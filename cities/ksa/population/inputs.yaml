@@ -1,0 +1,107 @@
+# > **Document version:** cities/ksa/population/inputs.yaml v0.1 | 31 Oct 2026 | Author: demand-modeler (R3) | Status: draft
+# Real-world inputs read by demand/population.py (no figure lives in the code). Every number carries
+# `source:` (docs/sources/index.csv or docs/sources/r3-pop.csv) or `assumption:` (docs/assumptions.md).
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+kind: inputs
+
+census_2022_total:
+  value: 32175224
+  unit: persons
+  source: S-cp2-gastat-007   # GASTAT Census 2022 TA1 governorate export, Total row
+
+gastat_estimate_2023:
+  value: 33702731
+  unit: persons (mid-year estimate)
+  source: S-cp2-gastat-006
+
+gastat_estimate_2024:
+  value: 35300280
+  unit: persons (mid-year estimate)
+  source: S-cp2-gastat-006
+
+# Anchoring of every UN WPP series to the census base (A-pop-001): factor = census / WPP Medium 2022.
+anchor:
+  wpp_variant_for_factor: Medium
+  year: 2022
+  assumption: A-pop-001
+
+# WPP 2024 projection variants start in 2024; 2022-2023 are estimates (Medium rows) in every variant.
+wpp_projection_start_year:
+  value: 2024
+  source: S-r3-pop-001
+  assumption: A-pop-004
+
+# Sensitivity: re-anchor to the GASTAT 2024 estimate and hold the 2024 ratio (A-pop-003).
+gastat2024_reanchor:
+  hold_ratio_from_year: 2024
+  ratio_decay: none        # alternative: linear decay to 1.0 by 2060 (range of A-pop-003)
+  assumption: A-pop-003
+
+downscaling:
+  default: constant_shares
+  regional_trend:
+    weight:
+      value: 0.5
+      p10: 0.0
+      p90: 1.0
+      assumption: A-pop-006
+    base_year: 2010        # TA9 regional series start
+    end_year: 2022         # TA9 regional series end
+    source: S-cp2-gastat-003
+
+urbanisation:
+  hold_after_last_year: true   # WUP 2025 ends in 2050; 2055/2060 held at 2050
+  assumption: A-pop-008
+
+vision2030:
+  national_target_2030:
+    value: 50000000
+    p10: 50000000
+    p90: 60000000
+    unit: persons
+    source: [S-r3-pop-012, S-r3-pop-013]
+    assumption: A-pop-009
+  path_to_2030: geometric_from_census     # A-pop-010
+  after_2030: wpp_medium_growth_ratio     # A-pop-010
+  path_assumption: A-pop-010
+  riyadh_target_2030:
+    zone: G138                            # Ar Riyadh governorate (OSM polygon "Riyadh governorate")
+    value: 15000000
+    p10: 10000000
+    p90: 20000000
+    unit: persons
+    source: [S-r3-pop-014, S-r3-pop-015]
+    assumption: A-pop-011
+  riyadh_after_2030: hold_share_of_national   # A-pop-012
+  riyadh_after_2030_assumption: A-pop-012
+  tourism_visits_target_2030:
+    value: 150000000
+    international: 70000000
+    domestic: 80000000
+    unit: visits per year
+    source: [S-r3-pop-017, S-r3-pop-018]
+    assumption: A-pop-018
+  tourism_visits_observed_2025:
+    value: 122000000
+    unit: visits per year (preliminary estimate)
+    source: S-r3-pop-018
+  tourism_visits_observed_2024:
+    inbound: 29700000
+    domestic: 86200000
+    unit: visits per year
+    source: S-r3-pop-018
+
+gigaprojects:
+  addon_mode:
+    value: reallocate          # alternative: additive
+    assumption: A-pop-013
+  ramp_start_year:
+    value: 2025
+    p10: 2025
+    p90: 2030
+    assumption: A-pop-014
+  undated_target_year:
+    value: 2045
+    p10: 2035
+    p90: 2060
+    assumption: A-pop-015

@@ -1,0 +1,40 @@
+# Document version: costs/config/reconcile.yaml v1.0 | 31 Oct 2026 | Author: cost-estimator (R1c) | Status: draft
+# Bottom-up vs top-down reconciliation (docs/costs.md section 5). Reference corridors are HYPOTHETICAL test
+# shapes (A-cost-018), not proposed lines: 300 km, flat desert, double track, electrified, 2 terminals + 2
+# intermediate stations, hourly all-stop service 06:00-23:00. `scope` says which bottom-up total a top-down
+# row is compared with: infra = capex excluding rolling stock; all_in = capex including rolling stock.
+reference:
+  length_km: 300
+  assumption_id: A-cost-018
+  cruise_kmh: {hsr: 300, conventional_passenger: 160, mixed: 200, commuter: 120, upgrade: 160}
+  accel_ms2: 0.5
+  decel_ms2: 0.6
+  dwell_s: 120
+gap_flag_pct: 30
+top_down:
+  hsr:
+    - {id: C-programme-hhr-per-km-001, scope: all_in, note: "KSA outturn; bundles 12 years of O&M and iconic stations"}
+    - {id: C-line-type-hsr-ec-total-001, scope: infra, note: "EU total investment, EUR 2016"}
+    - {id: C-line-type-hsr-wb-china-350-017, scope: all_in, note: "China all-in incl. rolling stock and IDC"}
+    - {id: C-line-type-hsr-wb-china-250-018, scope: all_in, note: "China 250 km/h all-in"}
+    - {id: C-line-type-hsr-france-lgv-2013-020, scope: infra, note: "four LGVs, estimates"}
+    - {id: C-line-type-hsr-eca-audited-021, scope: infra, note: "ECA audited outturn, nominal"}
+    - {id: C-line-type-hsr-pwc-hs2-rural-024, scope: infra, note: "rural sections, GBP 2011"}
+    - {id: C-line-type-hsr-wb-europe-019, scope: infra, note: "Spain/France construction, USD 2012"}
+  conventional_passenger:
+    - {id: C-line-type-conv-ec-total-004, scope: infra, note: "EU total investment, new conventional (passenger and mixed)"}
+    - {id: C-line-type-conv-baumgartner-easy-029, scope: infra, note: "Baumgartner easy topography, EUR 2000"}
+  mixed:
+    - {id: C-programme-landbridge-per-km-2178-001, scope: all_in, note: "SR 100 bn over new + upgraded km"}
+    - {id: C-programme-landbridge-per-km-1500-001, scope: all_in, note: "SR 100 bn over new track only (upper bound)"}
+    - {id: C-programme-sar-north-per-km-001, scope: infra, note: "single-track freight-led, excl. land"}
+    - {id: C-line-type-mixed-wb-china-200-026, scope: all_in, note: "China 200 km/h mixed, all-in"}
+    - {id: C-line-type-jubail-dammam-001, scope: infra, note: "freight line, construction only"}
+    - {id: C-line-type-conv-ec-total-004, scope: infra, note: "EU new conventional (covers mixed traffic)"}
+  upgrade:
+    - {id: C-line-type-upgrade-ec-conv-total-007, scope: infra, note: "EU upgrade projects, total investment"}
+    - {id: C-line-type-sar-phosphate-doubling-per-km-001, scope: infra, note: "doubling with structures and yards"}
+    - {id: C-line-type-sar-east-hofuf-haradh-doubling-001, scope: infra, note: "track doubling, desert freight"}
+  commuter:
+    - {id: C-line-type-commuter-urban-metro-033, scope: all_in, note: "urban metro class (upper reference only)"}
+    - {id: C-programme-riyadh-metro-per-km-001, scope: all_in, note: "Riyadh Metro all-in (urban metro, reference only)"}

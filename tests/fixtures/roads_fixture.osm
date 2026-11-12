@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- FIXTURE: invented road network for tests/test_network_*.py. Not real roads. Nodes 1-6 sit at
+     the centroids of tests/fixtures/zones.geojson FZ1-FZ6; 7-8 are a disconnected island.
+     w1 bottom row primary (two-way, class default speed); w2 top row primary maxspeed=100;
+     w3 secondary oneway 1->4; w4 residential 3-6; w5 trunk 2-5 access=private (excluded);
+     w6 tertiary island 7-8. -->
+<osm version="0.6" generator="fixture">
+  <node id="1" version="1" lat="22.05" lon="40.05"/>
+  <node id="2" version="1" lat="22.05" lon="40.15"/>
+  <node id="3" version="1" lat="22.05" lon="40.25"/>
+  <node id="4" version="1" lat="22.15" lon="40.05"/>
+  <node id="5" version="1" lat="22.15" lon="40.15"/>
+  <node id="6" version="1" lat="22.15" lon="40.25"/>
+  <node id="7" version="1" lat="22.50" lon="40.50"/>
+  <node id="8" version="1" lat="22.50" lon="40.55"/>
+  <way id="1" version="1"><nd ref="1"/><nd ref="2"/><nd ref="3"/><tag k="highway" v="primary"/></way>
+  <way id="2" version="1"><nd ref="4"/><nd ref="5"/><nd ref="6"/><tag k="highway" v="primary"/><tag k="maxspeed" v="100"/></way>
+  <way id="3" version="1"><nd ref="1"/><nd ref="4"/><tag k="highway" v="secondary"/><tag k="oneway" v="yes"/></way>
+  <way id="4" version="1"><nd ref="3"/><nd ref="6"/><tag k="highway" v="residential"/></way>
+  <way id="5" version="1"><nd ref="2"/><nd ref="5"/><tag k="highway" v="trunk"/><tag k="access" v="private"/></way>
+  <way id="6" version="1"><nd ref="7"/><nd ref="8"/><tag k="highway" v="tertiary"/></way>
+</osm>

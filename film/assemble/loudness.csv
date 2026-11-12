@@ -1,0 +1,9 @@
+cut,lang,stage,integrated_lufs,true_peak_dbtp,lra
+main,ar,final_mp4,-16.03,-1.77,4.00
+main,ar,narration_master,-16.03,-1.90,4.00
+main,en,final_mp4,-16.09,-1.83,4.50
+main,en,narration_master,-16.08,-1.89,4.40
+trailer,ar,final_mp4,-16.07,-1.84,5.10
+trailer,ar,narration_master,-16.07,-1.90,5.10
+trailer,en,final_mp4,-16.22,-1.87,4.70
+trailer,en,narration_master,-16.21,-1.90,4.70

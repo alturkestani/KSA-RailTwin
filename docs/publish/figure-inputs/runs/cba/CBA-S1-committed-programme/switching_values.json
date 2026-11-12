@@ -1,0 +1,24 @@
+{
+ "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+ "basis": {
+  "population": "un_wpp_medium",
+  "horizon_years": 60,
+  "rate_case": "greenbook_2026",
+  "central_npv_sar_m": -59800.48169379044,
+  "central_bcr": 0.3464275272967243,
+  "central_ridership_ratio": 0.6931289883045457
+ },
+ "demand_share_of_model_forecast": {
+  "value": 1.6253426708983492,
+  "statement": "in the model, demand must be 163 % of the modelled forecast for BCR = 1"
+ },
+ "capex_multiplier": {
+  "value": 0.25756333970458944
+ },
+ "vot_multiplier": {
+  "value": 8.937123203831653
+ },
+ "discount_rate_npv_zero": {
+  "value": 0.0026688989770916605
+ }
+}

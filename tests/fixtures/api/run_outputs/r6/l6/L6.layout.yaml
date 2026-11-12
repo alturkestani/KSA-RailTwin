@@ -1,0 +1,51 @@
+id: S6-L6
+layer: hypothetical
+base: S1
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+corridors:
+- id: S2-trunk_gap-abha-khamis-mushait-bisha
+  phase: 2050
+  electrified: false
+- id: S2-trunk_gap-abha-khamis-mushait-najran
+  phase: 2050
+  electrified: false
+- id: S2-trunk_gap-al-jubayl-hafar-al-batin
+  phase: 2050
+  electrified: false
+- id: S2-trunk_gap-jeddah-yanbu
+  phase: 2050
+  electrified: false
+- id: S2-trunk_gap-tabuk-sakaka
+  phase: 2050
+  electrified: false
+- id: S2-trunk_gap-taif-bisha
+  phase: 2050
+  electrified: false
+- id: S3-branch_spur-al-kharj
+  phase: 2050
+  electrified: false
+- id: S3-branch_spur-arar
+  phase: 2050
+  electrified: false
+- id: S3-branch_spur-bisha
+  phase: 2050
+  electrified: false
+- id: S3-branch_spur-sakaka
+  phase: 2050
+  electrified: false
+- id: S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind
+  phase: 2050
+  electrified: false
+- id: S4-commuter_belt-abha-khamis-mushait-135
+  phase: 2050
+  electrified: false
+- id: S4-commuter_belt-dammam-khobar-dhahran-180
+  phase: 2050
+  electrified: false
+- id: S4-commuter_belt-jazan-315
+  phase: 2050
+  electrified: false
+- id: S5-station_addition-al-jarn
+  phase: 2050
+- id: S5-station_addition-al-jubayl
+  phase: 2030

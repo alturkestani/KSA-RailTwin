@@ -1,0 +1,71 @@
+# Crosswalk overrides for screening.gastat (CP2_PREP item 1 addendum, 31 Oct 2026; checked by hand).
+# Everything not listed here is joined automatically (governorates: identical Census 2022 value with
+# S-073, then normalised Arabic name within the region; 2010 tables: normalised Arabic or English
+# name within the region).
+
+# Relayed governorate code -> OSM polygon gov_id (cities/ksa/zones/governorates.geojson), where the
+# Arabic spelling differs between S-073 and OSM. Al Amoah (الأمواه, Asir) has no OSM polygon
+# (C-r1a-20): it stays without one.
+gov_osm:
+  Balqarn: G021   # S-073 بالقرن, OSM بلقرن
+  Jazan: G067     # S-073 جيزان, OSM جازان
+  Sabya: G068     # S-073 صبيا, OSM صبياء
+  Al Mahd: G073   # S-073 مهد الذهب, OSM المهد
+  Yanbu: G078     # S-073 ينبع البحر, OSM ينبع
+
+# Relayed governorate code -> Census 2010 governorate name (Arabic, as printed in
+# twzy_lskn_fy_lmhfzt.xlsx) where the spelling differs. Governorates absent from the 2010 table
+# were created after 2010; their towns use the region's 2010->2022 ratio (TA9, A-screen-035).
+gov_2010:
+  Jazan: جازان
+  Sabya: صبياء
+  Yanbu: ينبع
+  Al Mahd: المهد
+
+# Census 2010 city (EN listing; key "name" or "name|pop_2010" when the name repeats) ->
+# settlement_id, where the automatic name match fails or picks the wrong node; "none" = no
+# settlement in the universe.
+city_2010:
+  "Makkah": KSA-ST-01525                  # مكه المكرمه; OSM node مكة
+  "Jubail|10241": "none"                  # the Al-Ahsa Jubail (الجبيل); its register row is OSM
+                                          # node الشهارين (KSA-ST-05310), not a name match: left out
+  "Al Hofuf and Al Mubarraz": KSA-ST-00003  # combined row, as in the pilot register
+
+# Census 2022 relayed city code -> pilot register row_key / settlement_id. The automatic join is on
+# the identical figure (citypopulation.de relays the same census table); the rows below differ.
+city_2022:
+  Al-Hofuf: {row_key: "eastern:osm:208501048", settlement_id: KSA-ST-00003, combined_with: Al-Mubarraz}
+  Al-Mubarraz: {row_key: "eastern:osm:208501048", settlement_id: KSA-ST-00003, combined_with: Al-Hofuf}
+  Al-Jubail: {row_key: "eastern:osm:38903292", settlement_id: KSA-ST-00002}
+  Yanbu: {row_key: "madinah:osm:3148037089", settlement_id: KSA-ST-01439}
+  Safwa: {row_key: null, settlement_id: KSA-ST-05170}
+
+# Primary Census 2022 TA1 city (≥ 5,000) name, as exported (addendum 2, 31 Oct 2026) ->
+# settlement_id, checked by hand (the Arabic name of the OSM node is the unambiguous rendering of the
+# export's transliteration; region from the node). "none" = no settlement for it in the universe.
+city_primary:
+  Alhufuf: {settlement_id: KSA-ST-00003, combined_with: Almubriz}   # combined row, as in the
+  Almubriz: {settlement_id: KSA-ST-00003, combined_with: Alhufuf}   # pilot register and relayed join
+  Aljabil: "none"            # the Al-Ahsa Jubail (الجبيل, 9,994); its pilot register row sits on the
+                             # OSM node Ash Shaharin (KSA-ST-05310), which is a different town
+  Alshaharin: KSA-ST-05310   # الشهارين (Al-Ahsa): the node takes its own figure, 5,518
+  Jubail Industrial City: "none"   # no OSM place node; Al Jubayl (KSA-ST-00002) is the city row
+  Yanbaa As-Senayah: "none"        # Yanbu Industrial City: no OSM place node
+  Alsayl Alsaghir: KSA-ST-00513    # السيل الصغير (Makkah)
+  Meegowa: KSA-ST-01713            # ميقوع (Al-Jouf)
+  Alajfir: KSA-ST-00991            # الأجفر (Hail)
+  Qia: KSA-ST-00519                # قيا (Makkah)
+  Aljaradiuh: KSA-ST-01304         # الجرادية (Jazan)
+  Alkharadiluh: KSA-ST-01218       # الخرادلة (Jazan)
+  Abwalsle: KSA-ST-01201           # أبو السلع (Jazan)
+  Rawdat Sudair: KSA-ST-03087      # روضة سدير (Riyadh)
+  Uqlat Alsuqur: KSA-ST-00197      # عقلة الصقور (Qassim)
+  Malahum: KSA-ST-03645            # ملهم (Riyadh)
+  Al Bijadyah: KSA-ST-00616        # البجادية (Riyadh)
+  Hakimuh: KSA-ST-01238            # حاكمة ابوعريش (Jazan)
+  Eayan Bin Fuhayd: KSA-ST-01041   # عين ابن فهيد (Qassim)
+  An Nabak Abu Qasr: KSA-ST-00842  # النبك أبوقصر (Al-Jouf); Alfudul has the same total, 5,374
+  Adham: "none"        # its figure 9,022 sits on the pilot row المهد (Makkah), a differently named
+                       # node; the 2010 bridge points to أضم instead: left unmatched, conflict logged
+  Alshazalah: "none"   # its figure 11,560 sits on the pilot row Ash Shinan (الشنان, Hail): name differs,
+                       # left unmatched, conflict logged

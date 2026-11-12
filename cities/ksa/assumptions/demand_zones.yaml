@@ -1,0 +1,30 @@
+# > **Document version:** cities/ksa/assumptions/demand_zones.yaml v0.2 | 3 Nov 2026 | Author: R3 builder (demand-modeler); R6 builder (split_governorates, CP6 P5b) | Status: draft
+# Zone system for the W8 demand model (demand.zones). Every value carries an assumption id
+# (docs/assumptions.md) or a source id. Label applies to every output built from it.
+version: "0.1"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+
+national_zones:
+  value: "one zone per OSM governorate polygon (cities/ksa/zones/governorates.geojson, 149; GASTAT Al Amoah merged into Tathlith G031, A-pop-007)"
+  population: {source: S-cp2-gastat-007, note: "GASTAT Census 2022 TA1 governorate table via cities/ksa/population/base_2022_governorates.csv"}
+  point: {value: "most populous settlement of the governorate (cities/ksa/zones/governorate_points.geojson, A-r1a-001)", assumption: A-demand-041}
+
+metro_subzones:
+  metros: {value: "CP1 metro list (A-screen-013): the governorates that hold a metro anchor row", source: "cities/ksa/assumptions/screening_weights.yaml metros"}
+  method: {value: "hexagon grid in the governorate's UTM zone, clipped to the governorate polygon; population shares from the WorldPop 2020 constrained 100 m grid, scaled to the Census 2022 governorate total", assumption: A-demand-001}
+  hex_flat_to_flat_km: {value: 10.0, range: [5.0, 20.0], unit: km, assumption: A-demand-001}
+  min_hex_population: {value: 3000, range: [1000, 10000], unit: persons (grid sum), assumption: A-demand-042, note: "hexes below this merge into the nearest kept hex of the same governorate (by centroid distance)"}
+  point: {value: "population-weighted centroid of the hex's grid pixels", assumption: A-demand-043}
+  grid: {manifest_id: worldpop-sau-2020-100m-unadj-constrained, licence: CC-BY-4.0, note: "WorldPop under-counts against the census (back-test median 0.637, docs/network.md); only within-governorate SHARES are used, totals come from the census"}
+
+split_governorates:
+  # R6 (CP6 P5b, Tariq 3 Nov 2026): split before any search so the S5 station additions in these zones see their own
+  # catchment (R5: the four Al-Ahsa stations shared Hufuf's zone G033; both Jubail stations sat in G034)
+  zones: {value: [G033, G034], assumption: A-r6-010, note: "G033 Al Ahsa, G034 Al Jubayl; same hexagon method as metro_subzones (A-demand-001/042/043)"}
+  hex_flat_to_flat_km: {value: 5.0, range: [5.0, 10.0], unit: km, assumption: A-r6-010, note: "low end of the A-demand-001 range so that Al-Jarn, Al-Oyun, Al-Qarah, Al-Umran (12-25 km from Hufuf) and the two Jubail sites (~10 km apart) can fall in different hexes"}
+
+jobs:
+  rule: {value: "region formal jobs (demand_jobs.yaml, S-r3-cal-050) x zone population / region population", assumption: A-demand-003, note: "demand_jobs.yaml governorate_distribution; metro hexes inherit the same within-region population rule, so jobs per resident is uniform within a region (flagged proxy)"}
+
+economic_nodes:
+  rule: {value: "every located node in cities/ksa/zones/economic_nodes.parquet is attached to the zone whose polygon contains it; counts per role per zone", assumption: A-demand-044}

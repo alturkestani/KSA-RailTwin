@@ -1,0 +1,25 @@
+# Spec for cities/ksa/lines/sar-east-freight-legacy.yaml. SAR's freight points (S-026) in geographic order.
+id: sar-east-freight-legacy
+line:
+  name_en: SAR East freight line (Dammam port - Riyadh dry port)
+  name_ar: خط الشرق للشحن (ميناء الدمام - ميناء الرياض الجاف)
+  layer: existing
+  operator: Saudi Arabia Railways (SAR)
+  status: in_service
+  source: S-026
+  accessed: 2026-10-31
+  line_type: freight                               # CP2 P4a; S-cp2-401, S-cp2-403
+  length_km: 566                                    # S-026 (verified); 556/550/546 unverified (C-r1a-10)
+  notes: >-
+    Freight only (S-cp2-401, S-cp2-403): `line_type: freight` since CP2 P4a (was `mixed`). SAR's
+    list order (King Abdulaziz Port, Al-Ahsa, Buqayq, Al-Kharj, Haradh, Al-Tawdhihiyah, Riyadh) is
+    not geographic; stations are listed Dammam to Riyadh here. Al-Tawdhihiyah (S-026) was not found
+    in OSM rail or place nodes and is omitted from the station list (unlocated, flagged). Port, Al-Ahsa
+    and dry-port points are OSM place proxies. Arabic line name descriptive (not read on SAR).
+stations:
+  - {id: dammam-port, name_en: King Abdulaziz Port (Dammam), name_ar: ميناء الملك عبدالعزيز بالدمام, class: terminal, source: S-026, proxy_osm: node/287865393, site_status: inferred}
+  - {id: buqayq, name_en: Buqayq (Abqaiq), name_ar: بقيق, class: intermediate, source: S-026, osm: node/2011671784}
+  - {id: al-ahsa, name_en: Al-Ahsa, name_ar: الأحساء, class: intermediate, source: S-026, proxy_osm: node/8487320543, site_status: inferred}
+  - {id: haradh, name_en: Haradh, name_ar: حرض, class: intermediate, source: S-026, osm: node/1236725492}
+  - {id: al-kharj, name_en: Al-Kharj, name_ar: الخرج, class: intermediate, source: S-026, osm: node/1236705235}
+  - {id: riyadh-dry-port, name_en: Riyadh (dry port), name_ar: ميناء الرياض الجاف, class: terminal, source: S-026, proxy_osm: node/315358390, site_status: inferred}

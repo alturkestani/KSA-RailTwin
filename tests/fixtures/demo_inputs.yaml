@@ -1,0 +1,54 @@
+# FIXTURE: invented demo inputs (tests/fixtures/README.md). Not a real place, cost or appraisal;
+# never cite these values. Read by `common.demo` (`make demo`) only.
+fixture: true
+source: fixture
+screening:
+  # fictional distances to the nearest existing line, one per row of region_register.parquet
+  dist_existing_km: [15.0, 40.0, 80.0, 120.0, 160.0]
+  metro_anchor_name_en: Fixture Town 1
+  sweep_fraction: 0.25
+cba:
+  population: un_wpp_medium
+  rate_case: greenbook_2026
+  # benefit quantities per modelled year (made up; same shape as tests/test_economics_cba.py)
+  base_year_population: un_wpp_medium_gastat2024
+  base_year: 2025
+  forecast_year: 2050
+  forecast_growth: 1.2
+  quantities:
+    user_min_commute: 2.0e+6
+    user_min_business: 2.0e+6
+    user_min_leisure_vfr: 4.0e+6
+    user_min_tourism: 1.0e+6
+    user_min_pilgrimage: 1.0e+6
+    car_trips_diverted: 1.0e+5
+    car_vkm_interurban: -2.0e+7
+    car_vkm_jeddah_urban: 0.0
+    car_pkm_diverted_min: 1.0e+7
+    bus_vkm: -1.0e+5
+    air_pkm: -1.0e+7
+    rail_pkm: 3.0e+7
+    rail_trips: 2.0e+5
+    revenue_sar: 2.0e+7
+    trips_total: 1.0e+8
+    wei_job_weighted_dlnED: 50.0
+  class_share: {civil: 0.6, track: 0.4}
+  train_km_yr: 1.0e+5
+  electric: true
+  line_type: conventional_passenger
+  # invented cost draws (SAR million): capex uniform on [low, high] around base; flat opex
+  capex_base: 900.0
+  capex_low: 800.0
+  capex_high: 1400.0
+  construction_years: 5.0
+  opex: 20.0
+  renewals_30y: 100.0
+  renewals_40y: 150.0
+  renewals_60y: 250.0
+  ridership_low: 0.7
+  ridership_high: 1.1
+dashboard:
+  data_root: tests/fixtures/api
+  runs_root: tests/fixtures/api/run_outputs
+  endpoints: [/health, /api/meta, /api/scenarios, /api/funnel, /api/cba, /api/programmes, /api/fiscal]
+  startup_timeout_s: 60

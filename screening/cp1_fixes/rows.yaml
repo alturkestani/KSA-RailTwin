@@ -1,0 +1,269 @@
+# CP1_PREP item 5 fixes (31 Oct 2026). Sources: docs/sources/cp1-item5.csv; findings docs/sources/cp1-item5-findings.md.
+# Label: pilot, proposed criteria pending CP1; screening input, not a forecast.
+al_baha:
+  add:
+  - name_ar: القرى
+    name_en: Al-Qarā
+    region: al_baha
+    governorate: Al-Qarā
+    governorate_ar: محافظة القرى
+    is_governorate_centre: true
+    osm_id: 9327998071
+    osm_type: node
+    lat: 20.2475218
+    lon: 41.3607144
+    population: null
+    pop_source: null
+    pop_year: null
+    pop_type: null
+    pop_source_status: null
+    primary_to_find: GASTAT Census 2022 locality population for the Al-Qarā seat (not tabulated on citypopulation.de, S-cp1-005)
+    dist_existing_km: 208.9
+    nearest_existing: Haramain HSR, Makkah Central station (Rusaifah), OSM node 10956967098; in service since 11 Oct 2018
+    dist_metro_km: 150.3
+    nearest_metro: Taif (place=city, OSM 1236468526)
+    nearest_metro_tier: 2
+    economic_roles:
+    - role: administrative
+      source: S-al_baha-001
+    terrain_class: escarpment_mountain
+    screened: true
+    exclusion_reason: null
+    sources:
+    - S-al_baha-001
+    - S-cp1-001
+    - S-cp1-002
+    - S-cp1-003
+    - S-cp1-004
+    - S-cp1-005
+    threshold_50k: false
+    pilot_sample: false
+    road_min_method: pending R1a skims
+    dist_method: haversine (A-screen-pilot-001 of this region; station and metro points as in screening/pilot_builders/al_baha_al_baha_dist.py)
+    notes: 'CP1_PREP 31 Oct 2026 (item 5): point = OSM admin_centre of governorate relation 12429803, node 9327998071 (place=town, named Al Tawilah / الأطاولة in OSM, S-cp1-003, S-cp1-001); the OSM label
+      node القرى (place=governorate, node 4975708122, S-cp1-002) lies 1.14 km away. Second source: citypopulation.de page point 16.6 km away (basis unstated, S-cp1-005); Wikidata Q65040833 and Wikipedia
+      coordinates point to a Qara in Al-Jawf, ~1,077 km away (S-cp1-006, S-cp1-007), conflict, not used. No settlement population: the governorate total 19,586 (S-al_baha-001) is not used. Terrain as the
+      other Al-Baha rows (A-screen-pilot-003 [al_baha]). Previously withheld (no coordinates).'
+    withheld_name: Al-Qarā
+riyadh:
+  update:
+  - row_key: riyadh:name:Ad-Dilam@23.997,47.165
+    set:
+      population: 39267
+      pop_source: S-cp1-012
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'coordinate = OSM governorate boundary centroid (not the town; town node not found in Nominatim) (OSM relation 12423665). Governorate total 54,822 (S-riyadh-001). Centre town node not found;
+        pilot does not screen it. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 39,267 (Census 2022, S-cp1-012, citypopulation.de crediting GASTAT; governorate total
+        not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-012
+    - S-cp1-028
+  - row_key: riyadh:node:1236714296
+    set:
+      population: 29698
+      pop_source: S-cp1-013
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'Presumed centre: OSM place=city node ''Layla'' inside the Al Aflaj governorate. The centre identity and the Arabic name are unverified against GASTAT (open item for R2). Governorate total
+        54,544 (S-riyadh-001). | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 29,698 (Census 2022, S-cp1-013, citypopulation.de crediting GASTAT; governorate total not
+        used); seat identity from the pilot register (OSM place Layla in Al-Aflaj governorate), not a GASTAT statement.'
+    add_sources:
+    - S-cp1-013
+    - S-cp1-028
+  - row_key: riyadh:node:1237933651
+    set:
+      population: 8683
+      pop_source: S-cp1-014
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'Branch campus of Majmaah University (S-riyadh-011). Governorate total 10,799 (S-riyadh-001); town figure not sourced. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town
+        population 8,683 (Census 2022, S-cp1-014, citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name,
+        not a GASTAT statement.'
+    add_sources:
+    - S-cp1-014
+    - S-cp1-028
+  - row_key: riyadh:node:1236708740
+    set:
+      population: 6895
+      pop_source: S-cp1-015
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'Governorate total 10,864 (S-riyadh-001); town figure not sourced. Arabic governorate name from S-073 list. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population
+        6,895 (Census 2022, S-cp1-015, citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a
+        GASTAT statement.'
+    add_sources:
+    - S-cp1-015
+    - S-cp1-028
+  - row_key: riyadh:name:Al-Quwayiyah@24.065,45.284
+    set:
+      population: 28589
+      pop_source: S-cp1-016
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'coordinate = OSM governorate boundary centroid (not the town; town node not found in Nominatim) (OSM relation 12423672). Governorate total 71,410 (S-riyadh-001). | terrain_source: A-screen-pilot-002
+        | CP1_PREP 31 Oct 2026: seat-town population 28,589 (Census 2022, S-cp1-016, citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place
+        name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-016
+    - S-cp1-028
+  - row_key: riyadh:node:1236421402
+    set:
+      population: 2726
+      pop_source: S-cp1-017
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'Governorate total 28,243 (S-riyadh-001); town figure not sourced. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 2,726 (Census 2022, S-cp1-017, citypopulation.de
+        crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-017
+    - S-cp1-028
+  - row_key: riyadh:name:As-Sulayyil@20.460,45.574
+    set:
+      population: 25136
+      pop_source: S-cp1-018
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'coordinate = OSM governorate boundary centroid (not the town; town node not found in Nominatim) (OSM relation 12423668). Governorate total 35,271 (S-riyadh-001); town figure not sourced. |
+        terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 25,136 (Census 2022, S-cp1-018, citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred
+        from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-018
+    - S-cp1-028
+  - row_key: riyadh:node:1236704884
+    set:
+      population: 16344
+      pop_source: S-cp1-019
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'Governorate total 26,299 (S-riyadh-001); town figure not sourced. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 16,344 (Census 2022, S-cp1-019, citypopulation.de
+        crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-019
+    - S-cp1-028
+  - row_key: riyadh:name:Hawtat Bani Tamim@23.487,46.879
+    set:
+      population: 30720
+      pop_source: S-cp1-020
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'coordinate = OSM governorate boundary centroid (not the town; town node not found in Nominatim) (OSM relation 12423669). Governorate total 41,854 (S-riyadh-001); town figure not sourced. ''Hotat
+        Sudair'' branch campus (S-riyadh-011) is not mapped to this row: the naming match is unconfirmed. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 30,720 (Census
+        2022, S-cp1-020, citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-020
+    - S-cp1-028
+  - row_key: riyadh:name:Huraymila@25.127,46.123
+    set:
+      population: 9842
+      pop_source: S-cp1-021
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'coordinate = OSM governorate boundary centroid (not the town; town node not found in Nominatim) (OSM relation 12423671). Governorate total 21,758 (S-riyadh-001); town figure not sourced. |
+        terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 9,842 (Census 2022, S-cp1-021, citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred
+        from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-021
+    - S-cp1-028
+  - row_key: riyadh:way:31154343
+    set:
+      population: 6574
+      pop_source: S-cp1-022
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'Way-mapped town (OSM place=town). Governorate total 9,846 (S-riyadh-001); town figure not sourced. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 6,574 (Census
+        2022, S-cp1-022, citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-022
+    - S-cp1-028
+  - row_key: riyadh:name:Shaqra@25.248,45.253
+    set:
+      population: 32215
+      pop_source: S-cp1-023
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'coordinate = OSM governorate boundary centroid (not the town; town node not found in Nominatim) (OSM relation 12423677). Governorate total 46,403 (S-riyadh-001); town figure not sourced. Town
+        vs governorate figures diverge across aggregators (city-facts.com, unreliable). | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 32,215 (Census 2022, S-cp1-023,
+        citypopulation.de crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-023
+    - S-cp1-028
+  - row_key: riyadh:node:1014940192
+    set:
+      population: 7433
+      pop_source: S-cp1-024
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'Governorate total 12,510 (S-riyadh-001); town figure not sourced. | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 7,433 (Census 2022, S-cp1-024, citypopulation.de
+        crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-024
+    - S-cp1-028
+  - row_key: riyadh:name:Wadi ad-Dawasir@20.460,44.800
+    set:
+      population: 77433
+      pop_source: S-cp1-025
+      pop_year: 2022
+      pop_type: official
+      pop_source_status: secondary
+      primary_to_find: GASTAT Census 2022 locality table (portal.saudicensus.sa unreachable on 31 Oct 2026, S-cp1-028)
+      screened: true
+      exclusion_reason: null
+      notes: 'coordinate = OSM governorate boundary centroid (not the town; town node not found in Nominatim) (OSM relation 12423662). Governorate total 91,535 (S-riyadh-001); the town figure is unresolved:
+        Needs Opus judgement (a governorate total is not the centre figure). | terrain_source: A-screen-pilot-002 | CP1_PREP 31 Oct 2026: seat-town population 77,433 (Census 2022, S-cp1-025, citypopulation.de
+        crediting GASTAT; governorate total not used); seat identity inferred from the citypopulation.de place name matching the governorate name, not a GASTAT statement.'
+    add_sources:
+    - S-cp1-025
+    - S-cp1-028

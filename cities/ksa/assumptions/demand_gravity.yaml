@@ -1,0 +1,51 @@
+# > **Document version:** cities/ksa/assumptions/demand_gravity.yaml v0.1 | 31 Oct 2026 | Author: R3 builder (demand-modeler) | Status: draft
+# Doubly-constrained gravity by purpose (skill gravity-calibration; demand.gravity). Trip rates, impedance
+# priors and pilgrimage totals are read from demand_generation.yaml (not copied); this file holds the run
+# settings and the attraction rules. Every value carries an assumption or source id.
+version: "0.1"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+
+purposes: [commute, business, leisure_vfr, tourism, pilgrimage]
+generation_file: cities/ksa/assumptions/demand_generation.yaml
+
+admissible_pairs:
+  min_road_km: {value: 40, range: [30, 50], unit: road km, assumption: A-demand-005, note: "intercity definition; intrazonal and shorter pairs carry no trips"}
+  commute_band_road_km: {value: [40, 120], range: [[30, 90], [50, 150]], unit: road km, assumption: A-demand-055, note: "intercity commuting is distributed only inside the band of the screening commute criterion (A-screen-005); distances here are road km"}
+
+impedance:
+  cost: {value: "composite generalised minutes = -logsum / |b_ivt_car| of the MNL (modechoice.mnl) for the purpose", assumption: A-demand-056, note: "the 'best current mode' cost of the skill, expressed as the expected-maximum utility so that rail and air reach enter the distribution; minimum 1 min"}
+  forms: {value: "demand_generation.yaml impedance_priors.functional_form (A-demand-021): commute exponential, business / leisure_vfr / tourism power"}
+
+attraction:
+  commute: {value: jobs_proxy, assumption: A-demand-002}
+  business: {value: jobs_proxy, assumption: A-demand-002}
+  leisure_vfr: {value: population, assumption: A-demand-013}
+  tourism:
+    value: "population x (1 + w x number of tourism, heritage, hajj_umrah and giga_project nodes in the zone)"
+    w: {value: 0.25, range: [0.0, 1.0], unit: per node, assumption: A-demand-054, note: "special-generator uplift; no Saudi destination-share table by governorate was used (Ministry of Tourism destination shares are a W8 follow-up)"}
+
+pilgrimage:
+  destinations: {umrah: hajj-masjid-al-haram, hajj: hajj-masjid-al-haram, madinah_visit: hajj-masjid-an-nabawi, note: "economic node ids; the destination zone is the zone containing the node (A-demand-016)"}
+  intrazonal: {value: "origins in the destination's governorate (parent_gov) are dropped (A-demand-017)"}
+  overlap_factor_madinah: {value: 1.0, range: [0.7, 1.0], assumption: A-demand-018}
+  trips_per_person: {value: 2.0, unit: one-way trips per performer, assumption: A-demand-006, note: "out and back"}
+  year: {value: 2025, source: "demand_generation.yaml pilgrimage umrah_internal_2025 / madinah_visits_internal_2025 / hajj_internal y2025"}
+  scaling_with_population: {value: "external totals scale with the national population ratio to the 2025 calibration population", assumption: A-demand-057}
+
+constraint:
+  business: {value: doubly}
+  leisure_vfr: {value: doubly}
+  tourism: {value: doubly}
+  commute: {value: origin, assumption: A-demand-058, note: "departure from the skill's doubly-constrained form: with trips allowed only in the 40-120 km band, Furness did not converge (max relative error 1.0 after 500 iterations, run S0-baseline-s1 first attempt, 31 Oct 2026): zone job totals cannot be met from the few origins in band. Commute is origin-constrained (productions fixed, jobs as attraction weights)"}
+
+furness:
+  tolerance: {value: 1.0e-4, note: "max relative deviation of row and column sums (skill gravity-calibration)"}
+  max_iter: {value: 500}
+
+calibration:
+  year: {value: 2025, assumption: A-demand-040}
+  population_scenario: {value: un_wpp_medium_gastat2024, note: "national total 2025 of WPP Medium re-anchored to GASTAT's 2024 estimate (A-pop-003): the trip rates were set per resident of that estimate (demand_generation.yaml population_base)"}
+  parameters: {value: [asc.rail, asc.air, asc.bus], note: "mode_choice_r3.yaml calibration_hook; bounds = the priors' ranges (A-mode-010..012)"}
+  fit_targets: {value: [rail-sar-east-north-pax-2025, air-domestic-departures-2025, bus-intercity-pax-2025q2q4], assumption: A-demand-059, note: "rail = SAR East + SAR North (derived from two grade A targets): the HHR total includes international visitors (foreign Umrah performers), whom this resident model does not generate; every other usable target is reported, not fitted"}
+  bus_quarter_share: {value: 0.75, range: [0.70, 0.80], unit: share of the annual total in Q2-Q4, assumption: A-demand-053}
+  objective: {value: "sum of squared log(modelled / observed) over the fit targets", assumption: A-demand-036}

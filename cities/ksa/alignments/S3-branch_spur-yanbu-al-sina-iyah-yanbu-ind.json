@@ -1,0 +1,97 @@
+{
+ "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+ "line_type": "conventional_passenger",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 226.782,
+ "straight_km_legs": 170.71,
+ "straight_km_end_to_end": 170.71,
+ "detour_ratio": 1.3285,
+ "max_grade_cap": 0.025,
+ "design_kmh": 200.0,
+ "r_min_m": 3111.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 13.993,
+ "viaduct_km": 11.195,
+ "earthworks_km": 62.573,
+ "at_grade_km": 139.022,
+ "tunnel_share": 0.0617,
+ "viaduct_share": 0.04936,
+ "fill_m3": 7904300.0,
+ "cut_m3": 8447500.0,
+ "formation_max_grade": 0.02502,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.2314,
+ "elev_min_m": -0.3,
+ "elev_max_m": 909.7,
+ "terrain_shares": {
+  "coastal": 0.2501,
+  "dunes": 0.0018,
+  "escarpment_mountain": 0.4289,
+  "flat_desert": 0.147,
+  "mixed": 0.1723
+ },
+ "area_km": {
+  "urban": 3.23,
+  "builtup": 14.975,
+  "protected": 0.0,
+  "military": 0.4,
+  "sand": 1.499,
+  "sabkha": 0.0,
+  "waterway": 9.496,
+  "highway": 22.237
+ },
+ "wadi_crossings_osm": 35,
+ "speed_restrictions": [
+  {
+   "from_km": 59.924,
+   "to_km": 61.224,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 78.317,
+   "to_km": 81.415,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 88.312,
+   "to_km": 91.31,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 113.9,
+   "to_km": 115.0,
+   "kmh": 160.0
+  },
+  {
+   "from_km": 119.298,
+   "to_km": 121.197,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 122.596,
+   "to_km": 124.795,
+   "kmh": 160.0
+  },
+  {
+   "from_km": 140.688,
+   "to_km": 143.287,
+   "kmh": 110.0
+  }
+ ],
+ "restricted_km": 15.193,
+ "min_curve_kmh": 110.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "madinah": 0.0,
+  "yanbu-al-sina-iyah-yanbu-ind": 226.501,
+  "yanbu": 226.782
+ },
+ "status": "routed",
+ "stations_key": "21579d92e1835f05",
+ "geojson": "cities/ksa/alignments/S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind.geojson",
+ "run": "runs/align/r5-h4a-s1/S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

@@ -1,0 +1,21 @@
+# Scenario S1 — committed. Schema: .claude/skills/scenario-yaml/SKILL.md. Planned lines are announced/planned, never existing (rule 5).
+id: S1
+kind: scenario
+title: "S1 committed: S0 plus the Landbridge (with its planned stations), the Riyadh Rail Link and the Saudi GCC section"
+layers: [existing, committed]
+baseline: S0
+lines:
+  include: [hhr, sar-north-passenger, sar-east-passenger, riyadh-metro, landbridge, riyadh-rail-link, gcc-railway-ksa]
+  # landbridge: ~950 km Riyadh–Jeddah mixed line, SAR phased delivery targeting 2034, planned station at Al-Jumum (MEED pid 114639) — source + date in the line YAML (R1a)
+  # riyadh-rail-link and gcc-railway-ksa: committed/under procurement — source + date + uncertainty_km in the line YAML (R1a)
+candidates: []
+population_scenario: base-2022
+gigaproject_addon: none
+demand_params: cities/ksa/assumptions/demand.yaml
+mode_choice_params: cities/ksa/assumptions/modechoice.yaml
+costs: cities/ksa/costs/cost_register.yaml      # committed-line costs are reported from public estimates, flagged (Landbridge SR100bn vs USD 7bn conflict)
+appraisal: cities/ksa/assumptions/appraisal.yaml  # R5
+seed: 1
+sensitivity: {band: "P10/P50/P90", draws: 1000}
+labels: ["synthetic demand, uncalibrated: scenario comparison, not a forecast"]
+source: "PROJECT.md sections 4 and 6; every line fact to be verified in R1a"

@@ -1,0 +1,76 @@
+{
+ "id": "S2-trunk_gap-jeddah-madinah",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 378.927,
+ "straight_km_legs": 328.143,
+ "straight_km_end_to_end": 327.831,
+ "detour_ratio": 1.1548,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 6.098,
+ "viaduct_km": 8.996,
+ "earthworks_km": 122.857,
+ "at_grade_km": 240.976,
+ "tunnel_share": 0.01609,
+ "viaduct_share": 0.02374,
+ "fill_m3": 6430200.0,
+ "cut_m3": 16943300.0,
+ "formation_max_grade": 0.01252,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.2277,
+ "elev_min_m": 0.0,
+ "elev_max_m": 933.2,
+ "terrain_shares": {
+  "coastal": 0.2058,
+  "escarpment_mountain": 0.086,
+  "flat_desert": 0.376,
+  "mixed": 0.3321
+ },
+ "area_km": {
+  "urban": 6.744,
+  "builtup": 30.926,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 0.0,
+  "sabkha": 0.0,
+  "waterway": 7.897,
+  "highway": 9.743
+ },
+ "wadi_crossings_osm": 48,
+ "speed_restrictions": [
+  {
+   "from_km": 224.026,
+   "to_km": 225.726,
+   "kmh": 220.0
+  },
+  {
+   "from_km": 226.325,
+   "to_km": 229.224,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 233.023,
+   "to_km": 235.022,
+   "kmh": 190.0
+  }
+ ],
+ "restricted_km": 6.598,
+ "min_curve_kmh": 130.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "jeddah": 0.0,
+  "khulays": 77.022,
+  "madinah": 378.927
+ },
+ "status": "routed",
+ "stations_key": "c27c38666f0417c1",
+ "geojson": "cities/ksa/alignments/alternatives/S2-trunk_gap-jeddah-madinah.geojson",
+ "run": "runs/align/alternatives-s1/S2-trunk_gap-jeddah-madinah",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

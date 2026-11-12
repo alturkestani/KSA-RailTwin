@@ -1,0 +1,346 @@
+# Station-site research for the 14 unlocated stops (CP2_PREP item 6, rail-data-scout, 31 Oct 2026).
+# Applied with `uv run python -m rail.lines apply-sites`; sources in docs/sources/index.csv (S-cp2-6xx),
+# bands A-stn-001…009 in docs/assumptions.md. Committed stops stay committed (announced/planned).
+counts:
+  resolved: 1
+  low_confidence: 11
+  unlocated: 2
+rules:
+  outcome_meaning: resolved = published or OSM-tagged facility site; low_confidence = town/facility-name
+    only, centroid + band; unlocated = nothing located, no point placed
+  uncertainty: A-stn-001 (built-up radius, geo-verify extents), A-stn-002 (fallback 15 km), A-stn-003
+    (max of own radius and alternative candidates), A-stn-004/005 (facility offsets)
+  layers: committed stays committed (announced/planned); no layer upgraded
+  coordinates: WGS84; distances are geodesics (pyproj via screening.geo_verify.geom)
+  google_maps: not used
+stations:
+- station_uid: gcc-railway-ksa:kuwait-border
+  line_id: gcc-railway-ksa
+  layer: committed
+  outcome: low_confidence
+  lat: 28.42254
+  lon: 48.49278
+  location_method: town_centroid:osm:node/983083571 (Al Khafji city)
+  confidence: low
+  uncertainty_km: 13.1
+  sources:
+  - S-cp2-607
+  - S-032
+  - S-cp2-601
+  - S-cp2-602
+  searched:
+  - 'WebSearch (standard): Saudi Landbridge / GCC railway / Riyadh Rail Link station locations, Oct 2026'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (no coordinates for this stop)'
+  - 'OSM local extract (read-only): railway=station, yard, workshop and place nodes within 10-25 km'
+  - 'Microsoft footprints (cached tiles): built-up cluster extent via geo-verify extents (A-stn-001)'
+  - 'OSM places: ''Al Khafji Customs'' node/1237828458 (named crossing, the spec proxy)'
+  notes: Route 'will begin at Al-Khafji in the Eastern Province near Kuwait's border' (S-cp2-607, 12 May
+    2026). No station or crossing site published. Town centroid = OSM Al Khafji city node (67,012 pop.
+    in OSM). Band = max(own built-up radius 5.19 km, geodesic 13.11 km to the named customs node 1237828458)
+    (A-stn-001, A-stn-003). The old proxy (customs node) lies inside the band. Layer committed, design
+    stage (S-032).
+- station_uid: gcc-railway-ksa:dammam
+  line_id: gcc-railway-ksa
+  layer: committed
+  outcome: low_confidence
+  lat: 26.43678
+  lon: 50.104
+  location_method: town_centroid:osm:node/287865393 (Dammam city)
+  confidence: low
+  uncertainty_km: 13.8
+  sources:
+  - S-cp2-607
+  - S-032
+  - S-cp2-601
+  - S-cp2-602
+  searched:
+  - 'WebSearch (standard): Saudi Landbridge / GCC railway / Riyadh Rail Link station locations, Oct 2026'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (no coordinates for this stop)'
+  - 'OSM local extract (read-only): railway=station, yard, workshop and place nodes within 10-25 km'
+  - 'Microsoft footprints (cached tiles): built-up cluster extent via geo-verify extents (A-stn-001)'
+  - 'MEED / Construction Review: route passes through Dammam (S-cp2-607), no station named'
+  notes: 'Dammam remains ''not confirmed'' (C-008). The line passes through Dammam (S-cp2-607) but no
+    station site is published. Band from the Dammam-Khobar built-up cluster (diameter 27.5 km, radius
+    13.76 km). OSM ''Dammam Railway Station'' node/492547630 (SAR, existing) is 3.7 km away and inside
+    the band; not used: no source links it to the GCC line.'
+- station_uid: gcc-railway-ksa:uae-border
+  line_id: gcc-railway-ksa
+  layer: committed
+  outcome: low_confidence
+  lat: 24.13303
+  lon: 51.56759
+  location_method: town_centroid:osm:node/3952970012 (Al Batha)
+  confidence: low
+  uncertainty_km: 1.3
+  sources:
+  - S-cp2-607
+  - S-032
+  - S-cp2-601
+  - S-cp2-602
+  searched: &id001
+  - 'WebSearch (standard): Saudi Landbridge / GCC railway / Riyadh Rail Link station locations, Oct 2026'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (no coordinates for this stop)'
+  - 'OSM local extract (read-only): railway=station, yard, workshop and place nodes within 10-25 km'
+  - 'Microsoft footprints (cached tiles): built-up cluster extent via geo-verify extents (A-stn-001)'
+  notes: Route 'will then extend southward to Al-Batha on the UAE border' (S-cp2-607). No crossing or
+    station site published. OSM Al Batha node is a village-class place (crossing name). Band = built-up
+    radius 1.26 km (374 buildings). Old proxy coordinates are the same node.
+- station_uid: landbridge:riyadh
+  line_id: landbridge
+  layer: committed
+  outcome: low_confidence
+  lat: 24.63892
+  lon: 46.71601
+  location_method: town_centroid:osm:node/315358390 (Riyadh city)
+  confidence: low
+  uncertainty_km: 19.9
+  sources:
+  - S-054
+  - S-cp2-604
+  - S-cp2-601
+  - S-cp2-602
+  - S-r1a-055
+  searched:
+  - 'WebSearch (standard): Saudi Landbridge / GCC railway / Riyadh Rail Link station locations, Oct 2026'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (no coordinates for this stop)'
+  - 'OSM local extract (read-only): railway=station, yard, workshop and place nodes within 10-25 km'
+  - 'Microsoft footprints (cached tiles): built-up cluster extent via geo-verify extents (A-stn-001)'
+  - 'Wikipedia Riyadh Dry Port (S-cp2-604): dry port is adjacent to the Riyadh railway station; not the
+    Landbridge terminal'
+  notes: Terminal site not published (S-054). Band = built-up city radius (19.94 km, 40 km window; cluster
+    diameter 39.9 km, not window-truncated). The stop is therefore effectively the city; any site must
+    come from SAR. Thumamah / Al Malaz bypass station names from a search summary were not verified and
+    are not used. No Riyadh Rail Link award notice found as of 31 Oct 2026 (S-r1a-055 is the latest).
+- station_uid: landbridge:dawadmi
+  line_id: landbridge
+  layer: committed
+  outcome: low_confidence
+  lat: 24.49417
+  lon: 44.38333
+  location_method: town_centroid:osm:node/1236695687 (Ad Dawadimi)
+  confidence: low
+  uncertainty_km: 4.1
+  sources:
+  - S-062
+  - S-lb-018
+  - S-cp2-601
+  - S-cp2-602
+  searched: *id001
+  notes: 'Named intermediate station (S-062: ''Dawadmi''; S-lb-018 MEED Projects: ''Al-Doadmi''). No coordinates
+    published. Band = built-up radius 4.10 km (10,777 buildings in the cluster).'
+- station_uid: landbridge:muwai
+  line_id: landbridge
+  layer: committed
+  outcome: low_confidence
+  lat: 22.43657
+  lon: 41.76194
+  location_method: town_centroid:osm:node/1236449504 (Al Muwayh)
+  confidence: low
+  uncertainty_km: 15.0
+  sources:
+  - S-062
+  - S-lb-018
+  - S-cp2-601
+  - S-cp2-602
+  searched:
+  - 'WebSearch (standard): Saudi Landbridge / GCC railway / Riyadh Rail Link station locations, Oct 2026'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (no coordinates for this stop)'
+  - 'OSM local extract (read-only): railway=station, yard, workshop and place nodes within 10-25 km'
+  - 'Microsoft footprints (cached tiles): built-up cluster extent via geo-verify extents (A-stn-001)'
+  - 'Footprint index check: the level-9 quadkey 122133233 has no Saudi file in Microsoft''s index'
+  notes: 'Named intermediate station: ''Muwai'' (S-062), ''Moya'' (S-lb-018), OSM ''Al Muwayh'' town.
+    No coordinates published. Band NOT measured: no footprint tile covers the window (A-stn-002 fallback
+    15 km, the Landbridge site value in A-r1a-006).'
+- station_uid: landbridge:al-jumum
+  line_id: landbridge
+  layer: committed
+  outcome: low_confidence
+  lat: 21.62117
+  lon: 39.69898
+  location_method: town_centroid:osm:node/1236466181 (Al Jumum)
+  confidence: low
+  uncertainty_km: 2.8
+  sources:
+  - S-062
+  - S-lb-018
+  - S-063
+  - S-cp2-601
+  - S-cp2-602
+  searched:
+  - 'WebSearch (standard): Saudi Landbridge / GCC railway / Riyadh Rail Link station locations, Oct 2026'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (no coordinates for this stop)'
+  - 'OSM local extract (read-only): railway=station, yard, workshop and place nodes within 10-25 km'
+  - 'Microsoft footprints (cached tiles): built-up cluster extent via geo-verify extents (A-stn-001)'
+  - 'MEED Projects pid=114639 (S-lb-018): ''Jamuma'''
+  notes: 'Identity A-stn-006: ''Jamuma'' (MEED Projects, S-lb-018) = Al-Jumum is the owner''s statement
+    (S-063, unverified against a published SAR list). No coordinates published. Band = built-up radius
+    2.78 km (6,544 buildings). Town centroid only.'
+- station_uid: landbridge:jeddah
+  line_id: landbridge
+  layer: committed
+  outcome: low_confidence
+  lat: 21.55044
+  lon: 39.17424
+  location_method: town_centroid:osm:node/1933393717 (Jeddah city)
+  confidence: low
+  uncertainty_km: 13.9
+  sources:
+  - S-054
+  - S-cp2-601
+  - S-cp2-602
+  - S-cp2-605
+  searched:
+  - 'WebSearch (standard): Saudi Landbridge / GCC railway / Riyadh Rail Link station locations, Oct 2026'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (no coordinates for this stop)'
+  - 'OSM local extract (read-only): railway=station, yard, workshop and place nodes within 10-25 km'
+  - 'Microsoft footprints (cached tiles): built-up cluster extent via geo-verify extents (A-stn-001)'
+  - 'WebSearch: Jeddah terminal / King Abdullah Port / Jeddah Islamic Port: no station site found'
+  - 'OSM: ''Jeddah Eslamic Seaport'' node/13426472235 at 21.46912,39.17029 (9.05 km; inside the band)'
+  notes: Terminal site not published (S-054). Band = max(built-up radius 13.89 km, geodesic 9.05 km to
+    the OSM Jeddah Islamic seaport node) (A-stn-001, A-stn-003). Haramain stations (Jeddah Central, airport)
+    are existing and not Landbridge sites. Search summaries on freight and passenger stations at the airport
+    and city centre are unverified and not used.
+- station_uid: riyadh-rail-link:north-south-connection
+  line_id: riyadh-rail-link
+  layer: committed
+  outcome: unlocated
+  lat: null
+  lon: null
+  location_method: unlocated:connection_point_not_published
+  confidence: null
+  uncertainty_km: null
+  sources:
+  - S-r1a-055
+  - S-cp2-605
+  - S-cp2-601
+  searched:
+  - 'WebSearch: Riyadh Rail Link connection / award, Oct 2026 (no award notice found)'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (lists ''Riyadh North Station'', SAR
+    Riyadh-Qurayyat line)'
+  - 'OSM: way/441199322 ''Riyadh North railway station'' (SAR), polygon centroid 24.85568,46.76307 (existing
+    station; proxy only)'
+  notes: 'The point where the 35 km line joins SAR''s North-South Railway is not published (S-r1a-055:
+    ''connects SAR''s North-South Railway to the Eastern Railway network''). An existing station is not
+    a connection point (A-stn-008), so the spec proxy is not promoted to a located point. Keep the stored
+    proxy only as ''unlocated:...''. If a band is needed, A-r1a-006 gives 10 km.'
+- station_uid: riyadh-rail-link:eastern-network-connection
+  line_id: riyadh-rail-link
+  layer: committed
+  outcome: unlocated
+  lat: null
+  lon: null
+  location_method: unlocated:connection_point_not_published
+  confidence: null
+  uncertainty_km: null
+  sources:
+  - S-r1a-055
+  - S-cp2-605
+  - S-cp2-601
+  searched:
+  - 'WebSearch: Riyadh Rail Link connection / award, Oct 2026 (no award notice found)'
+  - 'WebFetch: Wikipedia List of railway stations in Saudi Arabia (lists ''Riyadh railway station'' on
+    the Dammam-Riyadh line)'
+  - 'OSM: node/492520789 ''Riyadh Railway Station'' (SAR), 24.65047,46.74066 (existing station; proxy
+    only)'
+  notes: Connection to the Eastern network is not published. The OSM Riyadh Railway Station (node/492520789)
+    is the spec proxy; it is an existing station and not a connection point (A-stn-008). It is also the
+    anchor of the Riyadh Dry Port (S-cp2-604), so it must not be used as the Eastern connection by default.
+    Keep the stored proxy only as 'unlocated:...'.
+- station_uid: sar-east-freight-legacy:dammam-port
+  line_id: sar-east-freight-legacy
+  layer: existing
+  outcome: low_confidence
+  lat: 26.48861
+  lon: 50.20111
+  location_method: published:S-cp2-603 (Wikipedia port coordinate; secondary)
+  confidence: low
+  uncertainty_km: 4.4
+  sources:
+  - S-cp2-603
+  - S-cp2-601
+  - S-cp2-608
+  - S-026
+  searched:
+  - 'WebSearch: King Abdulaziz Port rail terminal / freight yard location (no SAR yard site found)'
+  - 'WebFetch: Wikipedia King Abdulaziz Port (coordinates; IPS terminal three rail tracks; berths 4-13
+    rail-connected)'
+  - 'OSM: node/13028110530 ''King Abdul Aziz Seaport'' (place=neighbourhood) at 26.45061,50.18882 (4.38
+    km from the Wikipedia point)'
+  - 'OSM rail yard near the old proxy: SRO cargo and passenger wagon workshops (ways 431461298, 431461295);
+    Dammam Railway Station node/492547630'
+  - 'MEED (23 Apr 2025, S-cp2-608): new freight yard serves Dammam Second Industrial City, not the port'
+  notes: 'The rail terminal inside the port is not located. The 4.4 km band is the distance between the
+    two port points (A-stn-003, A-stn-009). The stored proxy (26.428741, 50.121524) is 10.3 km from the
+    Wikipedia point and 7.1 km from the OSM port node, and sits in an OSM rail yard with SRO workshops
+    near the Dammam Railway Station. Location conflict (Wikipedia vs OSM, 4.4 km): escalated to the coordinator,
+    see REPORT.md. Geo-verify imagery of this window was inconclusive (cloud).'
+- station_uid: sar-east-freight-legacy:al-ahsa
+  line_id: sar-east-freight-legacy
+  layer: existing
+  outcome: resolved
+  lat: 25.38655
+  lon: 49.5686
+  location_method: osm:way/95533900 (Al Hufuf Railway Station, SAR; polygon centroid)
+  confidence: medium
+  uncertainty_km: 0.5
+  sources:
+  - S-cp2-601
+  - S-cp2-606
+  - S-026
+  searched:
+  - 'OSM: railway=station ways and nodes within 6 km (Al Hufuf Railway Station, operator Saudi Arabia
+    Railways)'
+  - 'WebFetch: enterpriseam (31 Dec 2024): freight moved to ''a new route in Al Ahsa Governorate'' (no
+    site)'
+  notes: 'SAR''s freight list names Al-Ahsa (S-026). OSM tags the SAR station at Hufuf (railway=station,
+    operator SAR), the best facility match in the town. Freight yard not tagged; identity assumed (A-stn-007),
+    offset allowance 0.5 km (A-stn-004). The Dec 2024 freight re-routing (S-cp2-606) may move the freight
+    stop: confirm when the new track is published. Imagery window cached but not re-inspected this run.'
+- station_uid: sar-east-freight-legacy:riyadh-dry-port
+  line_id: sar-east-freight-legacy
+  layer: existing
+  outcome: low_confidence
+  lat: 24.65047
+  lon: 46.74066
+  location_method: adjacent_to_facility:osm:node/492520789 (Riyadh Railway Station, SAR) per S-cp2-604
+  confidence: low
+  uncertainty_km: 1.1
+  sources:
+  - S-cp2-604
+  - S-cp2-601
+  - S-cp2-605
+  - S-026
+  searched:
+  - 'WebSearch: Riyadh Dry Port location (Saudi Global Ports concession; SRO cargo line)'
+  - 'WebFetch: Wikipedia Riyadh Dry Port (adjacent to Riyadh railway station; area 918,639 m2; no coordinates
+    printed)'
+  - 'OSM: named features within 6 km of the proxy (no ''dry port'' tag; Riyadh Railway Station node/492520789
+    0.91 km from the stored point)'
+  notes: 'Secondary location only: ''adjacent to the Riyadh railway station'' (S-cp2-604). The point is
+    the SAR station node. Band 1.1 km = equivalent-circle radius of 918,639 m2 (0.54 km) plus a 0.5 km
+    adjacency allowance (A-stn-005). The stored point is 0.91 km from this node, inside the band. The
+    dry port has no separate OSM tag.'
+- station_uid: sar-north-freight:ras-al-khair
+  line_id: sar-north-freight
+  layer: existing
+  outcome: low_confidence
+  lat: 27.47278
+  lon: 49.30111
+  location_method: town_centroid:osm:node/1237806545 (Ras Al Khair locality)
+  confidence: low
+  uncertainty_km: 18.4
+  sources:
+  - S-020
+  - S-cp2-601
+  - S-cp2-602
+  searched:
+  - 'WebSearch: Ras Al-Khair rail terminal / Ma''aden yard / RCJY Minerals City (no terminal site found)'
+  - 'OSM: named and yard/workshop/station features within 15 km (no named terminal; unnamed cluster centroid
+    27.46379,49.11542, 18.38 km WSW)'
+  - 'Geo-verify imagery (31 Oct 2026, earlier run): rail wye and loops inside the industrial city; the
+    terminal loop not determinable at 10 m'
+  notes: No terminal or station named for the Ma'aden freight terminal in any source found. Band = max(built-up
+    radius 1.13 km, geodesic 18.38 km to the unnamed yard cluster) (A-stn-001, A-stn-003). The radius
+    is a lower bound (footprint-sparse industrial area). The unnamed yard cluster is an unverified candidate;
+    escalated (REPORT.md). The stored proxy (27.49239, 49.213979) is the nearest OSM rail node to the
+    old place node.

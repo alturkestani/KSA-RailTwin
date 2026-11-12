@@ -1,0 +1,56 @@
+# > **Document version:** cities/ksa/assumptions/running_time_lines.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (sim-engineer) | Status: draft
+# Per-line operating parameters, stopping patterns and published times for access.running_time (R4 task 1).
+# Published times are the validation set: the gate is HHR Makkah-Jeddah (prompts/R4.md), the others are reported.
+# No official current HHR or SAR timetable is readable online (S-r4-rt-001, S-r1a-003, S-r4-rt-034): the only primary
+# times are the archived HHR opening timetable of Oct 2018 (S-cp2-503); every current time is secondary.
+version: "1.0"
+label: "timetable model, not a forecast"
+validation_tolerance: {value: 0.10, assumption: A-r4-rt-010, source: "prompts/R4.md task 1 (+/-10 %)"}
+
+# Timetable factor = published / modelled in-vehicle minutes on the validation pairs below. The kinematic model omits
+# running resistance, temporary and permanent speed restrictions and timetable padding beyond UIC recovery, so it is a
+# lower bound. Rule (A-r4-rt-011): an existing line uses the median factor of its own `era: current` pairs (falls back
+# to its 2018/older pairs); planned and hypothetical lines use the median factor over all existing-line current pairs,
+# with the min-max over all pairs as the range. Computed by `access.running_time factors`, written to
+# runs/access/running_time/factors.json; never hand-copied.
+timetable_factor_rule: {assumption: A-r4-rt-011}
+
+lines:
+  hhr:
+    stock: hsr_talgo350
+    line_speed_kmh: {value: 300, range: [300, 300], source: S-cp2-501}
+    restrictions: []          # no published HHR speed profile (A-hhr-001)
+    patterns:
+      express: {stops: [makkah, madinah]}
+      jeddah-shuttle: {stops: [makkah, jeddah]}
+    validation:
+      - {id: hhr-mj-2018, stops: [makkah, jeddah], role: gate, era: "2018", published_min: {value: 43, source: S-cp2-503, status: "primary (archived HHR timetable, Oct 2018)"}}
+      - {id: hhr-mm-2018, stops: [makkah, madinah], role: validation, era: "2018", published_min: {value: 175, source: S-cp2-503, status: "primary (archived HHR timetable, Oct 2018, non-stop train 3130)"}}
+      - {id: hhr-mj-current, stops: [makkah, jeddah], role: gate-current, era: current, published_min: {value: 29, range: [28, 30], source: "S-cp2-504; S-r1a-006", status: "secondary (aggregator and travel guide, 2026; midpoint of 28-30)"}}
+      - {id: hhr-mm-current, stops: [makkah, madinah], role: validation, era: current, published_min: {value: 120, source: S-r4-rt-003, status: "secondary (Wikipedia 'around 2 hours'; stops not stated, modelled non-stop)"}}
+  sar-east-passenger:
+    stock: intercity_200
+    line_speed_kmh: {value: 180, range: [180, 180], source: S-r4-rt-038}
+    restrictions: []
+    patterns:
+      express: {stops: [riyadh, dammam]}
+    validation:
+      - {id: east-express-2016, stops: [riyadh, dammam], role: validation, era: older, published_min: {value: 220, source: S-r4-rt-036, status: "secondary (Wikipedia citing Arab News 2016; stops not stated, modelled non-stop)"}}
+      - {id: east-express-current, stops: [riyadh, dammam], role: validation, era: current, published_min: {value: 215, source: S-r1a-040, status: "secondary (aggregator 08:00-11:35; stops not stated, modelled non-stop)"}}
+      - {id: east-standard-current, stops: [riyadh, hufuf, abqaiq, dammam], role: validation, era: current, published_min: {value: 270, source: S-r4-rt-035, status: "secondary (Wikipedia 'about 4.5 hours')"}}
+      - {id: east-riyadh-hufuf-current, stops: [riyadh, hufuf], role: validation, era: current, published_min: {value: 141, source: S-r4-rt-040, status: "secondary (ticket aggregator 2 h 21)"}}
+  sar-north-passenger:
+    stock: intercity_200
+    line_speed_kmh: {value: 200, range: [160, 200], source: "S-r4-rt-032 (day trains to Hail up to 200 km/h, night trains to Al-Qurayyat up to 160 km/h)"}
+    restrictions: []
+    validation:
+      - {id: north-riyadh-qassim-2017, stops: [riyadh-north, majmaah, al-qassim], role: validation, era: older, published_min: {value: 151, source: S-r4-rt-031, status: "secondary (Railway Gazette 2017; includes a 10-min Majmaah stop)"}}
+      - {id: north-riyadh-hail-current, stops: [riyadh-north, majmaah, al-qassim, hail], role: validation, era: current, published_min: {value: 272, source: S-r3-mode-003, status: "secondary (Rome2Rio average 4 h 32)"}}
+  landbridge:
+    stock: intercity_250
+    line_speed_kmh: {value: 250, range: [200, 250], source: "cities/ksa/lines/landbridge.yaml design_speed_kmh (S-054)", assumption: A-r4-rt-012}
+    # km-posts are a great-circle chain (landbridge.yaml); the announced length is 900 km (S-054) vs 874.3 km of chain
+    km_is_route: false
+    route_factor_override: {value: 1.029, assumption: A-r4-rt-012, derived_from: "900 / 874.3 (landbridge.yaml length_km / last km_post)"}
+    patterns:
+      express: {stops: [riyadh, jeddah]}

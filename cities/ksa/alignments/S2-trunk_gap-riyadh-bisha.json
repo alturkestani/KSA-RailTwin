@@ -1,0 +1,76 @@
+{
+ "id": "S2-trunk_gap-riyadh-bisha",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 713.348,
+ "straight_km_legs": 667.215,
+ "straight_km_end_to_end": 667.215,
+ "detour_ratio": 1.0691,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 7.299,
+ "viaduct_km": 5.2,
+ "earthworks_km": 158.088,
+ "at_grade_km": 542.761,
+ "tunnel_share": 0.01023,
+ "viaduct_share": 0.00729,
+ "fill_m3": 9011800.0,
+ "cut_m3": 20702600.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.1821,
+ "elev_min_m": 544.4,
+ "elev_max_m": 1172.1,
+ "terrain_shares": {
+  "dunes": 0.0715,
+  "escarpment_mountain": 0.043,
+  "flat_desert": 0.6316,
+  "mixed": 0.2506,
+  "sabkha": 0.0032
+ },
+ "area_km": {
+  "urban": 16.949,
+  "builtup": 18.499,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 52.296,
+  "sabkha": 2.3,
+  "waterway": 15.599,
+  "highway": 71.394
+ },
+ "wadi_crossings_osm": 93,
+ "speed_restrictions": [
+  {
+   "from_km": 23.348,
+   "to_km": 26.848,
+   "kmh": 160.0
+  },
+  {
+   "from_km": 35.747,
+   "to_km": 36.847,
+   "kmh": 240.0
+  },
+  {
+   "from_km": 363.823,
+   "to_km": 366.223,
+   "kmh": 220.0
+  }
+ ],
+ "restricted_km": 7.0,
+ "min_curve_kmh": 160.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "riyadh": 0.0,
+  "bisha": 713.348
+ },
+ "status": "routed",
+ "stations_key": "489846f4a675e112",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-riyadh-bisha.geojson",
+ "run": "runs/align/corridors-s1/S2-trunk_gap-riyadh-bisha",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

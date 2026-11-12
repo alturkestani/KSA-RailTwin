@@ -1,0 +1,155 @@
+{
+ "id": "S2-trunk_gap-jazan-najran",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 295.558,
+ "straight_km_legs": 191.177,
+ "straight_km_end_to_end": 191.177,
+ "detour_ratio": 1.546,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 108.683,
+ "viaduct_km": 69.79,
+ "earthworks_km": 43.294,
+ "at_grade_km": 73.79,
+ "tunnel_share": 0.36772,
+ "viaduct_share": 0.23613,
+ "fill_m3": 4703600.0,
+ "cut_m3": 11912500.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.4976,
+ "elev_min_m": 1.6,
+ "elev_max_m": 2412.2,
+ "terrain_shares": {
+  "coastal": 0.0668,
+  "escarpment_mountain": 0.5223,
+  "flat_desert": 0.2245,
+  "mixed": 0.1864
+ },
+ "area_km": {
+  "urban": 13.598,
+  "builtup": 10.198,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 2.9,
+  "sabkha": 0.0,
+  "waterway": 13.798,
+  "highway": 19.847
+ },
+ "wadi_crossings_osm": 67,
+ "speed_restrictions": [
+  {
+   "from_km": 101.436,
+   "to_km": 104.536,
+   "kmh": 200.0
+  },
+  {
+   "from_km": 120.934,
+   "to_km": 122.433,
+   "kmh": 210.0
+  },
+  {
+   "from_km": 144.03,
+   "to_km": 147.83,
+   "kmh": 210.0
+  },
+  {
+   "from_km": 171.327,
+   "to_km": 173.726,
+   "kmh": 170.0
+  },
+  {
+   "from_km": 173.726,
+   "to_km": 175.626,
+   "kmh": 110.0
+  },
+  {
+   "from_km": 175.726,
+   "to_km": 176.526,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 178.525,
+   "to_km": 180.125,
+   "kmh": 120.0
+  },
+  {
+   "from_km": 179.925,
+   "to_km": 181.025,
+   "kmh": 170.0
+  },
+  {
+   "from_km": 181.325,
+   "to_km": 183.125,
+   "kmh": 200.0
+  },
+  {
+   "from_km": 183.125,
+   "to_km": 184.824,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 186.024,
+   "to_km": 187.924,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 187.924,
+   "to_km": 189.323,
+   "kmh": 110.0
+  },
+  {
+   "from_km": 189.123,
+   "to_km": 190.823,
+   "kmh": 150.0
+  },
+  {
+   "from_km": 203.421,
+   "to_km": 205.221,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 205.821,
+   "to_km": 209.02,
+   "kmh": 120.0
+  },
+  {
+   "from_km": 211.02,
+   "to_km": 213.82,
+   "kmh": 200.0
+  },
+  {
+   "from_km": 280.81,
+   "to_km": 284.31,
+   "kmh": 170.0
+  },
+  {
+   "from_km": 284.81,
+   "to_km": 287.909,
+   "kmh": 180.0
+  },
+  {
+   "from_km": 288.309,
+   "to_km": 291.508,
+   "kmh": 100.0
+  }
+ ],
+ "restricted_km": 42.293,
+ "min_curve_kmh": 100.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "jazan": 0.0,
+  "najran": 295.558
+ },
+ "status": "routed",
+ "stations_key": "23e7e95e548a18a9",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-jazan-najran.geojson",
+ "run": "runs/align/corridors-s1/S2-trunk_gap-jazan-najran",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

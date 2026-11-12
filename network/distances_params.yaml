@@ -1,0 +1,32 @@
+# Parameters of network/distances.py (settlement distance fields). Registered in docs/assumptions.md.
+densify_km:
+  value: 1.0
+  assumption: "line alignments are densified so that no vertex gap exceeds 1 km before the nearest-vertex search (max error ~0.5 km)"
+  assumption_id: A-r1a-007
+intercity_lines:
+  value: [hhr, sar-north-passenger, sar-east-passenger]
+  assumption: "existing passenger intercity lines for the 'nearest existing station' field (freight lines and metros excluded; metro has its own field)"
+  assumption_id: A-r1a-008
+existing_all_lines:
+  value: [hhr, sar-north-passenger, sar-east-passenger, sar-north-freight, sar-east-freight-legacy, riyadh-metro-l1, riyadh-metro-l2, riyadh-metro-l3, riyadh-metro-l4, riyadh-metro-l5, riyadh-metro-l6]
+  assumption: "every existing line file, for the distance to any existing track"
+  assumption_id: A-r1a-008
+metro_cities:
+  # A-screen-013 metro set (Tariq, 30 Oct 2026); reference point = the OSM place=city node (ODbL)
+  value:
+    Riyadh: {tier: 1, osm_node: 315358390}
+    Jeddah: {tier: 1, osm_node: 1933393717}
+    Makkah: {tier: 1, osm_node: 4308338842}
+    Madinah: {tier: 1, osm_node: 4571693347}
+    Dammam: {tier: 1, osm_node: 287865393}
+    Al Khobar: {tier: 1, osm_node: 32441763}
+    Dhahran: {tier: 1, osm_node: 447805356}
+    Taif: {tier: 2, osm_node: 1236468526}
+    Buraidah: {tier: 2, osm_node: 1236365110}
+    Tabuk: {tier: 2, osm_node: 5418190413}
+    Abha: {tier: 2, osm_node: 295924875}
+    Khamis Mushait: {tier: 2, osm_node: 983083570}
+    Jazan: {tier: 3, osm_node: 288992209}
+    Najran: {tier: 3, osm_node: 982548735}
+  assumption: "metro reference points are OSM city-centre nodes; Dammam-Khobar-Dhahran and Abha-Khamis Mushait use each city's node"
+  assumption_id: A-r1a-009

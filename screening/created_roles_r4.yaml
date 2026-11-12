@@ -1,0 +1,245 @@
+# > **Document version:** screening/created_roles_r4.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (region-scout pass) | Status: draft
+# Economic roles for the 24 register rows created for GASTAT primary cities (CP4 R4 requirement 3). Generated from the
+# R4 scout table runs/r4/scout/created_roles.csv; role enum of the region-sweep skill (incl. energy). Applied by
+# `uv run python -m screening.commute_r4 roles` (medium/high only). Label: screening input, not a forecast.
+version: '1.0'
+label: screening input, not a forecast
+scored_confidence:
+  value:
+  - medium
+  - high
+  assumption_id: A-screen-044
+  note: low-confidence roles (oasis-level agriculture, one Wikipedia page that does not name the locality) are recorded, not
+    scored
+source_file: docs/sources/r4-roles.csv (S-r4-roles-001..020)
+rows:
+- row_key: eastern:node:1237806971
+  name_en: Al Jubayl Royal Commission
+  roles:
+  - role: industrial_city
+    sources:
+    - S-r4-roles-001
+    - S-r4-roles-002
+    confidence: high
+    note: Jubail Industrial City, managed by the Royal Commission for Jubail and Yanbu (001, secondary); SATORP sits in the
+      industrial city of Jubail (002, verified). Row coordinates are Jubail city; name is the Royal Commission label.
+  - role: port
+    sources:
+    - S-r4-roles-001
+    - S-r4-roles-003
+    confidence: medium
+    note: Jubail Commercial Seaport (001, secondary). Container terminal concession (003, unverified search summary). Mawani
+      page not reached.
+  - role: energy
+    sources:
+    - S-r4-roles-002
+    confidence: high
+    note: 'SATORP refining and petrochemical platform in the industrial city of Jubail (002, verified). Ras Tanura is a separate
+      row and is not used here. IWPP power plant (001) not counted: the energy enum covers refineries, oil/gas processing
+      and export terminals.'
+  - role: university
+    sources:
+    - S-r4-roles-001
+    - S-r4-roles-004
+    - S-r4-roles-005
+    confidence: medium
+    note: 'Jubail University College / Jubail Industrial College listed in Jubail (001, secondary; campus Fanateer per 004,
+      unverified). A Royal Commission page reports a 2022 merger (005, unverified), so current status needs checking. Not
+      assigned: administrative (no official list of the Al-Jubail governorate seat read; 001 gives only a ''Jubail governorate''
+      population label); military (Jubail Naval Airport is 25 km west of the city per 001, outside the locality).'
+  notes: null
+- row_key: riyadh:node:1236703756
+  name_en: '`Irqah'
+  roles: []
+  notes: 'No role found. Searched: Riyadh governorate listing (013, unverified) and district listings (014, commercial). Described
+    as a district of Riyadh city; no university, airport, energy, heritage or admin role found.'
+- row_key: eastern:node:1237339363
+  name_en: At Taraf
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: 'Oasis-level only (007: Al-Ahsa Oasis irrigated by 280+ springs for year-round agriculture). At Taraf not named
+      in any source read. Status oasis-level, not a locality role.'
+  notes: null
+- row_key: madinah:node:1236691814
+  name_en: Al `Uqul
+  roles: []
+  notes: 'No role found. Searched: Medina airport (015, verified: no district named; the Al-Khadhra address in a search summary
+    is not used); Al-Aqoul district (016, unverified: a district east of Medina, not a village). No agriculture, heritage
+    or facility source tied to the locality.'
+- row_key: eastern:node:1237339353
+  name_en: Al `Umran
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-010
+    - S-r4-roles-007
+    confidence: low
+    note: 'Locality claim of many farms only from a 2007 wiki mirror (010, unverified); oasis-level (007). Admin not assigned:
+      Al-Umran appears in a six-city list (020, unofficial) and no official centre list was read (009). Escalated.'
+  notes: null
+- row_key: eastern:way:1566620126
+  name_en: Alkalabiuh
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Alkalabiuh not named in any source read; not a locality role. Status oasis-level.
+  notes: null
+- row_key: eastern:way:671079959
+  name_en: Al Munayzala
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Al Munayzala not named in any source read; not a locality role. Status oasis-level.
+  notes: null
+- row_key: eastern:node:1237339379
+  name_en: Al Jarn
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Al Jarn not named in any source read; not a locality role. Status oasis-level.
+  notes: null
+- row_key: eastern:way:958521889
+  name_en: Al Battaliyah
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Al Battaliyah not named in any source read; not a locality role. Status oasis-level.
+  notes: null
+- row_key: jazan:node:1237961320
+  name_en: Al Hasamah
+  roles: []
+  notes: 'No role found. Searched: Wikipedia stub (017, unverified: village in Jizan Province); Ahad al-Masarihah farm listings
+    are commercial and cover Al Madaya village, not this locality. No agriculture, heritage or facility source.'
+- row_key: eastern:way:958034613
+  name_en: Al Hulaylah
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Not named in any source read. Status oasis-level.
+  notes: null
+- row_key: eastern:node:1237339401
+  name_en: Al Jishshah
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). A 2007 wiki mirror lists 'Al-Jeshah' as an eastern village (no role). Status oasis-level.
+  notes: null
+- row_key: riyadh:node:1236702237
+  name_en: Banban
+  roles: []
+  notes: 'No role found. Searched: Riyadh governorate listing (013, unverified) includes Banban. Administrative status (village
+    or markaz) not confirmed, so no admin role assigned. Real-estate listings only for other roles.'
+- row_key: eastern:node:7699092297
+  name_en: Ar Rumailah
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Not named in any source read. Status oasis-level.
+  notes: null
+- row_key: eastern:node:1237339349
+  name_en: Tuwaythir
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    - S-r4-roles-006
+    confidence: low
+    note: 'Oasis-level agriculture only (007). 006 names At-Tuwaitheer as one of four villages around Jabal al-Qarah: proximity
+      only, not a heritage role.'
+  notes: null
+- row_key: eastern:node:1237339348
+  name_en: Al Qarah
+  roles:
+  - role: heritage
+    sources:
+    - S-r4-roles-006
+    - S-r4-roles-007
+    - S-r4-roles-008
+    confidence: medium
+    note: Jabal al-Qarah, named after the village of Al-Qarah (006, secondary), with caves, inside the Al-Ahsa Oasis listing
+      (2018; 007 secondary; 008 unverified). Tie is by name and location, not a stated component boundary; confirm against
+      the UNESCO component map. Oasis-level agriculture (007) also applies but is not counted as locality agriculture.
+  notes: null
+- row_key: eastern:node:1237339355
+  name_en: Al Markaz
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). The name is generic ('the centre'); no official centre list read. Status oasis-level.
+  notes: null
+- row_key: eastern:node:6407458177
+  name_en: Al Mansourah
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Not named in any source read. Status oasis-level.
+  notes: null
+- row_key: eastern:node:1237339406
+  name_en: Al Qurayn
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Not named in any source read. Status oasis-level.
+  notes: null
+- row_key: eastern:node:7699092296
+  name_en: Al Haoutah
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Not named in any source read. Status oasis-level.
+  notes: null
+- row_key: eastern:node:1237339378
+  name_en: Al Jafr
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    - S-r4-roles-020
+    confidence: low
+    note: Oasis-level only (007). 020 lists Al-Jafr among six cities (unofficial, unverified), which does not establish agriculture.
+      Status oasis-level.
+  notes: null
+- row_key: qassim:way:1299457406
+  name_en: Ash Shiqqah al `Ulya
+  roles: []
+  notes: 'No role found. Searched: Aqar listings (018, commercial) show it as a district of Buraydah. No university, airport,
+    energy, heritage or agriculture source. Admin belongs to Buraydah, not this district.'
+- row_key: qassim:node:1237557461
+  name_en: Al Hilaliyah
+  roles: []
+  notes: 'Candidate administrative role NOT ASSIGNED: centre (markaz) of Bukayriyah governorate per Saudipedia (011) and Al-Yaum
+    (012); both unverified and secondary. No official list read. ESCALATE to coordinator. No agriculture locality source.'
+- row_key: eastern:node:1237339408
+  name_en: Ash Shuqayq
+  roles:
+  - role: agriculture
+    sources:
+    - S-r4-roles-007
+    confidence: low
+    note: Oasis-level only (007). Not named in any source read. Status oasis-level.
+  notes: null

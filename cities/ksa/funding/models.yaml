@@ -1,0 +1,485 @@
+# > **Document version:** cities/ksa/funding/models.yaml v0.1 | 31 Oct 2026 | Author: funding-ppp-analyst A (R1d) | Status: draft
+# Delivery and funding options register (W6). Validate: uv run python -m funding.models validate
+# risk_allocation gives the TYPICAL allocation of each model as described in the cited sources;
+# "varies" means the sources show the allocation is set contract by contract. It is not a
+# recommendation for any corridor (rule 9); R7 fills per-corridor matrices.
+# Fiscal-treatment logic: IPSAS 32 (S-fund-017, S-fund-018), Eurostat/EPEC economic-owner test
+# (S-fund-019, S-fund-020), IMF/World Bank PFRAM 2.0 (S-fund-021, S-fund-022, S-fund-023). Saudi Arabia's own
+# accounting treatment of PPP liabilities is not published in the documents read (S-fund-029):
+# unclear, see docs/funding.md.
+version: "0.1"
+label: "options landscape, not a recommendation"
+risk_keys:
+  - construction
+  - demand
+  - revenue
+  - operations
+  - financing
+  - land
+  - regulatory_force_majeure
+options:
+  - id: fully_public_budget
+    name: Fully public, state budget (traditional procurement)
+    family: public
+    definition: >-
+      A ministry or state agency funds capex from the general budget or sovereign borrowing,
+      procures design and construction through separate works contracts, owns the asset and
+      operates it directly or through a state entity. The Haramain line was let as separate
+      civil-works and systems/rolling-stock/O&M contracts (S-007, S-008; secondary).
+    who_pays: Taxpayers through the state budget; users through fares set by the state.
+    who_owns: The state (ministry or state agency).
+    who_operates: State agency or state-owned operator (O&M may be contracted out; see public_with_private_om).
+    typical_term_years:
+      note: "no contract term; asset life and budget cycle apply"
+    risk_allocation:
+      construction: public
+      demand: public
+      revenue: public
+      operations: public
+      financing: public
+      land: public
+      regulatory_force_majeure: public
+    fiscal_treatment: >-
+      Capex is recorded as public expenditure as incurred and any borrowing is public debt; the
+      asset is on the government balance sheet. This is the benchmark against which a public
+      sector comparator is built (S-fund-024).
+    when_it_fits: >-
+      Fits where fiscal space exists, demand is too uncertain to transfer, the state wants full
+      control of specification and fares, or no private bid is bankable. Trade-off: all cost and
+      schedule overrun risk stays with the budget (optimism-bias adjustment, S-fund-025).
+    examples: [S-007, S-008, S-lb-021]
+    sources: [S-fund-024, S-fund-025, S-fund-026]
+  - id: fully_public_pif
+    name: Fully public, financed or owned through the Public Investment Fund
+    family: public
+    definition: >-
+      The sovereign wealth fund finances the project or holds the project company as a
+      portfolio investment, outside the line-item state budget. MEED reported that PIF was
+      assigned to finance the Landbridge in 2009 and took control in 2011, and later described
+      PIF as a fallback financier during the 2023 consortium talks (secondary sources).
+    who_pays: PIF (equity or shareholder loans), ultimately repaid from project revenues or written off against PIF returns; users through fares and freight tariffs.
+    who_owns: PIF or a PIF-owned company.
+    who_operates: A PIF-owned company or a contracted operator.
+    typical_term_years:
+      note: "no contract term; investment horizon set by PIF; not published for rail"
+    risk_allocation:
+      construction: public
+      demand: public
+      revenue: public
+      operations: varies
+      financing: public
+      land: public
+      regulatory_force_majeure: public
+    fiscal_treatment: >-
+      Unclear for Saudi Arabia. Under international statistical logic the treatment depends on
+      whether the fund and its companies are classified inside general government or as public
+      corporations; PFRAM records such exposures as public-sector, not private (S-fund-023).
+      Whether PIF-financed rail is reported in the state budget or public-debt statistics is not
+      stated in the documents read (S-fund-029).
+    when_it_fits: >-
+      Fits where the state wants to keep delivery public while financing off the budget line, or
+      where commercial returns (freight, property) are expected. Trade-off: risk stays public in
+      substance; transparency depends on PIF disclosure.
+    examples: [S-lb-012, S-lb-009]
+    sources: [S-fund-036, S-fund-038, S-fund-023]
+    note: PIF Law primary text could not be read (S-fund-037); mandate cited from secondary sources.
+  - id: fully_public_sar
+    name: Fully public, delivered by Saudi Arabia Railways (state-owned company)
+    family: public
+    definition: >-
+      The state-owned railway company tenders and manages design-and-build and O&M contracts and
+      owns the infrastructure. SAR took over the Saudi Railways Organization's responsibilities
+      from 1 April 2021 and, per its own history, owns intercity rail infrastructure. MEED reports
+      the Landbridge is now to be delivered by SAR in several phases after the PPP talks ended.
+    who_pays: SAR from its funding (state budget transfers, PIF or borrowing; split not published) and from fares and freight tariffs.
+    who_owns: "SAR (ownership of SAR itself: secondary sources say PIF; see docs/funding.md)."
+    who_operates: SAR, directly or through contracted operators (for example Renfe on Haramain).
+    typical_term_years:
+      note: "no concession term; D&B and O&M contract terms vary"
+    risk_allocation:
+      construction: varies
+      demand: public
+      revenue: public
+      operations: varies
+      financing: public
+      land: public
+      regulatory_force_majeure: public
+    fiscal_treatment: >-
+      Unclear: depends on whether SAR is classified as a public corporation or within general
+      government and on how state transfers to SAR are budgeted; not stated in the documents read
+      (S-fund-029, S-fund-034). Construction risk transfer to D&B contractors is limited to the
+      contract price and terms.
+    when_it_fits: >-
+      Fits phased delivery under an existing operator with in-house programme management, where
+      packaging into D&B contracts is preferred over a single concession. Trade-off: demand and
+      financing risk stay public.
+    examples: [S-059, S-060, S-lb-001]
+    sources: [S-fund-033, S-fund-035]
+  - id: public_with_private_om
+    name: Public ownership with a private operations and maintenance contract
+    family: public_private
+    definition: >-
+      The state or its company owns and funds the asset; a private operator runs trains and/or
+      maintains assets for a fee under a multi-year O&M contract with performance terms. Haramain:
+      Renfe runs trains on behalf of SAR, extended to 2038 (secondary sources).
+    who_pays: The asset owner pays an O&M fee; users pay fares to the owner (fare revenue not normally kept by the operator unless the contract says so).
+    who_owns: State or state-owned company.
+    who_operates: Private operator (or consortium).
+    typical_term_years:
+      note: "Haramain O&M period reported to 2038 after extension; original term not confirmed (S-011 unverified)"
+    risk_allocation:
+      construction: public
+      demand: public
+      revenue: public
+      operations: private
+      financing: public
+      land: public
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Capex as for fully public delivery; O&M fees are current expenditure. An O&M contract of
+      five years or more in which the contractor both operates and maintains covers two of the
+      six functions in the PSP Law's PPP definition (S-fund-001); whether such contracts are
+      handled as PPPs under the Law in practice is unclear (see docs/funding.md).
+    when_it_fits: >-
+      Fits where operating know-how is the gap rather than finance; keeps fare and network policy
+      public. Trade-off: interface risk between builder, systems supplier and operator stays with
+      the owner.
+    examples: [S-fund-039, S-008]
+    sources: [S-fund-039, S-fund-001]
+  - id: ppp_dbfom_availability
+    name: PPP design-build-finance-operate-maintain, availability payment
+    family: ppp
+    definition: >-
+      A private SPV designs, builds, finances, operates and maintains the line for a fixed term
+      and is paid by the state through availability payments that fall with unavailability or
+      poor performance; the state keeps fare revenue and demand risk. Sydney Metro Northwest OTS
+      is an availability PPP in which the State retained demand risk.
+    who_pays: The state through availability payments over the term (plus any construction-period contribution); users pay fares to the state.
+    who_owns: State (asset typically reverts or is held by the grantor); SPV holds contractual rights.
+    who_operates: Private SPV (operator subcontractor).
+    typical_term_years:
+      low: 20
+      high: 30
+      source: S-fund-045
+      note: "low = Sydney Metro Northwest OTS (about 20 years, S-fund-045); high = PSP Law ceiling of 30 years incl. extensions unless approved (S-fund-002)"
+    risk_allocation:
+      construction: private
+      demand: public
+      revenue: public
+      operations: private
+      financing: private
+      land: public
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Under IPSAS 32 the grantor controls services, users and price, so the asset and a liability
+      are recognised on the government balance sheet (financial-liability model; S-fund-017,
+      S-fund-018). Under Eurostat rules an availability PPP may be off balance sheet only if the
+      partner bears most risks and rewards (S-fund-019). PFRAM treats availability payments as
+      firm future liabilities (S-fund-023). PSP Law Art. 8 requires MoF to secure allocations for
+      the payments (S-fund-004).
+    when_it_fits: >-
+      Fits where construction and whole-life maintenance risk can be priced by the market but
+      ridership is too uncertain to transfer. Trade-off: a long-term fixed claim on future budgets;
+      value for money depends on risk transfer exceeding the higher private financing cost.
+    examples: [S-fund-045, S-fund-043]
+    sources: [S-fund-017, S-fund-019, S-fund-021, S-fund-002, S-fund-004]
+  - id: ppp_dbfom_demand_risk
+    name: PPP design-build-finance-operate-maintain, demand (revenue) risk
+    family: ppp
+    definition: >-
+      As DBFOM, but the SPV is paid from fares or track-access charges and so carries ridership
+      and revenue risk, usually with a public capital contribution and sometimes a minimum revenue
+      guarantee or revenue-sharing clause. LGV SEA: the concessionaire collects access charges to
+      2061, bears traffic risk, and shares excess revenue from year 5.
+    who_pays: Users (fares or access charges passed through operators), with a public capital grant; any minimum revenue guarantee is a contingent public cost.
+    who_owns: Grantor owns; concessionaire holds the right to operate and collect revenue.
+    who_operates: Concessionaire (infrastructure) and/or train operators.
+    typical_term_years:
+      low: 30
+      high: 50
+      source: S-fund-046
+      note: "high = LGV SEA 50 years (S-fund-046); low = PSP Law default ceiling of 30 years (S-fund-002); longer needs approval"
+    risk_allocation:
+      construction: private
+      demand: private
+      revenue: private
+      operations: private
+      financing: private
+      land: public
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      IPSAS 32 grant-of-a-right model: if the grantor still controls services and price, the asset
+      is recognised with a deferred-revenue liability rather than a financial liability
+      (S-fund-018). Eurostat: more likely off balance sheet when demand risk is genuinely
+      transferred (S-fund-019). Minimum revenue guarantees are contingent liabilities (IPSAS 19),
+      reported as memorandum items (S-fund-023).
+    when_it_fits: >-
+      Fits only where forecast demand is robust enough for lenders at the P10 case; the skill rule
+      applies: not where P10 demand breaks BCR = 1 without saying so. Trade-off: higher risk
+      premium; renegotiation risk if traffic falls short (LGV SEA traffic below forecasts, S-fund-046).
+    examples: [S-fund-046, S-fund-047]
+    sources: [S-fund-018, S-fund-019, S-fund-023, S-fund-002]
+  - id: ppp_dbfm
+    name: PPP design-build-finance-maintain (no operations), availability payment
+    family: ppp
+    definition: >-
+      The SPV designs, builds, finances and maintains the infrastructure and is paid availability
+      payments; train operation stays with a separate (public or private) operator. Examples: LGV
+      Bretagne-Pays de la Loire (25 years, Eiffage Rail Express; operation by others) and HSL-Zuid
+      (infrastructure provider Infraspeed, contract to 2031).
+    who_pays: The state or infrastructure manager through availability payments (loyers) after a construction-period contribution.
+    who_owns: State or infrastructure manager.
+    who_operates: Separate train operator; SPV maintains infrastructure.
+    typical_term_years:
+      low: 25
+      high: 30
+      source: S-fund-043
+      note: "low = LGV BPL 25 years (S-fund-043); high = PSP Law 30-year ceiling (S-fund-002)"
+    risk_allocation:
+      construction: private
+      demand: public
+      revenue: public
+      operations: public
+      financing: private
+      land: public
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Same logic as availability DBFOM: under IPSAS 32 usually on the grantor's balance sheet
+      (S-fund-017); under Eurostat, depends on construction and availability risk transfer
+      (S-fund-019). Disputes over residual-risk clauses can create unbudgeted claims (HSL-Zuid
+      arbitration, S-fund-044).
+    when_it_fits: >-
+      Fits where an existing operator (for example SAR) will run trains and the gap is
+      construction and maintenance efficiency. Trade-off: interfaces between the maintainer and
+      operator remain a public risk.
+    examples: [S-fund-043, S-fund-044]
+    sources: [S-fund-017, S-fund-019, S-fund-002]
+  - id: vertical_separation_infra_public_ops_private
+    name: Vertical separation, public infrastructure manager, private train operators
+    family: public_private
+    definition: >-
+      A public infrastructure manager owns and maintains the network and charges track-access fees;
+      licensed operators (one or several, possibly competing) run services at their own commercial
+      risk. Spain's HSR liberalisation: ADIF earns access charges while three companies compete.
+      Saudi Railway Law M/159 provides for usage rights on fair, transparent, non-discriminatory
+      terms, with TGA setting the usage-fee policy.
+    who_pays: State funds infrastructure; operators pay access charges; users pay fares to operators.
+    who_owns: Public infrastructure owner or manager.
+    who_operates: Licensed private (or public) train operators.
+    typical_term_years:
+      note: "licence or path-allocation terms vary; no source for a typical term"
+    risk_allocation:
+      construction: public
+      demand: shared
+      revenue: shared
+      operations: private
+      financing: public
+      land: public
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Infrastructure capex is public (on balance sheet); access-charge income offsets part of the
+      cost. Operator losses stay private unless public-service obligations are contracted
+      (S-fund-051 reports operator losses after liberalisation).
+    when_it_fits: >-
+      Fits corridors with enough demand for more than one operator, or freight plus passenger
+      mixes. Trade-off: the state keeps construction and financing risk; requires an access-charge
+      regime (TGA policy not found published; see docs/funding.md).
+    examples: [S-fund-051]
+    sources: [S-fund-015, S-fund-016, S-fund-051]
+  - id: integrated_concession
+    name: Integrated concession (infrastructure plus train operation in one contract)
+    family: ppp
+    definition: >-
+      One concessionaire builds or upgrades, finances, owns or holds the infrastructure for the
+      term, buys rolling stock, runs services and collects fares, carrying demand risk, possibly
+      with public grants or land rights. The 2008 Landbridge tender sought a 50-year BOT of this
+      kind; the preferred bidder did not reach financial close (secondary sources).
+    who_pays: Users through fares and freight tariffs; state through capital grants or guarantees if any.
+    who_owns: Concessionaire during the term; reverts to the grantor at the end (BOT).
+    who_operates: Concessionaire.
+    typical_term_years:
+      low: 30
+      high: 50
+      source: S-lb-012
+      note: "high = 50-year Landbridge BOT as tendered (S-lb-012, secondary); low = PSP Law default 30-year ceiling (S-fund-002)"
+    risk_allocation:
+      construction: private
+      demand: private
+      revenue: private
+      operations: private
+      financing: private
+      land: shared
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Grant-of-a-right model under IPSAS 32 if the grantor regulates price and services
+      (S-fund-018); guarantees or termination compensation are contingent liabilities (S-fund-023).
+      PSP Law Art. 28 lets the contract define compensation, including lost revenues, on
+      termination without private-party breach (S-fund-007).
+    when_it_fits: >-
+      Fits where one party can manage the whole system and demand is bankable. Trade-off: hardest
+      to finance; a failed financial close returns the project to the state after years of delay
+      (Landbridge 2008-2011, S-lb-012).
+    examples: [S-lb-012, S-lb-017]
+    sources: [S-fund-018, S-fund-023, S-fund-007, S-fund-013]
+  - id: private_concession
+    name: Private concession or private railway (user-funded, minimal public support)
+    family: private
+    definition: >-
+      A private company finances, builds, owns and operates the railway under a concession or
+      licence, funded by users and its own non-fare business, with no or little public subsidy.
+      Japan's private railways: fares capped by the government, no subsidy, and real-estate
+      business alongside transport (Tokyu). Saudi Railway Law M/159 defines concessionaires and
+      requires concession tenders to be approved by TGA.
+    who_pays: Users and the company's investors; non-fare business revenue.
+    who_owns: Private company (subject to the concession or licence).
+    who_operates: Private company.
+    typical_term_years:
+      note: "Japanese private-railway rights described as indefinite in the cited paper (S-fund-052); no Saudi precedent found"
+    risk_allocation:
+      construction: private
+      demand: private
+      revenue: private
+      operations: private
+      financing: private
+      land: varies
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Typically off the government balance sheet when the grantor does not control price and
+      residual interest (IPSAS 32 para 9 conditions not met, S-fund-017); PFRAM classes such
+      user-funded concessions separately (S-fund-022). Fare caps or regulation can bring the asset
+      back under IPSAS 32 control (S-fund-017).
+    when_it_fits: >-
+      Fits only where fares plus non-fare revenue cover full cost; the case evidence is
+      metropolitan (Japan), not intercity desert corridors. Trade-off: the state cedes control of
+      service levels in exchange for no budget cost.
+    examples: [S-fund-052]
+    sources: [S-fund-012, S-fund-013, S-fund-017, S-fund-022]
+  - id: lvc_station_area_development
+    name: Land value capture, station-area development rights
+    family: land_value_capture
+    definition: >-
+      The state grants development rights at and around stations to the rail company or
+      developer, whose property profits fund part of the railway. Hong Kong's Rail-plus-Property
+      model is described by the Government as one approach to financially supporting new railway
+      projects.
+    who_pays: Property buyers and tenants (through land and property value); the state forgoes land premium it could otherwise collect.
+    who_owns: Rail company or developer holds development rights; land ownership per local law.
+    who_operates: Rail company (railway) and developer (property).
+    typical_term_years:
+      note: "varies with land tenure; no source for a typical term"
+    risk_allocation:
+      construction: varies
+      demand: varies
+      revenue: shared
+      operations: varies
+      financing: varies
+      land: public
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Forgone land premium is an implicit public contribution and should be valued in the fiscal
+      and VfM analysis even though no cash leaves the budget; the LegCo reply describes property
+      rights as Government financial support (S-fund-048).
+    when_it_fits: >-
+      Fits stations in growing urban areas with developable land and strong property demand.
+      Trade-off: depends on property cycles; Saudi land-rights instruments for this were not
+      reviewed here (unclear; see docs/funding.md). Railway Law Art. 33 allows concessionaire use of
+      railway land (S-fund-014).
+    examples: [S-fund-048, S-fund-052]
+    sources: [S-fund-048, S-fund-014]
+  - id: lvc_betterment_levy
+    name: Land value capture, betterment levy or business-rate supplement
+    family: land_value_capture
+    definition: >-
+      A charge on property owners or businesses in the area that benefits from the railway, used
+      to service borrowing for construction. London: the 2 pence Crossrail Business Rate
+      Supplement from April 2010 services GLA borrowing for its Crossrail contribution.
+    who_pays: Property owners or businesses in the levy area.
+    who_owns: The state or local authority (asset ownership unchanged).
+    who_operates: Unchanged (any delivery model).
+    typical_term_years:
+      note: "Crossrail BRS ran from April 2010 and continues in 2026-27 (S-fund-049); no typical term"
+    risk_allocation:
+      construction: public
+      demand: public
+      revenue: shared
+      operations: public
+      financing: public
+      land: public
+      regulatory_force_majeure: public
+    fiscal_treatment: >-
+      Levy income is public revenue; the borrowing it services is public debt (S-fund-049: GLA
+      borrowing serviced by BRS). Combines with any delivery model as a funding source.
+    when_it_fits: >-
+      Fits where a legal basis for a local levy exists and beneficiaries are identifiable.
+      Trade-off: needs enabling legislation; no Saudi instrument for a rail betterment levy was
+      found in the documents read (unclear; see docs/funding.md).
+    examples: [S-fund-049]
+    sources: [S-fund-049]
+  - id: lvc_tax_increment
+    name: Land value capture, tax increment financing
+    family: land_value_capture
+    definition: >-
+      Future growth in property or business taxes in a defined zone is ring-fenced for a period
+      to repay borrowing for the railway. London Northern Line Extension: GLA borrowing repaid
+      from incremental business rates retained for 25 years in an Enterprise Zone, plus developer
+      contributions.
+    who_pays: Future taxpayers in the zone (the increment), developers through contributions.
+    who_owns: The state or local authority.
+    who_operates: Unchanged (any delivery model).
+    typical_term_years:
+      low: 25
+      high: 25
+      source: S-fund-050
+      note: "single precedent: 25-year increment retention (S-fund-050)"
+    risk_allocation:
+      construction: public
+      demand: public
+      revenue: shared
+      operations: public
+      financing: public
+      land: public
+      regulatory_force_majeure: public
+    fiscal_treatment: >-
+      The borrowing is public debt; the risk is that the increment falls short of debt service,
+      which then falls on the general budget (S-fund-050 describes public-sector borrowing repaid
+      from the increment).
+    when_it_fits: >-
+      Fits where a property-tax base exists and development is expected because of the line.
+      Trade-off: Saudi Arabia's tax base for this (for example the white-land fee or municipal
+      fees) and its legal earmarking were not reviewed here (unclear; see docs/funding.md).
+    examples: [S-fund-050]
+    sources: [S-fund-050]
+  - id: hybrid_public_dbfm_plus_station_lvc
+    name: "Hybrid: public D&B of civil works, DBFM availability for systems and maintenance, station-area value capture"
+    family: hybrid
+    mix: [fully_public_sar, ppp_dbfm, lvc_station_area_development]
+    definition: >-
+      The state company procures civil works by design-and-build; a PPP SPV provides systems,
+      rolling stock or maintenance under availability payments; station-area development rights
+      fund part of the capex. Sydney Metro Northwest combined separate D&C civil packages with an
+      availability OTS PPP (S-fund-045); Hong Kong uses Rail-plus-Property (S-fund-048).
+    who_pays: State (civil works and availability payments), users (fares to the state), property market (station-area value).
+    who_owns: State company owns infrastructure; SPV holds a service contract; developers hold development rights.
+    who_operates: State company or the SPV's operator, per package.
+    typical_term_years:
+      low: 20
+      high: 30
+      source: S-fund-045
+      note: "SPV package term as for availability PPPs (S-fund-045, S-fund-002)"
+    risk_allocation:
+      construction: shared
+      demand: public
+      revenue: shared
+      operations: varies
+      financing: shared
+      land: public
+      regulatory_force_majeure: shared
+    fiscal_treatment: >-
+      Civil works on budget; availability payments as firm liabilities (S-fund-023); forgone land
+      premium as an implicit contribution (S-fund-048).
+    when_it_fits: >-
+      Fits phased programmes where the state company keeps civil delivery and demand risk but
+      seeks private efficiency on systems and maintenance. Trade-off: more interfaces to manage
+      between packages.
+    examples: [S-fund-045, S-fund-048]
+    sources: [S-fund-045, S-fund-048, S-fund-023]

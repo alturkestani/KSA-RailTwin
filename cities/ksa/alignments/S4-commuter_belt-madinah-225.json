@@ -1,0 +1,79 @@
+{
+ "id": "S4-commuter_belt-madinah-225",
+ "line_type": "commuter",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 134.008,
+ "straight_km_legs": 113.303,
+ "straight_km_end_to_end": 113.303,
+ "detour_ratio": 1.1827,
+ "max_grade_cap": 0.025,
+ "design_kmh": 160.0,
+ "r_min_m": 1991.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 13.99,
+ "viaduct_km": 11.392,
+ "earthworks_km": 54.663,
+ "at_grade_km": 53.964,
+ "tunnel_share": 0.1044,
+ "viaduct_share": 0.08501,
+ "fill_m3": 7634800.0,
+ "cut_m3": 8134800.0,
+ "formation_max_grade": 0.02502,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.3523,
+ "elev_min_m": 107.7,
+ "elev_max_m": 904.5,
+ "terrain_shares": {
+  "escarpment_mountain": 0.6913,
+  "flat_desert": 0.0653,
+  "mixed": 0.2435
+ },
+ "area_km": {
+  "urban": 4.547,
+  "builtup": 12.091,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 0.0,
+  "sabkha": 0.0,
+  "waterway": 10.293,
+  "highway": 11.792
+ },
+ "wadi_crossings_osm": 36,
+ "speed_restrictions": [
+  {
+   "from_km": 67.505,
+   "to_km": 69.403,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 77.497,
+   "to_km": 79.396,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 109.076,
+   "to_km": 110.575,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 132.36,
+   "to_km": 133.659,
+   "kmh": 120.0
+  }
+ ],
+ "restricted_km": 6.595,
+ "min_curve_kmh": 120.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "madinah": 0.0,
+  "badr-hunayn": 134.008
+ },
+ "status": "routed",
+ "stations_key": "81bee7684ddee28b",
+ "geojson": "cities/ksa/alignments/S4-commuter_belt-madinah-225.geojson",
+ "run": "runs/align/corridors-s1/S4-commuter_belt-madinah-225",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

@@ -1,0 +1,95 @@
+{
+ "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 297.433,
+ "straight_km_legs": 196.808,
+ "straight_km_end_to_end": 196.808,
+ "detour_ratio": 1.5113,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 24.494,
+ "viaduct_km": 22.695,
+ "earthworks_km": 144.968,
+ "at_grade_km": 105.276,
+ "tunnel_share": 0.08235,
+ "viaduct_share": 0.0763,
+ "fill_m3": 14555000.0,
+ "cut_m3": 29232200.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.4218,
+ "elev_min_m": 1163.0,
+ "elev_max_m": 2259.9,
+ "terrain_shares": {
+  "dunes": 0.0003,
+  "escarpment_mountain": 0.2713,
+  "flat_desert": 0.2677,
+  "mixed": 0.4607
+ },
+ "area_km": {
+  "urban": 17.296,
+  "builtup": 18.646,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 0.2,
+  "sabkha": 0.0,
+  "waterway": 5.199,
+  "highway": 11.697
+ },
+ "wadi_crossings_osm": 31,
+ "speed_restrictions": [
+  {
+   "from_km": 120.023,
+   "to_km": 123.222,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 146.217,
+   "to_km": 149.916,
+   "kmh": 210.0
+  },
+  {
+   "from_km": 157.115,
+   "to_km": 160.114,
+   "kmh": 210.0
+  },
+  {
+   "from_km": 166.113,
+   "to_km": 169.811,
+   "kmh": 150.0
+  },
+  {
+   "from_km": 191.906,
+   "to_km": 193.506,
+   "kmh": 220.0
+  },
+  {
+   "from_km": 197.005,
+   "to_km": 198.405,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 266.79,
+   "to_km": 269.289,
+   "kmh": 220.0
+  }
+ ],
+ "restricted_km": 19.094,
+ "min_curve_kmh": 150.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "abha-khamis-mushait": 0.0,
+  "najran": 297.433
+ },
+ "status": "routed",
+ "stations_key": "fd8cc81a49f0f5f5",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-abha-khamis-mushait-najran.geojson",
+ "run": "runs/align/r5-h4a-s1/S2-trunk_gap-abha-khamis-mushait-najran",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

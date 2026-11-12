@@ -1,0 +1,108 @@
+# > **Document version:** cities/ksa/assumptions/align_weights.yaml v1.0 | 1 Nov 2026 | Author: R4_ALIGN builder (gis-network-engineer role) | Status: reviewed (tuned and frozen)
+# Terrain-aware alignment parameters (R4_ALIGN; prompts/R4_ALIGN.md). Read by network/align.py and
+# network/align_data.py. Every parameter carries an assumption id (docs/assumptions.md).
+# Tuned on HHR, SAR North and SAR East (network.align validate/tune), then FROZEN: `frozen: true` and
+# the SHA-256 of this file's canonical JSON is written into every corridor run's meta.json.
+version: 1
+frozen: true
+label: hypothetical alignments (ours); indicative engineering sketch, not a design
+
+data:
+  resolution_arcsec: {value: 3, assumption_id: A-align-001}   # Copernicus GLO-30 averaged to ~90 m
+  tile_buffer_deg: {value: 0.3, assumption_id: A-align-002}
+  sea: impassable                                               # GLO-30 tile absent or WorldCover 80 at <= 0 m
+
+classes:
+  # Tariq's spec (prompts/R4_ALIGN.md item 1): HSR <= 2.5 %, mixed passenger/freight <= 1.25 %.
+  # Passenger-only conventional and commuter lines take the passenger cap (A-align-011).
+  # Design speed = vmax of the line type's running-time class (running_time_classes.yaml).
+  # Minimum radius R = 11.8 v^2 / (E + I) with E + I anchored on Tariq's HSR example
+  # (300 km/h -> 7,000 m => E + I = 151.7 mm) and applied to every class (A-align-012).
+  hsr: {max_grade: {value: 0.025, source: "prompts/R4_ALIGN.md item 1"}, design_kmh: 300}
+  mixed: {max_grade: {value: 0.0125, source: "prompts/R4_ALIGN.md item 1"}, design_kmh: 250}
+  conventional_passenger: {max_grade: {value: 0.025, assumption_id: A-align-011}, design_kmh: 200}
+  commuter: {max_grade: {value: 0.025, assumption_id: A-align-011}, design_kmh: 160}
+  radius_anchor: {v_kmh: 300, r_m: 7000, source: "prompts/R4_ALIGN.md item 1", assumption_id: A-align-012}
+
+router:
+  connectivity: 16
+  coarse_arcsec: {value: 15, assumption_id: A-align-003}        # first pass over the whole window
+  fine_band_km: {value: 3.0, assumption_id: A-align-004}        # second pass at 3" within this band
+  fine_piece_km: {value: 60, assumption_id: A-align-004}
+  window_ellipse: {value: 1.35, assumption_id: A-align-005}     # sum of focal distances <= e x leg
+  # widened in this order while the coarse path reaches >= window_touch of the edge (added after
+  # the first full routing: 6 corridors touched the 1.35 edge; tuning was run at 1.35 only)
+  window_ellipse_steps: {value: [1.35, 1.7, 2.2], assumption_id: A-align-005}
+  window_touch: {value: 0.97, assumption_id: A-align-005}
+  window_min_halfwidth_km: {value: 20, assumption_id: A-align-005}
+  grade_smoothing_m: {value: 500, assumption_id: A-align-006}   # earthworks absorb shorter relief
+
+weights:
+  # edge cost = length x (1 + grade term + area penalties) x corridor factor; over the cap = structure
+  grade: {value: 3.0, range: [1.0, 8.0], assumption_id: A-align-020}           # x (g / cap)^2 at grade
+  structure_factor: {value: derived, assumption_id: A-align-021}                # normalised register (tunnel+viaduct)/2 / base
+  structure_grade_exponent: {value: 1.0, range: [0.0, 2.0], assumption_id: A-align-031}  # x (g / cap)^k over the cap
+  urban: {value: 1.5, range: [0.5, 4.0], assumption_id: A-align-022}
+  protected: {value: 0.3, range: [0.0, 1.0], assumption_id: A-align-023}   # policy weight, not tuned
+  military: {value: 6.0, range: [2.0, 20.0], assumption_id: A-align-024}
+  sand: {value: 0.1, range: [0.1, 1.0], assumption_id: A-align-025}
+  sabkha: {value: 0.2, range: [0.2, 2.0], assumption_id: A-align-026}
+  wadi: {value: 0.6, range: [0.2, 2.0], assumption_id: A-align-027}             # per km inside a wadi cell
+  water: {value: 10.0, assumption_id: A-align-028}                              # inland water: bridge
+  corridor_bonus: {value: 0.25, range: [0.0, 0.5], assumption_id: A-align-029}  # within corridor_km of a highway or rail
+  corridor_km: {value: 1.0, assumption_id: A-align-029}
+
+wadi:
+  flow_accumulation_km2: {value: 50, range: [20, 200], assumption_id: A-align-030}   # D8 on the coarse grid
+
+profile:
+  step_m: {value: 100, assumption_id: A-align-040}
+  viaduct_fill_m: {value: 15, range: [10, 20], assumption_id: A-align-041}   # formation above ground
+  tunnel_cut_m: {value: 25, range: [20, 30], assumption_id: A-align-042}     # formation below ground
+  structure_penalty: {value: 5.0, assumption_id: A-align-043}               # LP weight per m beyond a threshold
+  earthworks_min_m: {value: 0.5, assumption_id: A-align-044}
+  formation_width_m: {value: 14, assumption_id: A-align-045}                # double track
+  side_slope_h_per_v: {value: 2.0, assumption_id: A-align-045}
+
+smoothing:
+  chord_m: {value: 300, assumption_id: A-align-050}             # three-point radius over +/- chord
+  sigma_steps_m: {value: [0, 250, 500, 1000, 2000, 4000], assumption_id: A-align-051}
+  max_offset_km: {value: 1.5, assumption_id: A-align-052}       # smoothing may not move the line further
+  speed_step_kmh: {value: 10, assumption_id: A-align-053}
+  min_restriction_km: {value: 0.5, assumption_id: A-align-053}
+
+terrain_class:
+  # along-line class per 100 m sample (feeds the cost register terrain shares); ordered rule
+  order: [escarpment_mountain, sabkha, coastal, dunes, mixed, flat_desert]
+  relief_box_km: {value: 2.0, assumption_id: A-align-060}
+  escarpment_relief_m: {value: 120, assumption_id: A-align-060}
+  mixed_relief_m: {value: 40, assumption_id: A-align-060}
+  coastal_km: {value: 10.0, assumption_id: A-geo-018}
+
+tune:
+  # coordinate descent on the three validation lines (objective: mean of the three mean offsets +
+  # 20 km x max(0, |length error| - tolerance) per line; A-align-070). Each parameter in turn over
+  # its values, the others held, the best kept. Protected areas are a policy weight (A-align-023),
+  # not tuned. Result and log: runs/align/tune-s1/ (chosen.json, tune.csv).
+  passes:
+    - sweeps: 2
+      grid:
+        weights.structure_grade_exponent: [0.0, 1.0, 2.0]
+        weights.corridor_bonus: [0.1, 0.25, 0.5]
+        weights.grade: [1.0, 3.0, 8.0]
+        weights.sand: [0.1, 0.4, 1.0]
+        weights.urban: [0.5, 1.5, 4.0]
+        router.grade_smoothing_m: [250, 500, 1000]
+    - sweeps: 1
+      grid:
+        weights.wadi: [0.2, 0.6, 2.0]
+        weights.sabkha: [0.2, 0.8, 2.0]
+        weights.corridor_km: [1.0, 2.5, 5.0]
+
+validation:
+  length_tolerance: {value: 0.05, source: "prompts/R4_ALIGN.md item 3"}
+  mean_offset_km: {value: 2.0, source: "prompts/R4_ALIGN.md item 3"}
+  lines:
+    hhr: {class: hsr}
+    sar-north-passenger: {class: mixed}
+    sar-east-passenger: {class: mixed}

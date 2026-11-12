@@ -1,0 +1,4645 @@
+# Document version: cities/ksa/costs/cost_register.yaml v1.0 | 31 Oct 2026 | Author: cost-estimator (R1c) | Status: draft
+# W3 cost register (cost-register skill; schema common.schemas.CostItem). Cost ranges, not a budget.
+# Values are in the SOURCE currency and price year (the `SAR` token in `unit` names the base currency; normalise
+# with `uv run python -m costs.register normalise --to SAR --price-year 2025`). Sources: docs/sources/cost-*.csv
+# and docs/sources/index.csv; assumptions: docs/assumptions.md; summary and reconciliation: docs/costs.md.
+# Rows with low = central = high are single published figures (see notes), never modelled points; every estimate
+# draws them through the reference-class uplift (cities/ksa/costs/uplifts.yaml).
+items:
+- id: C-programme-hhr-outturn-001
+  item: Haramain HSR whole-programme cost as stated by officials (outturn, nominal)
+  category: programme
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2018
+  low: 60000
+  central: 60000
+  high: 63000
+  source: S-lb-021
+  extra_sources:
+  - S-lb-022
+  - S-cost-ksa-008
+  - S-cost-ksa-009
+  - S-cost-ksa-010
+  status: sourced
+  approach: top_down
+  scope: Whole programme (civil works, stations, track and systems, trains, O&M bundled in Phase 2); SR 63 bn stated
+    as including expropriation (S-cost-ksa-008); SR 60 bn scope not stated ('exceeds' 60 bn per Okaz 2018)
+  layer: existing
+  price_year_basis: publication_year
+  notes: 'Nominal cumulative spend over 2009-2018 (no single price base); price_year = year of the SR 60 bn statements
+    (Mar/Sep 2018). High = SR 63 bn incl. land (SRO DG, Jun 2015). Components on record: Pkg 1 6.79 + Pkg 2 9.39
+    + Phase 2 30.8 = SR 46.98 bn before KAIA station, land, PM, variations, and the 2019 Jeddah station fire. Phase
+    2 includes 12 years of O&M, so the total is not pure capex. Outlier USD 7.87 bn (S-cost-ksa-011) kept as its
+    own row.'
+- id: C-programme-hhr-estimate-2012-001
+  item: Haramain HSR two-phase cost estimate, Dec 2012 (history; superseded by outturn)
+  category: programme
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2012
+  low: 51500
+  central: 51500
+  high: 51500
+  source: S-lb-016
+  status: sourced
+  approach: top_down
+  scope: Two phases of the Haramain project (Arab News, Dec 2012); land not stated
+  layer: existing
+  price_year_basis: publication_year
+  notes: Single figure as printed. Mid-construction estimate; the gap to the SR 60-63 bn outturn statements is a
+    cost-growth data point for the reference class (about +17 % to +22 % nominal), not a conflict.
+- id: C-programme-hhr-usd-outlier-001
+  item: Haramain HSR cost printed as USD 7.87 bn (outlier; scope unknown)
+  category: programme
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: USD
+  price_year: 2018
+  low: 7870
+  central: 7870
+  high: 7870
+  source: S-cost-ksa-011
+  status: sourced
+  approach: top_down
+  scope: Not stated
+  layer: existing
+  price_year_basis: publication_year
+  notes: Kept so nothing is dropped silently; DO NOT use for appraisal. USD 7.87 bn x 3.75 = SR 29.5 bn, below the
+    Phase 2 contract alone (SR 30.8 bn). Likely a partial scope or conversion of another figure; no explanation
+    found.
+- id: C-programme-hhr-per-km-001
+  item: Haramain HSR all-in top-down cost per route-km (derived from the outturn row)
+  category: programme
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2018
+  low: 132.45
+  central: 133.57
+  high: 140.25
+  source: S-lb-021
+  extra_sources:
+  - S-cost-ksa-008
+  - S-002
+  status: derived
+  derivation: SR 60,000 m / 453 km = 132.45; SR 60,000 m / 449.2 km = 133.57; SR 63,000 m (incl. land) / 449.2 km
+    = 140.25
+  approach: top_down
+  scope: All-in incl. stations, trains and 12 years of O&M bundled in Phase 2; high includes expropriation
+  layer: existing
+  price_year_basis: publication_year
+  notes: Nominal mixed-year sum divided by route length; not a capex rate for a new line without adjusting for the
+    bundled O&M and the five landmark stations.
+- id: C-programme-hhr-2026-package-001
+  item: Haramain HSR 2026 consortium package (20 trains, maintenance, operation extended to 2038), total
+  category: programme
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: EUR
+  price_year: 2026
+  low: 2800
+  central: 2800
+  high: 2800
+  source: S-cost-ksa-012
+  status: sourced
+  approach: top_down
+  scope: Talgo 20 trainsets plus fleet maintenance to 2033 (EUR 1.3 bn), Renfe operation to 2038, Indra systems
+    O&M (EUR 130 m); split of the remaining ~EUR 1.37 bn not published
+  layer: existing
+  price_year_basis: award_year
+  notes: Single figure as printed ('EUR 2.8 bn across the consortium'). Mostly opex and rolling stock; not a capex
+    figure. Operation term per year cannot be derived without the Renfe share.
+- id: C-programme-sar-north-2012-001
+  item: SAR North-South railway estimated cost, 2012 statements (2,750 km)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2012
+  low: 19987.5
+  central: 20000
+  high: 20000
+  source: S-lb-016
+  extra_sources:
+  - S-lb-023
+  - S-023
+  - S-lb-020
+  status: derived
+  derivation: SR 20,000 m (Arab News Dec 2012, S-lb-016); USD 5,330 m x 3.75 SAR/USD (SAMA peg, S-lb-020) = SR 19,987.5
+    m (SAR chairman, Mar 2012, S-lb-023)
+  approach: top_down
+  scope: Construction of the 2,750 km North-South network (minerals and passenger lines); USD 5.33 bn stated as
+    EXCLUDING expropriation compensation; rolling stock inclusion unknown
+  layer: existing
+  price_year_basis: publication_year
+  notes: 'SR 20 bn and USD 5.33 bn are the same figure at the peg. Conflicts with the 2017 ''built at USD 2.6 bn
+    / SAR 10 bn'' row (C-007): both kept.'
+- id: C-programme-sar-north-2017-001
+  item: SAR North-South railway cost as stated around opening (2017) and by Saudipedia
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2017
+  low: 9750
+  central: 10000
+  high: 10000
+  source: S-cost-ksa-023
+  extra_sources:
+  - S-cost-ksa-022
+  - S-lb-020
+  status: derived
+  derivation: SAR 10,000 m (Saudipedia, S-cost-ksa-023); USD 2,600 m x 3.75 (S-lb-020) = SR 9,750 m (Gulf Construction,
+    1 Oct 2017, S-cost-ksa-022)
+  approach: top_down
+  scope: 2,750 km North Train project; scope (civil only or all-in) not stated
+  layer: existing
+  price_year_basis: publication_year
+  notes: 'Saudipedia is undated; price_year 2017 follows the GCO statement. ANALYSIS: package values on record already
+    sum to more than SR 10 bn (civil SR 7.0-7.1 bn 2007 + stations/depots SR 2.34 bn 2012 + CAF SR 0.53 bn + wagons
+    ~USD 0.1 bn; locomotives, signalling, track supply unknown), so SR 10 bn probably covers a narrower scope. Unresolved;
+    see C-007.'
+- id: C-programme-sar-north-2010-001
+  item: SAR North-South railway estimated cost, 2010 (2,400 km scope)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: USD
+  price_year: 2010
+  low: 3500
+  central: 3500
+  high: 3500
+  source: S-lb-024
+  status: sourced
+  approach: top_down
+  scope: 2,400 km North-South railway (earlier scope), PIF-financed; inclusions not stated
+  layer: existing
+  price_year_basis: publication_year
+  notes: Single figure as printed (GlobalData project page, 2010). History only; smaller scope than the 2,750 km
+    network.
+- id: C-programme-sar-north-per-km-001
+  item: SAR North-South top-down cost per km, 2012 estimate basis (derived)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2012
+  low: 7.27
+  central: 7.27
+  high: 7.27
+  source: S-lb-016
+  extra_sources:
+  - S-lb-023
+  - S-021
+  status: derived
+  derivation: SR 20,000 m / 2,750 km (S-021) = 7.27
+  approach: top_down
+  scope: Network km (minerals and passenger lines; shared sections counted once per SAR's 2,750 km); excl. expropriation
+  layer: existing
+  price_year_basis: publication_year
+  notes: Single arithmetic point on one figure and one denominator; not a distribution. Freight-heavy desert line
+    (Nafud dunes on part of the route).
+- id: C-programme-sar-north-per-km-2017-001
+  item: SAR North-South top-down cost per km, 2017 statement basis (derived)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2017
+  low: 3.55
+  central: 3.64
+  high: 3.64
+  source: S-cost-ksa-023
+  extra_sources:
+  - S-cost-ksa-022
+  - S-021
+  status: derived
+  derivation: SR 9,750 m / 2,750 km = 3.55; SR 10,000 m / 2,750 km = 3.64
+  approach: top_down
+  scope: As the 2017 row (scope unstated)
+  layer: existing
+  price_year_basis: publication_year
+  notes: Spread is the USD/SAR rounding of one statement. Conflicts with the 7.27 row (C-007); scope of the SR 10
+    bn figure unknown.
+- id: C-programme-riyadh-metro-award-2013-001
+  item: Riyadh Metro three design-build packages awarded July 2013 (BACS lines 1-2, ANM line 3, FAST lines 4-6),
+    total
+  category: programme
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: USD
+  price_year: 2013
+  low: 22480
+  central: 22480
+  high: 22500
+  source: S-cost-ksa-035
+  extra_sources:
+  - S-039
+  status: derived
+  derivation: 9,450 + 5,210 + 7,820 = 22,480 USD m (DG Tresor, S-cost-ksa-035); 22,500 as rounded by Wikipedia (S-039)
+  approach: top_down
+  scope: Design, construction, rolling stock and systems for 6 lines, 176 km (60 km underground), 85 stations; land
+    (SR 3 bn budget) separate
+  layer: existing
+  price_year_basis: award_year
+  notes: Urban metro, not a line type of this study; reference only. Resolves C-005 in part - USD 22.5 bn is the
+    2013 award total, USD 25 bn the outturn statement.
+- id: C-programme-riyadh-metro-outturn-001
+  item: Riyadh Metro total project cost as stated by the RCRC CEO (outturn)
+  category: programme
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: USD
+  price_year: 2024
+  low: 25000
+  central: 25000
+  high: 25000
+  source: S-038
+  extra_sources:
+  - S-cost-ksa-036
+  status: sourced
+  approach: top_down
+  scope: Whole project (6 lines, 176 km, 85 stations); land inclusion not stated
+  layer: existing
+  price_year_basis: publication_year
+  notes: Urban metro, not a line type of this study; reference only. Single figure as stated (Argaam Dec 2024, ENR
+    2025 snippet). Nominal cumulative 2013-2024 spend. +11 % nominal over the 2013 award total.
+- id: C-programme-riyadh-metro-per-km-001
+  item: Riyadh Metro outturn cost per km (derived and as stated)
+  category: programme
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: USD
+  price_year: 2024
+  low: 142.05
+  central: 142.05
+  high: 166.0
+  source: S-038
+  extra_sources:
+  - S-cost-ksa-035
+  status: derived
+  derivation: USD 25,000 m / 176 km (S-cost-ksa-035) = 142.05; high = USD 166 m/km as stated by the RCRC CEO (S-038),
+    which implies 25,000 / 166 = 150.6 km
+  approach: top_down
+  scope: All-in urban metro incl. rolling stock and systems
+  layer: existing
+  price_year_basis: publication_year
+  notes: Urban metro, not a line type of this study; reference only. The stated 166 m/km does not reconcile with
+    176 km (unexplained length basis; C-005).
+- id: C-programme-landbridge-001
+  item: Saudi Landbridge whole programme, as stated by MOT / SAR (SR 100 bn)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2022
+  low: 100000
+  central: 100000
+  high: 100000
+  source: S-lb-002
+  extra_sources:
+  - S-lb-001
+  - S-lb-003
+  - S-046
+  status: derived
+  derivation: Official pre-tender estimate as stated ('نحو 100 مليار ريال', Mar 2022; Nov 2022; Jan 2026); no breakdown;
+    carried as a point per docs/costs-landbridge.md section 4
+  assumption_id: A-cost-100
+  approach: top_down
+  scope: '>1,500 km new track + 678 km upgrades, 250 km/h design, infrastructure and trains; land, financing and
+    contingency unknown'
+  layer: committed
+  price_year_basis: assumed
+  notes: high = central because no published higher figure exists; the reference-class-forecasting uplift (W3) supplies
+    the upside. Price year not stated by any source; 2022 nominal assumed (A-cost-100). Riyadh Rail Link award value
+    still unknown at 31 Oct 2026.
+- id: C-programme-landbridge-per-km-2178-001
+  item: Saudi Landbridge top-down cost per km over 2,178 km (new track incl. upgrades)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2022
+  low: 45.91
+  central: 45.91
+  high: 45.91
+  source: S-lb-002
+  extra_sources:
+  - S-lb-009
+  status: derived
+  derivation: SR 100,000 m / (1,500 + 678) km = 45.91 (S-lb-002, S-lb-009)
+  assumption_id: A-cost-100
+  approach: top_down
+  scope: All-in incl. trains; denominator includes 678 km of upgrades
+  layer: committed
+  price_year_basis: assumed
+  notes: Single arithmetic point on one denominator; not a distribution. Lower bound of the per-km reading.
+- id: C-programme-landbridge-per-km-1500-001
+  item: Saudi Landbridge top-down cost per km over 1,500 km (new track only; upper bound)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2022
+  low: 66.67
+  central: 66.67
+  high: 66.67
+  source: S-lb-002
+  extra_sources:
+  - S-057
+  - S-lb-009
+  status: derived
+  derivation: 'SR 100,000 m / 1,500 km = 66.67 (S-lb-002, S-057: ''more than 1,500 km'' of new track, so an upper
+    bound)'
+  assumption_id: A-cost-100
+  approach: top_down
+  scope: All-in incl. trains and the upgrades' cost, divided by new track only
+  layer: committed
+  price_year_basis: assumed
+  notes: Single arithmetic point on one denominator; not a distribution. Upper bound because new track exceeds 1,500
+    km and the numerator includes upgrade costs.
+- id: C-programme-landbridge-legacy-001
+  item: Saudi Landbridge legacy estimate (2008-2011 tender basis; history only, not for appraisal)
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2011
+  low: 26000
+  central: 26250
+  high: 26600
+  source: S-lb-014
+  extra_sources:
+  - S-052
+  - S-lb-016
+  - S-051
+  - S-lb-020
+  status: sourced
+  approach: top_down
+  scope: 950 km Riyadh-Jeddah + 115 km Dammam-Jubail freight/container line; exclusions unknown
+  layer: committed
+  price_year_basis: publication_year
+  notes: low SR 26 bn (2011, S-lb-014/S-052); central = USD 7,000 m x 3.75 (S-lb-020) = SR 26,250 m, the outlets'
+    own conversion pair; high SR 26.6 bn (Dec 2012, S-lb-016). History only; superseded scope (see docs/costs-landbridge.md).
+- id: C-programme-gcc-railway-saudi-section-001
+  item: GCC railway Saudi section (~672 km, Kuwait border to UAE border) cost
+  category: programme
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2026
+  source: S-cost-ksa-038
+  extra_sources:
+  - S-029
+  status: unknown
+  approach: top_down
+  layer: n/a
+  searched: 'Web search 31 Oct 2026 ''GCC railway Saudi section cost estimate'': Construction Review 12 May 2026
+    gives > USD 15 bn for the whole 2,186 km network, no Saudi-section value; MEED design-consultancy bid reports
+    (Jul 2026) give no value; network figures of USD 25 / 30 / 200 / 250 bn in older snippets (not read, scope unclear)'
+  notes: Announced/planned (design consultancy stage). Whole-network figure not apportioned to the Saudi section
+    (no source does so).
+- id: C-programme-jeddah-metro-planned-001
+  item: Jeddah metro (planned, 108 km, 3 lines, 46 stations) estimated cost (urban metro; reference only)
+  category: programme
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: USD
+  price_year: 2012
+  low: 9300
+  central: 9300
+  high: 9300
+  source: S-cost-ksa-039
+  status: sourced
+  approach: top_down
+  scope: 108 km, three lines, 46 stations; planning-stage estimate (Jeddah deputy mayor to Reuters)
+  layer: n/a
+  price_year_basis: assumed
+  assumption_id: A-cost-101
+  notes: Urban metro, not a line type of this study; reference only. Announced/planned, never committed. Single
+    figure ('around $9.3bn'). Article undated (page shows '14 years ago'); price year 2012 assumed (A-cost-101).
+    Implies ~USD 86 m/km (ANALYSIS).
+- id: C-line-type-hhr-civil-pkg1-001
+  item: Haramain HSR Phase 1 Package 1 civil works (Al Rajhi Alliance), contract value
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2009
+  low: 6790
+  central: 6790
+  high: 6790
+  source: S-cost-ksa-001
+  extra_sources:
+  - S-cost-ksa-002
+  - S-007
+  status: sourced
+  approach: top_down
+  scope: Design and build of route civil works (site preparation, embankments, bridges, culverts, tunnels); excludes
+    track, electrification, power, signalling, stations, rolling stock (Arab News 2009 lists those as later phases)
+  layer: existing
+  price_year_basis: award_year
+  notes: All three sources print the same single figure (SR 6.79 bn), so low = central = high is the source's own
+    single value. Award date differs (RG 9 Feb 2009 'won'; Arab News 5 Mar 2009 signing). Alliance membership differs
+    between outlets (RG Mada/Bouygues/Al Arrab/Arup/CREC; Arab News Al-Arrab/China Railway 18 Bureau/Masco). Contract
+    value at award, not outturn.
+- id: C-line-type-hhr-civil-pkg1-per-km-001
+  item: Haramain HSR Phase 1 Package 1 civil works per route-km (derived)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2009
+  low: 14.99
+  central: 15.12
+  high: 15.29
+  source: S-cost-ksa-001
+  extra_sources:
+  - S-002
+  status: derived
+  derivation: SR 6,790 m / 453 km (S-002 infobox) = 14.99; / 449.2 km main line (S-002 lead) = 15.12; / 444 km (S-cost-ksa-001)
+    = 15.29
+  approach: top_down
+  scope: Civil works only (no track, systems, stations, trains, land)
+  layer: existing
+  price_year_basis: award_year
+  notes: Spread reflects only the denominator (444 / 449.2 / 453 km); the numerator is a single award value. Mixed
+    terrain (coastal plain, Hijaz foothills, dunes near Madinah) is not split by any source.
+- id: C-line-type-sar-north-civil-2007-001
+  item: SAR North-South civil works, three contracts of April 2007 (lump)
+  category: line_type
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2007
+  low: 7000
+  central: 7100
+  high: 7100
+  source: S-cost-ksa-017
+  extra_sources:
+  - S-lb-024
+  status: sourced
+  approach: top_down
+  scope: Construction of three route sections (576 + 440 + 818 km); track supply, signalling, stations, rolling
+    stock not stated as included
+  layer: existing
+  price_year_basis: award_year
+  notes: Article states 7.1 bn; its three values sum to 7.0 bn (low). Second value printed as '1·9 riyals' (unit
+    missing; billion read from context).
+- id: C-line-type-sar-north-civil-2007-per-km-001
+  item: SAR North-South civil works per route-km, 2007 contracts (derived)
+  category: line_type
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2007
+  low: 3.42
+  central: 3.82
+  high: 4.32
+  source: S-cost-ksa-017
+  status: derived
+  derivation: 'Per section: 2,800/818 = 3.42 (An-Nafoud-Al Haditha); 2,300/576 = 3.99 (Ras Azzawr-Az Zabirah); 1,900/440
+    = 4.32 (Az Zabirah-Al Nufud). Central = sum of parts 7,000 / 1,834 km = 3.82 (stated totals give 7,100/1,765
+    = 4.02)'
+  approach: top_down
+  scope: Civil/construction contracts for a desert freight (minerals) line
+  layer: existing
+  price_year_basis: award_year
+  notes: 'Terrain by section is named but not costed separately: the 440 km Az Zabirah-Great Nafud section (highest
+    per km) runs into the Nafud dune sea; candidate evidence for a dunes premium (ANALYSIS, not a sourced premium).
+    Article lengths are internally inconsistent (1,765 vs 1,834 km).'
+- id: C-line-type-sar-phosphate-doubling-001
+  item: Phosphate line track doubling, first section (~100 km, AZ1/Nariyah Yard to Ras Al-Khair), contract value
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2026
+  low: 4000
+  central: 4000
+  high: 4125
+  source: S-cost-ksa-024
+  extra_sources:
+  - S-lb-020
+  status: sourced
+  approach: top_down
+  scope: Second track, alignment modifications, utility bridges and culvert widening, hydrological structures, converting
+    the AZ1 siding to main line, support for signalling and telecoms
+  layer: committed
+  price_year_basis: award_year
+  notes: 'MEED: ''estimated SR4bn-plus ($1.1bn)''; low = central = SR 4,000 m (a floor), high = the outlet''s own
+    USD 1,100 m x 3.75 = SR 4,125 m. Contractor conflict: MEED 20 Aug 2026 names Alomaier; a Feb 2026 MEED snippet
+    named Al-Nasr (not read). Second section (>150 km) value unknown (S-cost-ksa-025).'
+- id: C-line-type-sar-phosphate-doubling-per-km-001
+  item: Phosphate line track doubling, first section, per route-km (derived)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2026
+  low: 40.0
+  central: 40.0
+  high: 41.25
+  source: S-cost-ksa-024
+  status: derived
+  derivation: SR 4,000 m / 100 km = 40.0; SR 4,125 m / 100 km = 41.25 ('about 100 km')
+  approach: top_down
+  scope: Doubling plus structures and yard works near Ras Al-Khair (coastal Eastern Province)
+  layer: committed
+  price_year_basis: award_year
+  notes: 'Length is ''about 100 km'', so the per-km spread is understated. ANALYSIS: ~25x the 2014 Hofuf-Haradh
+    doubling rate (1.62/km); the scope here includes hydrological structures and yard conversion near the coast,
+    and a 12-year price gap. Do not use as a generic doubling rate without the scope caveat.'
+- id: C-line-type-sar-phosphate-doubling-s2-001
+  item: Phosphate line track doubling, second section (>150 km), contract value
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2026
+  source: S-cost-ksa-025
+  status: unknown
+  approach: top_down
+  layer: committed
+  searched: 'MEED guest pages (25 Sep 2026 ''SAR prepares phosphate rail second section contract award'', snippet:
+    ''multibillion-riyal'', no figure); web search 31 Oct 2026'
+  notes: Primary to find - SAR award notice.
+- id: C-line-type-sar-east-hofuf-haradh-doubling-001
+  item: Hofuf-Haradh doubling of 241 km single-track freight section (Al Mobty, 2014), per km (derived)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2014
+  low: 1.62
+  central: 1.62
+  high: 1.62
+  source: S-cost-ksa-031
+  status: derived
+  derivation: SR 391 m / 241 km = 1.62
+  approach: top_down
+  scope: Doubling of a single-track desert freight section (first phase); signalling and land not stated
+  layer: existing
+  price_year_basis: award_year
+  notes: Single arithmetic point on one contract. Flat desert (Hofuf to Haradh). Contract lump SR 391 m.
+- id: C-line-type-sar-east-renewal-2014-001
+  item: Dammam-Riyadh freight line renewal, 78.4 km (CRCC, 2014), per km (derived)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2014
+  low: 1.57
+  central: 1.57
+  high: 1.57
+  source: S-cost-ksa-031
+  status: derived
+  derivation: SR 123 m / 78.4 km = 1.57
+  approach: top_down
+  scope: Renewal of existing freight track (21-month contract); not new line
+  layer: existing
+  price_year_basis: award_year
+  notes: Single arithmetic point. Candidate input for renewal (W3 renewals) rather than new build.
+- id: C-line-type-sar-east-hofuf-bypass-001
+  item: Hofuf bypass realignment for 200 km/h (Al Mobty, 2011), contract value
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2011
+  low: 659
+  central: 659
+  high: 659
+  source: S-cost-ksa-030
+  status: sourced
+  approach: top_down
+  scope: Bypass moving the main line out of central Hofuf; length not stated
+  layer: existing
+  price_year_basis: award_year
+  notes: Single figure as printed. Per-km not derivable (length unknown).
+- id: C-line-type-sar-east-dammam-industrial-001
+  item: Dammam Second Industrial City rail link and freight yard (OHL / Hassan Allam), contract value
+  category: line_type
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2026
+  low: 500
+  central: 500
+  high: 500
+  source: S-cost-ksa-032
+  extra_sources:
+  - S-cost-ksa-033
+  status: sourced
+  approach: top_down
+  scope: New freight yard plus freight link to the Dammam-Riyadh line; 22.7 km single track incl. earthworks, track,
+    systems, signalling, telecoms, a 265 m and a 118 m bridge (S-cost-ksa-033)
+  layer: committed
+  price_year_basis: award_year
+  notes: SR 500 m is the January 2026 selection value; the June 2026 award report gives no value. Per km (ANALYSIS,
+    combining two sources) 500 / 22.7 = SR 22.0 m/km incl. the yard; not a line-only rate, so not registered as
+    a per-km row.
+- id: C-line-type-jubail-dammam-001
+  item: Jubail-Dammam 115 km freight railway (Terna, 2013), per km (derived)
+  category: line_type
+  line_type: mixed
+  terrain: coastal
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2013
+  low: 7.19
+  central: 7.19
+  high: 7.19
+  source: S-cost-ksa-034
+  status: derived
+  derivation: SAR 827 m / 115 km = 7.19
+  approach: top_down
+  scope: Construction of 115 km railway between Jubail and Dammam ports (petrochemical/metals freight); systems
+    and rolling stock not stated
+  layer: existing
+  price_year_basis: award_year
+  notes: Single arithmetic point. Award value, not outturn. Opening (Apr 2024 per Wikipedia) not verified here.
+    A design-and-build EUR ~170 m figure on a consultant page was seen in a snippet only (not read).
+- id: C-line-type-landbridge-riyadh-rail-link-001
+  item: Riyadh Rail Link (Landbridge Riyadh section, 35 km double track) design-and-build package value
+  category: line_type
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2026
+  source: S-lb-033
+  extra_sources:
+  - S-047
+  - S-050
+  - S-060
+  - S-lb-018
+  status: unknown
+  approach: top_down
+  layer: committed
+  searched: 'Web search 31 Oct 2026 ''Riyadh Rail Link Landbridge contract awarded SAR value October 2026'': MEED
+    31 Aug 2026 ''award nears'' (S-047), Construction Review/LinkedIn repeat USD 7 bn label (S-050, rejected in
+    docs/costs-landbridge.md 3b), GDN Online undated item with no value; no award notice found'
+  notes: Scope - viaducts, civil works, utilities, signalling. Stays unknown until SAR's award notice.
+- id: C-line-type-hsr-ec-total-001
+  item: New high-speed line, total investment unit cost (EU, EC/PwC 2018)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 11.84
+  central: 14.1
+  high: 16.36
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '14.1 x (1 -/+ 0.16) from the printed ''Q1-Q3: 14.1 +/- 16% M EUR/km'' (Figure 2 p.11 / Figure 34
+    p.65, S-lb-030)'
+  approach: top_down
+  scope: 'total investment: planning & design + construction + ancillary (contingency, land, PM, indirect)'
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 14.1 +/- 16% M EUR/km''; low/high = central x (1 -/+ 16%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-hsr-ec-construction-002
+  item: New high-speed line, construction unit cost (EU, EC/PwC 2018)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 11.7
+  central: 14.1
+  high: 16.5
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '14.1 x (1 -/+ 0.17) from the printed ''Q1-Q3: 14.1 +/- 17% M EUR/km'' (Figure 4 p.12 / Figure 35
+    p.66, S-lb-030)'
+  approach: top_down
+  scope: construction works only (base infrastructure + civil structures + stations); excludes planning & design
+    and ancillary
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 14.1 +/- 17% M EUR/km''; low/high = central x (1 -/+ 17%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-hsr-ec-base-003
+  item: New high-speed line, base infrastructure unit cost (earthworks, minor structures, equipment and permanent
+    way)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 7.39
+  central: 8.4
+  high: 9.41
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '8.4 x (1 -/+ 0.12) from the printed ''Q1-Q3: 8.4 +/- 12% M EUR/km'' (Figure 36 p.67, S-lb-030)'
+  approach: bottom_up
+  scope: base infrastructure = earthworks + minor/hydraulic structures and interfaces + equipment and permanent
+    way; excludes tunnels, bridges/viaducts, stations
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 8.4 +/- 12% M EUR/km''; low/high = central x (1 -/+ 12%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-conv-ec-total-004
+  item: New conventional line, total investment unit cost (EU, EC/PwC 2018)
+  category: line_type
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 6.89
+  central: 8.2
+  high: 9.51
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '8.2 x (1 -/+ 0.16) from the printed ''Q1-Q3: 8.2 +/- 16% M EUR/km'' (Figure 2 p.11 / Figure 34 p.65,
+    S-lb-030)'
+  approach: top_down
+  scope: total investment (planning & design + construction + ancillary); EC 'conventional' covers passenger and
+    mixed lines
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 8.2 +/- 16% M EUR/km''; low/high = central x (1 -/+ 16%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-conv-ec-construction-005
+  item: New conventional line, construction unit cost (EU, EC/PwC 2018)
+  category: line_type
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 5.83
+  central: 7.2
+  high: 8.57
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '7.2 x (1 -/+ 0.19) from the printed ''Q1-Q3: 7.2 +/- 19% M EUR/km'' (Figure 4 p.12 / Figure 35 p.66,
+    S-lb-030)'
+  approach: top_down
+  scope: construction works only; excludes planning & design and ancillary
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 7.2 +/- 19% M EUR/km''; low/high = central x (1 -/+ 19%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-conv-ec-base-006
+  item: New conventional line, base infrastructure unit cost (EU, EC/PwC 2018)
+  category: line_type
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 3.74
+  central: 4.4
+  high: 5.06
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '4.4 x (1 -/+ 0.15) from the printed ''Q1-Q3: 4.4 +/- 15% M EUR/km'' (Figure 36 p.67, S-lb-030)'
+  approach: bottom_up
+  scope: base infrastructure (earthworks, minor structures, equipment and permanent way); excludes tunnels, bridges/viaducts,
+    stations
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 4.4 +/- 15% M EUR/km''; low/high = central x (1 -/+ 15%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-upgrade-ec-conv-total-007
+  item: Upgrade of an existing conventional line, total investment unit cost (EU)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 3.54
+  central: 6.1
+  high: 8.66
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '6.1 x (1 -/+ 0.42) from the printed ''Q1-Q3: 6.1 +/- 42% M EUR/km'' (Figure 2 p.11 / Figure 34 p.65,
+    S-lb-030)'
+  approach: top_down
+  scope: total investment of upgrade projects on conventional lines
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 6.1 +/- 42% M EUR/km''; low/high = central x (1 -/+ 42%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-upgrade-ec-conv-construction-008
+  item: Upgrade of an existing conventional line, construction unit cost (EU)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 3.29
+  central: 5.4
+  high: 7.51
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '5.4 x (1 -/+ 0.39) from the printed ''Q1-Q3: 5.4 +/- 39% M EUR/km'' (Figure 4 p.12 / Figure 35 p.66,
+    S-lb-030)'
+  approach: top_down
+  scope: construction works of upgrade projects on conventional lines
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 5.4 +/- 39% M EUR/km''; low/high = central x (1 -/+ 39%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-upgrade-ec-hs-total-009
+  item: Upgrade to/of high-speed standard, total investment unit cost (EU)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 2.16
+  central: 5.4
+  high: 8.64
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '5.4 x (1 -/+ 0.60) from the printed ''Q1-Q3: 5.4 +/- 60% M EUR/km'' (Figure 2 p.11 / Figure 34 p.65,
+    S-lb-030)'
+  approach: top_down
+  scope: total investment of upgrade projects in the high-speed category
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 5.4 +/- 60% M EUR/km''; low/high = central x (1 -/+ 60%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-upgrade-ec-conv-base-010
+  item: Upgrade of an existing conventional line, base infrastructure unit cost (EU)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 2.62
+  central: 4.1
+  high: 5.58
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '4.1 x (1 -/+ 0.36) from the printed ''Q1-Q3: 4.1 +/- 36% M EUR/km'' (Figure 36 p.67, S-lb-030)'
+  approach: bottom_up
+  scope: base infrastructure of upgrade projects (conventional)
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 4.1 +/- 36% M EUR/km''; low/high = central x (1 -/+ 36%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-upgrade-ec-rehab-011
+  item: Rehabilitation of an existing conventional line, total investment unit cost (EU)
+  category: line_type
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 1.76
+  central: 4.4
+  high: 7.04
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '4.4 x (1 -/+ 0.60) from the printed ''Q1-Q3: 4.4 +/- 60% M EUR/km'' (Figure 2 p.11 / Figure 34 p.65,
+    S-lb-030)'
+  approach: top_down
+  scope: total investment of rehabilitation (renewal to restore capacity/condition) projects, conventional
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 4.4 +/- 60% M EUR/km''; low/high = central x (1 -/+ 60%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-hsr-ec-earthworks-012
+  item: Earthworks unit cost, high-speed (EU)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 2.58
+  central: 3.4
+  high: 4.22
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '3.4 x (1 -/+ 0.24) from the printed ''Q1-Q3: 3.4 +/- 24% M EUR/km'' (Figure 7 p.14 / Figure 40 p.69,
+    S-lb-030)'
+  approach: bottom_up
+  scope: earthworks only, per km of line on which the works are performed
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 3.4 +/- 24% M EUR/km''; low/high = central x (1 -/+ 24%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-conv-ec-earthworks-013
+  item: Earthworks unit cost, conventional (EU)
+  category: line_type
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.32
+  central: 0.9
+  high: 1.48
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '0.9 x (1 -/+ 0.65) from the printed ''Q1-Q3: 0.9 +/- 65% M EUR/km'' (Figure 7 p.14 / Figure 40 p.69,
+    S-lb-030)'
+  approach: bottom_up
+  scope: earthworks only
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 0.9 +/- 65% M EUR/km''; low/high = central x (1 -/+ 65%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-conv-ec-permanent-way-014
+  item: Permanent way (track) unit cost, conventional (EU)
+  category: line_type
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 1.04
+  central: 1.7
+  high: 2.36
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '1.7 x (1 -/+ 0.39) from the printed ''Q1-Q3: 1.7 +/- 39% M EUR/km'' (Figure 7 p.14 / Figure 40 p.69,
+    S-lb-030)'
+  approach: bottom_up
+  scope: permanent way only
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 1.7 +/- 39% M EUR/km''; low/high = central x (1 -/+ 39%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-hsr-ec-permanent-way-015
+  item: Permanent way (track) unit cost, high-speed (EU)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.85
+  central: 1.1
+  high: 1.35
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '1.1 x (1 -/+ 0.23) from the printed ''Q1-Q3: 1.1 +/- 23% M EUR/km'' (Figure 7 p.14 / Figure 40 p.69,
+    S-lb-030)'
+  approach: bottom_up
+  scope: permanent way only; EC notes HS permanent way and earthworks were hard to isolate
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 1.1 +/- 23% M EUR/km''; low/high = central x (1 -/+ 23%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index.'
+- id: C-line-type-na-ec-fencing-016
+  item: Fencing and noise barriers unit cost (EU; same for conventional and HS)
+  category: line_type
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.54
+  central: 0.8
+  high: 1.06
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: '0.8 x (1 -/+ 0.33) from the printed ''Q1-Q3: 0.8 +/- 33% M EUR/km'' (Figure 7 p.14 / Figure 40 p.69,
+    S-lb-030)'
+  approach: bottom_up
+  scope: fencing and noise barriers (not sand fencing)
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC/PwC prints the cluster as ''Q1-Q3: 0.8 +/- 33% M EUR/km''; low/high = central x (1 -/+ 33%) is our
+    reading of that label (interquartile band). Per double-track-equivalent km; EU projects 2000-2015, normalised
+    to EUR 2016 by a PPP (20% labour) x PPI/HICP (80%) index. Security/noise fencing, NOT sand fencing; a lower-bound
+    proxy at most for sand-fence capex (no sourced sand-fence rate found).'
+- id: C-line-type-hsr-wb-china-350-017
+  item: China HSR 350 km/h PDL unit cost (27 lines in operation end-2013)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: CNY
+  price_year: 2014
+  low: 94
+  central: 129
+  high: 183
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: sourced
+  approach: top_down
+  scope: 'whole project: preparation, land, civil works, track, core systems, regular stations (only some mega stations),
+    depots and yards, rolling stock, interest during construction (footnote 8)'
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Range = 'between RMB 94-183m per km'; central = stated weighted average RMB 129m/km. Estimated cost at
+    project approval, mixed nominal years 2007-2013 (Figure 3 source); price year set to publication (Jul 2014).
+- id: C-line-type-hsr-wb-china-250-018
+  item: China HSR 250 km/h PDL unit cost
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: CNY
+  price_year: 2014
+  low: 70
+  central: 87
+  high: 169
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: sourced
+  approach: top_down
+  scope: as C-line-type-hsr-wb-china-350-017 (all-in incl. rolling stock and IDC)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: '''with a couple of exceptions, between RMB 70-169m per km''; central = stated weighted average RMB 87m/km.
+    WB notes most 250 km/h lines were built about 2 years earlier and a new one would cost more.'
+- id: C-line-type-hsr-wb-europe-019
+  item: European HSR (>= 300 km/h) construction cost per km, as summarised by the World Bank
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: USD
+  price_year: 2012
+  low: 25
+  central: 32
+  high: 39
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-004
+  status: derived
+  derivation: range US$25-39 m/km as printed (WB 2014 p.7, Tables 4-5); central = midpoint (25+39)/2
+  approach: top_down
+  scope: construction cost; Table 5 projects (Spain, France) cost per km in US$ 2012 (TTI 2013 from GAO 2009)
+  layer: n/a
+  price_year_basis: stated
+  notes: Secondary within WB (Texas A&M TTI 2013 based on US GAO 2009; Crozet for France).
+- id: C-line-type-hsr-france-lgv-2013-020
+  item: Four French LGVs under construction 2013 (SEA, BPL, CNM, EST2), estimated cost per km
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2013
+  low: 18.1
+  central: 22.2
+  high: 25.7
+  source: S-cost-civil-004
+  extra_sources:
+  - S-lb-029
+  status: sourced
+  approach: top_down
+  scope: estimated total cost / length; 671 km, EUR 14,900 m total (Table 4)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Central = printed total-row value EUR 22.2 m/km. WB cites D.P. Crozet; price year = year of estimate (2013)
+    as printed, basis not stated.
+- id: C-line-type-hsr-eca-audited-021
+  item: EU audited high-speed lines, final/completion cost per km (ECA SR 19/2018, Table 5)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2018
+  low: 13.7
+  central: 25.0
+  high: 49.7
+  source: S-cost-civil-001
+  status: sourced
+  approach: top_down
+  scope: total line cost (nominal) / length, 10 audited lines in DE/FR/ES/IT; central = ECA headline 'on average
+    25 million euro per km (not taking into account the more expensive tunnelling projects)'
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'ECA: ''All figures are expressed in nominal terms'' (mixed years). Low 13.7 (Madrid-Galicia), high 49.7
+    (Stuttgart-Munich). Brenner Base Tunnel 145 M EUR/km excluded (tunnel). Initial construction estimates were
+    6.9-14.9 M EUR/km: overrun evidence belongs to the reference-class register.'
+- id: C-line-type-hsr-campos-2005-022
+  item: HSR construction cost per km, 45 projects worldwide (Campos, de Rus & Barron 2007)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2005
+  low: 6
+  central: 17.5
+  high: 45
+  source: S-cost-civil-003
+  status: sourced
+  approach: top_down
+  scope: infrastructure + superstructure; excludes planning and land
+  layer: n/a
+  price_year_basis: stated
+  notes: 'WCTR 2007 working-paper version read (the Transport Policy 2009 article is paywalled). In-operation subset:
+    9-39 (avg 18.0).'
+- id: C-line-type-hsr-pwc-hs2-all-023
+  item: European HSR comparators, cost per route-km (PwC 2016, 20 projects, >3,400 route-km)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2011
+  low: 11
+  central: 32
+  high: 79
+  source: S-cost-civil-005
+  status: sourced
+  approach: top_down
+  scope: infrastructure incl. stations, railway systems and depots; normalised to GBP 2011 by GDP deflator and PPP
+  layer: n/a
+  price_year_basis: stated
+  notes: Central = stated average GBP 32m/km. Mostly outturn costs.
+- id: C-line-type-hsr-pwc-hs2-rural-024
+  item: Rural European HSR comparator sections, cost per route-km (PwC 2016)
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2011
+  low: 11
+  central: 15.5
+  high: 20
+  source: S-cost-civil-005
+  status: derived
+  derivation: 'range GBP 11-20m/km as printed (rural: <25% of section within 1 km of conurbation); central = midpoint'
+  approach: top_down
+  scope: as C-line-type-hsr-pwc-hs2-all-023, rural sections only
+  layer: n/a
+  price_year_basis: stated
+  notes: Closest PwC class to open-desert alignments; urban/high-density sections GBP 43-61m/km; tunnel/viaduct-dominated
+    subsections GBP 72-93m/km.
+- id: C-line-type-hsr-haramain-civils-025
+  item: Haramain HSR Phase 1 Package 1 civil works (design and build), per route-km
+  category: line_type
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2009
+  low: 14.99
+  central: 15.29
+  high: 15.29
+  source: S-cost-civil-007
+  extra_sources:
+  - S-007
+  - S-002
+  status: derived
+  derivation: SAR 6,790 m / 444 km (Railway Gazette length) = 15.29; / 453 km (S-002) = 14.99
+  approach: top_down
+  scope: civil works only (Phase 1 Package 1); excludes stations (Package 2), track, systems, rolling stock (Phase
+    2), land
+  layer: existing
+  price_year_basis: award_year
+  notes: Award value, not outturn. Range reflects only route-length ambiguity, not cost uncertainty (apply reference-class
+    uplift separately).
+- id: C-line-type-mixed-wb-china-200-026
+  item: China 200 km/h mixed passenger/freight new lines, unit cost (WB-supported projects)
+  category: line_type
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: CNY
+  price_year: 2014
+  low: 89
+  central: 94
+  high: 99
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'Table 1: Nanning-Guangzhou RMB 89m/km, Harbin-Jiamusi RMB 99m/km; central = midpoint'
+  approach: top_down
+  scope: total estimated project cost incl. preparation, land, construction, regular stations, contingencies, rolling
+    stock, IDC (Table 1 note 1)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Estimates from FSR/PAD 2008-2012; bridges+viaducts+tunnels 48-53% of route-km.
+- id: C-line-type-mixed-sar-north-civils-027
+  item: SAR North-South railway civil and track works packages (2007), per route-km
+  category: line_type
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2007
+  low: 3.73
+  central: 3.99
+  high: 4.32
+  source: S-cost-civil-008
+  extra_sources:
+  - S-lb-024
+  status: derived
+  derivation: SAR 2,800 m / 750 km = 3.73 (Nafud-Haditha); SAR 2,300 m / 576 km = 3.99 (Al Zubirah-Ras Az Zawr);
+    SAR 1,900 m / 440 km = 4.32 (Al Zubirah-Nafud)
+  approach: top_down
+  scope: civil and track works contracts signed 3 Apr 2007; single-track heavy-haul freight line; excludes systems,
+    stations, rolling stock, expropriation
+  layer: existing
+  price_year_basis: award_year
+  notes: Award values (secondary source). Packages mix flat desert and Nafud dunes; the Nafud package is not markedly
+    costlier per km, but package boundaries do not isolate terrain.
+- id: C-line-type-mixed-etihad-s1-lump-028
+  item: Etihad Rail Stage One civil and track works contract (266 km, Shah/Habshan-Ruwais)
+  category: line_type
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: AED
+  price_year: 2011
+  low: 3300
+  central: 3300
+  high: 3300
+  source: S-cost-civil-009
+  status: sourced
+  approach: top_down
+  scope: civil and track works, design-procurement-construction, earthworks, bridges, communications, Mirfa depot;
+    single-track freight
+  layer: existing
+  price_year_basis: award_year
+  notes: 'Single figure as stated by the source (AED 3.3 bn award, Oct 2011). Per km (our arithmetic, not a register
+    value): 3,300/266 = AED 12.41 m/km. Line crosses sabkha and dune terrain (not quantified by the source).'
+- id: C-line-type-conv-baumgartner-easy-029
+  item: Double track 100 km/h, easy topography, all-in unit cost (Baumgartner 2001)
+  category: line_type
+  line_type: conventional_passenger
+  terrain: flat_desert
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2000
+  low: 1
+  central: 2
+  high: 4
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: sourced
+  approach: top_down
+  scope: inclusive of all cost elements (work management, road rerouting, tunnels, bridges, other structures)
+  layer: n/a
+  price_year_basis: stated
+  notes: Read in EC/PwC 2018 Table 1 (p.24); Baumgartner's own paper not read. 'Easy topography' undefined by the
+    author; mapping to flat_desert is our analysis. Author warns against use for financial studies.
+- id: C-line-type-hsr-baumgartner-easy-030
+  item: Double track 300 km/h, easy topography, all-in unit cost (Baumgartner 2001)
+  category: line_type
+  line_type: hsr
+  terrain: flat_desert
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2000
+  low: 2
+  central: 3
+  high: 6
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: sourced
+  approach: top_down
+  scope: as C-line-type-conv-baumgartner-easy-029
+  layer: n/a
+  price_year_basis: stated
+  notes: 'Average topography: 10 (6-30); difficult: 40 (20-50) M EUR/km. Same caveats as -029.'
+- id: C-line-type-hsr-baumgartner-difficult-031
+  item: Double track 300 km/h, difficult topography, all-in unit cost (Baumgartner 2001)
+  category: line_type
+  line_type: hsr
+  terrain: escarpment_mountain
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2000
+  low: 20
+  central: 40
+  high: 50
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: sourced
+  approach: top_down
+  scope: as -029
+  layer: n/a
+  price_year_basis: stated
+  notes: Mapping 'difficult topography' to escarpment_mountain is our analysis.
+- id: C-line-type-conv-baumgartner-difficult-032
+  item: Double track 100 km/h, difficult topography, all-in unit cost (Baumgartner 2001)
+  category: line_type
+  line_type: conventional_passenger
+  terrain: escarpment_mountain
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2000
+  low: 20
+  central: 20
+  high: 50
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: sourced
+  approach: top_down
+  scope: as -029
+  layer: n/a
+  price_year_basis: stated
+  notes: 'Printed ''20 (20-50)'': central equals the lower bound as printed.'
+- id: C-line-type-commuter-urban-metro-033
+  item: Urban rail (metro) total capital cost per route-km (Flyvbjerg, Bruzelius & van Wee 2008)
+  category: line_type
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: USD
+  price_year: 2002
+  low: 50
+  central: 75
+  high: 150
+  source: S-cost-civil-011
+  status: derived
+  derivation: Europe excl. outliers 'mainly between US$50-100 million'; incl. US/UITP 'US$50-150 million'; central
+    = midpoint of the European band
+  approach: top_down
+  scope: total capital cost incl. stations and rolling stock; metros, mostly partly underground
+  layer: n/a
+  price_year_basis: stated
+  notes: Metro-class, NOT at-grade commuter/suburban rail; an upper reference only. No sourced at-grade commuter
+    per-km benchmark found (see C-line-type-commuter-atgrade-034).
+- id: C-line-type-commuter-atgrade-034
+  item: Commuter/suburban at-grade new line, civil + track per route-km
+  category: line_type
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: USD
+  price_year: 2026
+  low: null
+  central: null
+  high: null
+  source: ''
+  status: unknown
+  approach: top_down
+  layer: n/a
+  price_year_basis: assumed
+  searched: EC/PwC 2018 (no commuter class); Transit Costs Project data page and final report (no class medians;
+    data 'All rights reserved'); Flyvbjerg et al. 2008 (metros only); web search for commuter/suburban per-km benchmarks
+    (31 Oct 2026)
+  notes: Pickrell 1985 at-grade two-track km USD 14m excl. stations (1983 $) is urban LRT/metro-era US data; used
+    only for ratios (C-structure-elevated-pickrell-ratio-045).
+- id: C-line-type-na-wb-railway-share-035
+  item: Share of total project cost that is 'railway' (excl. preparation, rolling stock, IDC), China WB projects
+  category: line_type
+  line_type: n/a
+  terrain: n/a
+  unit: pct_of_capex
+  currency: CNY
+  price_year: 2014
+  low: 82
+  central: 82
+  high: 82
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: sourced
+  approach: parameter
+  scope: railway construction (civil, track, regular stations, yards, signalling, power, superstructure) / total
+    project cost
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Single figure 'about 82 percent' as stated (Table 1 note 1; p.7). Used to strip all-in China figures to
+    infrastructure.
+- id: C-terrain-escarpment-hsr-uplift-036
+  item: Escarpment/mountain uplift over easy terrain, double-track 300 km/h, all-in (Baumgartner ratios)
+  category: terrain
+  line_type: hsr
+  terrain: escarpment_mountain
+  unit: pct
+  currency: EUR
+  price_year: 2000
+  low: 233.3
+  central: 733.3
+  high: 1233.3
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: average/easy = 10/3 - 1 = +233.3%; difficult/easy = 40/3 - 1 = +1233.3%; central = midpoint
+  approach: parameter
+  scope: ratio of printed averages; all-in costs incl. tunnels and bridges
+  layer: n/a
+  price_year_basis: stated
+  notes: Percent uplift over the flat base. Very wide and dated (2000); prefer building escarpment cost from structure
+    shares x tunnel/viaduct unit costs; this row is a cross-check.
+- id: C-terrain-escarpment-conv-uplift-037
+  item: Escarpment/mountain uplift over easy terrain, double-track 100 km/h, all-in (Baumgartner ratios)
+  category: terrain
+  line_type: conventional_passenger
+  terrain: escarpment_mountain
+  unit: pct
+  currency: EUR
+  price_year: 2000
+  low: 250
+  central: 575
+  high: 900
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: average/easy = 7/2 - 1 = +250%; difficult/easy = 20/2 - 1 = +900%; central = midpoint
+  approach: parameter
+  scope: as -036
+  layer: n/a
+  price_year_basis: stated
+  notes: Percent uplift over flat base; cross-check only.
+- id: C-terrain-dunes-uplift-038
+  item: 'Sand-dune terrain uplift on civil + track (sand mitigation: high embankments, fencing, protection)'
+  category: terrain
+  line_type: n/a
+  terrain: dunes
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 5
+  central: 25
+  high: 100
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-200
+  approach: parameter
+  scope: capex premium on civil + track over flat desert; excludes sand-removal opex (C-terrain-dunes-sand-removal-041)
+  layer: n/a
+  price_year_basis: assumed
+  notes: 'No published per-km dune premium found. Evidence bounding the range: Nafud earthworks ~0.89 million m3/km
+    and embankments up to 70 m (S-cost-civil-012); SAR North Nafud package not costlier per km than others (C-line-type-mixed-sar-north-civils-027);
+    a sand-shelter structure costs ~16x the track (C-terrain-dunes-sand-shelter-039).'
+- id: C-terrain-dunes-sand-shelter-039
+  item: Sand-shelter tunnel structure over track, dune crossing (Aus-Luderitz, Namibia; design + construction)
+  category: terrain
+  line_type: n/a
+  terrain: dunes
+  unit: SAR_m_per_km
+  currency: NAD
+  price_year: 2019
+  low: 115.5
+  central: 115.5
+  high: 115.5
+  source: S-cost-civil-013
+  status: sourced
+  approach: bottom_up
+  scope: structure only (design N$5.5m + construction N$110m per km); track extra (N$5.2-7.0m/km initial)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Single figure as stated in Table 4.10 (MSc mini-thesis, UNaM 2019; grey literature; 'current averaged tendered
+    rates'). Additional cost per km for an enclosed dune-crossing option, not a typical premium.
+- id: C-terrain-sabkha-uplift-040
+  item: Sabkha (soft saline ground) uplift on civil + track (ground improvement, soil replacement, drainage)
+  category: terrain
+  line_type: n/a
+  terrain: sabkha
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 5
+  central: 20
+  high: 60
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-201
+  approach: parameter
+  scope: capex premium on civil + track over flat desert
+  layer: n/a
+  price_year_basis: assumed
+  notes: 'No published unit cost found; Etihad Rail sabkha ground improvement (Keller, 13 km: rapid impact / dynamic
+    compaction to 10 m) has no published value.'
+- id: C-terrain-dunes-sand-fence-073
+  item: Sand fencing / sand-mitigation capex per km (Haramain, SAR North, Etihad Rail, ONCF, SNIM)
+  category: terrain
+  line_type: n/a
+  terrain: dunes
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2026
+  low: null
+  central: null
+  high: null
+  source: ''
+  status: unknown
+  approach: bottom_up
+  layer: n/a
+  price_year_basis: assumed
+  searched: web search (EN/AR) for Haramain sand mitigation contract value, SAR North Nafud sand protection, Etihad
+    Rail; Railway Gazette Haramain civils award; Construction Briefing 2008 (SAR North, no cost); Raffaele et al.
+    2022 J. Struct. Eng. (IRIS PDF 403); EU SMaRT project page (research budget only); Hamalwa 2019 (found, used
+    in -039/-041)
+  notes: 'Morocco (Al Boraq) and Mauritania (SNIM) sand-mitigation costs not searched in depth within budget: primaries
+    to find.'
+- id: C-structure-tunnel-pwc-hs2-042
+  item: HSR tunnel cost per route-km, European comparators (PwC 2016)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2011
+  low: 18
+  central: 36
+  high: 62
+  source: S-cost-civil-005
+  status: sourced
+  approach: bottom_up
+  scope: tunnel civil asset cost; 7 comparators
+  layer: n/a
+  price_year_basis: stated
+  notes: 'Central = stated average. EC/PwC 2018 reprints these as ''20.4 to 70.3 M GBP/km'': that is the EUR conversion
+    (x1.13449) mislabelled GBP; use the PwC primary.'
+- id: C-structure-tunnel-baumgartner-double-043
+  item: Bare double-track tunnel per km, excl. rail infrastructure (Baumgartner 2001)
+  category: structure
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2000
+  low: 20
+  central: 30
+  high: 70
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: sourced
+  approach: bottom_up
+  scope: bare tunnel, excl. rail infrastructure; single-track tunnel 20 (10-50)
+  layer: n/a
+  price_year_basis: stated
+  notes: EC/PwC 2018 Table 2 p.24; brackets exclude special/exceptional cases.
+- id: C-structure-tunnel-wb-china-250-044
+  item: HSR tunnel unit cost, China 250 km/h WB projects (per km of double track)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: CNY
+  price_year: 2014
+  low: 60
+  central: 77.5
+  high: 95
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: Table 3 range RMB 60-95m/km (250 km/h); central = midpoint
+  approach: bottom_up
+  scope: tunnel civil works; 200 km/h lines RMB 51-68m/km; WB text gives China HSR tunnels 'about US$ 10-15 million
+    per km'
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Estimates (FSR/PAD). Chinese labour and scale effects; WB cites US$43m (NZ), 50m (US), 60m (AU) average
+    tunnel cost (Efron & Read 2012).
+- id: C-structure-elevated-pickrell-ratio-045
+  item: Elevated two-track km cost relative to at-grade (urban rail, Pickrell 1985)
+  category: structure
+  line_type: commuter
+  terrain: n/a
+  unit: pct
+  currency: USD
+  price_year: 1983
+  low: 71.4
+  central: 75.2
+  high: 78.9
+  source: S-cost-civil-011
+  status: derived
+  derivation: excl. stations 24/14 - 1 = +71.4%; incl. stations 34/19 - 1 = +78.9%; central = midpoint (Table 5)
+  approach: parameter
+  scope: percent uplift of elevated over at-grade two-track km
+  layer: n/a
+  price_year_basis: stated
+  notes: US urban rail 1983; ratio only.
+- id: C-structure-tunnel-pickrell-ratio-046
+  item: Tunnelled two-track km cost relative to at-grade (urban rail, Pickrell 1985)
+  category: structure
+  line_type: commuter
+  terrain: n/a
+  unit: pct
+  currency: USD
+  price_year: 1983
+  low: 347.4
+  central: 352.3
+  high: 357.1
+  source: S-cost-civil-011
+  status: derived
+  derivation: incl. stations 85/19 - 1 = +347.4%; excl. stations 64/14 - 1 = +357.1%; central = midpoint (Table
+    5)
+  approach: parameter
+  scope: percent uplift of tunnel over at-grade two-track km
+  layer: n/a
+  price_year_basis: stated
+  notes: US urban rail 1983; ratio only.
+- id: C-structure-tunnel-hs2-bored-047
+  item: HS2 Phase 2 bored tunnel, twin-bore per route-km (target vs budget)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2016
+  low: 42.0
+  central: 47.9
+  high: 53.8
+  source: S-cost-civil-014
+  status: derived
+  derivation: GBP 21,000 (target) and 26,900 (budget) per single bored metre x 2 bores x 1,000 m; central = midpoint
+  approach: bottom_up
+  scope: bored tunnel per single bored metre; twin bore assumed for a double-track route-km (our arithmetic)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Price base of the per-metre rates not stated in the report (the GBP 45m/km comparator is in 2015 prices).
+- id: C-structure-viaduct-pwc-hs2-048
+  item: HSR viaduct cost per route-km, European comparators (PwC 2016)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2011
+  low: 13
+  central: 31
+  high: 53
+  source: S-cost-civil-005
+  status: sourced
+  approach: bottom_up
+  scope: viaduct civil asset cost; 7 comparators
+  layer: n/a
+  price_year_basis: stated
+  notes: Central = stated average; EC reprint mislabels the EUR conversion as GBP (14.7-60.1).
+- id: C-structure-viaduct-wb-china-250-049
+  item: HSR bridges/viaducts unit cost, China 250 km/h WB projects (per km double track)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: CNY
+  price_year: 2014
+  low: 57
+  central: 65
+  high: 73
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: Table 3 RMB 57-73m/km (250 km/h); central = midpoint; 350 km/h RMB 71m/km; 200 km/h RMB 59-62m/km;
+    actual typical ShiZheng viaduct RMB 60-70m/km
+  approach: bottom_up
+  scope: bridges/viaducts incl. short/medium water bridges, special river bridges and dry-land viaducts (footnote
+    12)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Standardised 24/32 m precast box girders; unique long-span bridges reach RMB 864-938m/km.
+- id: C-structure-viaduct-hs2-050
+  item: HS2 Phase 2 viaduct per km (target vs budget)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2016
+  low: 23
+  central: 27.5
+  high: 32
+  source: S-cost-civil-014
+  status: derived
+  derivation: GBP 23m/km (target) and 32m/km (budget); central = midpoint
+  approach: bottom_up
+  scope: viaduct
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Price base not stated.
+- id: C-structure-bridge-baumgartner-051
+  item: 'Rail bridges per km: short span/easy foundation to long span/difficult foundation (Baumgartner 2001)'
+  category: structure
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2000
+  low: 10
+  central: 15
+  high: 50
+  source: S-cost-civil-010
+  extra_sources:
+  - S-lb-030
+  status: sourced
+  approach: bottom_up
+  scope: short span/easy 15 (10-20); long span/difficult 30 (20-50); low/central from short span, high from long
+    span
+  layer: n/a
+  price_year_basis: stated
+  notes: EC/PwC 2018 Table 3 p.25.
+- id: C-structure-earthworks-pwc-hs2-052
+  item: HSR earthworks per route-km, European comparators (PwC 2016)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2011
+  low: 4
+  central: 6
+  high: 8
+  source: S-cost-civil-005
+  status: sourced
+  approach: bottom_up
+  scope: earthworks civil asset cost; 4 comparators
+  layer: n/a
+  price_year_basis: stated
+  notes: Central = stated average.
+- id: C-structure-share-hsr-china-053
+  item: Bridges + viaducts + tunnels share of route-km, China 250/350 km/h PDLs (WB-supported)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: pct
+  currency: CNY
+  price_year: 2014
+  low: 66
+  central: 68
+  high: 80
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'Table 1: 69, 80, 66, 67 % of route-km; central = median 68'
+  approach: parameter
+  scope: share of route length on bridges/viaducts/tunnels
+  layer: n/a
+  price_year_basis: publication_year
+  notes: China favours viaducts on fertile plains (land and resettlement), so these overstate structure shares for
+    open desert.
+- id: C-structure-share-mixed-china-054
+  item: Bridges + viaducts + tunnels share of route-km, China 200 km/h mixed lines (WB-supported)
+  category: structure
+  line_type: mixed
+  terrain: n/a
+  unit: pct
+  currency: CNY
+  price_year: 2014
+  low: 48
+  central: 50.5
+  high: 53
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'Table 1: 53 (Nanning-Guangzhou), 48 (Harbin-Jiamusi); central = midpoint'
+  approach: parameter
+  scope: as -053
+  layer: n/a
+  price_year_basis: publication_year
+- id: C-structure-share-escarpment-055
+  item: Structures (bridges + tunnels) share of route-km in mountainous terrain
+  category: structure
+  line_type: n/a
+  terrain: escarpment_mountain
+  unit: pct
+  currency: CNY
+  price_year: 2014
+  low: 66
+  central: 73
+  high: 80
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'WB footnote 13: mountainous areas ''can reach as high as 80 percent of the alignment length'' (high);
+    low = lowest 250 km/h PDL share 66 (Table 1); central = midpoint'
+  approach: parameter
+  scope: share of route length
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Chinese practice; Sarawat/Asir/Hejaz alignment-specific shares should come from the corridor generator.
+- id: C-structure-share-flat-desert-056
+  item: Structures (bridges, viaducts, tunnels) share of route-km in flat desert
+  category: structure
+  line_type: n/a
+  terrain: flat_desert
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 1
+  central: 5
+  high: 15
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-202
+  approach: parameter
+  scope: share of route length on structures (wadi crossings, road/rail grade separations, interchanges)
+  layer: n/a
+  price_year_basis: assumed
+  notes: No source gives a structure share for desert alignments (Haramain, SAR North, Etihad Rail shares not published).
+- id: C-structure-cost-share-tunnels-057
+  item: Tunnels share of total project cost, China 250 km/h PDLs (WB)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: CNY
+  price_year: 2014
+  low: 16
+  central: 22.5
+  high: 29
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'Table 2: 16-29 % (250 km/h); central = midpoint; 350 km/h 0 (ShiZheng exception); 200 km/h 2-13'
+  approach: parameter
+  scope: share of total project cost
+  layer: n/a
+  price_year_basis: publication_year
+- id: C-structure-cost-share-viaducts-058
+  item: Bridges/viaducts share of total project cost, China 250 km/h PDLs (WB)
+  category: structure
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: CNY
+  price_year: 2014
+  low: 13
+  central: 19
+  high: 25
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'Table 2: 13-25 % (250 km/h); central = midpoint; 350 km/h 41 (ShiZheng, 69% on viaduct); 200 km/h
+    25-27'
+  approach: parameter
+  scope: share of total project cost
+  layer: n/a
+  price_year_basis: publication_year
+- id: C-station-hhr-pkg2-per-station-001
+  item: Haramain HSR Phase 1 Package 2 station contracts, per station (Makkah, Madinah, Jeddah, KAEC)
+  category: station
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: SAR
+  price_year: 2011
+  low: 1560
+  central: 2347.5
+  high: 3180
+  source: S-cost-ksa-003
+  status: derived
+  derivation: Contracts Makkah 3,180, Madinah 1,560, Jeddah 2,900, KAEC 1,750 (SAR m, S-cost-ksa-003); low = min,
+    high = max, central = sum 9,390 / 4 = 2,347.5
+  approach: top_down
+  scope: Large iconic terminal stations (concourses, retail, mosques for 600+, civil defence, parking, helipad,
+    VIP lounges); Foster + Partners design; excludes the KAIA airport station (not contracted at the time)
+  layer: existing
+  price_year_basis: award_year
+  notes: Landmark pilgrim-capacity stations; not representative of an ordinary intercity station class. Use only
+    as the upper station class. Central is the arithmetic mean of four contracts, not a distribution estimate.
+- id: C-station-hhr-pkg2-lump-001
+  item: Haramain HSR Phase 1 Package 2, four station contracts combined
+  category: station
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2011
+  low: 9390
+  central: 9390
+  high: 9390
+  source: S-cost-ksa-003
+  status: derived
+  derivation: 3,180 + 1,560 + 2,900 + 1,750 = 9,390 SAR m (S-cost-ksa-003)
+  approach: top_down
+  scope: Four stations (Makkah, Madinah, Jeddah, KAEC); excludes KAIA station
+  layer: existing
+  price_year_basis: award_year
+  notes: Sum of four award values; outturn not published.
+- id: C-station-sar-north-2012-001
+  item: SAR North-South five passenger stations (Majmaah, Qassim, Hail, Al Jawf, Qurayyat), per station (derived)
+  category: station
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: SAR
+  price_year: 2012
+  low: 208.66
+  central: 314
+  high: 425.35
+  source: S-cost-ksa-018
+  status: derived
+  derivation: SR 1,570 m / 5 stations = 314 (central). R5 (CP5 H10a) spread from A-cost-401, the per-station
+    dispersion of the only KSA station programme with per-station contract values (C-station-hhr-pkg2-per-station-001,
+    S-cost-ksa-003, min/mean 1,560/2,347.5 = 0.66454, max/mean 3,180/2,347.5 = 1.35463); low = 314 x 0.66454 = 208.66,
+    high = 314 x 1.35463 = 425.35; same currency and price year, no index factor needed
+  assumption_id: A-cost-401
+  approach: top_down
+  scope: Station buildings for the North-South passenger service (Al Rashid Trading contract)
+  layer: existing
+  price_year_basis: award_year
+  notes: Central is a single arithmetic point (one contract, five stations; per-station split not published). Intercity
+    regional station class (contrast HHR landmark stations, 1,560-3,180). R5 H10a, 3 Nov 2026, was 314/314/314 (zero
+    spread); the low end (208.66) stays above the conventional halt class (C-station-conv-halt-uk-004, about SAR 80-100
+    m in 2025 terms). Applying a per-station min/max dispersion to a five-station mean widens the band (conservative).
+- id: C-station-hsr-terminal-ksa-001
+  item: HSR terminal / major-city station, Haramain contract values (Makkah, Jeddah, Madinah)
+  category: station
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: SAR
+  price_year: 2011
+  low: 1560
+  central: 2900
+  high: 3180
+  source: S-cost-sys-013
+  status: derived
+  derivation: 'station construction contracts printed: Makkah SAR 3.18 bn, Jeddah 2.90 bn, Madinah 1.56 bn (S-cost-sys-013);
+    low = min, high = max, central = median of the three = 2,900 m'
+  approach: bottom_up
+  scope: Package 2 station construction contracts (building, platforms, station works) as awarded Feb 2011; excludes
+    design (Foster + Partners / Buro Happold), land, systems and rail permanent way; outturn not known
+  layer: existing
+  price_year_basis: award_year
+  notes: Iconic large terminals sized for Hajj/Umrah peaks; a high-end KSA reference for a terminal class. Other
+    outlets print Makkah 3.2 / 3 bn and Madinah 1.6 bn (snippets; rounding).
+- id: C-station-hsr-intermediate-ksa-002
+  item: HSR intermediate station, Haramain (King Abdullah Economic City, Rabigh)
+  category: station
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: SAR
+  price_year: 2011
+  low: 1162.9
+  central: 1750
+  high: 2370.6
+  source: S-cost-sys-013
+  status: derived
+  derivation: Central = printed KAEC contract SAR 1.75 bn (S-cost-sys-013). R5 (CP5 H10a) spread from A-cost-401,
+    the per-station dispersion of the same Haramain Package 2 (C-station-hhr-pkg2-per-station-001, min/mean 0.66454,
+    max/mean 1.35463); low = 1,750 x 0.66454 = 1,162.9, high = 1,750 x 1.35463 = 2,370.6; same currency and price
+    year, no index factor needed
+  assumption_id: A-cost-401
+  approach: bottom_up
+  scope: Station construction contract (Saudi Oger), awarded Feb 2011; same exclusions as -001
+  layer: existing
+  price_year_basis: award_year
+  notes: Central is a single printed figure (status was sourced; derived since R5 because low/high are computed). Larger
+    than a typical intermediate station (signature design). R5 H10a, 3 Nov 2026, was 1,750/1,750/1,750. Cross-checks
+    inside the band, in SAR 2025 terms after the index (A-cost-002); Madinah contract 1,560 SAR 2011 = 2,023; HS2 Interchange
+    (C-station-hsr-intermediate-uk-003) = 2,094, i.e. about 1,615 SAR 2011.
+- id: C-station-hsr-intermediate-uk-003
+  item: HSR intermediate (parkway) station, HS2 Interchange (Solihull) design-and-build contract
+  category: station
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: GBP
+  price_year: 2022
+  low: 245.88
+  central: 370
+  high: 370
+  source: S-cost-sys-015
+  status: derived
+  derivation: Central and high = the printed contract ceiling 'worth up to' GBP 370m (S-cost-sys-015). R5 (CP5 H10a)
+    low from A-cost-401 (Haramain Package 2 per-station min/mean 0.66454, C-station-hhr-pkg2-per-station-001) =
+    370 x 0.66454 = 245.88; same currency and price year, no index factor needed. High kept at the ceiling because
+    the source states it as a maximum
+  assumption_id: A-cost-401
+  approach: bottom_up
+  scope: Two-stage design and build contract 'worth up to' GBP 370m; site preparation by the main works contractor
+    excluded; platforms/track/systems by others (not stated on the page)
+  layer: n/a
+  price_year_basis: award_year
+  notes: 'Single ''up to'' figure (a ceiling for the contract, not an outturn; status was sourced, derived since R5).
+    R5 H10a, 3 Nov 2026, was 370/370/370. The estimate map also uses this row for the HSR ''halt'' class; that is a
+    mapping choice of R1c (flagged in logs/r5/h10a-report.md), not changed here.'
+- id: C-station-conv-halt-uk-004
+  item: Conventional-line two-platform station with car park (Reston, East Linton), per station
+  category: station
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: GBP
+  price_year: 2023
+  low: 15.734
+  central: 19.0
+  high: 22.944
+  source: S-cost-sys-014
+  status: derived
+  derivation: Anticipated Final Cost for two stations GBP 37.8m-38.2m (S-cost-sys-014) / 2 = 18.9-19.1 per station;
+    central = 38.0 / 2 = 19.0. R5 (CP5 H10a) low = the cheapest same-class station found, Inverness Airport GBP 14m
+    in 2021 (C-station-conv-inverness-airport-uk-007, S-r5-cost-003) = 14 x I-gbp-2021-sar-2025 5.980629 / I-gbp-2023-sar-2025
+    5.321609 = GBP 15.734 m (2023); Kintore GBP 15m 2020 (C-station-conv-kintore-uk-006, S-r5-cost-001) = GBP 16.978
+    m (2023) sits inside. High mirrors the low around the central on a log scale (A-cost-402) = 19.0^2 / 15.734
+    = 22.944, because no costlier same-class station was found
+  assumption_id: A-cost-402
+  extra_sources: [S-r5-cost-001, S-r5-cost-003]
+  approach: bottom_up
+  scope: Two new fully accessible stations with car parks on an operating main line, outturn AFC; split equally
+    between the two stations (the source gives only the joint figure)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Proxy for the 'halt / small intermediate' class on conventional lines. Equal split is our assumption-free
+    arithmetic but hides the difference between the two sites. R5 H10a, 3 Nov 2026, was 18.9/19.0/19.1 (near-zero
+    spread).
+- id: C-station-halt-ksa-005
+  item: Desert halt / small intermediate station, KSA conventional line, per station
+  category: station
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: SAR
+  price_year: 2025
+  low: null
+  central: null
+  high: null
+  source: unknown
+  status: unknown
+  approach: bottom_up
+  layer: n/a
+  price_year_basis: assumed
+  searched: Web searches for SAR North/East line station contract values (none found); Haramain station contracts
+    (large stations only); CHSRA 2018/2022/2024 Basis of Estimate (PDFs blocked by bot protection, HTTP 200 with
+    HTML challenge)
+- id: C-station-conv-kintore-uk-006
+  item: Conventional-line two-platform station with 168-space car park (Kintore, Aberdeen-Inverness line), as built
+  category: station
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: GBP
+  price_year: 2020
+  low: 15
+  central: 15
+  high: 15
+  source: S-r5-cost-001
+  status: sourced
+  extra_sources: [S-r5-cost-002]
+  approach: bottom_up
+  scope: New two-platform station with car park on an operating single/double-track line; opened Oct 2020; what
+    the GBP 15m includes (track, signalling) is not stated
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): a same-class benchmark for C-station-conv-halt-uk-004; not in the estimate map. Single
+    printed figure. The Nov 2016 estimate was about GBP 12.2m (GBP 7.3m = 60 %, S-r5-cost-002), so the as-built cost
+    is about 23 % above that estimate.'
+- id: C-station-conv-inverness-airport-uk-007
+  item: Conventional-line two-platform station with footbridge, lifts and 64-space car park (Inverness Airport, Dalcross)
+  category: station
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: GBP
+  price_year: 2021
+  low: 14
+  central: 14
+  high: 14
+  source: S-r5-cost-003
+  status: sourced
+  approach: bottom_up
+  scope: Budget at the start of construction (Oct 2021) for a two-platform station; opened Feb 2023; whether the
+    double-tracking at the site is inside is not stated
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): a same-class benchmark for C-station-conv-halt-uk-004 (its low); not in the estimate
+    map. Single printed figure; a budget, not an outturn.'
+- id: C-depot-sar-north-nariyah-001
+  item: SAR North-South maintenance depot at Na'ariyah (Yapi Merkezi), contract value
+  category: depot
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2012
+  low: 378.49
+  central: 496
+  high: 649.99
+  source: S-cost-ksa-018
+  status: derived
+  derivation: Central = printed contract SR 496 m (S-cost-ksa-018). R5 (CP5 H10a) low = Hitachi Doncaster Carr intercity
+    depot GBP 70m in 2015 (C-depot-ic-uk-doncaster-004, S-r5-cost-004) = 70 x I-gbp-2015-sar-2025 6.815307 / I-sar-2012-sar-2025
+    1.260449 = SAR 378.49 m (2012). High mirrors the low around the central on a log scale (A-cost-402) = 496^2
+    / 378.49 = 649.99, because no costlier conventional depot of this class was found (HS2 Washwood Heath includes
+    a national control centre and is a different class)
+  assumption_id: A-cost-402
+  extra_sources: [S-r5-cost-004, S-r5-cost-005]
+  approach: top_down
+  scope: One rolling-stock maintenance depot
+  layer: existing
+  price_year_basis: award_year
+  notes: Central is a single figure as printed (status was sourced; derived since R5). A further SR 272 m covers 15
+    track maintenance facilities and 19 other buildings (same source), not included here. R5 H10a, 3 Nov 2026, was
+    496/496/496.
+- id: C-depot-hsr-uk-001
+  item: HSR rolling-stock depot with network control centre (HS2 Washwood Heath), contract value
+  category: depot
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: GBP
+  price_year: 2026
+  low: 126.62
+  central: 856
+  high: 856
+  source: S-cost-sys-016
+  status: derived
+  derivation: Central and high = printed contract 'around' GBP 856m (S-cost-sys-016), an upper bound for a depot
+    alone (it includes the national control centre). R5 (CP5 H10a) low = the KSA greenfield depot C-depot-sar-north-nariyah-001
+    central SR 496 m (2012) = 496 x I-sar-2012-sar-2025 1.260449 / I-gbp-2026-sar-2025-asbase 4.937628 = GBP 126.62
+    m (2026). Smaller HSR maintenance facilities found in R5 are cheaper still (Fuencarral II about EUR 100m, C-depot-hsr-es-fuencarral-005;
+    Trenitalia Paris hub over EUR 80m, C-depot-hsr-fr-paris-006; Rail Baltica Soodevahe EUR 41.33m estimate, C-depot-hsr-ee-railbaltica-007)
+    but they are additions to existing depot complexes or smaller sheds, so the KSA greenfield depot is used as the
+    low
+  extra_sources: [S-cost-ksa-018, S-r5-cost-006, S-r5-cost-007, S-r5-cost-008]
+  approach: bottom_up
+  scope: 'Design, build, test and commission: ~30 ha depot (maintenance building, carriage wash, automatic vehicle
+    inspection, stabling sidings, test track) PLUS the Network Integrated Control Centre; no split given'
+  layer: n/a
+  price_year_basis: award_year
+  notes: Single printed figure ('around'); includes a national control centre, so an upper bound for a depot alone
+    (status was sourced; derived since R5). Search snippets say the tender was estimated at GBP 275m (unverified);
+    conflict noted in notes-sys.md. R5 H10a, 3 Nov 2026, was 856/856/856. FLAG for the coordinator - the central
+    sits at the upper bound and is about 7x the KSA greenfield depot; the PERT mean stays near the upper bound.
+    Re-pointing depot.hsr to a depot-only row is a mapping decision, not taken here.
+- id: C-depot-regional-de-002
+  item: Regional multiple-unit maintenance facility (Stadler Rendsburg, 55 two-car battery trains)
+  category: depot
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2023
+  low: 30
+  central: 30
+  high: 67.04
+  source: S-cost-sys-017
+  status: derived
+  derivation: Central and low = printed 'around' EUR 30m (S-cost-sys-017), the cheapest of the four regional/commuter
+    depots in the register. R5 (CP5 H10a) high = Renfe Aranjuez commuter depot 'more than EUR 69m' in 2024 (C-depot-commuter-es-aranjuez-008,
+    S-r5-cost-009) = 69 x I-eur-2024-sar-2025 4.336805 / I-eur-2023-sar-2025 4.463882 = EUR 67.04 m (2023). Inside
+    the band - Renfe Mostoles EUR 42.7m 2026 tender (C-depot-commuter-es-mostoles-009) = EUR 40.53 m (2023)
+  extra_sources: [S-r5-cost-009, S-r5-cost-010]
+  approach: bottom_up
+  scope: Manufacturer's maintenance facility on a 77,000 m2 site incl. 8 cleaning/recharging positions; land treatment
+    not stated
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Single printed figure ('around'); low-end bound for a light depot, so low = central and the spread is upward
+    only (status was sourced; derived since R5). R5 H10a, 3 Nov 2026, was 30/30/30. FLAG - the central sits at the
+    minimum of the class; the median of the four regional/commuter points in EUR 2023 terms (30, Rail Baltica 39.2,
+    Mostoles 40.5, Aranjuez 67.0) is about 39.9. Kept because
+    the brief keeps the central unless a better source replaces it. The Aranjuez figure is a floor ('more than').
+- id: C-depot-ic-uk-doncaster-004
+  item: Intercity (IEP, 200 km/h) rolling-stock maintenance depot (Hitachi Doncaster Carr), depot works
+  category: depot
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: GBP
+  price_year: 2015
+  low: 70
+  central: 75
+  high: 80
+  source: S-r5-cost-004
+  status: derived
+  derivation: low = 'approximately GBP 70 million' (contractor, Mar 2015, S-r5-cost-004); high = 'estimated at about
+    GBP 80 million' (Rail Engineer 2019, S-r5-cost-005, works of 2014-2015); central = midpoint 75 of the two printed
+    figures; price year 2015 for both (the works year; the 2019 article does not state a price base)
+  extra_sources: [S-r5-cost-005]
+  approach: bottom_up
+  scope: 11,000 m2 maintenance shed with four raised roads under OCS, a lifting road for a 10-car train, equipment
+    drop, office and support buildings, 14 stabling positions; land treatment not stated
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): low anchor for C-depot-sar-north-nariyah-001; not in the estimate map.'
+- id: C-depot-hsr-es-fuencarral-005
+  item: High-speed (standard-gauge) maintenance depot extension, new 18,900 m2 shed (Fuencarral II, Madrid)
+  category: depot
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2025
+  low: 100
+  central: 100
+  high: 100
+  source: S-r5-cost-006
+  status: sourced
+  approach: bottom_up
+  scope: New shed doubling the standard-gauge maintenance capacity of an existing depot complex; 'close to EUR 100
+    million'; VAT treatment and equipment split not stated
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): HSR depot class evidence cited by C-depot-hsr-uk-001; not in the estimate map. Single
+    printed figure (Government of Spain press note).'
+- id: C-depot-hsr-fr-paris-006
+  item: High-speed maintenance hub, three tracks, up to 25 trains (Trenitalia France, Maisons-Alfort Pompadour)
+  category: depot
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2026
+  low: 80
+  central: 80
+  high: 80
+  source: S-r5-cost-007
+  status: sourced
+  approach: bottom_up
+  scope: Planned (operational end 2029); three maintenance tracks, washing, cleaning and storage in an existing railway
+    area; 'total investment exceeds EUR 80 million', so a floor
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): HSR depot class evidence cited by C-depot-hsr-uk-001; not in the estimate map. Single
+    printed floor figure; planned, not outturn.'
+- id: C-depot-hsr-ee-railbaltica-007
+  item: Rolling-stock depot for six high-speed trains or twelve regional units at once (Rail Baltica, Soodevahe, Estonia)
+  category: depot
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2026
+  low: 41.33
+  central: 41.33
+  high: 41.33
+  source: S-r5-cost-008
+  status: sourced
+  approach: bottom_up
+  scope: Design and construction; eight indoor lines (1,380 m usable) and six outdoor lines; estimated contract value
+    excluding VAT at tender launch (Jan 2026), handover Q4 2028
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): HSR depot class evidence cited by C-depot-hsr-uk-001; not in the estimate map. An
+    estimate at tender, not an award or outturn.'
+- id: C-depot-commuter-es-aranjuez-008
+  item: Commuter (Cercanias Madrid C-3) maintenance base, 3 x 200 m positions plus stabling for 12 trainsets (Renfe
+    Aranjuez)
+  category: depot
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2024
+  low: 69
+  central: 69
+  high: 69
+  source: S-r5-cost-009
+  status: sourced
+  approach: bottom_up
+  scope: Stated as more than EUR 69 million (incl. EUR 6.2m industrial equipment per search snippets, unverified); lathe,
+    washing and loading tracks; a floor figure
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): high anchor for C-depot-regional-de-002; not in the estimate map. Single printed floor
+    figure.'
+- id: C-depot-commuter-es-mostoles-009
+  item: Commuter (Cercanias Madrid C-5, Stadler 453) maintenance depot, three 200 m indoor tracks (Renfe Mostoles)
+  category: depot
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2026
+  low: 42.7
+  central: 42.7
+  high: 42.7
+  source: S-r5-cost-010
+  status: sourced
+  approach: bottom_up
+  scope: Tender value (Apr 2026; VAT treatment not stated); three indoor maintenance tracks, three tracks with technical
+    platforms, office building, washing line, wheel lathe
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'R5 H10a (3 Nov 2026): in-band check for C-depot-regional-de-002; not in the estimate map. Tender value, not
+    award.'
+- id: C-depot-hsr-ksa-003
+  item: Haramain HSR maintenance depot(s), cost
+  category: depot
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: SAR
+  price_year: 2011
+  low: null
+  central: null
+  high: null
+  source: unknown
+  status: unknown
+  approach: bottom_up
+  layer: existing
+  price_year_basis: assumed
+  searched: 'Haramain station/phase II searches (Railway Gazette, GRR, Wikipedia S-007/S-008); Talgo award coverage
+    mentions two maintenance facilities with 270+ staff but no capex; DB Cottbus ICE works (federal government and
+    DB pages: no figure; ~EUR 1 bn appears only in a cio.de snippet, unverified)'
+- id: C-rolling-stock-sar-north-caf-2012-001
+  item: CAF diesel push-pull trainsets for SAR North-South (5 sets, supply and maintain), per trainset (derived)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: SAR
+  price_year: 2012
+  low: 106.6
+  central: 106.6
+  high: 110.6
+  source: S-cost-ksa-019
+  extra_sources:
+  - S-cost-ksa-020
+  status: derived
+  derivation: SR 533 m / 5 = 106.6 (Railway Gazette, S-cost-ksa-019); SR 553 m / 5 = 110.6 (IRJ snippet, S-cost-ksa-020,
+    unverified)
+  approach: top_down
+  scope: Supply AND maintenance (term not stated) of five diesel push-pull trainsets (car-carrying capability; restaurant
+    car)
+  layer: existing
+  price_year_basis: award_year
+  notes: Maintenance bundled (term unknown), so overstates the train price. 533 vs 553 m riyal is a transcription
+    conflict between outlets. Compare the CAF 9-set EUR 200 m row.
+- id: C-rolling-stock-sar-caf-9sets-2012-001
+  item: CAF push-pull trainsets, 5 (North-South) + 4 (SRO East), combined value per trainset (derived)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2012
+  low: 22.22
+  central: 22.22
+  high: 22.22
+  source: S-cost-ksa-019
+  status: derived
+  derivation: EUR 200 m / 9 trainsets = 22.22
+  approach: top_down
+  scope: Two CAF contracts together (5 + 4 trainsets); maintenance inclusion of the second contract not stated
+  layer: existing
+  price_year_basis: award_year
+  notes: 'Single arithmetic point. ANALYSIS: inconsistent with SR 533 m for 5 sets alone (about USD 28 m per set
+    at the peg vs EUR 22 m per set here); the EUR 200 m may exclude maintenance or the sets may differ in length.
+    Kept separately, not averaged.'
+- id: C-rolling-stock-sar-north-wagons-2009-001
+  item: China South freight wagons for SAR North-South (668 wagons), per wagon (derived)
+  category: rolling_stock
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: USD
+  price_year: 2009
+  low: 0.15
+  central: 0.15
+  high: 0.15
+  source: S-cost-ksa-021
+  status: derived
+  derivation: USD 100 m ('almost') / 668 wagons = 0.1497, rounded 0.15
+  approach: top_down
+  scope: 668 wagons of more than 10 types (minerals, general freight)
+  layer: existing
+  price_year_basis: award_year
+  notes: Single arithmetic point; an upper bound because the value is 'almost US$100m'. Freight only; for freight
+    scenarios.
+- id: C-rolling-stock-sar-north-emd-locos-001
+  item: EMD SD70ACS heavy-haul locomotives for SAR (25 in 2009; 33 in 2026), value
+  category: rolling_stock
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: USD
+  price_year: 2026
+  source: S-cost-ksa-026
+  extra_sources:
+  - S-cost-ksa-021
+  status: unknown
+  approach: top_down
+  layer: existing
+  searched: 'Railway Gazette 9 Apr 2009 (no value for the 25 locos); web search 31 Oct 2026 ''Saudi Railway Company
+    EMD locomotives order value'' (Railway-News, Railway Age, Business News Today, Saudi Gulf Projects): 2026 order
+    of 33 ''not publicly disclosed'''
+  notes: Primary to find - Progress Rail / Caterpillar release; SAR annual report.
+- id: C-rolling-stock-sar-east-stadler-base-001
+  item: Stadler inter-city trainsets for SAR East, base order (10 sets incl. 10-year maintenance and spares), per
+    trainset (derived)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: CHF
+  price_year: 2024
+  low: 60.0
+  central: 60.0
+  high: 60.0
+  source: S-cost-ksa-027
+  status: derived
+  derivation: CHF 600 m / 10 trainsets = 60.0
+  approach: top_down
+  scope: 10 diesel-electric inter-city trainsets (175 m, ~320 passengers) plus 10 years full maintenance and spare
+    parts
+  layer: existing
+  price_year_basis: award_year
+  notes: Maintenance (10 years) bundled; overstates the train price. MEED put the contract at ~SR 2.6 bn (USD 690
+    m) (search snippet, not read).
+- id: C-rolling-stock-sar-east-stadler-option-001
+  item: Stadler inter-city trainsets for SAR East, option order (10 further sets, 2026), per trainset (derived)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: CHF
+  price_year: 2026
+  low: 30.0
+  central: 30.0
+  high: 30.0
+  source: S-cost-ksa-028
+  extra_sources:
+  - S-cost-ksa-027
+  status: derived
+  derivation: CHF 300 m / 10 trainsets = 30.0
+  approach: top_down
+  scope: 10 trainsets under the 2024 option; existing maintenance contract extended to cover them (extension value
+    not stated)
+  layer: existing
+  price_year_basis: award_year
+  notes: 'Half the base-order rate per set: the base order carried 10-year maintenance, spares and (ANALYSIS) design/non-recurring
+    costs. The option rate is the better proxy for the train price alone.'
+- id: C-rolling-stock-sar-east-talgo-2015-001
+  item: Talgo 200 km/h diesel trainsets for Riyadh-Dammam (6 sets, 2015), per trainset (derived)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: USD
+  price_year: 2015
+  low: 33.33
+  central: 33.33
+  high: 33.33
+  source: S-cost-ksa-029
+  status: derived
+  derivation: USD 200 m ('in excess of') / 6 trainsets = 33.33
+  approach: top_down
+  scope: Six 200 km/h diesel trainsets; maintenance not stated
+  layer: existing
+  price_year_basis: award_year
+  notes: A floor ('in excess of $200m'); no higher figure published, so low = central = high.
+- id: C-rollingstock-hsr-ice3neo-001
+  item: HSR trainset, Siemens Velaro MS / ICE 3neo (8 cars, 439 seats, 320 km/h)
+  category: rolling_stock
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2023
+  low: 29.501
+  central: 35.2941
+  high: 46.003
+  source: S-cost-sys-018
+  status: derived
+  derivation: around EUR 600 m / 17 trains = 35.2941 M EUR per trainset (S-cost-sys-018), central. R5 (CP5 H10a)
+    low = Alstom TGV M train-only price C-rollingstock-hsr-tgvm-002 EUR 25m (2018) x I-eur-2018-sar-2025 5.267482 /
+    I-eur-2023-sar-2025 4.463882 = EUR 29.501 m (2023); high = Talgo 350 Haramain first fleet C-rollingstock-hsr-talgo-ksa-2011-003
+    central EUR 35.9143m (2011) x I-eur-2011-sar-2025 5.717843 / 4.463882 = EUR 46.003 m (2023), possibly bundled
+    with maintenance, so a high-side point. Excluded - CR400AF (China domestic price, -005) and Talgo 2026 (bundled
+    with maintenance, -004)
+  approach: parameter
+  scope: Call-off under a 90-train framework; maintenance not mentioned (DB maintains its own fleet), so read as
+    train-only; four-voltage equipment
+  layer: n/a
+  price_year_basis: award_year
+  notes: Central from a single call-off. The 2020 first order (30 trains, EUR 1 bn in press) was not read in a primary
+    and is not used. R5 H10a, 3 Nov 2026, was 35.2941 flat; low/high from the other train-only HSR rows of the register.
+- id: C-rollingstock-hsr-tgvm-002
+  item: HSR double-deck trainset, Alstom Avelia Horizon / TGV M (up to 740 passengers)
+  category: rolling_stock
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2018
+  low: 25
+  central: 25
+  high: 25
+  source: S-cost-sys-019
+  status: sourced
+  approach: parameter
+  scope: Unit cost per trainset as printed; EXCLUDES the EUR 190 m complementary budget for options and services
+    across the order
+  layer: n/a
+  price_year_basis: award_year
+  notes: 'Single printed figure. Very large order (100) at a negotiated target cost: low end of the HSR band.'
+- id: C-rollingstock-hsr-talgo-ksa-2011-003
+  item: HSR trainset, Talgo 350 SRO for Haramain (first fleet), contract value per train
+  category: rolling_stock
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2011
+  low: 34.9167
+  central: 35.9143
+  high: 35.9143
+  source: S-009
+  extra_sources:
+  - S-008
+  - S-cost-sys-040
+  status: derived
+  derivation: EUR 1,257 m / 35 trains = 35.9143 (central, high); / 36 trains = 34.9167 (low) (S-009); award date
+    Oct 2011 (S-008)
+  approach: parameter
+  scope: 'Unclear whether maintenance is inside EUR 1.257 bn; a snippet (S-cost-sys-040, unverified) says Talgo''s
+    share incl. 35 trains + 12 years maintenance was EUR 1.6 bn, which would make 1.257 bn the train-supply part.
+    Not confirmed: treat as possibly bundled'
+  layer: existing
+  price_year_basis: award_year
+  notes: S-009 is secondary (Wikipedia). 35 ordered, 36 delivered per S-009. | The KSA top-down pass could not confirm
+    the currency of the original 2011 order from the sources it read (docs/sources/cost-notes-ksa.md); figure rests on S-009
+    (secondary).
+- id: C-rollingstock-hsr-talgo-ksa-2026-004
+  item: HSR trainset, Talgo for Haramain (20 additional trains, 2 power cars + 13 carriages, 417 seats), BUNDLED
+    with maintenance
+  category: rolling_stock
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2026
+  low: 65.0
+  central: 66.6
+  high: 66.6
+  source: S-cost-sys-020
+  extra_sources:
+  - S-cost-sys-021
+  status: derived
+  derivation: EUR 1,332 m / 20 = 66.6 (S-cost-sys-020, CNMV figure, central, high); EUR 1.3 bn / 20 = 65.0 (S-cost-sys-021,
+    rounded, low)
+  approach: parameter
+  scope: Manufacture AND maintenance of the 20 new trains (maintenance horizon 2033, extendable to 2038); NOT a
+    train-only price - upper bound for the vehicle
+  layer: committed
+  price_year_basis: award_year
+  notes: 'Bundled: do not use as a train-only price. Useful as the KSA ''supply + maintain'' data point. Existing
+    fleet count 35 vs 36 differs between outlets.'
+- id: C-rollingstock-hsr-cr400af-005
+  item: HSR 8-car trainset, CRRC/Bombardier Sifang CR400AF Fuxing (350 km/h), China domestic price
+  category: rolling_stock
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: CNY
+  price_year: 2021
+  low: 148.5
+  central: 148.5
+  high: 148.5
+  source: S-cost-sys-023
+  extra_sources:
+  - S-cost-sys-022
+  status: derived
+  derivation: 297 m yuan / 2 eight-car trainsets = 148.5 M CNY (S-cost-sys-023)
+  approach: parameter
+  scope: Domestic Chinese procurement; maintenance not mentioned; 8-car formation
+  layer: n/a
+  price_year_basis: award_year
+  notes: 'Consistency check (2018, kept separate, not merged): 3,100 m yuan / (15 + 3 x 2) eight-car equivalents
+    = 147.62 M CNY (S-cost-sys-022), assuming a 16-car set = two 8-car sets (our assumption). Export prices would
+    differ.'
+- id: C-rollingstock-hsr-egypt-velaro-006
+  item: HSR trainset, Siemens Velaro Egypt (train-only price)
+  category: rolling_stock
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2022
+  low: null
+  central: null
+  high: null
+  source: S-cost-sys-037
+  status: unknown
+  approach: parameter
+  layer: n/a
+  price_year_basis: award_year
+  searched: 'Siemens Mobility Egypt release coverage (search): EUR 8.1 bn Siemens share bundles 41 Velaro, 94 Desiro
+    HC, 41 Vectron, systems and maintenance; no train-only split published'
+- id: C-rollingstock-ic-diesel-sar-caf-008
+  item: Intercity diesel push-pull trainset (CAF for SAR North-South line, 200 km/h)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: USD
+  price_year: 2012
+  low: 24.181
+  central: 29.48
+  high: 31.915
+  source: S-cost-sys-026
+  status: derived
+  derivation: USD 147.4 m / 5 trainsets = 29.48 M USD (S-cost-sys-026), central. R5 (CP5 H10a) low = CAF 9-set combined
+    value C-rolling-stock-sar-caf-9sets-2012-001 EUR 22.22m (2012) x I-eur-2012-sar-2025 5.646801 / I-usd-2012-sar-2025
+    5.188953 = USD 24.181 m (2012); high = Talgo 200 km/h diesel sets for SAR East C-rolling-stock-sar-east-talgo-2015-001
+    USD 33.33m (2015) x I-usd-2015-sar-2025 4.968671 / 5.188953 = USD 31.915 m (2012), itself a floor ('in excess
+    of'). Inside the band - Stadler SAR East option C-rolling-stock-sar-east-stadler-option-001 = USD 26.08 m (2012);
+    CAF North SAR row C-rolling-stock-sar-north-caf-2012-001 = USD 25.89 m (2012). Excluded - Stadler base order (bundled
+    10-year maintenance and spares)
+  approach: parameter
+  scope: Manufacture of five passenger train sets; maintenance not stated in the article (a separate CAF service
+    contract exists)
+  layer: existing
+  price_year_basis: award_year
+  notes: Central from a single contract. Riyal value printed as 553 m (Railjournal) vs 533 m (Railway Gazette) in
+    snippets only; not used. R5 H10a, 3 Nov 2026, was 29.48 flat; low/high from the other KSA intercity trainset rows
+    of the register. Because the Talgo high is a floor, the true high may be higher.
+- id: C-rollingstock-h2-mu-caltrans-2023-009
+  item: Hydrogen fuel-cell intercity multiple unit (Stadler FLIRT H2, Caltrans base order)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: USD
+  price_year: 2023
+  low: 20.0
+  central: 20.0
+  high: 20.0
+  source: S-cost-sys-031
+  status: derived
+  derivation: USD 80 m / 4 trainsets = 20.0 M USD (S-cost-sys-031)
+  approach: parameter
+  scope: Base order of a 29-trainset option contract; maintenance/spares not mentioned; first-of-type for North
+    America (Buy America)
+  layer: n/a
+  price_year_basis: award_year
+  notes: Single figure. Companion 2024 option row -010.
+- id: C-rollingstock-h2-mu-caltrans-2024-010
+  item: Hydrogen fuel-cell intercity multiple unit (Stadler FLIRT H2, Caltrans option)
+  category: rolling_stock
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: USD
+  price_year: 2024
+  low: 21.1667
+  central: 21.1667
+  high: 21.1667
+  source: S-cost-sys-032
+  status: derived
+  derivation: USD 127 m / 6 trainsets = 21.1667 M USD (S-cost-sys-032)
+  approach: parameter
+  scope: Option call-off; content as -009
+  layer: n/a
+  price_year_basis: award_year
+- id: C-rollingstock-h2-mu-rmv-011
+  item: Hydrogen fuel-cell regional multiple unit (Alstom Coradia iLint, RMV/fahma), BUNDLED with hydrogen supply
+    and 25-year maintenance
+  category: rolling_stock
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2019
+  low: 13.3333
+  central: 18.5185
+  high: 18.5185
+  source: S-cost-sys-027
+  status: derived
+  derivation: contract ~EUR 500 m / 27 = 18.5185 (central, high); Alstom share EUR 360 m / 27 = 13.3333 (low) (S-cost-sys-027)
+  approach: parameter
+  scope: Trains + hydrogen supply + maintenance + reserve capacity for 25 years; NOT a train-only price
+  layer: n/a
+  price_year_basis: award_year
+  notes: Bundled upper bound. RMV later withdrew iLints from one line over reliability (search snippets, unverified)
+    - an operational risk, not a capex item.
+- id: C-rollingstock-battery-mu-nahsh-012
+  item: Battery-electric regional multiple unit (Stadler FLIRT Akku, two-car, 160 km/h), BUNDLED with 30-year maintenance
+  category: rolling_stock
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2019
+  low: 10.9091
+  central: 10.9091
+  high: 10.9091
+  source: S-cost-sys-033
+  status: derived
+  derivation: EUR 600 m / 55 units = 10.9091 M EUR (S-cost-sys-033)
+  approach: parameter
+  scope: Trains + 30-year maintenance; NOT a train-only price
+  layer: n/a
+  price_year_basis: award_year
+  notes: Single contract, bundled. Partly-electrified operation (charges under OCS) - needs some catenary islands.
+- id: C-rollingstock-h2-premium-013
+  item: Capex premium of a hydrogen fuel-cell multiple unit over an equivalent diesel multiple unit (vehicle only)
+  category: rolling_stock
+  line_type: n/a
+  terrain: n/a
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 15
+  central: 30
+  high: 60
+  source: assumed
+  extra_sources:
+  - S-cost-sys-027
+  status: assumed
+  assumption_id: A-cost-250
+  approach: parameter
+  scope: Percent uplift on a diesel MU price for the same platform; excludes refuelling infrastructure and hydrogen
+    supply
+  layer: n/a
+  price_year_basis: assumed
+  notes: No open source isolating the premium was found; the RMV/BMVI statement that the state covers 40% of the
+    'additional vehicle costs' versus diesel confirms a premium exists but gives no size. Wide range for honesty.
+- id: C-rollingstock-battery-premium-014
+  item: Capex premium of a battery-electric multiple unit over an equivalent diesel multiple unit (vehicle only)
+  category: rolling_stock
+  line_type: n/a
+  terrain: n/a
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 10
+  central: 25
+  high: 50
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-251
+  approach: parameter
+  scope: Percent uplift on a diesel MU price for the same platform; excludes charging infrastructure (OCS islands)
+    and battery replacement
+  layer: n/a
+  price_year_basis: assumed
+  notes: No open source isolating the premium was found (searched NAH.SH and Stadler coverage; prices are bundled
+    with 30-year maintenance). Battery life in 50 C ambient is an added uncertainty.
+- id: C-rollingstock-loco-freight-egypt-015
+  item: Diesel-electric mainline locomotive (GE ES30ACi Evolution, 3,200 hp), BUNDLED with 15-year parts and technical
+    support
+  category: rolling_stock
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: USD
+  price_year: 2017
+  low: 5.75
+  central: 5.75
+  high: 5.75
+  source: S-cost-sys-034
+  status: derived
+  derivation: USD 575 m / 100 locomotives = 5.75 M USD (S-cost-sys-034)
+  approach: parameter
+  scope: 100 locomotives + 15-year parts and technical support for the new AND existing GE fleet + training; NOT
+    a locomotive-only price (upper bound)
+  layer: n/a
+  price_year_basis: award_year
+  notes: Agreement described as worth USD 575 m; some coverage calls it a letter of intent. Brazilian Wabtec/Progress
+    Rail per-unit values (~USD 3.4-4.75 m) seen only in snippets and not used.
+- id: C-rollingstock-loco-eu-016
+  item: Mainline locomotive, Europe, implied whole-locomotive cost from the ECA ETCS share
+  category: rolling_stock
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2017
+  low: 2.0
+  central: 2.0
+  high: 2.0
+  source: S-cost-sys-002
+  status: derived
+  derivation: on-board unit ~EUR 300,000 = 'around 15 %' of the whole locomotive (S-cost-sys-002); 0.3 / 0.15 =
+    2.0 M EUR
+  approach: parameter
+  scope: Generic European locomotive (traction type not stated); implied by a rounded share, so indicative only
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'Rough: ''around 15 %'' is itself rounded; a 12-18% share would give 1.7-2.5 M EUR (sensitivity, not a
+    source). Electric locos, not KSA heavy-haul diesels.'
+- id: C-rollingstock-loco-sar-017
+  item: SAR heavy-haul diesel locomotive (EMD SD70ACS, Progress Rail) price per unit
+  category: rolling_stock
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: USD
+  price_year: 2026
+  low: null
+  central: null
+  high: null
+  source: S-cost-sys-036
+  extra_sources:
+  - S-cost-sys-035
+  status: unknown
+  approach: parameter
+  layer: existing
+  price_year_basis: award_year
+  searched: Railway Gazette 9 Apr 2009 (25 SD70ACS, value not stated; wagons ~USD 100 m); Progress Rail 33 SD70ACS
+    order Sep 2026 (no value disclosed); Railway Age, Progressive Railroading (HTTP 403); SAR site not searched
+    for tenders
+- id: C-rollingstock-h2-mu-mireo-018
+  item: Hydrogen two-car MU, Siemens Mireo Plus H (Romania, Heidekrautbahn), price per unit
+  category: rolling_stock
+  line_type: commuter
+  terrain: n/a
+  unit: SAR_m_per_trainset
+  currency: EUR
+  price_year: 2026
+  low: null
+  central: null
+  high: null
+  source: S-cost-sys-038
+  status: unknown
+  approach: parameter
+  layer: n/a
+  price_year_basis: award_year
+  searched: Siemens Romania release 28 Apr 2026 (no value; 15-year maintenance bundled); Heidekrautbahn coverage
+    (no value); romania-insider (HTTP 429), railmarket (HTTP 403)
+- id: C-signalling-etcs-l2-conv-001
+  item: ERTMS/ETCS Level 2 trackside signalling works, conventional line (EU tier-3 unit cost)
+  category: signalling
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.159
+  central: 0.3
+  high: 0.441
+  source: S-cost-sys-004
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: central 0.3 M EUR/km and Q1-Q3 band +/-47% printed (S-cost-sys-004, Fig. 7 / Fig. 40); low = 0.3 x
+    0.53 = 0.159, high = 0.3 x 1.47 = 0.441
+  approach: bottom_up
+  scope: ERTMS level 2 deployment on conventional lines; EXCLUDES radio-block centres and signalling station equipment,
+    and software-only upgrades; per double-track-equivalent km; EUR 2016 PPP-normalised (EU28)
+  layer: n/a
+  price_year_basis: stated
+  notes: EU 'conventional' sample covers passenger and mixed lines; usable for conventional_passenger too. Much
+    lower than the ECA whole-deployment figure (C-signalling-ertms-trackside-national-003) because RBCs, interlockings
+    and associated works are excluded; both kept, never averaged.
+- id: C-signalling-etcs-l2-hsr-002
+  item: ERTMS/ETCS Level 2 trackside signalling works, high-speed line (EU tier-3 unit cost)
+  category: signalling
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.415
+  central: 0.5
+  high: 0.585
+  source: S-cost-sys-004
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: central 0.5 M EUR/km and Q1-Q3 band +/-17% printed (S-cost-sys-004); low = 0.5 x 0.83 = 0.415, high
+    = 0.5 x 1.17 = 0.585
+  approach: bottom_up
+  scope: Signalling item on EU high-speed projects 2000-2015; per double-track-equivalent km; EUR 2016 PPP; the
+    study states the RBC/station-equipment exclusion for the conventional sample definition, assume same item boundary
+  layer: n/a
+  price_year_basis: stated
+- id: C-signalling-ertms-trackside-national-003
+  item: ERTMS trackside deployment, whole-network programme estimate per km of line (Denmark, Netherlands)
+  category: signalling
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2017
+  low: 1.18
+  central: 1.44
+  high: 1.69
+  source: S-cost-sys-001
+  status: sourced
+  approach: top_down
+  scope: Total trackside ERTMS deployment cost of national resignalling programmes (DK 2.52 bn EUR / 2,132 km; NL
+    4.90 bn EUR / 2,886 km), divided by km of line; ECA's EU extrapolation average 1.44; includes the national programmes'
+    associated works; per km of line (not double-track-equivalent)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'All three values printed by ECA (Annex V). Price year not stated: the underlying national estimates predate
+    the 2017 report. Treat as the upper reference for brownfield resignalling; greenfield single-system lines in
+    KSA are closer to the EC tier-3 rows plus RBCs.'
+- id: C-signalling-etcs-l2-hsr-spain-004
+  item: Signalling, high-speed line, Spanish planning guideline (BOE 2010 base, as cited by EC 2018)
+  category: signalling
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2010
+  low: 1.0
+  central: 1.125
+  high: 1.25
+  source: S-cost-sys-005
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: range 1-1.25 M EUR/km printed (S-cost-sys-005); central = midpoint (1.0 + 1.25) / 2 = 1.125
+  approach: bottom_up
+  scope: Spanish State bulletin guideline cost per km for HSR signalling; system level and track basis not stated
+    in the EC summary table
+  layer: n/a
+  price_year_basis: stated
+  notes: Secondary citation through EC 2018 Table 4; BOE original not read.
+- id: C-signalling-etcs-onboard-new-005
+  item: ETCS on-board unit fitted to a new locomotive or trainset
+  category: signalling
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2017
+  low: 0.3
+  central: 0.3
+  high: 0.3
+  source: S-cost-sys-002
+  status: sourced
+  approach: parameter
+  scope: Per on-board unit for new vehicles; ECA says about 15% of the whole locomotive cost; normally already inside
+    a new train's contract price, so do NOT add on top of rolling-stock rows unless the train price excludes ETCS
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Single figure stated by the source ('approximately 300 000 euro'), so low = central = high; the reference-class
+    uplift supplies the spread. Retrofit is a separate row.
+- id: C-signalling-etcs-retrofit-006
+  item: ETCS retrofit of an existing locomotive (equipment, installation, testing/authorisation, unavailability,
+    training)
+  category: signalling
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2016
+  low: 0.395
+  central: 0.4825
+  high: 0.57
+  source: S-cost-sys-003
+  status: sourced
+  approach: parameter
+  scope: Commission studies 2015 (570,000 EUR total) and 2016 (395,000 EUR); ECA average 482,500 EUR; audited cases
+    reached 663,000-970,000 EUR (NL) and 420,000-630,000 EUR (DE) including compulsory upgrades
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Relevant only if existing SAR fleets were migrated to ETCS. Price year set to the later study (2016); the
+    2015 figure is one year older (flagged, not escalated).
+- id: C-signalling-telecom-conv-007
+  item: Telecommunication works (fixed telecom, excluding radio towers), conventional line
+  category: signalling
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.159
+  central: 0.3
+  high: 0.441
+  source: S-cost-sys-004
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: central 0.3 M EUR/km, Q1-Q3 +/-47% (S-cost-sys-004); 0.3 x 0.53 = 0.159; 0.3 x 1.47 = 0.441
+  approach: bottom_up
+  scope: EU tier-3 telecommunication item; excludes specific telecom structures such as radio towers; per double-track-equivalent
+    km; EUR 2016 PPP
+  layer: n/a
+  price_year_basis: stated
+- id: C-signalling-telecom-hsr-008
+  item: Telecommunication works, high-speed line
+  category: signalling
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.1596
+  central: 0.19
+  high: 0.2204
+  source: S-cost-sys-004
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: central 0.19 M EUR/km, Q1-Q3 +/-16% (S-cost-sys-004, Fig. 40; Fig. 7 rounds to 0.2); 0.19 x 0.84 =
+    0.1596; 0.19 x 1.16 = 0.2204
+  approach: bottom_up
+  scope: EU tier-3 telecommunication item on HSR projects; per double-track-equivalent km; EUR 2016 PPP
+  layer: n/a
+  price_year_basis: stated
+- id: C-signalling-gsmr-009
+  item: GSM-R radio deployment along an average line (trackside)
+  category: signalling
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2025
+  low: 0.05
+  central: 0.09
+  high: 0.13
+  source: S-cost-sys-012
+  status: derived
+  derivation: range 50-130 kEUR/km printed (S-cost-sys-012, citing ERA RSDI) = 0.05-0.13 M EUR/km; central = midpoint
+    0.09
+  approach: bottom_up
+  scope: Trackside GSM-R per km of an average line; ERA data vintage not stated; EU-Rail assumes FRMCS costs the
+    same
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Overlaps the EC telecom rows (telecom item may already include GSM-R on some projects); use one or the
+    other, not both.
+- id: C-signalling-frmcs-010
+  item: FRMCS (5G railway radio) trackside deployment per km
+  category: signalling
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2021
+  low: null
+  central: null
+  high: null
+  source: S-cost-sys-039
+  extra_sources:
+  - S-cost-sys-012
+  status: unknown
+  approach: bottom_up
+  layer: n/a
+  price_year_basis: stated
+  searched: Web search 'GSM-R deployment cost per route km ... FRMCS'; EU-Rail WG2 deliverable read (no FRMCS figure,
+    assumes GSM-R cost); France COI 120,000 EUR/km (2021) seen only in a Sofrecom search snippet (unverified, S-cost-sys-039);
+    Ericsson white paper not read
+  notes: Until a primary is read, model FRMCS with the GSM-R row C-signalling-gsmr-009 (EU-Rail's own assumption).
+- id: C-signalling-etcs-l3-011
+  item: ETCS Level 3 / hybrid Level 3 trackside cost per km
+  category: signalling
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2026
+  low: null
+  central: null
+  high: null
+  source: unknown
+  status: unknown
+  approach: bottom_up
+  layer: n/a
+  price_year_basis: assumed
+  searched: EC/PwC 2018 (sample is Level 2 only); ECA SR 13/2017 (no level split); no published L3/hybrid unit cost
+    found in this session
+- id: C-electrification-ocs-conv-001
+  item: Electrification works (overhead contact system), conventional line, EU tier-3 unit cost
+  category: electrification
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.33
+  central: 0.6
+  high: 0.87
+  source: S-cost-sys-004
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: central 0.6 M EUR/km, Q1-Q3 +/-45% (S-cost-sys-004); 0.6 x 0.55 = 0.33; 0.6 x 1.45 = 0.87
+  approach: bottom_up
+  scope: EU electrification item on conventional lines; EXCLUDES traction substations and other specific electrification
+    structures; per double-track-equivalent km; EUR 2016 PPP
+  layer: n/a
+  price_year_basis: stated
+  notes: Add traction power supply (C-power-*) separately. Voltage system not stated (EU mix of 25 kV AC and DC).
+- id: C-electrification-ocs-hsr-002
+  item: Electrification works (overhead contact system), high-speed line, EU tier-3 unit cost
+  category: electrification
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2016
+  low: 0.498
+  central: 0.6
+  high: 0.702
+  source: S-cost-sys-004
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: central 0.6 M EUR/km, Q1-Q3 +/-17% (S-cost-sys-004); 0.6 x 0.83 = 0.498; 0.6 x 1.17 = 0.702
+  approach: bottom_up
+  scope: EU electrification item on HSR projects; per double-track-equivalent km; EUR 2016 PPP; substations presumed
+    excluded as in the conventional sample definition
+  layer: n/a
+  price_year_basis: stated
+- id: C-electrification-hsr-spain-003
+  item: Electrification, high-speed line, Spanish planning guideline (BOE 2010 base, as cited by EC 2018)
+  category: electrification
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: EUR
+  price_year: 2010
+  low: 1.1
+  central: 1.225
+  high: 1.35
+  source: S-cost-sys-005
+  extra_sources:
+  - S-lb-030
+  status: derived
+  derivation: range 1.1-1.35 M EUR/km printed (S-cost-sys-005); central = midpoint 1.225
+  approach: bottom_up
+  scope: Spanish guideline cost per km for HSR electrification; whether substations are included is not stated in
+    the EC summary; km basis not stated
+  layer: n/a
+  price_year_basis: stated
+  notes: About double the EC tier-3 HSR item; plausibly because the guideline includes traction power supply (analysis,
+    unconfirmed). Kept as a separate row, not averaged.
+- id: C-electrification-uk-stk-004
+  item: Electrification of an existing line, UK industry benchmark per single track km (simple to complex projects)
+  category: electrification
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2019
+  low: 0.75
+  central: 1.0
+  high: 1.5
+  source: S-cost-sys-006
+  extra_sources:
+  - S-cost-sys-007
+  status: derived
+  derivation: 'printed bands: simple GBP 0.75m-1m/STK, complex GBP 1m-1.5m/STK (S-cost-sys-006); low = simple floor,
+    high = complex ceiling, central = 1.0, the value at which the two printed bands meet'
+  approach: bottom_up
+  scope: Per SINGLE track km (a double-track line is two STK); retrofit electrification of operating UK lines incl.
+    typical bridge/station clearance work for 'averagely complex' lines; RIA warns it is not an estimating tool
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Brownfield UK conditions (clearances, possessions) make this a conservative-high proxy for greenfield desert
+    OCS.
+- id: C-electrification-uk-gwep-005
+  item: Great Western Electrification Programme latest estimate per single track km (UK outlier)
+  category: electrification
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2019
+  low: 2.8
+  central: 2.8
+  high: 2.8
+  source: S-cost-sys-007
+  status: sourced
+  approach: top_down
+  scope: GWEP whole-programme estimate per single track km as reported in March 2019
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'Single figure stated by the source. Conflict with C-electrification-uk-stk-004 (GBP 0.75-1.5m): kept as
+    the overrun outlier for reference-class use, not a planning rate.'
+- id: C-electrification-india-2018-006
+  item: 25 kV electrification of existing broad-gauge routes, India programme average per route km (2018 Cabinet
+    approval)
+  category: electrification
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: INR
+  price_year: 2018
+  low: 7.3365
+  central: 8.8735
+  high: 8.8735
+  source: S-cost-sys-008
+  status: derived
+  derivation: Rs 12,134.50 crore = INR 121,345 m; / 13,675 route km = 8.8735 INR m/RKM (central, high); / 16,540
+    track km = 7.3365 INR m per TRACK km (low, i.e. per single track) (S-cost-sys-008)
+  approach: top_down
+  scope: Approved programme cost for 108 sections; existing lines, mostly single track; includes whatever OHE, substations
+    and associated works the sanction covers (not itemised)
+  layer: n/a
+  price_year_basis: award_year
+  notes: 'low is per track km and central/high per route km of the same total; the range reflects the length basis,
+    not market spread. Indian labour and supply costs are far below KSA contract prices: a low-end reference only.'
+- id: C-electrification-india-2021-007
+  item: 25 kV electrification of remaining broad-gauge routes, India programme estimate per route km (2021 parliamentary
+    reply)
+  category: electrification
+  line_type: upgrade
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: INR
+  price_year: 2021
+  low: 11.1655
+  central: 11.1655
+  high: 11.1655
+  source: S-cost-sys-009
+  status: derived
+  derivation: about Rs 21,000 crore = INR 210,000 m / 18,808 route km = 11.1655 INR m/RKM (S-cost-sys-009)
+  approach: top_down
+  scope: Estimate for the balance network; single programme average
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'Single programme average, so low = central = high; it is the 2021 companion of row -006 and must not be
+    merged with it before price-year normalisation (rule: never mix price years). The spread comes from the cross-row
+    comparison and the reference-class uplift.'
+- id: C-power-grid-connection-hsr-001
+  item: Grid supply point (GSP) connection for HSR traction power, per connection (HS2 Phase 2a)
+  category: power
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: GBP
+  price_year: 2019
+  low: 92.5
+  central: 100
+  high: 160
+  source: S-cost-sys-010
+  status: sourced
+  approach: bottom_up
+  scope: Transmission-grid connection (400/275/132 kV circuits, cabling, substation extension) to a single auto-transformer
+    feeder station; excludes the railway feeder station itself; central = the hybrid-Bill Rugeley estimate, low
+    = selected Parkgate option, high = Option 2
+  layer: n/a
+  price_year_basis: publication_year
+  notes: All three values printed. The same report gives a feeding distance of almost 100 km between feeder stations,
+    i.e. roughly one GSP/feeder per ~100 km of HSR (parameter for corridor costing; no unit slot in the schema,
+    recorded here). UK grid connections include resilience (three circuits); SEC connections in KSA may differ.
+- id: C-power-traction-substation-hsr-002
+  item: 2x25 kV traction substation with its share of autotransformer stations, HSR (Spain, Eje Atlantico)
+  category: power
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2010
+  low: 7.8283
+  central: 14.2333
+  high: 20.6383
+  source: S-cost-sys-011
+  status: derived
+  derivation: EUR 42.7 m / 3 traction substations = 14.2333 M EUR per substation including 3 autotransformer centres
+    each on average (9 ATS in total) (S-cost-sys-011), central. R5 (CP5 H10a) spread +/-45 % from A-cost-403 (the
+    Q1-Q3 project dispersion the EC/PwC tier-3 study reports for conventional electrification, S-cost-sys-004, applied
+    the same way in C-electrification-ocs-conv-001) = 14.2333 x 0.55 = 7.8283 and x 1.45 = 20.6383; same currency and
+    price year, no index factor needed
+  assumption_id: A-cost-403
+  approach: bottom_up
+  scope: Construction contract for 3 TSS + 7 intermediate + 2 final autotransformer centres; excludes OCS and grid
+    connection; VAT treatment not stated
+  layer: n/a
+  price_year_basis: award_year
+  notes: One contract only for the central; Indian TSS awards (Rs 137-270 crore incl. sectioning posts and taxes)
+    were seen in search snippets only and are not used. R5 H10a, 3 Nov 2026, was 14.2333 flat. R5 searched Adif/BOE
+    award notices, TED (Portugal Vila Fria 150/2x25 kV TSS tender base price EUR 4.5m excl. VAT, 2015, snippet only;
+    TED returned HTTP 405), and CPK Poland (3+2 HSR traction substations, value not disclosed; a PLN 100-250 m plan
+    figure seen in a snippet only); none was read in full, so none is used.
+- id: C-power-h2-refuelling-station-003
+  item: Hydrogen refuelling station for a regional train fleet (e.g. Bremervorde, ~1,600 kg/day, 14 trains)
+  category: power
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_unit
+  currency: EUR
+  price_year: 2020
+  low: null
+  central: null
+  high: null
+  source: S-cost-sys-030
+  extra_sources:
+  - S-cost-sys-029
+  - S-cost-sys-028
+  status: unknown
+  approach: bottom_up
+  layer: n/a
+  price_year_basis: publication_year
+  searched: 'Alstom EN and DE releases (28 Jul 2020: capacity only), pv-magazine, railway-technology, electrive
+    (project total > EUR 93 m incl. trains, no split), gasworld and railwaypro (HTTP 403); ~EUR 10 m station cost
+    and EUR 8.4 m / 4.3 m grants appear only in search snippets (unverified); FCH JU/S2R 2019 study: PDF exceeded
+    the 50 MB limit and was deleted unread beyond a text grep that showed no station capex table'
+- id: C-land-riyadh-metro-2013-001
+  item: Riyadh Metro land compensation budget (35 locations)
+  category: land
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2013
+  low: 3000
+  central: 3000
+  high: 3000
+  source: S-cost-ksa-037
+  status: sourced
+  approach: top_down
+  scope: Compensation for land to be acquired at 35 identified locations (budgeted, not outturn)
+  layer: existing
+  price_year_basis: publication_year
+  notes: Urban metro, not a line type of this study; reference only (urban land). Single budget figure as stated
+    (ADA president to Reuters, ~Aug 2013; date inferred). About 3.6 % of the 2013 award total at the peg (ANALYSIS).
+- id: C-land-wb-china-hsr-059
+  item: Land acquisition and resettlement share of total project cost, China HSR (WB)
+  category: land
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: CNY
+  price_year: 2014
+  low: 4
+  central: 6
+  high: 8
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'Table 2: 350 km/h 4 %, 250 km/h 4-8 %; central = midpoint of 4-8; text: ''still below 8 percent of
+    project cost'''
+  approach: parameter
+  scope: land + resettlement / total project cost incl. rolling stock and IDC
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'Table 3 per km: RMB 4m (350), 5-9m (250), 5-8m (200) per km double track.'
+- id: C-land-wb-china-mixed-060
+  item: Land acquisition and resettlement share of total project cost, China 200 km/h mixed (WB)
+  category: land
+  line_type: mixed
+  terrain: n/a
+  unit: pct_of_capex
+  currency: CNY
+  price_year: 2014
+  low: 6
+  central: 7.5
+  high: 9
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: derived
+  derivation: 'Table 2: 6-9 %; central = midpoint'
+  approach: parameter
+  scope: as -059
+  layer: n/a
+  price_year_basis: publication_year
+- id: C-land-pwc-hs2-061
+  item: Land and property cost per route-km, European HSR comparators (PwC 2016)
+  category: land
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km
+  currency: GBP
+  price_year: 2011
+  low: 0.5
+  central: 1.25
+  high: 6.4
+  source: S-cost-civil-005
+  status: derived
+  derivation: six comparators 0.5, 0.6, 0.7, 1.8, 4.3, 6.4 GBP m/km; central = median (0.7+1.8)/2
+  approach: parameter
+  scope: land and property purchase
+  layer: n/a
+  price_year_basis: stated
+- id: C-land-campos-planning-land-062
+  item: Planning and land costs share of total investment, HSR (Campos et al. 2007)
+  category: land
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: EUR
+  price_year: 2005
+  low: 5
+  central: 7.5
+  high: 10
+  source: S-cost-civil-003
+  status: derived
+  derivation: '''between 5-10% in the total investment amount''; central = midpoint'
+  approach: parameter
+  scope: feasibility studies, technical design, land acquisition, legal/administrative fees, licences, permits (combined)
+  layer: n/a
+  price_year_basis: stated
+  notes: Combines planning/design and land; do not add to separate design rows without removing the overlap.
+- id: C-land-california-row-063
+  item: California HSR site work and right of way share of cost (as cited by WB 2014)
+  category: land
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: USD
+  price_year: 2014
+  low: 17.6
+  central: 17.6
+  high: 17.6
+  source: S-lb-029
+  extra_sources:
+  - S-cost-civil-002
+  status: sourced
+  approach: parameter
+  scope: site work + right of way (US$10m/km) as share of cost (CHSRA Draft Business Plan 2014)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Single figure as stated (footnote 23); bundles site work with land; high-land-value US case.
+- id: C-land-haramain-expropriation-064
+  item: Haramain HSR expropriation compensation share of total cost
+  category: land
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: SAR
+  price_year: 2015
+  low: 10.32
+  central: 10.32
+  high: 10.83
+  source: S-cost-civil-016
+  extra_sources:
+  - S-cost-civil-015
+  - S-lb-021
+  status: derived
+  derivation: SAR 6.5 bn compensation paid 'so far' (Oct 2013, S-cost-civil-016) / SAR 63 bn total incl. expropriation
+    (Jun 2015, S-cost-civil-015) = 10.32 %; / SAR 60 bn (S-lb-021) = 10.83 %
+  approach: parameter
+  scope: land expropriation compensation / whole-project cost
+  layer: existing
+  price_year_basis: publication_year
+  notes: 'Numerator read from a search snippet only (Al Arabiya page returned 403): status of input unverified;
+    2013 figure is a lower bound of final compensation. Mixed nominal years. SAR North cost statements exclude expropriation
+    (S-lb-023).'
+- id: C-utilities-diversion-065
+  item: Utilities diversion share of capex, interurban line
+  category: utilities
+  line_type: n/a
+  terrain: n/a
+  unit: pct_of_capex
+  currency: SAR
+  price_year: 2025
+  low: 0.5
+  central: 1.5
+  high: 5
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-203
+  approach: parameter
+  scope: relocation of utilities crossing or paralleling the alignment, interurban sections
+  layer: n/a
+  price_year_basis: assumed
+  notes: No open source with a rail utilities share found; TRB 2015 utility-coordination synthesis page carried
+    no figure; an 8-10% (1996, light rail, incl. betterments/mitigation) figure seen only in a search summary, unverified,
+    urban.
+- id: C-utilities-diversion-urban-066
+  item: Utilities diversion share of capex, urban sections
+  category: utilities
+  line_type: n/a
+  terrain: n/a
+  unit: pct_of_capex
+  currency: SAR
+  price_year: 2025
+  low: null
+  central: null
+  high: null
+  source: ''
+  status: unknown
+  approach: parameter
+  layer: n/a
+  price_year_basis: assumed
+  searched: EC/PwC 2018; WB 2014; PwC HS2 2016; ST3 methodology (allocated contingency 30% on utility relocation,
+    no share); nationalacademies.org TRB 'Practices for Utility Coordination in Transit Projects' ch.5 page (no
+    body text); web search 31 Oct 2026
+- id: C-design-pm-pwc-hs2-indirects-067
+  item: Indirect costs (design, project management, insurance) as % of construction cost, European HSR comparators
+    (PwC 2016)
+  category: design_pm
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: GBP
+  price_year: 2011
+  low: 7.5
+  central: 15.3
+  high: 20.4
+  source: S-cost-civil-005
+  status: derived
+  derivation: eight comparators 7.5, 11.5, 14.2, 15.0, 15.6, 17.0, 19.1, 20.4 %; central = median (15.0+15.6)/2
+  approach: parameter
+  scope: '% of construction cost (not of total capex)'
+  layer: n/a
+  price_year_basis: stated
+- id: C-design-pm-st3-scc80-068
+  item: FTA SCC 80 professional services allowance, Sound Transit ST3 methodology (projects > USD 25M)
+  category: design_pm
+  line_type: commuter
+  terrain: n/a
+  unit: pct_of_capex
+  currency: USD
+  price_year: 2015
+  low: 32
+  central: 32
+  high: 32
+  source: S-cost-civil-017
+  status: sourced
+  approach: parameter
+  scope: admin 6 + preliminary engineering 5 + final design/DSDC 10 + third parties 2 + construction management
+    9 = 32 % of construction (SCC 10-50); admin also on soft costs
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'Single figure as stated; projects under USD 25M: 48 %. US urban transit agency practice, upper reference
+    for a national programme.'
+- id: C-design-pm-campos-supervision-069
+  item: Supervision and quality control share of total investment, HSR (Campos et al. 2007)
+  category: design_pm
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: EUR
+  price_year: 2005
+  low: 1
+  central: 3
+  high: 5
+  source: S-cost-civil-003
+  status: derived
+  derivation: '''may represent between 1-5% of the total investment''; central = midpoint'
+  approach: parameter
+  scope: supervision, quality control and other minor items
+  layer: n/a
+  price_year_basis: stated
+- id: C-contingency-pwc-hs2-070
+  item: Contingency allowance on early HSR estimates, European comparators (PwC 2016)
+  category: contingency
+  line_type: hsr
+  terrain: n/a
+  unit: pct_of_capex
+  currency: GBP
+  price_year: 2011
+  low: 10
+  central: 20
+  high: 30
+  source: S-cost-civil-005
+  status: derived
+  derivation: '''range from 10% to 30% for projects at a similar stage of estimate maturity''; central = midpoint'
+  approach: parameter
+  scope: estimating contingency (not optimism bias / reference-class uplift)
+  layer: n/a
+  price_year_basis: stated
+  notes: Do not stack with reference-class uplift without checking the RCF skill's treatment.
+- id: C-contingency-st3-unallocated-071
+  item: FTA SCC 90 unallocated contingency, Sound Transit ST3 methodology
+  category: contingency
+  line_type: commuter
+  terrain: n/a
+  unit: pct_of_capex
+  currency: USD
+  price_year: 2015
+  low: 10
+  central: 15
+  high: 20
+  source: S-cost-civil-017
+  status: derived
+  derivation: 'text reads ''calculated as 10 20 percent of the total of SCC 10 through 80'' (tracked-change residue:
+    10 and 20 both printed); central = midpoint'
+  approach: parameter
+  scope: '% of SCC 10-80'
+  layer: n/a
+  price_year_basis: publication_year
+- id: C-contingency-st3-allocated-072
+  item: FTA allocated contingency on construction categories at system-plan stage, Sound Transit ST3
+  category: contingency
+  line_type: commuter
+  terrain: n/a
+  unit: pct_of_capex
+  currency: USD
+  price_year: 2015
+  low: 30
+  central: 30
+  high: 30
+  source: S-cost-civil-017
+  status: sourced
+  approach: parameter
+  scope: allocated contingency % on SCC 10, 20, 30, 40 line items (guideway, track, stations, sitework incl. utilities)
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Single figure as stated in the allocated-contingency table.
+- id: C-opex-hhr-indra-om-2026-001
+  item: Haramain HSR Indra technology O&M extension (traffic management, telecoms, ticketing, IT), per year (derived)
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_yr
+  currency: EUR
+  price_year: 2026
+  low: 26.0
+  central: 26.0
+  high: 26.0
+  source: S-cost-ksa-012
+  status: derived
+  derivation: 'EUR 130 m / 5 years = 26.0 per year (S-cost-ksa-012: ''approximately EUR 130m'' for ''at least''
+    five years)'
+  approach: top_down
+  scope: Operation and maintenance of rail traffic management, telecoms, booking, ticketing, access control, safety
+    and IT systems on the 449-453 km line
+  layer: existing
+  price_year_basis: award_year
+  notes: Single arithmetic point; an UPPER bound per year because the term is 'at least' five years. Systems O&M
+    only (no train operation, no track maintenance, no energy). Per route-km about EUR 0.057-0.058 m/yr (26.0 /
+    453 to 449.2).
+- id: C-terrain-dunes-sand-removal-041
+  item: Sand removal + track maintenance on dune-affected ballasted track (Aus-Luderitz)
+  category: opex
+  line_type: n/a
+  terrain: dunes
+  unit: SAR_m_per_km_per_yr
+  currency: NAD
+  price_year: 2019
+  low: 2.81
+  central: 4.18
+  high: 5.55
+  source: S-cost-civil-013
+  status: derived
+  derivation: 'Table 4.10 operating + maintenance per annum, conventional track: by hand N$2,809.09k; by machinery
+    N$5,550.00k; central = midpoint'
+  approach: bottom_up
+  scope: annual operating + maintenance per km of track on the 4.4 km dune section
+  layer: n/a
+  price_year_basis: publication_year
+  notes: For the opex track (maintenance of way incl. sand). Single short section in the Namib; grey literature.
+- id: C-opex-hsr-infra-maint-001
+  item: HSR infrastructure maintenance per single-track km per year (track, electrification, signalling, telecoms,
+    other)
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km_per_yr
+  currency: EUR
+  price_year: 2002
+  low: 0.012919
+  central: 0.03
+  high: 0.07165
+  source: S-cost-opex-001
+  status: sourced
+  approach: parameter
+  scope: Per km of SINGLE track, traffic-adjusted, 2002 EUR; Italy low (12,919), Netherlands high (71,650); central
+    = the paper's 'around EUR 30,000' for Belgium, France and Spain. Excludes renewals.
+  layer: n/a
+  price_year_basis: stated
+  notes: Elaborated by the authors from UIC (2005b). Five European countries; no desert or sand component.
+- id: C-opex-hsr-infra-maint-002
+  item: HSR infrastructure maintenance per route-km of double-track line per year
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_per_km_per_yr
+  currency: EUR
+  price_year: 2002
+  low: 0.021575
+  central: 0.0501
+  high: 0.1433
+  source: S-cost-opex-001
+  extra_sources:
+  - S-cost-opex-008
+  status: derived
+  derivation: 'single-track values (S-cost-opex-001) x double-track factor: low 12,919 x 1.67 = 21,575; central
+    30,000 x 1.67 = 50,100; high 71,650 x 2.0 = 143,300 EUR. Factor 1.67 = JASPERS ''double track is 1.67 times
+    that of single track'' (S-cost-opex-008, section 4.3.1); 2.0 = no economies of scale (upper bound).'
+  approach: parameter
+  scope: Same scope as C-opex-hsr-infra-maint-001, converted to route-km of double track.
+  layer: n/a
+  price_year_basis: stated
+  notes: Use this row for corridor costing by route length; sand uplift is a separate row (C-opex-dunes-sand-maint-001).
+- id: C-opex-conv-infra-maint-001
+  item: Conventional-line infrastructure maintenance per single-track km per year (Europe, UIC data)
+  category: opex
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_km_per_yr
+  currency: EUR
+  price_year: 2002
+  low: 0.020325
+  central: 0.039557
+  high: 0.059903
+  source: S-cost-opex-002
+  status: derived
+  derivation: low/high = Italy 20,325 and Netherlands 59,903 (Table A.3 CN); central = median of the four values
+    37,604 / 41,510 / 20,325 / 59,903 = 39,557 EUR (Python, 2026-10-31).
+  approach: parameter
+  scope: Conventional networks that also carry freight; per single-track km; 2002 EUR.
+  layer: n/a
+  price_year_basis: stated
+  notes: Higher than HSR in Belgium, France and Italy (freight damage, traffic) per the source.
+- id: C-opex-conv-infra-maint-002
+  item: Railway infrastructure maintenance per track-km per year (EC CBA Guide railway case study)
+  category: opex
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_m_per_km_per_yr
+  currency: EUR
+  price_year: 2014
+  low: 0.029717
+  central: 0.0375
+  high: 0.0375
+  source: S-cost-opex-005
+  status: sourced
+  approach: parameter
+  scope: Upgraded mixed passenger/freight line; low = actual business-as-usual cost (last 5 years), central/high
+    = 'good maintenance standards based on local costs'. Per track-km.
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Illustrative case-study values in constant prices of an unnamed 'year Y'; price year set to the guide's
+    publication year (Dec 2014). Country not named.
+- id: C-opex-mixed-infra-maint-001
+  item: Railway infrastructure maintenance per km of double-track line per year (JASPERS defaults, 16 European countries)
+  category: opex
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_m_per_km_per_yr
+  currency: EUR
+  price_year: 2010
+  low: 0.042859
+  central: 0.046579
+  high: 0.065629
+  source: S-cost-opex-008
+  status: derived
+  derivation: 'Table A.9 double-track column: low Bulgaria 42,859; high EU15 65,629; central = median of 16 values
+    = 46,579 EUR (Python, 2026-10-31).'
+  approach: parameter
+  scope: Includes taxes; steady-state maintenance; includes the variable element of train activity; 40% of cost
+    assumed wage-linked by JASPERS.
+  layer: n/a
+  price_year_basis: stated
+  notes: Single-track equivalents 25,710-39,369 EUR. Illustrative defaults per JASPERS.
+- id: C-opex-dunes-sand-maint-001
+  item: Sand-mitigation uplift on maintenance of way for lines through dune or drifting-sand terrain
+  category: opex
+  line_type: n/a
+  terrain: dunes
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 5
+  central: 25
+  high: 100
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-302
+  approach: parameter
+  scope: Percent uplift over the flat-terrain maintenance-of-way cost per route-km (sand removal, turnout cleaning,
+    signalling covers, extra rail/wheel wear). Excludes capex sand fences/barriers.
+  layer: n/a
+  price_year_basis: assumed
+  notes: No published cost found for Haramain, SAR North/East, Etihad Rail, SNIM or Tazara; the range is wide because
+    only qualitative evidence exists (see notes-opex.md). Applies to the dune share of the alignment only.
+- id: C-opex-hsr-rs-maint-001
+  item: HSR rolling-stock maintenance per train-km
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: EUR
+  price_year: 2002
+  low: 1.4
+  central: 2.0
+  high: 4.0
+  source: S-cost-opex-003
+  status: sourced
+  approach: parameter
+  scope: Labour, parts, common, other and cleaning per trainset; 12 European HSR types; low ICE1/ALARIS 1.4, high
+    ETR500 4.0; central = text 'around 2 EUR/km' (EUR 1 m per trainset-year at 500,000 km/yr).
+  layer: n/a
+  price_year_basis: stated
+  notes: Table A.5 row label reads 'per 1000 km' while the text gives EUR/km; the text's 2 EUR/km at 1 m EUR / 500,000
+    km confirms the per-km reading.
+- id: C-opex-hsr-train-op-001
+  item: HSR fully allocated operating expense per train-km (Amtrak Acela, FY2019)
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: USD
+  price_year: 2019
+  low: 57.79
+  central: 57.79
+  high: 57.79
+  source: S-cost-opex-010
+  status: derived
+  derivation: USD 93 per train-mile (Eno table, FY2019) / 1.609344 km per mile = 57.79 USD per train-km (Python,
+    2026-10-31).
+  approach: top_down
+  scope: Amtrak operating expenses per train-mile for the Acela route group (all operating cost incl. overheads
+    as allocated by Amtrak; not capital).
+  layer: n/a
+  price_year_basis: stated
+  notes: Single sourced figure, unit-converted only (hence low = central = high; flagged in notes-opex.md). FY2022
+    value in C-opex-hsr-train-op-002. US 240 km/h service on shared infrastructure; access to NEC infrastructure
+    costs within Amtrak allocation.
+- id: C-opex-hsr-train-op-002
+  item: HSR fully allocated operating expense per train-km (Amtrak Acela, FY2022)
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: USD
+  price_year: 2022
+  low: 94.45
+  central: 94.45
+  high: 94.45
+  source: S-cost-opex-010
+  status: derived
+  derivation: USD 152 per train-mile (Eno table, FY2022) / 1.609344 = 94.45 USD per train-km (Python, 2026-10-31).
+  approach: top_down
+  scope: As C-opex-hsr-train-op-001; FY2022 (post-pandemic recovery year, +63% vs FY2019 per Eno).
+  layer: n/a
+  price_year_basis: stated
+  notes: Single sourced figure, unit-converted only; kept separate from FY2019 so that price years are not mixed.
+- id: C-opex-conv-train-op-001
+  item: Conventional intercity fully allocated operating expense per train-km (Amtrak non-Acela route groups, FY2019)
+  category: opex
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: USD
+  price_year: 2019
+  low: 36.04
+  central: 44.12
+  high: 53.44
+  source: S-cost-opex-010
+  status: derived
+  derivation: 'USD per train-mile / 1.609344: state-supported 58 -> 36.04; long-distance 71 -> 44.12; other NEC
+    86 -> 53.44 (Python, 2026-10-31). Central = long-distance group.'
+  approach: top_down
+  scope: Amtrak operating expenses per train-mile, three non-Acela route groups, FY2019.
+  layer: n/a
+  price_year_basis: stated
+  notes: Secondary (Eno analysis of Amtrak monthly reports). FY2022 equivalents 69 / 87 / 124 USD per train-mile
+    (42.87 / 54.06 / 77.05 per train-km) in C-opex-conv-train-op-002.
+- id: C-opex-conv-train-op-002
+  item: Conventional intercity fully allocated operating expense per train-km (Amtrak non-Acela route groups, FY2022)
+  category: opex
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: USD
+  price_year: 2022
+  low: 42.87
+  central: 54.06
+  high: 77.05
+  source: S-cost-opex-010
+  status: derived
+  derivation: 'USD per train-mile / 1.609344: state-supported 69 -> 42.87; long-distance 87 -> 54.06; other NEC
+    124 -> 77.05 (Python, 2026-10-31).'
+  approach: top_down
+  scope: As C-opex-conv-train-op-001, FY2022.
+  layer: n/a
+  price_year_basis: stated
+- id: C-opex-conv-train-op-003
+  item: Train operation cost per train-km, European passenger services (EC CBA Guide railway case study)
+  category: opex
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: EUR
+  price_year: 2014
+  low: 3.3
+  central: 3.95
+  high: 3.95
+  source: S-cost-opex-006
+  status: sourced
+  approach: parameter
+  scope: 'Train operation cost (operator side) per train-km: short-distance 3.3, long-distance 3.95. Excludes infrastructure
+    maintenance and track access charges (2.1 EUR/train-km in the same case).'
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'Country-specific illustrative values ''for the purpose of the case study only'' (EC footnote 123). Large
+    gap to Amtrak fully allocated figures: different scope (Amtrak includes overheads, stations, sales, NEC infrastructure);
+    both kept, not averaged.'
+- id: C-opex-mixed-freight-train-op-001
+  item: Rail freight operating cost (traction) per train-km, JASPERS defaults
+  category: opex
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: EUR
+  price_year: 2010
+  low: 3.12
+  central: 4.39
+  high: 5.59
+  source: S-cost-opex-009
+  extra_sources:
+  - S-cost-opex-006
+  status: sourced
+  approach: parameter
+  scope: 'Variable traction cost per freight train-km (block, wagonload, container identical): electric 3.12; diesel
+    4.39 (EU15, without taxes); diesel with taxes 5.59. Excludes wagon/loco time costs and access charges.'
+  layer: n/a
+  price_year_basis: stated
+  notes: 'EC CBA Guide case gives 4.01 EUR per freight train-km (2014, S-cost-opex-006), within this range. Per
+    tonne-km freight cost: not found (see notes).'
+- id: C-opex-hsr-energy-001
+  item: HSR traction energy from the grid per train-km (simulated, 250-320 km/h, incl. supply losses and idling)
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: kwh_per_train_km
+  currency: SAR
+  price_year: 2025
+  low: 11.9
+  central: 16.31
+  high: 19.45
+  source: S-cost-opex-011
+  status: sourced
+  approach: parameter
+  scope: 'KTH Green Train simulations on a 467-469 km new line: low = GT-VHST 250 km/h eco 9 stops; central = Table
+    6 average for GT-VHST at 320 km/h (closest to 300 km/h operation); high = GT-250 280 km/h minimal time 9 stops.'
+  layer: n/a
+  price_year_basis: assumed
+  notes: 'Physical quantity; currency/price_year are placeholders required by the schema. Swedish climate, wide-body
+    ~460-seat trains: no desert air-conditioning load included. Popular-media figure 21.4 kWh/km for Chinese 350
+    km/h trains (S-cost-opex-029, unverified) lies above the range; not used.'
+- id: C-opex-conv-energy-001
+  item: Conventional electric passenger train energy per train-km (measured at pantograph, Sweden)
+  category: opex
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: kwh_per_train_km
+  currency: SAR
+  price_year: 2025
+  low: 7.34
+  central: 10.09
+  high: 16.51
+  source: S-cost-opex-012
+  extra_sources:
+  - S-cost-opex-013
+  status: sourced
+  approach: parameter
+  scope: 'Measured at pantograph (excl. supply losses): X50-3 Regina 3-car EMU 7.34; X2000-5 (200 km/h) 10.09; IC-8
+    loco + 8 cars (160 km/h) 16.51.'
+  layer: n/a
+  price_year_basis: assumed
+  notes: 'Physical quantity; currency/price_year are placeholders. Grid-side X2000 figures 11.87-13.6 kWh/train-km
+    (S-cost-opex-013). Saudi North/East passenger trains are diesel: diesel consumption per train-km is unknown
+    (C-opex-conv-diesel-001).'
+- id: C-opex-conv-diesel-001
+  item: Diesel fuel use per train-km (diesel passenger and freight trains)
+  category: opex
+  line_type: mixed
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: SAR
+  price_year: 2026
+  low: null
+  central: null
+  high: null
+  source: unknown
+  status: unknown
+  approach: parameter
+  searched: 'UIC/IEA Railway Handbook (not reached); KTH reports (electric only); JASPERS Table A.11 (cost per loco,
+    not litres); SAR 2025 results press (fuel SAVED 139.4 m litres, not consumption per train-km; S-cost-opex-024
+    unverified); web search ''diesel litres per train-km''. The schema has no litre unit: diesel price SAR 1.79/l
+    (S-cost-opex-016) is recorded in notes-opex.md and the sources CSV only.'
+  notes: 'Schema gap: propose units `litre_per_train_km` and `SAR_per_litre` (coordinator).'
+- id: C-opex-power-tariff-001
+  item: KSA electricity tariff for non-residential users, 2026 (before the 1 Jan 2027 revision)
+  category: opex
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_per_kwh
+  currency: SAR
+  price_year: 2026
+  low: 0.2
+  central: 0.26
+  high: 0.32
+  source: S-cost-opex-014
+  extra_sources:
+  - S-cost-opex-015
+  status: derived
+  derivation: low = industrial 20 halalas/kWh; high = commercial above 6,000 kWh/month 32 halalas (S-cost-opex-014);
+    central = midpoint (0.20 + 0.32) / 2 = 0.26 SAR, because the tariff class of rail traction supply is unknown
+    (A-cost-303).
+  assumption_id: A-cost-303
+  approach: parameter
+  scope: Energy charge only, excl. VAT and fixed/meter charges; government tier reported at 32 halalas (S-cost-opex-015,
+    unverified).
+  layer: n/a
+  price_year_basis: stated
+  notes: Secondary (MEED). Official Saudi Energy tariff page returned an error on 2026-10-31.
+- id: C-opex-power-tariff-002
+  item: KSA electricity tariff for non-residential users from 1 Jan 2027
+  category: opex
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_per_kwh
+  currency: SAR
+  price_year: 2027
+  low: 0.23
+  central: 0.29
+  high: 0.35
+  source: S-cost-opex-014
+  extra_sources:
+  - S-cost-opex-015
+  status: derived
+  derivation: low = industrial 23 halalas/kWh; high = commercial above 6,000 kWh/month 35 halalas (S-cost-opex-014;
+    government single tier 35, S-cost-opex-015 unverified); central = midpoint 0.29 SAR (tariff class unknown, A-cost-303).
+  assumption_id: A-cost-303
+  approach: parameter
+  scope: Announced 26 Oct 2026, effective 1 Jan 2027; energy charge excl. VAT; new fixed monthly capacity fee not
+    included.
+  layer: n/a
+  price_year_basis: stated
+  notes: Nominal 2027 tariff, recorded as price_year 2027 (announced level), not deflated.
+- id: C-opex-hsr-staff-001
+  item: HSR operation and maintenance staff per route-km (Haramain)
+  category: opex
+  line_type: hsr
+  terrain: n/a
+  unit: fte_per_km
+  currency: SAR
+  price_year: 2025
+  low: 2.89
+  central: 4.78
+  high: 6.67
+  source: S-cost-opex-021
+  extra_sources:
+  - S-cost-opex-022
+  - S-lb-021
+  status: derived
+  derivation: low = 1,300 direct workers of Renfe's Saudi branch (Jan 2023, S-cost-opex-021) / 450 km (S-lb-021)
+    = 2.89; high = 3,000 employees projected for the whole operation and maintenance (2013, S-cost-opex-022, unverified)
+    / 450 = 6.67; central = midpoint 4.78 (Python, 2026-10-31).
+  approach: top_down
+  scope: Low = train operator only (excl. infrastructure maintenance contractor and SAR staff); high = projected
+    total O&M workforce.
+  layer: existing
+  price_year_basis: assumed
+  notes: Physical quantity; currency/price_year placeholders. The high end rests on an unverified 2013 projection;
+    replace with an actual HHR or SAR headcount when found.
+- id: C-opex-staff-saudisation-001
+  item: Saudi share of railway O&M workforce (Saudisation share)
+  category: opex
+  line_type: n/a
+  terrain: n/a
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 70
+  central: 88
+  high: 95
+  source: assumed
+  extra_sources:
+  - S-cost-opex-023
+  - S-cost-opex-024
+  - S-cost-opex-022
+  - S-cost-opex-027
+  status: assumed
+  assumption_id: A-cost-300
+  approach: parameter
+  scope: Share of FTEs who are Saudi nationals, applied to the wage blend.
+  layer: n/a
+  price_year_basis: assumed
+  notes: 'Evidence (all unverified snippets): SAR >88% (Nov 2024), SAR 89% (2025), HHR 2013 target >70%, GASTAT
+    rail passenger localization 86.29% (2021). Low = HHR target; high = above observed to allow for Nitaqat tightening.'
+- id: C-opex-staff-wage-001
+  item: Average annual wage per FTE, blended Saudi/expatriate (all-sector GASTAT averages)
+  category: opex
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_per_fte_yr
+  currency: SAR
+  price_year: 2025
+  low: 47196
+  central: 122183
+  high: 132408
+  source: S-cost-opex-025
+  status: derived
+  derivation: 'monthly x 12 (GASTAT Q2 2025 via Argaam, S-cost-opex-025): expatriate 3,933 x 12 = 47,196 (low, 0%
+    Saudi); Saudi 11,034 x 12 = 132,408 (high, 100% Saudi); central = 0.88 x 132,408 + 0.12 x 47,196 = 122,183 at
+    the A-cost-300 central share (Python, 2026-10-31).'
+  approach: parameter
+  scope: All-sector average monthly wage; not rail-specific; employer on-costs (GOSI, allowances, training) not
+    included (see A-cost-301).
+  layer: n/a
+  price_year_basis: stated
+  notes: Rail-specific wage not found. Apply the on-cost/skill multiplier A-cost-301 (1.2-2.0) before use.
+- id: C-opex-staff-oncost-001
+  item: Employer on-cost and rail-skill multiplier on the all-sector average wage
+  category: opex
+  line_type: n/a
+  terrain: n/a
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 120
+  central: 150
+  high: 200
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-301
+  approach: parameter
+  scope: Loaded cost per FTE as percent of the all-sector average wage (C-opex-staff-wage-001).
+  layer: n/a
+  price_year_basis: assumed
+  notes: No rail-sector wage or loaded-cost source found; range reflects social-insurance contributions, allowances
+    and a skilled-workforce premium. Replace with a sourced rail wage when available.
+- id: C-opex-rs-maint-share-001
+  item: Rolling-stock maintenance as percent of rolling-stock capex per year
+  category: opex
+  line_type: n/a
+  terrain: n/a
+  unit: pct_per_yr
+  currency: EUR
+  price_year: 2002
+  low: null
+  central: null
+  high: null
+  source: unknown
+  status: unknown
+  approach: parameter
+  searched: Campos, de Rus and Barron 2007 (per trainset-year and per km only, no capex basis); JASPERS Table A.11
+    (per locomotive-year); EC CBA Guide 2014. Use per-train-km row C-opex-hsr-rs-maint-001 instead.
+- id: C-renewal-track-life-001
+  item: Track economic asset life
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: years
+  currency: GBP
+  price_year: 2026
+  low: 14
+  central: 27
+  high: 40
+  source: S-cp1-087
+  status: derived
+  derivation: TAG A1.1 Table 2 railways track 14-40 years (S-cp1-087); central = midpoint 27.
+  approach: parameter
+  scope: UK standard assumed economic asset lives (based on UNITE, Tweddle et al 2002, World Bank TRN-18).
+  layer: n/a
+  price_year_basis: publication_year
+  notes: 'Currency/price_year placeholders (GBP = source country). Desert sand abrasion could shorten lives: not
+    quantified.'
+- id: C-renewal-electrification-life-001
+  item: Electrification (OCS, power supply) economic asset life
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: years
+  currency: GBP
+  price_year: 2026
+  low: 30
+  central: 35
+  high: 40
+  source: S-cp1-087
+  status: derived
+  derivation: TAG A1.1 Table 2 electrification 30-40 years; central = midpoint 35.
+  approach: parameter
+  layer: n/a
+  price_year_basis: publication_year
+- id: C-renewal-signalling-life-001
+  item: Signalling economic asset life
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: years
+  currency: GBP
+  price_year: 2026
+  low: 10
+  central: 30
+  high: 50
+  source: S-cp1-087
+  status: derived
+  derivation: TAG A1.1 Table 2 signalling 10-50 years; central = midpoint 30.
+  approach: parameter
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Telecoms 7-40 years in the same table (midpoint 23.5).
+- id: C-renewal-buildings-life-001
+  item: Station and depot buildings economic asset life
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: years
+  currency: GBP
+  price_year: 2026
+  low: 30
+  central: 35
+  high: 40
+  source: S-cp1-087
+  status: derived
+  derivation: TAG A1.1 Table 2 buildings 30-40 years; central = midpoint 35.
+  approach: parameter
+  layer: n/a
+  price_year_basis: publication_year
+- id: C-renewal-civils-life-001
+  item: Earthworks, bridges and tunnels economic asset life
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: years
+  currency: GBP
+  price_year: 2026
+  low: 100
+  central: 100
+  high: 100
+  source: S-cp1-087
+  status: sourced
+  approach: parameter
+  scope: 'TAG A1.1 Table 2: earthworks 100; bridges/tunnels ''up to 100''.'
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Single figure as stated by the source; beyond a 60-year appraisal (A-cba-004), so no renewal inside the
+    horizon, residual value only.
+- id: C-renewal-rolling-stock-life-001
+  item: Rolling stock economic life (minimum, for appraisal)
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: years
+  currency: GBP
+  price_year: 2018
+  low: 30
+  central: 35
+  high: 35
+  source: S-cost-opex-026
+  status: sourced
+  approach: parameter
+  scope: 'TAG A5.3: new DMU and diesel locomotives 30 years; new EMU and electric locomotives 35 years; refurbishment
+    allowance during life required.'
+  layer: n/a
+  price_year_basis: publication_year
+  notes: Minimum lifespans; mid-life refurbishment cost not given.
+- id: C-renewal-cost-share-001
+  item: Renewal cost as percent of initial capex by asset class
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: pct_of_capex
+  currency: EUR
+  price_year: 2014
+  low: null
+  central: null
+  high: null
+  source: unknown
+  status: unknown
+  approach: parameter
+  searched: 'EC CBA Guide 2014 (replacement costs treated as cash flows, no generic %); JASPERS rail freight guidance
+    2017; TAG A1.1 and A5.3; web search ''renewal cost percent of capex railway''. UIC LICB not public. Default
+    method: renew each asset class at 100% of its initial capex at the end of its life (to be registered by the
+    coordinator if adopted).'
+- id: C-financing-sovereign-usd-001
+  item: Saudi sovereign USD borrowing cost (NDMC bonds and sukuk, 2026)
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: pct_per_yr
+  currency: USD
+  price_year: 2026
+  low: 4.875
+  central: 5.598
+  high: 5.875
+  source: S-cp1-074
+  extra_sources:
+  - S-cp1-075
+  - S-cp1-079
+  - S-cp1-076
+  - S-cp1-078
+  status: sourced
+  approach: parameter
+  scope: 'Nominal USD: 10-year 4.875% and 30-year 5.875% (Jan 2026, S-cp1-074); central = latest 10-year sukuk coupon
+    5.598% (Sep 2026, S-cp1-079, secondary; 5-year 5.257%).'
+  layer: n/a
+  price_year_basis: stated
+  notes: 'Same evidence as A-cba-003 (reused by id). No riyal sovereign yield found. Nominal rates: do not mix with
+    real discount rates.'
+- id: C-financing-pif-spread-001
+  item: PIF USD borrowing spread over US Treasuries
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: pct_per_yr
+  currency: USD
+  price_year: 2026
+  low: 0.85
+  central: 1.45
+  high: 2.05
+  source: S-cost-opex-020
+  extra_sources:
+  - S-cost-opex-019
+  status: sourced
+  approach: parameter
+  scope: 'Percentage points over UST: 10-year sukuk Jan 2026 ~0.85 (yield 5.13%, S-cost-opex-019); Jan 2024 bonds
+    5-year 1.15, 10-year 1.45, 30-year 2.05 (S-cost-opex-020).'
+  layer: n/a
+  price_year_basis: stated
+  notes: Secondary (press citing IFR). Mixes 2024 and 2026 spreads (spreads, not prices, so no inflation index applies);
+    price_year set to the latest point. Add to the matching-tenor UST yield (S-cp1-078) for an all-in rate.
+- id: C-financing-pf-margin-001
+  item: Project-finance senior debt margin for a Saudi rail PPP (over SOFR)
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: pct_per_yr
+  currency: USD
+  price_year: 2026
+  low: 1.0
+  central: 2.0
+  high: 3.5
+  source: assumed
+  extra_sources:
+  - S-cost-opex-028
+  status: assumed
+  assumption_id: A-cost-304
+  approach: parameter
+  scope: Percentage points over SOFR (or equivalent), construction and operation periods; excludes fees and hedging.
+  layer: n/a
+  price_year_basis: assumed
+  notes: No open source for a Saudi or GCC rail PPP margin. Upper end informed by the PP11 IPP schedule 250-350
+    bp (S-cost-opex-028, unverified, LIBOR era).
+- id: C-financing-cirr-usd-001
+  item: OECD CIRR, US dollar (export-credit minimum fixed rate), valid 15 Oct - 14 Nov 2026
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: pct_per_yr
+  currency: USD
+  price_year: 2026
+  low: 5.73
+  central: 5.85
+  high: 5.99
+  source: S-cost-opex-017
+  status: sourced
+  approach: parameter
+  scope: 'By government-bond maturity band: 3 years 5.73; 6 years 5.85 (central, mid band); 10 years 5.99. Excludes
+    the ECA premium (C-financing-eca-premium-001).'
+  layer: n/a
+  price_year_basis: stated
+  notes: 'Previous month (15 Sep - 14 Oct 2026): 5.28-5.68.'
+- id: C-financing-cirr-eur-001
+  item: OECD CIRR, euro, valid 15 Oct - 14 Nov 2026
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: pct_per_yr
+  currency: EUR
+  price_year: 2026
+  low: 4.15
+  central: 4.26
+  high: 4.49
+  source: S-cost-opex-017
+  status: sourced
+  approach: parameter
+  scope: 3 years 4.15; 6 years 4.26 (central); 10 years 4.49. Excludes the ECA premium.
+  layer: n/a
+  price_year_basis: stated
+  notes: 'Previous month: 3.78-4.23.'
+- id: C-financing-eca-premium-001
+  item: Export-credit agency premium for a Saudi sovereign or sub-sovereign borrower
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: pct
+  currency: USD
+  price_year: 2026
+  low: null
+  central: null
+  high: null
+  source: unknown
+  status: unknown
+  approach: parameter
+  searched: OECD country risk classification (Saudi Arabia = category 2, valid 16 Oct 2026, S-cost-opex-018); Finnvera
+    and Euler Hermes pages (no premium figures); OECD premium calculator not used (interactive tool). Premium depends
+    on tenor, buyer risk and cover; record as unknown.
+- id: C-financing-construction-period-001
+  item: Construction period for interest during construction (IDC)
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: years
+  currency: SAR
+  price_year: 2025
+  low: 5
+  central: 7
+  high: 10
+  source: assumed
+  extra_sources:
+  - S-lb-009
+  - S-al_baha-008
+  status: assumed
+  assumption_id: A-cost-305
+  approach: parameter
+  scope: Years from main civil award to opening; IDC = sum over years of drawn balance x construction-period interest
+    rate (computed in costs/, not registered as a number).
+  layer: n/a
+  price_year_basis: assumed
+  notes: 'Evidence: Landbridge described as a ''seven-year'' scheme (MEED, S-lb-009); Haramain opened Oct 2018 (S-al_baha-008).
+    Schedule-overrun uplift comes from reference-class-forecasting, not from this row.'
+- id: C-financing-drawdown-001
+  item: Capex drawdown profile for IDC (share of capex drawn in the first half of the construction period)
+  category: financing
+  line_type: n/a
+  terrain: n/a
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 30
+  central: 40
+  high: 50
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-306
+  approach: parameter
+  scope: Back-loaded S-curve (low) to uniform drawdown (high); used only to compute IDC.
+  layer: n/a
+  price_year_basis: assumed
+  notes: No KSA drawdown data found; EC CBA Guide 2014 treats IDC as a financing item outside the economic CBA (S-cost-opex-007).
+- id: C-system-hhr-phase2-eur-001
+  item: Haramain HSR Phase 2 (Al Shoula consortium) contract value, euro statement
+  category: system
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: EUR
+  price_year: 2011
+  low: 6736
+  central: 6736
+  high: 6740
+  source: S-cost-ksa-004
+  extra_sources:
+  - S-cost-ksa-005
+  - S-008
+  - S-010
+  status: sourced
+  approach: top_down
+  scope: Track, signalling and telecoms, electrification, operational control centre, 35 trains (Talgo 350), and
+    12 years of operation and maintenance (S-cost-ksa-004, S-cost-ksa-005)
+  layer: existing
+  price_year_basis: award_year
+  notes: 'EUR 6.736 bn (Construction Index) vs 6.74 bn (rounded, GCO). This is the ''Spanish source 6,736 million''
+    and the ''USD 9.4 bn total contract value'' of S-010: both are the Phase 2 contract, not the programme total
+    (GCO prints EUR 6.74 bn = USD 9.4 bn). Bundles capex (track, systems, trains) with 12 years of O&M, so it is
+    NOT a pure capex figure; no split is published.'
+- id: C-system-hhr-phase2-sar-001
+  item: Haramain HSR Phase 2 contract value, riyal statement at signing (Jan 2012)
+  category: system
+  line_type: hsr
+  terrain: n/a
+  unit: SAR_m_lump
+  currency: SAR
+  price_year: 2012
+  low: 30800
+  central: 30800
+  high: 30800
+  source: S-cost-ksa-006
+  extra_sources:
+  - S-cost-ksa-007
+  status: sourced
+  approach: top_down
+  scope: Track laying, electrification, operations and maintenance (S-cost-ksa-006); 35 trains plus 13 carriages,
+    signalling, track (S-cost-ksa-007)
+  layer: existing
+  price_year_basis: award_year
+  notes: Single figure as stated (SR 30.8 bn = USD 8.2 bn at the peg). Same contract as the EUR row; the two are
+    kept separately because the SAR and EUR statements are not reconcilable without an exchange-rate assumption
+    (conversion is the normaliser's job). Includes 12 years of O&M (per the EUR sources).
+- id: C-renewal-track-share-conv-003
+  item: 'Permanent way (track) as a share of base-infrastructure cost per km, new conventional line: the part of
+    civil_track renewed at the end of the track life'
+  category: renewal
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: pct
+  currency: EUR
+  price_year: 2016
+  low: 20.6
+  central: 38.6
+  high: 63.1
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: 'ratio of C-line-type-conv-ec-permanent-way-014 to C-line-type-conv-ec-base-006 (EC/PwC 2018, EUR
+    2016 per double-track-equivalent km): low 1.04/5.06, central 1.7/4.4, high 2.36/3.74 (x 100); extremes pair
+    opposite ends, so the band is wide on purpose'
+  approach: parameter
+  price_year_basis: stated
+  notes: Used by costs/config/estimate_map.yaml (track renewal) for non-HSR line types; earthworks and formation
+    are not renewed within 60 years in this method.
+- id: C-renewal-track-share-hsr-004
+  item: Permanent way (track) as a share of base-infrastructure cost per km, new high-speed line
+  category: renewal
+  line_type: hsr
+  terrain: n/a
+  unit: pct
+  currency: EUR
+  price_year: 2016
+  low: 9.0
+  central: 13.1
+  high: 18.3
+  source: S-lb-030
+  extra_sources:
+  - S-cost-civil-006
+  status: derived
+  derivation: 'ratio of C-line-type-hsr-ec-permanent-way-015 to C-line-type-hsr-ec-base-003 (EC/PwC 2018, EUR 2016):
+    low 0.85/9.41, central 1.1/8.4, high 1.35/7.39 (x 100)'
+  approach: parameter
+  price_year_basis: stated
+  notes: Used for HSR track renewal.
+- id: C-renewal-replacement-share-002
+  item: Renewal cost at end of asset life as a share of the asset initial capex (real terms)
+  category: renewal
+  line_type: n/a
+  terrain: n/a
+  unit: pct
+  currency: SAR
+  price_year: 2025
+  low: 70.0
+  central: 100.0
+  high: 120.0
+  source: assumed
+  status: assumed
+  assumption_id: A-cost-016
+  approach: parameter
+  price_year_basis: assumed
+  notes: 'No open source gives renewal cost as a share of initial capex (C-renewal-cost-share-001 is unknown; searched
+    by the opex pass: EC CBA Guide 2014, UIC LICB, TAG). Low: renewals reuse formation and design; high: work under
+    traffic and possession costs. Replaces the unknown row in estimates.'

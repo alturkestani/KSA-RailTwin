@@ -1,0 +1,24 @@
+# Spec for cities/ksa/lines/sar-north-freight.yaml. Points: SAR's list (S-020). Freight terminals are not
+# tagged in OSM; where no rail node exists the OSM place node is a flagged proxy.
+id: sar-north-freight
+line:
+  name_en: SAR North freight line (Al-Jalamid - Ras Al-Khair)
+  name_ar: خط الشمال للشحن (الجلاميد - رأس الخير)
+  layer: existing
+  operator: Saudi Arabia Railways (SAR)
+  status: in_service
+  source: S-019
+  accessed: 2026-10-31
+  line_type: freight                               # CP2 P4a; S-cp2-401, S-cp2-402
+  length_km: 1550                                   # S-019 (verified)
+  notes: >-
+    Freight only (S-cp2-401, S-cp2-402): `line_type: freight` since CP2 P4a (was `mixed`). The Arabic line name is descriptive (SAR's Arabic name not read, S-r1a-026).
+    "AlBaithah Junction" (SAR) may be the "Zabirah" junction of Wikipedia (C-r1a-06); the OSM
+    locality Al Ba`ithah is used as a proxy. Phosphate and bauxite branches and the Zabirah
+    connection are in the OSM existing layer but not split into separate line files.
+stations:
+  - {id: al-jalamid, name_en: Al-Jalamid mine, name_ar: حزم الجلاميد, class: terminal, source: S-020, proxy_osm: node/1236741000, site_status: inferred}
+  - {id: al-jawf, name_en: Jouf, name_ar: الجوف, class: major, source: S-020, osm: node/7984803603}
+  - {id: hail, name_en: Hail, name_ar: حائل, class: major, source: S-020, osm: node/7984942389}
+  - {id: al-baithah, name_en: AlBaithah Junction, name_ar: البعيثة, class: intermediate, source: S-020, proxy_osm: node/6784047594, site_status: inferred}
+  - {id: ras-al-khair, name_en: Ras Al-Khair, name_ar: رأس الخير, class: terminal, source: S-020, proxy_osm: node/1237806545, site_status: inferred}

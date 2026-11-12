@@ -1,0 +1,16 @@
+# Spec for cities/ksa/lines/riyadh-metro-l3.yaml. Stations: stop nodes of OSM route relation 8857387 (ODbL).
+id: riyadh-metro-l3
+stations_from_route: 8857387
+station_source: S-r1a-803
+osm_track: [subway, light_rail, rail]
+line:
+  name_en: Riyadh Metro Line 3 (Orange)
+  name_ar: مترو الرياض - المسار البرتقالي
+  layer: existing
+  operator: Royal Commission for Riyadh City (RCRC), owner; operator not verified
+  status: in_service
+  source: S-r1a-047
+  accessed: 2026-10-31
+  line_type: metro
+  length_km: 40.7                                     # S-r1a-047 (secondary)
+  notes: "Opened 5 Jan 2025 (S-r1a-047, secondary). 22 stations per Wikipedia; station list and Arabic names from the OSM route relation (S-r1a-803). Operator not read (riyadhmetro.sa unreachable, S-r1a-054); RCRC owns the project (S-034). Arabic line name descriptive."

@@ -1,0 +1,3 @@
+id,claim,value,unit,url,publisher,title,published,accessed,locator,quote,status,primary_to_find,used_in
+S-fx-001,fixture claim one,45,min,https://example.org/a,Fixture,Fixture A,unknown,2026-11-07,p1,,verified,,tests
+S-fx-002,fixture claim two,453,km,https://example.org/b,Fixture,Fixture B,unknown,2026-11-07,p2,,verified,,tests

@@ -1,0 +1,27 @@
+# > **Document version:** cities/ksa/assumptions/reroute_thresholds.yaml v1.0 | 6 Nov 2026 | Author: FIX_HHR_REROUTE builder | Status: draft
+# FIX_HHR_REROUTE (prompts/FIX_HHR_REROUTE.md item 1): when a re-routed corridor "moved materially".
+# Set BEFORE the deltas were computed (6 Nov 2026). A corridor moved materially if ANY test is true;
+# only then are its R5 costs, running times, judge score, layouts, CBA and published numbers re-run.
+# Read by network/reroute.py. Each value is registered in docs/assumptions.md (A-align-120..124).
+version: 1
+label: hypothetical alignments (ours); indicative engineering sketch, not a design
+corridors:  # the four routed corridors with vertices in the old stitched-chord band (FIX_HHR_JEDDAH)
+  - S4-commuter_belt-jeddah-000
+  - S4-commuter_belt-jeddah-045
+  - S4-commuter_belt-jeddah-315
+  - S2-trunk_gap-riyadh-jeddah
+material:
+  # relative change of routed length (|new - old| / old)
+  length_rel: {value: 0.01, assumption_id: A-align-120}
+  # relative change of tunnel km, viaduct km or earthworks km, each tested on its own; when the old
+  # value is 0, any change of at least 0.001 km counts as material
+  structure_rel: {value: 0.01, assumption_id: A-align-121}
+  # absolute change of the end-to-end all-stop running time, kinematic value case (R4 model), minutes
+  run_min_abs: {value: 0.5, assumption_id: A-align-122}
+  # maximum lateral offset of the new path from the old path, km
+  max_offset_km: {value: 1.0, assumption_id: A-align-123}
+reporting:
+  # "moved" length: km of the new path lying more than this distance from the old path (not a test)
+  moved_m: {value: 500, assumption_id: A-align-124}
+  # path sampling step for the offsets, m
+  sample_m: {value: 50, assumption_id: A-align-124}

@@ -1,0 +1,242 @@
+{
+ "type": "FeatureCollection",
+ "name": "fixture-zones-jeddah",
+ "fixture": true,
+ "note": "invented test data; not real zones or populations; squares placed inside the TrafficTwin Jeddah clip bbox only so the road-skim demo has a network",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FJZ1",
+    "name_en": "Fixture Jeddah Zone 1",
+    "name_ar": null,
+    "region": null,
+    "population": 1200,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       39.12,
+       21.48
+      ],
+      [
+       39.15,
+       21.48
+      ],
+      [
+       39.15,
+       21.51
+      ],
+      [
+       39.12,
+       21.51
+      ],
+      [
+       39.12,
+       21.48
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FJZ2",
+    "name_en": "Fixture Jeddah Zone 2",
+    "name_ar": null,
+    "region": null,
+    "population": 3400,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       39.15,
+       21.52
+      ],
+      [
+       39.18,
+       21.52
+      ],
+      [
+       39.18,
+       21.55
+      ],
+      [
+       39.15,
+       21.55
+      ],
+      [
+       39.15,
+       21.52
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FJZ3",
+    "name_en": "Fixture Jeddah Zone 3",
+    "name_ar": null,
+    "region": null,
+    "population": 2100,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       39.18,
+       21.56
+      ],
+      [
+       39.21,
+       21.56
+      ],
+      [
+       39.21,
+       21.59
+      ],
+      [
+       39.18,
+       21.59
+      ],
+      [
+       39.18,
+       21.56
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FJZ4",
+    "name_en": "Fixture Jeddah Zone 4",
+    "name_ar": null,
+    "region": null,
+    "population": 5600,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       39.15,
+       21.6
+      ],
+      [
+       39.18,
+       21.6
+      ],
+      [
+       39.18,
+       21.630000000000003
+      ],
+      [
+       39.15,
+       21.630000000000003
+      ],
+      [
+       39.15,
+       21.6
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FJZ5",
+    "name_en": "Fixture Jeddah Zone 5",
+    "name_ar": null,
+    "region": null,
+    "population": 800,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       39.2,
+       21.5
+      ],
+      [
+       39.230000000000004,
+       21.5
+      ],
+      [
+       39.230000000000004,
+       21.53
+      ],
+      [
+       39.2,
+       21.53
+      ],
+      [
+       39.2,
+       21.5
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FJZ6",
+    "name_en": "Fixture Jeddah Zone 6",
+    "name_ar": null,
+    "region": null,
+    "population": 4300,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       39.22,
+       21.62
+      ],
+      [
+       39.25,
+       21.62
+      ],
+      [
+       39.25,
+       21.650000000000002
+      ],
+      [
+       39.22,
+       21.650000000000002
+      ],
+      [
+       39.22,
+       21.62
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

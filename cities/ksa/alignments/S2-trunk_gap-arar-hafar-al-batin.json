@@ -1,0 +1,63 @@
+{
+ "id": "S2-trunk_gap-arar-hafar-al-batin",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 561.648,
+ "straight_km_legs": 555.683,
+ "straight_km_end_to_end": 555.357,
+ "detour_ratio": 1.0107,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 0.0,
+ "viaduct_km": 0.0,
+ "earthworks_km": 29.796,
+ "at_grade_km": 531.851,
+ "tunnel_share": 0.0,
+ "viaduct_share": 0.0,
+ "fill_m3": 402700.0,
+ "cut_m3": 717500.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.0684,
+ "elev_min_m": 307.5,
+ "elev_max_m": 554.5,
+ "terrain_shares": {
+  "flat_desert": 1.0
+ },
+ "area_km": {
+  "urban": 12.799,
+  "builtup": 30.947,
+  "protected": 0.0,
+  "military": 1.9,
+  "sand": 0.0,
+  "sabkha": 0.0,
+  "waterway": 4.9,
+  "highway": 49.496
+ },
+ "wadi_crossings_osm": 34,
+ "speed_restrictions": [
+  {
+   "from_km": 557.698,
+   "to_km": 559.798,
+   "kmh": 230.0
+  }
+ ],
+ "restricted_km": 2.1,
+ "min_curve_kmh": 230.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "arar": 0.0,
+  "rafha": 285.068,
+  "hafar-al-batin": 561.648
+ },
+ "status": "routed",
+ "stations_key": "3c29faddeeff45a1",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-arar-hafar-al-batin.geojson",
+ "run": "runs/align/r5-h4a-s1/S2-trunk_gap-arar-hafar-al-batin",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

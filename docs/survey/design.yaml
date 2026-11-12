@@ -1,0 +1,283 @@
+# > **Document version:** docs/survey/design.yaml v0.1 | 31 Oct 2026 | Author: socio-culture-analyst B (R1d) | Status: draft
+# Stated-preference design configuration: DESIGNED, NOT FIELDED. Read by
+#   uv run python -m demand.survey design --config docs/survey/design.yaml --seed 1 --out docs/survey/choice_sets.csv
+# Priors are the values in cities/ksa/assumptions/mode_choice_priors.yaml ("literature-based until survey results exist").
+# 16 parameters: 3 ASCs, 4 mode-specific IVT, generic cost, access, headway, on-time share, comfort,
+# women-only/family carriage, prayer facilities, luggage, shaded transfer.
+version: "0.1"
+label: "designed, not fielded"
+reference_trip: "Intercity one-way trip of 400 km road distance (A-social-100) between the respondent's home governorate and a named destination; the fielding team scales every time and cost level by D/400 for the respondent's pair (road distance D, valid 150-600 km) and rounds times to 5 min and costs to SAR 5. Air is shown only where the pair has scheduled flights."
+priors_file: cities/ksa/assumptions/mode_choice_priors.yaml
+design:
+  n_tasks: 27
+  n_blocks: 3
+  dominance_task: true
+  starts: 10
+  max_sweeps: 30
+alternatives:
+  - id: car
+    label_en: "Your own car (or a household car)"
+    label_ar: "سيارتك الخاصة (أو سيارة الأسرة)"
+    asc: {prior: 0.0, assumption: A-mode-010}
+    reference: true
+    attributes:
+      - id: ivt
+        label_en: "Door-to-door driving time"
+        label_ar: "مدة القيادة من الباب إلى الباب"
+        unit: min
+        levels: [210, 240, 270]
+        coding: linear
+        param: ivt_car
+        prior: -0.010
+        assumption: A-social-101
+        note: "prior A-mode-001"
+      - id: cost
+        label_en: "Fuel and parking cost for the car"
+        label_ar: "تكلفة الوقود والمواقف للسيارة"
+        unit: SAR
+        levels: [60, 80, 100, 120]
+        coding: linear
+        param: cost
+        prior: -0.013
+        assumption: A-social-102
+        note: "prior A-mode-005; fuel price S-soc-316"
+  - id: rail
+    label_en: "Train (new intercity service)"
+    label_ar: "القطار (خدمة جديدة بين المدن)"
+    asc: {prior: -0.2, assumption: A-mode-010}
+    attributes:
+      - id: ivt
+        label_en: "Time on the train"
+        label_ar: "مدة الرحلة على متن القطار"
+        unit: min
+        levels: [90, 150, 210]
+        coding: linear
+        param: ivt_rail
+        prior: -0.009
+        assumption: A-social-103
+        note: "prior A-mode-002"
+      - id: access
+        label_en: "Time to reach the station and from the station to your destination"
+        label_ar: "مدة الوصول إلى المحطة ومن المحطة إلى وجهتك"
+        unit: min
+        levels: [20, 40, 60]
+        coding: linear
+        param: access
+        prior: -0.017
+        assumption: A-social-104
+        note: "prior A-mode-007"
+      - id: cost
+        label_en: "Ticket price (one way, per person)"
+        label_ar: "سعر التذكرة (ذهاب فقط، للشخص الواحد)"
+        unit: SAR
+        levels: [60, 100, 140, 180]
+        coding: linear
+        param: cost
+        prior: -0.013
+        assumption: A-social-105
+        note: "prior A-mode-005; fare evidence S-soc-318 (secondary), S-soc-321 (unverified)"
+      - id: headway
+        label_en: "A train every"
+        label_ar: "قطار كل"
+        unit: min
+        levels: [30, 60, 120]
+        coding: linear
+        param: headway
+        prior: -0.004
+        assumption: A-social-106
+        note: "prior A-mode-008"
+      - id: reliability
+        label_en: "Trips arriving on time"
+        label_ar: "نسبة الرحلات التي تصل في موعدها"
+        unit: "%"
+        levels: [80, 95]
+        coding: linear
+        param: on_time
+        prior: 0.007
+        assumption: A-social-107
+        note: "prior A-mode-009"
+      - id: comfort
+        label_en: "Class"
+        label_ar: "الدرجة"
+        unit: class
+        levels: [0, 1]
+        level_labels_en: ["Economy", "Business"]
+        level_labels_ar: ["الدرجة الاقتصادية", "درجة الأعمال"]
+        coding: dummy
+        param: comfort
+        prior: [0.4]
+        assumption: A-social-108
+        note: "prior A-mode-014"
+      - id: family_carriage
+        label_en: "Women-only or family carriage available"
+        label_ar: "عربة مخصصة للنساء أو للعائلات"
+        unit: yes/no
+        levels: [0, 1]
+        level_labels_en: ["No", "Yes"]
+        level_labels_ar: ["غير متوفرة", "متوفرة"]
+        coding: dummy
+        param: family_carriage
+        prior: [0.2]
+        assumption: A-social-109
+        note: "prior A-mode-015"
+      - id: prayer
+        label_en: "Prayer area on board or at the stations"
+        label_ar: "مصلى في القطار أو في المحطات"
+        unit: yes/no
+        levels: [0, 1]
+        level_labels_en: ["No", "Yes"]
+        level_labels_ar: ["غير متوفر", "متوفر"]
+        coding: dummy
+        param: prayer
+        prior: [0.2]
+        assumption: A-social-110
+        note: "prior A-mode-016"
+      - id: luggage
+        label_en: "Luggage included"
+        label_ar: "الأمتعة المشمولة"
+        unit: allowance
+        levels: [0, 1]
+        level_labels_en: ["Cabin bag only", "Cabin bag + one large suitcase"]
+        level_labels_ar: ["حقيبة يد فقط", "حقيبة يد + حقيبة سفر كبيرة واحدة"]
+        coding: dummy
+        param: luggage
+        prior: [0.2]
+        assumption: A-social-111
+        note: "prior A-mode-017"
+      - id: shaded_transfer
+        label_en: "Shaded or air-conditioned walk and transfer at the stations"
+        label_ar: "ممرات وانتقال مظللة أو مكيفة في المحطات"
+        unit: yes/no
+        levels: [0, 1]
+        level_labels_en: ["No", "Yes"]
+        level_labels_ar: ["غير متوفرة", "متوفرة"]
+        coding: dummy
+        param: shaded_transfer
+        prior: [0.25]
+        assumption: A-social-112
+        note: "prior A-mode-018"
+  - id: air
+    label_en: "Domestic flight"
+    label_ar: "رحلة طيران داخلية"
+    asc: {prior: -0.2, assumption: A-mode-011}
+    note: "shown only where the respondent's pair has scheduled flights (availability handled in estimation)"
+    attributes:
+      - id: ivt
+        label_en: "Flight time"
+        label_ar: "مدة الطيران"
+        unit: min
+        levels: [55, 70, 85]
+        coding: linear
+        param: ivt_air
+        prior: -0.012
+        assumption: A-social-113
+        note: "prior A-mode-003"
+      - id: access
+        label_en: "Time to the airport, check-in and security, and from the airport to your destination"
+        label_ar: "مدة الوصول إلى المطار وإجراءات السفر والتفتيش، ومن المطار إلى وجهتك"
+        unit: min
+        levels: [60, 90, 120]
+        coding: linear
+        param: access
+        prior: -0.017
+        assumption: A-social-114
+        note: "prior A-mode-007"
+      - id: cost
+        label_en: "Ticket price (one way, per person)"
+        label_ar: "سعر التذكرة (ذهاب فقط، للشخص الواحد)"
+        unit: SAR
+        levels: [180, 260, 340, 420]
+        coding: linear
+        param: cost
+        prior: -0.013
+        assumption: A-social-115
+        note: "prior A-mode-005; fare evidence S-soc-320 (unverified)"
+      - id: headway
+        label_en: "A flight every"
+        label_ar: "رحلة كل"
+        unit: min
+        levels: [60, 120, 240]
+        coding: linear
+        param: headway
+        prior: -0.004
+        assumption: A-social-116
+        note: "prior A-mode-008"
+      - id: reliability
+        label_en: "Flights arriving on time"
+        label_ar: "نسبة الرحلات التي تصل في موعدها"
+        unit: "%"
+        levels: [80, 95]
+        coding: linear
+        param: on_time
+        prior: 0.007
+        assumption: A-social-107
+        note: "prior A-mode-009"
+      - id: luggage
+        label_en: "Luggage included"
+        label_ar: "الأمتعة المشمولة"
+        unit: allowance
+        levels: [0, 1]
+        level_labels_en: ["Cabin bag only", "Cabin bag + one large suitcase"]
+        level_labels_ar: ["حقيبة يد فقط", "حقيبة يد + حقيبة سفر كبيرة واحدة"]
+        coding: dummy
+        param: luggage
+        prior: [0.2]
+        assumption: A-social-111
+        note: "prior A-mode-017"
+  - id: bus
+    label_en: "Intercity coach (bus)"
+    label_ar: "حافلة بين المدن"
+    asc: {prior: -0.6, assumption: A-mode-012}
+    attributes:
+      - id: ivt
+        label_en: "Time on the coach"
+        label_ar: "مدة الرحلة على متن الحافلة"
+        unit: min
+        levels: [300, 345, 390]
+        coding: linear
+        param: ivt_bus
+        prior: -0.007
+        assumption: A-social-117
+        note: "prior A-mode-004"
+      - id: access
+        label_en: "Time to reach the bus station and from the bus station to your destination"
+        label_ar: "مدة الوصول إلى محطة الحافلات ومنها إلى وجهتك"
+        unit: min
+        levels: [15, 30, 45]
+        coding: linear
+        param: access
+        prior: -0.017
+        assumption: A-social-118
+        note: "prior A-mode-007"
+      - id: cost
+        label_en: "Ticket price (one way, per person)"
+        label_ar: "سعر التذكرة (ذهاب فقط، للشخص الواحد)"
+        unit: SAR
+        levels: [60, 80, 100, 120]
+        coding: linear
+        param: cost
+        prior: -0.013
+        assumption: A-social-119
+        note: "prior A-mode-005; fare evidence S-soc-319 (secondary)"
+      - id: headway
+        label_en: "A coach every"
+        label_ar: "حافلة كل"
+        unit: min
+        levels: [60, 120, 240]
+        coding: linear
+        param: headway
+        prior: -0.004
+        assumption: A-social-116
+        note: "prior A-mode-008"
+      - id: comfort
+        label_en: "Class"
+        label_ar: "الدرجة"
+        unit: class
+        levels: [0, 1]
+        level_labels_en: ["Standard", "VIP"]
+        level_labels_ar: ["عادية", "VIP"]
+        coding: dummy
+        param: comfort
+        prior: [0.4]
+        assumption: A-social-108
+        note: "prior A-mode-014"

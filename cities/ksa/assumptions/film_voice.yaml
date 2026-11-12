@@ -1,0 +1,80 @@
+# Version: film_voice.yaml v1.3 | 10 Nov 2026 | Author: R10 builder (v1.3: BUILD_MOVIE_EN, ElevenLabs Creator plan rate; v1.2: FIX_HALF2_QUALITY, ElevenLabs English narrator; v1.1: R10_HALF2) | Status: draft
+# Narration settings for film.voice speak (R10 half 2). Register: film/assumptions-r10.md (A-film-006..011).
+# Voice ids are Nabrah's public-voice ids from GET https://api.nabrah.ai/api/ext/tts/voices (read 8 Nov 2026);
+# they are identifiers, not secrets. Keys are read from the main checkout's .env at run time only.
+version: "1.0"
+
+engine: nabrah
+# FIX_HALF2_QUALITY (Tariq, 8 Nov 2026): English = ElevenLabs documentary narrator; Arabic = Nabrah with tashkeel.
+engine_by_lang: {en: elevenlabs, ar: nabrah}
+elevenlabs:
+  url: https://api.elevenlabs.io/v1/text-to-speech/{voice_id}
+  model: eleven_multilingual_v2
+  output_format: mp3_44100_128   # kept from the free-tier run so trailer and main match; converted to 48 kHz mono 16-bit WAV locally
+  seed: 1                        # rule 10 (ElevenLabs documents seed as best-effort determinism)
+  voices:                        # premade voices, ids from GET /v1/voices (read 8 Nov 2026); identifiers, not secrets
+    George: JBFqnCBsd6RMkjVDRZzb  # "Warm, Captivating Storyteller", British, use_case narrative_story
+    Daniel: onwK4e9ZLuTAKqWW03F9  # "Steady Broadcaster", British, use_case informative_educational
+  voice:
+    value: George
+    assumption: A-film-013
+    status: assumed
+    reason: "the catalogue's narrative/storyteller voice, picked for a documentary read over Daniel (broadcast/news) after a one-line A/B (film/voice/ab-fixq.csv); premade voice, no cloning"
+  voice_settings: {stability: 0.5, similarity_boost: 0.75, style: 0.0, use_speaker_boost: true, speed: 1.0}
+  usd_per_1000_chars:
+    value: 0.2091
+    assumption: A-film-013
+    status: assumed
+    reason: "Creator plan rate: USD 25.30 invoice incl. tax (subtotal 22.00; GET /v1/user/subscription next_invoice, 10 Nov 2026) / 121,000 credits a month (elevenlabs.io/pricing, read 10 Nov 2026; TTS = 1 credit per character); paid plans allow commercial use (Terms of Use §1(c), last updated 9 Oct 2026, read 10 Nov 2026). Free-tier rate was USD 0 (8 Nov 2026)"
+nabrah:
+  url: https://api.nabrah.ai/api/ext/tts/generations
+  model: nabrah_tts_v1   # the only value the API accepts (API reference, read 8 Nov 2026)
+  response_format: wav   # 48 kHz mono 16-bit PCM
+  voices:
+    Abdullah: 019efbba-87c6-72e4-9436-ed6d434dce17
+    Norah: 019efbba-037e-7d5e-987c-165d664273d9
+    Daniah: 019efbb8-db4c-75f9-a00b-0ee07c036268
+  credits_per_1000_chars: 400   # S-nabrah-003
+  usd_per_credit:
+    value: 0.000205   # 100 SAR / 130,000 credits (Basic plan, S-nabrah-003) / 3.75 SAR per USD
+    assumption: A-film-011
+    status: assumed
+    reason: "Tariq's actual plan is not visible through the API; the Basic-plan rate is used for the cost log"
+
+# Voice roles (cp8-package.md §1, provisional at CP8 and kept for this draft): Abdullah = guide,
+# Norah = history and the existing network, Daniah = method and numbers. Both languages, both cuts.
+roles_by_section:
+  value: {1: Abdullah, 2: Norah, 3: Abdullah, 4: Abdullah, 5: Norah, 6: Daniah, 7: Daniah, 8: Daniah}
+  assumption: A-film-006
+  status: assumed
+  reason: "section-to-role mapping of the three CP8 roles; to be settled after native review"
+
+loudness:
+  integrated_lufs: -16.0
+  true_peak_dbtp: -1.5
+  lra: 11.0
+  aac_headroom_db: 0.4   # master true peak = true_peak_dbtp - 0.4 so the delivered AAC stays <= -1.5 dBTP
+  assumption: A-film-007
+  status: assumed
+  reason: "R10 brief: -16 LUFS integrated / -1.5 dBTP true peak, two-pass loudnorm; LRA 11 is the ffmpeg default target"
+
+gap_between_lines_s:
+  value: 0.35
+  range: [0.2, 0.8]
+  assumption: A-film-008
+  status: assumed
+  reason: "pause inserted between consecutive narrated lines inside a shot; editorial, pending native review"
+
+shot_head_s:
+  value: 0.6
+  range: [0.3, 1.0]
+  assumption: A-film-009
+  status: assumed
+  reason: "picture before the first line of a shot starts (read-in for on-screen text); editorial"
+
+shot_tail_s:
+  value: 0.8
+  range: [0.4, 1.5]
+  assumption: A-film-010
+  status: assumed
+  reason: "picture held after the last line of a shot ends; editorial"

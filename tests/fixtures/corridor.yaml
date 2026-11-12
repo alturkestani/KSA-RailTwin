@@ -1,0 +1,33 @@
+# FIXTURE: invented test data (tests/fixtures/README.md). Not a real or proposed line.
+id: S2-trunk_gap-fixture-corridor
+name_en: Fixture Corridor
+name_ar: ممر اختبار
+layer: hypothetical
+operator: null
+status: generated
+source: fixture
+source_date: 2026-10-30
+accessed: 2026-10-30
+line_type: conventional_passenger
+design_speed_kmh: 200
+track: double
+electrified: true
+gauge_mm: 1435
+length_km: 120
+alignment: null
+generated_from: tests/fixtures (no screening run)
+rules_hash: fixture
+fixture: true
+stations:
+  - {id: fx-a, name_en: Fixture A, name_ar: محطة اختبار أ, km_post: 0, lat: 22.0, lon: 40.0, class: terminal, source: fixture}
+  - {id: fx-b, name_en: Fixture B, name_ar: محطة اختبار ب, km_post: 55, lat: 22.4, lon: 40.3, class: intermediate, source: fixture}
+  - {id: fx-c, name_en: Fixture C, name_ar: محطة اختبار ج, km_post: 120, lat: 22.9, lon: 40.7, class: terminal, source: fixture}
+services:
+  - {id: all_stop, stops: all, headway_min: 60, span: "06:00-23:00", sampled: 2026-10-30, source: fixture}
+  - {id: express, stops: [fx-a, fx-c], headway_min: 120, sampled: 2026-10-30, source: fixture}
+running_time_model:
+  accel_ms2: {value: 0.5, source: fixture}
+  decel_ms2: {value: 0.6, source: fixture}
+  cruise_kmh: {value: 200, source: fixture}
+  dwell_s: {value: 120, assumption: "fixture value for tests only"}
+notes: "Fixture for schema tests; every number is invented."

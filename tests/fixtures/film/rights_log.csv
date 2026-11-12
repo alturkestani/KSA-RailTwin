@@ -1,0 +1,5 @@
+item,type,version,source,licence,attribution,proof_link,status,used_in,notes
+Noto Naskh Arabic,font,2.018,https://github.com/notofonts/arabic,OFL-1.1,Noto fonts (Google),https://openfontlicense.org/,approved,film titles,fixture
+OpenStreetMap,data,2026-10,https://www.openstreetmap.org,ODbL-1.0,© OpenStreetMap contributors,https://www.openstreetmap.org/copyright,used,film cut maps,fixture
+Coqui XTTS-v2,tts_model,2.0,https://huggingface.co/coqui/XTTS-v2,CPML (non-commercial),,https://coqui.ai/cpml,test_only,CP8 voice samples,fixture
+Hejaz Railway photo,image,n/a,https://commons.wikimedia.org/,Public domain,Library of Congress (public domain),https://commons.wikimedia.org/,candidate,,fixture

@@ -1,0 +1,4 @@
+> **Document version:** prompts/_resume.md v1.0 | 30 Oct 2026 | Author: coordinator | Status: active
+
+## Resume notice
+A previous session worked on this same milestone in this worktree and stopped before writing `M<n>: done`. Read `git log --oneline -20`, `git status`, `docs/status/<track>.md` and the newest files under `logs/` to see what exists. Continue from where it left off; do not start over and do not discard working code. If the previous attempt was blocked by something you cannot fix, write `M<n>: blocked - <reason>` and stop.

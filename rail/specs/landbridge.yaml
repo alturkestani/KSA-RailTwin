@@ -1,0 +1,32 @@
+# Spec for cities/ksa/lines/landbridge.yaml (committed / under procurement). No alignment is published;
+# the polyline joins the named places and every station site is UNLOCATED (town centroid proxy, flagged).
+id: landbridge
+km_method: great_circle
+line:
+  name_en: Saudi Landbridge, Riyadh - Jeddah new line (announced/planned)
+  name_ar: الجسر البري السعودي - خط الرياض جدة (مخطط)
+  layer: committed
+  operator: Saudi Arabia Railways (SAR)
+  status: announced
+  source: S-054
+  source_date: 2026-01-21
+  accessed: 2026-10-31
+  line_type: mixed
+  design_speed_kmh: 250                             # S-058 (secondary, 2011 press): passenger design 250, operating 220
+  length_km: 900                                    # S-054 (MEED, 21 Jan 2026); 920/950/958 km elsewhere (C-002)
+  uncertainty_km: 30
+  notes: >-
+    Announced/planned, never existing (rule 5). SAR delivers in phases to a 2034 target after PPP
+    talks ended (S-059). The Riyadh section (Riyadh Rail Link, 35 km) is under procurement and has
+    its own file. Intermediate stations Jumoum (Al-Jumum), Muwai and Dawadmi are named by S-062 and
+    MEED Projects (S-lb-018, paywalled) with no locations: every site here is a town-centroid proxy
+    (location_method unlocated:*), and km-posts are a great-circle chain, not the alignment. The
+    Jeddah and Riyadh terminal sites are not published. Cost conflict C-001 (SR 100 bn programme vs
+    USD 7 bn) is unresolved and not used here. uncertainty_km 30 is the positional uncertainty
+    of the indicative polyline (A-r1a-006).
+stations:
+  - {id: riyadh, name_en: Riyadh (terminal site not published), name_ar: الرياض, class: planned, source: S-054, proxy_osm: node/315358390, site_status: inferred, uncertainty_km: 15}
+  - {id: dawadmi, name_en: Dawadmi (Al-Doadmi), name_ar: الدوادمي, class: planned, source: S-062, proxy_osm: node/1236695687, site_status: inferred, uncertainty_km: 15}
+  - {id: muwai, name_en: Muwai (Moya), name_ar: المويه, class: planned, source: S-062, proxy_osm: node/1236449504, site_status: inferred, uncertainty_km: 15}
+  - {id: al-jumum, name_en: Al-Jumum (Jumoum / Jamuma), name_ar: الجموم, class: planned, source: S-062, proxy_osm: node/1236466181, site_status: inferred, uncertainty_km: 15, notes: "MEED Projects pid=114639 (S-lb-018) names 'Jamuma'; identified as Al-Jumum by the project owner (S-063); site unlocated"}
+  - {id: jeddah, name_en: Jeddah (terminal site not published), name_ar: جدة, class: planned, source: S-054, proxy_osm: node/1933393717, site_status: inferred, uncertainty_km: 15}

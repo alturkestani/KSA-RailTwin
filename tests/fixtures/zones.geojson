@@ -1,0 +1,242 @@
+{
+ "type": "FeatureCollection",
+ "name": "fixture-zones",
+ "fixture": true,
+ "note": "invented test data; not real zones or populations",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FZ1",
+    "name_en": "Fixture Zone 1",
+    "name_ar": null,
+    "region": null,
+    "population": 1000,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       40.0,
+       22.0
+      ],
+      [
+       40.1,
+       22.0
+      ],
+      [
+       40.1,
+       22.1
+      ],
+      [
+       40.0,
+       22.1
+      ],
+      [
+       40.0,
+       22.0
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FZ2",
+    "name_en": "Fixture Zone 2",
+    "name_ar": null,
+    "region": null,
+    "population": 2500,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       40.1,
+       22.0
+      ],
+      [
+       40.2,
+       22.0
+      ],
+      [
+       40.2,
+       22.1
+      ],
+      [
+       40.1,
+       22.1
+      ],
+      [
+       40.1,
+       22.0
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FZ3",
+    "name_en": "Fixture Zone 3",
+    "name_ar": null,
+    "region": null,
+    "population": 4000,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       40.2,
+       22.0
+      ],
+      [
+       40.300000000000004,
+       22.0
+      ],
+      [
+       40.300000000000004,
+       22.1
+      ],
+      [
+       40.2,
+       22.1
+      ],
+      [
+       40.2,
+       22.0
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FZ4",
+    "name_en": "Fixture Zone 4",
+    "name_ar": null,
+    "region": null,
+    "population": 800,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       40.0,
+       22.1
+      ],
+      [
+       40.1,
+       22.1
+      ],
+      [
+       40.1,
+       22.200000000000003
+      ],
+      [
+       40.0,
+       22.200000000000003
+      ],
+      [
+       40.0,
+       22.1
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FZ5",
+    "name_en": "Fixture Zone 5",
+    "name_ar": null,
+    "region": null,
+    "population": 12000,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       40.1,
+       22.1
+      ],
+      [
+       40.2,
+       22.1
+      ],
+      [
+       40.2,
+       22.200000000000003
+      ],
+      [
+       40.1,
+       22.200000000000003
+      ],
+      [
+       40.1,
+       22.1
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "zone_id": "FZ6",
+    "name_en": "Fixture Zone 6",
+    "name_ar": null,
+    "region": null,
+    "population": 6000,
+    "pop_source": "fixture",
+    "fixture": true
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       40.2,
+       22.1
+      ],
+      [
+       40.300000000000004,
+       22.1
+      ],
+      [
+       40.300000000000004,
+       22.200000000000003
+      ],
+      [
+       40.2,
+       22.200000000000003
+      ],
+      [
+       40.2,
+       22.1
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

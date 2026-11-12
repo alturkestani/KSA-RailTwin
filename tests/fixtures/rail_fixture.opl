@@ -1,0 +1,13 @@
+n1 v1 dV c0 t2020-01-01T00:00:00Z i0 u T x40.0 y22.0
+n2 v1 dV c0 t2020-01-01T00:00:00Z i0 u T x40.1 y22.0
+n3 v1 dV c0 t2020-01-01T00:00:00Z i0 u T x40.2 y22.0
+n4 v1 dV c0 t2020-01-01T00:00:00Z i0 u T x40.2 y22.1
+n10 v1 dV c0 t2020-01-01T00:00:00Z i0 u Trailway=station,name=Fixture%20%Alpha,name:ar=%0623%%0644%%0641% x40.0 y22.0
+n11 v1 dV c0 t2020-01-01T00:00:00Z i0 u Trailway=station,name=Fixture%20%Gamma x40.2 y22.1
+n20 v1 dV c0 t2020-01-01T00:00:00Z i0 u T x40.5 y22.5
+n21 v1 dV c0 t2020-01-01T00:00:00Z i0 u T x40.6 y22.5
+w100 v1 dV c0 t2020-01-01T00:00:00Z i0 u Trailway=rail,name=Fixture%20%Line Nn1,n2,n3
+w101 v1 dV c0 t2020-01-01T00:00:00Z i0 u Trailway=rail Nn3,n4
+w102 v1 dV c0 t2020-01-01T00:00:00Z i0 u Trailway=abandoned,historic=railway Nn20,n21
+w103 v1 dV c0 t2020-01-01T00:00:00Z i0 u Trailway=construction Nn2,n20
+r200 v1 dV c0 t2020-01-01T00:00:00Z i0 u Troute=train,type=route,name=Fixture%20%Route Mn10@stop,w100@,w101@,n11@stop

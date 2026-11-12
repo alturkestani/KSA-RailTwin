@@ -1,0 +1,1658 @@
+# > **Document version:** cities/ksa/funding/recommendations.yaml v1.2 | 4 Nov 2026 | Author: FIX_R7 (basis fields and availability legal list checked, item 2); R7 builder (funding.recommend build; generated) | Status: draft
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast
+version: '1.0'
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+units: SAR million, 2025 prices; PV at 2026, Green Book 2026 schedule
+population_case: 'un_wpp_low (robust case: the worst of the three, R6 convention); medium and high in
+  runs/r7/fiscal/fiscal.json'
+judge: v3-variants, SHA-256 d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee (docs/r6/judge-hashes.md)
+international_pilgrim_segment: carries no user benefits (CP6 P8a, CP7-4); it is not added to any fiscal
+  or revenue figure
+legal_items:
+  sar_mandate:
+    status: clear
+    text: SAR took over the Saudi Railways Organization's responsibilities from 1 Apr 2021; 2016 and 2019
+      decisions give it ownership of intercity rail infrastructure and of operational railway projects
+      (SAR's own history page).
+    sources:
+    - S-fund-033
+  sar_ownership_form:
+    status: unclear
+    question: Who are SAR's shareholders per its commercial registration or articles, and what is its
+      legal form?
+    sources:
+    - S-fund-034
+    - S-fund-035
+  fiscal_reporting:
+    status: unclear
+    question: Are SAR's capex and debt consolidated in general-government statistics or the budget, and
+      would PPP payment commitments or guarantees be disclosed? (fully public via budget, PIF or SAR differ
+      in reporting, not in the risk the state carries)
+    sources:
+    - S-fund-029
+    - S-fund-026
+  pif_role:
+    status: unclear
+    question: Does PIF currently finance SAR's capex (equity, loans or guarantees), and what do Arts.
+      3-4 of the official PIF Law text say on domestic infrastructure and guarantees?
+    sources:
+    - S-lb-012
+    - S-lb-009
+    - S-fund-036
+    - S-fund-037
+  railway_law_concession:
+    status: clear
+    text: 'Railway Law M/159: concession contracts are tendered upon TGA approval in accordance with relevant
+      laws (Art. 32); TGA may allow a concessionaire to use railway land and protection zones (Art. 33);
+      TGA sets the policy for usage fees, the fees charged under use agreements for access to the network
+      (Arts. 1 and 18).'
+    sources:
+    - S-fund-013
+    - S-fund-014
+    - S-fund-016
+  fare_setting_authority:
+    status: unclear
+    question: Who sets and approves passenger fares on intercity and commuter rail (the state rail company,
+      TGA, a ministry or a concession contract)? Railway Law Art. 18 covers usage (access) fees under
+      use agreements, not passenger fares; no source read settles it.
+    sources:
+    - S-fund-016
+    - S-fund-012
+  railway_law_regulation:
+    status: unclear
+    question: Which cases of the Railway Law Implementing Regulation allow transfer of existing assets
+      to a concessionaire, and has TGA published a usage-fee policy?
+    sources:
+    - S-fund-054
+    - S-fund-055
+  psp_law_steps:
+    status: clear
+    text: 'PSP Law M/63: a PPP is a contract of 5 years or more with two or more of design, build, manage,
+      operate, maintain or finance (Art. 1); MoF refers projects to NCP for a preliminary viability study
+      within 60 business days (Art. 7); MoF ensures funds and allocations and approves support (Art. 8;
+      extra support by Council of Ministers resolution, Art. 10); term up to 30 years unless the relevant
+      agency approves longer (Art. 20); termination with compensation that may include lost revenues (Art.
+      28); arbitration with the relevant agency''s approval (Art. 34).'
+    sources:
+    - S-fund-001
+    - S-fund-003
+    - S-fund-004
+    - S-fund-005
+    - S-fund-002
+    - S-fund-007
+    - S-fund-008
+  psp_regulations_thresholds:
+    status: unclear
+    question: What do the amended (2023/2024) Implementing Regulations say on the SAR 200 m PPP threshold
+      (reported by secondary sources), procurement methods, the VfM study and MoF fiscal approval?
+    sources:
+    - S-fund-041
+    - S-fund-053
+    - S-fund-042
+  psp_relevant_agency:
+    status: unclear
+    question: For an intercity or commuter rail PPP, which body is the relevant and the executive agency
+      (Art. 2 governing rules), and is SAR a contracting authority under Art. 4?
+    sources:
+    - S-fund-010
+  psp_railway_interaction:
+    status: unclear
+    question: Does a rail concession tendered under Railway Law Art. 32 also follow PSP Law procedures
+      (NCP study, MoF approval)?
+    sources:
+    - S-fund-013
+    - S-fund-003
+  ncp_vfm_method:
+    status: unclear
+    question: Has NCP published a VfM or PSC method (the R7 test follows the Green Book logic as a named
+      reference)?
+    sources:
+    - S-fund-030
+    - S-fund-056
+    - S-fund-024
+  om_contract_status:
+    status: unclear
+    question: Is a 5-year-plus O&M-only rail contract (as on Haramain) a PPP under PSP Law Art. 1, with
+      NCP and MoF steps, or ordinary government procurement?
+    sources:
+    - S-fund-001
+    - S-fund-039
+  host_line_procurement:
+    status: unclear
+    question: Can a station on a committed host line (GCC Railway in design; the Landbridge in phased
+      delivery after the PPP talks ended) be added within the host line's procurement, and under what
+      procurement model are the Landbridge phases being let?
+    sources:
+    - S-029
+    - S-059
+    - S-lb-001
+    - S-060
+  lvc_instruments:
+    status: unclear
+    question: Which Saudi instruments (development rights on railway land under Railway Law Art. 33, municipal
+      fees, the white-land fee) could legally be earmarked for rail?
+    sources:
+    - S-fund-014
+  land_expropriation:
+    status: unclear
+    question: What expropriation procedure and timetable apply to a new rail alignment (not reviewed in
+      R1d or R7)?
+    sources:
+    - S-fund-014
+    - S-fund-006
+corridors:
+  S3-branch_spur-al-kharj:
+    family: branch_spur
+    recommended_model: fully_public_sar
+    judgement: 'analyst''s judgement (rule 9): best fit given the evidence below; not advocacy for any
+      entity'
+    delivery_note: public capital delivery with an explicit stage gate before construction starts (2047
+      for the 2050 phase, A-r6-002), a P90 budget line and contracts that share the cost tail (target
+      cost with pain/gain); O&M in-house or by a contracted operator (public_with_private_om has the same
+      fiscal exposure in the model).
+    reasoning:
+    - 'The spur''s value is real in the model (robust NPV positive at P50 cost) but its cost tail is wide:
+      at P90 capex the state''s exposure rises under every model, because the overrun at P90 is many times
+      any plausible private equity cushion (A-fund-102): risk transfer above the cushion is nominal and
+      returns to the state as a contingent liability.'
+    - The availability PPP has a negative VfM across every registered range; the financing premium (S-fund-r7-001)
+      costs about what the transferred overrun is worth.
+    - 'A demand-risk PPP is not a fit: the P10 BCR is below 1 in every population case and fares cover
+      well under half of opex and renewals (skill rule). In the model it needs a construction grant larger
+      than the contract capex (the grant pre-pays the operating deficit), so its fiscal cost is close
+      to public delivery while the ''transferred'' demand risk sits on a revenue stream the minimum revenue
+      guarantee then backstops.'
+    conditions: 'Carry the P90 cost risk explicitly (CP7-1): the L1 programme turns negative at P90 cost
+      in the low and medium population cases. A non-electrified spur narrows that loss but lowers the
+      robust NPV (docs/r6-topology.md §0.2); keep it as a design option at the stage gate.'
+    alternatives_considered:
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - ppp_dbfom_demand_risk
+    - hybrid_public_dbfm_plus_station_lvc
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S3-branch_spur-al-kharj--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S3-branch_spur-al-kharj--public_with_private_om.yaml
+    - cities/ksa/funding/risk_matrix_S3-branch_spur-al-kharj--ppp_dbfom_availability.yaml
+    - cities/ksa/funding/risk_matrix_S3-branch_spur-al-kharj--ppp_dbfom_demand_risk.yaml
+    - cities/ksa/funding/risk_matrix_S3-branch_spur-al-kharj--hybrid_public_dbfm_plus_station_lvc.yaml
+    basis:
+      score: runs/r7/corridors/S3-branch_spur-al-kharj@2050/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: 4309.1
+      capex:
+        p10: 5432.6
+        p50: 9771.1
+        p90: 36018.3
+        base_p50: 8184.2
+      bcr_p10_60y:
+        un_wpp_low: 0.37
+        un_wpp_medium: 0.42
+        un_wpp_high: 0.47
+      npv_at_p90_cost_60y:
+        un_wpp_low: -6869.7
+        un_wpp_medium: -5418.8
+        un_wpp_high: -3865.5
+      fare_over_opex_60y: 0.409
+      fiscal_series_method: cash-flow engine (all horizons); judge 60 y fiscal cost as cross-check
+      judge_fiscal_cost_p50_60y: 7136.9
+      phases:
+        S3-branch_spur-al-kharj: 2050
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 4477.675
+            p50: 6742.585
+            p90: 20444.781
+            expected: 10205.664
+          40y:
+            p10: 4803.429
+            p50: 7068.338
+            p90: 20770.535
+            expected: 10531.418
+          60y:
+            p10: 5258.37
+            p50: 7523.28
+            p90: 21225.476
+            expected: 10986.359
+        upfront_public_capex_undiscounted:
+          p10: 5432.59
+          p50: 9771.127
+          p90: 36018.308
+        budget_share_peak_pct_p90_capex: 0.631
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 13702.2
+        legal_preconditions: &id001
+        - sar_mandate
+        - fare_setting_authority
+        - sar_ownership_form
+        - fiscal_reporting
+        - pif_role
+        - land_expropriation
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      public_with_private_om:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 4477.675
+            p50: 6742.585
+            p90: 20444.781
+            expected: 10205.664
+          40y:
+            p10: 4803.429
+            p50: 7068.338
+            p90: 20770.535
+            expected: 10531.418
+          60y:
+            p10: 5258.37
+            p50: 7523.28
+            p90: 21225.476
+            expected: 10986.359
+        upfront_public_capex_undiscounted:
+          p10: 5432.59
+          p50: 9771.127
+          p90: 36018.308
+        budget_share_peak_pct_p90_capex: 0.631
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 13702.2
+        legal_preconditions: &id002
+        - fare_setting_authority
+        - sar_mandate
+        - om_contract_status
+        - psp_law_steps
+        precedent: Haramain O&M by Renfe for SAR, extended to 2038 (secondary, S-fund-039); HSL-Zuid shows
+          the State can end up with operating damage costs (S-fund-044).
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 10472.648
+            p50: 10472.648
+            p90: 22393.696
+            expected: 14435.794
+          40y:
+            p10: 10798.401
+            p50: 10798.401
+            p90: 22719.449
+            expected: 14761.547
+          60y:
+            p10: 11253.343
+            p50: 11253.343
+            p90: 23174.391
+            expected: 15216.489
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.05
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 3963.1
+          p90_pv: 11921.0
+          termination_worst_case_pv: 5480.2
+          termination_expected_pv: 274.0
+        legal_preconditions: &id003
+        - psp_law_steps
+        - fare_setting_authority
+        - psp_regulations_thresholds
+        - psp_relevant_agency
+        - psp_railway_interaction
+        - ncp_vfm_method
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      ppp_dbfom_demand_risk:
+        kind: demand_concession
+        net_fiscal_cost_pv:
+          30y:
+            p10: 6259.299
+            p50: 6259.299
+            p90: 18691.518
+            expected: 10385.375
+          40y:
+            p10: 6585.052
+            p50: 6585.052
+            p90: 19017.272
+            expected: 10711.128
+          60y:
+            p10: 7039.993
+            p50: 7039.993
+            p90: 19472.213
+            expected: 11166.07
+        upfront_public_capex_undiscounted:
+          p10: 11787.716
+          p50: 11787.716
+          p90: 11787.716
+        budget_share_peak_pct_p90_capex: 0.217
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 4126.1
+          p90_pv: 12432.2
+          termination_worst_case_pv: 5480.2
+          termination_expected_pv: 274.0
+        legal_preconditions: &id004
+        - psp_law_steps
+        - fare_setting_authority
+        - railway_law_concession
+        - railway_law_regulation
+        - psp_railway_interaction
+        precedent: 'LGV SEA: demand risk largely on the concessionaire, 48% grantor contribution, 73%
+          of senior debt state-guaranteed, traffic below forecast (S-fund-223, S-fund-227, S-fund-229);
+          China: lines below about 40 M passengers a year do not service their debt (S-fund-250).'
+      hybrid_public_dbfm_plus_station_lvc:
+        kind: availability_plus_lvc
+        net_fiscal_cost_pv:
+          30y:
+            p10: 10472.648
+            p50: 10472.648
+            p90: 22393.696
+            expected: 14435.794
+          40y:
+            p10: 10798.401
+            p50: 10798.401
+            p90: 22719.449
+            expected: 14761.547
+          60y:
+            p10: 11253.343
+            p50: 11253.343
+            p90: 23174.391
+            expected: 15216.489
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.05
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 3963.1
+          p90_pv: 11921.0
+          termination_worst_case_pv: 5480.2
+          termination_expected_pv: 274.0
+        legal_preconditions: &id005
+        - psp_law_steps
+        - lvc_instruments
+        precedent: LGV Bretagne-Pays de la Loire DBFM (S-fund-043) with Rail-plus-Property-type development
+          rights (S-fund-048).
+        lvc_break_even_pv: 11253.3
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -4230.1
+        vfm_pct_of_psc: -38.5
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.8104
+          private_finance_premium: -0.0184
+          transaction_cost: -0.7813
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -1196.9
+          const:0.0356: -2890.4
+  S4-commuter_belt-riyadh-225:
+    family: commuter_belt
+    recommended_model: fully_public_sar
+    judgement: 'analyst''s judgement (rule 9): best fit given the evidence below; not advocacy for any
+      entity'
+    delivery_note: 'only if the reach objective is chosen (S6-L3): public capital delivery, a stage gate
+      before 2047, O&M in-house or contracted.'
+    reasoning:
+    - 'No model makes the belt self-financing: fares are a few per cent of opex and renewals in the model,
+      and its standalone robust NPV is negative.'
+    - Private finance adds cost (negative VfM across every registered range) and a demand-risk concession
+      has no revenue to carry (P10 BCR far below 1).
+    - It is a reach option, bought at a fiscal cost; the decision is about reach, not about delivery.
+    conditions: In the model the belt is an island (it touches neither S1 nor another layout corridor,
+      R6 flag) and turns Duruma negative next to it (docs/r6-topology.md §0).
+    alternatives_considered:
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - ppp_dbfom_demand_risk
+    - hybrid_public_dbfm_plus_station_lvc
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S4-commuter_belt-riyadh-225--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S4-commuter_belt-riyadh-225--public_with_private_om.yaml
+    - cities/ksa/funding/risk_matrix_S4-commuter_belt-riyadh-225--ppp_dbfom_availability.yaml
+    - cities/ksa/funding/risk_matrix_S4-commuter_belt-riyadh-225--ppp_dbfom_demand_risk.yaml
+    - cities/ksa/funding/risk_matrix_S4-commuter_belt-riyadh-225--hybrid_public_dbfm_plus_station_lvc.yaml
+    basis:
+      score: runs/r7/corridors/S4-commuter_belt-riyadh-225@2050/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: -8292.8
+      capex:
+        p10: 4717.2
+        p50: 8910.3
+        p90: 34256.2
+        base_p50: 7463.2
+      bcr_p10_60y:
+        un_wpp_low: 0.06
+        un_wpp_medium: 0.06
+        un_wpp_high: 0.07
+      npv_at_p90_cost_60y:
+        un_wpp_low: -18990.8
+        un_wpp_medium: -18663.3
+        un_wpp_high: -18329.4
+      fare_over_opex_60y: 0.023
+      fiscal_series_method: cash-flow engine (all horizons); judge 60 y fiscal cost as cross-check
+      judge_fiscal_cost_p50_60y: 11107.4
+      phases:
+        S4-commuter_belt-riyadh-225: 2050
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 6981.517
+            p50: 9170.473
+            p90: 22402.19
+            expected: 12598.175
+          40y:
+            p10: 7878.224
+            p50: 10067.179
+            p90: 23298.896
+            expected: 13494.881
+          60y:
+            p10: 9130.548
+            p50: 11319.504
+            p90: 24551.221
+            expected: 14747.206
+        upfront_public_capex_undiscounted:
+          p10: 4717.223
+          p50: 8910.266
+          p90: 34256.223
+        budget_share_peak_pct_p90_capex: 0.6
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 13231.7
+        legal_preconditions: *id001
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      public_with_private_om:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 6981.517
+            p50: 9170.473
+            p90: 22402.19
+            expected: 12598.175
+          40y:
+            p10: 7878.224
+            p50: 10067.179
+            p90: 23298.896
+            expected: 13494.881
+          60y:
+            p10: 9130.548
+            p50: 11319.504
+            p90: 24551.221
+            expected: 14747.206
+        upfront_public_capex_undiscounted:
+          p10: 4717.223
+          p50: 8910.266
+          p90: 34256.223
+        budget_share_peak_pct_p90_capex: 0.6
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 13231.7
+        legal_preconditions: *id002
+        precedent: Haramain O&M by Renfe for SAR, extended to 2038 (secondary, S-fund-039); HSL-Zuid shows
+          the State can end up with operating damage costs (S-fund-044).
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 12571.908
+            p50: 12571.908
+            p90: 24136.907
+            expected: 16458.165
+          40y:
+            p10: 13468.614
+            p50: 13468.614
+            p90: 25033.614
+            expected: 17354.871
+          60y:
+            p10: 14720.939
+            p50: 14720.939
+            p90: 26285.938
+            expected: 18607.196
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.06
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 3886.3
+          p90_pv: 11565.0
+          termination_worst_case_pv: 4997.4
+          termination_expected_pv: 249.9
+        legal_preconditions: *id003
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      ppp_dbfom_demand_risk:
+        kind: demand_concession
+        net_fiscal_cost_pv:
+          30y:
+            p10: 7597.774
+            p50: 7597.774
+            p90: 19210.779
+            expected: 11499.332
+          40y:
+            p10: 8494.48
+            p50: 8494.48
+            p90: 20107.485
+            expected: 12396.039
+          60y:
+            p10: 9746.805
+            p50: 9746.805
+            p90: 21359.81
+            expected: 13648.363
+        upfront_public_capex_undiscounted:
+          p10: 14369.446
+          p50: 14369.446
+          p90: 14369.446
+        budget_share_peak_pct_p90_capex: 0.261
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 3901.6
+          p90_pv: 11613.0
+          termination_worst_case_pv: 4997.4
+          termination_expected_pv: 249.9
+        legal_preconditions: *id004
+        precedent: 'LGV SEA: demand risk largely on the concessionaire, 48% grantor contribution, 73%
+          of senior debt state-guaranteed, traffic below forecast (S-fund-223, S-fund-227, S-fund-229);
+          China: lines below about 40 M passengers a year do not service their debt (S-fund-250).'
+      hybrid_public_dbfm_plus_station_lvc:
+        kind: availability_plus_lvc
+        net_fiscal_cost_pv:
+          30y:
+            p10: 12571.908
+            p50: 12571.908
+            p90: 24136.907
+            expected: 16458.165
+          40y:
+            p10: 13468.614
+            p50: 13468.614
+            p90: 25033.614
+            expected: 17354.871
+          60y:
+            p10: 14720.939
+            p50: 14720.939
+            p90: 26285.938
+            expected: 18607.196
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.06
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 3886.3
+          p90_pv: 11565.0
+          termination_worst_case_pv: 4997.4
+          termination_expected_pv: 249.9
+        legal_preconditions: *id005
+        precedent: LGV Bretagne-Pays de la Loire DBFM (S-fund-043) with Rail-plus-Property-type development
+          rights (S-fund-048).
+        lvc_break_even_pv: 14720.9
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -3860.0
+        vfm_pct_of_psc: -26.2
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.8051
+          private_finance_premium: -0.0184
+          transaction_cost: -0.7818
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -1086.3
+          const:0.0356: -2635.4
+  S5-station_addition-al-jubayl:
+    family: station_addition
+    recommended_model: fully_public_sar
+    judgement: 'analyst''s judgement (rule 9): best fit given the evidence below; not advocacy for any
+      entity'
+    delivery_note: capital works let together with, or as a variation of, the host line's works by the
+      host line's owner; O&M through the host line's operating arrangement. Who finances (budget, PIF
+      or the state rail company) changes reporting, not risk (unclear items fiscal_reporting, pif_role).
+    reasoning: &id006
+    - 'Small, interface-bound works: each station is an addition to a line someone else builds or runs;
+      a standalone station SPV would carry the interface with the host line.'
+    - The availability PPP costs the state more in expected PV in every registered parameter range (VfM
+      below); the sign changes only at a bid far below the un-uplifted base estimate (switching value
+      of A-fund-007).
+    - 'Fares do not finance the station: the standalone fare increment is small or negative (the stop
+      lengthens through journeys), so a revenue-based model has nothing to carry.'
+    conditions: 'Dhahran and Al Jubayl (2030) carry a P10 BCR above 1 in every population case; Duruma
+      (2050) does not (stage-gate it at its construction start). Al Jubayl''s and Duruma''s host lines
+      are committed, not existing: the delivery route depends on the host line''s procurement (unclear
+      item host_line_procurement).'
+    alternatives_considered:
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - lvc_station_area_development
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S5-station_addition-al-jubayl--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-al-jubayl--public_with_private_om.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-al-jubayl--ppp_dbfom_availability.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-al-jubayl--lvc_station_area_development.yaml
+    basis:
+      score: runs/r6/v3/library/S5-station_addition-al-jubayl/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: 4982.3
+      capex:
+        p10: 266.9
+        p50: 474.4
+        p90: 1762.0
+        base_p50: 397.3
+      bcr_p10_60y:
+        un_wpp_low: 2.76
+        un_wpp_medium: 3.08
+        un_wpp_high: 3.43
+      npv_at_p90_cost_60y:
+        un_wpp_low: 4007.3
+        un_wpp_medium: 4537.8
+        un_wpp_high: 5082.1
+      fare_over_opex_60y: 2.608
+      fiscal_series_method: cash-flow engine (all horizons); judge 60 y fiscal cost as cross-check
+      judge_fiscal_cost_p50_60y: 184.1
+      phases:
+        S5-station_addition-al-jubayl: 2030
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 58.643
+            p50: 254.285
+            p90: 1468.398
+            expected: 562.533
+          40y:
+            p10: 22.644
+            p50: 218.286
+            p90: 1432.399
+            expected: 526.533
+          60y:
+            p10: -27.447
+            p50: 168.194
+            p90: 1382.308
+            expected: 476.442
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.045
+        budget_share_peak_year: 2027
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 1214.1
+        legal_preconditions: *id001
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      public_with_private_om:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 58.643
+            p50: 254.285
+            p90: 1468.398
+            expected: 562.533
+          40y:
+            p10: 22.644
+            p50: 218.286
+            p90: 1432.399
+            expected: 526.533
+          60y:
+            p10: -27.447
+            p50: 168.194
+            p90: 1382.308
+            expected: 476.442
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.045
+        budget_share_peak_year: 2027
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 1214.1
+        legal_preconditions: *id002
+        precedent: Haramain O&M by Renfe for SAR, extended to 2038 (secondary, S-fund-039); HSL-Zuid shows
+          the State can end up with operating damage costs (S-fund-044).
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 554.609
+            p50: 554.609
+            p90: 1611.818
+            expected: 906.759
+          40y:
+            p10: 518.61
+            p50: 518.61
+            p90: 1575.819
+            expected: 870.76
+          60y:
+            p10: 468.519
+            p50: 468.519
+            p90: 1525.727
+            expected: 820.668
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.002
+        budget_share_peak_year: 2030
+        contingent_liabilities_pv:
+          expected_pv: 352.1
+          p90_pv: 1057.2
+          termination_worst_case_pv: 480.5
+          termination_expected_pv: 24.0
+        legal_preconditions: *id003
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      lvc_station_area_development:
+        kind: public_plus_lvc
+        net_fiscal_cost_pv:
+          30y:
+            p10: 58.643
+            p50: 254.285
+            p90: 1468.398
+            expected: 562.533
+          40y:
+            p10: 22.644
+            p50: 218.286
+            p90: 1432.399
+            expected: 526.533
+          60y:
+            p10: -27.447
+            p50: 168.194
+            p90: 1382.308
+            expected: 476.442
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.045
+        budget_share_peak_year: 2027
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 1214.1
+        legal_preconditions: &id007
+        - lvc_instruments
+        - railway_law_concession
+        precedent: 'Hong Kong Rail-plus-Property: development rights instead of cash; the government judged
+          property ''may barely bridge'' the gap on two lines (S-fund-048, S-fund-218).'
+        lvc_break_even_pv: 168.2
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -344.2
+        vfm_pct_of_psc: -72.2
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.7905
+          private_finance_premium: -0.0162
+          transaction_cost: -0.7236
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -154.0
+          const:0.0356: -282.5
+  S5-station_addition-dhahran:
+    family: station_addition
+    recommended_model: fully_public_sar
+    judgement: 'analyst''s judgement (rule 9): best fit given the evidence below; not advocacy for any
+      entity'
+    delivery_note: capital works let together with, or as a variation of, the host line's works by the
+      host line's owner; O&M through the host line's operating arrangement. Who finances (budget, PIF
+      or the state rail company) changes reporting, not risk (unclear items fiscal_reporting, pif_role).
+    reasoning: *id006
+    conditions: 'Dhahran and Al Jubayl (2030) carry a P10 BCR above 1 in every population case; Duruma
+      (2050) does not (stage-gate it at its construction start). Al Jubayl''s and Duruma''s host lines
+      are committed, not existing: the delivery route depends on the host line''s procurement (unclear
+      item host_line_procurement).'
+    alternatives_considered:
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - lvc_station_area_development
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S5-station_addition-dhahran--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-dhahran--public_with_private_om.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-dhahran--ppp_dbfom_availability.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-dhahran--lvc_station_area_development.yaml
+    basis:
+      score: runs/r6/v3/library/S5-station_addition-dhahran/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: 2362.0
+      capex:
+        p10: 266.9
+        p50: 474.4
+        p90: 1762.0
+        base_p50: 397.3
+      bcr_p10_60y:
+        un_wpp_low: 1.23
+        un_wpp_medium: 1.34
+        un_wpp_high: 1.46
+      npv_at_p90_cost_60y:
+        un_wpp_low: 1261.7
+        un_wpp_medium: 1532.9
+        un_wpp_high: 1817.8
+      fare_over_opex_60y: -0.355
+      fiscal_series_method: cash-flow engine (all horizons); judge 60 y fiscal cost as cross-check
+      judge_fiscal_cost_p50_60y: 657.2
+      phases:
+        S5-station_addition-dhahran: 2030
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 414.187
+            p50: 609.829
+            p90: 1823.942
+            expected: 918.076
+          40y:
+            p10: 444.515
+            p50: 640.156
+            p90: 1854.27
+            expected: 948.404
+          60y:
+            p10: 486.715
+            p50: 682.356
+            p90: 1896.47
+            expected: 990.604
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.045
+        budget_share_peak_year: 2027
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 1214.1
+        legal_preconditions: *id001
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      public_with_private_om:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 414.187
+            p50: 609.829
+            p90: 1823.942
+            expected: 918.076
+          40y:
+            p10: 444.515
+            p50: 640.156
+            p90: 1854.27
+            expected: 948.404
+          60y:
+            p10: 486.715
+            p50: 682.356
+            p90: 1896.47
+            expected: 990.604
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.045
+        budget_share_peak_year: 2027
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 1214.1
+        legal_preconditions: *id002
+        precedent: Haramain O&M by Renfe for SAR, extended to 2038 (secondary, S-fund-039); HSL-Zuid shows
+          the State can end up with operating damage costs (S-fund-044).
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 910.153
+            p50: 910.153
+            p90: 1967.362
+            expected: 1262.303
+          40y:
+            p10: 940.481
+            p50: 940.481
+            p90: 1997.689
+            expected: 1292.63
+          60y:
+            p10: 982.681
+            p50: 982.681
+            p90: 2039.889
+            expected: 1334.83
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.004
+        budget_share_peak_year: 2030
+        contingent_liabilities_pv:
+          expected_pv: 352.1
+          p90_pv: 1057.2
+          termination_worst_case_pv: 480.5
+          termination_expected_pv: 24.0
+        legal_preconditions: *id003
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      lvc_station_area_development:
+        kind: public_plus_lvc
+        net_fiscal_cost_pv:
+          30y:
+            p10: 414.187
+            p50: 609.829
+            p90: 1823.942
+            expected: 918.076
+          40y:
+            p10: 444.515
+            p50: 640.156
+            p90: 1854.27
+            expected: 948.404
+          60y:
+            p10: 486.715
+            p50: 682.356
+            p90: 1896.47
+            expected: 990.604
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.045
+        budget_share_peak_year: 2027
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 1214.1
+        legal_preconditions: *id007
+        precedent: 'Hong Kong Rail-plus-Property: development rights instead of cash; the government judged
+          property ''may barely bridge'' the gap on two lines (S-fund-048, S-fund-218).'
+        lvc_break_even_pv: 682.4
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -344.2
+        vfm_pct_of_psc: -34.7
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.7905
+          private_finance_premium: -0.0162
+          transaction_cost: -0.7236
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -154.0
+          const:0.0356: -282.5
+  S5-station_addition-duruma:
+    family: station_addition
+    recommended_model: fully_public_sar
+    judgement: 'analyst''s judgement (rule 9): best fit given the evidence below; not advocacy for any
+      entity'
+    delivery_note: capital works let together with, or as a variation of, the host line's works by the
+      host line's owner; O&M through the host line's operating arrangement. Who finances (budget, PIF
+      or the state rail company) changes reporting, not risk (unclear items fiscal_reporting, pif_role).
+    reasoning: *id006
+    conditions: 'Dhahran and Al Jubayl (2030) carry a P10 BCR above 1 in every population case; Duruma
+      (2050) does not (stage-gate it at its construction start). Al Jubayl''s and Duruma''s host lines
+      are committed, not existing: the delivery route depends on the host line''s procurement (unclear
+      item host_line_procurement).'
+    alternatives_considered:
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - lvc_station_area_development
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S5-station_addition-duruma--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-duruma--public_with_private_om.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-duruma--ppp_dbfom_availability.yaml
+    - cities/ksa/funding/risk_matrix_S5-station_addition-duruma--lvc_station_area_development.yaml
+    basis:
+      score: runs/r7/corridors/S5-station_addition-duruma@2050/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: 481.4
+      capex:
+        p10: 266.9
+        p50: 474.4
+        p90: 1762.0
+        base_p50: 397.3
+      bcr_p10_60y:
+        un_wpp_low: 0.63
+        un_wpp_medium: 0.7
+        un_wpp_high: 0.76
+      npv_at_p90_cost_60y:
+        un_wpp_low: -121.5
+        un_wpp_medium: -30.0
+        un_wpp_high: 61.4
+      fare_over_opex_60y: -1.278
+      fiscal_series_method: cash-flow engine (all horizons); judge 60 y fiscal cost as cross-check
+      judge_fiscal_cost_p50_60y: 494.2
+      phases:
+        S5-station_addition-duruma: 2050
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 298.68
+            p50: 407.002
+            p90: 1079.227
+            expected: 577.671
+          40y:
+            p10: 330.303
+            p50: 438.625
+            p90: 1110.85
+            expected: 609.294
+          60y:
+            p10: 374.468
+            p50: 482.79
+            p90: 1155.015
+            expected: 653.459
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.031
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 672.2
+        legal_preconditions: *id001
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      public_with_private_om:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 298.68
+            p50: 407.002
+            p90: 1079.227
+            expected: 577.671
+          40y:
+            p10: 330.303
+            p50: 438.625
+            p90: 1110.85
+            expected: 609.294
+          60y:
+            p10: 374.468
+            p50: 482.79
+            p90: 1155.015
+            expected: 653.459
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.031
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 672.2
+        legal_preconditions: *id002
+        precedent: Haramain O&M by Renfe for SAR, extended to 2038 (secondary, S-fund-039); HSL-Zuid shows
+          the State can end up with operating damage costs (S-fund-044).
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 588.085
+            p50: 588.085
+            p90: 1173.435
+            expected: 783.061
+          40y:
+            p10: 619.708
+            p50: 619.708
+            p90: 1205.059
+            expected: 814.685
+          60y:
+            p10: 663.873
+            p50: 663.873
+            p90: 1249.224
+            expected: 858.85
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.003
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 195.0
+          p90_pv: 585.4
+          termination_worst_case_pv: 266.0
+          termination_expected_pv: 13.3
+        legal_preconditions: *id003
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      lvc_station_area_development:
+        kind: public_plus_lvc
+        net_fiscal_cost_pv:
+          30y:
+            p10: 298.68
+            p50: 407.002
+            p90: 1079.227
+            expected: 577.671
+          40y:
+            p10: 330.303
+            p50: 438.625
+            p90: 1110.85
+            expected: 609.294
+          60y:
+            p10: 374.468
+            p50: 482.79
+            p90: 1155.015
+            expected: 653.459
+        upfront_public_capex_undiscounted:
+          p10: 266.862
+          p50: 474.358
+          p90: 1762.035
+        budget_share_peak_pct_p90_capex: 0.031
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 672.2
+        legal_preconditions: *id007
+        precedent: 'Hong Kong Rail-plus-Property: development rights instead of cash; the government judged
+          property ''may barely bridge'' the gap on two lines (S-fund-048, S-fund-218).'
+        lvc_break_even_pv: 482.8
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -205.4
+        vfm_pct_of_psc: -31.4
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.8094
+          private_finance_premium: -0.0184
+          transaction_cost: -0.7814
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -58.1
+          const:0.0356: -140.3
+programmes:
+  S6-L2:
+    note: 'cost-robust layout (CP7-1): the three station additions, each delivered with its host line.'
+    recommended_package:
+      S5-station_addition-al-jubayl: fully_public_sar
+      S5-station_addition-duruma: fully_public_sar
+      S5-station_addition-dhahran: fully_public_sar
+    judgement: 'analyst''s judgement: the corridor recommendations combined; the programme figures are
+      the layout''s own judge score (corridors interact)'
+    alternatives_considered:
+    - ppp_dbfom_availability
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S6-L2--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S6-L2--ppp_dbfom_availability.yaml
+    basis:
+      score: runs/r6/top5/L2/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: 6791.6
+      capex:
+        p10: 800.6
+        p50: 1423.1
+        p90: 5286.1
+        base_p50: 1192.0
+      bcr_p10_60y:
+        un_wpp_low: 1.38
+        un_wpp_medium: 1.52
+        un_wpp_high: 1.66
+      npv_at_p90_cost_60y:
+        un_wpp_low: 3986.4
+        un_wpp_medium: 4771.3
+        un_wpp_high: 5589.4
+      fare_over_opex_60y: 0.463
+      fiscal_series_method: judge fiscal_cost (all horizons)
+      judge_fiscal_cost_p50_60y: 1282.7
+      phases:
+        S5-station_addition-al-jubayl: 2030
+        S5-station_addition-duruma: 2050
+        S5-station_addition-dhahran: 2030
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 671.429
+            p50: 1206.568
+            p90: 4006.364
+            expected: 2093.731
+          40y:
+            p10: 680.665
+            p50: 1239.575
+            p90: 4034.52
+            expected: 2126.088
+          60y:
+            p10: 694.937
+            p50: 1282.73
+            p90: 4087.93
+            expected: 2171.255
+        upfront_public_capex_undiscounted:
+          p10: 800.585
+          p50: 1423.073
+          p90: 5286.106
+        budget_share_peak_pct_p90_capex: 0.091
+        budget_share_peak_year: 2027
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 3100.5
+        legal_preconditions: *id001
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 2088.299
+            p50: 2088.299
+            p90: 4788.066
+            expected: 2987.574
+          40y:
+            p10: 2120.656
+            p50: 2120.656
+            p90: 4820.423
+            expected: 3019.931
+          60y:
+            p10: 2165.823
+            p50: 2165.823
+            p90: 4865.59
+            expected: 3065.098
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.007
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 899.3
+          p90_pv: 2699.8
+          termination_worst_case_pv: 1227.1
+          termination_expected_pv: 61.4
+        legal_preconditions: *id003
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -893.8
+        vfm_pct_of_psc: -41.2
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.7949
+          private_finance_premium: -0.0167
+          transaction_cost: -0.7362
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -366.2
+          const:0.0356: -705.2
+    budget_envelope: 'B1 = SAR 100 bn capex (A-r6-003, CP7-2): capex P90 5,286 SAR m'
+  S6-L1:
+    note: 'highest robust NPV (CP7-1): L2 plus the Al-Kharj spur; the spur''s P90 cost risk is carried
+      in every figure below.'
+    recommended_package:
+      S3-branch_spur-al-kharj: fully_public_sar
+      S5-station_addition-al-jubayl: fully_public_sar
+      S5-station_addition-duruma: fully_public_sar
+      S5-station_addition-dhahran: fully_public_sar
+    judgement: 'analyst''s judgement: the corridor recommendations combined; the programme figures are
+      the layout''s own judge score (corridors interact)'
+    alternatives_considered:
+    - ppp_dbfom_availability
+    - ppp_dbfom_demand_risk
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S6-L1--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S6-L1--ppp_dbfom_availability.yaml
+    - cities/ksa/funding/risk_matrix_S6-L1--ppp_dbfom_demand_risk.yaml
+    basis:
+      score: runs/r6/top5/L1/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: 11022.9
+      capex:
+        p10: 6233.2
+        p50: 11194.2
+        p90: 41304.4
+        base_p50: 9376.2
+      bcr_p10_60y:
+        un_wpp_low: 0.54
+        un_wpp_medium: 0.6
+        un_wpp_high: 0.67
+      npv_at_p90_cost_60y:
+        un_wpp_low: -2957.6
+        un_wpp_medium: -723.9
+        un_wpp_high: 1630.8
+      fare_over_opex_60y: 0.41
+      fiscal_series_method: judge fiscal_cost (all horizons)
+      judge_fiscal_cost_p50_60y: 8441.1
+      phases:
+        S3-branch_spur-al-kharj: 2050
+        S5-station_addition-al-jubayl: 2030
+        S5-station_addition-duruma: 2050
+        S5-station_addition-dhahran: 2030
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 3948.878
+            p50: 7106.379
+            p90: 22124.676
+            expected: 12310.808
+          40y:
+            p10: 4581.177
+            p50: 8066.642
+            p90: 23170.137
+            expected: 12672.408
+          60y:
+            p10: 4675.881
+            p50: 8441.118
+            p90: 23614.84
+            expected: 13177.432
+        upfront_public_capex_undiscounted:
+          p10: 6233.176
+          p50: 11194.201
+          p90: 41304.415
+        budget_share_peak_pct_p90_capex: 0.662
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 16792.8
+        legal_preconditions: *id001
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 12575.96
+            p50: 12575.96
+            p90: 27187.458
+            expected: 17434.742
+          40y:
+            p10: 12937.56
+            p50: 12937.56
+            p90: 27549.058
+            expected: 17796.341
+          60y:
+            p10: 13442.583
+            p50: 13442.583
+            p90: 28054.081
+            expected: 18301.365
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.057
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 4858.8
+          p90_pv: 14611.5
+          termination_worst_case_pv: 6707.3
+          termination_expected_pv: 335.4
+        legal_preconditions: *id003
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      ppp_dbfom_demand_risk:
+        kind: demand_concession
+        net_fiscal_cost_pv:
+          30y:
+            p10: 7542.684
+            p50: 7542.684
+            p90: 22725.139
+            expected: 12583.452
+          40y:
+            p10: 7904.284
+            p50: 7904.284
+            p90: 23086.739
+            expected: 12945.052
+          60y:
+            p10: 8409.307
+            p50: 8409.307
+            p90: 23591.763
+            expected: 13450.075
+        upfront_public_capex_undiscounted:
+          p10: 13443.405
+          p50: 13443.405
+          p90: 13443.405
+        budget_share_peak_pct_p90_capex: 0.23
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 5040.8
+          p90_pv: 15182.5
+          termination_worst_case_pv: 6707.3
+          termination_expected_pv: 335.4
+        legal_preconditions: *id004
+        precedent: 'LGV SEA: demand risk largely on the concessionaire, 48% grantor contribution, 73%
+          of senior debt state-guaranteed, traffic below forecast (S-fund-223, S-fund-227, S-fund-229);
+          China: lines below about 40 M passengers a year do not service their debt (S-fund-250).'
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -5123.9
+        vfm_pct_of_psc: -38.9
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.8077
+          private_finance_premium: -0.0181
+          transaction_cost: -0.773
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -1563.1
+          const:0.0356: -3595.6
+    budget_envelope: 'B1 = SAR 100 bn capex (A-r6-003, CP7-2): capex P90 41,304 SAR m'
+  S6-L3:
+    note: 'reach alternative (CP7-1): Al Jubayl and Dhahran stations, the Al-Kharj spur and the Riyadh
+      commuter belt 225.'
+    recommended_package:
+      S3-branch_spur-al-kharj: fully_public_sar
+      S5-station_addition-al-jubayl: fully_public_sar
+      S5-station_addition-dhahran: fully_public_sar
+      S4-commuter_belt-riyadh-225: fully_public_sar
+    judgement: 'analyst''s judgement: the corridor recommendations combined; the programme figures are
+      the layout''s own judge score (corridors interact)'
+    alternatives_considered:
+    - ppp_dbfom_availability
+    - ppp_dbfom_demand_risk
+    risk_matrices:
+    - cities/ksa/funding/risk_matrix_S6-L3--fully_public_sar.yaml
+    - cities/ksa/funding/risk_matrix_S6-L3--ppp_dbfom_availability.yaml
+    - cities/ksa/funding/risk_matrix_S6-L3--ppp_dbfom_demand_risk.yaml
+    basis:
+      score: runs/r6/top5/L3/score.json
+      judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+      robust_npv: 2426.5
+      capex:
+        p10: 10683.5
+        p50: 19630.1
+        p90: 73798.6
+        base_p50: 16442.0
+      bcr_p10_60y:
+        un_wpp_low: 0.28
+        un_wpp_medium: 0.32
+        un_wpp_high: 0.35
+      npv_at_p90_cost_60y:
+        un_wpp_low: -21744.9
+        un_wpp_medium: -19225.0
+        un_wpp_high: -16624.2
+      fare_over_opex_60y: 0.193
+      fiscal_series_method: judge fiscal_cost (all horizons)
+      judge_fiscal_cost_p50_60y: 18961.7
+      phases:
+        S3-branch_spur-al-kharj: 2050
+        S5-station_addition-al-jubayl: 2030
+        S5-station_addition-dhahran: 2030
+        S4-commuter_belt-riyadh-225: 2050
+    options:
+      fully_public_sar:
+        kind: public
+        net_fiscal_cost_pv:
+          30y:
+            p10: 9808.17
+            p50: 15131.05
+            p90: 41369.482
+            expected: 24336.645
+          40y:
+            p10: 11625.74
+            p50: 17515.872
+            p90: 44106.022
+            expected: 25562.755
+          60y:
+            p10: 12696.327
+            p50: 18961.729
+            p90: 45342.594
+            expected: 27275.144
+        upfront_public_capex_undiscounted:
+          p10: 10683.537
+          p50: 19630.109
+          p90: 73798.602
+        budget_share_peak_pct_p90_capex: 1.23
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 0.0
+          p90_pv: 0.0
+          termination_worst_case_pv: 0.0
+          termination_expected_pv: 0.0
+          retained_overrun_p90_pv: 29380.1
+        legal_preconditions: *id001
+        precedent: 'Haramain: public design-build packages plus an EPC + O&M contract; the state carried
+          cost and demand; about six years late; 2023 ridership about an eighth of the design projection
+          (secondary) (S-fund-261, S-fund-265). Spain ADIF/AVE: public build through an off-budget entity;
+          ex-post returns nil to minimal where demand is thin (S-fund-237, S-fund-239).'
+      ppp_dbfom_availability:
+        kind: availability
+        net_fiscal_cost_pv:
+          30y:
+            p10: 24556.677
+            p50: 24556.677
+            p90: 50174.029
+            expected: 33115.719
+          40y:
+            p10: 25782.787
+            p50: 25782.787
+            p90: 51400.14
+            expected: 34341.83
+          60y:
+            p10: 27495.176
+            p50: 27495.176
+            p90: 53112.528
+            expected: 36054.218
+        upfront_public_capex_undiscounted:
+          p10: 0.0
+          p50: 0.0
+          p90: 0.0
+        budget_share_peak_pct_p90_capex: 0.114
+        budget_share_peak_year: 2050
+        contingent_liabilities_pv:
+          expected_pv: 8559.0
+          p90_pv: 25617.4
+          termination_worst_case_pv: 11438.6
+          termination_expected_pv: 571.9
+        legal_preconditions: *id003
+        precedent: 'Sydney Metro Northwest: availability PPP, the State kept demand (S-fund-045); LGV
+          SEA''s equity cushion was about 20% of its private financing (S-fund-227).'
+      ppp_dbfom_demand_risk:
+        kind: demand_concession
+        net_fiscal_cost_pv:
+          30y:
+            p10: 14784.734
+            p50: 14784.734
+            p90: 41068.229
+            expected: 23556.102
+          40y:
+            p10: 16010.845
+            p50: 16010.845
+            p90: 42294.34
+            expected: 24782.213
+          60y:
+            p10: 17723.233
+            p50: 17723.233
+            p90: 44006.728
+            expected: 26494.601
+        upfront_public_capex_undiscounted:
+          p10: 27143.349
+          p50: 27143.349
+          p90: 27143.349
+        budget_share_peak_pct_p90_capex: 0.479
+        budget_share_peak_year: 2047
+        contingent_liabilities_pv:
+          expected_pv: 8771.4
+          p90_pv: 26283.5
+          termination_worst_case_pv: 11438.6
+          termination_expected_pv: 571.9
+        legal_preconditions: *id004
+        precedent: 'LGV SEA: demand risk largely on the concessionaire, 48% grantor contribution, 73%
+          of senior debt state-guaranteed, traffic below forecast (S-fund-223, S-fund-227, S-fund-229);
+          China: lines below about 40 M passengers a year do not service their debt (S-fund-250).'
+      _vfm_availability_vs_public:
+        vfm_expected_pv: -8779.1
+        vfm_pct_of_psc: -32.2
+        sign: favours public delivery
+        sign_robust_to_registered_ranges: true
+        switching_values:
+          bid_contingency: -0.8064
+          private_finance_premium: -0.0182
+          transaction_cost: -0.7767
+          absorption_capacity: null
+          public_contribution_availability: null
+        rate_sensitivity:
+          flat_5: -2591.3
+          const:0.0356: -6091.0
+    budget_envelope: 'B1 = SAR 100 bn capex (A-r6-003, CP7-2): capex P90 73,799 SAR m'

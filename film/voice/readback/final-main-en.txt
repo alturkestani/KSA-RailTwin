@@ -1,0 +1,149 @@
+# source: film/renders/out/ksa-rail-twin-main-en.mp4
+# sha256: 540c5e41094ed2ce7f2d71be8ed3a44ce89407e38059ccc7eba378c31ada150e
+# model: mlx-community/whisper-large-v3-turbo (local, offline), language=en, temperature 0
+# date: 2026-11-12
+[0.24-6.52] Four journeys. No traveller here is a real person. Each is a composite built on published facts.
+[8.64-14.00] Riyadh, late evening. A family drives its car onto a train and finds its sleeper cabin.
+[14.74-17.02] They wake in the far north, at Kuraillat.
+[18.10-24.32] That part is real. Northline night trains have sleeper cabins and carry cars between Riyadh and Kuraillat.
+[24.32-31.70] Thursday afternoon, a consultant in Riyadh heads for the airport as most weeks for Jeddah.
+[32.72-38.34] In 2025, Jeddah Riyadh was fifth in OAG's top 10 air routes by scheduled seats,
+[38.82-43.16] about 9.8 million both ways. Seats are capacity, not passengers.
+[45.06-50.00] Jeddah, a family packs for a summer week in Abha up on the escarpment.
+[50.00-55.34] By road, passes like Aqabat Shah, 11 tunnels, 32 bridges
+[55.34-61.46] By air, one airline's published schedule listed Abhar to Jeddah at 1 hour 15 minutes
+[61.46-63.62] By train, no way
+[63.62-74.30] In January 2025, the head of ASIA's Development Authority gave a formal target of 9.1 million visitors a year by 2030
+[74.30-81.50] Back in Riyadh, a student finishes her last exam and books a seat home to Tabuk.
+[82.20-86.32] Fly or drive the long road northwest, no train goes there.
+[88.42-90.06] Four journeys, one question.
+[91.00-93.38] What would make rail a real choice on more of them?
+[94.00-97.36] An independent study tried to answer in ranges, not promises.
+[99.12-102.64] The Hejaz Railway reached Medina in 1908.
+[102.64-107.56] The line in what is now Saudi Arabia remained closed after 1920.
+[109.12-114.96] In October 1951, King Abdulaziz inaugurated the Riyadh-Damam railway line.
+[116.80-120.46] Today's passenger lines, the east line to Damam and the north line,
+[120.90-125.78] about 1,250 km via Qasim, Haile and Al-Joof,
+[126.44-129.48] with passenger trains reaching Qurayyat since 2022.
+[129.48-140.68] The Haramein line links Makkah, Jeddah and Medina, open since October 2018 at up to 300km an hour from early 2020.
+[142.34-150.40] And Riyadh has a metro, 6 lines and 85 stations, open between December 2024 and January 2025.
+[152.12-157.10] Who is off this map? The study screened all 150 governorates.
+[157.10-174.94] In the 2022 census, Taif had about 913,000 people, Tabuk 624,000, Kamis Mushait 601,000, Abhar and Najran 422,000 each, Jazan 201,000.
+[175.46-177.78] Nun has a passenger station within 10km.
+[179.68-185.98] Committed lines, the land bridge and the Saudi section of the GCC railway are announced or under procurement.
+[186.78-188.22] None carries passengers yet.
+[190.34-196.92] Even with them, about 26.10 of 35.93 million people live within two hours of a station.
+[197.54-199.54] A reported count never scored.
+[200.94-202.56] The country is growing.
+[202.56-209.56] The 2022 census counted 32,175,224 people.
+[209.56-216.20] By mid-2024, the General Authority for Statistics estimated 35.3 million.
+[217.52-229.68] After the line launch in July 2022, His Royal Highness Crown Prince Mohammed bin Salman told journalists the aim is 50 to 60 million people in the kingdom by 2030, about half Saudis.
+[230.28-232.50] Remarks, not a published programme target.
+[232.50-238.48] For Riyadh, the Royal Commission's president told Reuters in July 2020
+[238.48-242.02] the idea was a city of 15 million by 2030.
+[242.84-245.10] Later reports say that figure is under review.
+[246.78-250.08] The Vision 2030 document itself sets this
+[250.08-255.94] to increase our capacity to welcome Umrah visitors from 8 million to 30 million every year
+[255.94-261.90] and to have three Saudi cities be recognised in the top-ranked 100 cities in the world.
+[262.50-269.50] It speaks of the need to complete, improve and link our infrastructure internally and across borders
+[269.50-275.50] and of constructing shared road and railway networks with the Gulf states.
+[275.50-282.50] A growing country raises a fair question. Should airports and highways be the only ways across it?
+[282.50-291.50] Who would ride? Business on the Riyadh Jeddah trunk? Families heading for the cool of Asir? Students and families going north?
+[291.50-308.38] The busiest pair first. In 2050, with the land bridge running, rail carries about 0.42 million of 4.66 million one-way trips a year between the Riyadh and Jeddah metros. Air about 3.47 million.
+[308.38-311.50] Why so few?
+[312.16-317.08] In the corridor sketches, air stays ahead door-to-door in every rail case modelled,
+[317.60-320.48] even non-stop at 350km an hour.
+[321.16-325.40] Rail's case rests on the towns in between and city centre stations.
+[327.10-332.46] This film's thread, connecting the country, not only its holy cities and largest metros.
+[332.74-338.20] The test, who can reach one of five big metros within 120 minutes door-to-door.
+[338.38-344.92] None of the layouts tested brings any new place within 60 minutes of a big metro.
+[345.76-347.86] The distances are national, not suburban.
+[350.12-352.28] Does a railway create trips or move them?
+[353.12-356.16] The committed lines move trips between modes and destinations.
+[356.98-359.48] The national total is the same with or without them.
+[361.16-364.24] If cheaper, faster travel also creates trips,
+[364.24-371.70] The model adds 0.2 to 1.1 million trips a year in 2050, which barely changes the overall result.
+[373.36-375.68] Today, air carries much of the country.
+[376.14-384.46] In 2025, the Civil Aviation Authority counted 65 million domestic travellers, of about 140.9 million in all.
+[384.46-396.74] OAG named Jeddah-Riyadh the fastest-growing route in its 2025 top 10, up 13% on 2024, 22% on 2019.
+[398.54-403.20] A caution from Japan, despite an extensive high-speed rail network,
+[403.20-408.92] the world's second and third busiest air routes in 2025 were Japanese domestic routes.
+[408.92-423.86] In December 2025, Saudi Arabia and Qatar agreed a 785km high-speed line, with stops including Hofuf and Damam, and a target trip of about two hours. Announced, not built.
+[425.72-435.22] The land bridge, about 900km of new railway between Riyadh and Jeddah, is reported as due by 2034. It too is announced, not existing.
+[435.22-439.46] How do you test a railway that does not exist?
+[440.16-441.12] Start with the ground.
+[441.54-444.44] Each hypothetical line was routed over real terrain,
+[444.94-449.86] on 30-metre elevation data, at least cost through slopes, dunes and wadis.
+[451.58-455.52] On three lines that already run, lengths came within 5%,
+[455.52-458.74] but paths sat 3 to 10 kilometres off on average.
+[459.30-462.00] So every route here is a sketch, not a design.
+[462.00-466.74] Tunnels, viaducts and earthworks were measured.
+[467.62-473.64] Off the Taif escarpment, two of the Via Taif sketches turned 61.9 straight-line kilometres
+[473.64-480.64] into 91.4 kilometres of track, with 16.2 of tunnel and 14.8 of viaduct.
+[482.42-485.06] Near Makkah, one rule shaped the sketches.
+[485.82-489.06] A through Riyadh Jeddah train stays outside the Haram boundary,
+[489.06-492.32] so every ticketed passenger can complete the journey.
+[493.02-496.04] Haramain already serves Makkah from R. Rusefa.
+[498.28-502.32] Costs come from the study's own register for double-track electrified railway,
+[502.80-504.38] not from press release totals.
+[505.14-507.76] Each is a range, low, middle and high.
+[509.46-512.08] Big rail projects often overrun,
+[512.68-516.08] so costs carry an uplift from international reference classes.
+[516.08-523.24] one of 355 rail projects, with contingency reported separately, not quietly added.
+[525.32-530.28] Then the search, on top of the committed lines, combinations of 71 candidate corridors,
+[530.74-534.02] new stations, spurs, commuter belts and trunk links.
+[535.56-541.94] Each candidate was scored by one frozen appraisal model, the judge, over 10,000 random draws,
+[541.94-545.28] its fingerprint checked before and after every run.
+[545.28-549.50] The score is cautious, the worst of three population cases.
+[551.60-555.34] Classical optimizers searched and so did an automated research loop.
+[556.00-560.50] One change at a time, a written hypothesis, kept only if the judge agreed.
+[562.34-568.62] Every attempt left a row in a register, 47,108 rows in the final search.
+[570.18-574.48] At every checkpoint a person read the results and decided what came next.
+[575.28-577.44] The machine searched. It did not decide.
+[579.36-580.20] Does it pay back?
+[580.66-583.12] For every riyal spent, how many come back?
+[583.66-586.00] Below 1, a line does not repay its cost.
+[586.54-589.94] For the committed lines, the middle answer is about 0.3.
+[592.08-593.78] Three options were put forward.
+[594.38-596.06] None is a recommendation to build.
+[596.22-604.22] The central case, new stations at Al-Jubeil, Dahran and Duruma, costing 0.8 to 5.3 billion riyals.
+[604.94-607.72] In the middle case, each rial brings back about 6.
+[608.08-610.00] Even at high cost, it pays back.
+[611.54-618.18] The upside case adds a spur to Al-Karj, costing 6.2 to 41.3 billion rials.
+[618.84-622.40] In the middle case, each rial brings back about 2.3.
+[622.56-627.66] But if costs come in high, it no longer pays back in two of three population cases.
+[627.66-641.34] The Reach alternative adds a Riyadh commuter belt, putting 4.25 million people within 120 minutes, door-to-door, of the five metros, against 3.56 million.
+[642.00-648.40] Each Riyadh brings back about 1.1, just above 1. At high cost, it does not pay back in any case.
+[650.00-657.50] Who pays? No option pays for itself from fares. Tickets cover only part of running and renewal costs.
+[657.66-660.82] So however it is delivered, the state pays the difference.
+[662.32-663.64] What comes back?
+[664.20-673.08] For the committed lines over 60 years, the model puts users' travel time and cost savings in today's money at 2.3 to 19.3 billion rials,
+[673.08-681.24] and a safety benefit, road deaths and injuries avoided valued at standard appraisal values, at 0.6 to 7.4 billion.
+[681.24-693.90] A much bigger figure, the wider boost to the economy, is roughly 114.6 to 267.7 billion rials in the middle case across the three options.
+[694.86-699.84] The method is unreliable on these large zones, so the study keeps it outside every ranking.
+[701.46-709.28] And a direct Riyadh Jeddah Railway, a side study, not the official ranking, sketched five routes in place of the land bridge.
+[709.96-712.88] Each returns only about 0.2 per rial.
+[713.48-715.94] On these numbers, none pays back its cost.
+[716.66-720.52] That helps explain why there is no direct Riyadh Jeddah railway today.
+[722.10-723.58] They differ in reach.
+[724.08-727.28] The direct sketch adds no one to the national two-hour reach.
+[727.78-730.70] The three via Taif, about 0.23 million.
+[731.38-735.70] The chain through the land bridges announced stops, about 0.31 million.
+[735.70-750.70] Within 120 minutes of the five metros, only two add anyone, about 93,693 people with a gateway southwest of Makkah and about 109,007 with a stop at Al Jumum.
+[752.36-762.64] Now the far north and south, Tabuk, Abha, Kamis Mushait, Najran and Jazan. On today's map, none has a passenger station within 10 kilometers.
+[762.64-769.64] As a comparison, not a recommendation, the study also built one connected network,
+[770.22-773.24] the cheapest 16 additions that join 18 cities.
+[774.86-782.18] In it, a line of about 460 kilometers runs from Tabuk to Sakaka, then a short spur to the north line.
+[782.92-789.48] Abha and Kamis Mushait link to Najran, through Bisha to Taif and the land bridge, and down the mountains to Jazan.
+[789.48-799.44] That puts 32.7 million people within two hours of a station, against 26.1 million with the committed lines alone
+[799.44-805.66] Door to door by train, how long from these cities to the nearest big city?
+[806.32-808.04] The study did not root those trips
+[808.04-817.22] The price of one connected network, in the middle case, each real brings back only about 0.06, far below 1
+[817.22-822.38] A field survey and observed demand could change all of this.
+[822.98-826.96] Stage gates before each construction start mark where to revisit the choice.
+[828.72-832.14] Four journeys. A night train north that already runs.
+[832.72-834.62] An air shuttle that rail does not beat.
+[835.16-838.86] A climb to Abha and a road to Tabuk, still off the rail map.
+[840.42-843.64] A railway that connects more of the country is possible.
+[843.98-846.98] Whether it is worth building is for those who decide.
+[847.22-851.22] The evidence is here to read, every figure sourced on screen.

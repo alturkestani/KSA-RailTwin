@@ -1,0 +1,36 @@
+# Spec for cities/ksa/lines/hhr.yaml (rail.lines build). Facts carry S- ids (docs/sources/index.csv,
+# docs/sources/r1a-lines.csv). Station coordinates: OSM (ODbL). km-posts: OSM track distance.
+id: hhr
+opened: 2018-10-11            # S-r1a-019 (secondary): public opening; airport branch 2019-12-11
+line:
+  name_en: Haramain High Speed Railway
+  name_ar: قطار الحرمين السريع   # S-r1a-002 lists the stations; line name in Arabic not read on a SAR page (unverified)
+  layer: existing
+  operator: Saudi Arabia Railways (SAR)            # S-001 (verified page header)
+  status: in_service                                # S-013 (GASTAT 2025 ridership, verified)
+  source: S-001
+  accessed: 2026-10-31
+  line_type: hsr
+  design_speed_kmh: 300                             # S-003 (secondary): in-service limit; design 320/360
+  length_km: 453                                    # S-002 (secondary): 449.2 main line + 3.75 airport branch
+  fares_sar:
+    - {from: makkah, to: jeddah, economy: {low: 43, high: 43}, business: {low: 90, high: 90}, sampled: 2026-10-31, source: S-r1a-012}
+    - {from: makkah, to: kaia, economy: {low: 65, high: 65}, business: {low: 101.4, high: 101.4}, sampled: 2026-10-31, source: S-r1a-013}
+  running_time_model:
+    cruise_kmh: {value: 300, source: S-003}
+  observed_performance:
+    - {pair: [makkah, jeddah], minutes: 43, implied_avg_kmh: 107, source: S-005}
+  notes: >-
+    Fares are a travel guide's sample (fares stamped 28 Oct 2026, before VAT and fees; secondary,
+    C-r1a-02). Makkah-Jeddah 43 min is secondary (Wikipedia, S-005) and is the October 2018 opening
+    timetable (S-cp2-503, S-cp2-507; CP2_PREP HHR-check, C-r1a-22); current secondary listings give
+    28-30 min (S-cp2-504); other values conflict (C-r1a-01). No SAR timetable was readable on 31 Oct 2026 (S-r1a-003), so no service pattern is
+    recorded. KAIA is on a 3.75 km branch (S-004): its km-post is the track distance from Makkah via
+    the branch, so the KAIA-KAEC km difference is not a running distance. Arabic station names as
+    printed by SAR (S-r1a-002). Track, electrification and gauge not read (unverified).
+stations:
+  - {id: makkah, name_en: Makkah, name_ar: مكة المكرمة, class: terminal, source: S-001, osm: node/10956967098}
+  - {id: jeddah, name_en: Al-Sulimaniyah - Jeddah, name_ar: السليمانية - جدة, class: major, source: S-001, osm: way/485762503}
+  - {id: kaia, name_en: Airport - Jeddah, name_ar: المطار- جدة, class: airport, source: S-001, osm: node/7227897402, branch: true}
+  - {id: kaec, name_en: KAEC, name_ar: مدينة الملك عبدالله الاقتصادية, class: intermediate, source: S-001, osm: node/2147398509}
+  - {id: madinah, name_en: Madinah, name_ar: المدينة المنورة, class: terminal, source: S-001, osm: node/10957110707}

@@ -1,0 +1,138 @@
+{
+ "id": "S2-trunk_gap-riyadh-jeddah",
+ "line_type": "hsr",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 893.484,
+ "straight_km_legs": 844.227,
+ "straight_km_end_to_end": 844.182,
+ "detour_ratio": 1.0583,
+ "max_grade_cap": 0.025,
+ "design_kmh": 300.0,
+ "r_min_m": 7000.0,
+ "structure_factor": 5.3339,
+ "tunnel_km": 13.398,
+ "viaduct_km": 16.397,
+ "earthworks_km": 121.175,
+ "at_grade_km": 742.514,
+ "tunnel_share": 0.015,
+ "viaduct_share": 0.01835,
+ "fill_m3": 7525000.0,
+ "cut_m3": 19558000.0,
+ "formation_max_grade": 0.02503,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.1104,
+ "elev_min_m": 13.2,
+ "elev_max_m": 1104.1,
+ "terrain_shares": {
+  "coastal": 0.0083,
+  "dunes": 0.0363,
+  "escarpment_mountain": 0.0836,
+  "flat_desert": 0.6943,
+  "mixed": 0.1774
+ },
+ "area_km": {
+  "urban": 30.788,
+  "builtup": 59.134,
+  "protected": 0.0,
+  "military": 2.499,
+  "sand": 32.478,
+  "sabkha": 0.0,
+  "waterway": 23.499,
+  "highway": 64.141
+ },
+ "wadi_crossings_osm": 123,
+ "speed_restrictions": [
+  {
+   "from_km": 20.639,
+   "to_km": 24.738,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 209.736,
+   "to_km": 212.336,
+   "kmh": 250.0
+  },
+  {
+   "from_km": 287.136,
+   "to_km": 288.836,
+   "kmh": 280.0
+  },
+  {
+   "from_km": 387.936,
+   "to_km": 389.136,
+   "kmh": 290.0
+  },
+  {
+   "from_km": 392.836,
+   "to_km": 394.936,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 396.136,
+   "to_km": 399.236,
+   "kmh": 240.0
+  },
+  {
+   "from_km": 762.235,
+   "to_km": 763.035,
+   "kmh": 290.0
+  },
+  {
+   "from_km": 764.135,
+   "to_km": 766.735,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 777.935,
+   "to_km": 781.235,
+   "kmh": 240.0
+  },
+  {
+   "from_km": 792.835,
+   "to_km": 795.934,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 805.634,
+   "to_km": 807.234,
+   "kmh": 270.0
+  },
+  {
+   "from_km": 837.534,
+   "to_km": 841.934,
+   "kmh": 180.0
+  },
+  {
+   "from_km": 864.234,
+   "to_km": 869.234,
+   "kmh": 200.0
+  },
+  {
+   "from_km": 871.434,
+   "to_km": 873.634,
+   "kmh": 250.0
+  },
+  {
+   "from_km": 883.234,
+   "to_km": 886.134,
+   "kmh": 250.0
+  }
+ ],
+ "restricted_km": 40.698,
+ "min_curve_kmh": 180.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "riyadh": 0.0,
+  "al-muzahimiyah": 58.27,
+  "al-quway-iyah": 169.986,
+  "jeddah": 893.484
+ },
+ "status": "routed",
+ "stations_key": "4a8dd190c98475bb",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-riyadh-jeddah.geojson",
+ "run": "runs/fix-hhr-reroute/align-s1/S2-trunk_gap-riyadh-jeddah",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

@@ -1,0 +1,12 @@
+cut,lang,line_id,section,engine,voice,chars,seconds,input_i,input_tp,output_i,output_tp,said_override,sha256,voice_id,model
+trailer,ar,t-01,1,nabrah,Abdullah,146,7.840,-22.13,-5.99,-16.11,-1.50,yes,04e07d7744dc61f044df3f40cb2e2e38dc2665a9d4003f0a7c90431aa7a657c9,,
+trailer,ar,t-02,1,nabrah,Abdullah,132,8.800,-22.99,-7.29,-16.11,-1.50,yes,22aabaec75798b61532c9ecb631bcfa41e55a3f10788b7f8a0380f70de124edf,,
+trailer,ar,t-03,2,nabrah,Norah,117,7.680,-22.89,-5.29,-16.72,-1.50,yes,330463b02dd27cad5c814b440a0aeea3b3175f299128f60eb47d62b04b4a6286,,
+trailer,ar,t-04,3,nabrah,Abdullah,71,6.400,-24.86,-8.35,-16.21,-1.50,yes,3704852df3d2a81b7f0818bfd0c32718d8c4346eddabe0789dff686a720219b1,,
+trailer,ar,t-05,4,nabrah,Abdullah,104,5.280,-23.94,-5.77,-17.11,-1.50,yes,54098256f0f61b54ce34c49066de93b0cb6a2d0dc0d87e93c03be6ba1b42258d,,
+trailer,ar,t-06,6,nabrah,Daniah,149,9.120,-21.86,-2.46,-16.59,-1.50,yes,71c833da794111dabeae67e36b9bf921a2dff77e76f106e50ebd6a517935afd9,,
+trailer,ar,t-07,7,nabrah,Daniah,73,4.640,-20.52,-2.36,-16.78,-1.50,yes,3a9709255acf84861b809b6ecbd348091d54c651597394a101856ba0b126252a,,
+trailer,ar,t-08,8,nabrah,Daniah,141,12.000,-22.64,-4.66,-16.36,-1.50,yes,e65932c07116c10dfe967544b7929d904eb5506f5984d80fab13acff131115fd,019efbb8-db4c-75f9-a00b-0ee07c036268,nabrah_tts_v1
+trailer,ar,t-09,8,nabrah,Daniah,87,5.760,-21.21,-3.21,-16.12,-1.50,yes,104d926d772dd7ee766bd4d911febc3022acad593dc3d19a6284dab8c3d035ba,,
+trailer,ar,t-10,8,nabrah,Daniah,45,3.840,-19.69,-4.81,-16.01,-1.50,yes,1975a30f0f938dd128a020fc238ee71b4bd3b24f1c62fcb710f25f54597d5b41,,
+trailer,ar,t-11,8,nabrah,Daniah,24,2.560,-22.23,-6.56,-17.19,-1.50,yes,c788d4bed8734b400cfc76178d76695a70b1cb38e7820615f234a35679f91838,,

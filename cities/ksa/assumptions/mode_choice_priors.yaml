@@ -1,0 +1,45 @@
+# > **Document version:** cities/ksa/assumptions/mode_choice_priors.yaml v0.2 | 3 Nov 2026 | Author: socio-culture-analyst B (R1d); R5 (A-mode-011 range, H2a) | Status: draft
+# Literature priors for the intercity car / rail / air / bus multinomial logit (W8 mode choice) and for the
+# D-efficient stated-preference design (docs/survey/design.yaml uses the SAME values).
+# Units: utility per minute (times), per SAR (cost), per percentage point (on-time share), utility (dummies, ASCs).
+# Car is the reference alternative (ASC 0). No survey has been fielded; no value here is estimated from Saudi data.
+# Assumption rows: docs/assumptions.md (A-mode-0xx). Sources: docs/sources/r1d-soc-survey.csv (S-soc-3xx).
+version: "0.1"
+label: "literature-based until survey results exist"
+reference_alternative: car
+transfer_method: {assumption: A-mode-020, note: "multipliers transferred as dimensionless ratios of the IVT coefficient; money values only for the VoT cross-check"}
+
+asc:
+  rail: {value: -0.2, unit: utility, range: [-1.0, 0.5], assumption: A-mode-010, status: "literature-based until survey results exist", note: "constants are not transferable (S-soc-337, secondary); calibrate to observed shares in R3"}
+  air:  {value: -0.2, unit: utility, range: [-1.0, 1.5], assumption: A-mode-011, status: "literature-based until survey results exist", note: "as rail; air available only on pairs with scheduled flights. Range widened from [-1.0, 0.5] to [-1.0, 1.5] on 3 Nov 2026 (CP5 decision H2a, Tariq): KSA air constants not transferable from the literature prior"}
+  bus:  {value: -0.6, unit: utility, range: [-1.5, 0.0], assumption: A-mode-012, status: "literature-based until survey results exist", note: "no Saudi intercity estimate obtained (S-soc-307, S-soc-308 unverified)"}
+
+in_vehicle_time:
+  car:  {value: -0.010, unit: utility per min, range: [-0.020, -0.005], assumption: A-mode-001, status: "literature-based until survey results exist", note: "urban Riyadh SP car -0.022 (S-soc-304, secondary) scaled down for 150-600 km trips (S-soc-303); non-work range -0.007 to -0.025 (S-soc-337, secondary)"}
+  rail: {value: -0.009, unit: utility per min, range: [-0.018, -0.005], assumption: A-mode-002, status: "literature-based until survey results exist", note: "value of time falls as comfort rises (S-soc-305)"}
+  air:  {value: -0.012, unit: utility per min, range: [-0.024, -0.006], assumption: A-mode-003, status: "literature-based until survey results exist", note: "air/HSR users value time more than bus users (S-soc-306, unverified)"}
+  bus:  {value: -0.007, unit: utility per min, range: [-0.014, -0.004], assumption: A-mode-004, status: "literature-based until survey results exist", note: "lower value of time of bus users (S-soc-306, unverified)"}
+
+access_egress_time:   {value: -0.017, unit: utility per min, range: [-0.030, -0.010], assumption: A-mode-007, status: "literature-based until survey results exist", note: "1.87 x rail IVT, inter-urban access multiplier (S-soc-302); world mean 1.70 (S-soc-300); generic rail/air/bus"}
+headway:              {value: -0.004, unit: utility per min, range: [-0.006, -0.002], assumption: A-mode-008, status: "literature-based until survey results exist", note: "0.46 x rail IVT, inter-urban headway multiplier (S-soc-302); world mean 0.60 (S-soc-300); generic rail/air/bus"}
+cost:                 {value: -0.013, unit: utility per SAR, range: [-0.030, -0.007], assumption: A-mode-005, status: "literature-based until survey results exist", note: "derived from car IVT and the design value of time A-mode-006; generic for fuel+parking and fares"}
+on_time_share:        {value: 0.007, unit: utility per percentage point, range: [0.002, 0.015], assumption: A-mode-009, status: "literature-based until survey results exist", note: "late-time multiplier 2.67 (S-soc-302) x 0.30 late min per pp (A-mode-013) x rail IVT; generic rail/air"}
+comfort_upper_class:  {value: 0.4, unit: utility, range: [0.0, 1.0], assumption: A-mode-014, status: "literature-based until survey results exist", note: "rail business vs economy, bus VIP vs standard; sign from S-soc-305"}
+women_only_or_family_carriage: {value: 0.2, unit: utility, range: [-0.2, 0.6], assumption: A-mode-015, status: "literature-based until survey results exist", note: "design prior only; no published WTP found; hypothesis H1 (docs/survey/design.md)"}
+prayer_facilities:    {value: 0.2, unit: utility, range: [0.0, 0.5], assumption: A-mode-016, status: "literature-based until survey results exist", note: "design prior only; no published estimate found; hypothesis H4"}
+luggage_large_allowance: {value: 0.2, unit: utility, range: [0.0, 0.5], assumption: A-mode-017, status: "literature-based until survey results exist", note: "cabin bag + one large suitcase vs cabin bag only; rail and air"}
+heat_shaded_transfer: {value: 0.25, unit: utility, range: [0.0, 0.6], assumption: A-mode-018, status: "literature-based until survey results exist", note: "hot-climate walk effect not significant worldwide (S-soc-301) but large in one Riyadh SP sample (S-soc-304, secondary); hypothesis H2"}
+
+auxiliary:
+  late_arrival_mean_delay: {value: 30, unit: min, range: [15, 60], assumption: A-mode-013, status: "literature-based until survey results exist", note: "used only to convert on-time share into expected late minutes"}
+
+vot_cross_check:
+  design_vot_car: {value: 46, unit: SAR per hour, range: [20, 90], assumption: A-mode-006, status: "literature-based until survey results exist", note: "cost coefficient = car IVT / (46/60)"}
+  implied_vot_from_priors: {value: {car: 46.2, rail: 41.5, air: 55.4, bus: 32.3}, unit: SAR per hour, range: [20, 90], assumption: A-mode-019, status: "literature-based until survey results exist", note: "IVT coefficient / cost coefficient x 60"}
+  a_cba_010_non_work: {value: 37.7, unit: SAR per hour (2023 prices), range: [35.3, 37.7], assumption: A-cba-010, status: "literature-based until survey results exist", note: "7.08 GBP/h x transfer 1.07-1.142 x 4.661 SAR/GBP (3.75 / 0.8045, S-soc-322; peg A-cost-001); not uprated to 2025"}
+  a_cba_010_non_work_interurban: {value: 52.0, unit: SAR per hour (2023 prices), range: [48.7, 52.0], assumption: A-mode-006, status: "literature-based until survey results exist", note: "x 1.38 inter-urban increment (S-soc-303)"}
+  a_cba_010_commuting: {value: 82.6, unit: SAR per hour (2023 prices), range: [77.4, 82.6], assumption: A-cba-010, status: "literature-based until survey results exist", note: "15.51 GBP/h x 1.07-1.142 x 4.661"}
+  a_cba_010_working: {value: 134.3, unit: SAR per hour (2023 prices), range: [125.8, 134.3], assumption: A-cba-010, status: "literature-based until survey results exist", note: "25.23 GBP/h perceived x 1.07-1.142 x 4.661; business trips are not the design's base segment"}
+  wage_base_saudi: {value: 63.7, unit: SAR per hour, range: [63.7, 63.7], source: S-soc-338, status: "literature-based until survey results exist", note: "SAR 11,034 per month / 173.3 h (secondary: press report of GASTAT Q2 2025)"}
+  wage_base_expatriate: {value: 22.7, unit: SAR per hour, range: [22.7, 22.7], source: S-soc-338, status: "literature-based until survey results exist", note: "SAR 3,933 per month / 173.3 h (secondary)"}
+  reading: "The design VoT (46) sits between the A-cba-010 non-work value with and without the inter-urban increment (37.7-52.0, 2023 prices) and below the Saudi mean wage rate; the survey's purpose and income segmentation (docs/survey/analysis-plan.md) replaces it."

@@ -1,0 +1,182 @@
+# > **Document version:** cities/ksa/assumptions/demand_jobs.yaml v0.1 | 31 Oct 2026 | Author: demand-modeler (R3) | Status: draft
+# Jobs proxy per region (and the rule to distribute it to governorate zones) for the W8 gravity model.
+# Source file: manifest kapsarc-gastat-labour-admin-records (GASTAT administrative records relayed by the
+# KAPSARC Data Portal; values copied by script). Region slugs match cities/ksa/regions/*.csv.
+# Sources: docs/sources/r3-cal.csv; assumptions: docs/assumptions.md.
+version: '0.1'
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+jobs_proxy:
+  definition: formal workplace jobs = GOSI participants on the job (private sector, social-insurance rules) + civil-service employees, by administrative region, 2025
+    Q4
+  source: S-r3-cal-050
+  status: secondary
+  evidence_grade: B
+  assumption: A-demand-003
+  excludes:
+    note: domestic workers (not published by region), military and security personnel, the self-employed outside GOSI, informal work; 579 civil-service records 'undefined'
+      and 380 'out of the kingdom' are dropped
+    assumption: A-demand-004
+  caveat: Riyadh holds 49.2% of formal jobs against 26.7% of the 2022 population. Part of this is real (the capital), part may be registration at head-office region;
+    the dataset does not say which region basis it uses. Run the population-share sensitivity below.
+  national_total_jobs_formal: 14836997
+  check: 'region sums equal the published totals: GOSI 13,665,115 (Total row); civil service 1,171,882 of 1,172,841 (959 undefined/abroad)'
+regions:
+  al_baha:
+    gosi_participants: 44691
+    civil_service: 24465
+    jobs_formal: 69156
+    jobs_formal_saudi: 32423
+    jobs_formal_non_saudi: 36733
+    share_jobs: 0.00466
+    population_2022: 339174
+    share_population_2022: 0.01054
+    jobs_per_resident_2022: 0.2039
+  al_jouf:
+    gosi_participants: 83326
+    civil_service: 28216
+    jobs_formal: 111542
+    jobs_formal_saudi: 42373
+    jobs_formal_non_saudi: 69169
+    share_jobs: 0.00752
+    population_2022: 595822
+    share_population_2022: 0.01852
+    jobs_per_resident_2022: 0.1872
+  asir:
+    gosi_participants: 380570
+    civil_service: 93968
+    jobs_formal: 474538
+    jobs_formal_saudi: 162382
+    jobs_formal_non_saudi: 312156
+    share_jobs: 0.03198
+    population_2022: 2024285
+    share_population_2022: 0.06291
+    jobs_per_resident_2022: 0.2344
+  eastern:
+    gosi_participants: 2467540
+    civil_service: 114046
+    jobs_formal: 2581586
+    jobs_formal_saudi: 755700
+    jobs_formal_non_saudi: 1825886
+    share_jobs: 0.174
+    population_2022: 5125254
+    share_population_2022: 0.15929
+    jobs_per_resident_2022: 0.5037
+  hail:
+    gosi_participants: 176157
+    civil_service: 31838
+    jobs_formal: 207995
+    jobs_formal_saudi: 55585
+    jobs_formal_non_saudi: 152410
+    share_jobs: 0.01402
+    population_2022: 746406
+    share_population_2022: 0.0232
+    jobs_per_resident_2022: 0.2787
+  jazan:
+    gosi_participants: 191286
+    civil_service: 51798
+    jobs_formal: 243084
+    jobs_formal_saudi: 83498
+    jobs_formal_non_saudi: 159586
+    share_jobs: 0.01638
+    population_2022: 1404997
+    share_population_2022: 0.04367
+    jobs_per_resident_2022: 0.173
+  madinah:
+    gosi_participants: 416086
+    civil_service: 66004
+    jobs_formal: 482090
+    jobs_formal_saudi: 160265
+    jobs_formal_non_saudi: 321825
+    share_jobs: 0.03249
+    population_2022: 2137983
+    share_population_2022: 0.06645
+    jobs_per_resident_2022: 0.2255
+  makkah:
+    gosi_participants: 2203699
+    civil_service: 171896
+    jobs_formal: 2375595
+    jobs_formal_saudi: 702367
+    jobs_formal_non_saudi: 1673228
+    share_jobs: 0.16011
+    population_2022: 8021463
+    share_population_2022: 0.24931
+    jobs_per_resident_2022: 0.2962
+  najran:
+    gosi_participants: 170501
+    civil_service: 30746
+    jobs_formal: 201247
+    jobs_formal_saudi: 54822
+    jobs_formal_non_saudi: 146425
+    share_jobs: 0.01356
+    population_2022: 592300
+    share_population_2022: 0.01841
+    jobs_per_resident_2022: 0.3398
+  northern_borders:
+    gosi_participants: 57832
+    civil_service: 19326
+    jobs_formal: 77158
+    jobs_formal_saudi: 27590
+    jobs_formal_non_saudi: 49568
+    share_jobs: 0.0052
+    population_2022: 373577
+    share_population_2022: 0.01161
+    jobs_per_resident_2022: 0.2065
+  qassim:
+    gosi_participants: 466071
+    civil_service: 60866
+    jobs_formal: 526937
+    jobs_formal_saudi: 130153
+    jobs_formal_non_saudi: 396784
+    share_jobs: 0.03552
+    population_2022: 1336179
+    share_population_2022: 0.04153
+    jobs_per_resident_2022: 0.3944
+  riyadh:
+    gosi_participants: 6858913
+    civil_service: 443967
+    jobs_formal: 7302880
+    jobs_formal_saudi: 1940492
+    jobs_formal_non_saudi: 5362388
+    share_jobs: 0.49221
+    population_2022: 8591748
+    share_population_2022: 0.26703
+    jobs_per_resident_2022: 0.85
+  tabuk:
+    gosi_participants: 148443
+    civil_service: 34746
+    jobs_formal: 183189
+    jobs_formal_saudi: 62759
+    jobs_formal_non_saudi: 120430
+    share_jobs: 0.01235
+    population_2022: 886036
+    share_population_2022: 0.02754
+    jobs_per_resident_2022: 0.2068
+sensitivity:
+  population_share:
+    rule: jobs_r = national_total_jobs_formal x share_population_2022_r
+    assumption: A-demand-003
+    population_source: S-cp2-gastat-001 (Census 2022 by region, relayed by DataPulse; manifest gastat-popregion-relayed-datapulse-csv); recompute from S-cp2-gastat-007
+      (governorate primary export) through the zone-region join for the final run
+  blend:
+    rule: jobs_r = 0.5 x admin-record jobs + 0.5 x population-share jobs
+    assumption: A-demand-003
+regional_residence_based_alternative:
+  status: not available
+  source: S-r3-cal-051
+  note: GASTAT LFS employed-by-region shares on the KAPSARC portal end at 2021 Q2; the GASTAT LFS Q4 2025 workbook with employed by region was not obtained
+governorate_distribution:
+  rule: jobs_g = jobs_r(g) x pop2022_g / pop2022_r(g), with pop2022_g from GASTAT Census 2022 TA1 governorate primary export and r(g) from the zone's region attribute
+    (zones.geojson, OSM containment)
+  source: S-cp2-gastat-007
+  assumption: A-demand-002
+  status: assumed (proxy)
+  flag: 'proxy: assumes jobs per resident is uniform within a region; overstates jobs in dormitory governorates, understates industrial cities'
+  sensitivity: replace pop2022_g by an OSM activity weight w_g = area of landuse in (commercial, retail, industrial) + 0.01 km2 x count of amenity/shop/office POIs,
+    normalised within the region (ODbL); plus the economic nodes (industrial cities, ports, mining, energy; cities/ksa/zones/economic_nodes.csv) as special generators
+    for business attraction only
+used_for:
+  commute: attraction D_j
+  business: attraction D_j (with population)
+  leisure_vfr: not used (population)
+  tourism: not used (tourism nodes + population)
+  pilgrimage: not used (fixed destinations)

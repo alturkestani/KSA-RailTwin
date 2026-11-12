@@ -1,0 +1,517 @@
+KSA Rail Twin
+Copyright 2026 The KSA Rail Twin contributors
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+It is a personal, open-source, non-partisan study; it does not represent or advocate for any
+agency, company or other entity.
+
+Third-party data and software
+-----------------------------
+The full register of every dataset, model, tool, voice, font, music track and image, with its
+licence, commercial-use status and attribution, is docs/licences.md (machine-readable copy:
+docs/licences.csv). This file mirrors the attributions that must travel with the code; the
+full generated credits are docs/credits.md, and the generated block at the end of this file lists
+every register item whose row names an attribution (`make credits` rebuilds both).
+
+OpenStreetMap
+  Rail, road and place data are derived from OpenStreetMap data, (c) OpenStreetMap contributors,
+  available under the Open Database License (ODbL) 1.0: https://www.openstreetmap.org/copyright
+  Extracts are obtained from Geofabrik GmbH (https://download.geofabrik.de/). Derived databases
+  remain subject to the ODbL (share-alike); every map credits "(c) OpenStreetMap contributors".
+  No OSM extract is committed to this repository (data/ is gitignored).
+
+GASTAT open data
+  Population, census and transport statistics come from the General Authority for Statistics of
+  the Kingdom of Saudi Arabia (GASTAT), https://www.stats.gov.sa/ , used under its open-data terms
+  of use, with attribution to GASTAT. Tables derived or modified here are marked as derived and
+  are not official GASTAT statistics.
+
+TrafficTwin Jeddah
+  Conventions, orchestration scripts, agents, skills and the Jeddah coupling are adapted from
+  TrafficTwin Jeddah, (c) 2026 The TrafficTwin Jeddah contributors, Apache License 2.0 (the
+  author's optional private companion project: not public, and not required to run, test or
+  reproduce this repository). Its derived Jeddah network
+  (data/jeddah/jeddah.v2.net.xml, used through a local symlink and not redistributed) is a
+  derived database of OpenStreetMap under the ODbL.
+
+Population grids, buildings and imagery (R1a, GEO_VERIFY)
+  WorldPop (www.worldpop.org, School of Geography and Environmental Science, University of
+  Southampton), Saudi Arabia 2020 population counts, CC BY 4.0. Microsoft Global ML Building
+  Footprints (https://github.com/microsoft/GlobalMLBuildingFootprints), Community Data License
+  Agreement - Permissive 2.0 (CDLA-Permissive-2.0; no share-alike). Contains modified Copernicus
+  Sentinel data 2026 (visual confirmation windows; no imagery committed). None of these files is
+  committed (data/ is gitignored).
+
+Price indices, benchmarks and appraisal guidance (R1b, R1c, R1d)
+  Source: World Bank, World Development Indicators (CC BY 4.0; modified: re-based, combined into
+  a price/FX index). Source: Eurostat, nama_10_gdp (CC BY 4.0; modified: re-based). Source:
+  European Court of Auditors, Special Report 19/2018, (c) European Union, 2018 (CC BY 4.0).
+  Contains public sector information licensed under the Open Government Licence v3.0 (HM
+  Treasury Green Book guidance; Department for Transport TAG; reference-class data: Oxford Global
+  Projects). World Bank, China Transport Topics No. 9 (2014), CC BY 3.0 IGO. UNESCO World
+  Heritage Centre, World Heritage List (CC BY-SA 4.0). Items whose terms are unclear or
+  share-alike are flagged in docs/licences.md for a check before any release.
+
+Terrain, population scenarios and calibration data (R3)
+  Terrain classes produced using Copernicus WorldDEM-30 (c) DLR e.V. 2010-2014 and (c) Airbus
+  Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all
+  rights reserved. The organisations in charge of the Copernicus programme by law or by delegation
+  do not incur any liability for any use of the Copernicus WorldDEM-30. No endorsement is implied.
+  NASA JPL (2013), NASA Shuttle Radar Topography Mission Global 1 arc second (SRTMGL1.003), NASA
+  EOSDIS Land Processes DAAC, https://doi.org/10.5067/MEASURES/SRTM/SRTMGL1.003 (cross-check).
+  United Nations, DESA, Population Division (2024), World Population Prospects 2024, and (2025)
+  World Urbanization Prospects 2025, CC BY 3.0 IGO (modified: Saudi rows extracted, re-anchored to
+  the Census 2022 total). Source: GASTAT (railway, air, Hajj and Umrah statistics; labour records
+  via the KAPSARC Data Portal); derived tables are marked as derived. Contains public sector
+  information licensed under the Open Government Licence v3.0 (Department for Transport TAG units
+  M2.1, M3.1, M3.2 and National Travel Survey tables). None of the data files is committed.
+
+Eclipse SUMO and OSRM (R4)
+  The Jeddah decongestion coupling runs Eclipse SUMO 1.28.0, (c) German Aerospace Center (DLR) and
+  others, Eclipse Public License 2.0 (https://eclipse.dev/sumo/), from the read-only TrafficTwin
+  environment, as a dependency, not vendored. Road skims use OSRM (osrm-backend, BSD-2-Clause).
+
+Network, pilgrims and alignments (R4)
+  Pilgrim tables: Source: General Authority for Statistics (GASTAT), Umrah Statistics and Hajj
+  Statistics (with MoHU, MoI and Jeddah Islamic Port as data owners); General Authority of Civil
+  Aviation (GACA) press release; Saudi Press Agency (SPA), relaying SAR. Derived tables are marked
+  as derived. Domestic air routes: Wikipedia contributors, CC BY-SA 4.0 (airport pages, read
+  1 Nov 2026). Alignment cost surface: ESA WorldCover project 2021 / Contains modified Copernicus
+  Sentinel data (2021) processed by ESA WorldCover consortium (CC BY 4.0); OpenStreetMap layers
+  (c) OpenStreetMap contributors, ODbL-1.0; geology from Pollastro, R.M., 1998, USGS (public
+  domain); terrain produced using Copernicus WorldDEM-30 (see the R3 block). WDPA is not used
+  (non-commercial terms). The committed alignment sidecars (cities/ksa/alignments/) are treated as
+  ODbL share-alike until their release status is decided.
+
+Appraisal parameters (R5)
+  Contains public sector information licensed under the Open Government Licence v3.0 (Department
+  for Transport, TAG Data Book v2.03 and TAG units A1.1, A1.3, A2.1, A2.4; HM Treasury, The Green
+  Book; Department for Energy Security and Net Zero, greenhouse gas conversion factors and carbon
+  values). (c) European Union; source: European Commission, Handbook on the external costs of
+  transport (CE Delft, 2019). Our World in Data, based on Ember and Energy Institute (CC BY 4.0).
+  International Monetary Fund, World Economic Outlook Database, October 2026 (IMF terms; reuse
+  terms to check before release). Saudi Global Ports, intermodal dry-port tariff announcement
+  (terms not stated; cited only, enters no result). Values are transcribed with citations; no
+  table is redistributed.
+
+Third-party software (dependencies, not vendored)
+  Python (installed by uv from uv.lock): pyyaml, pydantic, numpy, pandas, pyarrow, duckdb,
+  shapely, pyproj, geopandas, pyogrio, networkx, typer, rich, scipy, matplotlib, httpx, rasterio (its wheel
+  bundles GDAL) and their dependencies, under permissive licences (MIT, BSD-2/3-Clause, Apache-2.0, ISC, PSF-2.0,
+  MIT-CMU, the matplotlib licence) except certifi (MPL-2.0, unmodified). Dev only: ruff (MIT),
+  pytest (MIT). Per-package versions and licences are in docs/licences.md.
+
+Synthetic demand
+  All modelled results are labelled "synthetic demand, uncalibrated: scenario comparison, not a
+  forecast" until calibration says otherwise. Cost and benefit figures are P10/P50/P90 ranges.
+
+Decision dashboard (R8: api/, web/)
+  The dashboard reuses the Vite + React + deck.gl + MapLibre viewer and FastAPI patterns of
+  TrafficTwin Jeddah, (c) 2026 The TrafficTwin Jeddah contributors, Apache License 2.0
+  (optional private companion project, not public): web/tsconfig.json is copied; web/vite.config.ts,
+  web/scripts/screenshot.mjs (from scripts/lib.mjs), web/src/components/MapView.tsx (from
+  src/engine.ts), api/settings.py and api/main.py are adapted. Python: FastAPI (MIT), Starlette
+  (BSD-3-Clause), Uvicorn (BSD-3-Clause), opentelemetry-api (Apache-2.0). JavaScript, bundled in
+  web/dist (not committed): React and react-dom (MIT), deck.gl (MIT, (c) vis.gl contributors),
+  MapLibre GL JS (BSD-3-Clause, (c) MapLibre contributors), Noto Sans and Noto Naskh Arabic via
+  Fontsource (SIL Open Font License 1.1); build and dev tools Vite (MIT), TypeScript (Apache-2.0),
+  puppeteer-core (Apache-2.0). Basemap: OpenFreeMap (https://openfreemap.org, MIT), (c)
+  OpenMapTiles (code BSD-3-Clause, design CC BY 4.0), Positron style (code BSD-3-Clause, design
+  CC BY 4.0, derived from CARTO basemaps, CC BY 3.0), data from OpenStreetMap, (c) OpenStreetMap
+  contributors, ODbL 1.0; the OSM credit is always visible on the map and in every screenshot.
+  Per-package versions and licences: docs/licences.md (R8 rows; the track fragment was folded
+  in at INTEGRATE_R8).
+
+--- BEGIN GENERATED ATTRIBUTIONS (uv run python -m common.licences credits) ---
+Every register item whose row names an attribution (docs/licences.csv; full credits
+with versions, licences and obligations: docs/credits.md). Listing is not clearance:
+release status per item is in docs/licences-release.md.
+
+- Claude Code (Anthropic): orchestrator and coding assistant [Proprietary (Anthropic consumer
+  terms)]: Claude Code (Anthropic), orchestrator and coding assistant
+- OpenStreetMap data (GCC extract via Geofabrik) [ODbL-1.0]: (c) OpenStreetMap contributors,
+  https://www.openstreetmap.org/copyright
+- OpenRailwayMap (OSM rail tagging/rendering) [ODbL-1.0 (data) / GPL-3.0 (code)]: (c)
+  OpenStreetMap contributors
+- Overture Maps (places, transportation) [ODbL-1.0 (transportation) / CDLA-Permissive-2.0
+  (others)]: per theme
+- GASTAT open data (Census 2022, Railway Transport Statistics 2023, LFS) [GASTAT use policy (open
+  data principle)]: GASTAT acknowledged as official source; modifications clearly indicated; not
+  presented as official GASTAT statistics
+- Saudi Open Data portal (data.gov.sa) [Saudi Open Data licence (per dataset)]: per dataset
+- World Bank WDI [CC-BY-4.0]: World Bank
+- UN World Population Prospects [CC-BY-3.0 IGO]: United Nations DESA
+- GHSL (Global Human Settlement Layer) [CC-BY-4.0]: European Commission JRC
+- WorldPop [CC-BY-4.0]: WorldPop, University of Southampton
+- Copernicus DEM GLO-30 [Copernicus DEM licence (free, attribution)]: ESA / Airbus credit line
+  required
+- SRTM 30 m [Public domain (US Government)]: NASA/USGS courtesy
+- Mobility Database / Transitland (GTFS catalogue) [Catalogue metadata open; feeds per operator]:
+  per feed
+- Wikimedia Commons archival images (Hejaz Railway etc.) [PD / CC-BY / CC-BY-SA per file]: per
+  file
+- TrafficTwin Jeddah (code, docs, derived Jeddah network) [Apache-2.0 (code); ODbL (derived
+  network)]: TrafficTwin Jeddah contributors; (c) OpenStreetMap contributors
+- Eclipse SUMO [EPL-2.0]: DLR and others
+- Llama 3.x [Llama Community Licence]: 'Built with Llama' notice
+- ClArTTS reference voice (MBZUAI) [CC-BY-4.0]: MBZUAI ClArTTS; LibriVox reader
+- SADA (Saudi Audio Dataset for Arabic, SDAIA) [to read (dataset terms)]: SDAIA
+- MGB-2 / QASR (Arabic broadcast speech) [Research agreement required (to confirm)]: per agreement
+- Noto Sans Arabic / Noto Naskh Arabic [OFL-1.1]: none (OFL reserved font names)
+- Free Music Archive (CC tracks) [CC per track (avoid NC/ND)]: per track
+- GASTAT Railway Transport Statistics 2025 (EN PDF) [GASTAT use policy (no named licence)]:
+  Source: General Authority for Statistics (GASTAT), Railway Transport Statistics 2025
+- Railway key indicators 2024-2025 (derived from GASTAT) [GASTAT use policy (derived)]: Derived by
+  KSA Rail Twin from GASTAT, Railway Transport Statistics 2025; not official GASTAT statistics
+- GASTAT Census 2022 tables (region, governorate, locality, nationality) [GASTAT use policy (no
+  named licence)]: Source: General Authority for Statistics (GASTAT), Census 2022
+- GASTAT web pages (census launch article, use policy) [GASTAT use policy]: Source: GASTAT
+- SAR network page (published facts) [Published facts (site terms not reviewed)]: Source: Saudi
+  Arabia Railways (SAR), "Our Network"
+- HHR booking site sar.hhr.sa (published facts) [Published facts (site terms not reviewed)]:
+  Source: Saudi Arabia Railways, Haramain High Speed Railway
+- RCRC website (published facts) [Published facts (site terms not reviewed)]: Source: Royal
+  Commission for Riyadh City
+- Makkah Region Emirate, Al-Jumum governorate page [Published facts (site terms not reviewed)]:
+  Source: Makkah Region Emirate
+- MEED and MEED Projects (press) [Proprietary press (paywalled)]: Cite MEED article title and date
+- ENR (Engineering News-Record) (press) [Proprietary press]: Cite ENR article title and date
+- Trade and business press (Construction Review Online, Gulf Construction Online, Railway Gazette,
+  Argaam, Gulf News, Saudi Auto) [Proprietary press]: Cite publisher, title and date
+- citypopulation.de (aggregator of GASTAT census figures) [Site terms not checked]: Cite Thomas
+  Brinkhoff, citypopulation.de, and GASTAT as original source
+- GLMM (Gulf Labour Markets, Migration and Population) census tables [No explicit reuse licence
+  found]: Cite GLMM and GASTAT
+- Wikipedia (en, ar) articles [CC-BY-SA-4.0 (text)]: Wikipedia contributors, article title, URL
+- Saudipedia [Site terms not checked]: Cite Saudipedia
+- OpenStreetMap place, railway and boundary objects (Nominatim results for the pilot register)
+  [ODbL-1.0]: (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright
+- citypopulation.de Census 2022 tables (Eastern Region governorate and place rows) [unclear: site
+  terms not read on 2026-10-30; page carries 'Source: General Statistics Authority']: GASTAT (per
+  the page source line); citypopulation.de
+- Wikipedia: List of cities and towns in Saudi Arabia (corroboration only) [CC-BY-SA-4.0]:
+  Wikipedia contributors; CC BY-SA 4.0 link
+- Saudipedia (Arabic) emirate article: governorate count (corroboration) [terms not read (no
+  licence statement captured)]: Saudipedia
+- Search-extract web sources for economic roles (UNESCO, GSN, Maritime Executive, Wikipedia pages,
+  KFUPM staff page, MarineLink) [mixed: UNESCO and Wikipedia (CC BY-SA 4.0); press and staff pages
+  terms not read]: per source (cited by URL in docs/sources/pilot-eastern.csv)
+- OpenStreetMap GCC extract (place and railway nodes, pilot extract) [ODbL-1.0]: © OpenStreetMap
+  contributors (ODbL)
+- citypopulation.de Hail census table (transcription) [unclear (terms not checked; facts only,
+  credits GASTAT)]: Source: citypopulation.de, crediting General Statistics Authority (GASTAT),
+  Census 2022
+- Asharq Al-Awsat article (Q3 2026 rail passengers) [press (no reuse licence stated; facts only,
+  cited)]: Source: Asharq Al-Awsat, citing Transport General Authority figures
+- OpenStreetMap place=* and railway=station nodes (Overpass API, read-only query) [ODbL-1.0]: (c)
+  OpenStreetMap contributors, https://www.openstreetmap.org/copyright
+- Nominatim geocoder (2 read-only queries: Al Harth relation 12430365; Najran node 982548735)
+  [ODbL-1.0 (data); usage policy (identify client, ≤ 1 request per second)]: (c) OpenStreetMap
+  contributors
+- citypopulation.de, Jazan Region and admin pages (Census 2022) [no licence statement read; facts
+  only, cited]: "Source: General Statistics Authority, Kingdom of Saudi Arabia" (page line; credit
+  GASTAT)
+- Wikipedia (Jazan Province, Sarawat Mountains, Fayfa Mountains, Farasan Islands) [CC BY-SA 4.0
+  (text); facts only, no text copied]: Wikipedia contributors
+- Arab News, Gulf Industry, CruiseMapper, Saudipedia (search snippets, facts only) [copyright of
+  each outlet; facts only, cited]: per outlet
+- OpenStreetMap GCC states extract (place nodes, rail ways) [ODbL 1.0]: © OpenStreetMap
+  contributors, ODbL 1.0, https://www.openstreetmap.org/copyright
+- citypopulation.de census 2022 pages (governorate and place tables; source line GASTAT) [terms
+  not checked; facts only (numbers) cited]: General Statistics Authority, Kingdom of Saudi Arabia
+  (per the site's source line)
+- Wikipedia (English and Arabic) articles: Tabuk Province, Al-Bad', Haql, Umluj, governorate list
+  [CC BY-SA 4.0 (Wikipedia text)]: Wikipedia contributors, CC BY-SA 4.0; facts cited, no text
+  copied
+- Wikivoyage Duba and CruiseMapper Duba port schedule (search snippets) [Wikivoyage CC BY-SA
+  3.0/4.0; CruiseMapper terms not checked]: per the site
+- UNESCO World Heritage Tentative List entry 6575 (Ancient Walled Oases of Northern Arabia)
+  [UNESCO website terms (not checked)]: UNESCO World Heritage Centre
+- Visit Saudi, Saudi Tourism Guide, Kupi, New Civil Engineer (search snippets) [terms not
+  checked]: per the site
+- datasaudi.sa Tabuk region page (search snippet) [terms not checked]: per the site
+- OpenStreetMap via the Nominatim and Overpass APIs (read-only pilot queries, 13 regions)
+  [ODbL-1.0 (data); Nominatim and Overpass usage policies (rate limits, User-Agent)]: (c)
+  OpenStreetMap contributors, https://www.openstreetmap.org/copyright
+- citypopulation.de administrative-division page (Census 2022 governorate populations), archived
+  HTML [unclear (terms of use not read)]: citypopulation.de (Thomas Brinkhoff), crediting GASTAT
+- citypopulation.de (City Population, Thomas Brinkhoff): Saudi Arabia Census 2022 population
+  figures relayed from GASTAT (governorate and place tables) [CC BY 3.0 per the Terms of Use
+  (S-cp1-050, S-cp1-051); CC BY 4.0 declared in the HTML of the Saudi pages (S-cp1-055,
+  S-cp1-057): CONFLICT, unresolved, Tariq decides]: "Thomas Brinkhoff: City Population,
+  http://www.citypopulation.de" (or the page URL; hyperlink in web media), licence CC BY [3.0 or
+  4.0, to fix], plus "underlying official source: General Authority for Statistics (GASTAT),
+  Census 2022"; modified figures marked "modified; not an official GASTAT statistic" (GASTAT use
+  policy 1.2.2, 1.4.2, S-cp1-058)
+- Nabrah AI (Nabrah Studio TTS, voice cloning; public voices Daniah, Norah, Abdullah) [Proprietary
+  SaaS (Deep Scan Technologies, Riyadh; KSA law); terms last updated 04-10-2026, read 2026-10-31
+  (S-nabrah-002)]: Nabrah AI (Nabrah Studio voice) credited on published audio (Tariq, 7 Nov 2026
+  AST; FIX_LICENCE_CITE_FACTS); the terms and the written confirmation (S-nabrah-005) set no
+  wording; AI-generated disclosure where confusion could cause harm (§6.4)
+- ElevenLabs (commercial TTS, Arabic) [Proprietary SaaS; terms to read at R10]: to read
+- OpenStreetMap data (GCC extract via Geofabrik; rail ways and relations; admin boundaries; place
+  nodes) [ODbL-1.0]: (c) OpenStreetMap contributors, https://www.openstreetmap.org/copyright
+- TrafficTwin Jeddah OSM clip (jeddah.osm.pbf) [ODbL-1.0 (derived from OSM)]: (c) OpenStreetMap
+  contributors
+- WorldPop Saudi Arabia 2020 population counts (100 m constrained UN-adjusted, used; 1 km
+  UN-adjusted, cross-check; 100 m constrained not adjusted, downloaded and not used) [CC-BY-4.0]:
+  WorldPop (www.worldpop.org, School of Geography and Environmental Science, University of
+  Southampton), Saudi Arabia 2020 population counts, doi:10.5258/SOTON/WP00684
+- GHS-POP R2023A (JRC Global Human Settlement Layer) [CC-BY-4.0]: European Commission, Joint
+  Research Centre, GHS-POP R2023A
+- Wikidata (coordinates of some economic nodes) [CC0-1.0]: none required (courtesy credit:
+  Wikidata)
+- Wikipedia (en) articles: Haramain HSR, Riyadh Metro, Hejaz railway, Saudi Railways, list pages
+  [CC-BY-SA-4.0 (text)]: Wikipedia contributors, article title, URL
+- GASTAT publications (Railway Transport Statistics 2025; Real Estate Price Index Q1 2025; Hajj
+  1446H) [GASTAT use policy]: Source: General Authority for Statistics (GASTAT)
+- Saudipedia, RCU (rcu.gov.sa), ROSHN (roshn.sa), MODON, RCJY, GACA pages (economic-node facts)
+  [site terms (facts only; not read in full)]: cite publisher, page, URL
+- Microsoft Global ML Building Footprints (KingdomofSaudiArabia quadkey files + dataset-links.csv
+  index) [CDLA-Permissive-2.0]: Microsoft Global ML Building Footprints
+  (https://github.com/microsoft/GlobalMLBuildingFootprints), CDLA Permissive 2.0
+- Copernicus Sentinel-2 L2A (COGs on the AWS open-data bucket sentinel-cogs, via the Earth Search
+  STAC API) [Copernicus Sentinel data terms (free, full and open; attribution)]: Contains modified
+  Copernicus Sentinel data 2026
+- Earth Search STAC API (Element 84) [open public API (no key); catalogue metadata]: Element 84
+  Earth Search
+- GHS-BUILT-S R2023A [CC-BY-4.0]: European Commission JRC, GHSL
+- VIIRS annual night-lights (EOG) [public domain with citation (EOG terms; registration required
+  for download)]: Elvidge et al., EOG Colorado School of Mines
+- Google Maps (visual spot checks only) [proprietary; visual check only]: cited as 'visual check,
+  Google Maps, <date>' in notes only
+- World Bank World Development Indicators: NY.GDP.DEFL.ZS and PA.NUS.FCRF (API JSON) [CC-BY-4.0]:
+  Source: World Bank, World Development Indicators (CC BY 4.0)
+- European Court of Auditors, Special Report 19/2018 'A European high-speed rail network: not a
+  reality but an ineffective patchwork' (tables reproduced as values in metrics.csv and
+  overruns.csv) [CC-BY-4.0 (ECA reuse policy, Decision No 6-2019)]: Source: European Court of
+  Auditors, Special Report 19/2018, © European Union, 2018
+- World Bank WDI series FP.CPI.TOTL, NY.GDP.DEFL.ZS, PA.NUS.FCRF (20 economies, 2000-2025)
+  [CC-BY-4.0]: The World Bank, World Development Indicators (modified: re-based to 2025, combined
+  into a price/FX index)
+- Eurostat nama_10_gdp GDP price index, EA20, PD15_EUR [CC-BY-4.0]: Source: Eurostat, nama_10_gdp
+  (modified: re-based to 2025)
+- DfT TAG optimism bias workbook (reference-class curves, data: Oxford Global Projects 2020)
+  [OGL-UK-3.0 (gov.uk default; workbook's own terms not checked)]: Contains public sector
+  information licensed under the Open Government Licence v3.0 (Department for Transport); data:
+  Oxford Global Projects
+- HM Treasury Green Book supplementary guidance: optimism bias; DfT TAG units A1.2 and A5.3; OGP
+  2020 report for DfT [OGL-UK-3.0 (gov.uk default)]: Contains public sector information licensed
+  under the Open Government Licence v3.0
+- European Commission DG REGIO / PwC (2018), Assessment of unit costs (standard prices) of rail
+  projects [EU Commission reuse policy (Decision 2011/833/EU; CC BY 4.0 since 2019) - not
+  re-read]: Source: European Commission, DG REGIO (2018), Assessment of unit costs (standard
+  prices) of rail projects
+- World Bank (Ollivier, Sondhi, Zhou 2014), High-Speed Railways in China: A Look at Construction
+  Costs [CC-BY-3.0-IGO (Open Knowledge Repository default) - not re-read]: World Bank, China
+  Transport Topics No. 9 (2014), CC BY 3.0 IGO
+- Peer-reviewed and working papers (Flyvbjerg et al. 2002, 2005, 2006, 2007; Campos, de Rus and
+  Barron 2007; Flyvbjerg et al. 2008) and other cited reports [various (facts cited; no text or
+  tables redistributed)]: Cite each work as in docs/sources
+- Trade press and company releases (MEED guest pages, Railway Gazette, IRJ, Construction Review,
+  Arab News, Stadler, Talgo, Siemens, Alstom, etc.) [publisher terms (facts only)]: Cite outlet
+  and date
+- MoF FY2026 pre-budget statement: medium-term fiscal estimates table (total expenditure
+  2024-2028) [no licence statement captured; facts and derived study table cited only; MoF table
+  not republished]: Source: Ministry of Finance, Saudi Arabia, Pre-budget statement FY2026
+- HM Treasury Green Book 2026: public sector comparator method (paras A.13-A.14) and optimism-bias
+  rule (para 2.25) [Open Government Licence v3.0]: Contains public sector information licensed
+  under the Open Government Licence v3.0 (HM Treasury, The Green Book 2026)
+- IMF/World Bank PFRAM 2.0 conventions (firm vs contingent liabilities; worst-case contingent
+  liability) used as metric definitions; the Excel tool itself is not reused [IMF terms of use not
+  captured; concepts cited only; Excel tool not used]: IMF and World Bank, PFRAM 2.0 User Manual
+  (2019)
+- GASTAT Labour Market Statistics Q4 2025 (LFS Excel tables): extracts transcribed into
+  docs/social.md tables (derived) [GASTAT open data / use policy (see S-069 in
+  docs/sources/index.csv)]: Source: General Authority for Statistics (GASTAT), Labour Force
+  Survey; derived table by KSA Rail Twin
+- GASTAT Labour Market Statistics bulletins Q4 2023 and Q1 2025 (PDF): figures cited [GASTAT open
+  data / use policy (S-069)]: Source: GASTAT
+- World Bank CCKP CRU TS 4.08 monthly tasmax climatology for SAU (values cited in docs/social.md
+  and docs/assumptions.md) [World Bank open data terms (commonly CC BY 4.0); CRU TS licence not
+  confirmed]: World Bank Climate Change Knowledge Portal; CRU TS 4.08 (University of East Anglia
+  Climatic Research Unit)
+- UNESCO World Heritage List open dataset (whc001), Saudi Arabia records: names, inscription
+  years, point coordinates (planned use as a route-sensitivity layer) [CC BY-SA 4.0]: UNESCO World
+  Heritage Centre, World Heritage List (CC BY-SA 4.0)
+- DfT TAG Unit A4.2 Distributional Impact Appraisal (method and worksheet layout adapted for Part
+  B) [Open Government Licence v3.0]: Contains public sector information licensed under the Open
+  Government Licence v3.0 (Department for Transport, TAG Unit A4.2)
+- biogeme (Python discrete-choice estimation) [MIT]: Bierlaire, M. Biogeme (cite the version used)
+- apollo (R choice-model estimation) [GPL-2]: Apollo, apollochoicemodelling.com (cite as the
+  package documentation requests; citation text not read)
+- xlogit (Python mixed logit) [unclear: MIT (PyPI metadata) vs GPL-3.0 (GitHub repository)]:
+  Arteaga, C. xlogit
+- demand/survey.py D-efficient design generator (own code) [Apache-2.0]: none beyond the
+  repository NOTICE
+- EPSG Geodetic Parameter Dataset (read through PROJ proj.db bundled in pyproj) [EPSG Dataset
+  Terms of Use (IOGP)]: EPSG Geodetic Parameter Dataset, IOGP (wording per the terms, unread)
+- HHR Train Schedule page (Oct 2018), Internet Archive Wayback Machine capture [Copyright Haramain
+  High Speed Rail 2018 (no open licence); Internet Archive terms of use]: cite HHR (hhr.sa) and
+  the Wayback capture URL
+- Schittenhelm (2011), Planning With Timetable Supplements in Railway Timetables [journal article,
+  licence not checked (open access download)]: cite author, title, proceedings, year
+- GASTAT population tables (Census 2010 governorate/cities>5k/regions/detailed; Census 2022
+  Tableau TA1/TA2/TA9 region exports; Census 2022 methodology; 2024 population estimates) [GASTAT
+  data use policy (no named licence; open-data principle, attribution)]: Source: General Authority
+  for Statistics (GASTAT), Kingdom of Saudi Arabia; derived tables marked as derived
+- GASTAT Census 2022 TA1 primary Excel exports (governorates 150; cities of 5,000 or more 271 plus
+  Other) [GASTAT data use policy (no named licence; open-data principle, attribution)]: Source:
+  General Authority for Statistics (GASTAT), Kingdom of Saudi Arabia, Census 2022; derived tables
+  marked as derived
+- DataPulse open data (census-2022 and population-region CSVs relaying GASTAT) [Reuse under the
+  GASTAT data use policy with attribution (file header); DataPulse processing, not an official
+  statistic]: Source: GASTAT, Saudi Census 2022 (relayed and organised by DataPulse, not official;
+  no GASTAT endorsement)
+- WorldPop Saudi Arabia 2020 100 m constrained UN-adjusted [r3 use] [CC-BY-4.0]: WorldPop
+  (www.worldpop.org, School of Geography and Environmental Science, University of Southampton)
+- OpenStreetMap derived zones (cities/ksa/zones/zones.geojson) [r3] [ODbL-1.0]: (c) OpenStreetMap
+  contributors, https://www.openstreetmap.org/copyright
+- GASTAT Railway Transport Statistics 2025 tables (xlsx) [GASTAT use policy
+  (https://www.stats.gov.sa/en/use-policy; S-069)]: Source: General Authority for Statistics
+  (GASTAT); data from the Transport General Authority
+- GASTAT Air Transport Statistics 2025 tables (xlsx) [GASTAT use policy (S-069)]: Source: GASTAT;
+  data from the General Authority of Civil Aviation (GACA)
+- GASTAT Hajj Statistics Publication 2024 (EN PDF) [GASTAT use policy (S-069)]: Source: GASTAT
+- GASTAT Umrah Statistics 2025 (Q1-Q3 PDFs; Q1/Q3/Q4 xlsx tables) [GASTAT use policy (S-069)]:
+  Source: GASTAT (Umrah and Madinah visit survey)
+- GASTAT labour market administrative records via KAPSARC Data Portal (CSV export) [Public Domain
+  (as labelled on the portal)]: Source: GASTAT, via KAPSARC Data Portal (courtesy credit; not
+  required by the label)
+- GASTAT Labour Force Survey via KAPSARC Data Portal (CSV export) [Public Domain (as labelled on
+  the portal)]: Source: GASTAT, via KAPSARC Data Portal
+- SAPTCO Annual Report 2025 (English PDF) [Company publication; reuse terms not read]: Source:
+  SAPTCO Annual Report 2025
+- DfT TAG units M2.1 (Nov 2025), M3.1 (May 2026), M3.2 (May 2024) [Open Government Licence v3.0]:
+  Contains public sector information licensed under the Open Government Licence v3.0 (Department
+  for Transport)
+- DfT National Travel Survey tables NTS0407 and NTS0317 (ODS) [Open Government Licence v3.0]:
+  Contains public sector information licensed under the Open Government Licence v3.0 (Department
+  for Transport, National Travel Survey)
+- Wang and Chen (2022), Entropy 24(12):1792 [CC BY 4.0]: Wang Z., Chen Y. (2022) Exploring Spatial
+  Patterns of Interurban Passenger Flows Using Dual Gravity Models, Entropy 24(12):1792
+- UN World Population Prospects 2024 (Total Population by Sex CSV; Saudi rows extracted)
+  [CC-BY-3.0-IGO]: United Nations, Department of Economic and Social Affairs, Population Division
+  (2024). World Population Prospects 2024, Online Edition. (modified: Saudi rows extracted and
+  scaled to the GASTAT Census 2022 total)
+- UN World Urbanization Prospects 2025 (national definitions and Degree of Urbanisation level 1
+  CSVs; Saudi rows extracted) [CC-BY-3.0-IGO]: United Nations, Department of Economic and Social
+  Affairs, Population Division (2025). World Urbanization Prospects 2025. (modified: Saudi urban
+  share extracted)
+- GASTAT Census 2022 TA1 governorate table, derived zone base [GASTAT use policy]: Source: General
+  Authority for Statistics (GASTAT), Census 2022. Derived table (modified: governorates mapped to
+  OSM zones, Al Amoah merged into Tathlith); not official statistics
+- Press and project-site figures (giga-projects, Vision 2030 statements) [facts cited, no text
+  reproduced beyond short quotes]: Cite each source as in docs/sources/r3-pop.csv
+- Copernicus DEM GLO-30 [r3] [Licence for the use of the Copernicus WorldDEM-30 (COP-DEM-GLO-30-F,
+  Full, Free & Open): free of charge, worldwide, without time limit; rights of reproduction,
+  distribution, communication to the public, adaptation and combination (Art. 3-5)]: Unmodified:
+  "© DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by
+  the European Union and ESA; all rights reserved." Adapted or modified (our case, Art. 6b):
+  "produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH
+  2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved"
+- SRTM GL1 v003 (SRTMGL1.003) [r3] [NASA EOSDIS data use policy: "openly shared, without
+  restriction"]: Citation requested (EOSDIS Data Use and Citation Guidance): NASA JPL (2013). NASA
+  Shuttle Radar Topography Mission Global 1 arc second [Data set]. NASA EOSDIS Land Processes
+  DAAC. https://doi.org/10.5067/MEASURES/SRTM/SRTMGL1.003
+- OSM coastline extract (natural=coastline) [r3] [ODbL-1.0]: (c) OpenStreetMap contributors,
+  https://www.openstreetmap.org/copyright
+- GASTAT Umrah and Hajj statistics bulletins (42 files: Umrah 1440-1442 AH annual, 2022, 2023, Q1
+  2024-Q1 2026 quarterly; Hajj 1440 and 1443-1447 AH) [GASTAT use policy (open data principle;
+  per-file licence not stated)]: Source: General Authority for Statistics (GASTAT), Umrah
+  Statistics / Hajj Statistics (with MoHU, MoI, Jeddah Islamic Port as data owners); derived
+  tables marked as derived
+- GACA press release: 19 million air passengers in Hajj 1446 (HTML capture) [GACA website terms
+  (press release; no open licence stated)]: Source: General Authority of Civil Aviation (GACA)
+  press release
+- SPA news item N2326094: HHR Hajj 1446 seats (HTML capture) [SPA website terms (news; no open
+  licence stated)]: Source: Saudi Press Agency (SPA), relaying SAR
+- Wikipedia airport pages (27 Saudi airports, 'Airlines and destinations' tables) [CC BY-SA 4.0
+  (text)]: Wikipedia contributors, CC BY-SA 4.0
+- Press and secondary pages for running times, rolling stock and bus cities (Railway Gazette,
+  Railway Technology, Wego, Bookaway, Rail Monsters, Argaam, Saudi Auto, Wikipedia) [publisher
+  terms (no open licence)]: cited per row
+- Sources for the economic roles of the 24 created register rows (Royal Commission, Wikipedia,
+  UNESCO, press) [various (Wikipedia CC BY-SA 4.0; others publisher terms)]: cited per row
+- TrafficTwin (read-only checkout: sim.runner, sim.schemas, cached edge tables, weekday baselines
+  seed 1) [see the TrafficTwin row in docs/licences.md]: as the TrafficTwin row
+- Eclipse SUMO 1.28.0 (TrafficTwin venv) [EPL-2.0 (see the Eclipse SUMO row)]: as the existing row
+- OSRM (osrm-backend) v26.10.0, national MLD files [BSD-2-Clause (see the OSRM row)]: as the
+  existing row
+- Copernicus DEM GLO-30 Public [r4a use: 241 tiles resampled to 3 arc-seconds] [Copernicus
+  WorldDEM-30 licence (free, worldwide; attribution + no-liability notice required)]: produced
+  using Copernicus WorldDEM-30 (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space GmbH
+  2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved
+- ESA WorldCover 10 m 2021 v200 [CC BY 4.0]: ESA WorldCover project 2021 / Contains modified
+  Copernicus Sentinel data (2021) processed by ESA WorldCover consortium; accessed 2026-11-01 from
+  https://registry.opendata.aws/esa-worldcover-vito
+- OpenStreetMap layers for the alignment cost surface (landuse urban, protected areas, military,
+  waterways, highways, natural sand/wetland/water) [r4a] [ODbL-1.0]: (c) OpenStreetMap
+  contributors, https://www.openstreetmap.org/copyright
+- WDPA / WDPCA (World Database on Protected and Conserved Areas, UNEP-WCMC and IUCN, Protected
+  Planet) [NOT USED] [Protected Planet terms: no Commercial Use without prior written permission
+  of UNEP-WCMC; no redistribution or sub-licensing incl. within derivative works]: UNEP-WCMC and
+  IUCN (year), Protected Planet: [On-line], [month/year], Cambridge, UK: UNEP-WCMC and IUCN.
+  Available at: www.protectedplanet.net
+- USGS Bedrock geology of the Arabian Peninsula (geo2bg; Pollastro 1998, OFR 97-470-B) [NOT USED]
+  [US Government work (public domain); no licence stated in the catalogue record]: Pollastro,
+  R.M., 1998, USGS
+- DfT TAG Data Book (values of time, discount schedule, indirect tax, marginal external costs,
+  damage costs) [r5 use] [Open Government Licence v3.0]: Contains public sector information
+  licensed under the Open Government Licence v3.0 (Department for Transport, TAG Data Book)
+- DfT TAG units A1.1, A1.3, A2.1, A2.4 (method text; values transcribed with citation) [r5 use]
+  [Open Government Licence v3.0]: Contains public sector information licensed under the Open
+  Government Licence v3.0 (Department for Transport, TAG)
+- HM Treasury Green Book and supplementary guidance on discounting [r5 use] [Open Government
+  Licence v3.0]: Contains public sector information licensed under the Open Government Licence
+  v3.0 (HM Treasury, The Green Book)
+- DESNZ greenhouse gas conversion factors for company reporting [Open Government Licence v3.0]:
+  Contains public sector information licensed under the Open Government Licence v3.0 (Department
+  for Energy Security and Net Zero)
+- DESNZ valuation of greenhouse gas emissions for policy appraisal (carbon values) [Open
+  Government Licence v3.0]: Contains public sector information licensed under the Open Government
+  Licence v3.0 (Department for Energy Security and Net Zero)
+- Handbook on the external costs of transport (CE Delft for the European Commission) [European
+  Commission reuse policy (Commission Decision 2011/833/EU), assumed]: © European Union; source:
+  European Commission, Handbook on the external costs of transport
+- Our World in Data / Ember: carbon intensity of electricity generation (Saudi Arabia)
+  [CC-BY-4.0]: Our World in Data, based on Ember and Energy Institute
+- IMF World Economic Outlook database (KSA real GDP and population growth) [IMF copyright and
+  usage terms]: International Monetary Fund, World Economic Outlook Database, October 2026
+- Saudi Global Ports / SAR intermodal dry-port tariff announcement [not stated]: Saudi Global
+  Ports
+- Uvicorn [BSD-3-Clause]: keep copyright notice
+- Noto Sans (Regular, Bold; hinted TTF) [OFL-1.1]: none required (keep the OFL text with the
+  fonts; Reserved Font Name rules)
+- Noto Naskh Arabic (Regular, Bold; hinted TTF) [OFL-1.1]: none required (keep the OFL text with
+  the fonts; Reserved Font Name rules)
+- libraqm, HarfBuzz, SheenBidi (bundled inside the matplotlib 3.11.2 wheel, ft2font) [libraqm MIT;
+  HarfBuzz Old MIT; SheenBidi Apache-2.0]: none beyond the matplotlib licence file
+- Starlette (FastAPI dependency) [BSD-3-Clause]: keep copyright notice
+- opentelemetry-api (FastAPI dependency) [Apache-2.0]: NOTICE if redistributed
+- React / react-dom [MIT]: keep copyright notice in the bundle
+- deck.gl (@deck.gl/core, layers, extensions, mapbox) [MIT]: keep copyright notice in the bundle
+- MapLibre GL JS [BSD-3-Clause]: keep copyright notice in the bundle
+- Noto Sans (@fontsource/noto-sans) [OFL-1.1]: none (OFL reserved font names)
+- Noto Naskh Arabic (@fontsource/noto-naskh-arabic) [OFL-1.1]: none (OFL reserved font names)
+- npm dependency tree of web/ (transitive) [MIT 124; ISC 15; BSD-3-Clause 7; Apache-2.0 7;
+  BSD-2-Clause 3; OFL-1.1 2; (MIT OR Apache-2.0) 1; 0BSD 1]: per package (notices travel with
+  redistributed bundles)
+- OpenFreeMap public instance (Positron style, vector tiles, Noto glyphs) [MIT (OpenFreeMap);
+  OpenMapTiles code BSD-3-Clause, design CC BY 4.0; Positron style code BSD-3-Clause, design CC BY
+  4.0 (derived from CARTO basemaps, CC BY 3.0); map data ODbL-1.0 (OSM); Noto Sans glyphs
+  OFL-1.1]: © OpenMapTiles; Data from OpenStreetMap (required, also in printed or video media);
+  OpenFreeMap optional; (c) OpenStreetMap contributors
+- TrafficTwin Jeddah web/ and api/ scaffold (pattern reuse) [Apache-2.0]: TrafficTwin Jeddah
+  contributors (NOTICE)
+- Dashboard API test fixtures (tests/fixtures/api) [ODbL-1.0 for OSM-derived geometry and register
+  rows; project outputs Apache-2.0 / project licence]: (c) OpenStreetMap contributors
+- Dashboard screenshots (docs/report/figures/dashboard-*.png) [Project output; contains
+  OpenFreeMap/OpenMapTiles rendering of OSM data (ODbL produced work; CC BY 4.0 design)]: (c)
+  OpenStreetMap contributors; © OpenMapTiles; OpenFreeMap (visible in each map image)
+- Alignment sidecars weights v2 (cities/ksa/alignments-v2/) [r8 register gap] [ODbL-1.0
+  (OSM-derived cost surface)]: (c) OpenStreetMap contributors
+- KSA Rail Twin figure inputs (run-output subset; docs/publish/figure-inputs/) [Project output
+  (code Apache-2.0); OSM-derived files ODbL-1.0 (derived database)]: (c) OpenStreetMap
+  contributors; GASTAT (derived; not official statistics); WorldPop (CC BY 4.0)
+--- END GENERATED ATTRIBUTIONS ---

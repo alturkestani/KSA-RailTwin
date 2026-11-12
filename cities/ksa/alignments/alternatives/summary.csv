@@ -1,0 +1,5 @@
+id,line_type,length_km,straight_km_legs,detour_ratio,tunnel_km,viaduct_km,earthworks_km,restricted_km,min_curve_kmh,profile_feasible
+S2-trunk_gap-jeddah-madinah,mixed,378.927,328.143,1.1548,6.098,8.996,122.857,6.598,130.0,True
+S2-trunk_gap-riyadh-buraidah,mixed,368.385,334.497,1.1013,7.995,8.595,102.158,7.394,190.0,True
+S2-trunk_gap-riyadh-dammam-khobar-dhahran,mixed,404.584,394.322,1.026,0.0,0.1,81.397,0.0,250.0,True
+S2-trunk_gap-riyadh-madinah,hsr,755.486,719.381,1.0502,4.598,4.598,46.284,4.098,230.0,True

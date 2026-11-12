@@ -1,0 +1,100 @@
+{
+ "id": "S2-trunk_gap-taif-bisha",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 293.255,
+ "straight_km_legs": 267.595,
+ "straight_km_end_to_end": 267.595,
+ "detour_ratio": 1.0959,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 3.999,
+ "viaduct_km": 3.199,
+ "earthworks_km": 120.482,
+ "at_grade_km": 165.574,
+ "tunnel_share": 0.01364,
+ "viaduct_share": 0.01091,
+ "fill_m3": 7554700.0,
+ "cut_m3": 14730900.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.3258,
+ "elev_min_m": 1150.3,
+ "elev_max_m": 1689.1,
+ "terrain_shares": {
+  "escarpment_mountain": 0.0897,
+  "flat_desert": 0.5039,
+  "mixed": 0.4057,
+  "sabkha": 0.0007
+ },
+ "area_km": {
+  "urban": 4.249,
+  "builtup": 7.899,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 0.0,
+  "sabkha": 0.2,
+  "waterway": 5.499,
+  "highway": 5.899
+ },
+ "wadi_crossings_osm": 35,
+ "speed_restrictions": [
+  {
+   "from_km": 12.448,
+   "to_km": 15.648,
+   "kmh": 180.0
+  },
+  {
+   "from_km": 17.247,
+   "to_km": 20.247,
+   "kmh": 150.0
+  },
+  {
+   "from_km": 21.247,
+   "to_km": 23.346,
+   "kmh": 210.0
+  },
+  {
+   "from_km": 41.843,
+   "to_km": 44.343,
+   "kmh": 140.0
+  },
+  {
+   "from_km": 45.143,
+   "to_km": 46.343,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 92.435,
+   "to_km": 94.935,
+   "kmh": 170.0
+  },
+  {
+   "from_km": 171.323,
+   "to_km": 174.323,
+   "kmh": 200.0
+  },
+  {
+   "from_km": 208.118,
+   "to_km": 211.117,
+   "kmh": 190.0
+  }
+ ],
+ "restricted_km": 20.498,
+ "min_curve_kmh": 140.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "taif": 0.0,
+  "bisha": 293.255
+ },
+ "status": "routed",
+ "stations_key": "0158523d1f464174",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-taif-bisha.geojson",
+ "run": "runs/align/corridors-s1/S2-trunk_gap-taif-bisha",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

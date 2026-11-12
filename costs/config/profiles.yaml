@@ -1,0 +1,27 @@
+# Document version: costs/config/profiles.yaml v1.0 | 31 Oct 2026 | Author: cost-estimator (R1c) | Status: draft
+# Default costing profile per line type for costs.estimate. Every real-world value carries an assumption id
+# (docs/assumptions.md) or a cost-register id; a corridor overrides them with a `costing:` block (--costing).
+# Defaults until R1a supplies terrain classes and alignments per corridor: 100 % flat desert, no tunnels,
+# viaduct share drawn from the register (flat-desert structure share, A-cost-202).
+_common: &common
+  terrain_shares:
+    flat_desert: {value: 1.0, assumption_id: A-cost-010}
+  structure_shares:
+    tunnel: {value: 0.0, assumption_id: A-cost-010}
+    viaduct: {register_id: C-structure-share-flat-desert-056}
+  signalling: etcs_l2
+  signalling_assumption_id: A-cost-012
+  depots: {value: 1, assumption_id: A-cost-011}
+  turnaround_min: {value: 15, assumption_id: A-cost-005}
+  fleet_spare_share: {value: 0.10, assumption_id: A-cost-006}
+  operating_days_per_year: {value: 365, assumption_id: A-cost-007}
+  substation_spacing_km: {value: 50, assumption_id: A-cost-014}
+  traction_if_not_electric: diesel
+  construction_years: {low: 5, central: 7, high: 10, assumption_id: A-cost-305}
+  appraisal_stage: {value: strategic, assumption_id: A-rcf-032}
+profiles:
+  hsr: *common
+  conventional_passenger: *common
+  mixed: *common
+  commuter: *common
+  upgrade: *common

@@ -1,0 +1,12 @@
+shot_id,cut,lang,type,duration_s,output,footer,osm_credit,copernicus,figures_traced,figures_not_found
+sh-01-51,trailer,ar,map_animation,9.233,film/renders/trailer-ar/sh-01-51.mp4,none,True,True,,
+sh-01-52,trailer,ar,map_animation,10.200,film/renders/trailer-ar/sh-01-52.mp4,none,True,True,2025 9.8,
+sh-02-51,trailer,ar,map_animation,9.067,film/renders/trailer-ar/sh-02-51.mp4,none,True,True,10 10,
+sh-03-51,trailer,ar,map_animation,7.800,film/renders/trailer-ar/sh-03-51.mp4,none,True,True,-2024 35.3,
+sh-04-51,trailer,ar,map_animation,6.667,film/renders/trailer-ar/sh-04-51.mp4,none,True,True,,
+sh-06-51,trailer,ar,map_animation,10.533,film/renders/trailer-ar/sh-06-51.mp4,none,True,True,,
+sh-07-51,trailer,ar,chart,6.033,film/renders/trailer-ar/sh-07-51.mp4,none,True,True,"10,000",
+sh-08-51,trailer,ar,map_animation,13.400,film/renders/trailer-ar/sh-08-51.mp4,none,True,True,4.0 5.6 2025 60,
+sh-08-52,trailer,ar,chart,7.167,film/renders/trailer-ar/sh-08-52.mp4,none,True,True,60,
+sh-08-53,trailer,ar,map_animation,5.233,film/renders/trailer-ar/sh-08-53.mp4,none,True,True,,
+sh-08-54,trailer,ar,title,3.967,film/renders/trailer-ar/sh-08-54.mp4,synthetic,True,True,,

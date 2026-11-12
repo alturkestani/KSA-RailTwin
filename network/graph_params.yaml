@@ -1,0 +1,16 @@
+# Parameters for network/graph.py (scenario rail graph). Every number is an ASSUMPTION (rule 1),
+# registered by the coordinator from docs/status/r1a-network-notes.md. A line's own
+# `running_time_model` (and `design_speed_kmh` for cruise) always overrides the defaults below.
+interchange:
+  # stations of different lines closer than this (great-circle) get a walk interchange edge
+  walk_max_km: {value: 0.4, low: 0.2, high: 0.8, assumption_id: A-r1a-030}
+  # walking speed for interchange edges (km/h)
+  walk_speed_kmh: {value: 4.8, low: 3.6, high: 5.4, assumption_id: A-r1a-031}
+  # same-name stations of different lines are linked only if closer than this (avoids linking
+  # e.g. two different "Riyadh" stations across the city as if they were one interchange)
+  same_name_max_km: {value: 3.0, low: 1.0, high: 5.0, assumption_id: A-r1a-032}
+running_time_defaults:
+  # used only where a line YAML has no running_time_model value
+  accel_ms2: {value: 0.5, low: 0.3, high: 0.8, assumption_id: A-r1a-033}
+  decel_ms2: {value: 0.6, low: 0.4, high: 0.9, assumption_id: A-r1a-034}
+  dwell_s:   {value: 120, low: 60, high: 300, assumption_id: A-r1a-035}

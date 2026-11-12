@@ -1,0 +1,29 @@
+# Spec for cities/ksa/lines/hejaz-railway.yaml (historical layer). Stations: named stop nodes of OSM
+# route relation 1277794 (Hejaz railway; ODbL), north to south, plus the Madinah terminus.
+id: hejaz-railway
+stations_from_route: 1277794
+station_source: S-r1a-807
+osm_track: [abandoned, disused, rail]
+km_fallback: great_circle
+order_by: lat_desc
+opened: 1908-09-01            # S-r1a-066 (secondary): Madinah reached
+line:
+  name_en: Hejaz Railway (Saudi section, historical)
+  name_ar: سكة حديد الحجاز
+  layer: historical
+  operator: null
+  status: abandoned
+  source: S-r1a-066
+  accessed: 2026-10-31
+  line_type: conventional_passenger
+  notes: >-
+    Historical layer only, never in a scenario. Damascus-Madinah reached Madinah on 1 Sep 1908
+    (S-r1a-066); the Saudi section closed after 1920 (S-r1a-068; C-r1a-13). Narrow gauge, no mm
+    read (S-r1a-077). Wikipedia's route table gives km markers for about 40 Saudi-section stations
+    (S-r1a-067, secondary; origin not stated, C-r1a-12); the km-posts below are measured along the
+    OSM abandoned track where it is mapped and great-circle elsewhere. Madinah station is the Hejaz
+    Railway Museum (S-r1a-071, secondary). Arabic line name from the OSM relation (ODbL).
+extra_stations:
+  - {id: madinah-hejaz-station, name_en: Madinah (Hejaz Railway station, now museum), name_ar: محطة سكة حديد الحجاز بالمدينة المنورة, class: terminal, source: S-r1a-071, osm: node/7931432373}
+names_en:
+  7317195489: Bir Ibn Hermas          # S-r1a-067 (Wikipedia route table spelling); OSM name is Arabic only

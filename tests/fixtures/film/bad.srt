@@ -1,0 +1,11 @@
+1
+00:00:01,000 --> 00:00:03,000
+Two cues overlap here
+
+2
+00:00:02,500 --> 00:00:04,500
+This line is far too long to fit within forty-two characters
+
+3
+00:00:05,000 --> 00:00:06,000
+Far too many words in one second

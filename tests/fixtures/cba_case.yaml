@@ -1,0 +1,25 @@
+# FIXTURE: invented test data (tests/fixtures/README.md). Not a real appraisal; never cite these values.
+id: CBA-fixture-corridor
+scenario: S2
+baseline: S1
+horizon_years: [30, 40, 60]
+residual_value:
+  method: straight_line_remaining_life
+  asset_lives: {civil: 100, track: 40, systems: 20, rolling_stock: 30}
+  source: fixture
+price_year: 2024
+currency: SAR
+discount_rates:
+  social: {rate: 0.035, declining: [[0, 30, 0.035], [31, 75, 0.03]], source: fixture}
+  commercial: {rate: 0.06, source: fixture}
+  sensitivity: [0.02, 0.05, 0.08]
+costs:
+  capex_ref: runs/costs/fixture/rcf/
+  opex_ref: runs/costs/fixture/opex/
+benefits:
+  travel_time_savings: {by_purpose: true, vot_ref: fixture, rule_of_half: true}
+  wider_economic_impacts: {agglomeration: tag_a2_4, report_separately: true, ref: fixture}
+  land_value_uplift: {capture_only_if_not_counted_in_time_savings: true, ref: fixture}
+  regional_development_vision2030: {monetised: false, scorecard: docs/cba-scorecard.md}
+monte_carlo: {draws: 100, seed: 1, inputs: [capex, opex, demand]}
+fixture: true

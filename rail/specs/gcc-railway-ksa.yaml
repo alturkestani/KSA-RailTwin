@@ -1,0 +1,26 @@
+# Spec for cities/ksa/lines/gcc-railway-ksa.yaml (committed: design tender issued). No alignment published.
+id: gcc-railway-ksa
+km_method: great_circle
+line:
+  name_en: GCC Railway, Saudi section (Kuwait border - UAE border; design stage)
+  name_ar: سكة حديد دول مجلس التعاون - القسم السعودي (مرحلة التصميم)
+  layer: committed
+  operator: null
+  status: design
+  source: S-029
+  source_date: 2026-05-12
+  accessed: 2026-10-31
+  line_type: mixed
+  design_speed_kmh: 220                             # S-031 (secondary): passenger design speed
+  length_km: 672                                    # S-029 (secondary): about 672 km in Saudi Arabia
+  uncertainty_km: 30
+  notes: >-
+    Design-consultancy tender issued 7 May 2026, bids due 30 Jun 2026 (S-030, MEED 12 May 2026).
+    This is the only procurement step: the route is not committed in the text read (the scout
+    proposed the 'announced/planned' label; the R1a prompt files it as committed). Routing Kuwait
+    border to UAE border (S-032); Al-Khafji and Dammam are not confirmed (C-008). Every site is an
+    OSM place proxy (unlocated); km-posts are a great-circle chain. Operator not named in the source.
+stations:
+  - {id: kuwait-border, name_en: Kuwait border (proxy Al Khafji customs), name_ar: الحدود الكويتية (منفذ الخفجي), class: planned, source: S-032, proxy_osm: node/1237828458, site_status: inferred, uncertainty_km: 30}
+  - {id: dammam, name_en: Dammam (not confirmed, C-008), name_ar: الدمام, class: planned, source: S-032, proxy_osm: node/287865393, site_status: inferred, uncertainty_km: 30}
+  - {id: uae-border, name_en: UAE border (proxy Al Batha), name_ar: الحدود الإماراتية (البطحاء), class: planned, source: S-032, proxy_osm: node/3952970012, site_status: inferred, uncertainty_km: 30}

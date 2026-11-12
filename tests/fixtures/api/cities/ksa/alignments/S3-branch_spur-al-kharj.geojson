@@ -1,0 +1,66 @@
+{
+ "type": "FeatureCollection",
+ "name": "S3-branch_spur-al-kharj",
+ "attribution": "alignment derived from Copernicus GLO-30 (c) DLR/Airbus, ESA WorldCover 2021 (CC BY 4.0) and (c) OpenStreetMap contributors (ODbL)",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "routed",
+    "id": "S3-branch_spur-al-kharj",
+    "layer": "hypothetical",
+    "length_km": 139.226,
+    "detour_ratio": 1.0536,
+    "tunnel_km": 0.9,
+    "viaduct_km": 1.099
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      46.7407,
+      24.6505
+     ],
+     [
+      47.026,
+      24.4282
+     ],
+     [
+      47.3279,
+      24.2268
+     ],
+     [
+      47.3967,
+      24.0283
+     ],
+     [
+      47.684,
+      23.8304
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "straight_sketch",
+    "id": "S3-branch_spur-al-kharj",
+    "layer": "hypothetical"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      46.740657,
+      24.650468
+     ],
+     [
+      47.684013,
+      23.83044
+     ]
+    ]
+   }
+  }
+ ]
+}

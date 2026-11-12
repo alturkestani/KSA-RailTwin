@@ -1,0 +1,1713 @@
+# film/storyboard/shots.yaml v1.4 | 10 Nov 2026 | Author: R10 builder (v1.4: FIX_FILM_STORY, plain-language captions, benefit-to-cost bars, north/south shots sh-08-15..20 from S6-L6; v1.3: BUILD_MOVIE: full-sentence captions, sim_map for every main shot; v1.2: FIX_HALF2_QUALITY, single closing notice, sim_map trailer shots; v1.1: FIX_CP8_NOTES); motion-graphics (R10) | Status: draft (CP9)
+# One shot per script line or run of consecutive lines; checked by:
+#   uv run python -m film.shots check film/storyboard/shots.yaml --lines film/script/lines.csv
+# duration_s = sum of the covered lines' English est_seconds (lines.csv); the Arabic cut re-times to its own VO in half 2.
+# footer (FIX_HALF2_QUALITY, Tariq 8 Nov 2026): synthetic on each cut's LAST shot only (the single closing notice
+#   'synthetic demand, uncalibrated: scenario comparison, not a forecast' / glossary term 4); none everywhere else.
+# reuse_of / held_frame_from: a shot showing another shot's picture inherits its OSM credit and Copernicus
+#   extra_credit (chart re-cuts of a data panel inherit neither).
+# renderer sim_map (every shot of both cuts since BUILD_MOVIE): film/sim.py (moving map over the DEM relief, the twin's GeoJSON, trains, charts); spec under `sim:`.
+# quote_label: {en, ar}: quotation styling per language; true only where every covered line of that language is a quote.
+# storyboard.md section 2 is generated: uv run python -m film.shots storyboard film/storyboard/shots.yaml --write
+shots:
+- id: sh-01-01
+  section: 1
+  cut: main
+  type: text_card
+  duration_s: 6.9
+  visual: Night relief map of the whole Kingdom; the camera drifts slowly while four faint journey paths (north, Riyadh–Jeddah,
+    Jeddah–Abha, Riyadh–Tabuk) trace in; caption and composite pill fade in. No people, no photos.
+  data_source: docs/sources/r10-notes.md
+  on_screen_text:
+    en: Four journeys, each traveller a composite built on published facts, not a real person.
+    ar: أربع رحلات، وكل مسافر فيها شخصية مركّبة مبنية على معلومات منشورة، مو شخص حقيقي.
+  narration_line_ids:
+  - m-01-01
+  transition: fade in from black
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-01.mp4
+  composite_label: &id001
+    en: 'Composite journey: not a real person'
+    ar: شخصية مركّبة، مو شخص حقيقي
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-01-02
+  section: 1
+  cut: main
+  type: map_animation
+  duration_s: 16.4
+  visual: 'Night camera follows a train running the existing North Line (solid) from Riyadh to Qurayyat over the relief; small
+    sleeper-berth and car glyphs (vector, not photos) ride beside it. Legend: existing solid, committed dashed, hypothetical
+    dotted; composite pill.'
+  data_source: cities/ksa/lines/geojson/sar-north-passenger.geojson; cities/ksa/lines/geojson/existing.geojson; S-r10-005;
+    S-r10-006; S-018
+  on_screen_text:
+    en: The North Line night train runs from Riyadh to Qurayyat with sleeper cabins and a carriage for passengers' cars (SAR).
+    ar: قطار الشمال الليلي يمشي من الرياض إلى القريات، وفيه مقصورات نوم وعربة تنقل سيارات الركاب (سار).
+  narration_line_ids:
+  - m-01-02
+  - m-01-03
+  transition: dissolve
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-02.mp4
+  composite_label: *id001
+  layer_legend: true
+  source_caption:
+    en: 'Source: Saudi Arabia Railways (SAR), published service pages'
+    ar: 'المصدر: الخطوط الحديدية السعودية (سار)، صفحات الخدمات المنشورة'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-01-03
+  section: 1
+  cut: main
+  type: map_animation
+  duration_s: 16.6
+  visual: 'Camera over the Riyadh–Jeddah corridor: an air arc labelled ''air'' (no aircraft image) pulses between the two
+    cities with seat particles flowing both ways; a counter climbs to 9.8 million scheduled seats, with the ''seats are capacity,
+    not passengers'' caveat.'
+  data_source: S-xt-001; S-xt-002; cities/ksa/zones/regions.geojson
+  on_screen_text:
+    en: In 2025, Jeddah–Riyadh had about 9.8 million scheduled seats both ways, fifth in OAG's top ten. Seats are capacity,
+      not passengers.
+    ar: في 2025، كان لخط جدة–الرياض حوالي 9.8 مليون مقعد مجدول بالاتجاهين، والخامس في قائمة أو إيه جي لأكثر عشرة خطوط. والمقاعد
+      سعة، مو ركاب.
+  narration_line_ids:
+  - m-01-04
+  - m-01-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-03.mp4
+  composite_label: *id001
+  layer_legend: true
+  source_caption:
+    en: 'Source: OAG, Busiest Routes 2025'
+    ar: 'المصدر: أو إيه جي، أكثر الخطوط ازدحاماً 2025'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-01-04
+  section: 1
+  cut: main
+  type: map_animation
+  duration_s: 16.2
+  visual: 'Camera tilts down the Sarawat escarpment between Jeddah and Abha over the Copernicus relief at full detail (no
+    imagery): road, air and rail glyphs light in turn; a short air arc draws from Abha to Jeddah (no Jeddah to Abha time is
+    sourced). No rail line is drawn because none exists.'
+  data_source: cop-dem-glo30-align-3as-2026-11-01; cities/ksa/lines/geojson/existing.geojson; S-r10-014; S-r10-013; docs/coverage.md
+  on_screen_text:
+    en: 'Jeddah–Abha: the Aqabat Shaar road has 11 tunnels and 32 bridges; one airline''s now-expired schedule listed Abha
+      to Jeddah at an hour and 15 minutes; there is no rail.'
+    ar: 'جدة–أبها: طريق عقبة شعار فيه 11 نفق و32 جسر، وجدول شركة طيران واحدة، انتهت صلاحيته، حدّد رحلة أبها إلى جدة بساعة
+      و15 دقيقة، وما فيه قطار.'
+  narration_line_ids:
+  - m-01-06
+  - m-01-07
+  transition: dissolve
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-04.mp4
+  composite_label: *id001
+  layer_legend: true
+  source_caption:
+    en: 'Sources: Asir region road authority page; one airline''s Abha → Jeddah schedule, valid to 28 March 2026 (accessed
+      7 Nov 2026)'
+    ar: 'المصادر: صفحة الطرق في منطقة عسير؛ جدول شركة طيران واحدة لرحلة أبها ← جدة، صالح حتى 28 مارس 2026 (اطلاع 7 نوفمبر
+      2026)'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-01-05
+  section: 1
+  cut: main
+  type: text_card
+  duration_s: 8.3
+  visual: 'Held escarpment frame from sh-01-04 (relief, legend and credits kept): Abha and the Asir highlands glow while the
+    attributed statement (office, date, figure) sets in. No logo.'
+  data_source: S-r10-016
+  on_screen_text:
+    en: In January 2025, the CEO of Asir's development authority gave an official target of 9.1 million visitors a year by
+      2030.
+    ar: في يناير 2025، ذكر الرئيس التنفيذي لهيئة تطوير منطقة عسير إن الهدف الرسمي 9.1 مليون زائر في السنة بحلول 2030.
+  narration_line_ids:
+  - m-01-08
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-05.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  held_frame_from:
+  - sh-01-04
+  source_caption:
+    en: 'Source: reported statement, January 2025 (S-r10-016)'
+    ar: 'المصدر: تصريح منشور، يناير 2025'
+- id: sh-01-06
+  section: 1
+  cut: main
+  type: map_animation
+  duration_s: 9.8
+  visual: Camera follows the long road north-west from Riyadh; the existing North Line passes well east of Tabuk; a true-scale
+    10 km ring around Tabuk pulses empty, with no station inside; 'no passenger rail' tag.
+  data_source: cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/stations.geojson; docs/coverage.md
+  on_screen_text:
+    en: From Riyadh to Tabuk you fly or drive the long road north-west, because no passenger train goes there.
+    ar: من الرياض إلى تبوك، يا الطيارة يا الطريق الطويل للشمال الغربي، لأن ما فيه قطار ركاب يوصل هناك.
+  narration_line_ids:
+  - m-01-09
+  transition: dissolve
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-06.mp4
+  composite_label: *id001
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-01-07
+  section: 1
+  cut: main
+  type: title
+  duration_s: 9.9
+  visual: Camera pulls back over the whole Kingdom at night; the four journey paths of sh-01-02, sh-01-03, sh-01-04 and sh-01-06
+    glow together, then the film title sets over the relief.
+  data_source: none
+  on_screen_text:
+    en: 'A Railway to Connect the Country: an independent study that answers in ranges, not promises.'
+    ar: 'سكة تربط البلد: دراسة مستقلة تجاوب بنطاقات، مو بوعود.'
+  narration_line_ids:
+  - m-01-10
+  transition: fade through black
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-07.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  held_frame_from:
+  - sh-01-02
+  - sh-01-03
+  - sh-01-04
+  - sh-01-06
+- id: sh-02-01
+  section: 2
+  cut: main
+  type: archival
+  duration_s: 7.5
+  visual: 'Camera over the Hejaz: the historical Hejaz Railway layer (grey, thin) draws south to Madinah over the relief;
+    the two public-domain photographs (track-laying near Tabuk, 1906; Medina main station, 1914; Library of Congress) slide
+    in as inset panels with date and credit.'
+  data_source: film/rights_log.csv (LOC 96513602; LOC 2002714726); cities/ksa/lines/geojson/historical.geojson; S-r1a-066;
+    S-r1a-068
+  on_screen_text:
+    en: The Hejaz Railway reached Madinah in 1908, and the line in today's Saudi Arabia stayed closed after 1920.
+    ar: سكة حديد الحجاز وصلت المدينة المنورة في 1908، والجزء اللي داخل المملكة اليوم ظل مقفل بعد 1920.
+  narration_line_ids:
+  - m-02-01
+  transition: dissolve
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-01.mp4
+  archival_credit:
+    en: 'Photos: B. Moritz / Library of Congress, public domain'
+    ar: 'صور: ب. موريتس / مكتبة الكونغرس، ملكية عامة'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-02-02
+  section: 2
+  cut: main
+  type: map_animation
+  duration_s: 5.4
+  visual: 'Camera over the east: the 1951 Riyadh–Dammam line draws itself east to west over the relief (existing layer) with
+    a date stamp; no photo (none found that is public domain or openly licensed).'
+  data_source: cities/ksa/lines/geojson/sar-east-freight-legacy.geojson; cities/ksa/lines/geojson/existing.geojson; S-r10-003
+  on_screen_text:
+    en: In October 1951, the Riyadh–Dammam railway line was inaugurated.
+    ar: في أكتوبر 1951، تم تدشين خط سكة حديد الرياض–الدمام.
+  narration_line_ids:
+  - m-02-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-02.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-02-03
+  section: 2
+  cut: main
+  type: map_animation
+  duration_s: 12.0
+  visual: 'Today''s passenger network builds up over the relief: the East Line, then the North Line (about 1,250 km) via Qassim,
+    Hail and Al-Jouf to Qurayyat, with a train running its length.'
+  data_source: cities/ksa/lines/geojson/sar-east-passenger.geojson; cities/ksa/lines/geojson/sar-north-passenger.geojson;
+    S-r1a-033; S-017; S-018; S-r10-004
+  on_screen_text:
+    en: The North Line is about 1,250 km long, and passenger trains have run on it to Qurayyat since 2022.
+    ar: خط الشمال طوله حوالي 1,250 كيلو، وقطارات الركاب توصل عليه القريات من 2022.
+  narration_line_ids:
+  - m-02-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-03.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-02-04
+  section: 2
+  cut: main
+  type: map_animation
+  duration_s: 8.7
+  visual: 'Camera swings west: the Haramain line Makkah–Jeddah–Madinah lights up (existing) and a train runs it.'
+  data_source: cities/ksa/lines/geojson/hhr.geojson; S-r10-007; S-r10-008; S-r1a-010
+  on_screen_text:
+    en: The Haramain line opened in October 2018, and its trains have run at up to 300 km/h since early 2020.
+    ar: قطار الحرمين فتح في أكتوبر 2018، وقطاراته تمشي بسرعة توصل إلى 300 كيلو في الساعة من بداية 2020.
+  narration_line_ids:
+  - m-02-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-04.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-02-05
+  section: 2
+  cut: main
+  type: map_animation
+  duration_s: 6.9
+  visual: 'Camera zooms into Riyadh: six metro lines draw in their line colours from the register geometry; station dots count
+    to 85.'
+  data_source: cities/ksa/lines/geojson/riyadh-metro-l1.geojson .. riyadh-metro-l6.geojson; S-034; S-r10-010; S-r10-011; S-036
+  on_screen_text:
+    en: The Riyadh Metro has six lines and 85 stations, opened between December 2024 and January 2025.
+    ar: مترو الرياض فيه ست خطوط و85 محطة، وافتتح بين ديسمبر 2024 ويناير 2025.
+  narration_line_ids:
+  - m-02-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-05.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-02-06
+  section: 2
+  cut: main
+  type: map_animation
+  duration_s: 18.8
+  visual: Camera pulls back over all 150 governorate outlines, each ticked as screened. Six towns pulse in order with their
+    2022 census populations and a true-scale 10 km ring; no ring contains a passenger station.
+  data_source: S-cp2-gastat-007; docs/coverage.md; cities/ksa/zones/regions.geojson; cities/ksa/lines/stations.geojson
+  on_screen_text:
+    en: All 150 governorates were screened. In the 2022 census, Taif had 913k people, Tabuk 624k, Khamis Mushait 601k, Abha
+      422k, Najran 422k and Jazan 201k, none with a passenger station within 10 km.
+    ar: انفرزت كل المحافظات الـ150. في تعداد 2022، كان في الطائف 913 ألف نسمة، وتبوك 624 ألف، وخميس مشيط 601 ألف، وأبها 422
+      ألف، ونجران 422 ألف، وجازان 201 ألف، وولا وحدة منها عندها محطة ركاب في حدود 10 كيلو.
+  narration_line_ids:
+  - m-02-06
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-06.mp4
+  layer_legend: true
+  source_caption:
+    en: 'Source: GASTAT, Census 2022 (derived table)'
+    ar: 'المصدر: الهيئة العامة للإحصاء، تعداد 2022 (جدول مشتق)'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-02-07
+  section: 2
+  cut: main
+  type: map_animation
+  duration_s: 9.6
+  visual: 'The committed layer draws dashed over the relief: the Landbridge and the Saudi section of the GCC Railway, each
+    tagged ''announced / under procurement'' with source and date.'
+  data_source: cities/ksa/lines/geojson/committed.geojson; cities/ksa/lines/geojson/landbridge.geojson; cities/ksa/lines/geojson/gcc-railway-ksa.geojson;
+    S-054; S-r1a-055; S-029
+  on_screen_text:
+    en: 'The committed lines, drawn dashed, are the Landbridge and the Saudi section of the GCC Railway: announced or under
+      procurement, and carrying no passengers yet.'
+    ar: 'الخطوط الملتزم بها، بالخط المتقطع، هي الجسر البري والقسم السعودي من سكة حديد دول مجلس التعاون: معلنة أو قيد الطرح،
+      وما تشيل ركاب إلى اليوم.'
+  narration_line_ids:
+  - m-02-07
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-07.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-02-08
+  section: 2
+  cut: main
+  type: map_animation
+  duration_s: 8.3
+  visual: Two-hour station reach shades in over the existing and committed network while a counter runs to 26.10 of 35.93
+    million; tag 'reported count, never scored'.
+  data_source: runs/r6/v3/national_reach.json; A-r6-104
+  on_screen_text:
+    en: 26.10 of 35.93 million people live within two hours of a station on the existing and committed network; the count
+      is reported, not scored.
+    ar: '26.10 مليون من أصل 35.93 مليون نسمة يعيشون في حدود ساعتين من محطة على الشبكة الحالية والملتزم بها: رقم للعرض، ما
+      يدخل في التقييم.'
+  narration_line_ids:
+  - m-02-08
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-08.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-03-01
+  section: 3
+  cut: main
+  type: chart
+  duration_s: 10.1
+  visual: 'National relief map: city lights brighten while a counter runs to 32,175,224 (Census 2022), then to 35.3 million
+    (GASTAT mid-2024 estimate); labels say which is a count and which an estimate.'
+  data_source: S-r10-023; S-r10-024
+  on_screen_text:
+    en: Census 2022 counted 32,175,224 people, and GASTAT's mid-2024 estimate is 35.3 million.
+    ar: تعداد 2022 حسب 32,175,224 نسمة، وتقدير الهيئة العامة للإحصاء لمنتصف 2024 هو 35.3 مليون.
+  narration_line_ids:
+  - m-03-01
+  - m-03-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-03-01.mp4
+  source_caption:
+    en: 'Source: General Authority for Statistics (GASTAT)'
+    ar: 'المصدر: الهيئة العامة للإحصاء'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-03-02
+  section: 3
+  cut: main
+  type: text_card
+  duration_s: 15.4
+  visual: 'Over the national map at night, city lights pulse while the attributed remarks set in: July 2022, after The Line
+    launch, the range 50 to 60 million by 2030, about half Saudis, and ''remarks, not a published programme target''. No
+    portrait, no emblem.'
+  data_source: S-r10-057; S-r10-058; S-r10-025; docs/sources/r10-notes.md
+  on_screen_text:
+    en: 'After The Line launch in July 2022, His Royal Highness Crown Prince Mohammed bin Salman told journalists the aim is 50 to 60 million people in the Kingdom by 2030, about half Saudis: remarks, not a published programme target.'
+    ar: 'بعد إطلاق تصاميم ذا لاين في يوليو 2022، قال صاحب السمو الملكي الأمير محمد بن سلمان، ولي العهد، للصحفيين إن الهدف 50 إلى 60 مليون نسمة في المملكة بحلول 2030، نصهم تقريباً سعوديين: تصريحات، مو هدف منشور في برنامج رسمي.'
+  narration_line_ids:
+  - m-03-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-03-02.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-03-03
+  section: 3
+  cut: main
+  type: text_card
+  duration_s: 11.1
+  visual: 'Camera eases into Riyadh: the city glows while the remark to Reuters (July 2020, 15 million by 2030) sets in, with
+    a second line ''later reports: under review''.'
+  data_source: S-r10-026; S-r10-027
+  on_screen_text:
+    en: In July 2020, a remark to Reuters put Riyadh at 15 million people by 2030; later reports say the figure is under review.
+    ar: في يوليو 2020، تصريح لرويترز تكلّم عن الرياض بـ15 مليون بحلول 2030، وتقارير لاحقة تقول إن الرقم قيد المراجعة.
+  narration_line_ids:
+  - m-03-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-03-03.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-03-04
+  section: 3
+  cut: main
+  type: text_card
+  duration_s: 15.9
+  visual: 'Camera over the Hejaz at night: Makkah and Madinah glow and pilgrim-flow particles thicken. The English cut sets
+    the two Vision 2030 phrases as quotations; the Arabic cut carries the meaning with an explicit paraphrase note and no
+    quotation marks or styling (no official Arabic wording is registered).'
+  data_source: S-r10-019; S-r10-020
+  on_screen_text:
+    en: 'Vision 2030 sets two goals: Umrah capacity ''from 8 million to 30 million'' visitors every year, and ''three Saudi
+      cities'' in the top-ranked 100 in the world.'
+    ar: من أهداف رؤية 2030، بمعنى النص مو نصه الحرفي، رفع الطاقة لاستقبال المعتمرين من 8 ملايين إلى 30 مليون كل سنة، وإن ثلاث
+      مدن سعودية تكون ضمن أعلى 100 مدينة في العالم.
+  narration_line_ids:
+  - m-03-05
+  - m-03-06
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-03-04.mp4
+  quote_label:
+    en: true
+    ar: false
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-03-05
+  section: 3
+  cut: main
+  type: map_animation
+  duration_s: 12.4
+  visual: Camera widens from the Kingdom to the GCC; the committed GCC Railway Saudi section stays dashed; quotation overlay
+    on the English cut, paraphrase overlay with its note on the Arabic cut. No alignment beyond the registered Saudi section
+    is drawn.
+  data_source: cities/ksa/lines/geojson/gcc-railway-ksa.geojson; cities/ksa/lines/geojson/committed.geojson; S-r10-021; S-r10-022
+  on_screen_text:
+    en: The Vision also speaks of the need 'to complete, improve and link our infrastructure internally and across borders'
+      and of 'shared road and railway networks'.
+    ar: وتتكلم الرؤية، بمعنى النص مو نصه الحرفي، عن استكمال البنية التحتية وتطويرها وربطها داخلياً وعبر الحدود، وعن شبكات
+      طرق وسكك حديد مشتركة مع دول الخليج.
+  narration_line_ids:
+  - m-03-07
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-03-05.mp4
+  quote_label:
+    en: true
+    ar: false
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-03-06
+  section: 3
+  cut: main
+  type: map_animation
+  duration_s: 6.9
+  visual: 'Slow national pull-out over the relief: existing (solid) and committed (dashed) rail only, trains running; the
+    question appears as the caption.'
+  data_source: cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/geojson/committed.geojson; docs/executive-summary.en.md
+  on_screen_text:
+    en: Should airports and highways be the only ways across this growing country?
+    ar: هل لازم المطارات والطرق السريعة تكون الطريق الوحيد للتنقل في بلد يزداد فيه عدد السكان؟
+  narration_line_ids:
+  - m-03-08
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-03-06.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-04-01
+  section: 4
+  cut: main
+  type: map_animation
+  duration_s: 8.8
+  visual: 'Camera over the national map: three journey flows draw at equal width on purpose (no magnitudes): Riyadh–Jeddah
+    (business), Jeddah to Asir (family holiday), Riyadh to the north (students and families).'
+  data_source: docs/demand.md; cities/ksa/zones/regions.geojson
+  on_screen_text:
+    en: The likely riders are business travellers between Riyadh and Jeddah, families heading to Asir, and students and families
+      going north.
+    ar: اللي ممكن يركبون هم المسافرين للعمل بين الرياض وجدة، والعوايل الطالعة لعسير، والطلاب والعوايل الرايحين للشمال.
+  narration_line_ids:
+  - m-04-01
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-01.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-04-02
+  section: 4
+  cut: main
+  type: chart
+  duration_s: 13.2
+  visual: 'Camera over the Riyadh–Jeddah corridor: trip particles flow along the Landbridge (committed, dashed) and the air
+    arc; a stacked bar fills to 4.66 million one-way trips a year (2050): rail 0.42 million, air 3.47 million, the rest by
+    road (remainder computed from the run, not typed).'
+  data_source: runs/study/extra-travel/baseline/rj_baseline.json; docs/extra-travel-study.md
+  on_screen_text:
+    en: In 2050, with the Landbridge running, rail carries 0.42 million and air 3.47 million of the 4.66 million one-way trips
+      a year between the Riyadh and Jeddah metros.
+    ar: في 2050 ومع تشغيل الجسر البري، السكة تاخذ 0.42 مليون والطيران 3.47 مليون من أصل 4.66 مليون رحلة باتجاه واحد في السنة
+      بين منطقتي الرياض وجدة.
+  narration_line_ids:
+  - m-04-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-02.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-04-03
+  section: 4
+  cut: main
+  type: chart
+  duration_s: 14.1
+  visual: 'Riyadh–Jeddah corridor: the study''s sketches drawn dotted; rail dots, including a non-stop 350 km/h case, race
+    an air dot, timed by the study''s door-to-door times, and air arrives first in every row; then the towns in between light
+    up along the sketches.'
+  data_source: runs/study/rj/times-s1/times.csv; runs/study/rj/times-s1/air.json; docs/rj-routes-study.md
+  on_screen_text:
+    en: Door to door, air stays ahead of every rail case studied, even a non-stop train at 350 km/h.
+    ar: من الباب إلى الباب، الطيارة تبقى قدّام كل حالات القطار في الدراسة، حتى قطار بدون توقف بسرعة 350 كيلو في الساعة.
+  narration_line_ids:
+  - m-04-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-03.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-04-04
+  section: 4
+  cut: main
+  type: map_animation
+  duration_s: 11.7
+  visual: Five metros (Riyadh, Jeddah, Makkah, Madinah, Dammam) pulse; the 120-minute door-to-door reach fills around each
+    from the access runs as the camera pulls back.
+  data_source: runs/access/S1/; runs/access/S1/reached.parquet; A-r6-007
+  on_screen_text:
+    en: The study asks who can reach one of five big metros within 120 minutes, door to door.
+    ar: الدراسة تختبر مين يقدر يوصل لوحدة من المدن الخمس الكبرى خلال 120 دقيقة من الباب إلى الباب.
+  narration_line_ids:
+  - m-04-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-04.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-04-05
+  section: 4
+  cut: main
+  type: map_animation
+  duration_s: 8.6
+  visual: The 60-minute band around the big metros shades in; the camera holds while S1 and each top layout toggle in turn
+    and the shading does not change.
+  data_source: runs/r6/top5/top5.csv; runs/access/S1/
+  on_screen_text:
+    en: No layout tested brings a new place within 60 minutes of a big metro.
+    ar: ولا مخطط من اللي انختبرت يدخّل منطقة جديدة في نطاق 60 دقيقة من مدينة كبرى.
+  narration_line_ids:
+  - m-04-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-05.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-04-06
+  section: 4
+  cut: main
+  type: chart
+  duration_s: 10.9
+  visual: Over the dimmed national map, trip particles switch between modes and drift between destinations while two equal-height
+    national-trip bars (with and without the committed lines) keep the same height.
+  data_source: docs/extra-travel-study.md; runs/study/extra-travel/baseline/rj_baseline.json
+  on_screen_text:
+    en: The committed lines move trips between modes and destinations, and the national total stays the same.
+    ar: الخطوط الملتزم بها تنقل الرحلات بين وسائل النقل والوجهات، والمجموع على مستوى المملكة يبقى نفسه.
+  narration_line_ids:
+  - m-04-06
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-06.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-04-07
+  section: 4
+  cut: main
+  type: chart
+  duration_s: 9.9
+  visual: "Over the dimmed map, a range bar grows to 0.2–1.1 million extra trips a year (2050), then a small gauge shows how little the overall result (benefits minus costs, middle case) moves (at most about 2.5 %, not said on screen)."
+  data_source: runs/study/extra-travel/induced_summary.csv; docs/extra-travel-study.md; A-xt-002
+  on_screen_text: 
+    en: "If cheaper, faster travel creates trips, there are an extra 0.2 to 1.1 million a year in 2050, which barely changes the overall result."
+    ar: "لو السفر الأرخص أو الأسرع ولّد رحلات، تزيد بين 0.2 و1.1 مليون رحلة في السنة في 2050، وهذا ما يغيّر النتيجة العامة إلا شوي."
+  narration_line_ids:
+  - m-04-07
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-07.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-05-01
+  section: 5
+  cut: main
+  type: chart
+  duration_s: 10.3
+  visual: 'Camera pulls back over the Kingdom at night: illustrative air arcs between the main airports pulse; a proportional
+    bar shows 65 million domestic within about 140.9 million air travellers (2025).'
+  data_source: S-r10-029
+  on_screen_text:
+    en: In 2025, GACA counted 65 million domestic air travellers, out of about 140.9 million in all.
+    ar: في 2025، حسبت الهيئة العامة للطيران المدني 65 مليون مسافر طيران داخلي، من أصل حوالي 140.9 مليون إجمالاً.
+  narration_line_ids:
+  - m-05-01
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-05-01.mp4
+  source_caption:
+    en: 'Source: General Authority of Civil Aviation, 29 Jan 2026'
+    ar: 'المصدر: الهيئة العامة للطيران المدني، 29 يناير 2026'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-05-02
+  section: 5
+  cut: main
+  type: chart
+  duration_s: 7.9
+  visual: 'Camera over the Jeddah–Riyadh air arc: seat particles thicken and two growth arrows rise beside it, +13 % on 2024
+    and +22 % on 2019.'
+  data_source: S-xt-001; S-xt-002
+  on_screen_text:
+    en: 'In OAG''s 2025 top ten, Jeddah–Riyadh grew fastest: up 13 % on 2024 and 22 % on 2019.'
+    ar: 'في قائمة أو إيه جي 2025، خط جدة–الرياض كان الأسرع نمواً: زاد 13 بالمية عن 2024، و22 بالمية عن 2019.'
+  narration_line_ids:
+  - m-05-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-05-02.mp4
+  source_caption:
+    en: 'Source: OAG, Busiest Routes 2025'
+    ar: 'المصدر: أو إيه جي، أكثر الخطوط ازدحاماً 2025'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-05-03
+  section: 5
+  cut: main
+  type: text_card
+  duration_s: 10.7
+  visual: Over the dimmed national map, the Riyadh–Jeddah air arc keeps pulsing beside the dashed Landbridge while the caution
+    sets in; text only, no Japanese map or train images.
+  data_source: S-xt-007
+  on_screen_text:
+    en: 'Japan offers a caution: despite extensive high-speed rail, the world''s second and third busiest air routes in 2025
+      were domestic Japanese routes.'
+    ar: 'اليابان تعطينا درس: رغم شبكة القطارات السريعة الواسعة، ثاني وثالث أزحم خطوط طيران في العالم في 2025 كانت داخلية يابانية.'
+  narration_line_ids:
+  - m-05-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-05-03.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-05-04
+  section: 5
+  cut: main
+  type: map_animation
+  duration_s: 12.2
+  visual: 'Camera over the Eastern Province and Qatar: markers only at Hofuf, Dammam and Doha pulse with an ''announced''
+    tag. No alignment drawn: no route geometry is in the register.'
+  data_source: S-r10-028; cities/ksa/zones/regions.geojson
+  on_screen_text:
+    en: In December 2025, Saudi Arabia and Qatar agreed a 785 km high-speed line with a target trip of about two hours; it
+      is announced, not built.
+    ar: في ديسمبر 2025، وقّعت المملكة وقطر اتفاقية لقطار سريع طوله 785 كيلو، والمستهدف إن الرحلة تكون حوالي ساعتين، وهو معلن،
+      ما انبنى.
+  narration_line_ids:
+  - m-05-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-05-04.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-05-05
+  section: 5
+  cut: main
+  type: map_animation
+  duration_s: 9.8
+  visual: The Landbridge (committed, dashed) draws itself from Riyadh to Jeddah across the relief with an 'announced, not
+    existing' tag and the 2034 date.
+  data_source: cities/ksa/lines/geojson/landbridge.geojson; S-054; S-r1a-055
+  on_screen_text:
+    en: The Landbridge, about 900 km of new railway between Riyadh and Jeddah, is reported as due by 2034; it is announced,
+      not existing.
+    ar: الجسر البري، حوالي 900 كيلو سكة جديدة بين الرياض وجدة، المنشور إنه يُسلَّم بحلول 2034، وهو معلن، مو قائم.
+  narration_line_ids:
+  - m-05-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-05-05.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-06-01
+  section: 6
+  cut: main
+  type: map_animation
+  duration_s: 13.5
+  visual: 'Low camera over the Copernicus relief: a least-cost path grows across slopes, dunes and wadis (hypothetical layer,
+    dotted).'
+  data_source: runs/align/corridors-v2-s1; cop-dem-glo30-align-3as-2026-11-01; docs/alignments.md
+  on_screen_text:
+    en: Each hypothetical line is routed at least cost over real terrain, using 30 m elevation data.
+    ar: كل خط افتراضي انرسم بأقل تكلفة فوق تضاريس حقيقية، على بيانات ارتفاعات بدقة 30 متر.
+  narration_line_ids:
+  - m-06-01
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-06-01.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-06-02
+  section: 6
+  cut: main
+  type: map_animation
+  duration_s: 11.0
+  visual: 'Camera visits three running lines in turn: the sketch (dotted) draws over the real line (solid), with the offset
+    ribbons shaded.'
+  data_source: runs/align/validation-v2-s1/validation.csv; docs/alignments.md
+  on_screen_text:
+    en: Tested on 3 running lines, sketch lengths came within 5 %, but paths sat 3 to 10 km off on average, so each route
+      is a sketch, not a design.
+    ar: لما انجرّبت على 3 خطوط شغّالة، الأطوال طلعت ضمن 5 بالمية، لكن المسارات كانت بعيدة بمتوسط 3 إلى 10 كيلو، فكل مسار مخطط
+      تقريبي، مو تصميم.
+  narration_line_ids:
+  - m-06-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-06-02.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-06-03
+  section: 6
+  cut: main
+  type: map_animation
+  duration_s: 14.3
+  visual: 'Low camera over the Taif escarpment (Copernicus relief at full detail): a straight chord of 61.9 km draws, then
+    the sketch unrolls to 91.4 km; tunnel and viaduct segments coloured from the legs table.'
+  data_source: runs/study/rj/legs-s1/legs.csv; docs/rj-routes-study.md
+  on_screen_text:
+    en: On the Taif descent, two via-Taif sketches turn a 61.9 km straight line into 91.4 km of track, with 16.2 km of tunnel
+      and 14.8 km of viaduct.
+    ar: في نزلة الطائف، مخططين يمرّون بالطائف يحوّلون 61.9 كيلو بخط مستقيم إلى 91.4 كيلو سكة، فيها 16.2 كيلو أنفاق و14.8 كيلو
+      جسور.
+  narration_line_ids:
+  - m-06-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-06-03.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-06-04
+  section: 6
+  cut: main
+  type: map_animation
+  duration_s: 14.4
+  visual: 'Camera near Makkah over the relief: the Haram boundary shown only as the mapped OSM marker points, the RJ sketches
+    passing outside, and the existing Haramain station at Ar Rusayfah pulsing. No imagery, no photos.'
+  data_source: runs/study/rj/siting-s1/siting.json; cities/ksa/alignments-study/haram_markers.geojson; docs/rj-routes-study.md
+  on_screen_text:
+    en: By the study's siting rule, through trains stay outside the Haram boundary, and the Haramain line serves Makkah from
+      Ar Rusayfah.
+    ar: حسب قاعدة الموقع في الدراسة، القطار العابر يبقى برّا حدود الحرم، وقطار الحرمين يخدم مكة من الرصيفة.
+  narration_line_ids:
+  - m-06-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-06-04.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-06-05
+  section: 6
+  cut: main
+  type: chart
+  duration_s: 10.3
+  visual: Over a dimmed corridor sketch, the register's cost elements for double-track electrified railway appear as low /
+    middle / high range bars (values read from the register at render time).
+  data_source: cities/ksa/costs/index.yaml; docs/costs.md; A-r4-cost-001; A-r4-cost-002
+  on_screen_text:
+    en: 'Costs come from the study''s own register for double-track electrified railway, and each is a range: low, middle
+      and high.'
+    ar: 'التكاليف من سجل الدراسة نفسها لسكة مزدوجة ومكهربة، وكل تكلفة نطاق: منخفضة، ووسطى، ومرتفعة.'
+  narration_line_ids:
+  - m-06-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-06-05.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-06-06
+  section: 6
+  cut: main
+  type: chart
+  duration_s: 12.3
+  visual: Over the dimmed map, the reference-class overrun curve draws with the uplift marked; contingency appears as a separate
+    block beside it, not stacked.
+  data_source: S-cost-rcf-008; S-cost-rcf-010; A-rcf-001; A-rcf-004; A-cost-008; docs/costs.md
+  on_screen_text:
+    en: Costs carry a reference-class uplift, with one class of 355 rail projects, and contingency is reported separately.
+    ar: التكاليف عليها زيادة من فئات مرجعية، منها فئة فيها 355 مشروع سكة حديد، والطوارئ تنعرض لحالها.
+  narration_line_ids:
+  - m-06-06
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-06-06.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-07-01
+  section: 7
+  cut: main
+  type: map_animation
+  duration_s: 9.7
+  visual: 'On top of the committed layer, 71 candidate corridors draw in the hypothetical (dotted) style, family by family:
+    stations, spurs, commuter belts, trunk links; the camera pulls back to the whole Kingdom.'
+  data_source: cities/ksa/corridors/; cities/ksa/lines/geojson/committed.geojson; docs/r6-topology.md
+  on_screen_text:
+    en: 'The search starts from the committed lines and draws on 71 candidate corridors: stations, spurs, commuter belts and
+      trunk links.'
+    ar: 'البحث يبدأ من الخطوط الملتزم بها ويدوّر في 71 ممر مرشّح: محطات، وخطوط فرعية، وأحزمة ضواحي، وخطوط رئيسية.'
+  narration_line_ids:
+  - m-07-01
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-07-01.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-07-02
+  section: 7
+  cut: main
+  type: chart
+  duration_s: 14.1
+  visual: Over the dimmed map, a judge panel with its fingerprint (hash) checked before and after; a fan of 10,000 draws spreads
+    from it; three population cases appear, the worst one highlighted.
+  data_source: docs/r6-topology.md; A-r6-001
+  on_screen_text:
+    en: One frozen judge scored every layout over 10,000 random draws, its fingerprint checked before and after, taking the
+      worst of three population cases.
+    ar: حَكَم واحد مجمّد قيّم كل مخطط على 10,000 سحبة عشوائية، وبصمته تنفحص قبل وبعد، وتقييمه أسوأ سيناريو من ثلاثة للسكان.
+  narration_line_ids:
+  - m-07-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-07-02.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-07-03
+  section: 7
+  cut: main
+  type: chart
+  duration_s: 10.0
+  visual: Over the dimmed map, a loop (hypothesis, one change, judge, keep or discard) cycles while a candidate corridor toggles
+    on the map; classical optimisers run as a parallel lane.
+  data_source: docs/r6-topology.md
+  on_screen_text:
+    en: The search changed one thing at a time, from a written hypothesis, and kept a change only if the judge agreed.
+    ar: البحث يغيّر شي واحد كل مرة، بفرضية مكتوبة، وما يحفظ التغيير إلا إذا وافق الحَكَم.
+  narration_line_ids:
+  - m-07-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-07-03.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-07-04
+  section: 7
+  cut: main
+  type: chart
+  duration_s: 5.2
+  visual: "Over the dimmed map, the final search's logged evaluations appear one by one as dots (cost across, benefits minus costs in the worst population case up; FIX_FILM_STORY plain axis label)."
+  data_source: runs/r6/v3/results.tsv; docs/r6-topology.md
+  on_screen_text:
+    en: The final search left 47,108 rows in its register, one for every attempt.
+    ar: البحث الأخير ترك 47,108 سطر في السجل، سطر لكل محاولة.
+  narration_line_ids:
+  - m-07-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-07-04.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-07-05
+  section: 7
+  cut: main
+  type: chart
+  duration_s: 8.1
+  visual: Over the dimmed national map, the checkpoint timeline drawn from the status log appears, each checkpoint marked
+    'a person decided'.
+  data_source: docs/STATUS.md
+  on_screen_text:
+    en: At every checkpoint a person decided what came next, and the machine only searched.
+    ar: عند كل محطة مراجعة، شخص قرر الخطوة الجاية، والآلة بس دوّرت.
+  narration_line_ids:
+  - m-07-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-07-05.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-01
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 11.1
+  visual: "Camera over the existing and committed network: a benefit-to-cost bar grows (P10–P90 of the riyals back per riyal spent, white mark at the middle, about 0.3) beside a bold line at 1, labelled 'pays back its cost'; the bar's middle stays left of the line."
+  data_source: runs/cba/CBA-S1-committed-programme/results.json; docs/report/sections/04-results.md; S-r10-056
+  on_screen_text: 
+    en: "In the middle case, the committed lines bring back about 0.3 riyals for every riyal spent, below one, the level at which a line pays back its cost."
+    ar: "في الحالة الوسطى، الخطوط الملتزم بها ترجّع حوالي 0.3 ريال لكل ريال ينصرف، أقل من واحد، وهو الحد اللي عنده الخط يرجّع تكلفته."
+  narration_line_ids:
+  - m-08-01
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-01.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-02
+  section: 8
+  cut: main
+  type: split_screen
+  duration_s: 17.1
+  visual: "Camera over the Eastern Province and Riyadh: the three new stations of S6-L2 (Al Jubayl, Dhahran, Duruma) pulse as hypothetical markers on the existing and committed lines; a cost range bar grows (0.8–5.3 bn SAR), then a benefit-to-cost bar (P10–P90, white mark at the middle, about 6) beside a bold line at 1 ('pays back its cost')."
+  data_source: runs/r6/top5/top5.csv; runs/r6/top5/L2.layout.yaml; docs/executive-summary.en.md; S-r10-056
+  on_screen_text: 
+    en: "The central case, not a recommendation to build, adds stations at Al Jubayl, Dhahran and Duruma for 0.8 to 5.3 billion SAR, and brings back about 6 riyals per riyal in the middle case."
+    ar: "الحالة المركزية، وهي مو توصية بالبناء، تضيف محطات في الجبيل والظهران وضرما بتكلفة بين 0.8 و5.3 مليار ريال، وترجّع حوالي 6 ريالات لكل ريال في الحالة الوسطى."
+  narration_line_ids:
+  - m-08-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-02.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-03
+  section: 8
+  cut: main
+  type: split_screen
+  duration_s: 14.7
+  visual: "Camera south of Riyadh: the S6-L1 Al-Kharj spur draws itself (dotted) over the relief; a cost range bar grows (6.2–41.3 bn), then a benefit-to-cost bar (P10–P90, middle about 2.3) beside the bold line at 1."
+  data_source: runs/r6/top5/top5.csv; runs/r6/top5/L1.layout.yaml; S-r10-056
+  on_screen_text: 
+    en: "The upside case adds the Al-Kharj spur for 6.2 to 41.3 billion SAR and brings back about 2.3 riyals per riyal in the middle case, less if costs run high."
+    ar: "الحالة الأعلى عائداً تضيف الخط الفرعي للخرج بتكلفة بين 6.2 و41.3 مليار ريال، وترجّع حوالي 2.3 ريال لكل ريال في الحالة الوسطى، وأقل لو ارتفعت التكلفة."
+  narration_line_ids:
+  - m-08-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-03.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-04
+  section: 8
+  cut: main
+  type: split_screen
+  duration_s: 17.2
+  visual: "Camera over Riyadh: the S6-L3 commuter belt draws (dotted); counters for 4.25 vs 3.56 million people within 120 minutes; a benefit-to-cost bar (P10–P90, middle about 1.1) beside the bold line at 1."
+  data_source: runs/r6/top5/top5.csv; runs/r6/top5/L3.layout.yaml; S-r10-056
+  on_screen_text: 
+    en: "The reach alternative adds a Riyadh commuter belt, with 4.25 million people within 120 minutes against 3.56 million, and brings back about 1.1 riyals per riyal in the middle case."
+    ar: "بديل التغطية الأوسع يضيف حزام ضواحي حول الرياض، فيه 4.25 مليون نسمة في نطاق 120 دقيقة مقابل 3.56 مليون، ويرجّع حوالي 1.1 ريال لكل ريال في الحالة الوسطى."
+  narration_line_ids:
+  - m-08-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-04.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-05
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 11.1
+  visual: "Over the dimmed map, the state's net-cost range bars by delivery model (as fig10) grow to the right of zero with the median marked; no figure on screen: the point is that the state pays the difference under every model."
+  data_source: runs/r7/fiscal/fiscal.json; docs/executive-summary.en.md
+  on_screen_text: 
+    en: "No option pays for itself from fares, so whichever way it is delivered, the state pays the difference."
+    ar: "ولا خيار يغطي تكلفته من التذاكر، فبأي طريقة تنفيذ، الدولة تدفع الفرق."
+  narration_line_ids:
+  - m-08-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-05.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-06
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 18.5
+  visual: 'Over the dimmed committed network, two benefit range bars (P10–P90) for 60 years grow: users'' travel time and
+    cost savings (rule of a half on the composite cost, so fares and car fuel are inside it) 2.3–19.3 bn SAR; monetised safety
+    benefit (deaths and injuries avoided at standard appraisal values; not a crash count) 0.6–7.4 bn SAR. Wider economic impacts
+    are not on this shot (sh-08-07). Source caption with the appraisal basis.'
+  data_source: runs/cba/CBA-S1-committed-programme/results.json; A-cba-001; A-cba-203
+  on_screen_text:
+    en: For the committed lines over 60 years, users' travel time and cost savings are 2.3 to 19.3 billion SAR, and the safety
+      benefit (deaths and injuries avoided, at appraisal values) 0.6 to 7.4 billion.
+    ar: للخطوط الملتزم بها خلال 60 سنة، وفورات الناس في وقت التنقل وتكلفته بين 2.3 و19.3 مليار ريال، وفائدة السلامة (الوفيات
+      والإصابات المتجنبة بقيم التقييم) بين 0.6 و7.4 مليار.
+  narration_line_ids:
+  - m-08-06
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-06.mp4
+  source_caption: 
+    en: 'Basis: 2025 SAR valued in 2026 money, medium population, 60 years, UK Green Book 2026 method, P10–P90 (committed-lines run)'
+    ar: 'الأساس: ريالات 2025 بقيمة فلوس 2026، سيناريو السكان المتوسط، 60 سنة، طريقة الكتاب الأخضر البريطاني 2026، P10–P90 (تشغيلة الخطوط الملتزم بها)'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-07
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 15.8
+  visual: Over the dimmed map, a greyed, hatched range bar 114.6–267.7 bn SAR labelled 'indicative, outside every ranking'
+    grows, kept visually apart from the CBA bars.
+  data_source: runs/r6/top5/top5.csv; docs/cba.md; A-cba-130
+  on_screen_text: 
+    en: "A wider boost to the economy is roughly 114.6 to 267.7 billion SAR in the middle case across three options, and stays outside every ranking."
+    ar: "الأثر الأوسع على الاقتصاد تقديره التقريبي بين 114.6 و267.7 مليار ريال في الحالة الوسطى للخيارات الثلاثة، ويبقى برّا ترتيب الخيارات كله."
+  narration_line_ids:
+  - m-08-07
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-07.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-08
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 18.9
+  visual: "Camera over the Riyadh–Jeddah corridor: the five side-study sketches draw dotted (hypothetical); one benefit-to-cost bar per sketch grows (middle values 0.18–0.24, said as about 0.2), all short of the bold line at 1 ('pays back its cost')."
+  data_source: runs/study/rj/score/score.csv; docs/rj-routes-study.md
+  on_screen_text: 
+    en: "In a side study, each Riyadh–Jeddah sketch brings back only about 0.2 riyals per riyal in the middle case, below one, so none pays back its cost."
+    ar: "في دراسة جانبية، كل مخطط بين الرياض وجدة يرجّع حوالي 0.2 ريال بس لكل ريال في الحالة الوسطى، أقل من واحد، فولا واحد يرجّع تكلفته."
+  narration_line_ids:
+  - m-08-08
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-08.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-09
+  section: 8
+  cut: main
+  type: map_animation
+  duration_s: 13.3
+  visual: 'The five RJ sketches (dotted) draw on the map one at a time, each with its national two-hour reach gain: direct
+    +0.00; three via Taif +0.23 million; Landbridge-stops chain +0.31 million.'
+  data_source: runs/study/rj/score/replace-rj-a/national_reach.json; runs/study/rj/score/replace-rj-lb/national_reach.json;
+    runs/study/rj/score/replace-rj-b/national_reach.json; runs/study/rj/score/replace-rj-c1/national_reach.json; runs/study/rj/score/replace-rj-c2/national_reach.json;
+    cities/ksa/alignments-study/
+  on_screen_text:
+    en: For national two-hour reach, the direct sketch adds no one, via Taif adds about 0.23 million, and via the Landbridge's
+      announced stops about 0.31 million.
+    ar: في التغطية الوطنية في حدود ساعتين، المخطط المباشر ما يضيف أحد، واللي عبر الطائف يضيف حوالي 0.23 مليون، واللي عبر محطات
+      الجسر البري المعلنة حوالي 0.31 مليون.
+  narration_line_ids:
+  - m-08-09
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-09.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-10
+  section: 8
+  cut: main
+  type: map_animation
+  duration_s: 11.0
+  visual: 'Camera zooms to the Makkah–Jeddah area: two markers pulse, the gateway south-west of Makkah (RJ-C1) and the Al-Jumum
+    stop (RJ-LB), each with its 120-minute gain counting up.'
+  data_source: runs/study/rj/score/replace-rj-c1/score.judge.json; runs/study/rj/score/replace-rj-lb/score.judge.json; docs/rj-routes-study.md
+  on_screen_text:
+    en: Within 120 minutes of the five metros, a gateway south-west of Makkah adds about 93,693 people and a stop at Al-Jumum
+      about 109,007.
+    ar: في نطاق 120 دقيقة من المدن الخمس الكبرى، بوابة جنوب غرب مكة تضيف حوالي 93,693 نسمة، ومحطة في الجموم حوالي 109,007.
+  narration_line_ids:
+  - m-08-10
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-10.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-15
+  section: 8
+  cut: main
+  type: map_animation
+  duration_s: 9.9
+  visual: "Camera from the far north (Tabuk) down to the far south (Asir, Najran, Jazan) over the existing and committed lines; the five cities pulse in turn with a true-scale 10 km ring; no ring contains a passenger station."
+  data_source: "docs/coverage.md; S-r10-050; cities/ksa/lines/stations.geojson; cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/geojson/committed.geojson"
+  on_screen_text:
+    en: "Tabuk, Abha, Khamis Mushait, Najran and Jazan have no passenger station within 10 km on today's map."
+    ar: "تبوك وأبها وخميس مشيط ونجران وجازان ما عندها محطة ركاب في حدود 10 كيلو في خريطة اليوم."
+  narration_line_ids:
+  - m-08-14
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-15.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-16
+  section: 8
+  cut: main
+  type: map_animation
+  duration_s: 9.0
+  visual: "source: S6-L6 (comparison layout). National view: over the existing and committed lines, the 16 additions of the connected comparison layout draw themselves (dotted, hypothetical layer) along their modelled DEM least-cost alignments, never straight lines; the 18 required cities glow as they join."
+  data_source: "runs/r6/l6/L6.layout.yaml; docs/r6-l6-connected.md; S-r10-051"
+  on_screen_text:
+    en: "As a comparison, not a recommendation, the study's connected network joins 18 cities with 16 additions, the lowest-cost set."
+    ar: "للمقارنة، مو توصية، الشبكة المترابطة في الدراسة تربط 18 مدينة بـ16 إضافة، وهي أرخص مجموعة."
+  narration_line_ids:
+  - m-08-15
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-16.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  source: S6-L6 (comparison layout)
+- id: sh-08-17
+  section: 8
+  cut: main
+  type: map_animation
+  duration_s: 14.8
+  visual: "source: S6-L6 (comparison layout). Camera low over the north: the Tabuk–Sakaka line and the Jouf–Sakaka spur draw along their routed alignments to the North Line; then the camera flies south to Asir, where the lines to Najran, to Bisha (and on to Taif and the Landbridge at Muwai) and down the escarpment through Baysh to Jazan draw at full DEM detail over the relief."
+  data_source: "docs/r6-l6-connected.md; runs/r6/l6/L6.layout.yaml; S-r10-052; runs/align/corridors-s1/S2-trunk_gap-tabuk-sakaka/alignment.geojson; runs/align/corridors-s1/S3-branch_spur-sakaka/alignment.geojson; runs/align/corridors-s1/S2-trunk_gap-abha-khamis-mushait-najran/alignment.geojson; runs/align/corridors-s1/S2-trunk_gap-abha-khamis-mushait-bisha/alignment.geojson; runs/align/corridors-s1/S2-trunk_gap-taif-bisha/alignment.geojson; runs/align/corridors-s1/S3-branch_spur-bisha/alignment.geojson; runs/align/corridors-s1/S4-commuter_belt-abha-khamis-mushait-135/alignment.geojson; runs/align/corridors-s1/S4-commuter_belt-jazan-315/alignment.geojson"
+  on_screen_text:
+    en: "In the connected network, a 458.9 km line runs from Tabuk to Sakaka, and Abha and Khamis Mushait link to Najran, to Bisha and Taif, and down the mountains to Jazan."
+    ar: "في الشبكة المترابطة، خط طوله 458.9 كيلو يربط تبوك بسكاكا، وأبها وخميس مشيط تتصل بنجران وبيشة والطائف، وتنزل من الجبال لين جازان."
+  narration_line_ids:
+  - m-08-16
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-17.mp4
+  extra_figures:
+  - "458.9"
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  source: S6-L6 (comparison layout)
+- id: sh-08-18
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 7.9
+  visual: "source: S6-L6 (comparison layout). National view at night: every station of the committed network glows with its reach, then the stations of the connected layout join; two bars of the whole population grow, committed lines alone and connected network."
+  data_source: "runs/r6/l6/national_reach.json; docs/r6-l6-connected.md; S-r10-053"
+  on_screen_text:
+    en: "With the connected network, 32.7 million people live within two hours of a station, against 26.1 million with the committed lines alone."
+    ar: "مع الشبكة المترابطة، 32.7 مليون نسمة على بعد ساعتين من محطة، مقابل 26.1 مليون مع الخطوط الملتزم بها بس."
+  narration_line_ids:
+  - m-08-17
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-18.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  source: S6-L6 (comparison layout)
+- id: sh-08-19
+  section: 8
+  cut: main
+  type: map_animation
+  duration_s: 7.8
+  visual: "source: S6-L6 (comparison layout). The five cities pulse on the connected network; a dashed question mark arc reaches from each towards the nearest big city and stops short: the study did not route these door-to-door times."
+  data_source: "docs/r6-l6-connected.md; S-r10-054"
+  on_screen_text:
+    en: "The study did not route door-to-door train times from these five cities to the nearest big city."
+    ar: "الدراسة ما حسبت أوقات القطار من الباب إلى الباب من هالمدن الخمس لأقرب مدينة كبيرة."
+  narration_line_ids:
+  - m-08-18
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-19.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  source: S6-L6 (comparison layout)
+- id: sh-08-20
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 7.7
+  visual: "source: S6-L6 (comparison layout). Over the dimmed connected network, a benefit-to-cost bar (P10–P90, white mark at the middle, about 0.06) grows beside the bold line at 1 ('pays back its cost'), far to its left."
+  data_source: "runs/r6/l6/score/S6-L6.csv; docs/r6-l6-connected.md; S-r10-055"
+  on_screen_text:
+    en: "In the middle case, the connected network brings back only about 0.06 riyals for every riyal spent, far below one."
+    ar: "في الحالة الوسطى، الشبكة المترابطة ترجّع حوالي 0.06 ريال بس لكل ريال ينصرف، أقل من واحد بكثير."
+  narration_line_ids:
+  - m-08-19
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-20.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  source: S6-L6 (comparison layout)
+- id: sh-08-11
+  section: 8
+  cut: main
+  type: chart
+  duration_s: 9.5
+  visual: 'Over the dimmed national map, a stage-gate timeline (as fig09) draws: gates before each construction start, 2027
+    and 2047, with ''field survey'' and ''observed demand'' feeding each gate.'
+  data_source: runs/r6/top5/top5.csv; runs/r7/fiscal/fiscal.json; docs/executive-summary.en.md; docs/report/feasibility-report.md
+  on_screen_text:
+    en: A field survey could change all of this, so stage gates sit before each construction start.
+    ar: استبيان ميداني ممكن يغيّر كل هذا، وعشان كذا فيه بوابات مراجعة قبل كل بداية إنشاء.
+  narration_line_ids:
+  - m-08-11
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-11.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-12
+  section: 8
+  cut: main
+  type: map_animation
+  duration_s: 10.7
+  visual: 'Recap camera over the national map: a train runs the North Line night route (solid), the Riyadh–Jeddah air arc
+    pulses, the Abha escarpment and the Tabuk road are each held for a beat; Abha and Tabuk stay off the rail layers.'
+  data_source: cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/geojson/committed.geojson; docs/rj-routes-study.md;
+    docs/coverage.md; S-r10-005; S-r10-006
+  on_screen_text:
+    en: A night train north already runs, rail does not beat the air shuttle, and Abha and Tabuk are still off the rail map.
+    ar: قطار ليلي للشمال شغّال اليوم، والقطار ما يسبق الجسر الجوي، وأبها وتبوك إلى اليوم برّا خريطة السكة.
+  narration_line_ids:
+  - m-08-12
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-12.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-13
+  section: 8
+  cut: main
+  type: title
+  duration_s: 11.9
+  visual: 'Closing camera pulls back over the whole Kingdom at night: existing and committed lines glow, trains run, cities
+    light; then fade.'
+  data_source: cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/geojson/committed.geojson
+  on_screen_text:
+    en: Every figure on screen has a source, and the evidence is here to read.
+    ar: كل رقم على الشاشة له مصدر، والأدلة هنا لكل من يحب يقراها.
+  narration_line_ids:
+  - m-08-13
+  transition: fade to black
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-13.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-08-14
+  section: 8
+  cut: main
+  type: title
+  duration_s: 20.0
+  visual: 'Credits roll over the darkened national map (no narration): first the single closing notice, then the credit lines:
+    KSA Rail Twin; voices; Claude; data credits (© OpenStreetMap contributors, ODbL; GASTAT; SAR/HHR published facts; Copernicus
+    WorldDEM-30 credit line; OAG; GACA); archival photos (B. Moritz / Library of Congress, public domain); fonts (SIL OFL);
+    tools. No entity emblem of any kind.'
+  data_source: none
+  on_screen_text:
+    en: Credits
+    ar: الشكر والمصادر
+  narration_line_ids: []
+  transition: cut
+  footer: synthetic
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-14.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-01-51
+  section: 1
+  cut: trailer
+  type: map_animation
+  duration_s: 7.4
+  visual: 'Night relief map of the Kingdom from the Copernicus tiles. Camera starts over the north and pulls back to the whole
+    country: a train runs the North Line from Riyadh to Qurayyat, an air arc draws from Riyadh to Jeddah, Abha and Tabuk pulse.
+    Side caption; legend; composite pill.'
+  data_source: cities/ksa/lines/geojson/sar-north-passenger.geojson; cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/geojson/committed.geojson;
+    cities/ksa/zones/regions.geojson; cop-dem-glo30-align-3as-2026-11-01; S-r10-005; S-r10-006; docs/sources/r10-notes.md
+  on_screen_text:
+    en: 'Four journeys: a night train north, a Riyadh–Jeddah flight, the climb to Abha, a trip home to Tabuk.'
+    ar: 'أربع رحلات: قطار ليلي للشمال، ورحلة طيران بين الرياض وجدة، وطلعة لأبها، ومشوار للبيت في تبوك.'
+  narration_line_ids:
+  - t-01
+  transition: fade in from black
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-51.mp4
+  composite_label: *id001
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-01-52
+  section: 1
+  cut: trailer
+  type: map_animation
+  duration_s: 6.1
+  visual: 'Camera over the Riyadh–Jeddah corridor: an air arc with seat particles flowing both ways over the relief; existing
+    and committed lines, trains running.'
+  data_source: S-xt-001; S-xt-002; cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/geojson/committed.geojson;
+    cop-dem-glo30-align-3as-2026-11-01
+  on_screen_text:
+    en: 'Jeddah–Riyadh in 2025: about 9.8 million scheduled airline seats both ways, fifth among OAG''s ten busiest routes
+      in the world.'
+    ar: 'جدة–الرياض في 2025: حوالي 9.8 مليون مقعد طيران مجدول بالاتجاهين، والخامس بين أكثر عشرة خطوط ازدحاماً في العالم حسب
+      أو إيه جي.'
+  narration_line_ids:
+  - t-02
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-01-52.mp4
+  source_caption:
+    en: 'Source: OAG, Busiest Routes 2025 · seats are capacity, not passengers'
+    ar: 'المصدر: OAG، Busiest Routes 2025 · المقاعد سعة، مو ركاب'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-02-51
+  section: 2
+  cut: trailer
+  type: map_animation
+  duration_s: 6.0
+  visual: 'West and south of the Kingdom over the relief: the existing passenger lines with trains running; Taif, Tabuk, Abha,
+    Najran and Jazan light in turn, each with a true-scale 10 km ring and a warning pulse.'
+  data_source: S-cp2-gastat-007; docs/coverage.md; cities/ksa/lines/stations.geojson; cities/ksa/lines/geojson/existing.geojson;
+    cop-dem-glo30-align-3as-2026-11-01
+  on_screen_text:
+    en: 'Taif, Tabuk, Abha, Najran and Jazan: no passenger rail station within 10 km of any of them today (rings: 10 km).'
+    ar: 'الطائف وتبوك وأبها ونجران وجازان: ولا وحدة منها عندها محطة قطار ركاب في حدود 10 كيلومتر اليوم (الدوائر: 10 كيلومتر).'
+  narration_line_ids:
+  - t-03
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-02-51.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-03-51
+  section: 3
+  cut: trailer
+  type: map_animation
+  duration_s: 4.3
+  visual: National relief map; population dots for every governorate and city zone grow in from the largest down, sized by
+    census population.
+  data_source: S-r10-024; cities/ksa/zones/zones.geojson; S-cp2-gastat-007; cop-dem-glo30-align-3as-2026-11-01
+  on_screen_text:
+    en: 'Saudi Arabia in mid-2024: 35.3 million people (GASTAT). Dots: governorates and city zones, sized by census population.'
+    ar: 'السعودية في منتصف 2024: 35.3 مليون نسمة (الهيئة العامة للإحصاء). النقاط: محافظات وأجزاء مدن، حجمها حسب سكانها في
+      التعداد.'
+  narration_line_ids:
+  - t-04
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-03-51.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-04-51
+  section: 4
+  cut: trailer
+  type: map_animation
+  duration_s: 4.8
+  visual: 'Riyadh–Jeddah corridor: the study''s rail corridor sketches drawn dotted; a rail dot on the fastest case''s alignment
+    races an air dot on its arc, both timed in proportion to the modelled door-to-door times; air arrives first.'
+  data_source: runs/study/rj/times-s1/times.csv; runs/study/rj/times-s1/air.json; docs/rj-routes-study.md; cities/ksa/lines/geojson/existing.geojson;
+    cop-dem-glo30-align-3as-2026-11-01
+  on_screen_text:
+    en: 'Riyadh–Jeddah, door to door: air beats every rail case studied. The dots run at the study''s door-to-door times.'
+    ar: 'الرياض–جدة من الباب إلى الباب: الطيارة تسبق كل حالات القطار في الدراسة. النقطتين تمشي بأزمنة الدراسة.'
+  narration_line_ids:
+  - t-05
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-04-51.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-06-51
+  section: 6
+  cut: trailer
+  type: map_animation
+  duration_s: 7.5
+  visual: 'Low camera over the Taif escarpment (Copernicus relief at full detail): the Taif spur alignment draws itself up
+    the slope from Makkah; neighbouring corridor sketches fade in; Haramain trains run below.'
+  data_source: runs/align/corridors-s1/S3-branch_spur-at-ta-if/alignment.geojson; cop-dem-glo30-align-3as-2026-11-01; docs/costs.md;
+    A-cost-008; cities/ksa/lines/geojson/existing.geojson
+  on_screen_text:
+    en: Every candidate line is routed over Copernicus terrain data and priced from the study's cost register, with an overrun
+      uplift.
+    ar: كل خط مقترح انرسم فوق بيانات تضاريس كوبرنيكوس، وانسعّر من سجل التكاليف في الدراسة، مع زيادة للتجاوزات.
+  narration_line_ids:
+  - t-06
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-06-51.mp4
+  layer_legend: true
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+- id: sh-07-51
+  section: 7
+  cut: trailer
+  type: chart
+  duration_s: 4.3
+  visual: Over the dimmed national map, every logged layout evaluation of the optimiser appears one by one as a dot (cost
+    across, benefits minus costs in the worst population case up); layouts kept by the judge in green.
+  data_source: runs/r6/results.tsv; docs/r6-topology.md
+  on_screen_text:
+    en: One frozen appraisal model, 'the judge', scored every layout over 10,000 Monte Carlo draws. Each dot is one logged
+      attempt.
+    ar: حَكَم تقييم واحد مجمّد قيّم كل مخطط على 10,000 سحبة مونت كارلو. وكل نقطة محاولة مسجّلة.
+  narration_line_ids:
+  - t-07
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-07-51.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: false
+- id: sh-08-51
+  section: 8
+  cut: trailer
+  type: map_animation
+  duration_s: 7.1
+  visual: 'Camera over the Eastern Province and Riyadh: the three new stations of the central case (Al Jubayl, Dhahran, Duruma)
+    pulse on the existing lines; a range bar grows from 4.0 to 5.6 billion SAR against break-even.'
+  data_source: runs/r6/top5/top5.csv; docs/r6-topology.md; S-r10-056; cities/ksa/corridors/station_addition/S5-station_addition-al-jubayl.yaml;
+    cities/ksa/corridors/station_addition/S5-station_addition-dhahran.yaml; cities/ksa/corridors/station_addition/S5-station_addition-duruma.yaml;
+    cities/ksa/lines/geojson/existing.geojson; cop-dem-glo30-align-3as-2026-11-01
+  on_screen_text:
+    en: 'Central case: new stations at Al Jubayl, Dhahran and Duruma. About 6 riyals back per riyal spent in the middle case;
+      even at high cost, benefits exceed costs by 4.0 to 5.6 billion SAR (2025 prices, 60 years).'
+    ar: 'الحالة المركزية: محطات جديدة في الجبيل والظهران وضرما. في الحالة الوسطى كل ريال ينصرف يرجّع حوالي 6 ريالات، وحتى
+      مع التكلفة المرتفعة المنافع تزيد على التكاليف بين 4.0 و5.6 مليار ريال (بأسعار 2025، على 60 سنة).'
+  narration_line_ids:
+  - t-08
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-51.mp4
+  extra_figures:
+  - '2025'
+  - '60'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-52
+  section: 8
+  cut: trailer
+  type: chart
+  duration_s: 5.0
+  visual: 'Over the dimmed map, two range bars (fully public; PPP with availability payments) grow to the right of zero: the
+    net cost to the state for the central case, with the median marked.'
+  data_source: runs/r7/fiscal/fiscal.json; docs/executive-summary.en.md
+  on_screen_text:
+    en: 'Net cost to the state over 60 years, central case: above zero under every delivery model tested.'
+    ar: 'صافي التكلفة على الدولة خلال 60 سنة، الحالة المركزية: فوق الصفر في كل نماذج التنفيذ اللي انختبرت.'
+  narration_line_ids:
+  - t-09
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-52.mp4
+  extra_figures:
+  - '60'
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: false
+- id: sh-08-53
+  section: 8
+  cut: trailer
+  type: map_animation
+  duration_s: 4.9
+  visual: 'Night camera pulls back over the whole Kingdom: every existing and committed line glows, trains run, cities light.'
+  data_source: cities/ksa/lines/geojson/existing.geojson; cities/ksa/lines/geojson/committed.geojson; cities/ksa/zones/regions.geojson;
+    cop-dem-glo30-align-3as-2026-11-01
+  on_screen_text:
+    en: 'A railway that connects the country: a possibility, not a promise.'
+    ar: 'سكة تربط البلد: احتمال، مو وعد.'
+  narration_line_ids:
+  - t-10
+  transition: cut
+  footer: none
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-53.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)
+  layer_legend: true
+- id: sh-08-54
+  section: 8
+  cut: trailer
+  type: title
+  duration_s: 2.6
+  visual: Title over the darkened national map, then the single closing notice (synthetic demand, uncalibrated) and the narration,
+    map, relief and statistics credits.
+  data_source: cities/ksa/lines/geojson/existing.geojson
+  on_screen_text:
+    en: A Railway to Connect the Country
+    ar: سكة تربط البلد
+  narration_line_ids:
+  - t-11
+  transition: fade to black
+  footer: synthetic
+  renderer: sim_map
+  osm_credit: true
+  ai_generated: false
+  output: film/renders/sh-08-54.mp4
+  extra_credit: Copernicus WorldDEM-30 credit line (hillshade)

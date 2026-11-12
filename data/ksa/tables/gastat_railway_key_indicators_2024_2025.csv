@@ -1,0 +1,16 @@
+indicator,unit,y2024,y2025,locator
+intracity_railway_passengers,million passengers,31.1,145.4,p1 Key Indicators table
+intercity_railway_passengers,million passengers,11.6,10.9,p1 Key Indicators table
+intercity_passenger_train_trips,trips,35614,42827,p1 Key Indicators table
+railway_freight_trips,trips,6807,8885,p1 Key Indicators table
+freight_transported,million tons,15.6,16.1,p1 Key Indicators table
+containers_transported,thousand TEUs,887.9,915.4,p1 Key Indicators table
+total_railway_passengers,million passengers,42.7,156.4,p1 lead paragraph
+passenger_km_total,million passenger-km,3724.3,3609.3,p1 passenger transport performance
+passenger_km_haramain_hsr,million passenger-km,,2743,p1 passenger transport performance (approximately; 76.0% share; 2024 not printed)
+passenger_km_east_train,million passenger-km,,496,p1 passenger transport performance (2024 not printed)
+passenger_km_north_train,million passenger-km,,370,p1 passenger transport performance (2024 not printed)
+freight_ton_km_total,million ton-km,16427.7,17011.5,p1 freight transport performance
+on_time_performance_haramain_hsr,percent,,97.8,p1 operational performance
+on_time_performance_east_train,percent,,96.1,p1 operational performance
+on_time_performance_north_train,percent,,94.3,p1 operational performance

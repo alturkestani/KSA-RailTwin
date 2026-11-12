@@ -1,0 +1,5830 @@
+{
+ "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+ "fast_label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6",
+ "refs": {
+  "Riyadh": {
+   "city": "Riyadh",
+   "ref": "riyadh",
+   "kind": "metro",
+   "lat": 24.638916,
+   "lon": 46.71601,
+   "name_en": "Riyadh",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/commuter_belt/S4-commuter_belt-riyadh-000.yaml",
+   "required": true
+  },
+  "Jeddah": {
+   "city": "Jeddah",
+   "ref": "jeddah",
+   "kind": "metro",
+   "lat": 21.550443,
+   "lon": 39.174236,
+   "name_en": "Jeddah",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/commuter_belt/S4-commuter_belt-jeddah-000.yaml",
+   "required": true
+  },
+  "Makkah": {
+   "city": "Makkah",
+   "ref": "makkah",
+   "kind": "metro",
+   "anchor_family": "commuter_belt",
+   "lat": 21.420847,
+   "lon": 39.826869,
+   "name_en": "Makkah",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/commuter_belt/S4-commuter_belt-makkah-045.yaml",
+   "required": true
+  },
+  "Madinah": {
+   "city": "Madinah",
+   "ref": "madinah",
+   "kind": "metro",
+   "anchor_family": "trunk_gap",
+   "lat": 24.471153,
+   "lon": 39.611122,
+   "name_en": "Madinah",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/trunk_gap/S2-trunk_gap-madinah-ar-rass.yaml",
+   "required": true
+  },
+  "Dammam–Khobar–Dhahran": {
+   "city": "Dammam–Khobar–Dhahran",
+   "ref": "dammam-khobar-dhahran",
+   "kind": "metro",
+   "lat": 26.436782,
+   "lon": 50.103999,
+   "name_en": "Dammam–Khobar–Dhahran",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/commuter_belt/S4-commuter_belt-dammam-khobar-dhahran-180.yaml",
+   "required": true
+  },
+  "Taif": {
+   "city": "Taif",
+   "ref": "taif",
+   "kind": "metro",
+   "lat": 21.27028,
+   "lon": 40.415831,
+   "name_en": "Taif",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/trunk_gap/S2-trunk_gap-taif-bisha.yaml",
+   "required": true
+  },
+  "Buraidah (Qassim)": {
+   "city": "Buraidah (Qassim)",
+   "ref": "buraidah",
+   "kind": "metro",
+   "lat": 26.331667,
+   "lon": 43.971667,
+   "name_en": "Buraidah",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/commuter_belt/S4-commuter_belt-buraidah-090.yaml",
+   "required": true
+  },
+  "Tabuk": {
+   "city": "Tabuk",
+   "ref": "tabuk",
+   "kind": "metro",
+   "lat": 28.401254,
+   "lon": 36.567049,
+   "name_en": "Tabuk",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/trunk_gap/S2-trunk_gap-tabuk-sakaka.yaml",
+   "required": true
+  },
+  "Abha–Khamis Mushait": {
+   "city": "Abha–Khamis Mushait",
+   "ref": "abha-khamis-mushait",
+   "kind": "metro",
+   "lat": 18.216428,
+   "lon": 42.50436,
+   "name_en": "Abha–Khamis Mushait",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/commuter_belt/S4-commuter_belt-abha-khamis-mushait-045.yaml",
+   "required": true
+  },
+  "Jazan": {
+   "city": "Jazan",
+   "ref": "jazan",
+   "kind": "metro",
+   "lat": 16.894719,
+   "lon": 42.557976,
+   "name_en": "Jazan",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/commuter_belt/S4-commuter_belt-jazan-090.yaml",
+   "required": true
+  },
+  "Najran": {
+   "city": "Najran",
+   "ref": "najran",
+   "kind": "metro",
+   "lat": 17.543981,
+   "lon": 44.224682,
+   "name_en": "Najran",
+   "ref_source": "A-screen-013 metro anchor",
+   "ref_file": "cities/ksa/corridors/trunk_gap/S2-trunk_gap-abha-khamis-mushait-najran.yaml",
+   "required": true
+  },
+  "Yanbu": {
+   "city": "Yanbu",
+   "ref": "yanbu",
+   "kind": "town",
+   "lat": 24.089019,
+   "lon": 38.068708,
+   "name_en": "Yanbu'",
+   "ref_source": "register madinah:node:3148037089",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind.yaml",
+   "required": true
+  },
+  "Bisha": {
+   "city": "Bisha",
+   "ref": "bisha",
+   "kind": "town",
+   "lat": 20.0,
+   "lon": 42.6,
+   "name_en": "Bisha",
+   "ref_source": "register asir:node:983083565",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-bisha.yaml",
+   "required": true
+  },
+  "Arar": {
+   "city": "Arar",
+   "ref": "arar",
+   "kind": "town",
+   "lat": 30.981553,
+   "lon": 41.016479,
+   "name_en": "Arar",
+   "ref_source": "register northern_borders:node:1236747164",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-arar.yaml",
+   "required": true
+  },
+  "Hafar Al-Batin": {
+   "city": "Hafar Al-Batin",
+   "ref": "hafar-al-batin",
+   "kind": "town",
+   "lat": 28.432808,
+   "lon": 45.962753,
+   "name_en": "Hafar Al-Batin",
+   "ref_source": "register eastern:node:983083568",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-hafar-al-batin.yaml",
+   "required": true
+  },
+  "Sakaka": {
+   "city": "Sakaka",
+   "ref": "sakaka",
+   "kind": "town",
+   "lat": 29.978401,
+   "lon": 40.20477,
+   "name_en": "Sakaka",
+   "ref_source": "register al_jouf:node:1236740006",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-sakaka.yaml",
+   "required": true
+  },
+  "Al-Kharj": {
+   "city": "Al-Kharj",
+   "ref": "al-kharj",
+   "kind": "town",
+   "lat": 23.83044,
+   "lon": 47.684013,
+   "name_en": "Al-Kharj",
+   "ref_source": "register riyadh:name:Al-Kharj@23.830,47.684",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-al-kharj.yaml",
+   "required": true
+  },
+  "Al Jubayl": {
+   "city": "Al Jubayl",
+   "ref": "al-jubayl",
+   "kind": "town",
+   "lat": 27.000697,
+   "lon": 49.653216,
+   "name_en": "Al Jubayl",
+   "ref_source": "register eastern:node:38903292",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-al-jubayl.yaml",
+   "required": true
+  },
+  "Ha'il": {
+   "city": "Ha'il",
+   "ref": "ha-il",
+   "kind": "town",
+   "lat": 27.520872,
+   "lon": 41.698599,
+   "name_en": "Ha'il",
+   "ref_source": "register hail:node:346801397",
+   "ref_file": "cities/ksa/corridors/trunk_gap/S2-trunk_gap-ar-rass-ha-il.yaml",
+   "required": false
+  },
+  "Ar Rass": {
+   "city": "Ar Rass",
+   "ref": "ar-rass",
+   "kind": "town",
+   "lat": 25.86852,
+   "lon": 43.503898,
+   "name_en": "Ar Rass",
+   "ref_source": "register qassim:node:346703530",
+   "ref_file": "cities/ksa/corridors/branch_spur/S3-branch_spur-ar-rass.yaml",
+   "required": false
+  }
+ },
+ "runs": {
+  "all": [
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jeddah-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     },
+     {
+      "id": "S5-station_addition-thuwal",
+      "phase": 2050
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14324.6,
+       "robust_npv_2030": -24922.0,
+       "capex_p10": 8484.4,
+       "capex_p50": 15626.8,
+       "capex_p90": 58847.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22695.6,
+       "robust_npv_2030": -39895.5,
+       "capex_p10": 15328.6,
+       "capex_p50": 30390.2,
+       "capex_p90": 121022.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "option": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20754.1,
+       "robust_npv_2030": -36040.2,
+       "capex_p10": 11033.8,
+       "capex_p50": 19149.8,
+       "capex_p90": 68542.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 402.748
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16598.9,
+       "robust_npv_2030": -29007.5,
+       "capex_p10": 9200.2,
+       "capex_p50": 15984.6,
+       "capex_p90": 57257.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -24819.1,
+       "robust_npv_2030": -42733.9,
+       "capex_p10": 12655.6,
+       "capex_p50": 22036.6,
+       "capex_p90": 79140.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16488.1,
+       "robust_npv_2030": -28707.9,
+       "capex_p10": 9399.1,
+       "capex_p50": 16853.6,
+       "capex_p90": 62075.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 3916.2,
+       "robust_npv_2030": 1941.5,
+       "capex_p10": 4917.7,
+       "capex_p50": 8732.5,
+       "capex_p90": 31885.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10911.1,
+       "robust_npv_2030": -18917.4,
+       "capex_p10": 6105.8,
+       "capex_p50": 10672.4,
+       "capex_p90": 38522.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15797.1,
+       "robust_npv_2030": -27358.3,
+       "capex_p10": 8564.3,
+       "capex_p50": 14824.2,
+       "capex_p90": 52927.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3693.0,
+       "robust_npv_2030": -6666.5,
+       "capex_p10": 2738.4,
+       "capex_p50": 4882.5,
+       "capex_p90": 17985.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23181.7,
+       "robust_npv_2030": -41205.5,
+       "capex_p10": 14646.7,
+       "capex_p50": 32195.7,
+       "capex_p90": 136421.5,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18163.0,
+       "robust_npv_2030": -31392.8,
+       "capex_p10": 5494.2,
+       "capex_p50": 9518.8,
+       "capex_p90": 34158.8,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -6902.0,
+       "robust_npv_2030": -12329.8,
+       "capex_p10": 2619.4,
+       "capex_p50": 4557.0,
+       "capex_p90": 16411.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S4-commuter_belt-jeddah-315",
+       "option": "S4-commuter_belt-jeddah-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -12314.2,
+       "robust_npv_2030": -20635.2,
+       "capex_p10": 3423.7,
+       "capex_p50": 6008.8,
+       "capex_p90": 21775.7,
+       "reach_gain_120_alone": 41154.0,
+       "route_km": 84.509
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-thuwal",
+       "option": "S5-station_addition-thuwal",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -2402.6,
+       "robust_npv_2030": -4075.5,
+       "capex_p10": 1738.5,
+       "capex_p50": 2950.1,
+       "capex_p90": 10429.6,
+       "reach_gain_120_alone": 34350.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -200683.5,
+      "robust_npv_sum_of_row_minima": -200832.1,
+      "capex_p10_sum": 116884.2,
+      "capex_p50_sum": 215332.4,
+      "capex_p90_sum": 810927.4,
+      "reach_gain_120_union": 471636.0,
+      "n_corridors": 17,
+      "route_km": 3099.6,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "landbridge:riyadh",
+       "nearest_name": "Riyadh (terminal site not published)",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "hhr:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha-va0f89039:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315-va0f89039:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar-va0f89039:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj-va0f89039:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:thuwal",
+      "inserted_by_station_addition": true,
+      "joined_by": "S4-commuter_belt-jeddah-315-va0f89039:thuwal",
+      "joined_line": "S4-commuter_belt-jeddah-315-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:al-jubayl",
+      "inserted_by_station_addition": true,
+      "joined_by": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+      "joined_line": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": [
+     "S4-commuter_belt-jeddah-315"
+    ]
+   },
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-riyadh-hafar-al-batin",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jeddah-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     },
+     {
+      "id": "S5-station_addition-thuwal",
+      "phase": 2050
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14324.6,
+       "robust_npv_2030": -24922.0,
+       "capex_p10": 8484.4,
+       "capex_p50": 15626.8,
+       "capex_p90": 58847.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22695.6,
+       "robust_npv_2030": -39895.5,
+       "capex_p10": 15328.6,
+       "capex_p50": 30390.2,
+       "capex_p90": 121022.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16598.9,
+       "robust_npv_2030": -29007.5,
+       "capex_p10": 9200.2,
+       "capex_p50": 15984.6,
+       "capex_p90": 57257.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-riyadh-hafar-al-batin",
+       "option": "S2-trunk_gap-riyadh-hafar-al-batin-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20195.7,
+       "robust_npv_2030": -36865.2,
+       "capex_p10": 13124.2,
+       "capex_p50": 22882.5,
+       "capex_p90": 82640.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 488.299
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -24819.1,
+       "robust_npv_2030": -42733.9,
+       "capex_p10": 12655.6,
+       "capex_p50": 22036.6,
+       "capex_p90": 79140.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16488.1,
+       "robust_npv_2030": -28707.9,
+       "capex_p10": 9399.1,
+       "capex_p50": 16853.6,
+       "capex_p90": 62075.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 3916.2,
+       "robust_npv_2030": 1941.5,
+       "capex_p10": 4917.7,
+       "capex_p50": 8732.5,
+       "capex_p90": 31885.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10911.1,
+       "robust_npv_2030": -18917.4,
+       "capex_p10": 6105.8,
+       "capex_p50": 10672.4,
+       "capex_p90": 38522.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15797.1,
+       "robust_npv_2030": -27358.3,
+       "capex_p10": 8564.3,
+       "capex_p50": 14824.2,
+       "capex_p90": 52927.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3693.0,
+       "robust_npv_2030": -6666.5,
+       "capex_p10": 2738.4,
+       "capex_p50": 4882.5,
+       "capex_p90": 17985.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23181.7,
+       "robust_npv_2030": -41205.5,
+       "capex_p10": 14646.7,
+       "capex_p50": 32195.7,
+       "capex_p90": 136421.5,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18163.0,
+       "robust_npv_2030": -31392.8,
+       "capex_p10": 5494.2,
+       "capex_p50": 9518.8,
+       "capex_p90": 34158.8,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -6902.0,
+       "robust_npv_2030": -12329.8,
+       "capex_p10": 2619.4,
+       "capex_p50": 4557.0,
+       "capex_p90": 16411.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S4-commuter_belt-jeddah-315",
+       "option": "S4-commuter_belt-jeddah-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -12314.2,
+       "robust_npv_2030": -20635.2,
+       "capex_p10": 3423.7,
+       "capex_p50": 6008.8,
+       "capex_p90": 21775.7,
+       "reach_gain_120_alone": 41154.0,
+       "route_km": 84.509
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-thuwal",
+       "option": "S5-station_addition-thuwal",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -2402.6,
+       "robust_npv_2030": -4075.5,
+       "capex_p10": 1738.5,
+       "capex_p50": 2950.1,
+       "capex_p90": 10429.6,
+       "reach_gain_120_alone": 34350.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -200125.1,
+      "robust_npv_sum_of_row_minima": -200273.7,
+      "capex_p10_sum": 118974.6,
+      "capex_p50_sum": 219065.1,
+      "capex_p90_sum": 825025.6,
+      "reach_gain_120_union": 471636.0,
+      "n_corridors": 17,
+      "route_km": 3185.1,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "S2-trunk_gap-riyadh-hafar-al-batin-va0f89039:riyadh",
+       "nearest_name": "Riyadh",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "hhr:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha-va0f89039:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315-va0f89039:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar-va0f89039:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-riyadh-hafar-al-batin-va0f89039:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj-va0f89039:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "gcc-railway-ksa:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:thuwal",
+      "inserted_by_station_addition": true,
+      "joined_by": "S4-commuter_belt-jeddah-315-va0f89039:thuwal",
+      "joined_line": "S4-commuter_belt-jeddah-315-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": [
+     "S4-commuter_belt-jeddah-315"
+    ]
+   },
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jeddah-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     },
+     {
+      "id": "S5-station_addition-thuwal",
+      "phase": 2050
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14324.6,
+       "robust_npv_2030": -24922.0,
+       "capex_p10": 8484.4,
+       "capex_p50": 15626.8,
+       "capex_p90": 58847.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22695.6,
+       "robust_npv_2030": -39895.5,
+       "capex_p10": 15328.6,
+       "capex_p50": 30390.2,
+       "capex_p90": 121022.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "option": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20754.1,
+       "robust_npv_2030": -36040.2,
+       "capex_p10": 11033.8,
+       "capex_p50": 19149.8,
+       "capex_p90": 68542.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 402.748
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -24819.1,
+       "robust_npv_2030": -42733.9,
+       "capex_p10": 12655.6,
+       "capex_p50": 22036.6,
+       "capex_p90": 79140.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16488.1,
+       "robust_npv_2030": -28707.9,
+       "capex_p10": 9399.1,
+       "capex_p50": 16853.6,
+       "capex_p90": 62075.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 3916.2,
+       "robust_npv_2030": 1941.5,
+       "capex_p10": 4917.7,
+       "capex_p50": 8732.5,
+       "capex_p90": 31885.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10911.1,
+       "robust_npv_2030": -18917.4,
+       "capex_p10": 6105.8,
+       "capex_p50": 10672.4,
+       "capex_p90": 38522.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15797.1,
+       "robust_npv_2030": -27358.3,
+       "capex_p10": 8564.3,
+       "capex_p50": 14824.2,
+       "capex_p90": 52927.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3693.0,
+       "robust_npv_2030": -6666.5,
+       "capex_p10": 2738.4,
+       "capex_p50": 4882.5,
+       "capex_p90": 17985.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "option": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14713.4,
+       "robust_npv_2030": -26417.7,
+       "capex_p10": 10810.2,
+       "capex_p50": 20839.4,
+       "capex_p90": 81313.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 226.782
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23181.7,
+       "robust_npv_2030": -41205.5,
+       "capex_p10": 14646.7,
+       "capex_p50": 32195.7,
+       "capex_p90": 136421.5,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18163.0,
+       "robust_npv_2030": -31392.8,
+       "capex_p10": 5494.2,
+       "capex_p50": 9518.8,
+       "capex_p90": 34158.8,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -6902.0,
+       "robust_npv_2030": -12329.8,
+       "capex_p10": 2619.4,
+       "capex_p50": 4557.0,
+       "capex_p90": 16411.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S4-commuter_belt-jeddah-315",
+       "option": "S4-commuter_belt-jeddah-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -12314.2,
+       "robust_npv_2030": -20635.2,
+       "capex_p10": 3423.7,
+       "capex_p50": 6008.8,
+       "capex_p90": 21775.7,
+       "reach_gain_120_alone": 41154.0,
+       "route_km": 84.509
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-thuwal",
+       "option": "S5-station_addition-thuwal",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -2402.6,
+       "robust_npv_2030": -4075.5,
+       "capex_p10": 1738.5,
+       "capex_p50": 2950.1,
+       "capex_p90": 10429.6,
+       "reach_gain_120_alone": 34350.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -198798.1,
+      "robust_npv_sum_of_row_minima": -198946.6,
+      "capex_p10_sum": 118494.2,
+      "capex_p50_sum": 220187.2,
+      "capex_p90_sum": 834983.1,
+      "reach_gain_120_union": 471636.0,
+      "n_corridors": 17,
+      "route_km": 3001.4,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "landbridge:riyadh",
+       "nearest_name": "Riyadh (terminal site not published)",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S4-commuter_belt-jeddah-315-va0f89039:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha-va0f89039:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315-va0f89039:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar-va0f89039:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj-va0f89039:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:thuwal",
+      "inserted_by_station_addition": true,
+      "joined_by": "S4-commuter_belt-jeddah-315-va0f89039:thuwal",
+      "joined_line": "S4-commuter_belt-jeddah-315-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:madinah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+      "joined_line": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:al-jubayl",
+      "inserted_by_station_addition": true,
+      "joined_by": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+      "joined_line": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": [
+     "S4-commuter_belt-jeddah-315"
+    ]
+   }
+  ],
+  "no_chord_band": [
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14324.6,
+       "robust_npv_2030": -24922.0,
+       "capex_p10": 8484.4,
+       "capex_p50": 15626.8,
+       "capex_p90": 58847.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22695.6,
+       "robust_npv_2030": -39895.5,
+       "capex_p10": 15328.6,
+       "capex_p50": 30390.2,
+       "capex_p90": 121022.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "option": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20754.1,
+       "robust_npv_2030": -36040.2,
+       "capex_p10": 11033.8,
+       "capex_p50": 19149.8,
+       "capex_p90": 68542.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 402.748
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16598.9,
+       "robust_npv_2030": -29007.5,
+       "capex_p10": 9200.2,
+       "capex_p50": 15984.6,
+       "capex_p90": 57257.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -24819.1,
+       "robust_npv_2030": -42733.9,
+       "capex_p10": 12655.6,
+       "capex_p50": 22036.6,
+       "capex_p90": 79140.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16488.1,
+       "robust_npv_2030": -28707.9,
+       "capex_p10": 9399.1,
+       "capex_p50": 16853.6,
+       "capex_p90": 62075.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 3916.2,
+       "robust_npv_2030": 1941.5,
+       "capex_p10": 4917.7,
+       "capex_p50": 8732.5,
+       "capex_p90": 31885.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10911.1,
+       "robust_npv_2030": -18917.4,
+       "capex_p10": 6105.8,
+       "capex_p50": 10672.4,
+       "capex_p90": 38522.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15797.1,
+       "robust_npv_2030": -27358.3,
+       "capex_p10": 8564.3,
+       "capex_p50": 14824.2,
+       "capex_p90": 52927.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3693.0,
+       "robust_npv_2030": -6666.5,
+       "capex_p10": 2738.4,
+       "capex_p50": 4882.5,
+       "capex_p90": 17985.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "option": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14713.4,
+       "robust_npv_2030": -26417.7,
+       "capex_p10": 10810.2,
+       "capex_p50": 20839.4,
+       "capex_p90": 81313.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 226.782
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23181.7,
+       "robust_npv_2030": -41205.5,
+       "capex_p10": 14646.7,
+       "capex_p50": 32195.7,
+       "capex_p90": 136421.5,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18163.0,
+       "robust_npv_2030": -31392.8,
+       "capex_p10": 5494.2,
+       "capex_p50": 9518.8,
+       "capex_p90": 34158.8,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -6902.0,
+       "robust_npv_2030": -12329.8,
+       "capex_p10": 2619.4,
+       "capex_p50": 4557.0,
+       "capex_p90": 16411.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -200761.3,
+      "robust_npv_sum_of_row_minima": -200828.7,
+      "capex_p10_sum": 122532.2,
+      "capex_p50_sum": 227212.9,
+      "capex_p90_sum": 860035.2,
+      "reach_gain_120_union": 430482.0,
+      "n_corridors": 16,
+      "route_km": 3241.9,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "landbridge:riyadh",
+       "nearest_name": "Riyadh (terminal site not published)",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha-va0f89039:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315-va0f89039:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar-va0f89039:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj-va0f89039:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:madinah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+      "joined_line": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:al-jubayl",
+      "inserted_by_station_addition": true,
+      "joined_by": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+      "joined_line": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": []
+   },
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-at-ta-if",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14324.6,
+       "robust_npv_2030": -24922.0,
+       "capex_p10": 8484.4,
+       "capex_p50": 15626.8,
+       "capex_p90": 58847.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22695.6,
+       "robust_npv_2030": -39895.5,
+       "capex_p10": 15328.6,
+       "capex_p50": 30390.2,
+       "capex_p90": 121022.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "option": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20754.1,
+       "robust_npv_2030": -36040.2,
+       "capex_p10": 11033.8,
+       "capex_p50": 19149.8,
+       "capex_p90": 68542.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 402.748
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16598.9,
+       "robust_npv_2030": -29007.5,
+       "capex_p10": 9200.2,
+       "capex_p50": 15984.6,
+       "capex_p90": 57257.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -24819.1,
+       "robust_npv_2030": -42733.9,
+       "capex_p10": 12655.6,
+       "capex_p50": 22036.6,
+       "capex_p90": 79140.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16488.1,
+       "robust_npv_2030": -28707.9,
+       "capex_p10": 9399.1,
+       "capex_p50": 16853.6,
+       "capex_p90": 62075.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 3916.2,
+       "robust_npv_2030": 1941.5,
+       "capex_p10": 4917.7,
+       "capex_p50": 8732.5,
+       "capex_p90": 31885.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10911.1,
+       "robust_npv_2030": -18917.4,
+       "capex_p10": 6105.8,
+       "capex_p50": 10672.4,
+       "capex_p90": 38522.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-at-ta-if",
+       "option": "S3-branch_spur-at-ta-if-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -12073.8,
+       "robust_npv_2030": -22666.7,
+       "capex_p10": 11314.1,
+       "capex_p50": 22912.5,
+       "capex_p90": 92568.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 160.525
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15797.1,
+       "robust_npv_2030": -27358.3,
+       "capex_p10": 8564.3,
+       "capex_p50": 14824.2,
+       "capex_p90": 52927.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3693.0,
+       "robust_npv_2030": -6666.5,
+       "capex_p10": 2738.4,
+       "capex_p50": 4882.5,
+       "capex_p90": 17985.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23181.7,
+       "robust_npv_2030": -41205.5,
+       "capex_p10": 14646.7,
+       "capex_p50": 32195.7,
+       "capex_p90": 136421.5,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18163.0,
+       "robust_npv_2030": -31392.8,
+       "capex_p10": 5494.2,
+       "capex_p50": 9518.8,
+       "capex_p90": 34158.8,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -6902.0,
+       "robust_npv_2030": -12329.8,
+       "capex_p10": 2619.4,
+       "capex_p50": 4557.0,
+       "capex_p90": 16411.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -198121.7,
+      "robust_npv_sum_of_row_minima": -198189.1,
+      "capex_p10_sum": 123036.1,
+      "capex_p50_sum": 229286.0,
+      "capex_p90_sum": 871290.7,
+      "reach_gain_120_union": 430482.0,
+      "n_corridors": 16,
+      "route_km": 3175.6,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "landbridge:riyadh",
+       "nearest_name": "Riyadh (terminal site not published)",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "S3-branch_spur-at-ta-if-va0f89039:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "hhr:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha-va0f89039:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315-va0f89039:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar-va0f89039:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj-va0f89039:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:makkah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-at-ta-if-va0f89039:makkah",
+      "joined_line": "S3-branch_spur-at-ta-if-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:al-jubayl",
+      "inserted_by_station_addition": true,
+      "joined_by": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+      "joined_line": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": []
+   },
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-riyadh-hafar-al-batin",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     },
+     {
+      "id": "S5-station_addition-al-oyun",
+      "phase": 2050
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14324.6,
+       "robust_npv_2030": -24922.0,
+       "capex_p10": 8484.4,
+       "capex_p50": 15626.8,
+       "capex_p90": 58847.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22695.6,
+       "robust_npv_2030": -39895.5,
+       "capex_p10": 15328.6,
+       "capex_p50": 30390.2,
+       "capex_p90": 121022.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16598.9,
+       "robust_npv_2030": -29007.5,
+       "capex_p10": 9200.2,
+       "capex_p50": 15984.6,
+       "capex_p90": 57257.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-riyadh-hafar-al-batin",
+       "option": "S2-trunk_gap-riyadh-hafar-al-batin-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20195.7,
+       "robust_npv_2030": -36865.2,
+       "capex_p10": 13124.2,
+       "capex_p50": 22882.5,
+       "capex_p90": 82640.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 488.299
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -24819.1,
+       "robust_npv_2030": -42733.9,
+       "capex_p10": 12655.6,
+       "capex_p50": 22036.6,
+       "capex_p90": 79140.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16488.1,
+       "robust_npv_2030": -28707.9,
+       "capex_p10": 9399.1,
+       "capex_p50": 16853.6,
+       "capex_p90": 62075.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 3916.2,
+       "robust_npv_2030": 1941.5,
+       "capex_p10": 4917.7,
+       "capex_p50": 8732.5,
+       "capex_p90": 31885.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10911.1,
+       "robust_npv_2030": -18917.4,
+       "capex_p10": 6105.8,
+       "capex_p50": 10672.4,
+       "capex_p90": 38522.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15797.1,
+       "robust_npv_2030": -27358.3,
+       "capex_p10": 8564.3,
+       "capex_p50": 14824.2,
+       "capex_p90": 52927.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3693.0,
+       "robust_npv_2030": -6666.5,
+       "capex_p10": 2738.4,
+       "capex_p50": 4882.5,
+       "capex_p90": 17985.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "option": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14713.4,
+       "robust_npv_2030": -26417.7,
+       "capex_p10": 10810.2,
+       "capex_p50": 20839.4,
+       "capex_p90": 81313.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 226.782
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23181.7,
+       "robust_npv_2030": -41205.5,
+       "capex_p10": 14646.7,
+       "capex_p50": 32195.7,
+       "capex_p90": 136421.5,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18163.0,
+       "robust_npv_2030": -31392.8,
+       "capex_p10": 5494.2,
+       "capex_p50": 9518.8,
+       "capex_p90": 34158.8,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -6902.0,
+       "robust_npv_2030": -12329.8,
+       "capex_p10": 2619.4,
+       "capex_p50": 4557.0,
+       "capex_p90": 16411.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-oyun",
+       "option": "S5-station_addition-al-oyun",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -751.8,
+       "robust_npv_2030": -1132.8,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -200257.3,
+      "robust_npv_sum_of_row_minima": -200336.6,
+      "capex_p10_sum": 124622.6,
+      "capex_p50_sum": 230945.6,
+      "capex_p90_sum": 874133.4,
+      "reach_gain_120_union": 430482.0,
+      "n_corridors": 16,
+      "route_km": 3327.4,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "S2-trunk_gap-riyadh-hafar-al-batin-va0f89039:riyadh",
+       "nearest_name": "Riyadh",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha-va0f89039:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315-va0f89039:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar-va0f89039:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-riyadh-hafar-al-batin-va0f89039:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj-va0f89039:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "gcc-railway-ksa:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:madinah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+      "joined_line": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-oyun",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-jarn",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": []
+   }
+  ],
+  "base_only": [
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -13866.6,
+       "robust_npv_2030": -24682.7,
+       "capex_p10": 9333.9,
+       "capex_p50": 17340.4,
+       "capex_p90": 65665.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22053.2,
+       "robust_npv_2030": -39500.6,
+       "capex_p10": 16403.8,
+       "capex_p50": 32559.1,
+       "capex_p90": 129652.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "option": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -19942.1,
+       "robust_npv_2030": -35609.2,
+       "capex_p10": 12542.9,
+       "capex_p50": 22193.8,
+       "capex_p90": 80654.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 402.748
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15898.1,
+       "robust_npv_2030": -28592.5,
+       "capex_p10": 10402.0,
+       "capex_p50": 18408.8,
+       "capex_p90": 66903.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23885.0,
+       "robust_npv_2030": -42211.9,
+       "capex_p10": 14359.5,
+       "capex_p50": 25473.6,
+       "capex_p90": 92815.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15862.8,
+       "robust_npv_2030": -28320.7,
+       "capex_p10": 10464.3,
+       "capex_p50": 19002.4,
+       "capex_p90": 70625.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 4309.1,
+       "robust_npv_2030": 2253.9,
+       "capex_p10": 5432.6,
+       "capex_p50": 9771.1,
+       "capex_p90": 36018.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10505.1,
+       "robust_npv_2030": -18663.2,
+       "capex_p10": 6814.5,
+       "capex_p50": 12102.0,
+       "capex_p90": 44210.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15207.7,
+       "robust_npv_2030": -27031.3,
+       "capex_p10": 9711.8,
+       "capex_p50": 17138.9,
+       "capex_p90": 62137.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3614.8,
+       "robust_npv_2030": -6671.1,
+       "capex_p10": 2996.3,
+       "capex_p50": 5402.6,
+       "capex_p90": 20055.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "option": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14175.9,
+       "robust_npv_2030": -26036.2,
+       "capex_p10": 11655.8,
+       "capex_p50": 22545.2,
+       "capex_p90": 88100.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 226.782
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20973.6,
+       "robust_npv_2030": -38309.2,
+       "capex_p10": 15077.1,
+       "capex_p50": 33064.0,
+       "capex_p90": 139876.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14903.9,
+       "robust_npv_2030": -27128.7,
+       "capex_p10": 6099.3,
+       "capex_p50": 10739.4,
+       "capex_p90": 39015.3,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -5589.0,
+       "robust_npv_2030": -10583.8,
+       "capex_p10": 2885.1,
+       "capex_p50": 5093.1,
+       "capex_p90": 18544.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -187804.6,
+      "robust_npv_sum_of_row_minima": -187871.9,
+      "capex_p10_sum": 134712.7,
+      "capex_p50_sum": 251783.2,
+      "capex_p90_sum": 957797.5,
+      "reach_gain_120_union": 430482.0,
+      "n_corridors": 16,
+      "route_km": 3241.9,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "landbridge:riyadh",
+       "nearest_name": "Riyadh (terminal site not published)",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:madinah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind:madinah",
+      "joined_line": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:al-jubayl",
+      "inserted_by_station_addition": true,
+      "joined_by": "S2-trunk_gap-al-jubayl-hafar-al-batin:al-jubayl",
+      "joined_line": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": []
+   },
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-at-ta-if",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -13866.6,
+       "robust_npv_2030": -24682.7,
+       "capex_p10": 9333.9,
+       "capex_p50": 17340.4,
+       "capex_p90": 65665.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22053.2,
+       "robust_npv_2030": -39500.6,
+       "capex_p10": 16403.8,
+       "capex_p50": 32559.1,
+       "capex_p90": 129652.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "option": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -19942.1,
+       "robust_npv_2030": -35609.2,
+       "capex_p10": 12542.9,
+       "capex_p50": 22193.8,
+       "capex_p90": 80654.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 402.748
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15898.1,
+       "robust_npv_2030": -28592.5,
+       "capex_p10": 10402.0,
+       "capex_p50": 18408.8,
+       "capex_p90": 66903.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23885.0,
+       "robust_npv_2030": -42211.9,
+       "capex_p10": 14359.5,
+       "capex_p50": 25473.6,
+       "capex_p90": 92815.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15862.8,
+       "robust_npv_2030": -28320.7,
+       "capex_p10": 10464.3,
+       "capex_p50": 19002.4,
+       "capex_p90": 70625.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 4309.1,
+       "robust_npv_2030": 2253.9,
+       "capex_p10": 5432.6,
+       "capex_p50": 9771.1,
+       "capex_p90": 36018.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10505.1,
+       "robust_npv_2030": -18663.2,
+       "capex_p10": 6814.5,
+       "capex_p50": 12102.0,
+       "capex_p90": 44210.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-at-ta-if",
+       "option": "S3-branch_spur-at-ta-if",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -11697.4,
+       "robust_npv_2030": -22455.6,
+       "capex_p10": 11940.6,
+       "capex_p50": 24176.3,
+       "capex_p90": 97597.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 160.525
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15207.7,
+       "robust_npv_2030": -27031.3,
+       "capex_p10": 9711.8,
+       "capex_p50": 17138.9,
+       "capex_p90": 62137.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3614.8,
+       "robust_npv_2030": -6671.1,
+       "capex_p10": 2996.3,
+       "capex_p50": 5402.6,
+       "capex_p90": 20055.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20973.6,
+       "robust_npv_2030": -38309.2,
+       "capex_p10": 15077.1,
+       "capex_p50": 33064.0,
+       "capex_p90": 139876.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14903.9,
+       "robust_npv_2030": -27128.7,
+       "capex_p10": 6099.3,
+       "capex_p50": 10739.4,
+       "capex_p90": 39015.3,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -5589.0,
+       "robust_npv_2030": -10583.8,
+       "capex_p10": 2885.1,
+       "capex_p50": 5093.1,
+       "capex_p90": 18544.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -185326.1,
+      "robust_npv_sum_of_row_minima": -185393.4,
+      "capex_p10_sum": 134997.5,
+      "capex_p50_sum": 253414.3,
+      "capex_p90_sum": 967294.5,
+      "reach_gain_120_union": 430482.0,
+      "n_corridors": 16,
+      "route_km": 3175.6,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "landbridge:riyadh",
+       "nearest_name": "Riyadh (terminal site not published)",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "S3-branch_spur-at-ta-if:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "hhr:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:makkah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-at-ta-if:makkah",
+      "joined_line": "S3-branch_spur-at-ta-if",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:al-jubayl",
+      "inserted_by_station_addition": true,
+      "joined_by": "S2-trunk_gap-al-jubayl-hafar-al-batin:al-jubayl",
+      "joined_line": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": []
+   },
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-riyadh-hafar-al-batin",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050
+     },
+     {
+      "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jarn",
+      "phase": 2050
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -13866.6,
+       "robust_npv_2030": -24682.7,
+       "capex_p10": 9333.9,
+       "capex_p50": 17340.4,
+       "capex_p90": 65665.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22053.2,
+       "robust_npv_2030": -39500.6,
+       "capex_p10": 16403.8,
+       "capex_p50": 32559.1,
+       "capex_p90": 129652.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15898.1,
+       "robust_npv_2030": -28592.5,
+       "capex_p10": 10402.0,
+       "capex_p50": 18408.8,
+       "capex_p90": 66903.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-riyadh-hafar-al-batin",
+       "option": "S2-trunk_gap-riyadh-hafar-al-batin",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18947.9,
+       "robust_npv_2030": -35903.6,
+       "capex_p10": 14898.5,
+       "capex_p50": 26461.5,
+       "capex_p90": 96881.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 488.299
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23885.0,
+       "robust_npv_2030": -42211.9,
+       "capex_p10": 14359.5,
+       "capex_p50": 25473.6,
+       "capex_p90": 92815.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha",
+       "variant": {},
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15862.8,
+       "robust_npv_2030": -28320.7,
+       "capex_p10": 10464.3,
+       "capex_p50": 19002.4,
+       "capex_p90": 70625.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 4309.1,
+       "robust_npv_2030": 2253.9,
+       "capex_p10": 5432.6,
+       "capex_p50": 9771.1,
+       "capex_p90": 36018.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10505.1,
+       "robust_npv_2030": -18663.2,
+       "capex_p10": 6814.5,
+       "capex_p50": 12102.0,
+       "capex_p90": 44210.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15207.7,
+       "robust_npv_2030": -27031.3,
+       "capex_p10": 9711.8,
+       "capex_p50": 17138.9,
+       "capex_p90": 62137.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3614.8,
+       "robust_npv_2030": -6671.1,
+       "capex_p10": 2996.3,
+       "capex_p50": 5402.6,
+       "capex_p90": 20055.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "option": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "variant": {},
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14175.9,
+       "robust_npv_2030": -26036.2,
+       "capex_p10": 11655.8,
+       "capex_p50": 22545.2,
+       "capex_p90": 88100.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 226.782
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20973.6,
+       "robust_npv_2030": -38309.2,
+       "capex_p10": 15077.1,
+       "capex_p50": 33064.0,
+       "capex_p90": 139876.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14903.9,
+       "robust_npv_2030": -27128.7,
+       "capex_p10": 6099.3,
+       "capex_p50": 10739.4,
+       "capex_p90": 39015.3,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315",
+       "variant": {},
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -5589.0,
+       "robust_npv_2030": -10583.8,
+       "capex_p10": 2885.1,
+       "capex_p50": 5093.1,
+       "capex_p90": 18544.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S5-station_addition-al-jarn",
+       "option": "S5-station_addition-al-jarn",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -685.5,
+       "robust_npv_2030": -1049.7,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -186810.4,
+      "robust_npv_sum_of_row_minima": -186877.7,
+      "capex_p10_sum": 137068.3,
+      "capex_p50_sum": 256050.9,
+      "capex_p90_sum": 974024.6,
+      "reach_gain_120_union": 430482.0,
+      "n_corridors": 16,
+      "route_km": 3327.4,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "S2-trunk_gap-riyadh-hafar-al-batin:riyadh",
+       "nearest_name": "Riyadh",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-riyadh-hafar-al-batin:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "gcc-railway-ksa:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "sar-north-passenger:hail",
+       "nearest_name": "Hail",
+       "km": 18.9,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "sar-north-passenger:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 90.86,
+       "test": null,
+       "on_graph": false,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:madinah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind:madinah",
+      "joined_line": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [
+     {
+      "chosen": "S5-station_addition-al-jarn",
+      "capex_p50": 474.4,
+      "equal_capex_substitutes": [
+       "S5-station_addition-al-oyun",
+       "S5-station_addition-al-qarah",
+       "S5-station_addition-al-umran"
+      ]
+     }
+    ],
+    "uses_chord_band": []
+   }
+  ],
+  "with_reported_cities": [
+   {
+    "items": [
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-ar-rass-ha-il",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-jeddah-yanbu",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-tabuk-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S2-trunk_gap-taif-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-al-kharj",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-ar-rass",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-arar",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-bisha",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-sakaka",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-abha-khamis-mushait-135",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S4-commuter_belt-jazan-315",
+      "phase": 2050,
+      "electrified": false
+     },
+     {
+      "id": "S5-station_addition-al-jubayl",
+      "phase": 2030
+     },
+     {
+      "id": "S5-station_addition-al-umran",
+      "phase": 2050
+     }
+    ],
+    "blocks": {
+     "rows": [
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-bisha",
+       "option": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14324.6,
+       "robust_npv_2030": -24922.0,
+       "capex_p10": 8484.4,
+       "capex_p50": 15626.8,
+       "capex_p90": 58847.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 228.423
+      },
+      {
+       "id": "S2-trunk_gap-abha-khamis-mushait-najran",
+       "option": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -22695.6,
+       "robust_npv_2030": -39895.5,
+       "capex_p10": 15328.6,
+       "capex_p50": 30390.2,
+       "capex_p90": 121022.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 297.433
+      },
+      {
+       "id": "S2-trunk_gap-al-jubayl-hafar-al-batin",
+       "option": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -20754.1,
+       "robust_npv_2030": -36040.2,
+       "capex_p10": 11033.8,
+       "capex_p50": 19149.8,
+       "capex_p90": 68542.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 402.748
+      },
+      {
+       "id": "S2-trunk_gap-ar-rass-ha-il",
+       "option": "S2-trunk_gap-ar-rass-ha-il-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15082.2,
+       "robust_npv_2030": -26039.7,
+       "capex_p10": 7949.0,
+       "capex_p50": 13801.8,
+       "capex_p90": 49437.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 273.938
+      },
+      {
+       "id": "S2-trunk_gap-jeddah-yanbu",
+       "option": "S2-trunk_gap-jeddah-yanbu-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16598.9,
+       "robust_npv_2030": -29007.5,
+       "capex_p10": 9200.2,
+       "capex_p50": 15984.6,
+       "capex_p90": 57257.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 324.998
+      },
+      {
+       "id": "S2-trunk_gap-tabuk-sakaka",
+       "option": "S2-trunk_gap-tabuk-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -24819.1,
+       "robust_npv_2030": -42733.9,
+       "capex_p10": 12655.6,
+       "capex_p50": 22036.6,
+       "capex_p90": 79140.4,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 458.85
+      },
+      {
+       "id": "S2-trunk_gap-taif-bisha",
+       "option": "S2-trunk_gap-taif-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "trunk_gap",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -16488.1,
+       "robust_npv_2030": -28707.9,
+       "capex_p10": 9399.1,
+       "capex_p50": 16853.6,
+       "capex_p90": 62075.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 293.255
+      },
+      {
+       "id": "S3-branch_spur-al-kharj",
+       "option": "S3-branch_spur-al-kharj-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": 3916.2,
+       "robust_npv_2030": 1941.5,
+       "capex_p10": 4917.7,
+       "capex_p50": 8732.5,
+       "capex_p90": 31885.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 139.226
+      },
+      {
+       "id": "S3-branch_spur-ar-rass",
+       "option": "S3-branch_spur-ar-rass-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -4930.2,
+       "robust_npv_2030": -9024.9,
+       "capex_p10": 3688.8,
+       "capex_p50": 6549.1,
+       "capex_p90": 23965.7,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 94.61
+      },
+      {
+       "id": "S3-branch_spur-arar",
+       "option": "S3-branch_spur-arar-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -10911.1,
+       "robust_npv_2030": -18917.4,
+       "capex_p10": 6105.8,
+       "capex_p50": 10672.4,
+       "capex_p90": 38522.2,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 194.898
+      },
+      {
+       "id": "S3-branch_spur-bisha",
+       "option": "S3-branch_spur-bisha-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -15797.1,
+       "robust_npv_2030": -27358.3,
+       "capex_p10": 8564.3,
+       "capex_p50": 14824.2,
+       "capex_p90": 52927.3,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 302.297
+      },
+      {
+       "id": "S3-branch_spur-sakaka",
+       "option": "S3-branch_spur-sakaka-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -3693.0,
+       "robust_npv_2030": -6666.5,
+       "capex_p10": 2738.4,
+       "capex_p50": 4882.5,
+       "capex_p90": 17985.6,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 57.093
+      },
+      {
+       "id": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind",
+       "option": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "branch_spur",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -14713.4,
+       "robust_npv_2030": -26417.7,
+       "capex_p10": 10810.2,
+       "capex_p50": 20839.4,
+       "capex_p90": 81313.1,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 226.782
+      },
+      {
+       "id": "S4-commuter_belt-abha-khamis-mushait-135",
+       "option": "S4-commuter_belt-abha-khamis-mushait-135-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -23181.7,
+       "robust_npv_2030": -41205.5,
+       "capex_p10": 14646.7,
+       "capex_p50": 32195.7,
+       "capex_p90": 136421.5,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 103.907
+      },
+      {
+       "id": "S4-commuter_belt-dammam-khobar-dhahran-180",
+       "option": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -18163.0,
+       "robust_npv_2030": -31392.8,
+       "capex_p10": 5494.2,
+       "capex_p50": 9518.8,
+       "capex_p90": 34158.8,
+       "reach_gain_120_alone": 7659.0,
+       "route_km": 151.569
+      },
+      {
+       "id": "S4-commuter_belt-jazan-315",
+       "option": "S4-commuter_belt-jazan-315-va0f89039",
+       "variant": {
+        "electrified": false
+       },
+       "family": "commuter_belt",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -6902.0,
+       "robust_npv_2030": -12329.8,
+       "capex_p10": 2619.4,
+       "capex_p50": 4557.0,
+       "capex_p90": 16411.8,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 60.391
+      },
+      {
+       "id": "S5-station_addition-al-jubayl",
+       "option": "S5-station_addition-al-jubayl",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2030,
+       "robust_npv_best_phase": 4982.3,
+       "robust_npv_2030": 4982.3,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 422823.0,
+       "route_km": 0.0
+      },
+      {
+       "id": "S5-station_addition-al-umran",
+       "option": "S5-station_addition-al-umran",
+       "variant": {},
+       "family": "station_addition",
+       "best_phase": 2050,
+       "robust_npv_best_phase": -325.0,
+       "robust_npv_2030": -585.0,
+       "capex_p10": 266.9,
+       "capex_p50": 474.4,
+       "capex_p90": 1762.0,
+       "reach_gain_120_alone": 0.0,
+       "route_km": 0.0
+      }
+     ],
+     "totals": {
+      "robust_npv_fast": -220480.7,
+      "robust_npv_sum_of_row_minima": -220480.6,
+      "capex_p10_sum": 134170.0,
+      "capex_p50_sum": 247563.8,
+      "capex_p90_sum": 933438.3,
+      "reach_gain_120_union": 430482.0,
+      "n_corridors": 18,
+      "route_km": 3610.4,
+      "label": "fast mode, not a full-judge score; corridor interaction not included; the full judge overstated/understated fast mode by 1–17 % of capex in R6"
+     }
+    },
+    "check": {
+     "n_components": 1,
+     "cities": {
+      "Riyadh": {
+       "nearest": "landbridge:riyadh",
+       "nearest_name": "Riyadh (terminal site not published)",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jeddah": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:jeddah",
+       "nearest_name": "Jeddah",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Makkah": {
+       "nearest": "hhr:makkah",
+       "nearest_name": "Makkah",
+       "km": 3.98,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Madinah": {
+       "nearest": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+       "nearest_name": "Madinah",
+       "km": 8.96,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Dammam–Khobar–Dhahran": {
+       "nearest": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+       "nearest_name": "Dammam–Khobar–Dhahran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Taif": {
+       "nearest": "S2-trunk_gap-taif-bisha-va0f89039:taif",
+       "nearest_name": "Taif",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Buraidah (Qassim)": {
+       "nearest": "S3-branch_spur-ar-rass-va0f89039:al-qassim",
+       "nearest_name": "Qassim",
+       "km": 21.52,
+       "test": "T2 served 25 km",
+       "on_graph": true,
+       "required": true
+      },
+      "Tabuk": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:tabuk",
+       "nearest_name": "Tabuk",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Abha–Khamis Mushait": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:abha-khamis-mushait",
+       "nearest_name": "Abha–Khamis Mushait",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Jazan": {
+       "nearest": "S4-commuter_belt-jazan-315-va0f89039:jazan",
+       "nearest_name": "Jazan",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Najran": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-najran-va0f89039:najran",
+       "nearest_name": "Najran",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Yanbu": {
+       "nearest": "S2-trunk_gap-jeddah-yanbu-va0f89039:yanbu",
+       "nearest_name": "Yanbu'",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Bisha": {
+       "nearest": "S2-trunk_gap-abha-khamis-mushait-bisha-va0f89039:bisha",
+       "nearest_name": "Bisha",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Arar": {
+       "nearest": "S3-branch_spur-arar-va0f89039:arar",
+       "nearest_name": "Arar",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Hafar Al-Batin": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:hafar-al-batin",
+       "nearest_name": "Hafar Al-Batin",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Sakaka": {
+       "nearest": "S2-trunk_gap-tabuk-sakaka-va0f89039:sakaka",
+       "nearest_name": "Sakaka",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al-Kharj": {
+       "nearest": "S3-branch_spur-al-kharj-va0f89039:al-kharj",
+       "nearest_name": "Al-Kharj",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Al Jubayl": {
+       "nearest": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+       "nearest_name": "Al Jubayl",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": true
+      },
+      "Ha'il": {
+       "nearest": "S2-trunk_gap-ar-rass-ha-il-va0f89039:ha-il",
+       "nearest_name": "Ha'il",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": false
+      },
+      "Ar Rass": {
+       "nearest": "S2-trunk_gap-ar-rass-ha-il-va0f89039:ar-rass",
+       "nearest_name": "Ar Rass",
+       "km": 0.0,
+       "test": "T1 walk",
+       "on_graph": true,
+       "required": false
+      }
+     },
+     "all_required_on_graph": true
+    },
+    "joins": [
+     {
+      "island": 1,
+      "island_lines": [
+       "hhr"
+      ],
+      "island_station": "hhr:madinah",
+      "inserted_by_station_addition": false,
+      "joined_by": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039:madinah",
+      "joined_line": "S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:al-jubayl",
+      "inserted_by_station_addition": true,
+      "joined_by": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039:al-jubayl",
+      "joined_line": "S2-trunk_gap-al-jubayl-hafar-al-batin-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     },
+     {
+      "island": 2,
+      "island_lines": [
+       "gcc-railway-ksa"
+      ],
+      "island_station": "gcc-railway-ksa:dammam",
+      "inserted_by_station_addition": false,
+      "joined_by": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039:dammam-khobar-dhahran",
+      "joined_line": "S4-commuter_belt-dammam-khobar-dhahran-180-va0f89039",
+      "km": 0.0,
+      "rule": "walk_distance"
+     }
+    ],
+    "ties": [],
+    "uses_chord_band": []
+   }
+  ]
+ }
+}

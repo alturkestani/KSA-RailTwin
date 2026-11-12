@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[39.245363,21.517643]},"properties":{"station_uid":"fixture:jeddah","location_method":"osm:way/485762503","located":true}}]}

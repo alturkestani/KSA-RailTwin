@@ -1,0 +1,56 @@
+# > **Document version:** cities/ksa/population/intl_airport_split.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (demand-modeler) | Status: draft
+# Drop-in table (prompts/R4.md): entry-port shares of foreign Umrah performers by year. demand.intl reads the row
+# for the run year, else the latest earlier row, else `default`. A new year's row (e.g. from haj.gov.sa open data)
+# replaces the assumed constant without code changes. Shares are of ALL foreign arrivals (air, land, sea).
+# default = the 1440-1442 AH pooled shares (GASTAT Umrah bulletins, Table 3; computed by
+# `uv run python -m demand.intl split` from data/ksa/tables/pilgrims/, never typed by hand);
+# assumed constant for every Gregorian year without its own row (A-intl-001). Range = min-max of the three years.
+# example of a drop-in row (not active):
+#  2025: {status: sourced, source: "haj.gov.sa open data ...", shares: {JED: 0.60, MED: 0.27, RUH: 0.01, ...}}
+version: '1.0'
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+default:
+  status: assumed
+  assumption: A-intl-001
+  source: GASTAT Umrah Statistics bulletins 1440, 1441, 1442 AH, Table 3 (manifest pilgrims-umrah-statistics-bulletin-2019-xlsx,
+    -2020-1-xlsx, pilgrims-umr-ann2021-1-xlsx)
+  shares_file: runs/intl/split-s1/split_1440_1442.json
+  shares:
+    DMM: 0.00445
+    JED: 0.61255
+    MED: 0.26652
+    RUH: 0.01024
+    TIF: 1.0e-05
+    YNB: 0.00776
+    air_other: 0.0
+    land: 0.0843
+    sea: 0.01417
+  range:
+    DMM:
+    - 0.0
+    - 0.00534
+    JED:
+    - 0.60694
+    - 0.89512
+    MED:
+    - 0.1033
+    - 0.28922
+    RUH:
+    - 0.00158
+    - 0.0127
+    TIF:
+    - 0.0
+    - 3.0e-05
+    YNB:
+    - 0.0
+    - 0.01042
+    air_other:
+    - 0.0
+    - 0.0
+    land:
+    - 0.0
+    - 0.09538
+    sea:
+    - 0.0
+    - 0.01815
+years: {}

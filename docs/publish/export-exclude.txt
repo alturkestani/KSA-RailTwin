@@ -1,0 +1,13 @@
+# PUBLISH_PREP (12 Nov 2026): tracked files to DROP from the public export (docs/publish/checklist.md §2).
+# They stay on the private main branch. One repo-relative path per line; lines starting with # are comments.
+# Full copies of news web pages with no stated terms: cite by URL only (Tariq's 7 Nov 2026 citation-only rule).
+data/ksa/tables/pilgrims/gaca-19-million-air-passengers-hajj-1446.html
+data/ksa/tables/pilgrims/spa_N2326094_HHR_hajj1446.html
+# Third-party (DataPulse) re-packagings of GASTAT tables: the relay's own terms were never captured;
+# superseded by the committed primary GASTAT TA1 exports (cross-check only).
+data/ksa/tables/gastat/census-2022-20260929.csv
+data/ksa/tables/gastat/census-2022-dictionary.csv
+data/ksa/tables/gastat/population-region-20260928.csv
+data/ksa/tables/gastat/population-region-dictionary.csv
+# FIX_EXPORT_NAMES (12 Nov 2026): the milestone prompt quotes the private-name list verbatim (Tariq's words).
+prompts/FIX_EXPORT_NAMES.md

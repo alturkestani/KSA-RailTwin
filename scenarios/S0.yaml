@@ -1,0 +1,19 @@
+# Scenario S0 — today. Schema: .claude/skills/scenario-yaml/SKILL.md. Label applies: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+id: S0
+kind: scenario
+title: "S0 today: existing lines including the Riyadh Metro"
+layers: [existing]
+baseline: null            # S0 is the baseline every other scenario is matched against
+lines:
+  include: [hhr, sar-north-passenger, sar-east-passenger, riyadh-metro]   # ids in cities/ksa/lines/*.yaml (R1a writes them; layer: existing, each with source + date)
+candidates: []
+population_scenario: base-2022          # GASTAT Census 2022 control totals; R3 adds 2050/2060 scenarios
+gigaproject_addon: none
+demand_params: cities/ksa/assumptions/demand.yaml       # R3
+mode_choice_params: cities/ksa/assumptions/modechoice.yaml   # R3
+costs: null               # no new build
+appraisal: null
+seed: 1
+sensitivity: {band: "P10/P50/P90", draws: 1000}
+labels: ["synthetic demand, uncalibrated: scenario comparison, not a forecast"]
+source: "PROJECT.md section 6; line facts to be verified in R1a (DATASCOUT_1H first)"

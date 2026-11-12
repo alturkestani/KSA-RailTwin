@@ -1,0 +1,38 @@
+# Document version: cities/ksa/assumptions/cba_freight.yaml v0.1 | 3 Nov 2026 | Author: economist (R5, CBA-B) | Status: draft
+# W4 freight parameters. Base SAR 2025 (A-cost-001); conversion factors from cities/ksa/costs/index.yaml (A-cost-002):
+# I-gbp-2023-sar-2025 = 5.321609, I-eur-2016-sar-2025 = 5.406486; EU -> KSA income transfer 1.1264 (A-cba-223).
+# Freight benefits exclude passenger time savings. Outputs: "synthetic demand, uncalibrated: scenario comparison, not a forecast".
+meta:
+  label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+  price_year: 2025
+  currency: SAR
+  freight_od_in_repo: >-
+    runs/r4/demand/S1-r4-2025-base-s1/freight.json says "no open freight OD found" (searched: GASTAT Railway Transport
+    Statistics 2025 = rail freight totals by line, no OD table; Mawani/TGA = port throughput totals, no inland OD; no open
+    road freight survey or truck OD for Saudi Arabia). demand/gravity.py writes that note (FREIGHT_NOTE, lines 447-475)
+    and builds no freight matrix. Consequence: freight benefits can only be computed on line totals (tonnes x km on an
+    assumed diverted volume), so the freight_shift benefit should be reported as a sensitivity, separately from the
+    passenger case, until a freight OD or SAR line tonnage by segment is obtained.
+  road_to_rail_diversion_source: >-
+    No sourced KSA road-to-rail diversion share was found. The only policy anchor is the Ministry of Transport and
+    Logistics goal of tripling Dammam-Riyadh freight capacity (S-r1a-037), which is a capacity goal, not a demand share.
+    freight_road_to_rail_diversion_share below is a registered assumption (A-cba-237) with a 5-year ramp.
+params:
+  road_freight_cost_sar_per_tkm:
+    {value: 0.1466, low: 0.0734, high: 0.2562, unit: SAR per tonne-km (resource cost, articulated HGV), price_year: 2025, currency: SAR, assumption_id: A-cba-230, sources: [S-r5-cba-207, S-r5-cba-208, S-cost-opex-016, S-soc-338, S-r5-cba-211], note: "no KSA trucking cost per tkm found (a commercial blog quote was unverified and not used). Bottom-up: TAG A1.3.14 OGV2 non-fuel a1 18.187 p/km x 5.321609 = 0.968 SAR/vkm (S-r5-cba-207) + fuel: TAG A1.3.8 OGV2 at 80 km/h 0.2835 L/km (S-r5-cba-208) x KSA diesel SAR 1.79/L (S-cost-opex-016) = 0.508 + driver: SAR 3,933/month expatriate average wage (S-soc-338, secondary) / 173.3 h / 80 km/h = 0.284 -> 1.759 SAR/vkm; / average laden payload 12.0 t (DESNZ 2026 articulated >33t: 0.93939 kg/km / 0.07835 kg/tkm, S-r5-cba-211) = 0.147. Low: payload 20 t, non-fuel 0.7x = 0.073; high: payload 8 t, non-fuel 1.3x = 0.256. Departures: administered diesel price (financial, not shadow); empty running only via the average-laden payload; overheads and profit excluded"}
+  rail_freight_cost_sar_per_tkm:
+    {value: 0.0856, low: 0.0201, high: 0.1198, unit: SAR per tonne-km (SAR published tariff, container), price_year: 2025, currency: SAR, assumption_id: A-cba-231, sources: [S-r5-cba-226, S-r1a-038], note: "SAR rail haulage tariff collected by SGP Intermodal, Riyadh Dry Port, effective 1 Mar 2026 (S-r5-cba-226): 20ft dry 'import full - returning empty' round trip SAR 666 (40ft 1,110); 'export full one way' SAR 224 (40ft 366). Distance King Abdulaziz Port (Dammam) - Riyadh Dry Port 556 km (546-556, S-r1a-038). Payload per loaded 20ft 14 t (assumption, range 10-20). Central = 666 / (556 x 14) = 0.0856; high = 666 / (556 x 10) = 0.120; low = export one-way (backhaul pricing) 224 / (556 x 20) = 0.020. A 2026 tariff treated as 2025 prices. This is a financial TARIFF, not a resource cost: it excludes terminal handling and first/last-mile drayage (still by truck) and any state support to SAR; bulk minerals traffic (North line) is not covered"}
+  truck_kgco2e_per_tkm:
+    {value: 0.07835, low: 0.0603, high: 0.19947, unit: kg CO2e per tonne-km, price_year: 2025, currency: SAR, assumption_id: A-cba-232, sources: [S-r5-cba-211], note: "DESNZ 2026 'HGV (non-refrigerated, all diesel), Articulated (>33t), Average laden' 0.07835 (central: long-haul intercity); low = articulated >33t 100 % laden 0.0603; high = average non-refrigerated rigids, average laden 0.19947 (S-r5-cba-211). UK biofuel-blend diesel basis; KSA diesel has no blend (~3 % higher, not applied)"}
+  rail_freight_kgco2e_per_tkm:
+    {value: 0.02583, low: 0.0181, high: 0.0336, unit: kg CO2e per tonne-km (diesel freight train), price_year: 2025, currency: SAR, assumption_id: A-cba-233, sources: [S-r5-cba-211, S-r5-cba-224], note: "DESNZ 2026 'Rail, Freight train' 0.02583 kg/tkm (S-r5-cba-211); cross-check EU Handbook 2019 Table 25 diesel freight train 0.25 EUR-cent/tkm at EUR 100/t = 0.025 kg/tkm (S-r5-cba-224). Low/high = 0.7x / 1.3x (assumption: heavy SAR mineral trains vs light container loads). SAR freight is diesel"}
+  truck_crash_cost_sar_per_tkm:
+    {value: 0.0792, low: 0.0266, high: 0.1156, unit: SAR per tonne-km, price_year: 2025, currency: SAR, assumption_id: A-cba-234, sources: [S-r5-cba-222, S-r5-cba-220], note: "EU Handbook 2019 Table 8 HGV external accident cost 1.3 EUR-cent/tkm (S-r5-cba-222) x 5.406486 x 1.1264 = 0.0792. Low = x 0.336 (ratio of the KSA-derived car value 0.1475 to the Handbook car value transferred 0.4385, A-cba-203); high = x 1.46 (WHO-estimated / reported deaths 6,651 / 4,555, S-r5-cba-220, secondary). No KSA truck-involvement statistics found"}
+  truck_air_quality_cost_sar_per_tkm:
+    {value: 0.0463, low: 0.0231, high: 0.0694, unit: SAR per tonne-km, price_year: 2025, currency: SAR, assumption_id: A-cba-235, sources: [S-r5-cba-223], note: "EU Handbook 2019 Table 16 HGV average air pollution 0.76 EUR-cent/tkm (S-r5-cba-223) x 5.406486 x 1.1264 = 0.0463. Low/high 0.5x / 1.5x (assumption: rural desert exposure vs older engine standards). Rail diesel freight comparator: 0.68 EUR-cent/tkm = 0.0414 SAR/tkm (same table), so the net AQ gain per tkm diverted is small"}
+  truck_congestion_cost_sar_per_tkm:
+    {value: 0.0244, low: 0.0049, high: 0.0487, unit: SAR per tonne-km, price_year: 2025, currency: SAR, assumption_id: A-cba-236, sources: [S-r5-cba-225], note: "EU Handbook 2019 Table 71 HGV congestion (delay cost) 0.8 EUR-cent/tkm (S-r5-cba-225) x 5.406486 x 1.1264 = 0.0487 (high). Central 0.5x and low 0.1x (assumption: KSA intercity highways less congested than the EU average, as in A-cba-220). Not for Jeddah port traffic inside the TrafficTwin area (coupling only)"}
+  freight_road_to_rail_diversion_share:
+    {value: 0.05, low: 0.0, high: 0.15, unit: share of corridor road tonne-km diverted to rail at full ramp, price_year: 2025, currency: SAR, assumption_id: A-cba-237, sources: [S-r1a-037], note: "ASSUMPTION, no source for a share (see meta.road_to_rail_diversion_source). Ramp linear over 5 years from opening (ramp_years). Low 0 = no freight benefit (the default reporting case should show freight as a sensitivity). Needs a base of corridor road tonne-km, which does not exist in the repo (no freight OD)"}
+  freight_diversion_ramp_years:
+    {value: 5, low: 3, high: 8, unit: years to full diversion, price_year: 2025, currency: SAR, assumption_id: A-cba-237, sources: [], note: "assumption, paired with freight_road_to_rail_diversion_share"}

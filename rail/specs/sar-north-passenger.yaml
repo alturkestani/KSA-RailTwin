@@ -1,0 +1,31 @@
+# Spec for cities/ksa/lines/sar-north-passenger.yaml. Stations: SAR's place list (S-018) located at the
+# stop_position nodes of OSM route relation 13880225 (Riyadh -> Al Qurayyat; ODbL).
+id: sar-north-passenger
+opened: 2017-02-26            # S-r1a-030 (secondary): Riyadh-Majmaah; later sections 2017-2022 (C-r1a-05)
+line:
+  name_en: SAR North passenger line (Riyadh - Al Qurayyat)
+  name_ar: خط الشمال بين الرياض والقريات        # S-r1a-026 (verified, SAR Arabic page)
+  layer: existing
+  operator: Saudi Arabia Railways (SAR)
+  status: in_service
+  source: S-017
+  accessed: 2026-10-31
+  line_type: conventional_passenger
+  length_km: 1250                                   # S-017 (verified)
+  fares_sar:
+    - {from: riyadh-north, to: hail, economy: {low: 125, high: 125}, sampled: 2026-10-31, source: S-r1a-021}
+    - {from: riyadh-north, to: al-qassim, economy: {low: 80, high: 80}, sampled: 2026-10-31, source: S-r1a-022}
+  notes: >-
+    SAR's English page ends the passenger line at Al Haditha (S-018) but the Wikipedia list calls
+    Al Haditha proposed and SAR's Arabic page names the line to Al Qurayyat (C-r1a-05); Al Haditha
+    is therefore not listed as an in-service station. Fares are SAR home-page 'from' prices with no
+    currency printed and no class (S-r1a-021/022); stored as economy low = high. No timetable
+    readable (S-r1a-025). Speed, track, electrification and gauge not read (unverified). Arabic
+    station names from OSM (ODbL); SAR does not print them (S-r1a-028).
+stations:
+  - {id: riyadh-north, name_en: Riyadh (North), name_ar: محطة قطار الشمال بالرياض, class: terminal, source: S-018, osm: node/7984868762}
+  - {id: majmaah, name_en: Majmaah, name_ar: محطة المجمعة, class: intermediate, source: S-018, osm: node/7985031029}
+  - {id: al-qassim, name_en: Qassim, name_ar: القصيم, class: intermediate, source: S-018, osm: node/6788821146}
+  - {id: hail, name_en: Hail, name_ar: حائل, class: intermediate, source: S-018, osm: node/7984942389}
+  - {id: al-jawf, name_en: Jouf, name_ar: الجوف, class: intermediate, source: S-018, osm: node/7984803603}
+  - {id: al-qurayyat, name_en: Qurayyat, name_ar: القريات, class: terminal, source: S-018, osm: node/7987566892}

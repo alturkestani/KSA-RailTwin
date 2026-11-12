@@ -1,0 +1,24 @@
+{
+  "seed": 1,
+  "config_hash": "ff022c7dcbbf272d05996aa47f40f2482dd52bf3f4669776ef4c7991c2f769e0",
+  "data_hash": "57d7e5b6bedcfb5b72abbb260855ac47c18d40085762e03cbcb2dbf8344f3101",
+  "code_version": "r2-6-g811202e",
+  "tool_versions": {
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "pydantic": "2.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "duckdb": "2.0.0",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0",
+    "geopandas": "1.2.0",
+    "networkx": "3.7",
+    "typer": "0.27.3",
+    "scipy": "1.18.1"
+  },
+  "label": "screening input, not a forecast; criteria approved at CP1 (D6a-D10a, 31 Oct 2026)",
+  "created_utc": "2026-10-31T15:42:06+00:00",
+  "step": "screening.funnel score"
+}

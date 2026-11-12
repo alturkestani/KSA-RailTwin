@@ -1,0 +1,122 @@
+# > **Document version:** cities/ksa/assumptions/demand_generation.yaml v0.1 | 31 Oct 2026 | Author: demand-modeler (R3) | Status: draft
+# Intercity trip generation per purpose, pilgrimage external totals and impedance priors for the W8
+# doubly-constrained gravity model (skill gravity-calibration). No Saudi household travel survey exists
+# (docs/social.md); the per-capita rates are anchored on Ministry of Tourism domestic overnight trips by
+# purpose and expanded by registered assumptions. Every value: {value, range, unit, source or assumption, status}.
+# Sources: docs/sources/r3-cal.csv (S-r3-cal-0xx), docs/sources/index.csv (S-soc-0xx, S-cp2-gastat-0xx).
+# Assumptions: docs/assumptions.md (A-demand-0xx; A-demand-001 and -020 are left to the zone
+# and intrazonal-cost rows named in the skill, A-demand-030 is reserved for the giga delivered share).
+version: "0.1"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+
+definitions:
+  intercity_trip: {value: "one-way person trip between two different zones whose road distance is at least 40 km", range: ["30 km", "50 km"], assumption: A-demand-005, status: assumed,
+                   note: "intrazonal and < 40 km pairs are dropped from the OD; the tourism anchor counts overnight trips regardless of distance, so the rates carry a small upward bias (covered by the ranges)"}
+  unit: "one-way intercity person trips per resident per year (residents = Saudis + non-Saudis)"
+  one_way_per_round_trip: {value: 2.0, range: [1.8, 2.0], unit: one-way trips per tourism trip, assumption: A-demand-006, status: assumed,
+                           note: "a tourism trip is a round trip (outbound + return); multi-stop trips and one-way relocations lower it"}
+
+population_base:
+  year: 2024
+  residents: {value: 35300280, unit: persons (mid-2024 estimate), source: S-cp2-gastat-006, status: sourced}
+  note: "no GASTAT mid-2025 estimate was found (31 Oct 2026); 2025 trips are divided by the 2024 population only to set the high end of the ranges"
+
+tourism_anchor:
+  domestic_overnight_trips_2024: {value: 86200000, unit: trips/yr, source: S-soc-032, status: secondary, note: "Ministry of Tourism 2024 report via Argaam; the 2024 purpose split is from the same table"}
+  domestic_overnight_trips_2025: {value: 93300000, unit: trips/yr, source: S-soc-031, status: sourced, note: "DataSaudi (Ministry of Economy and Planning, Ministry of Tourism data)"}
+  purpose_split_2024: {value: {leisure_entertainment: 0.37, visiting_friends_relatives: 0.35, religious: 0.13, business: 0.10, other: 0.04}, unit: share of domestic trips, source: S-soc-032, status: secondary,
+                       note: "shares sum to 0.99 as printed; 2025 VFR share 0.404 (37.7 M of 93.3 M, S-soc-031, verified) is higher than 2024"}
+  overnight_trips_per_resident_2024: {value: 2.442, range: [2.442, 2.643], unit: round trips per resident per year, assumption: A-demand-007, status: assumed,
+                                      note: "86.2 M / 35,300,280; high end = 93.3 M (2025) / 2024 population"}
+  purpose_mapping: {value: {tourism: [leisure_entertainment, other], leisure_vfr: [visiting_friends_relatives], business: [business], pilgrimage: "not from tourism: external totals below", religious: "dropped (counted in pilgrimage)"},
+                    assumption: A-demand-008, status: assumed}
+
+day_trip_multipliers:   # same-day intercity trips are not in the overnight tourism statistics
+  tourism:     {value: 1.2, range: [1.0, 1.6], unit: total / overnight trips, assumption: A-demand-009, status: assumed}
+  leisure_vfr: {value: 1.5, range: [1.1, 2.5], unit: total / overnight trips, assumption: A-demand-010, status: assumed}
+  business:    {value: 2.0, range: [1.3, 3.0], unit: total / overnight trips, assumption: A-demand-011, status: assumed}
+
+trip_rates:   # one-way intercity person trips per resident per year; producer variable = residents of the zone
+  commute:     {value: 0.5,   range: [0.1, 2.0],   unit: one-way trips per resident per year, assumption: A-demand-015, status: assumed,
+                note: "no Saudi intercity commuting data; GB long-distance ratio commuting/VFR = 13.95/23.13 = 0.60 (S-r3-cal-033) applied to the Saudi overnight VFR rate gives about 1.0 (upper-central); H1.1 in docs/social.md expects intercity commuting only on a few short pairs; distributed only to pairs in the 40-120 km commute band (A-screen-005)"}
+  business:    {value: 0.977, range: [0.571, 1.586], unit: one-way trips per resident per year, assumption: A-demand-014, status: assumed,
+                note: "2.442 x 0.10 x 2.0 (one-way) x 2.0 (day-trip multiplier); range combines A-demand-006, -007 and -011"}
+  leisure_vfr: {value: 2.564, range: [1.692, 4.625], unit: one-way trips per resident per year, assumption: A-demand-013, status: assumed,
+                note: "2.442 x 0.35 x 2.0 x 1.5; the 2025 VFR share 0.404 (verified) sits inside the range"}
+  tourism:     {value: 2.403, range: [1.802, 3.468], unit: one-way trips per resident per year, assumption: A-demand-012, status: assumed,
+                note: "2.442 x (0.37 + 0.04) x 2.0 x 1.2"}
+  pilgrimage:  {value: "external totals by origin region (below)", assumption: A-demand-016, status: sourced (totals) / assumed (origin split for Q2)}
+  cross_check: {value: {non_pilgrimage_one_way_per_resident: 6.44, pilgrimage_one_way_per_resident_upper: 1.87}, assumption: A-demand-012,
+                note: "arithmetic only: (0.5 + 0.977 + 2.564 + 2.403) and 2 x (25,055,083 + 7,840,577 + 166,654) / 35,300,280 before removing intrazonal pilgrims. Observed public-mode volumes (rail 10.9 M, air about 32.0 M departures, bus about 3.7 M a year if Q1 is like Q2-Q4) would then be roughly 16% of about 290 M one-way intercity trips, leaving car near 84%; GB long-distance car share is 78% (S-r3-cal-034). A plausibility check, not a target"}
+  calibration: "rates may be scaled inside their ranges by demand.calibrate; generation and the mode constants are confounded because car has no observed target (demand_calibration.yaml), so the default is to hold rates at the central values and fit the mode constants, then report a rate sweep"
+
+pilgrimage:   # fixed external totals by ORIGIN region; destinations fixed; one-way trips = 2 x persons
+  destination_rule: {value: {umrah: "Makkah governorate zone (Masjid al-Haram)", madinah_visit: "Madinah governorate zone", hajj: "Makkah governorate zone (holy sites)"}, assumption: A-demand-016, status: assumed}
+  intrazonal_rule:  {value: "within the Makkah region row, the share of performers living in the Makkah governorate is pop2022(Makkah gov) / pop2022(Makkah region) and is dropped as intrazonal; Jeddah, Taif and the other governorates are intercity", range: ["0.5 x share", "1.5 x share"], source: S-cp2-gastat-007, assumption: A-demand-017, status: assumed,
+                     note: "the GASTAT survey gives the region of residence only; Madinah visitor tables already exclude residents of Madinah city (S-r3-cal-043)"}
+  overlap_rule:     {value: "Umrah and Madinah visits are separate trips", range: ["0.7 x Madinah visits (30% are legs of an Umrah trip)", "1.0"], assumption: A-demand-018, status: assumed}
+  within_region_split: {value: "governorate population share, Census 2022", source: S-cp2-gastat-007, assumption: A-demand-016, status: assumed}
+  umrah_internal_2025:
+    total: {value: 25055083, unit: performers/yr, source: S-soc-029, status: sourced, note: "equals the sum of the four GASTAT quarters 8,698,867 + 4,118,975 + 6,647,440 + 5,589,801 (S-r3-cal-041..044)"}
+    q2_imputation: {value: "Q2 printed for makkah 1,773,820, riyadh 602,244, northern_borders 9,302 (S-r3-cal-042); the other ten regions share the Q2 residual 1,733,609 in proportion to their Q1+Q3+Q4 sum", assumption: A-demand-016, status: assumed}
+    by_origin_region:   # Q1 + Q2 (imputed for 10 regions) + Q3 + Q4; sources S-r3-cal-041..044; rows sum to 25,055,082 (imputed parts rounded)
+      al_baha: 230945
+      al_jouf: 453750
+      asir: 1064841
+      eastern: 1317368
+      hail: 722574
+      jazan: 1711613
+      madinah: 1435232
+      makkah: 10150931
+      najran: 820824
+      northern_borders: 129990
+      qassim: 1279242
+      riyadh: 4867458
+      tabuk: 870314
+  madinah_visits_internal_2025:
+    total: {value: 7840577, unit: visitors/yr (religious purpose, excl. Madinah city residents), source: "S-r3-cal-041; S-r3-cal-042; S-r3-cal-043; S-r3-cal-044", status: sourced,
+            note: "2,040,007 + 1,665,341 + 2,258,929 + 1,876,300; Q2 has no regional table, imputed by Q1+Q3+Q4 shares (A-demand-016)"}
+    by_origin_region:
+      al_baha: 60476
+      al_jouf: 342595
+      asir: 166126
+      eastern: 761787
+      hail: 606294
+      jazan: 352090
+      madinah: 497740
+      makkah: 1835778
+      najran: 466185
+      northern_borders: 97767
+      qassim: 570984
+      riyadh: 1520012
+      tabuk: 562743
+  hajj_internal:
+    y2025: {value: 166654, unit: pilgrims, source: S-soc-028, status: sourced}
+    y2024: {value: 221854, unit: pilgrims, source: S-r3-cal-040, status: sourced}
+    origin_split: {value: "national population share by region (no regional table published)", assumption: A-demand-019, status: assumed,
+                   note: "a single 5-day peak; annual totals are small next to Umrah; peak-day capacity is a separate check (docs/social.md H4.1)"}
+
+impedance_priors:   # f(c), c = generalised minutes by the best current mode from the skims
+  functional_form: {value: {commute: exponential, business: power, leisure_vfr: power, tourism: power, pilgrimage: "none (fixed destinations)"}, alternative: "the other form, matched at 150-300 min", assumption: A-demand-021, status: assumed,
+                    note: "linear-cost exponential lambdas from UK urban/regional models (S-r3-cal-032) are far too steep at 300-600 min intercity costs; power decay (log-cost damping) is the usual intercity form (S-r3-cal-035)"}
+  commute:     {beta_per_min: {value: 0.05, range: [0.023, 0.113], unit: per generalised minute, source: S-r3-cal-032, assumption: A-demand-022, status: assumed,
+                note: "TAG M2.1 Table 3 home-based work: PT median 0.033 (min 0.023), car median 0.065 (max 0.113); transferability medium (UK, trips of similar duration to 40-120 km Saudi commutes)"}}
+  business:    {gamma: {value: 1.5, range: [1.0, 2.2], unit: power exponent, source: S-r3-cal-035, assumption: A-demand-023, status: assumed,
+                note: "about 0.75 x the rail exponent 1.94 (Wang and Chen 2022); TAG M2.1 business lambdas run below home-based other (car min 0.038 vs 0.074), so business is taken as less distance-sensitive; transferability low"},
+                beta_alt_per_min: {value: 0.0069, range: [0.0046, 0.0102], unit: per generalised minute, assumption: A-demand-027, status: assumed, note: "exponential matched to the power prior: ln(2^gamma)/150"}}
+  leisure_vfr: {gamma: {value: 1.9, range: [1.2, 2.5], unit: power exponent, source: "S-r3-cal-035; S-r3-cal-034", assumption: A-demand-024, status: assumed,
+                note: "China intercity rail b = 1.94 (Beijing-Tianjin-Hebei, Euclidean km; S-r3-cal-035); GB long-distance trip-length distribution decays with a power of about 2.5 (fitted to NTS0317 2025 bands, S-r3-cal-034; a trip-length distribution, which includes the opportunity effect, used only to bound the range); transferability low-medium"},
+                beta_alt_per_min: {value: 0.0088, range: [0.0055, 0.0116], unit: per generalised minute, assumption: A-demand-028, status: assumed, note: "matched: ln(2^gamma)/150"}}
+  tourism:     {gamma: {value: 1.5, range: [0.8, 2.2], unit: power exponent, source: S-r3-cal-035, assumption: A-demand-025, status: assumed,
+                note: "destination attractiveness (coast, AlUla, Abha, Taif) dominates; taken weaker than VFR; no estimated value found for leisure tourism; transferability low"},
+                beta_alt_per_min: {value: 0.0069, range: [0.0037, 0.0102], unit: per generalised minute, assumption: A-demand-029, status: assumed, note: "matched: ln(2^gamma)/150"}}
+  pilgrimage:  {value: "not used", assumption: A-demand-031, status: assumed, note: "origins and destinations are both fixed, so there is no distribution step; generalised cost enters only through mode choice"}
+  reference_not_used:
+    china_highway_exponent: {value: 8.31, source: S-r3-cal-035, note: "Beijing-Tianjin-Hebei highway flows; a small dense region, not transferable to Saudi intercity distances"}
+    gb_tld_exponential_per_km: {value: 0.0102, source: S-r3-cal-034, note: "least-squares fit of log(share per km) on band midpoints, 50-350 miles; a trip-length distribution, not a deterrence function"}
+
+attraction_variables:   # D_j per purpose (the coordinator's gravity.yaml may override; listed so the rates have a pairing)
+  commute: {value: "formal jobs (demand_jobs.yaml)", assumption: A-demand-002}
+  business: {value: "formal jobs, plus economic nodes as special generators", assumption: A-demand-002}
+  leisure_vfr: {value: "population", assumption: A-demand-013}
+  tourism: {value: "population + tourism, heritage and giga-project nodes (giga add-on only in scenarios, A-demand-030)", assumption: A-demand-012}

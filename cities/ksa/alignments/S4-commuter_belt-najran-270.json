@@ -1,0 +1,64 @@
+{
+ "id": "S4-commuter_belt-najran-270",
+ "line_type": "commuter",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 90.404,
+ "straight_km_legs": 75.888,
+ "straight_km_end_to_end": 75.888,
+ "detour_ratio": 1.1913,
+ "max_grade_cap": 0.025,
+ "design_kmh": 160.0,
+ "r_min_m": 1991.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 9.59,
+ "viaduct_km": 9.89,
+ "earthworks_km": 46.351,
+ "at_grade_km": 24.574,
+ "tunnel_share": 0.10608,
+ "viaduct_share": 0.1094,
+ "fill_m3": 4695500.0,
+ "cut_m3": 10935700.0,
+ "formation_max_grade": 0.02503,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.4122,
+ "elev_min_m": 1273.5,
+ "elev_max_m": 2263.5,
+ "terrain_shares": {
+  "escarpment_mountain": 0.3768,
+  "flat_desert": 0.0514,
+  "mixed": 0.5718
+ },
+ "area_km": {
+  "urban": 11.787,
+  "builtup": 7.892,
+  "protected": 0.0,
+  "military": 0.1,
+  "sand": 0.0,
+  "sabkha": 0.0,
+  "waterway": 2.497,
+  "highway": 15.634
+ },
+ "wadi_crossings_osm": 13,
+ "speed_restrictions": [
+  {
+   "from_km": 4.745,
+   "to_km": 6.144,
+   "kmh": 140.0
+  }
+ ],
+ "restricted_km": 1.399,
+ "min_curve_kmh": 140.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "najran": 0.0,
+  "zahran-al-janub": 90.404
+ },
+ "status": "routed",
+ "stations_key": "61bbae5950046b30",
+ "geojson": "cities/ksa/alignments/S4-commuter_belt-najran-270.geojson",
+ "run": "runs/align/corridors-s1/S4-commuter_belt-najran-270",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

@@ -1,0 +1,197 @@
+# > **Document version:** cities/ksa/assumptions/funding_r7.yaml v1.2 | 4 Nov 2026 | Author: INTEGRATE_R7 (register pointer comment); R7 builder (funding-ppp-analyst) | Status: draft
+# R7 delivery and funding parameters (W6). Every real-world parameter carries `source:` (S-id) or
+# `assumption:` (reasoning and range) and a register row in docs/assumptions.md (A-fund ids; merged from the R7 fragment at INTEGRATE_R7).
+# Money: SAR million, 2025 prices; rates real unless stated. Read by funding/fiscal.py and funding/vfm.py.
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+version: "1.0"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+
+appraisal:
+  rate_case: greenbook_2026      # discount schedule of the R5/R6 appraisal (A-cba-001; CP1); PV year 2026 (A-cba-301)
+  horizon_years: 60              # score convention of R6 (docs/r6-topology.md §0.1); 30 and 40 reported too
+  robust_case: un_wpp_low        # worst population case = robust NPV convention (R6, CP7 prompt)
+  pv_year: 2026
+
+params:
+  sovereign_real_rate:
+    id: A-fund-101
+    value: 0.0356
+    low: 0.0284
+    high: 0.0384
+    unit: real rate per year
+    source: "S-cp1-079 (Saudi 10-year USD sukuk coupon 5.598%, Sep 2026, secondary), S-cp1-074 (NDMC 2036 4.875% and 2056 5.875% as printed), less Saudi CPI inflation 2.04% (2024-2025, S-cost-idx-001); central = 5.598 - 2.04; low = 4.875 - 2.04; high = 5.875 - 2.04 (subtraction, not Fisher)"
+  private_finance_premium:
+    id: A-fund-008
+    value: 0.02875
+    low: 0.02
+    high: 0.04
+    unit: percentage points over sovereign borrowing (as a rate)
+    source: "S-fund-r7-001 (NAO 2018 para 1.17: 2% to 3.75% over gilts, IPA 2% to 4%); central = midpoint of 2.0-3.75; a UK reference class, no Saudi PPP cost-of-capital figure found (unclear)"
+  ppp_term_years:
+    id: A-fund-010
+    value: 30
+    unit: years of operation paid by availability payments
+    source: "S-fund-002 (PSP Law M/63 Art. 20: up to 30 years including extensions unless the relevant agency approves longer)"
+  bid_contingency:
+    id: A-fund-007
+    value: 0.20
+    low: 0.05
+    high: 0.50
+    unit: share of the un-uplifted base capex (capex_base_p50) priced into a fixed-price private bid
+    assumption: "No published Saudi or reference-class figure for the risk premium a fixed-price rail bidder adds to the base estimate. Central 0.20 sits between the reference-class P50 uplift the state applies to itself (capex_p50 / capex_base_p50 = 1.19, A-rcf-001) and zero; range 0.05-0.50. VfM depends on it: its switching value is reported (vfm.py)."
+  absorption_capacity:
+    id: A-fund-102
+    value: 0.20
+    low: 0.10
+    high: 0.30
+    unit: share of the contract capex the private side can absorb in overruns before the contract fails (equity cushion)
+    source: "S-fund-227 (LISEA: equity 20% of the private financing at 31 Dec 2017); the range is assumed (one precedent)"
+  public_contribution_availability:
+    id: A-fund-002
+    value: 0.0
+    low: 0.0
+    high: 0.5
+    unit: share of contract capex paid by the state during construction under an availability PPP
+    assumption: "Central 0: the availability payment carries all private capex (Sydney Metro Northwest pattern, S-fund-045, where the State paid by availability). The 0.5 bound brackets LGV SEA's 48% grantor contribution (S-fund-223), which was a demand-risk concession. Reported as a sensitivity."
+  transaction_cost:
+    id: A-fund-103
+    value: 0.02
+    low: 0.01
+    high: 0.05
+    unit: share of contract capex (public and private bid, legal and advisory costs, passed to the state)
+    assumption: "No Saudi or open reference-class figure was found for rail PPP transaction costs; 1-5% of capex is a working range. Its switching value is reported."
+  mrg_level:
+    id: A-fund-104
+    value: 0.70
+    low: 0.50
+    high: 0.90
+    unit: share of the forecast (P50) fare revenue guaranteed to a demand-risk concessionaire
+    assumption: "No Saudi rail MRG precedent; PFRAM treats MRGs as contingent liabilities (S-fund-023). Central 0.70 = the reference-class median outturn/forecast ratio (A-rcf-029), range 0.50-0.90."
+  ridership_outturn_ratio:
+    id: A-rcf-029
+    source: "S-cost-rcf-013 (DfT optimism-bias workbook, rail benefits FBC curve, n = 132): actual/forecast passengers; cities/ksa/costs/uplifts.yaml U-ridership-rail-fbc"
+    uplift_id: U-ridership-rail-fbc
+  termination_probability:
+    id: A-fund-006
+    value: 0.05
+    low: 0.02
+    high: 0.10
+    unit: probability over the contract term that the PPP terminates early with compensation to the private party
+    assumption: "No Saudi rail PPP history (the 2008 Landbridge BOT did not reach financial close, S-lb-012, so it gives no termination rate). Wide working range; the worst case (termination at opening, PFRAM convention S-fund-021) is reported next to the probability-weighted value."
+  cpi_inflation:
+    id: A-fund-105
+    value: 0.0204
+    unit: per year
+    source: "S-cost-idx-001 (World Bank CPI SAU 2024 134.4745, 2025 137.2119: +2.04%); used only to deflate the nominal MoF budget and sukuk yields"
+  budget_reference:
+    id: A-fund-004
+    unit: SAR bn nominal, total state expenditure
+    source: "S-fund-026 (FY2026 pre-budget statement: 2026 budget 1,313; 2027 estimate 1,350; 2028 estimate 1,419)"
+    years: {2026: 1313, 2027: 1350, 2028: 1419}
+  budget_growth_nominal:
+    id: A-fund-005
+    value: 0.0396
+    low: 0.0079
+    high: 0.0511
+    unit: nominal growth per year after 2028
+    source: "A-fund-005 (computed from S-fund-026 CAGRs; not an MoF projection)"
+  construction_profile:
+    id: A-fund-106
+    rule: "capex spent uniformly in phase-3 .. phase-1, opening in the phase year"
+    source: "A-r6-002 (construction starts phase - 3) and A-cba-303 (uniform profile); the judge draws the opening year, so the fiscal timing profile is the plan, not the draw"
+  pv_scaling:
+    id: A-fund-107
+    rule: "PV quantities known only at P50 (capex, residual) scaled by capex_pX / capex_p50 to give P10/P90; fiscal cost pX = PVC pX + residual"
+    assumption: "The judge reports PVC at P10/P50/P90 and the PV components at P50 only; fiscal cost = PVC + residual value (economics/cba.py), so its quantiles are approximated by PVC quantiles plus a residual scaled with capex. Exact draws would need a judge change (not allowed)."
+  capex_tail:
+    id: A-fund-108
+    rule: "lognormal through capex P50 and P90 (sigma = ln(P90/P50) / 1.2816) for expected overrun integrals; mean via the same fit"
+    assumption: "Only P10/P50/P90 of the 10,000 capex draws are stored. The upper tail is what risk transfer and contingent liabilities depend on, so the fit uses P50 and P90. The judge's distribution is skewed (P50/P10 about 1.8, P90/P50 about 3.7)."
+  annuity_equivalent:
+    id: A-fund-109
+    rule: "annual opex+renewals and annual fare revenue = PV_p50 / sum of discount factors over the 60 operating years"
+    assumption: "The judge stores PVs, not annual flows; a level annual equivalent is used for availability-payment and budget-share timing. Fares grow with demand in the model, so early-year fares are overstated and late-year fares understated."
+
+# Candidate models per corridor family (ids from cities/ksa/funding/models.yaml)
+candidates:
+  station_addition:
+    - fully_public_sar
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - lvc_station_area_development
+  branch_spur:
+    - fully_public_sar
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - ppp_dbfom_demand_risk
+    - hybrid_public_dbfm_plus_station_lvc
+  commuter_belt:
+    - fully_public_sar
+    - public_with_private_om
+    - ppp_dbfom_availability
+    - ppp_dbfom_demand_risk
+    - hybrid_public_dbfm_plus_station_lvc
+
+# Fiscal treatment per model (how fiscal.py computes the state's cost)
+fiscal_kind:
+  fully_public_sar: public
+  public_with_private_om: public
+  ppp_dbfom_availability: availability
+  ppp_dbfm: availability
+  ppp_dbfom_demand_risk: demand_concession
+  lvc_station_area_development: public_plus_lvc
+  hybrid_public_dbfm_plus_station_lvc: availability_plus_lvc
+
+# Risk allocation per candidate model (A-fund-001 resolved at R7: one column per risk; "varies"
+# entries of models.yaml are resolved here with the reason). Mechanisms are contract clause types;
+# precedents show where the allocation was used, not that it suits a Saudi corridor. The builder
+# (funding.risk_matrix build) adds the corridor evidence from runs/r7/fiscal and runs/r7/vfm.
+allocation:
+  fully_public_sar:
+    construction: {mark: public, mechanism: "state-delivered works (design-build packages) with an optimism-bias contingency held by the owner", precedents: [S-fund-261, S-fund-265, S-fund-025], why: "models.yaml 'varies' resolved to public: Haramain was delivered by the state in design-build packages and the schedule slipped about six years (secondary)"}
+    demand: {mark: public, mechanism: "state keeps fare revenue; no guarantee", precedents: [S-fund-265, S-fund-045], why: "the owner carries ridership; Haramain 2023 ridership was about one-eighth of its design projection (secondary)"}
+    revenue: {mark: public, mechanism: "state company keeps fare revenue; who sets passenger fares is unclear (legal item fare_setting_authority)", precedents: [S-fund-033, S-fund-016], why: "the owner keeps fares under public delivery; Railway Law Art. 18 covers usage (access) fees under use agreements, not passenger fares"}
+    operations: {mark: public, mechanism: "in-house operation by the state company", precedents: [S-fund-033], why: "models.yaml 'varies' resolved to public for the in-house variant; the contracted-O&M variant is public_with_private_om"}
+    financing: {mark: public, mechanism: "budget, PIF or SAR balance-sheet funding", precedents: [S-fund-004, S-fund-027, S-lb-012], why: "who finances (budget, PIF or SAR) changes the reporting, not the risk; how SAR- or PIF-financed rail is reported is unclear"}
+    land: {mark: public, mechanism: "state delivers land and utilities free of encumbrances before works", precedents: [S-fund-014, S-fund-258], why: "expropriation delayed Al Boraq by about three years (secondary)"}
+    regulatory_force_majeure: {mark: public, mechanism: "no private counterparty: change in law and force majeure stay with the owner", precedents: [S-fund-006], why: "no PSP contract, so PSP Law Arts. 28 and 34 do not apply"}
+  public_with_private_om:
+    construction: {mark: public, mechanism: "state-delivered works with an optimism-bias contingency", precedents: [S-fund-261, S-fund-025], why: "capital works stay with the owner; only O&M is contracted"}
+    demand: {mark: public, mechanism: "state keeps fare revenue; operator paid a fee", precedents: [S-fund-039, S-fund-045], why: "Haramain: Renfe runs trains on behalf of SAR (secondary); whether any of its fee depends on ridership is unclear"}
+    revenue: {mark: public, mechanism: "state keeps fares; operator paid a fee", precedents: [S-fund-039], why: "fare revenue stays with the owner; who sets passenger fares is unclear (legal item fare_setting_authority)"}
+    operations: {mark: private, mechanism: "performance-based O&M contract with availability and punctuality deductions", precedents: [S-fund-039, S-fund-044], why: "HSL-Zuid shows the limit: arbitration placed 90% of a rail-damage cost on the State"}
+    financing: {mark: public, mechanism: "budget, PIF or SAR balance-sheet funding", precedents: [S-fund-004, S-fund-027], why: "no private finance in the contract"}
+    land: {mark: public, mechanism: "state delivers land before works", precedents: [S-fund-014, S-fund-258], why: "as in fully public delivery"}
+    regulatory_force_majeure: {mark: shared, mechanism: "change-in-law and force-majeure relief in the O&M contract; arbitration subject to agency approval", precedents: [S-fund-007, S-fund-008], why: "a 5-year-plus O&M contract may fall under the PSP Law (unclear: O&M-only contracts and the Art. 1 definition)"}
+  ppp_dbfom_availability:
+    construction: {mark: private, mechanism: "fixed-price DBFOM paid only from availability; overrun beyond the equity cushion returns to the state on renegotiation or termination", precedents: [S-fund-046, S-fund-047, S-fund-045, S-fund-227], why: "LGV SEA protected taxpayers from overruns of budget commitments, but the private cushion was about 20% equity"}
+    demand: {mark: public, mechanism: "availability payment; state keeps fare revenue", precedents: [S-fund-045], why: "Sydney Metro Northwest: the State retained demand risk"}
+    revenue: {mark: public, mechanism: "state keeps fares; the SPV is paid by availability", precedents: [S-fund-045], why: "fares are not the SPV's income; who sets passenger fares is unclear (legal item fare_setting_authority)"}
+    operations: {mark: private, mechanism: "availability deductions and hand-back condition requirements", precedents: [S-fund-043, S-fund-044], why: "whole-life maintenance priced into the payment"}
+    financing: {mark: private, mechanism: "project-finance debt raised by the SPV, rate fixed or hedged at financial close; refinancing-gain sharing", precedents: [S-fund-227, S-fund-004, S-lb-012], why: "LISEA's senior debt was 73% state-guaranteed, so the transfer was partial; the 2008 Landbridge BOT did not reach financial close (secondary)"}
+    land: {mark: public, mechanism: "state delivers land; compensation event for late delivery", precedents: [S-fund-014, S-fund-006], why: "Railway Law Art. 33 lets TGA allow a concessionaire to use railway lands"}
+    regulatory_force_majeure: {mark: shared, mechanism: "change-in-law and public-interest termination compensation (PSP Law Art. 28) with force-majeure relief above a threshold", precedents: [S-fund-007, S-fund-008, S-fund-006], why: "Art. 28 allows compensation including lost revenues"}
+  ppp_dbfom_demand_risk:
+    construction: {mark: private, mechanism: "fixed-price design-build inside the concession; overrun beyond the equity cushion returns to the state", precedents: [S-fund-046, S-fund-047, S-fund-227], why: "as LGV SEA"}
+    demand: {mark: private, mechanism: "fares to the concessionaire with a minimum revenue guarantee (cap-and-collar) and revenue sharing above forecast", precedents: [S-fund-046, S-fund-229, S-fund-023], why: "LGV SEA carried traffic risk; its forecasts were optimistic (over-estimated air diversion); MRGs are contingent liabilities"}
+    revenue: {mark: private, mechanism: "concessionaire collects fares under the concession (any fare cap would be a contract term)", precedents: [S-fund-046, S-fund-013], why: "LGV SEA's concessionaire collected track-access tolls; whether a Saudi rail concessionaire may set passenger fares, and under which authority, is unclear (legal item fare_setting_authority)"}
+    operations: {mark: private, mechanism: "concessionaire operates and maintains at its own cost", precedents: [S-fund-046], why: "integrated in the concession"}
+    financing: {mark: private, mechanism: "project-finance debt and equity at the SPV; state construction grant", precedents: [S-fund-223, S-fund-227, S-lb-012], why: "LGV SEA needed a 48% grantor contribution"}
+    land: {mark: public, mechanism: "state delivers land and utilities", precedents: [S-fund-014, S-fund-258], why: "as in the other models"}
+    regulatory_force_majeure: {mark: shared, mechanism: "change-in-law and public-interest termination compensation including lost revenues (PSP Law Art. 28)", precedents: [S-fund-007, S-fund-008], why: "termination compensation includes lost revenues"}
+  lvc_station_area_development:
+    construction: {mark: public, mechanism: "state-delivered station works; development parcels built by the developer at its own risk", precedents: [S-fund-217, S-fund-025], why: "models.yaml 'varies' resolved to public for the station works"}
+    demand: {mark: public, mechanism: "state keeps fares", precedents: [S-fund-048], why: "property value depends on station use; the rail demand risk stays with the owner"}
+    revenue: {mark: shared, mechanism: "station-area development rights or land premium ring-fenced to the project", precedents: [S-fund-048, S-fund-218], why: "Hong Kong R+P: the government judged property 'may barely bridge' the gaps on two lines"}
+    operations: {mark: public, mechanism: "in-house or host-line operation", precedents: [S-fund-033], why: "models.yaml 'varies' resolved to public"}
+    financing: {mark: public, mechanism: "public funding repaid in part from land value", precedents: [S-fund-217, S-fund-004], why: "MTR bears a ten-plus-year financing gap before flats sell"}
+    land: {mark: public, mechanism: "state grants development rights on railway land (Railway Law Art. 33)", precedents: [S-fund-014], why: "whether railway land can be developed commercially is unclear"}
+    regulatory_force_majeure: {mark: shared, mechanism: "planning and land-use change compensation in the development agreement", precedents: [S-fund-006, S-fund-007], why: "Saudi LVC instruments were not reviewed (unclear)"}
+  hybrid_public_dbfm_plus_station_lvc:
+    construction: {mark: shared, mechanism: "state civil works plus a DBFM for systems with pain/gain share on the interfaces", precedents: [S-fund-043, S-fund-045, S-fund-025], why: "split packages; interface risk stays shared"}
+    demand: {mark: public, mechanism: "availability payment for the DBFM; state keeps fares", precedents: [S-fund-045], why: "as in an availability PPP"}
+    revenue: {mark: shared, mechanism: "fares to the state plus station-area development rights", precedents: [S-fund-048, S-fund-045], why: "land value is a funding source, not a delivery model"}
+    operations: {mark: shared, mechanism: "SPV maintains infrastructure under availability deductions; trains run by the state company or its operator", precedents: [S-fund-043, S-fund-039], why: "models.yaml 'varies' resolved to shared (maintenance private, operation public)"}
+    financing: {mark: shared, mechanism: "public civil-works funding plus SPV finance for the DBFM package", precedents: [S-fund-004, S-fund-227], why: "two finance sources"}
+    land: {mark: public, mechanism: "state delivers land and grants development rights", precedents: [S-fund-014], why: "as above"}
+    regulatory_force_majeure: {mark: shared, mechanism: "change-in-law and termination compensation for the DBFM (PSP Law Art. 28)", precedents: [S-fund-007, S-fund-008], why: "as an availability PPP"}

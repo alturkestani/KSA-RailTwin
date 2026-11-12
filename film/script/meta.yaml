@@ -1,0 +1,35 @@
+# Film script metadata (read by film.script render; the version header of the four Markdown files).
+version: "1.4"
+date: "10 Nov 2026"
+author: "R10 builder (v1.4: BUILD_MOVIE, Arabic main rewords for clear pronunciation, film/storyboard/ar-rewords.csv; v1.3: FIX_HALF2_QUALITY, the in-the-model / uncalibrated refrain dropped per Tariq 8 Nov 2026, single closing notice on the last shot and credits, m-06-07 removed; v1.2: FIX_CP8_NOTES, m-08-06 benefit meaning and m-02-02 wording; v1.1: verifier fixes, glossary label term, two softened lines); documentary-director (R10)"
+status: "draft (CP8)"
+title_ar: "سكة تربط البلد"
+title_en: "A Railway to Connect the Country"
+trailer_title_ar: "سكة تربط البلد: إعلان"
+trailer_title_en: "A Railway to Connect the Country: trailer"
+sections_en:
+  1: "Four journeys (composites)"
+  2: "The map we have, and the towns still off it"
+  3: "A growing country"
+  4: "Who rides, and how the country connects"
+  5: "What rail already unlocks"
+  6: "How we routed and priced it"
+  7: "Autoresearch and the frozen judge"
+  8: "Cost and economic impact"
+sections_ar:
+  1: "أربع رحلات (شخصيات مركّبة)"
+  2: "الخريطة اللي عندنا والمدن اللي برّاها"
+  3: "بلد يكبر"
+  4: "مين يركب، وكيف يتصل البلد"
+  5: "اللي تفتحه السكة اليوم"
+  6: "كيف رسمنا المسار وسعّرناه"
+  7: "البحث الآلي والحَكَم المجمّد"
+  8: "التكلفة والأثر الاقتصادي"
+# FIX_MBS_TITLE (Tariq, 11 Nov 2026): the honorific Tariq set verbatim for m-03-03 takes the English
+# planning estimate from 720.0 s to 722.0 s. No other line may change in that run, so the 2.0 s
+# excess is recorded here and reported by `film.script validate` as a warning (listed for CP9);
+# anything above 722.0 s is still an error.
+duration_allowance:
+  main/en:
+    seconds: 2.0
+    reason: "FIX_MBS_TITLE: Tariq's verbatim honorific on m-03-03; for CP9"

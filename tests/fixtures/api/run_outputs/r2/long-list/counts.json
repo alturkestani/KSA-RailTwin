@@ -1,0 +1,53 @@
+{
+  "all": {
+    "al_baha": 16,
+    "al_jouf": 62,
+    "asir": 37,
+    "eastern": 75,
+    "hail": 17,
+    "jazan": 51,
+    "madinah": 22,
+    "makkah": 77,
+    "najran": 13,
+    "northern_borders": 57,
+    "qassim": 37,
+    "riyadh": 705,
+    "tabuk": 55
+  },
+  "long_threshold": {
+    "al_baha": 10,
+    "al_jouf": 5,
+    "asir": 20,
+    "eastern": 36,
+    "hail": 11,
+    "jazan": 19,
+    "madinah": 10,
+    "makkah": 20,
+    "najran": 9,
+    "northern_borders": 5,
+    "qassim": 15,
+    "riyadh": 30,
+    "tabuk": 8
+  },
+  "served": {
+    "eastern": 4,
+    "madinah": 1,
+    "makkah": 2,
+    "riyadh": 2
+  },
+  "pass_sensitivity_not_served": {
+    "al_baha": 10,
+    "al_jouf": 16,
+    "asir": 36,
+    "eastern": 61,
+    "hail": 17,
+    "jazan": 51,
+    "madinah": 15,
+    "makkah": 49,
+    "najran": 13,
+    "northern_borders": 8,
+    "qassim": 27,
+    "riyadh": 48,
+    "tabuk": 11
+  }
+}

@@ -1,0 +1,208 @@
+{
+ "type": "FeatureCollection",
+ "name": "existing",
+ "attribution": "(c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+ "layer": "existing",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "line_id": "hhr",
+    "name_en": "Haramain High Speed Railway",
+    "name_ar": "قطار الحرمين السريع",
+    "layer": "existing",
+    "status": "in_service",
+    "operator": "Saudi Arabia Railways (SAR)",
+    "source": "S-001",
+    "source_date": "",
+    "accessed": "2026-10-31",
+    "km_method": "cumulative shortest path along OSM track ['rail']; 137 gaps <= 0.3 km bridged between consecutive stations",
+    "alignment_km": 484.59,
+    "uncertainty_km": null
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      39.7883,
+      21.4176
+     ],
+     [
+      39.7428,
+      21.3991
+     ],
+     [
+      39.5934,
+      21.3248
+     ],
+     [
+      39.4829,
+      21.4763
+     ],
+     [
+      39.3758,
+      21.5275
+     ],
+     [
+      39.2901,
+      21.4975
+     ],
+     [
+      39.2547,
+      21.5077
+     ],
+     [
+      39.2416,
+      21.523
+     ],
+     [
+      39.2154,
+      21.6234
+     ],
+     [
+      39.1823,
+      21.6419
+     ],
+     [
+      39.2409,
+      21.5243
+     ],
+     [
+      39.2041,
+      21.6556
+     ],
+     [
+      39.165,
+      21.7938
+     ],
+     [
+      39.157,
+      21.9722
+     ],
+     [
+      39.1899,
+      22.4127
+     ],
+     [
+      39.1825,
+      22.5403
+     ],
+     [
+      39.2077,
+      22.7437
+     ],
+     [
+      39.3624,
+      22.8891
+     ],
+     [
+      39.7082,
+      23.1739
+     ],
+     [
+      39.7607,
+      23.4024
+     ],
+     [
+      39.7854,
+      23.5253
+     ],
+     [
+      39.8122,
+      23.8509
+     ],
+     [
+      39.7325,
+      23.9843
+     ],
+     [
+      39.6535,
+      24.1015
+     ],
+     [
+      39.5972,
+      24.2669
+     ],
+     [
+      39.6264,
+      24.3296
+     ],
+     [
+      39.6799,
+      24.3751
+     ],
+     [
+      39.7042,
+      24.4473
+     ],
+     [
+      39.6996,
+      24.4721
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "line_id": "riyadh-metro-l1",
+    "name_en": "Riyadh Metro Line 1 (Blue)",
+    "name_ar": "مترو الرياض - المسار الأزرق",
+    "layer": "existing",
+    "status": "in_service",
+    "operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+    "source": "S-r1a-045",
+    "source_date": "",
+    "accessed": "2026-10-31",
+    "km_method": "cumulative shortest path along OSM track ['light_rail', 'rail', 'subway']; 192 gaps <= 0.3 km bridged between consecutive stations",
+    "alignment_km": 36.7,
+    "uncertainty_km": null
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      46.6166,
+      24.8295
+     ],
+     [
+      46.6411,
+      24.7738
+     ],
+     [
+      46.6459,
+      24.7637
+     ],
+     [
+      46.6692,
+      24.7244
+     ],
+     [
+      46.7011,
+      24.6677
+     ],
+     [
+      46.7169,
+      24.6276
+     ],
+     [
+      46.7303,
+      24.6063
+     ],
+     [
+      46.7453,
+      24.5985
+     ],
+     [
+      46.7634,
+      24.5833
+     ],
+     [
+      46.7763,
+      24.5601
+     ]
+    ]
+   }
+  }
+ ]
+}

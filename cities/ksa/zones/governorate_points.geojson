@@ -1,0 +1,3136 @@
+{
+"type": "FeatureCollection",
+"name": "governorate_points",
+"attribution": "(c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+"features": [
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.6560108,
+20.2836432
+]
+},
+"properties": {
+"zone_id": "G001",
+"governorate": "Al Aqiq",
+"region": "al_baha",
+"settlement_id": "KSA-ST-01855",
+"name_en": "Al `Aqiq",
+"population": 19269,
+"pop_type": "official",
+"pop_source": "S-al_baha-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.4656378,
+20.0137941
+]
+},
+"properties": {
+"zone_id": "G002",
+"governorate": "Al Bahah",
+"region": "al_baha",
+"settlement_id": "KSA-ST-00013",
+"name_en": "Al Bahah",
+"population": 90515,
+"pop_type": "official",
+"pop_source": "S-al_baha-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.0720687,
+20.1997012
+]
+},
+"properties": {
+"zone_id": "G003",
+"governorate": "Al Hajrah",
+"region": "al_baha",
+"settlement_id": "KSA-ST-00581",
+"name_en": "الحجرة",
+"population": 2812,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.2828451,
+20.1105064
+]
+},
+"properties": {
+"zone_id": "G004",
+"governorate": "Al Mandaq",
+"region": "al_baha",
+"settlement_id": "KSA-ST-01336",
+"name_en": "Al Mindak",
+"population": 8674,
+"pop_type": "official",
+"pop_source": "S-al_baha-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.435556,
+19.779444
+]
+},
+"properties": {
+"zone_id": "G005",
+"governorate": "Al Mukhwah",
+"region": "al_baha",
+"settlement_id": "KSA-ST-00575",
+"name_en": "Al Makhwah",
+"population": 26248,
+"pop_type": "official",
+"pop_source": "S-al_baha-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.3607144,
+20.2475218
+]
+},
+"properties": {
+"zone_id": "G006",
+"governorate": "Al Qara",
+"region": "al_baha",
+"settlement_id": "KSA-ST-03407",
+"name_en": "Al Tawilah",
+"population": 2032,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.373665,
+20.053499
+]
+},
+"properties": {
+"zone_id": "G007",
+"governorate": "Bani Hasan",
+"region": "al_baha",
+"settlement_id": "KSA-ST-01515",
+"name_en": "بني حسن",
+"population": 6344,
+"pop_type": "official",
+"pop_source": "S-al_baha-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.557222,
+19.859444
+]
+},
+"properties": {
+"zone_id": "G008",
+"governorate": "Biljurashi",
+"region": "al_baha",
+"settlement_id": "KSA-ST-00566",
+"name_en": "Baljurashi",
+"population": 35985,
+"pop_type": "official",
+"pop_source": "S-al_baha-003",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.5201123,
+19.594439
+]
+},
+"properties": {
+"zone_id": "G009",
+"governorate": "Farat Ghamid Az Zinad",
+"region": "al_baha",
+"settlement_id": "KSA-ST-01891",
+"name_en": "Ghamid Az Zinad",
+"population": 1528,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.251301,
+19.9401107
+]
+},
+"properties": {
+"zone_id": "G010",
+"governorate": "Qilwah",
+"region": "al_baha",
+"settlement_id": "KSA-ST-03122",
+"name_en": "Qilwah",
+"population": 13069,
+"pop_type": "official",
+"pop_source": "S-al_baha-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.341944,
+31.333333
+]
+},
+"properties": {
+"zone_id": "G011",
+"governorate": "Al Qurayyat",
+"region": "al_jouf",
+"settlement_id": "KSA-ST-00868",
+"name_en": "Al Qurayyat",
+"population": 167080,
+"pop_type": "official",
+"pop_source": "S-al_jouf-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.866726,
+29.8059219
+]
+},
+"properties": {
+"zone_id": "G012",
+"governorate": "Dawamat Al Jandal",
+"region": "al_jouf",
+"settlement_id": "KSA-ST-00851",
+"name_en": "Dawmat al Jandal",
+"population": 42362,
+"pop_type": "official",
+"pop_source": "S-al_jouf-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.2047701,
+29.9784008
+]
+},
+"properties": {
+"zone_id": "G013",
+"governorate": "Sakaka",
+"region": "al_jouf",
+"settlement_id": "KSA-ST-00854",
+"name_en": "Sakaka",
+"population": 204174,
+"pop_type": "official",
+"pop_source": "S-al_jouf-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.2165051,
+30.5006757
+]
+},
+"properties": {
+"zone_id": "G014",
+"governorate": "Tubarjal",
+"region": "al_jouf",
+"settlement_id": "KSA-ST-00871",
+"name_en": "Tubarjal",
+"population": 78354,
+"pop_type": "official",
+"pop_source": "S-al_jouf-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.5043596,
+18.2164282
+]
+},
+"properties": {
+"zone_id": "G015",
+"governorate": "Abha",
+"region": "asir",
+"settlement_id": "KSA-ST-00026",
+"name_en": "Abha",
+"population": 334290,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.8413581,
+18.1814093
+]
+},
+"properties": {
+"zone_id": "G016",
+"governorate": "Ahad Rufaydah",
+"region": "asir",
+"settlement_id": "KSA-ST-02691",
+"name_en": "Ahad Rufaidah",
+"population": 79202,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.536389,
+18.217222
+]
+},
+"properties": {
+"zone_id": "G017",
+"governorate": "Al Birk",
+"region": "asir",
+"settlement_id": "KSA-ST-01240",
+"name_en": "Al Birk",
+"population": 3987,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.5312466,
+18.0103437
+]
+},
+"properties": {
+"zone_id": "G018",
+"governorate": "Al Harjah",
+"region": "asir",
+"settlement_id": "KSA-ST-03378",
+"name_en": "الرفغة",
+"population": 847,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.9236423,
+19.13022
+]
+},
+"properties": {
+"zone_id": "G019",
+"governorate": "Al Majardah",
+"region": "asir",
+"settlement_id": "KSA-ST-00555",
+"name_en": "Al Majaridah",
+"population": 21837,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.133333,
+19.116667
+]
+},
+"properties": {
+"zone_id": "G020",
+"governorate": "An Nimas",
+"region": "asir",
+"settlement_id": "KSA-ST-00552",
+"name_en": "An Nimas",
+"population": 22541,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.9579697,
+19.563336
+]
+},
+"properties": {
+"zone_id": "G021",
+"governorate": "Balqarn",
+"region": "asir",
+"settlement_id": "KSA-ST-00563",
+"name_en": "Sabt Al 'Alayah",
+"population": 200000,
+"pop_type": "derived",
+"pop_source": "osm-gcc-2026-10-14 node/1236690508 population tag",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.9464041,
+18.9380322
+]
+},
+"properties": {
+"zone_id": "G022",
+"governorate": "Bariq",
+"region": "asir",
+"settlement_id": "KSA-ST-01850",
+"name_en": "Bariq",
+"population": 2858,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.6,
+20.0
+]
+},
+"properties": {
+"zone_id": "G023",
+"governorate": "Bishah",
+"region": "asir",
+"settlement_id": "KSA-ST-00265",
+"name_en": "Bishah",
+"population": 115537,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.5194305,
+17.6617883
+]
+},
+"properties": {
+"zone_id": "G024",
+"governorate": "Dhahran Al Janub",
+"region": "asir",
+"settlement_id": "KSA-ST-01310",
+"name_en": "Dhahran Al Janub",
+"population": 24134,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.733333,
+18.3
+]
+},
+"properties": {
+"zone_id": "G025",
+"governorate": "Khamis Mushayt",
+"region": "asir",
+"settlement_id": "KSA-ST-00268",
+"name_en": "Khamis Mushayt",
+"population": 535065,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.048889,
+18.546389
+]
+},
+"properties": {
+"zone_id": "G026",
+"governorate": "Muhayil",
+"region": "asir",
+"settlement_id": "KSA-ST-00558",
+"name_en": "Muhayil",
+"population": 97967,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.226975,
+18.089207
+]
+},
+"properties": {
+"zone_id": "G027",
+"governorate": "Rijal Almaa",
+"region": "asir",
+"settlement_id": "KSA-ST-02119",
+"name_en": "Al habil",
+"population": 5810,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.1326414,
+18.0873982
+]
+},
+"properties": {
+"zone_id": "G028",
+"governorate": "Sarat Abidah",
+"region": "asir",
+"settlement_id": "KSA-ST-00029",
+"name_en": "Sarat `Abidah",
+"population": 19855,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.17026,
+18.953526
+]
+},
+"properties": {
+"zone_id": "G029",
+"governorate": "Tanumah",
+"region": "asir",
+"settlement_id": "KSA-ST-01711",
+"name_en": "Tanumah",
+"population": 12442,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.2422812,
+18.8358697
+]
+},
+"properties": {
+"zone_id": "G030",
+"governorate": "Tarib",
+"region": "asir",
+"settlement_id": "KSA-ST-01893",
+"name_en": "المضة",
+"population": 9492,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.5,
+19.533333
+]
+},
+"properties": {
+"zone_id": "G031",
+"governorate": "Tathlith",
+"region": "asir",
+"settlement_id": "KSA-ST-00397",
+"name_en": "Tathlith",
+"population": 15854,
+"pop_type": "official",
+"pop_source": "S-asir-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.668333,
+25.935556
+]
+},
+"properties": {
+"zone_id": "G032",
+"governorate": "Abqaiq Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00047",
+"name_en": "Abqaiq",
+"population": 45032,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.5626628,
+25.3877578
+]
+},
+"properties": {
+"zone_id": "G033",
+"governorate": "Al Ahsa Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-03116",
+"name_en": "Al Ahsa",
+"population": 903597,
+"pop_type": "derived",
+"pop_source": "osm-gcc-2026-10-14 node/8487320543 population tag",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.6532161,
+27.0006968
+]
+},
+"properties": {
+"zone_id": "G034",
+"governorate": "Al Jubayl Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00002",
+"name_en": "Al Jubayl",
+"population": 474679,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+48.4927814,
+28.4225409
+]
+},
+"properties": {
+"zone_id": "G035",
+"governorate": "Al Khafji Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00269",
+"name_en": "Al Khafji",
+"population": 78691,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+48.4789354,
+27.4741541
+]
+},
+"properties": {
+"zone_id": "G036",
+"governorate": "Al Nuayriyah Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00902",
+"name_en": "Nuayriyah",
+"population": 40023,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.758333,
+24.740833
+]
+},
+"properties": {
+"zone_id": "G037",
+"governorate": "Al Udayd Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00932",
+"name_en": "Salwa",
+"population": 5566,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.1039991,
+26.4367824
+]
+},
+"properties": {
+"zone_id": "G038",
+"governorate": "Dammam Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00004",
+"name_en": "Dammam",
+"population": 1386166,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.9627527,
+28.4328084
+]
+},
+"properties": {
+"zone_id": "G039",
+"governorate": "Hafar Al Batin Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00267",
+"name_en": "Hafar Al-Batin",
+"population": 387096,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.1960237,
+26.3039999
+]
+},
+"properties": {
+"zone_id": "G040",
+"governorate": "Khobar Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00001",
+"name_en": "Al Khobar",
+"population": 409549,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+47.702218,
+27.5592149
+]
+},
+"properties": {
+"zone_id": "G041",
+"governorate": "Qaryah Al Ulya Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-00046",
+"name_en": "Qaryah al `Ulya",
+"population": 10961,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.055532,
+26.5764104
+]
+},
+"properties": {
+"zone_id": "G042",
+"governorate": "Qatif Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-01110",
+"name_en": "Tarout",
+"population": 117646,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.067352,
+26.707417
+]
+},
+"properties": {
+"zone_id": "G043",
+"governorate": "Ras Tannurah Governorate",
+"region": "eastern",
+"settlement_id": "KSA-ST-01101",
+"name_en": "Ra's Tannurah",
+"population": 57030,
+"pop_type": "official",
+"pop_source": "S-eastern-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.315707,
+26.7874812
+]
+},
+"properties": {
+"zone_id": "G044",
+"governorate": "Al Ghazalah",
+"region": "hail",
+"settlement_id": "KSA-ST-03117",
+"name_en": "Al Ghazalah",
+"population": 5592,
+"pop_type": "official",
+"pop_source": "S-hail-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.3804969,
+25.3381214
+]
+},
+"properties": {
+"zone_id": "G045",
+"governorate": "Al Hait",
+"region": "hail",
+"settlement_id": "KSA-ST-07060",
+"name_en": "الملوي",
+"population": 15000,
+"pop_type": "derived",
+"pop_source": "osm-gcc-2026-10-14 node/13700860322 population tag",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.359613,
+26.2902589
+]
+},
+"properties": {
+"zone_id": "G046",
+"governorate": "As Sulaymi",
+"region": "hail",
+"settlement_id": "KSA-ST-00296",
+"name_en": "As Sulaymi",
+"population": 6775,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.3239047,
+26.8629218
+]
+},
+"properties": {
+"zone_id": "G047",
+"governorate": "Ash Shamli",
+"region": "hail",
+"settlement_id": "KSA-ST-01668",
+"name_en": "الشملي",
+"population": 9163,
+"pop_type": "official",
+"pop_source": "S-hail-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.443889,
+27.175
+]
+},
+"properties": {
+"zone_id": "G048",
+"governorate": "Ash Shinan",
+"region": "hail",
+"settlement_id": "KSA-ST-00998",
+"name_en": "Ash Shinan",
+"population": 11560,
+"pop_type": "official",
+"pop_source": "S-hail-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.3899399,
+27.9102716
+]
+},
+"properties": {
+"zone_id": "G049",
+"governorate": "Baqa",
+"region": "hail",
+"settlement_id": "KSA-ST-00963",
+"name_en": "Baqa",
+"population": 19659,
+"pop_type": "official",
+"pop_source": "S-hail-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.6985992,
+27.5208716
+]
+},
+"properties": {
+"zone_id": "G050",
+"governorate": "Hail",
+"region": "hail",
+"settlement_id": "KSA-ST-00041",
+"name_en": "Ha'il",
+"population": 448623,
+"pop_type": "official",
+"pop_source": "S-hail-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.967607,
+27.287548
+]
+},
+"properties": {
+"zone_id": "G051",
+"governorate": "Mawqaq",
+"region": "hail",
+"settlement_id": "KSA-ST-00368",
+"name_en": "Dulayhan",
+"population": 3484,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.124944,
+26.494182
+]
+},
+"properties": {
+"zone_id": "G052",
+"governorate": "Simira",
+"region": "hail",
+"settlement_id": "KSA-ST-02596",
+"name_en": "Simira'",
+"population": 3105,
+"pop_type": "official",
+"pop_source": "S-hail-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.8380784,
+16.9661387
+]
+},
+"properties": {
+"zone_id": "G053",
+"governorate": "Abu Arish Governorate",
+"region": "jazan",
+"settlement_id": "KSA-ST-03123",
+"name_en": "Abu Arish",
+"population": 69632,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.2287845,
+17.7252243
+]
+},
+"properties": {
+"zone_id": "G054",
+"governorate": "Ad Darb",
+"region": "jazan",
+"settlement_id": "KSA-ST-02687",
+"name_en": "Abu Alsadad",
+"population": 9940,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.9531097,
+16.7106851
+]
+},
+"properties": {
+"zone_id": "G055",
+"governorate": "Ahad Al Masarihah",
+"region": "jazan",
+"settlement_id": "KSA-ST-02688",
+"name_en": "Ahad al Musarihah",
+"population": 25670,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.0837091,
+17.0395187
+]
+},
+"properties": {
+"zone_id": "G056",
+"governorate": "Al Aridah",
+"region": "jazan",
+"settlement_id": "KSA-ST-01256",
+"name_en": "Al `Aridah",
+"population": 10902,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.9404299,
+17.2352185
+]
+},
+"properties": {
+"zone_id": "G057",
+"governorate": "Al Aydabi",
+"region": "jazan",
+"settlement_id": "KSA-ST-01265",
+"name_en": "Al `Aydabi",
+"population": 10357,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.2177921,
+16.7819669
+]
+},
+"properties": {
+"zone_id": "G058",
+"governorate": "Al Harth",
+"region": "jazan",
+"settlement_id": "KSA-ST-01269",
+"name_en": "Al Khawbah",
+"population": 3235,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.9516853,
+16.5734314
+]
+},
+"properties": {
+"zone_id": "G059",
+"governorate": "Al Tuwal Governorate",
+"region": "jazan",
+"settlement_id": "KSA-ST-03489",
+"name_en": "alturashia",
+"population": 5112,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.1328881,
+17.3384764
+]
+},
+"properties": {
+"zone_id": "G060",
+"governorate": "Alddayer",
+"region": "jazan",
+"settlement_id": "KSA-ST-01538",
+"name_en": "Alddayer",
+"population": 15752,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.78977,
+17.537379
+]
+},
+"properties": {
+"zone_id": "G061",
+"governorate": "Ar Rayth",
+"region": "jazan",
+"settlement_id": "KSA-ST-02322",
+"name_en": "Muqza`",
+"population": 6883,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.5372249,
+17.3756272
+]
+},
+"properties": {
+"zone_id": "G062",
+"governorate": "Baysh",
+"region": "jazan",
+"settlement_id": "KSA-ST-01842",
+"name_en": "Baysh",
+"population": 32679,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.7795037,
+17.1051176
+]
+},
+"properties": {
+"zone_id": "G063",
+"governorate": "Damad Governorate",
+"region": "jazan",
+"settlement_id": "KSA-ST-01250",
+"name_en": "Damad",
+"population": 26079,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.1374613,
+17.2807743
+]
+},
+"properties": {
+"zone_id": "G064",
+"governorate": "Faifa Governorate",
+"region": "jazan",
+"settlement_id": "KSA-ST-01539",
+"name_en": "Al Jawah",
+"population": 21104,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.118333,
+16.702222
+]
+},
+"properties": {
+"zone_id": "G065",
+"governorate": "Farasan",
+"region": "jazan",
+"settlement_id": "KSA-ST-00272",
+"name_en": "Farasan",
+"population": 10118,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.8927267,
+17.4398271
+]
+},
+"properties": {
+"zone_id": "G066",
+"governorate": "Harub Governorate",
+"region": "jazan",
+"settlement_id": "KSA-ST-01311",
+"name_en": "Harub",
+"population": 9394,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.5579758,
+16.894719
+]
+},
+"properties": {
+"zone_id": "G067",
+"governorate": "Jazan",
+"region": "jazan",
+"settlement_id": "KSA-ST-00005",
+"name_en": "Jizan",
+"population": 173919,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.621495,
+17.1502255
+]
+},
+"properties": {
+"zone_id": "G068",
+"governorate": "Sabya",
+"region": "jazan",
+"settlement_id": "KSA-ST-01255",
+"name_en": "Sabya",
+"population": 72086,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.943889,
+16.597222
+]
+},
+"properties": {
+"zone_id": "G069",
+"governorate": "Samtah",
+"region": "jazan",
+"settlement_id": "KSA-ST-01292",
+"name_en": "Samitah",
+"population": 43301,
+"pop_type": "official",
+"pop_source": "S-jazan-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.515278,
+24.879722
+]
+},
+"properties": {
+"zone_id": "G070",
+"governorate": "Al Hinakiyah",
+"region": "madinah",
+"settlement_id": "KSA-ST-00605",
+"name_en": "Al Hanakiyah",
+"population": 24880,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.1085415,
+25.0635722
+]
+},
+"properties": {
+"zone_id": "G071",
+"governorate": "Al Is",
+"region": "madinah",
+"settlement_id": "KSA-ST-01683",
+"name_en": "al `Aiss",
+"population": 8760,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.6111216,
+24.471153
+]
+},
+"properties": {
+"zone_id": "G072",
+"governorate": "Al Madinah Al Munawwarah",
+"region": "madinah",
+"settlement_id": "KSA-ST-01532",
+"name_en": "Medina",
+"population": 1411599,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.8791554,
+23.4995868
+]
+},
+"properties": {
+"zone_id": "G073",
+"governorate": "Al Mahd",
+"region": "madinah",
+"settlement_id": "KSA-ST-01365",
+"name_en": "Mahd adh Dhahab",
+"population": 20272,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.9596519,
+26.5588965
+]
+},
+"properties": {
+"zone_id": "G074",
+"governorate": "Al Ula",
+"region": "madinah",
+"settlement_id": "KSA-ST-02693",
+"name_en": "Al-Ula",
+"population": 40760,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.7907409,
+23.78
+]
+},
+"properties": {
+"zone_id": "G075",
+"governorate": "Badr",
+"region": "madinah",
+"settlement_id": "KSA-ST-01387",
+"name_en": "Badr Hunayn",
+"population": 30494,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.2932974,
+25.7025446
+]
+},
+"properties": {
+"zone_id": "G076",
+"governorate": "Khaybar",
+"region": "madinah",
+"settlement_id": "KSA-ST-00055",
+"name_en": "Khaybar",
+"population": 15888,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.709722,
+23.421667
+]
+},
+"properties": {
+"zone_id": "G077",
+"governorate": "Wadi Al Fara",
+"region": "madinah",
+"settlement_id": "KSA-ST-01376",
+"name_en": "Al Faqir",
+"population": 7231,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.0687076,
+24.089019
+]
+},
+"properties": {
+"zone_id": "G078",
+"governorate": "Yanbu",
+"region": "madinah",
+"settlement_id": "KSA-ST-01439",
+"name_en": "Yanbu`",
+"population": 331916,
+"pop_type": "official",
+"pop_source": "S-madinah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.8791135,
+20.4496878
+]
+},
+"properties": {
+"zone_id": "G079",
+"governorate": "Adam",
+"region": "makkah",
+"settlement_id": "KSA-ST-01876",
+"name_en": "Adham",
+"population": 10484,
+"pop_type": "derived",
+"pop_source": "osm-gcc-2026-10-14 node/6768442812 population tag",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.6654083,
+19.5814482
+]
+},
+"properties": {
+"zone_id": "G080",
+"governorate": "Al Ardhiyat",
+"region": "makkah",
+"settlement_id": "KSA-ST-00836",
+"name_en": "Namerah",
+"population": 13188,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.6989787,
+21.621168
+]
+},
+"properties": {
+"zone_id": "G081",
+"governorate": "Al Jumum",
+"region": "makkah",
+"settlement_id": "KSA-ST-00508",
+"name_en": "Al Jumum",
+"population": 41089,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.7982315,
+22.2640213
+]
+},
+"properties": {
+"zone_id": "G082",
+"governorate": "Al Kamil",
+"region": "makkah",
+"settlement_id": "KSA-ST-01356",
+"name_en": "Al Kamil",
+"population": 3151,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.031793,
+21.9080694
+]
+},
+"properties": {
+"zone_id": "G083",
+"governorate": "Al Khurmah",
+"region": "makkah",
+"settlement_id": "KSA-ST-00499",
+"name_en": "Al Khurmah",
+"population": 28491,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.2701391,
+20.1451486
+]
+},
+"properties": {
+"zone_id": "G084",
+"governorate": "Al Lith",
+"region": "makkah",
+"settlement_id": "KSA-ST-01349",
+"name_en": "Al Lith",
+"population": 20811,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.761935,
+22.4365659
+]
+},
+"properties": {
+"zone_id": "G085",
+"governorate": "Al Muwayh",
+"region": "makkah",
+"settlement_id": "KSA-ST-00488",
+"name_en": "Al Muwayh",
+"population": 7278,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.0788747,
+19.1264288
+]
+},
+"properties": {
+"zone_id": "G086",
+"governorate": "Al Qunfudhah",
+"region": "makkah",
+"settlement_id": "KSA-ST-00270",
+"name_en": "Al Qunfudhah",
+"population": 42447,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.4158308,
+21.2702801
+]
+},
+"properties": {
+"zone_id": "G087",
+"governorate": "Al Taif",
+"region": "makkah",
+"settlement_id": "KSA-ST-00520",
+"name_en": "At Ta'if",
+"population": 563282,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.4500096,
+21.4012724
+]
+},
+"properties": {
+"zone_id": "G088",
+"governorate": "Bahrah",
+"region": "makkah",
+"settlement_id": "KSA-ST-01322",
+"name_en": "Bahrah",
+"population": 70118,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.1742363,
+21.5504432
+]
+},
+"properties": {
+"zone_id": "G089",
+"governorate": "Governorate of Jeddah",
+"region": "makkah",
+"settlement_id": "KSA-ST-01411",
+"name_en": "Jeddah",
+"population": 3712917,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.3202072,
+22.1551359
+]
+},
+"properties": {
+"zone_id": "G090",
+"governorate": "Khulays",
+"region": "makkah",
+"settlement_id": "KSA-ST-00059",
+"name_en": "Khulays",
+"population": 20139,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.826869,
+21.420847
+]
+},
+"properties": {
+"zone_id": "G091",
+"governorate": "Makkah Al Mukarramah",
+"region": "makkah",
+"settlement_id": "KSA-ST-01525",
+"name_en": "Mecca",
+"population": 2385509,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+40.8093539,
+20.9466176
+]
+},
+"properties": {
+"zone_id": "G092",
+"governorate": "Missan",
+"region": "makkah",
+"settlement_id": "KSA-ST-01874",
+"name_en": "بني سعد",
+"population": 6482,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.0335547,
+22.7989669
+]
+},
+"properties": {
+"zone_id": "G093",
+"governorate": "Rabigh",
+"region": "makkah",
+"settlement_id": "KSA-ST-00263",
+"name_en": "Rabigh",
+"population": 72928,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.8501935,
+21.2571996
+]
+},
+"properties": {
+"zone_id": "G094",
+"governorate": "Ranyah",
+"region": "makkah",
+"settlement_id": "KSA-ST-01763",
+"name_en": "Ranyah",
+"population": 28681,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.5874689,
+21.2172851
+]
+},
+"properties": {
+"zone_id": "G095",
+"governorate": "Turubah",
+"region": "makkah",
+"settlement_id": "KSA-ST-07369",
+"name_en": "Turubah",
+"population": 28279,
+"pop_type": "official",
+"pop_source": "S-makkah-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.7163591,
+17.8813714
+]
+},
+"properties": {
+"zone_id": "G096",
+"governorate": "Badr Al Janub",
+"region": "najran",
+"settlement_id": "KSA-ST-03406",
+"name_en": "Badr al Janub",
+"population": 2709,
+"pop_type": "official",
+"pop_source": "S-najran-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.023155,
+17.8518464
+]
+},
+"properties": {
+"zone_id": "G097",
+"governorate": "Hubuna",
+"region": "najran",
+"settlement_id": "KSA-ST-05729",
+"name_en": "Habuna",
+"population": 12738,
+"pop_type": "official",
+"pop_source": "S-najran-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.7411346,
+17.5498537
+]
+},
+"properties": {
+"zone_id": "G098",
+"governorate": "Khubash",
+"region": "najran",
+"settlement_id": "KSA-ST-03120",
+"name_en": "Khubash",
+"population": 7182,
+"pop_type": "official",
+"pop_source": "S-najran-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.2246817,
+17.5439809
+]
+},
+"properties": {
+"zone_id": "G099",
+"governorate": "Najran",
+"region": "najran",
+"settlement_id": "KSA-ST-00264",
+"name_en": "Najran",
+"population": 381431,
+"pop_type": "official",
+"pop_source": "S-najran-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+47.1126055,
+17.491225
+]
+},
+"properties": {
+"zone_id": "G100",
+"governorate": "Sharurah",
+"region": "najran",
+"settlement_id": "KSA-ST-00279",
+"name_en": "Sharurah",
+"population": 89456,
+"pop_type": "official",
+"pop_source": "S-najran-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.110816,
+17.974877
+]
+},
+"properties": {
+"zone_id": "G101",
+"governorate": "Thar",
+"region": "najran",
+"settlement_id": "KSA-ST-01944",
+"name_en": "Thar",
+"population": 8030,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.203056,
+18.529167
+]
+},
+"properties": {
+"zone_id": "G102",
+"governorate": "Yadamah",
+"region": "najran",
+"settlement_id": "KSA-ST-01914",
+"name_en": "Yadamah",
+"population": 4983,
+"pop_type": "official",
+"pop_source": "S-najran-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.2382351,
+30.3632535
+]
+},
+"properties": {
+"zone_id": "G103",
+"governorate": "Al Uwayqilah",
+"region": "northern_borders",
+"settlement_id": "KSA-ST-00873",
+"name_en": "Uwayqilah",
+"population": 17055,
+"pop_type": "official",
+"pop_source": "S-northern_borders-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.0164788,
+30.9815531
+]
+},
+"properties": {
+"zone_id": "G104",
+"governorate": "Arar",
+"region": "northern_borders",
+"settlement_id": "KSA-ST-00883",
+"name_en": "`Ar`ar",
+"population": 199247,
+"pop_type": "official",
+"pop_source": "S-northern_borders-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.5178685,
+29.6324189
+]
+},
+"properties": {
+"zone_id": "G105",
+"governorate": "Rafha",
+"region": "northern_borders",
+"settlement_id": "KSA-ST-00277",
+"name_en": "Rafha",
+"population": 63929,
+"pop_type": "official",
+"pop_source": "S-northern_borders-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.6615532,
+31.6725877
+]
+},
+"properties": {
+"zone_id": "G106",
+"governorate": "Turayf",
+"region": "northern_borders",
+"settlement_id": "KSA-ST-00872",
+"name_en": "Turayf",
+"population": 61395,
+"pop_type": "official",
+"pop_source": "S-northern_borders-001",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.324129,
+27.4024971
+]
+},
+"properties": {
+"zone_id": "G107",
+"governorate": "Al Asyah",
+"region": "qassim",
+"settlement_id": "KSA-ST-00150",
+"name_en": "Qibah",
+"population": 11506,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.7334802,
+25.9877958
+]
+},
+"properties": {
+"zone_id": "G108",
+"governorate": "Al Badai",
+"region": "qassim",
+"settlement_id": "KSA-ST-01886",
+"name_en": "Al Bada'i`",
+"population": 48474,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.665355,
+26.1499429
+]
+},
+"properties": {
+"zone_id": "G109",
+"governorate": "Al Bukayriyah",
+"region": "qassim",
+"settlement_id": "KSA-ST-01013",
+"name_en": "Albukayriyah",
+"population": 43229,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.2209063,
+25.8596075
+]
+},
+"properties": {
+"zone_id": "G110",
+"governorate": "Al Midhnab",
+"region": "qassim",
+"settlement_id": "KSA-ST-00313",
+"name_en": "Al Mithnab",
+"population": 33341,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.8467437,
+25.5031224
+]
+},
+"properties": {
+"zone_id": "G111",
+"governorate": "An Nabhaniyah",
+"region": "qassim",
+"settlement_id": "KSA-ST-00102",
+"name_en": "Dulay` Rashid",
+"population": 17933,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.5038978,
+25.8685205
+]
+},
+"properties": {
+"zone_id": "G112",
+"governorate": "Ar Rass",
+"region": "qassim",
+"settlement_id": "KSA-ST-00040",
+"name_en": "Ar Rass",
+"population": 107902,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.263056,
+26.318333
+]
+},
+"properties": {
+"zone_id": "G113",
+"governorate": "Ash Shimasiyah",
+"region": "qassim",
+"settlement_id": "KSA-ST-00307",
+"name_en": "Ash Shimasiyah",
+"population": 5719,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.971667,
+26.331667
+]
+},
+"properties": {
+"zone_id": "G114",
+"governorate": "Buraydah",
+"region": "qassim",
+"settlement_id": "KSA-ST-00303",
+"name_en": "Buraydah",
+"population": 571169,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.9284151,
+24.7156647
+]
+},
+"properties": {
+"zone_id": "G115",
+"governorate": "Dariyah",
+"region": "qassim",
+"settlement_id": "KSA-ST-00478",
+"name_en": "Dariyah",
+"population": 5798,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.5580679,
+26.0547858
+]
+},
+"properties": {
+"zone_id": "G116",
+"governorate": "Riyadh Al Khabra",
+"region": "qassim",
+"settlement_id": "KSA-ST-00060",
+"name_en": "Riyad Al Khabra",
+"population": 25588,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.9864354,
+26.0908582
+]
+},
+"properties": {
+"zone_id": "G117",
+"governorate": "Unayzah",
+"region": "qassim",
+"settlement_id": "KSA-ST-00266",
+"name_en": "Unaizah",
+"population": 183319,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.197907,
+25.828388
+]
+},
+"properties": {
+"zone_id": "G118",
+"governorate": "Uqlat As Suqur",
+"region": "qassim",
+"settlement_id": "KSA-ST-00197",
+"name_en": "Uglat Asugour",
+"population": 6659,
+"pop_type": "derived",
+"pop_source": "osm-gcc-2026-10-14 node/747671382 population tag",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.6377184,
+26.4945913
+]
+},
+"properties": {
+"zone_id": "G119",
+"governorate": "Uyun Al Jiwa",
+"region": "qassim",
+"settlement_id": "KSA-ST-01027",
+"name_en": "Al Jiwa",
+"population": 15619,
+"pop_type": "official",
+"pop_source": "S-qassim-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+47.165,
+23.996944
+]
+},
+"properties": {
+"zone_id": "G120",
+"governorate": "Ad Dilam",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00749",
+"name_en": "Ad Dilam",
+"population": 39267,
+"pop_type": "official",
+"pop_source": "S-cp1-012",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.5717678,
+24.7483029
+]
+},
+"properties": {
+"zone_id": "G121",
+"governorate": "Ad Diriyah",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00710",
+"name_en": "Ad Dir`iyah",
+"population": 61609,
+"pop_type": "official",
+"pop_source": "S-riyadh-003",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.383333,
+24.494167
+]
+},
+"properties": {
+"zone_id": "G122",
+"governorate": "Ad Duwadimi",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00609",
+"name_en": "Ad Dawadimi",
+"population": 86861,
+"pop_type": "official",
+"pop_source": "S-riyadh-009",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+42.9150847,
+23.9023697
+]
+},
+"properties": {
+"zone_id": "G123",
+"governorate": "Afif",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00048",
+"name_en": "Afif",
+"population": 47340,
+"pop_type": "official",
+"pop_source": "S-riyadh-005",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.7171558,
+22.2929472
+]
+},
+"properties": {
+"zone_id": "G124",
+"governorate": "Al Aflaj",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00821",
+"name_en": "Layla",
+"population": 29698,
+"pop_type": "official",
+"pop_source": "S-cp1-013",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.950833,
+26.028611
+]
+},
+"properties": {
+"zone_id": "G125",
+"governorate": "Al Ghat",
+"region": "riyadh",
+"settlement_id": "KSA-ST-01141",
+"name_en": "Al Ghat",
+"population": 8683,
+"pop_type": "official",
+"pop_source": "S-cp1-014",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.513889,
+23.633611
+]
+},
+"properties": {
+"zone_id": "G126",
+"governorate": "Al Hariq",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00801",
+"name_en": "Al Hariq",
+"population": 6895,
+"pop_type": "official",
+"pop_source": "S-cp1-015",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+47.6840134,
+23.8304401
+]
+},
+"properties": {
+"zone_id": "G127",
+"governorate": "Al Kharj",
+"region": "riyadh",
+"settlement_id": "KSA-ST-07371",
+"name_en": "Al-Kharj",
+"population": 295462,
+"pop_type": "official",
+"pop_source": "S-riyadh-007",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.345556,
+25.903889
+]
+},
+"properties": {
+"zone_id": "G128",
+"governorate": "Al Majmaah",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00388",
+"name_en": "Al Majma'ah",
+"population": 70243,
+"pop_type": "official",
+"pop_source": "S-riyadh-008",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.2705605,
+24.4727747
+]
+},
+"properties": {
+"zone_id": "G129",
+"governorate": "Al Muzahimiyah",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00280",
+"name_en": "Al Muzahimiyah",
+"population": 55604,
+"pop_type": "official",
+"pop_source": "S-riyadh-004",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.284381,
+24.065056
+]
+},
+"properties": {
+"zone_id": "G130",
+"governorate": "Al Quwayiyah",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00409",
+"name_en": "Al Quway`iyah",
+"population": 28589,
+"pop_type": "official",
+"pop_source": "S-cp1-016",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.9581379,
+22.8424548
+]
+},
+"properties": {
+"zone_id": "G131",
+"governorate": "Ar Rayn",
+"region": "riyadh",
+"settlement_id": "KSA-ST-01852",
+"name_en": "الحفيرة",
+"population": 2948,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.574444,
+20.459722
+]
+},
+"properties": {
+"zone_id": "G132",
+"governorate": "As Sulayyil",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00282",
+"name_en": "As Sulayyil",
+"population": 25136,
+"pop_type": "official",
+"pop_source": "S-cp1-018",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.8151967,
+26.2995806
+]
+},
+"properties": {
+"zone_id": "G133",
+"governorate": "Az Zulfi",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00300",
+"name_en": "Az Zulfi",
+"population": 68317,
+"pop_type": "official",
+"pop_source": "S-riyadh-009",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.133743,
+24.59551
+]
+},
+"properties": {
+"zone_id": "G134",
+"governorate": "Duruma",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00741",
+"name_en": "Duruma",
+"population": 16344,
+"pop_type": "official",
+"pop_source": "S-cp1-019",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.8787064,
+23.4874984
+]
+},
+"properties": {
+"zone_id": "G135",
+"governorate": "Hawtat Bani Tamim",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00276",
+"name_en": "Hotat Bani Tamim",
+"population": 30720,
+"pop_type": "official",
+"pop_source": "S-cp1-020",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.1225,
+25.126667
+]
+},
+"properties": {
+"zone_id": "G136",
+"governorate": "Huraymila",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00701",
+"name_en": "Huraymila'",
+"population": 9842,
+"pop_type": "official",
+"pop_source": "S-cp1-021",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.4908974,
+25.1183534
+]
+},
+"properties": {
+"zone_id": "G137",
+"governorate": "Marat",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00261",
+"name_en": "Tharmada'",
+"population": 11002,
+"pop_type": "grid",
+"pop_source": "worldpop-sau-2020-100m-unadj-constrained",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.7160104,
+24.638916
+]
+},
+"properties": {
+"zone_id": "G138",
+"governorate": "Riyadh governorate",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00035",
+"name_en": "Riyadh",
+"population": 6924566,
+"pop_type": "official",
+"pop_source": "S-080",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+47.156667,
+25.569722
+]
+},
+"properties": {
+"zone_id": "G139",
+"governorate": "Rumah",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00709",
+"name_en": "Rumah",
+"population": 25031,
+"pop_type": "official",
+"pop_source": "S-riyadh-006",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.252778,
+25.248333
+]
+},
+"properties": {
+"zone_id": "G140",
+"governorate": "Shaqra",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00670",
+"name_en": "Shaqra'",
+"population": 32215,
+"pop_type": "official",
+"pop_source": "S-cp1-023",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.8692233,
+25.2962532
+]
+},
+"properties": {
+"zone_id": "G141",
+"governorate": "Thadiq",
+"region": "riyadh",
+"settlement_id": "KSA-ST-00685",
+"name_en": "Old Thadiq",
+"population": 7438,
+"pop_type": "derived",
+"pop_source": "osm-gcc-2026-10-14 node/1236702313 population tag",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.799553,
+20.4602516
+]
+},
+"properties": {
+"zone_id": "G142",
+"governorate": "Wadi Ad Dawasir",
+"region": "riyadh",
+"settlement_id": "KSA-ST-01425",
+"name_en": "Wadi Ad Dawasir",
+"population": 77433,
+"pop_type": "official",
+"pop_source": "S-cp1-025",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+36.4532774,
+26.2444191
+]
+},
+"properties": {
+"zone_id": "G143",
+"governorate": "Al Wajh",
+"region": "tabuk",
+"settlement_id": "KSA-ST-01191",
+"name_en": "Al Wajh",
+"population": 33868,
+"pop_type": "official",
+"pop_source": "S-tabuk-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+35.0141103,
+28.4841608
+]
+},
+"properties": {
+"zone_id": "G144",
+"governorate": "Al-Bad'",
+"region": "tabuk",
+"settlement_id": "KSA-ST-01187",
+"name_en": "Al-Bad'",
+"population": 16583,
+"pop_type": "official",
+"pop_source": "S-tabuk-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+35.6920727,
+27.352083
+]
+},
+"properties": {
+"zone_id": "G145",
+"governorate": "Governorate of Duba",
+"region": "tabuk",
+"settlement_id": "KSA-ST-01190",
+"name_en": "Duba",
+"population": 39543,
+"pop_type": "official",
+"pop_source": "S-tabuk-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+34.9469118,
+29.2864157
+]
+},
+"properties": {
+"zone_id": "G146",
+"governorate": "Haqil",
+"region": "tabuk",
+"settlement_id": "KSA-ST-00291",
+"name_en": "Haql",
+"population": 25652,
+"pop_type": "official",
+"pop_source": "S-tabuk-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+36.567049,
+28.4012536
+]
+},
+"properties": {
+"zone_id": "G147",
+"governorate": "Tabuk Governorate",
+"region": "tabuk",
+"settlement_id": "KSA-ST-01633",
+"name_en": "Tabuk",
+"population": 594350,
+"pop_type": "official",
+"pop_source": "S-tabuk-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.539257,
+27.6225952
+]
+},
+"properties": {
+"zone_id": "G148",
+"governorate": "Tayma",
+"region": "tabuk",
+"settlement_id": "KSA-ST-01186",
+"name_en": "Tayma'",
+"population": 37579,
+"pop_type": "official",
+"pop_source": "S-tabuk-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.2622321,
+25.0302778
+]
+},
+"properties": {
+"zone_id": "G149",
+"governorate": "Umluj",
+"region": "tabuk",
+"settlement_id": "KSA-ST-00262",
+"name_en": "Umluj",
+"population": 46229,
+"pop_type": "official",
+"pop_source": "S-tabuk-002",
+"method": "most populous settlement of the governorate (A-r1a-001 priority)"
+}
+}
+]
+}

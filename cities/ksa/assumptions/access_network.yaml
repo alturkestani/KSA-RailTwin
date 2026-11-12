@@ -1,0 +1,60 @@
+# > **Document version:** cities/ksa/assumptions/access_network.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (gis-network-engineer, sim-engineer) | Status: draft
+# Rail graph, air network and bus availability for the R4 network evaluation (access.railgraph, access.airbus).
+# Every real-world value carries a source id or an assumption id (docs/assumptions.md).
+version: "1.0"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+
+line_sets:
+  # intercity passenger services only: the Riyadh Metro serves intracity trips (outside the intercity demand model,
+  # A-demand-005) and the Hejaz Railway is not in service.
+  S0: {lines: [hhr, sar-east-passenger, sar-north-passenger], source: "scenarios/S0.yaml (existing)"}
+  S1: {lines: [hhr, sar-east-passenger, sar-north-passenger, landbridge, riyadh-rail-link, gcc-railway-ksa], source: "scenarios/S1.yaml (existing + committed, announced/planned)"}
+
+station_sites:
+  # The Landbridge terminal sites are not published (landbridge.yaml). R3 placed them at town centroids; R4 places
+  # them at the existing intercity stations they are announced to connect with (A-r4-acc-004). The centroid sites
+  # are the sensitivity `sites: centroid`.
+  landbridge:
+    jeddah: {lat: 21.517643, lon: 39.245363, assumption: A-r4-acc-004, note: "co-located with HHR Al-Sulaymaniyah (hhr.yaml jeddah)"}
+    riyadh: {lat: 24.650, lon: 46.741, assumption: A-r4-acc-004, note: "co-located with SAR Riyadh station (stations.geojson sar-east-passenger:riyadh), the Riyadh Rail Link's eastern-network connection"}
+  gcc-railway-ksa:
+    dammam: {lat: 26.41, lon: 50.126, assumption: A-r4-acc-004, note: "co-located with SAR Dammam passenger station (stations.geojson); GCC station site not confirmed"}
+
+transfer:
+  max_walk_km: {value: 1.0, range: [0.5, 2.0], assumption: A-r4-acc-001}
+  walk_kmh: {value: 4.8, range: [3.6, 5.4], assumption: A-r4-acc-001}
+  walk_fixed_min: {value: 5, range: [2, 10], assumption: A-r4-acc-001}
+  penalty_ivt_min: {value: 10, range: [5, 20], assumption: A-r4-acc-002}
+
+interchanges: []      # explicit links besides the walk rule and corridor connects_to
+
+# Lines without an announced local passenger service carry through journeys only: a rail path whose rides are all on
+# connector lines is not a rail option (A-r4-acc-005). The Riyadh Rail Link is the Landbridge's Riyadh section joining
+# the North and East networks (riyadh-rail-link.yaml, S-r1a-055).
+connector_lines: {value: [riyadh-rail-link], assumption: A-r4-acc-005}
+
+# door-to-door clock minutes (isochrones, 30-minute test): expected wait = headway / 2, capped (A-access-010);
+# summer first/last-mile penalty on road access and egress (A-access-011) = mode_choice_r3.yaml summer_penalty for rail
+# (1 + outdoor_share x (multiplier - 1)); car peak factor on free-flow skims (A-access-012).
+station_catchment_road_min: {value: 30, range: [15, 45], assumption: A-r4-acc-006, note: "a zone is in a station's local catchment for the in-vehicle isochrone and the 30-minute test when its zone point is within this road time of the station"}
+wait_cap_min: {value: 30, range: [15, 60], assumption: A-access-010}
+summer_access_factor: {rule: "1 + summer_penalty.outdoor_share.rail x (summer_penalty.multiplier - 1), read from mode_choice_r3.yaml", assumption: A-access-011}
+car_peak_factor: {value: 1.3, range: [1.1, 1.6], assumption: A-access-012, note: "AM-peak / free-flow road minutes outside Jeddah; no open Saudi intercity peak speed data found (car-intercity-counts, demand_calibration.yaml)"}
+
+hypothetical_service:
+  # services of committed lines without a published plan and of hypothetical corridors
+  headway_min:
+    hsr: {value: 60, range: [30, 120], assumption: A-r4-acc-003, source: "HHR headway 60 (S-r1a-011, demand_supply.yaml)"}
+    mixed: {value: 120, range: [60, 240], assumption: A-demand-049}
+    conventional_passenger: {value: 120, range: [60, 240], assumption: A-demand-049}
+    commuter: {value: 30, range: [15, 60], assumption: A-r4-acc-003}
+    default: {value: 120, range: [60, 240], assumption: A-demand-049}
+  fare_per_km_sar:
+    default: {value: 0.30, range: [0.20, 0.405], assumption: A-mode-037}
+  ontime_pp: {value: 96.1, range: [94.3, 97.8], assumption: A-mode-039}
+
+check_pairs:
+  - [hhr:jeddah, hhr:makkah]
+  - [hhr:jeddah, landbridge:al-jumum]
+  - [sar-north-passenger:riyadh-north, sar-east-passenger:dammam]
+  - [landbridge:riyadh, hhr:madinah]

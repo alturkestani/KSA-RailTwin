@@ -1,0 +1,48 @@
+# Road skim parameters for the `osmnx` backend of network/skims.py (osmium + NetworkX graph).
+# Every number below is an ASSUMPTION (rule 1), registered by the coordinator from
+# docs/status/r1a-network-notes.md. Central default speeds mirror the OSRM car profile
+# (osrm-backend 26.10.0, profiles/car.lua `speeds` table, read 31 Oct 2026) so that both backends
+# share one speed basis; they are free-flow, uncongested, not calibrated to Saudi traffic.
+# Units: km/h. low/high = the range for sensitivity.
+version: 1
+reference: "osrm-backend 26.10.0 profiles/car.lua (speeds, speed_reduction); https://github.com/Project-OSRM/osrm-backend/blob/master/profiles/car.lua"
+
+# Highway classes kept as drivable (method, not a number). Mirrors the OSRM car profile list.
+drivable_classes:
+  [motorway, motorway_link, trunk, trunk_link, primary, primary_link, secondary, secondary_link,
+   tertiary, tertiary_link, unclassified, residential, living_street, service, road]
+
+# Ways dropped although their class is drivable (method; OSRM car profile and OSMnx `drive` style).
+exclude:
+  access: [no, private, agricultural, forestry, emergency, psv, bus, military, official, delivery, permit, residents, customers, destination]
+  motor_vehicle: [no, private]
+  motorcar: [no, private]
+  service: [parking_aisle, driveway, private, emergency_access, parking, drive-through]
+  area: [yes]
+
+# Implied oneway when no `oneway` tag is set (OSM wiki convention; OSRM does the same).
+implied_oneway_highway: [motorway]
+implied_oneway_junction: [roundabout, circular]
+
+default_speed_kmh:
+  motorway:       {value: 90, low: 90, high: 120, assumption_id: A-r1a-010}
+  motorway_link:  {value: 45, low: 35, high: 60,  assumption_id: A-r1a-011}
+  trunk:          {value: 85, low: 70, high: 110, assumption_id: A-r1a-012}
+  trunk_link:     {value: 40, low: 30, high: 50,  assumption_id: A-r1a-013}
+  primary:        {value: 65, low: 50, high: 90,  assumption_id: A-r1a-014}
+  primary_link:   {value: 30, low: 25, high: 45,  assumption_id: A-r1a-015}
+  secondary:      {value: 55, low: 40, high: 80,  assumption_id: A-r1a-016}
+  secondary_link: {value: 25, low: 20, high: 40,  assumption_id: A-r1a-017}
+  tertiary:       {value: 40, low: 30, high: 60,  assumption_id: A-r1a-018}
+  tertiary_link:  {value: 20, low: 15, high: 30,  assumption_id: A-r1a-019}
+  unclassified:   {value: 25, low: 20, high: 50,  assumption_id: A-r1a-020}
+  residential:    {value: 25, low: 15, high: 40,  assumption_id: A-r1a-021}
+  living_street:  {value: 10, low: 5,  high: 20,  assumption_id: A-r1a-022}
+  service:        {value: 15, low: 10, high: 25,  assumption_id: A-r1a-023}
+  road:           {value: 10, low: 10, high: 25,  assumption_id: A-r1a-024}  # OSRM default_speed for unknown classes
+
+# Free-flow speed from a numeric maxspeed tag = maxspeed x factor (OSRM car.lua speed_reduction).
+maxspeed_factor: {value: 0.8, low: 0.7, high: 1.0, assumption_id: A-r1a-025}
+
+# A zone centroid snapped farther than this from the graph is flagged (coordinator instruction).
+snap_flag_km: {value: 2.0, low: 1.0, high: 5.0, assumption_id: A-r1a-026}

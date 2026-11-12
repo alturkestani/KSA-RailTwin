@@ -1,0 +1,20 @@
+> **Document version:** prompts/VERIFY_R10.md v1.0 | 30 Oct 2026 | Author: coordinator (generated from VERIFY_TEMPLATE.md) | Status: active
+
+# VERIFY_R10 — independent red-team audit of milestone R10 (main checkout, read-only)
+
+You run on `claude-fable-5-1` as the `red-team-verifier` (read `.claude/agents/red-team-verifier.md` and follow it exactly), launched by the coordinator with `./orchestrate.sh verify R10` after the milestone's builder wrote `R10: done` and, for multi-track phases, after `INTEGRATE_*` finished. You are not the model that wrote the work. **You read and run checks; you never edit code, data, registers or documents.** The only files you write are `docs/status/verify-R10.md` and one status line in `docs/status/main.md`. No pushes, no tags, no network action beyond fetching the URLs you check.
+
+## Procedure
+1. Read `CLAUDE.md`, `PROJECT.md` sections 2, 5, 7 and 9, `prompts/R10.md` (its Acceptance list), `docs/STATUS.md` and the builder's status block for R10.
+2. Run and capture exit codes and timings: `uv run ruff check .`, `uv run ruff format --check .`, `uv run pytest -q`, `uv run python -m common.docver check docs prompts .claude`, `uv run python -m common.manifest verify`, and the README command named for this milestone. "Not run" or "not measured" is a FAIL.
+3. **Acceptance criteria**: one row per criterion in `prompts/R10.md` with PASS/FAIL and the exact command, file path, line or URL that proves it.
+4. **Number tracing**: every figure in the milestone's documents traces to an `S-nnn` row (open the URL and confirm the value, date and quote), an `A-xxx` row, or a `runs/<id>/` output with `meta.json`. For film milestones: every line of `film/script/lines.csv` in both languages, figures digit by digit, and every `film/rights_log.csv` row's proof link.
+5. **Licence & openness register**: every dataset, model, tool, voice, font, track and image used in the milestone appears in `docs/licences.md`/`.csv` with licence, open Y/N, commercial-use status and attribution; compatibility conflicts (ODbL share-alike, non-commercial terms, NC/ND media) are listed; any proprietary item has Tariq's recorded approval date.
+6. **Coverage** (where the milestone touches screening, benchmarks or regions): 13/13 regions, every GASTAT governorate reconciled in `docs/coverage.md`, every benchmark country of W5 present with findings or "no reliable data found".
+7. **Spot-check**: a seeded random 10 % sample (seed = today's date as YYYYMMDD; list the ids) of register rows, cost rows and benchmark rows; verify each against its source; report the hit rate.
+8. **Method hygiene**: CBA double counting (benefit matrix), planned or committed lines shown as existing (line YAML layers, map legends), unflagged assumptions (bare numbers in YAML without `source:`/`assumption:`), matched baselines and sensitivity bands on every scenario result, the synthetic/uncalibrated label and model language ("in the model"), P10/P50/P90 instead of points.
+9. **Governance hygiene**: advocacy creeping into the text; model names in public-facing documents (`docs/report`, `docs/policy-brief.md`, `docs/executive-summary.*`, `film/script`); content from the author's company; absolute home paths and secrets in tracked files (`git ls-files | xargs grep -ln "/Users/[a-z]"`, `.env`); `data/`, `runs/`, `movies/` payloads in `git ls-files`; version headers on every doc.
+10. **Determinism**: run the smallest relevant seeded command twice and diff the outputs (ignore timestamps in `meta.json`).
+
+## Output
+Write `docs/status/verify-R10.md` with the version header, the criteria table (PASS/FAIL, evidence), the failures with exact evidence, the spot-check sample ids and results, the three most important fixes, and a final line `VERDICT: PASS` or `VERDICT: FAIL`. Do not soften a FAIL because the fix looks easy; do not fix anything. Then append to `docs/status/main.md` the line `VERIFY_R10: done` (this means the audit ran; the verdict is in the report). Commit only these two files: `git add docs/status/verify-R10.md docs/status/main.md && git commit -m "verify(R10): red-team audit <PASS|FAIL>"`.

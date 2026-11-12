@@ -1,0 +1,1295 @@
+# > **Document version:** cities/ksa/assumptions/demand_calibration.yaml v0.1 | 31 Oct 2026 | Author: demand-modeler (R3) | Status: draft
+# Observed annual totals for the W8 gravity + mode-choice calibration (skill gravity-calibration), with
+# evidence grades and tolerances. Grades: A = primary official table read by the builder; B = official
+# figure relayed by press/secondary with the URL captured; C = press without a primary; D = unverified.
+# Only usable A/B targets are calibrated to; C/D are listed as "available but unverified".
+# Sources: docs/sources/r3-cal.csv (S-r3-cal-0xx) and docs/sources/index.csv. Assumptions:
+# docs/assumptions.md (A-demand-0xx). Generated from the manifest files
+# gastat-rail-tables-2025-en and gastat-air-tables-2025-en (values copied by script, not by hand).
+version: '0.1'
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+base_year:
+  value: 2025
+  range:
+  - 2024
+  - 2025
+  assumption: A-demand-040
+  status: assumed
+  note: latest year with grade A rail and air tables; 2024 runs as a check (population base 2024 = 35,300,280, S-cp2-gastat-006)
+pass_rule:
+  rule: a target passes when |modelled/observed - 1| <= tolerance.rel; GEH is reported, never used as the pass test
+  assumption: A-demand-036
+  geh:
+    formula: sqrt(2 (M - C)^2 / (M + C))
+    basis: average daily flows (annual / 365)
+    source: S-r3-cal-030
+    note: TAG M3.1 defines GEH on hourly link flows (GEH < 5 in > 85% of cases); here it is a descriptive statistic only
+  only_usable: 'targets with usable: true and evidence_grade A or B; C/D targets are ''available but unverified'' and never calibrated to (gravity-calibration skill)'
+tolerances:
+  A_total:
+    rel: 0.15
+    assumption: A-demand-032
+    source: S-r3-cal-031
+    note: 'TAG M3.2 Table 4: assigned vs observed < 15% across screenline/boarding/alighting groups'
+  A_station:
+    rel: 0.25
+    assumption: A-demand-033
+    source: S-r3-cal-031
+    low_flow_exempt_below_departures_per_year: 100000
+    note: 'TAG M3.2 Table 5: individual stops/stations < 25%; trip ends below 100,000 departures a year are reported, not failed (A-demand-033)'
+  A_tld:
+    rel: 0.05
+    assumption: A-demand-034
+    source: S-r3-cal-030
+    note: 'TAG M3.1 Table 5: trip length distribution means within 5% (a matrix-estimation limit, used by analogy)'
+  B:
+    rel: 0.25
+    assumption: A-demand-035
+    note: secondary relay of an official figure; wider than grade A
+  C: null
+  D: null
+targets:
+- id: rail-intercity-pax-2023
+  mode: rail
+  measure: passengers
+  scope: intercity rail national (HHR + SAR East + SAR North)
+  year: 2023
+  value: 8329170
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: &id001
+    rel: 0.15
+    assumption: A-demand-032
+  note: 'Sum of the three intercity lines in GASTAT Table 1-1 (data: TGA). Equals the printed intercity total (S-044: 10.9 M 2025, 11.6 M 2024). Excludes the intracity
+    lines (Riyadh Metro, KAIA APM, PNU APM, Al Mashaaer metro).'
+- id: rail-hhr-pax-2023
+  mode: rail
+  measure: passengers
+  scope: HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah)
+  year: 2023
+  value: 6200779
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-sar_east-pax-2023
+  mode: rail
+  measure: passengers
+  scope: SAR East line (Riyadh-Hofuf-Abqaiq-Dammam)
+  year: 2023
+  value: 1358653
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-sar_north-pax-2023
+  mode: rail
+  measure: passengers
+  scope: SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat)
+  year: 2023
+  value: 769738
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-intercity-pax-2024
+  mode: rail
+  measure: passengers
+  scope: intercity rail national (HHR + SAR East + SAR North)
+  year: 2024
+  value: 11590197
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: 'Sum of the three intercity lines in GASTAT Table 1-1 (data: TGA). Equals the printed intercity total (S-044: 10.9 M 2025, 11.6 M 2024). Excludes the intracity
+    lines (Riyadh Metro, KAIA APM, PNU APM, Al Mashaaer metro).'
+- id: rail-hhr-pax-2024
+  mode: rail
+  measure: passengers
+  scope: HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah)
+  year: 2024
+  value: 9213973
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-sar_east-pax-2024
+  mode: rail
+  measure: passengers
+  scope: SAR East line (Riyadh-Hofuf-Abqaiq-Dammam)
+  year: 2024
+  value: 1492417
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-sar_north-pax-2024
+  mode: rail
+  measure: passengers
+  scope: SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat)
+  year: 2024
+  value: 883807
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-intercity-pax-2025
+  mode: rail
+  measure: passengers
+  scope: intercity rail national (HHR + SAR East + SAR North)
+  year: 2025
+  value: 10938371
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: 'Sum of the three intercity lines in GASTAT Table 1-1 (data: TGA). Equals the printed intercity total (S-044: 10.9 M 2025, 11.6 M 2024). Excludes the intracity
+    lines (Riyadh Metro, KAIA APM, PNU APM, Al Mashaaer metro).'
+- id: rail-hhr-pax-2025
+  mode: rail
+  measure: passengers
+  scope: HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah)
+  year: 2025
+  value: 8529112
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-sar_east-pax-2025
+  mode: rail
+  measure: passengers
+  scope: SAR East line (Riyadh-Hofuf-Abqaiq-Dammam)
+  year: 2025
+  value: 1482367
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-sar_north-pax-2025
+  mode: rail
+  measure: passengers
+  scope: SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat)
+  year: 2025
+  value: 926892
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: One passenger = one station-to-station journey (station arrivals sum to the line total in Tables 1-4 to 1-6).
+- id: rail-intercity-pkm-2023
+  mode: rail
+  measure: passenger_km
+  scope: intercity rail national (HHR + SAR East + SAR North)
+  year: 2023
+  value: 2617.7
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: Sum of GASTAT Table 1-8 by line. 2023 = 2,617.7, which confirms the unverified S-042 figure (2,618); 2024 = 3,724.3 and 2025 = 3,609.3 match the publication
+    text (S-045). The publication text says HHR is 76.0% of 2025 pkm.
+- id: rail-hhr-pkm-2023
+  mode: rail
+  measure: passenger_km
+  scope: HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah)
+  year: 2023
+  value: 1918.8
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-sar_east-pkm-2023
+  mode: rail
+  measure: passenger_km
+  scope: SAR East line (Riyadh-Hofuf-Abqaiq-Dammam)
+  year: 2023
+  value: 397
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-sar_north-pkm-2023
+  mode: rail
+  measure: passenger_km
+  scope: SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat)
+  year: 2023
+  value: 301.9
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-intercity-pkm-2024
+  mode: rail
+  measure: passenger_km
+  scope: intercity rail national (HHR + SAR East + SAR North)
+  year: 2024
+  value: 3724.283
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: Sum of GASTAT Table 1-8 by line. 2023 = 2,617.7, which confirms the unverified S-042 figure (2,618); 2024 = 3,724.3 and 2025 = 3,609.3 match the publication
+    text (S-045). The publication text says HHR is 76.0% of 2025 pkm.
+- id: rail-hhr-pkm-2024
+  mode: rail
+  measure: passenger_km
+  scope: HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah)
+  year: 2024
+  value: 2919.820233
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-sar_east-pkm-2024
+  mode: rail
+  measure: passenger_km
+  scope: SAR East line (Riyadh-Hofuf-Abqaiq-Dammam)
+  year: 2024
+  value: 457.998447
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-sar_north-pkm-2024
+  mode: rail
+  measure: passenger_km
+  scope: SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat)
+  year: 2024
+  value: 346.464022
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-intercity-pkm-2025
+  mode: rail
+  measure: passenger_km
+  scope: intercity rail national (HHR + SAR East + SAR North)
+  year: 2025
+  value: 3609.3
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: Sum of GASTAT Table 1-8 by line. 2023 = 2,617.7, which confirms the unverified S-042 figure (2,618); 2024 = 3,724.3 and 2025 = 3,609.3 match the publication
+    text (S-045). The publication text says HHR is 76.0% of 2025 pkm.
+- id: rail-hhr-pkm-2025
+  mode: rail
+  measure: passenger_km
+  scope: HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah)
+  year: 2025
+  value: 2743
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-sar_east-pkm-2025
+  mode: rail
+  measure: passenger_km
+  scope: SAR East line (Riyadh-Hofuf-Abqaiq-Dammam)
+  year: 2025
+  value: 496
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-sar_north-pkm-2025
+  mode: rail
+  measure: passenger_km
+  scope: SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat)
+  year: 2025
+  value: 370.3
+  unit: million passenger-km/yr
+  source_id: S-r3-cal-003
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: GASTAT Table 1-8, as printed (2024 values carry six decimals in the workbook).
+- id: rail-hhr-triplen-2025
+  mode: rail
+  measure: mean_trip_length_km
+  scope: HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah)
+  year: 2025
+  value: 321.6
+  unit: km
+  source_id: S-r3-cal-004
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: &id002
+    rel: 0.05
+    assumption: A-demand-034
+  note: Average passenger trip length from GASTAT Key Indicators (Tables 3-6 to 3-8); equals pkm / passengers. A trip-length target, compared with the modelled rail
+    OD trip length on the line.
+- id: rail-sar_east-triplen-2025
+  mode: rail
+  measure: mean_trip_length_km
+  scope: SAR East line (Riyadh-Hofuf-Abqaiq-Dammam)
+  year: 2025
+  value: 334.6
+  unit: km
+  source_id: S-r3-cal-004
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id002
+  note: Average passenger trip length from GASTAT Key Indicators (Tables 3-6 to 3-8); equals pkm / passengers. A trip-length target, compared with the modelled rail
+    OD trip length on the line.
+- id: rail-sar_north-triplen-2025
+  mode: rail
+  measure: mean_trip_length_km
+  scope: SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat)
+  year: 2025
+  value: 399.5
+  unit: km
+  source_id: S-r3-cal-004
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id002
+  note: Average passenger trip length from GASTAT Key Indicators (Tables 3-6 to 3-8); equals pkm / passengers. A trip-length target, compared with the modelled rail
+    OD trip length on the line.
+- id: rail-hhr-stn-makkah-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah): station Makkah Station (stations.geojson name ''Makkah'')'
+  year: 2025
+  value:
+    departures: 2803968
+    arrivals: 2993513
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: &id003
+    rel: 0.25
+    assumption: A-demand-033
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-hhr-stn-al-sulimaniyah-jeddah-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah): station Jeddah Station (stations.geojson name ''Al-Sulimaniyah - Jeddah'')'
+  year: 2025
+  value:
+    departures: 746137
+    arrivals: 723513
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-hhr-stn-airport-jeddah-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah): station King Abdulaziz Airport Station (stations.geojson name ''Airport - Jeddah'')'
+  year: 2025
+  value:
+    departures: 1869609
+    arrivals: 1715729
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-hhr-stn-kaec-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah): station King Abdullah Economic City Station (stations.geojson name ''KAEC'')'
+  year: 2025
+  value:
+    departures: 65454
+    arrivals: 96136
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-hhr-stn-madinah-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'HHR line (Makkah-Jeddah-KAIA-KAEC-Madinah): station Madinah Station (stations.geojson name ''Madinah'')'
+  year: 2025
+  value:
+    departures: 3043944
+    arrivals: 3000221
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_east-stn-riyadh-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR East line (Riyadh-Hofuf-Abqaiq-Dammam): station Riyadh Station (stations.geojson name ''Riyadh'')'
+  year: 2025
+  value:
+    departures: 534889
+    arrivals: 532154
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_east-stn-hufuf-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR East line (Riyadh-Hofuf-Abqaiq-Dammam): station Al-Hofuf Station (stations.geojson name ''Hufuf'')'
+  year: 2025
+  value:
+    departures: 400741
+    arrivals: 379946
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_east-stn-abqaiq-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR East line (Riyadh-Hofuf-Abqaiq-Dammam): station Abqaiq Station (stations.geojson name ''Abqaiq'')'
+  year: 2025
+  value:
+    departures: 57567
+    arrivals: 62924
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_east-stn-dammam-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR East line (Riyadh-Hofuf-Abqaiq-Dammam): station Dammam Station (stations.geojson name ''Dammam'')'
+  year: 2025
+  value:
+    departures: 489170
+    arrivals: 507343
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_north-stn-riyadh-north-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat): station Riyadh Station (stations.geojson name ''Riyadh (North)'')'
+  year: 2025
+  value:
+    departures: 411452
+    arrivals: 422217
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_north-stn-majmaah-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat): station Majmaah Station (stations.geojson name ''Majmaah'')'
+  year: 2025
+  value:
+    departures: 67146
+    arrivals: 73355
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_north-stn-qassim-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat): station Qassim Station (stations.geojson name ''Qassim'')'
+  year: 2025
+  value:
+    departures: 322304
+    arrivals: 307598
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_north-stn-hail-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat): station Hail Station (stations.geojson name ''Hail'')'
+  year: 2025
+  value:
+    departures: 108680
+    arrivals: 106306
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_north-stn-jouf-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat): station Al-Jouf Station (stations.geojson name ''Jouf'')'
+  year: 2025
+  value:
+    departures: 10188
+    arrivals: 9668
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-sar_north-stn-qurayyat-2025
+  mode: rail
+  measure: station_departures_and_arrivals
+  scope: 'SAR North line (Riyadh-Majmaah-Qassim-Hail-Al-Jouf-Al-Qurayyat): station Al-Qurayyat Station (stations.geojson name ''Qurayyat'')'
+  year: 2025
+  value:
+    departures: 7122
+    arrivals: 7748
+  unit: passengers/yr
+  source_id: S-r3-cal-002
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Station boardings (departures) and alightings (arrivals), GASTAT Tables 1-4 to 1-6, Total columns. Compare with modelled productions/attractions on the line
+    at the station's zone.
+- id: rail-all-incl-intracity-2025
+  mode: rail
+  measure: passengers
+  scope: all rail incl. intracity (Riyadh Metro, KAIA APM, PNU APM, Al Mashaaer metro)
+  year: 2025
+  value: 156370185
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: false
+  tolerance: null
+  note: 'Context only: 145.4 M of the 156.4 M are intracity (Riyadh Metro 105,432,091; KAIA airport APM 34,724,373; PNU APM 3,400,498 estimated; Al Mashaaer metro
+    1,874,852, all in June). Not an intercity calibration target.'
+- id: rail-all-incl-intracity-2023
+  mode: rail
+  measure: passengers
+  scope: all rail incl. intracity
+  year: 2023
+  value: 30292670
+  unit: passengers/yr
+  source_id: S-r3-cal-001
+  evidence_grade: A
+  status: verified
+  usable: false
+  tolerance: null
+  note: Context only. Replaces the secondary S-041 (30.3 M) with the primary table value; 2023 intercity = 8,329,170 (target above).
+- id: rail-intercity-pax-2025-tga-argaam
+  mode: rail
+  measure: passengers
+  scope: intercity rail national (TGA quarterly sum relayed by Argaam)
+  year: 2025
+  value: 11.7
+  unit: million passengers/yr
+  source_id: S-r3-cal-009
+  evidence_grade: B
+  status: secondary
+  usable: false
+  tolerance: null
+  note: 'CONFLICT with GASTAT 10,938,371 (+7%). GASTAT monthly Table 1-2 summed by quarter gives Q1 2,963,988, Q2 2,369,691, Q3 2,701,695, Q4 2,902,997; TGA/Argaam
+    Q3 (2.70 M) and Q4 (2.9 M; HHR 2.30, East 0.37, North 0.23) agree with GASTAT, while TGA Q1 (3.4 M) and Q2 (2.7 M) exceed it by about 0.77 M in total; the cause
+    is not stated. Not used: the grade A GASTAT annual table supersedes it (A-demand-038).'
+- id: rail-sar-networks-pax-2024
+  mode: rail
+  measure: passengers
+  scope: all SAR-operated networks (scope not broken down)
+  year: 2024
+  value: 13.7
+  unit: million passengers/yr
+  source_id: S-r3-cal-006
+  evidence_grade: B
+  status: secondary
+  usable: false
+  tolerance: null
+  note: 'CONFLICT with GASTAT intercity 11,590,197. SAR''s network scope probably adds the Al Mashaaer metro (as its 2023 statement did, S-r3-cal-007: 11.2 M incl.
+    Mashaaer) but this is not stated. Not used (A-demand-038).'
+- id: air-domestic-departures-2025
+  mode: air
+  measure: passengers
+  scope: domestic air total, commercial (national + foreign carriers), departing passengers at all 27 airports
+  year: 2025
+  value: 32031852
+  unit: passengers/yr
+  source_id: S-r3-cal-010
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: Departing passengers on domestic commercial flights (Table 1-1). Departures count enplanements, so a passenger connecting between two domestic flights counts
+    twice; the connecting share is unknown (A-demand-037). Arrivals 31,969,052. Excludes general aviation (589,942 departing).
+- id: air-domestic-departures-2024
+  mode: air
+  measure: passengers
+  scope: domestic air total, commercial (national + foreign carriers), departing passengers
+  year: 2024
+  value: 29119512
+  unit: passengers/yr
+  source_id: S-r3-cal-010
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: As above, 2024 column of Table 1-1. Arrivals 29,057,395.
+- id: air-domestic-arrdep-incl-ga-2025
+  mode: air
+  measure: passengers
+  scope: domestic air, arriving + departing, all aviation types (GASTAT headline)
+  year: 2025
+  value: 65171913
+  unit: passengers/yr (two counts per one-way flight)
+  source_id: S-r3-cal-010
+  evidence_grade: A
+  status: verified
+  usable: false
+  tolerance: null
+  note: 'Equals the 65.1 M headline (S-r3-cal-012). Each one-way domestic flight is counted at both ends: do not compare with one-way OD trips without halving. Context
+    only.'
+- id: air-dom-ruh-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at King Khalid International Airport (economic node airport-ruh-king-khalid)
+  year: 2025
+  value:
+    departures: 10418402
+    arrivals: 10497915
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-jed-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at King Abdulaziz International Airport (economic node airport-jed-king-abdulaziz)
+  year: 2025
+  value:
+    departures: 8248295
+    arrivals: 8226554
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-dmm-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at King Fahd International Airport (economic node airport-dmm-king-fahd)
+  year: 2025
+  value:
+    departures: 3343538
+    arrivals: 3343792
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-ahb-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Abha International Airport (economic node airport-ahb-abha)
+  year: 2025
+  value:
+    departures: 2145964
+    arrivals: 2139938
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-med-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Prince Mohammed bin Abdulaziz International Airport (economic node airport-med-prince-mohammad)
+  year: 2025
+  value:
+    departures: 1604956
+    arrivals: 1504552
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-giz-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at King Abdullah bin Abdulaziz International Airport (economic node airport-giz-jizan)
+  year: 2025
+  value:
+    departures: 1269915
+    arrivals: 1252853
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-tuu-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Prince Sultan bin Abdulaziz International Airport (economic node airport-tuu-tabuk)
+  year: 2025
+  value:
+    departures: 1083822
+    arrivals: 1051421
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-eam-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Najran International Airport (economic node airport-eam-najran)
+  year: 2025
+  value:
+    departures: 627207
+    arrivals: 625679
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-tif-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Taif International Airport (economic node airport-tif-taif)
+  year: 2025
+  value:
+    departures: 491273
+    arrivals: 490743
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-elq-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Prince Naif bin Abdulaziz International Airport (economic node airport-elq-prince-naif)
+  year: 2025
+  value:
+    departures: 421011
+    arrivals: 413897
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-has-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Ha'il International Airport (economic node airport-has-hail)
+  year: 2025
+  value:
+    departures: 375088
+    arrivals: 376538
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-aj-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Al-Jouf International Airport (economic node airport-aj-al-jouf)
+  year: 2025
+  value:
+    departures: 274362
+    arrivals: 274212
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-abt-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at King Saud bin Abdulaziz Airport (economic node airport-abt-al-baha)
+  year: 2025
+  value:
+    departures: 238728
+    arrivals: 239761
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-rae-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Arar International Airport (economic node airport-rae-arar)
+  year: 2025
+  value:
+    departures: 230013
+    arrivals: 289121
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-bhh-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Bisha Airport (economic node airport-bhh-bisha)
+  year: 2025
+  value:
+    departures: 200432
+    arrivals: 195984
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-ury-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Gurayat Airport (economic node airport-ury-gurayat)
+  year: 2025
+  value:
+    departures: 179112
+    arrivals: 175903
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-ynb-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Prince Abdulmohsin bin Abdulaziz International Airport (economic node airport-ynb-yanbu)
+  year: 2025
+  value:
+    departures: 161169
+    arrivals: 160248
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-aqi-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Al-Qaisumah International Airport (economic node airport-aqi-al-qaisumah)
+  year: 2025
+  value:
+    departures: 146701
+    arrivals: 146278
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-shw-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Sharurah Airport (economic node airport-shw-sharurah)
+  year: 2025
+  value:
+    departures: 99172
+    arrivals: 97891
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-ulh-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Al-Ula International Airport (economic node airport-ulh-al-ula)
+  year: 2025
+  value:
+    departures: 97378
+    arrivals: 95833
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-num-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Neom Bay Airport (economic node airport-num-neom-bay)
+  year: 2025
+  value:
+    departures: 95775
+    arrivals: 97330
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-wae-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Wadi Al-Dawasir Airport (economic node airport-wae-wadi-al-dawasir)
+  year: 2025
+  value:
+    departures: 70992
+    arrivals: 67961
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-rah-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Rafha Airport (economic node airport-rah-rafha)
+  year: 2025
+  value:
+    departures: 54852
+    arrivals: 54293
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-rsi-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Red Sea International Airport (economic node airport-rsi-red-sea)
+  year: 2025
+  value:
+    departures: 55369
+    arrivals: 57651
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-tui-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Turaif Airport (economic node airport-tui-turaif)
+  year: 2025
+  value:
+    departures: 49998
+    arrivals: 47937
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-dwd-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Dawadmi Airport (economic node airport-dwd-al-dawadmi)
+  year: 2025
+  value:
+    departures: 24203
+    arrivals: 22568
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-dom-hof-2025
+  mode: air
+  measure: airport_domestic_departures_and_arrivals
+  scope: domestic commercial passengers at Al-Ahsa International Airport (economic node airport-hof-al-ahsa)
+  year: 2025
+  value:
+    departures: 24125
+    arrivals: 22199
+  unit: passengers/yr
+  source_id: S-r3-cal-011
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id003
+  note: Tables 1-3 (national carriers) + 1-4 (foreign carriers on domestic sectors). Includes domestic transfer passengers at hubs (A-demand-037); compare with modelled
+    air trip ends at the airport's catchment.
+- id: air-pair-ruh-jed
+  mode: air
+  measure: pair passengers
+  scope: air city pair Riyadh-Jeddah
+  year: 2025
+  value: null
+  unit: passengers/yr
+  source_id: S-r1a-530
+  evidence_grade: D
+  status: secondary
+  usable: false
+  tolerance: null
+  note: 'Available but unverified: only a rank (Jeddah-Riyadh in IATA''s 2025 global top 10, airline-reported via Air Cargo Week); no open passenger figure. GASTAT/GACA
+    publish no origin-destination table (Table 7-7 counts routes only). No air city-pair target exists.'
+- id: bus-intercity-pax-2025q2
+  mode: bus
+  measure: passengers
+  scope: intercity bus national (TGA, all concession zones), Q2 2025
+  year: 2025
+  value: 958000
+  unit: passengers/quarter
+  source_id: S-r3-cal-020
+  evidence_grade: B
+  status: secondary
+  usable: true
+  tolerance: &id004
+    rel: 0.25
+    assumption: A-demand-035
+  note: TGA quarterly bulletin relayed by the press with the URL captured; printed as 'more than'. The TGA bulletin itself was not found on tga.gov.sa.
+- id: bus-intercity-pax-2025q3
+  mode: bus
+  measure: passengers
+  scope: intercity bus national (TGA, all concession zones), Q3 2025
+  year: 2025
+  value: 905000
+  unit: passengers/quarter
+  source_id: S-r3-cal-021
+  evidence_grade: B
+  status: secondary
+  usable: true
+  tolerance: *id004
+  note: TGA quarterly bulletin relayed by the press with the URL captured; printed as 'more than'. The TGA bulletin itself was not found on tga.gov.sa.
+- id: bus-intercity-pax-2025q4
+  mode: bus
+  measure: passengers
+  scope: intercity bus national (TGA, all concession zones), Q4 2025
+  year: 2025
+  value: 884000
+  unit: passengers/quarter
+  source_id: S-r3-cal-022
+  evidence_grade: B
+  status: secondary
+  usable: true
+  tolerance: *id004
+  note: TGA quarterly bulletin relayed by the press with the URL captured; printed as 'more than'. The TGA bulletin itself was not found on tga.gov.sa.
+- id: bus-intercity-pax-2025q2q4
+  mode: bus
+  measure: passengers
+  scope: intercity bus national (TGA), Q2+Q3+Q4 2025 (three quarters)
+  year: 2025
+  value: 2747000
+  unit: passengers/3 quarters
+  source_id: S-r3-cal-020; S-r3-cal-021; S-r3-cal-022
+  evidence_grade: B
+  status: secondary
+  usable: true
+  tolerance: *id004
+  note: Derived sum of three relayed quarters (A-demand-039). Q1 2025 was not found, so no annual total; compare with 0.75 x the modelled annual bus total, or the
+    modelled Q2-Q4 if the model is seasonal.
+- id: bus-sat-southern-2025
+  mode: bus
+  measure: passengers
+  scope: intercity bus, SAPTCO Alsa (SAT) Southern Excellence Zone concession only
+  year: 2025
+  value: 1596972
+  unit: passengers/yr
+  source_id: S-r3-cal-023
+  evidence_grade: A
+  status: verified
+  usable: true
+  tolerance: *id001
+  note: Primary company report, but a partial scope (one TGA concession zone; routes not mapped here). Usable only as a lower-bound check on modelled bus trips on
+    southern routes; 2024 1,481,732. SAT ran 65,038 trips in 2025 against about 43-45 thousand national trips per quarter (S-r3-cal-020..022).
+- id: bus-intercity-pax-2023-gastat
+  mode: bus
+  measure: passengers
+  scope: intercity bus national (GASTAT Land Transport Statistics 2023)
+  year: 2023
+  value: 4.1
+  unit: million passengers/yr
+  source_id: S-r3-cal-024
+  evidence_grade: D
+  status: unverified
+  usable: false
+  tolerance: null
+  note: Available but unverified (search-engine extraction; PDF 404). The 2022 edition gave 39.1 M intercity (a definitional break). Not used.
+- id: car-intercity-counts
+  mode: car
+  measure: vehicle counts
+  scope: intercity road traffic counts
+  year: null
+  value: null
+  unit: null
+  source_id: S-r3-cal-025
+  evidence_grade: D
+  status: unverified
+  usable: false
+  tolerance: null
+  note: 'Not found: no open, current intercity traffic count was located (MoT 2019 news page 404). Car demand has no observed target; car is the residual mode.'

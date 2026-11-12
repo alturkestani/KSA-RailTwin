@@ -1,0 +1,19 @@
+engine,voice,lang,line_id,seconds,cer,note
+elevenlabs,Sarah,ar,m-02-06,23.68,0.52,"free tier, eleven_multilingual_v2, premade voices (Saudi library voices refused on free tier); test only"
+elevenlabs,Daniel,ar,m-04-07,23.68,0.051,"free tier, eleven_multilingual_v2, premade voices (Saudi library voices refused on free tier); test only"
+elevenlabs,Sarah,ar,m-08-06,22.48,0.111,"free tier, eleven_multilingual_v2, premade voices (Saudi library voices refused on free tier); test only"
+elevenlabs,Daniel,en,m-02-06,23.68,0.008,"free tier, eleven_multilingual_v2, premade voices (Saudi library voices refused on free tier); test only"
+elevenlabs,Daniel,en,m-04-07,19.37,0.01,"free tier, eleven_multilingual_v2, premade voices (Saudi library voices refused on free tier); test only"
+elevenlabs,Alice,en,m-08-06,21.59,0.008,"free tier, eleven_multilingual_v2, premade voices (Saudi library voices refused on free tier); test only"
+nabrah,Norah,ar,m-02-06,22.92,0.031,paid (approved A/B); nabrah_tts_v1; film master voice
+nabrah,Abdullah,ar,m-04-07,14.4,0.005,paid (approved A/B); nabrah_tts_v1; film master voice
+nabrah,Daniah,ar,m-08-06,22.28,0.022,paid (approved A/B); nabrah_tts_v1; film master voice
+nabrah,Norah,en,m-02-06,27.92,0.027,paid (approved A/B); nabrah_tts_v1; film master voice
+nabrah,Abdullah,en,m-04-07,14.24,0.01,paid (approved A/B); nabrah_tts_v1; film master voice
+nabrah,Daniah,en,m-08-06,22.16,0.027,paid (approved A/B); nabrah_tts_v1; film master voice
+open,chatterbox-builtin,ar,m-02-06,40.0,0.747,"local open model (Chatterbox built-in for Arabic, Kokoro am_michael for English); test only"
+open,chatterbox-builtin,ar,m-04-07,16.72,0.137,"local open model (Chatterbox built-in for Arabic, Kokoro am_michael for English); test only"
+open,chatterbox-builtin,ar,m-08-06,19.04,0.204,"local open model (Chatterbox built-in for Arabic, Kokoro am_michael for English); test only"
+open,kokoro-am_michael,en,m-02-06,25.45,0.019,"local open model (Chatterbox built-in for Arabic, Kokoro am_michael for English); test only"
+open,kokoro-am_michael,en,m-04-07,18.07,0.01,"local open model (Chatterbox built-in for Arabic, Kokoro am_michael for English); test only"
+open,kokoro-am_michael,en,m-08-06,22.88,0.0,"local open model (Chatterbox built-in for Arabic, Kokoro am_michael for English); test only"

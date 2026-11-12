@@ -1,0 +1,54 @@
+{
+  "seed": 1,
+  "config_hash": "a7b98866ae6247f5093ce0623e5c44de50cd95de535aca6e57c40e4fd462bd8e",
+  "data_hash": "2ecea5fbbb63691fa40d6fdc12dbc08c9e256a958b17f82865d6b776efd4f910",
+  "code_version": "r4-15-g3d49c58",
+  "tool_versions": {
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "pydantic": "2.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "duckdb": "2.0.0",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0",
+    "geopandas": "1.2.0",
+    "networkx": "3.7",
+    "typer": "0.27.3",
+    "scipy": "1.18.1"
+  },
+  "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+  "created_utc": "2026-11-03T13:27:08+00:00",
+  "geojson": {
+    "Riyadh": [
+      "runs/access/S1/riyadh/isochrone_in_vehicle.geojson"
+    ],
+    "Jeddah": [
+      "runs/access/S1/jeddah/isochrone_in_vehicle.geojson",
+      "runs/access/S1/jeddah/isochrone_door_to_door.geojson"
+    ],
+    "Makkah": [
+      "runs/access/S1/makkah/isochrone_in_vehicle.geojson",
+      "runs/access/S1/makkah/isochrone_door_to_door.geojson"
+    ],
+    "Madinah": [
+      "runs/access/S1/madinah/isochrone_in_vehicle.geojson"
+    ],
+    "Dammam–Khobar–Dhahran": [
+      "runs/access/S1/dammam/isochrone_in_vehicle.geojson",
+      "runs/access/S1/dammam/isochrone_door_to_door.geojson"
+    ],
+    "Taif": [
+      "runs/access/S1/taif/isochrone_in_vehicle.geojson"
+    ],
+    "Buraidah": [
+      "runs/access/S1/buraidah/isochrone_in_vehicle.geojson"
+    ],
+    "Tabuk": [],
+    "Abha–Khamis Mushait": [],
+    "Jazan": [],
+    "Najran": []
+  },
+  "routing": "scipy dijkstra on the rail graph (minutes / ivt)"
+}

@@ -1,0 +1,28 @@
+{
+  "seed": 1,
+  "config_hash": "a0a1b3610b1877153309447391324651d65163977972409beee177f6b444c4cc",
+  "data_hash": "2ecea5fbbb63691fa40d6fdc12dbc08c9e256a958b17f82865d6b776efd4f910",
+  "code_version": "judge v3-variants @ 017234562c sha256 d9fef64384e2e25f",
+  "tool_versions": {
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "pydantic": "2.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "duckdb": "2.0.0",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0",
+    "geopandas": "1.2.0",
+    "networkx": "3.7",
+    "typer": "0.27.3",
+    "scipy": "1.18.1"
+  },
+  "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+  "created_utc": "2026-11-03T18:37:20+00:00",
+  "judge": "v3-variants",
+  "judge_sha256": "d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee",
+  "judge_commit": "017234562c7c8496749afa17c0bdfeeeccb77009",
+  "judge_fingerprint_checked": true,
+  "harness_code_version": "r6-3-g6f99dbf"
+}

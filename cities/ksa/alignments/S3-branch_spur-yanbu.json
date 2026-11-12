@@ -1,0 +1,96 @@
+{
+ "id": "S3-branch_spur-yanbu",
+ "line_type": "conventional_passenger",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 226.654,
+ "straight_km_legs": 170.71,
+ "straight_km_end_to_end": 170.71,
+ "detour_ratio": 1.3277,
+ "max_grade_cap": 0.025,
+ "design_kmh": 200.0,
+ "r_min_m": 3111.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 14.696,
+ "viaduct_km": 11.798,
+ "earthworks_km": 60.688,
+ "at_grade_km": 139.473,
+ "tunnel_share": 0.06484,
+ "viaduct_share": 0.05205,
+ "fill_m3": 8171300.0,
+ "cut_m3": 7843700.0,
+ "formation_max_grade": 0.02503,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.2316,
+ "elev_min_m": -0.3,
+ "elev_max_m": 908.6,
+ "terrain_shares": {
+  "coastal": 0.2499,
+  "dunes": 0.0022,
+  "escarpment_mountain": 0.4257,
+  "flat_desert": 0.1462,
+  "mixed": 0.176
+ },
+ "area_km": {
+  "urban": 4.049,
+  "builtup": 14.897,
+  "protected": 0.0,
+  "military": 0.3,
+  "sand": 1.7,
+  "sabkha": 0.0,
+  "waterway": 10.498,
+  "highway": 21.846
+ },
+ "wadi_crossings_osm": 37,
+ "speed_restrictions": [
+  {
+   "from_km": 59.938,
+   "to_km": 61.238,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 78.335,
+   "to_km": 81.434,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 88.332,
+   "to_km": 91.332,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 113.927,
+   "to_km": 115.027,
+   "kmh": 160.0
+  },
+  {
+   "from_km": 119.326,
+   "to_km": 121.326,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 122.625,
+   "to_km": 124.725,
+   "kmh": 160.0
+  },
+  {
+   "from_km": 140.721,
+   "to_km": 143.221,
+   "kmh": 110.0
+  }
+ ],
+ "restricted_km": 15.099,
+ "min_curve_kmh": 110.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "madinah": 0.0,
+  "yanbu": 226.654
+ },
+ "status": "routed",
+ "stations_key": "09769631237b1a47",
+ "geojson": "cities/ksa/alignments/S3-branch_spur-yanbu.geojson",
+ "run": "runs/align/corridors-s1/S3-branch_spur-yanbu",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

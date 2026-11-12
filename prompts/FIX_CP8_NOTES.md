@@ -1,0 +1,39 @@
+> **Document version:** prompts/FIX_CP8_NOTES.md v1.0 | 7 Nov 2026 | Author: Tariq (verbatim; header and a short coordinator addendum added) | Status: active
+
+# FIX_CP8_NOTES — approved by Tariq on 7 Nov 2026 (AST), after independent coordinator review of the CP8 package at 6cec58f. Do not treat the existing verify-R10 PASS as clearance for half 2.
+
+Work on the existing branch r10 / worktree r10, from current HEAD 6cec58f (or later only if it is this fix). One short run, Opus, USD 60 guard, verifier inside. Do not create a new worktree, do not merge to main, do not fast-forward, do not start half 2, do not render, do not assemble, do not download new models, do not call paid TTS, do not create accounts or keys, do not push, do not tag, do not add a remote, do not contact anyone. Leave /tmp/r10-voice in place unless free disk would fall under 10 GB.
+
+Save this prompt as prompts/FIX_CP8_NOTES.md with a version header. Closing line remains: R10: blocked - CP8 approval required. Update docs/status/r10.md and docs/status/cp8-package.md to record these decisions and the fixes. Re-run the red-team verifier on the changed lines, shots and labels.
+
+REQUIRED FIXES
+
+1. m-08-06 meaning (both languages, lines.csv, sh-08-06, and the CP8 question text). Keep the sourced amounts 2.3–19.3 billion and 0.6–7.4 billion from run:runs/cba/CBA-S1-committed-programme/results.json (pv_user_time_cost P10–P90 2313.139 / 19336.083 and pv_safety 595.837 / 7444.498 SAR million; medium population, 60 years, greenbook_2026). Do not call the first range "travel time saved" or «قيمة الوقت اللي يرجع للناس». It is discounted user travel-time AND travel-cost benefits (docs/cba.md: user_time_cost is rule-of-a-half on the logsum composite cost and contains fares and car fuel; the R8 report calls these "user time and cost savings"). The second range is a monetized safety benefit (deaths and injuries avoided at standard appraisal values), not a crash count. Add the basis on the source card: 2025 SAR, present value 2026, medium population, 60 years, Green Book 2026, P10–P90. WEI stays in m-08-07.
+
+2. Shot timing. After the two softened lines, recompute shot durations from the covered lines. Independent sums at 6cec58f: main AR narration 667.6 s (11:08), main EN 685.5 s (11:26). sh-01-04 picture 14.8 s vs covered English 16.2 s; sh-06-03 picture 13.1 s vs covered English 14.3 s. storyboard.md still states EN 682.9 s and AR 666.0 s — update those totals and any derived render estimates (8.7 / 18.9 / 60.0 GB). Add a test that storyboard on-screen text, section titles AND shot durations match shots.yaml / meta.yaml / covered line times.
+
+3. Map-bearing frames. sh-01-05, sh-01-07 and sh-08-13 show or hold a map but have osm_credit: false. Set or inherit OSM credit on those shots. sh-01-05 also inherits a hillshade: preserve the Copernicus credit.
+
+4. Flight card sh-01-04. Narration correctly says a published schedule "listed Abha to Jeddah" at 1 h 15 min (S-r10-013, timetable valid only through 28 March 2026). The card still shows "Jeddah → Abha … Air: 1 h 15 min" without the dated reverse-direction caveat. Align direction and dated status with the sourced row. Do not invent a current forward-direction time.
+
+5. Vision 2030 Arabic (m-03-05 / m-03-07 and their shots). Keep the spoken paraphrase. Put an explicit paraphrase note in the Arabic on-screen text as well. quote_label must not apply English quotation styling to paraphrased Arabic. Do not add an official Arabic Vision URL unless you find and register one under the 7 Nov citation practice; do not invent a quote.
+
+6. sh-07-51 reuses the synthetic-labelled search-register scroll from sh-07-04 but has footer: none. Give it the same synthetic footer. Do not add spoken-line labels on m-04-04, m-06-01, m-06-02 or t-06; keep those four shot footers as they are.
+
+7. pronunciation.md: «ألف ومية وخمسين» means 1,150. If the list begins at 1,250, correct the example before any later TTS. Do not generate new audio in this run.
+
+8. m-02-02 "first railway line" comes right after the Hejaz Railway and is easy to misread, even if it echoes SAR wording. Say the Riyadh–Dammam line (still sourced). Do not call the North Line "begun in 2022"; keep "passenger trains reaching Qurayyat since 2022" (S-r10-004 / Ajel, first services 31 March 2022).
+
+DECISIONS (do not reopen)
+
+- Extra-travel §5 lines, including the OAG seat-count lines, keep BOTH labels: "synthetic demand, uncalibrated: scenario comparison, not a forecast" and "not the official ranking." Do not relabel the OAG lines as unlabelled sourced facts. A source caption that they are observed seat counts is fine beside the labels.
+- Glossary term 4 stays «طلب تركيبي غير مُعايَر». Do not replace it with «محاكاة متعددة العناصر غير مجرّبة» or «سيناريو غير مدقق». If the two skill files .claude/skills/motion-maps/SKILL.md and documentary-script/SKILL.md still prescribe «طلب اصطناعي», align them to the glossary term (small allowed edit; no other skill rewrites).
+- English duration: no mandatory trim. The target is 8–12 minutes (not 9–11). After timing is fixed, record the English total including credits (about 11:46 at 6cec58f) and note that extra breathing room would push past 12 minutes.
+- Paid A/B stays off until Tariq sets NABRAH_API_KEY and ELEVENLABS_API_KEY himself. Combined cap USD 60, alert 48, unused. Tariq, 7 Nov 2026: the hold "keep Nabra-Saudi-82M and NAMAA out until their training data is named" is lifted. He accepts those models under their published licences (MIT / Apache-2.0) even if the training corpus is unnamed. The no-cloning rule still stands: do not use a model that clones a real identifiable person without written consent. Do not claim Chatterbox has exhaustive training-data provenance. Nabrah public voices (Daniah, Norah, Abdullah) remain the first choice for Arabic; Chatterbox stays the clean-licence fallback; NAMAA and Nabra-Saudi-82M are allowed options, not automatic replacements. Record this in the rights log and CP8 notes; do not download models or generate new audio in this fix run.
+- Native review stays pending on every Arabic row. Contact no one.
+- No render, no assembly, no merge to main, no INTEGRATE_R10. Main already has the cost-log row cda7a23; r10 branched from e9e0433 — they have diverged. Integration waits until Tariq accepts this fix.
+- Disk: about 20.5 GiB free; gate remains ≥ 50 GiB. Do not delete archives or /tmp/r10-voice in this run.
+
+Stop when the verifier PASSes these notes and the status line is again: R10: blocked - CP8 approval required.
+
+Coordinator addendum (7 Nov 2026): the launcher reads this file from the main checkout's `prompts/` (committed there as coordinator bookkeeping); copy it byte-identical into the worktree as `prompts/FIX_CP8_NOTES.md` and commit it on `r10` as your first commit. The launcher ends the run on a `FIX_CP8_NOTES: done` (or `FIX_CP8_NOTES: blocked - <reason>`) line inside `docs/status/r10.md`: put that line at the end of your FIX_CP8_NOTES status block, and keep `R10: blocked - CP8 approval required` as the file's last line (the verifier's `od -c` tail check stands). Status block (in `docs/status/r10.md`, with `cp8-package.md` bumped to v1.2): per-fix before/after for items 1–8 with line ids and shot ids, the recomputed per-cut totals (narration and with credits) and the render estimate, `git diff --stat` against 6cec58f, test count, cost estimate in the first line; verifier label `VERIFY_FIX_CP8_NOTES` in the foreground (it checks each of the eight fixes against the stated sources, that the OAG lines kept both labels, that glossary term 4 is unchanged and the two skill files now match it, that no model was downloaded and no audio generated, no merge/tag/remote, `make test` green). Do not kill any process you did not start (dashboard on 8765 and anything on 8000 are not yours; this run needs no server).

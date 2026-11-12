@@ -1,0 +1,33 @@
+# data: nothing committed except the README and small licence-compatible tables with their own README
+data/*
+!data/README.md
+!data/ksa/
+data/ksa/*
+!data/ksa/tables/
+runs/
+# PUBLISH_EXPORT (Q8): the shipped figure inputs mirror runs/ paths but live under docs/publish/
+!docs/publish/figure-inputs/runs/
+logs/
+movies/
+# film/renders and film/audio: directories, or (R10 half 2) symlinks to the external volume; no trailing slash so a symlink matches
+film/renders
+film/audio
+.worktrees/
+.venv*/
+web/node_modules/
+node_modules/
+web/dist/
+.env
+.env.*
+# FIX_EXPORT_NAMES (12 Nov 2026): the private-name list for the export redaction (mode 600; never tracked)
+.publish/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+
+# R6 frozen judge copies (read-only; hashes in runs/r6/judge and docs/r6/judge-hashes.md)
+judge/*
+!judge/README.md

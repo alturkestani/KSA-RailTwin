@@ -1,0 +1,76 @@
+shot,field,old,new
+sh-06-07,(shot),full-frame label card (m-06-07),(shot removed with its line)
+sh-01-03,footer,synthetic+not_official,none
+sh-01-07,footer,synthetic+not_official,none
+sh-02-08,en,"In the model: 26.10 of 35.93 million people within two hours of a station · reported, not scored","26.10 of 35.93 million people within two hours of a station · reported, not scored"
+sh-02-08,ar,في النموذج: 26.10 مليون من أصل 35.93 مليون في حدود ساعتين من محطة · رقم للعرض، ما يدخل في التقييم,26.10 مليون من أصل 35.93 مليون في حدود ساعتين من محطة · رقم للعرض، ما يدخل في التقييم
+sh-02-08,footer,synthetic,none
+sh-04-02,en,"In the model, 2050, Riyadh–Jeddah metros: rail 0.42 million · air 3.47 million · of 4.66 million one-way trips a year","2050, Riyadh–Jeddah metros: rail 0.42 million · air 3.47 million · of 4.66 million one-way trips a year"
+sh-04-02,ar,في النموذج، 2050، بين منطقتي الرياض وجدة: السكة 0.42 مليون · الطيران 3.47 مليون · من أصل 4.66 مليون رحلة باتجاه واحد في السنة,2050، بين منطقتي الرياض وجدة: السكة 0.42 مليون · الطيران 3.47 مليون · من أصل 4.66 مليون رحلة باتجاه واحد في السنة
+sh-04-02,footer,synthetic+not_official,none
+sh-04-03,en,In the model: air ahead door to door in every rail case · even non-stop at 350 km/h,Air ahead door to door in every rail case · even non-stop at 350 km/h
+sh-04-03,ar,في النموذج: الطيارة قدّام من الباب إلى الباب في كل حالات القطار · حتى بدون توقف بسرعة 350 كيلو في الساعة,الطيارة قدّام من الباب إلى الباب في كل حالات القطار · حتى بدون توقف بسرعة 350 كيلو في الساعة
+sh-04-03,footer,synthetic+not_official,none
+sh-04-04,footer,synthetic,none
+sh-04-05,en,In the model: no layout brings a new place within 60 minutes of a big metro,No layout brings a new place within 60 minutes of a big metro
+sh-04-05,ar,في النموذج: ولا مخطط يدخّل منطقة جديدة في نطاق 60 دقيقة من مدينة كبرى,ولا مخطط يدخّل منطقة جديدة في نطاق 60 دقيقة من مدينة كبرى
+sh-04-05,footer,synthetic,none
+sh-04-06,en,In the model: trips move between modes and destinations · national total unchanged,Trips move between modes and destinations · national total unchanged
+sh-04-06,ar,في النموذج: الرحلات تنتقل بين الوسائل والوجهات · المجموع الوطني ما يتغير,الرحلات تنتقل بين الوسائل والوجهات · المجموع الوطني ما يتغير
+sh-04-06,footer,synthetic+not_official,none
+sh-04-07,en,Uncalibrated test: +0.2 to 1.1 million trips a year in 2050 · programme NPV moves at most about 2.5 % at the middle value,+0.2 to 1.1 million trips a year in 2050 · programme NPV moves at most about 2.5 % at the middle value
+sh-04-07,ar,اختبار غير معاير: +0.2 إلى 1.1 مليون رحلة في السنة في 2050 · صافي القيمة الحالية يتحرك بحد أقصى حوالي 2.5 بالمية في الحالة الوسطى,+0.2 إلى 1.1 مليون رحلة في السنة في 2050 · صافي القيمة الحالية يتحرك بحد أقصى حوالي 2.5 بالمية في الحالة الوسطى
+sh-04-07,footer,synthetic+not_official,none
+sh-05-02,footer,synthetic+not_official,none
+sh-05-03,footer,synthetic+not_official,none
+sh-06-01,footer,synthetic,none
+sh-06-02,footer,synthetic,none
+sh-06-03,footer,synthetic+not_official,none
+sh-06-04,footer,synthetic+not_official,none
+sh-07-04,footer,synthetic,none
+sh-08-01,en,"Committed lines vs today, in the model: NPV −337.6 to +11.6 billion SAR · middle about −60.1 billion",Committed lines vs today: NPV −337.6 to +11.6 billion SAR · middle about −60.1 billion
+sh-08-01,ar,الخطوط الملتزم بها مقارنة بالحالية، في النموذج: صافي القيمة الحالية بين سالب 337.6 وموجب 11.6 مليار ريال · الوسطى حوالي سالب 60.1 مليار,الخطوط الملتزم بها مقارنة بالحالية: صافي القيمة الحالية بين سالب 337.6 وموجب 11.6 مليار ريال · الوسطى حوالي سالب 60.1 مليار
+sh-08-01,footer,synthetic,none
+sh-08-02,en,"Central case: stations at Al Jubayl, Dhahran, Duruma · cost 0.8 to 5.3 billion SAR · in the model, NPV at high cost 4.0 to 5.6 billion · not a recommendation to build","Central case: stations at Al Jubayl, Dhahran, Duruma · cost 0.8 to 5.3 billion SAR · NPV at high cost 4.0 to 5.6 billion · not a recommendation to build"
+sh-08-02,ar,الحالة المركزية: محطات في الجبيل والظهران وضرما · التكلفة بين 0.8 و5.3 مليار ريال · في النموذج، صافي القيمة الحالية مع التكلفة المرتفعة بين 4.0 و5.6 مليار · مو توصية بالبناء,الحالة المركزية: محطات في الجبيل والظهران وضرما · التكلفة بين 0.8 و5.3 مليار ريال · صافي القيمة الحالية مع التكلفة المرتفعة بين 4.0 و5.6 مليار · مو توصية بالبناء
+sh-08-02,footer,synthetic,none
+sh-08-03,en,"Upside case: + Al-Kharj spur · cost 6.2 to 41.3 billion SAR · in the model, at high cost −3.0 to +1.6 billion",Upside case: + Al-Kharj spur · cost 6.2 to 41.3 billion SAR · at high cost −3.0 to +1.6 billion
+sh-08-03,ar,الحالة الأعلى عائداً: + الخط الفرعي للخرج · التكلفة بين 6.2 و41.3 مليار ريال · في النموذج، مع التكلفة المرتفعة بين سالب 3.0 وموجب 1.6 مليار,الحالة الأعلى عائداً: + الخط الفرعي للخرج · التكلفة بين 6.2 و41.3 مليار ريال · مع التكلفة المرتفعة بين سالب 3.0 وموجب 1.6 مليار
+sh-08-03,footer,synthetic,none
+sh-08-04,en,"Reach alternative: + Riyadh commuter belt · 4.25 million within 120 minutes vs 3.56 million · in the model, at high cost −21.7 to −16.6 billion SAR",Reach alternative: + Riyadh commuter belt · 4.25 million within 120 minutes vs 3.56 million · at high cost −21.7 to −16.6 billion SAR
+sh-08-04,ar,بديل التغطية الأوسع: + حزام ضواحي الرياض · 4.25 مليون في نطاق 120 دقيقة مقابل 3.56 مليون · في النموذج، مع التكلفة المرتفعة بين سالب 21.7 وسالب 16.6 مليار ريال,بديل التغطية الأوسع: + حزام ضواحي الرياض · 4.25 مليون في نطاق 120 دقيقة مقابل 3.56 مليون · مع التكلفة المرتفعة بين سالب 21.7 وسالب 16.6 مليار ريال
+sh-08-04,footer,synthetic,none
+sh-08-05,en,"In the model, no option pays for itself · the state pays under every delivery model · central case, public delivery: 0.7 to 4.1 billion SAR over 60 years","No option pays for itself · the state pays under every delivery model · central case, public delivery: 0.7 to 4.1 billion SAR over 60 years"
+sh-08-05,ar,في النموذج، ولا خيار يغطي تكلفته · الدولة تدفع في كل نماذج التنفيذ · الحالة المركزية، تنفيذ حكومي: بين 0.7 و4.1 مليار ريال خلال 60 سنة,ولا خيار يغطي تكلفته · الدولة تدفع في كل نماذج التنفيذ · الحالة المركزية، تنفيذ حكومي: بين 0.7 و4.1 مليار ريال خلال 60 سنة
+sh-08-05,footer,synthetic,none
+sh-08-06,en,"Committed lines, 60 years, in the model: users' travel time and cost savings 2.3 to 19.3 billion SAR · safety benefit (deaths and injuries avoided, at appraisal values) 0.6 to 7.4 billion","Committed lines, 60 years: users' travel time and cost savings 2.3 to 19.3 billion SAR · safety benefit (deaths and injuries avoided, at appraisal values) 0.6 to 7.4 billion"
+sh-08-06,ar,الخطوط الملتزم بها، 60 سنة، في النموذج: وفورات الناس في وقت التنقل وتكلفته 2.3 إلى 19.3 مليار ريال · فائدة السلامة (الوفيات والإصابات المتجنبة بقيم التقييم) 0.6 إلى 7.4 مليار,الخطوط الملتزم بها، 60 سنة: وفورات الناس في وقت التنقل وتكلفته 2.3 إلى 19.3 مليار ريال · فائدة السلامة (الوفيات والإصابات المتجنبة بقيم التقييم) 0.6 إلى 7.4 مليار
+sh-08-06,footer,synthetic,none
+sh-08-07,footer,synthetic,none
+sh-08-08,footer,synthetic+not_official,none
+sh-08-09,footer,synthetic+not_official,none
+sh-08-10,footer,synthetic+not_official,none
+sh-08-11,en,"Synthetic, uncalibrated demand · a field survey could change it · stage gates before each construction start",A field survey could change all of this · stage gates before each construction start
+sh-08-11,ar,طلب تركيبي غير مُعايَر · استبيان ميداني ممكن يغيّره · بوابات مراجعة قبل كل بداية إنشاء,استبيان ميداني ممكن يغيّر كل هذا · بوابات مراجعة قبل كل بداية إنشاء
+sh-08-11,footer,synthetic,none
+sh-08-12,footer,synthetic+not_official,none
+sh-08-14,footer,none,synthetic
+sh-01-51,footer,synthetic+not_official,none
+sh-01-52,footer,synthetic+not_official,none
+sh-04-51,en,In the model: air ahead door to door in every rail case,Air ahead door to door in every rail case
+sh-04-51,ar,في النموذج: الطيارة قدّام من الباب إلى الباب في كل حالات القطار,الطيارة قدّام من الباب إلى الباب في كل حالات القطار
+sh-04-51,footer,synthetic+not_official,none
+sh-06-51,footer,synthetic,none
+sh-07-51,footer,synthetic,none
+sh-08-51,en,"In the model, the three-station central case at high cost: 4.0 to 5.6 billion SAR",The three-station central case at high cost: 4.0 to 5.6 billion SAR
+sh-08-51,ar,في النموذج، خيار المحطات الثلاث مع التكلفة المرتفعة: بين 4.0 و5.6 مليار ريال,خيار المحطات الثلاث مع التكلفة المرتفعة: بين 4.0 و5.6 مليار ريال
+sh-08-51,footer,synthetic,none
+sh-08-52,en,"In the model, no option pays for itself · the state pays under every delivery model",No option pays for itself · the state pays under every delivery model
+sh-08-52,ar,في النموذج، ولا خيار يغطي تكلفته · الدولة تدفع في كل نماذج التنفيذ,ولا خيار يغطي تكلفته · الدولة تدفع في كل نماذج التنفيذ
+sh-08-52,footer,synthetic,none
+sh-08-53,en,"Synthetic, uncalibrated demand: a scenario comparison, not a forecast · a possibility, not a promise","A railway that connects the country: a possibility, not a promise"
+sh-08-53,ar,طلب تركيبي غير مُعايَر: مقارنة سيناريوهات، مو توقّع · احتمال، مو وعد,سكة تربط البلد: احتمال، مو وعد
+sh-08-53,footer,synthetic,none
+sh-08-54,footer,none,synthetic
+sh-08-12,en,"A night train north that already runs · an air shuttle rail does not beat, in this model · Abha and Tabuk, still off the rail map","A night train north that already runs · an air shuttle rail does not beat · Abha and Tabuk, still off the rail map"
+sh-08-12,ar,قطار ليلي للشمال شغّال اليوم · جسر جوي ما يسبقه القطار، في هالنموذج · أبها وتبوك، إلى اليوم برّا خريطة السكة,قطار ليلي للشمال شغّال اليوم · جسر جوي ما يسبقه القطار · أبها وتبوك، إلى اليوم برّا خريطة السكة

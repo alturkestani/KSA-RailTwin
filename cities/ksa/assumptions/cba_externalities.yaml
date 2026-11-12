@@ -1,0 +1,109 @@
+# Document version: cities/ksa/assumptions/cba_externalities.yaml v0.2 | 3 Nov 2026 | Author: economist (R5, CBA-B) | Status: draft
+# W4 externality and resource-cost parameters. Base: SAR 2025 prices (A-cost-001); peg 3.75 SAR/USD (S-lb-020).
+# Price conversion: cities/ksa/costs/index.yaml factors I-gbp-2023-sar-2025 = 5.321609, I-eur-2016-sar-2025 = 5.406486,
+# I-usd-2017-sar-2025 = 4.835307 (A-cost-002). Income transfer (A-cba-223): x (KSA/UK GDP pc PPP 2025)^1 = 1.142 for
+# DfT TAG willingness-to-pay values; x (KSA/EU GDP pc PPP 2025)^1 = 1.1264 for EU Handbook values. Resource costs
+# (vehicle operating costs) and carbon values are NOT income-transferred.
+# Every behavioural or valuation figure here is literature-based until survey results exist. Outputs that use these values
+# are "synthetic demand, uncalibrated: scenario comparison, not a forecast".
+# Schema: params.<key> = {value, low, high, unit, price_year, currency, assumption_id, sources, note}; the two schedule
+# nodes (carbon_value_schedule, ksa_grid_kgco2e_per_kwh_schedule) carry year keys {<year>: {value, low, high}} directly.
+meta:
+  label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+  price_year: 2025
+  currency: SAR
+  income_transfer: {uk_to_ksa: 1.142, eu_to_ksa: 1.1264, elasticity: 1.0, assumption_id: A-cba-223, sources: [S-cp1-097, S-cp1-098, S-r5-cba-217, S-cp1-093]}
+  demand_model_car_cost_finding: >-
+    grep of modechoice/ and cities/ksa/assumptions/mode_choice*.yaml: the generalised cost includes FUEL ONLY.
+    modechoice/pairs.py lines 139-172: cost_sar_car = km * fuel_price_sar_per_l / fuel_economy_km_per_l + parking, per
+    vehicle, divided by occupancy in the MNL; mode_choice_r3.yaml car.running_cost_basis = fuel_only (A-mode-023;
+    2.18 SAR/L S-soc-316, 10 km/L S-soc-317), occupancy 2.0 (A-mode-022). Non-fuel VOC (wear, maintenance, depreciation)
+    is not in the perceived cost. CBA rule: user benefits already carry the fuel saving for diverted car trips through
+    the rule of half; add only the non-fuel resource saving (car_voc_nonfuel_sar_per_vkm) as a separate VOC line, never
+    the full car_vehicle_operating_cost_sar_per_vkm on top of the user benefit.
+params:
+  car_occupancy_intercity:
+    {value: 2.0, low: 1.61, high: 2.5, unit: persons per car (per vehicle-km), price_year: 2025, currency: SAR, assumption_id: A-cba-201, sources: [S-r5-cba-202], note: "central = A-mode-022 (2.0, the demand model's value; kept identical so car-VKM removed matches the trips the MNL diverts). No KSA occupancy survey found. Low = TAG Data Book v2.03 Table A1.3.3 average car, all-week, per vehicle-km 1.614 (UK 2010); high = assumption (KSA intercity family, VFR and pilgrimage trips; TAG 'other' purpose weekend is 2.09). literature-based until survey results exist"}
+  bus_occupancy_intercity:
+    {value: 25.0, low: 12.8, high: 40.0, unit: passengers per bus (per vehicle-km), price_year: 2025, currency: SAR, assumption_id: A-cba-202, sources: [S-r5-cba-202, S-r5-cba-219], note: "assumption. No KSA bus-km found: GASTAT reports 43.5 million bus passengers within and between cities in 2022 (S-r5-cba-219) but no vehicle-km. Low = TAG A1.3.3 PSV passengers 12.8 (UK local buses, S-r5-cba-202); central 25 ~ half of a 49-seat coach; high 40 ~ 80 % of a 49-seat coach (assumption)"}
+  road_crash_cost_sar_per_car_vkm:
+    {value: 0.1475, low: 0.0724, high: 0.4385, unit: SAR per car vehicle-km (average total casualty cost), price_year: 2025, currency: SAR, assumption_id: A-cba-203, sources: [S-r5-cba-219, S-r5-cba-215, S-r5-cba-218, S-r5-cba-206, S-r5-cba-221, S-r5-cba-216, S-soc-317, S-r5-cba-220, S-r5-cba-222, S-r5-cba-201], note: "derivation (central): VSL = 70 x KSA GDP per capita 2025 USD 34,536.66 (S-r5-cba-215) = USD 2,417,566 = SAR 9,065,872 (iRAP rule of thumb 70, range 60-80, S-r5-cba-218). Deaths 4,555 and injuries 24,400 (GASTAT 2022, S-r5-cba-219). Injury value as a share of VSL from TAG Table A4.1.1 (S-r5-cba-206): serious 0.1112, slight 0.0085; serious share of reported injuries 0.5 (assumption; GASTAT gives no split). Total = 4,555 x 9.066M + 24,400 x (0.5 x 0.1112 + 0.5 x 0.0085) x 9.066M = SAR 54.5 bn. Share attributable to car traffic 0.8 (assumption; trucks, buses, motorcycles). VKM proxy (no KSA vehicle-km statistic found): gasoline 838 L per person 2024 (S-r5-cba-221, secondary) x population 35,300,280 (S-r5-cba-216) = 29.58 bn L (= 186.1 M bbl; press reports 188.2 M bbl) x 10 km/L (S-soc-317) = 295.8 bn vkm. 54.5 x 0.8 / 295.8 = 0.1475. Low: VSL 60x, serious share 0.3, car share 0.7, 14 km/L (414.1 bn vkm) = 0.0724. High: EU Handbook 2019 car external accident cost 7.2 EUR-cent/vkm (S-r5-cba-222) x 5.406 x 1.126 = 0.4385; the KSA derivation with VSL 80x, WHO-estimated 6,651 deaths (2021, S-r5-cba-220, secondary), all injuries serious, share 0.9, 8 km/L gives 0.369. Reported injuries (5.4 per death) look under-reported against EU ratios, so the central is likely low. Damage-only crash and admin costs excluded. Cross-check: TAG A5.4.2 rural A-road accident MEC 1.16 p/vkm (external part only, UK risk) = 0.0705 (S-r5-cba-201)"}
+  road_crash_cost_sar_per_bus_vkm:
+    {value: 0.3872, low: 0.1901, high: 1.1511, unit: SAR per bus vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-224, sources: [S-r5-cba-222], note: "no KSA bus-involvement statistics found. EU Handbook 2019 Table 8 bus/coach 18.9 vs passenger car 7.2 EUR-cent/vkm, ratio 2.625 (S-r5-cba-222). Central = 2.625 x KSA car central 0.1475 (A-cba-203) = 0.387; low = 2.625 x 0.0724 = 0.190; high = Handbook bus/coach 18.9 EUR-cent x 5.406486 x 1.1264 = 1.151"}
+  rail_crash_cost_sar_per_train_km:
+    {value: 3.1789, low: 1.0536, high: 4.7684, unit: SAR per train-km (external accident cost), price_year: 2025, currency: SAR, assumption_id: A-cba-204, sources: [S-r5-cba-222], note: "EU Handbook 2019 Table 8, EU28 2016 averages: conventional passenger train 52.2 EUR-cent/vkm, high-speed 17.3 EUR-cent/vkm (S-r5-cba-222). x 5.406486 (EUR 2016 -> SAR 2025) x 1.1264 (income transfer) = conventional 3.18, HSR 1.05. Central = conventional; low = HSR value; high = 1.5 x conventional (assumption: level crossings and camel/sand incursion risk on desert lines; no KSA rail casualty statistics found). Small relative to road values; use rail_crash_cost_sar_per_train_km_hsr for HSR lines"}
+  rail_crash_cost_sar_per_train_km_hsr:
+    {value: 1.0536, low: 0.5268, high: 3.1789, unit: SAR per train-km, price_year: 2025, currency: SAR, assumption_id: A-cba-204, sources: [S-r5-cba-222], note: "EU Handbook 2019 Table 8 high-speed passenger train 17.3 EUR-cent/vkm, transferred as above. Low = 0.5x (assumption); high = conventional value"}
+  carbon_value_sar_per_tco2e_2025:
+    {value: 1858.9, low: 929.4, high: 2788.3, unit: SAR per tCO2e, price_year: 2025, currency: SAR, assumption_id: A-cba-205, sources: [S-r5-cba-204, S-r5-cba-205], note: "CENTRAL CHOICE: UK DESNZ/BEIS carbon values for policy appraisal (Sep 2021 edition, GBP 2020 prices: 2025 low/central/high 130/260/390; the edition in force on 3 Nov 2026, no newer edition found, S-r5-cba-205), as carried in DfT TAG Data Book v2.03 (May 2026) Table A3.4.1 in 2023 prices, market price unit of account: 2025 = GBP 349.30 (low 174.65, high 523.96) (S-r5-cba-204). x 5.321609 (I-gbp-2023-sar-2025) = SAR 1,858.9. Not income-transferred: a target-consistent value for a global damage. Chosen as central because it is a published appraisal schedule to 2050+ with low/high bands and matches the TAG framework already used for VoT (A-cba-010); the World Bank/HLCCP range (carbon_value_hlccp_2030_sar_per_tco2e) is much lower and runs as a sensitivity. Departure: UK market-price unit (UK indirect tax 19 %) kept rather than re-based to KSA VAT 15 %"}
+  carbon_value_2025:
+    {value: 1858.9, low: 929.4, high: 2788.3, unit: SAR per tCO2e, price_year: 2025, currency: SAR, assumption_id: A-cba-205, sources: [S-r5-cba-204, S-r5-cba-205], note: "alias of carbon_value_sar_per_tco2e_2025 under the key economics/cba.py and economics/montecarlo.py read; keep the two identical"}
+  carbon_value_growth_real:
+    {value: 0.0151, low: 0.0151, high: 0.0151, unit: fraction per year (real), price_year: 2025, currency: SAR, assumption_id: A-cba-206, sources: [S-r5-cba-204], note: "derived from TAG A3.4.1 central: (508.53 / 349.30)^(1/25) - 1 = 1.514 %/yr for 2025-2050; TAG extends post-2050 at 1.5 %/yr (2055 = 547.84). Prefer carbon_value_schedule (exact path); the growth rate is a scalar fallback"}
+  carbon_value_schedule:
+    unit: SAR per tCO2e
+    price_year: 2025
+    currency: SAR
+    assumption_id: A-cba-206
+    sources: [S-r5-cba-204, S-r5-cba-205]
+    note: "TAG A3.4.1 market-price values (GBP 2023) x 5.321609; low = 0.5 x central, high = 1.5 x central (the DESNZ low/high bands); interpolate linearly between listed years; 2060-2100 are TAG's own extension (market price 2060 GBP 590.17 ... 2100 GBP 1,070.59, ~1.5 %/yr); np.interp holds 2100 flat beyond 2100. Year keys sit directly under this node (economics/cba.py carbon_value reads digit keys)"
+    2025: {value: 1858.9, low: 929.4, high: 2788.3}
+    2030: {value: 2004.8, low: 1002.4, high: 3007.2}
+    2035: {value: 2162.1, low: 1081.1, high: 3243.2}
+    2040: {value: 2331.9, low: 1165.9, high: 3497.8}
+    2045: {value: 2512.1, low: 1256.0, high: 3768.1}
+    2050: {value: 2706.2, low: 1353.1, high: 4059.3}
+    2055: {value: 2915.4, low: 1457.7, high: 4373.0}
+    2060: {value: 3140.7, low: 1570.3, high: 4711.0}
+    2070: {value: 3644.9, low: 1822.4, high: 5467.3}
+    2080: {value: 4230.0, low: 2115.0, high: 6345.1}
+    2090: {value: 4909.1, low: 2454.6, high: 7363.7}
+    2100: {value: 5697.2, low: 2848.6, high: 8545.9}
+  carbon_value_hlccp_2030_sar_per_tco2e:
+    {value: 362.6, low: 241.8, high: 483.5, unit: SAR per tCO2e (2030), price_year: 2025, currency: SAR, assumption_id: A-cba-207, sources: [S-r5-cba-227], note: "SENSITIVITY, not central. High-Level Commission on Carbon Prices range USD 50-100 per tCO2 by 2030, which the World Bank 2024 Guidance Note on the Shadow Price of Carbon follows (E3G summary, secondary; the World Bank's own year-by-year table not retrieved, S-r5-cba-227). Price year assumed USD 2017 (the commission's report year; unverified) x 4.835307 (I-usd-2017-sar-2025). Central = midpoint USD 75. The EU Handbook 2019 central (EUR 100/t 2016 = SAR 540.6, S-r5-cba-224) lies between this range and DESNZ"}
+  ef_car_kgco2e_per_vkm:
+    {value: 0.2354, low: 0.1615, high: 0.2942, unit: kg CO2e per car vehicle-km (tank-to-wheel), price_year: 2025, currency: SAR, assumption_id: A-cba-208, sources: [S-r5-cba-209, S-soc-317], note: "KSA method: DESNZ 2026 petrol (100 % mineral, no biofuel blend in KSA) 2.35372 kg CO2e/L (S-r5-cba-209) / 10 km/L (S-soc-317, the demand model's fuel economy) = 0.2354; 14 km/L = 0.168, 8 km/L = 0.294 (high). Low = DESNZ 2026 'average car, petrol' 0.16152 kg/km (UK fleet). No KSA fleet-mix factor found. Well-to-tank (DESNZ +0.046 kg/km) excluded, consistent with grid factors at generation"}
+  ef_bus_kgco2e_per_vkm:
+    {value: 0.6153, low: 0.4923, high: 0.7999, unit: kg CO2e per bus vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-209, sources: [S-r5-cba-208, S-r5-cba-209], note: "TAG A1.3.8 PSV fuel formula L/km = a/v + b + c v + d v^2 at 80 km/h = 0.2312 L/km (S-r5-cba-208) x DESNZ 2026 diesel 100 % mineral 2.66155 kg/L (S-r5-cba-209) = 0.615. Low/high = 0.8x / 1.3x (assumption: newer coaches vs desert air-conditioning load; the formula is a UK 2015 PSV mix). Cross-check: DESNZ coach 0.03948 kg/pkm x 25 passengers = 0.99 kg/vkm on UK coach occupancy, not used"}
+  ef_air_kgco2e_per_pkm_domestic:
+    {value: 0.1355, low: 0.1355, high: 0.2628, unit: kg CO2e per passenger-km, price_year: 2025, currency: SAR, assumption_id: A-cba-210, sources: [S-r5-cba-210], note: "DESNZ 2026 'Domestic, to/from UK, average passenger': without radiative forcing (RF) 0.13552 kg/pkm (central), with RF 0.22928; WTT +0.0335 (S-r5-cba-210). CHOICE: central WITHOUT RF (conservative for rail; non-CO2 effects are uncertain and TAG/most appraisal values count CO2e only); high = with RF + WTT 0.2628 as a sensitivity. UK domestic sectors are shorter (more landing/take-off share per km) than KSA domestic sectors, so per-pkm values may be high for Riyadh-Jeddah-type distances"}
+  ef_rail_electric_kwh_per_train_km_hsr:
+    {value: 16.31, low: 11.9, high: 19.45, unit: kWh per train-km (from the grid), price_year: 2025, currency: SAR, assumption_id: A-cba-211, sources: [S-cost-opex-011], note: "reuses cost register C-opex-hsr-energy-001: KTH Green Train simulations 250-320 km/h incl. supply losses. Swedish climate; desert air-conditioning not included (likely upward bias in KSA, unquantified)"}
+  ef_rail_electric_kwh_per_train_km_conventional:
+    {value: 10.09, low: 7.34, high: 16.51, unit: kWh per train-km (at pantograph), price_year: 2025, currency: SAR, assumption_id: A-cba-212, sources: [S-cost-opex-012, S-cost-opex-013], note: "reuses C-opex-conv-energy-001: X2000-5 10.09, Regina 7.34, IC-8 loco + 8 cars 16.51 (measured at pantograph). Grid-side X2000 figures 11.87-13.6 (S-cost-opex-013): multiply by ~1.2 for supply losses if grid-side energy is needed (assumption from the two X2000 figures)"}
+  ef_rail_electric_kwh_per_train_km_commuter:
+    {value: 7.34, low: 4.97, high: 8.31, unit: kWh per train-km, price_year: 2025, currency: SAR, assumption_id: A-cba-213, sources: [S-cost-opex-012, S-cost-opex-013], note: "X50-3 Regina 3-car EMU 7.34 at pantograph (S-cost-opex-012); Regina fleet range 4.97-8.31 (S-cost-opex-013). Longer metro/commuter consists scale roughly with cars (not applied)"}
+  ksa_grid_kgco2e_per_kwh:
+    {value: 0.692, low: 0.543, high: 0.702, unit: kg CO2e per kWh generated, price_year: 2025, currency: SAR, assumption_id: A-cba-214, sources: [S-r5-cba-212, S-r5-cba-203], note: "Our World in Data 'Carbon intensity of electricity generation' (Ember and Energy Institute), Saudi Arabia 2024 = 691.95 g/kWh (2019-2023: 697-702) (S-r5-cba-212). Low 0.543 = LowCarbonPower 2023 figure (secondary, S-r5-cba-203); high 0.702 = OWID 2021. Generation basis: transmission losses not added"}
+  ksa_grid_kgco2e_per_kwh_schedule:
+    unit: kg CO2e per kWh
+    price_year: 2025
+    currency: SAR
+    assumption_id: A-cba-215
+    sources: [S-r5-cba-212, S-r5-cba-213, S-r5-cba-214]
+    note: "ASSUMED path, anchored on 2024 = 0.692 (S-r5-cba-212) and the stated target of about 50 % of electricity from renewables by 2030 under the National Renewable Energy Program (S-r5-cba-213, secondary; ~12 % renewables in 2025 per a 2026 secondary report, S-r5-cba-214). LOW case = target met: 50 % renewables + 50 % gas at an assumed ~0.5 kg/kWh = 0.25 in 2030, then 0.15 / 0.05 / 0.0 (2040/2050/2060, the 2060 net-zero pledge, primary source to find). CENTRAL = partial delivery: 0.55 / 0.40 / 0.25 / 0.10. HIGH = little change: 0.69 / 0.65 / 0.60 / 0.55. Interpolate linearly; the gas intensity and the central/high paths are assumptions, not sourced projections. Year keys sit directly under this node (economics/cba.py grid_factor reads digit keys)"
+    2025: {value: 0.692, low: 0.692, high: 0.692}
+    2030: {value: 0.55, low: 0.25, high: 0.69}
+    2040: {value: 0.40, low: 0.15, high: 0.65}
+    2050: {value: 0.25, low: 0.05, high: 0.60}
+    2060: {value: 0.10, low: 0.0, high: 0.55}
+  ef_rail_diesel_kgco2e_per_train_km:
+    {value: 12.645, low: 2.01, high: 14.752, unit: kg CO2e per train-km (diesel passenger train), price_year: 2025, currency: SAR, assumption_id: A-cba-216, sources: [S-cost-opex-012, S-r5-cba-209, S-r5-cba-224], note: "no SAR fleet fuel-use figure found (C-opex-conv-diesel-001 unknown). Derivation: loco + 8 cars traction energy 16.51 kWh/train-km at pantograph (IC-8, S-cost-opex-012) / fuel-to-pantograph-equivalent efficiency 0.35 (assumption, range 0.30-0.40) = 47.2 kWh fuel = 4.75 L diesel (9.93 kWh/L from DESNZ 2026 2.66155 kg/L and 0.26806 kg/kWh net CV, S-r5-cba-209) x 0.26806 = 12.6 kg. High = efficiency 0.30 (14.75 kg). Low = EU Handbook 2019 average diesel passenger train 20.1 EUR-cent/vkm at EUR 100/t = 2.01 kg/vkm (S-r5-cba-224; mostly light DMUs, so a floor for SAR loco-hauled sets). Implied litres: ef_rail_diesel_l_per_train_km"}
+  ef_rail_diesel_l_per_train_km:
+    {value: 4.751, low: 4.157, high: 5.543, unit: litres diesel per train-km, price_year: 2025, currency: SAR, assumption_id: A-cba-216, sources: [S-cost-opex-012, S-r5-cba-209], note: "same derivation as ef_rail_diesel_kgco2e_per_train_km at efficiency 0.35 (0.40 low, 0.30 high); can fill the cost-register gap C-opex-conv-diesel-001 at SAR 1.79/L (S-cost-opex-016) if the cost-estimator agrees"}
+  air_quality_cost_sar_per_car_vkm:
+    {value: 0.0078, low: 0.0063, high: 0.0323, unit: SAR per car vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-217, sources: [S-r5-cba-201, S-r5-cba-223], note: "TAG Data Book v2.03 Table A5.4.2 (2025, pence per vkm, 2023 prices) local air quality, rural motorways 0.1278 p (central) and rural A roads 0.1033 p (low) (S-r5-cba-201) x 5.321609 x 1.142 = 0.0078 / 0.0063. High = EU Handbook 2019 Table 16 petrol car average 0.53 EUR-cent/vkm (S-r5-cba-223, EU fleet incl. urban exposure) x 5.406 x 1.126 = 0.0323. The KSA fleet may be older than the UK fleet (upward risk); intercity rural exposure is low (downward)"}
+  air_quality_cost_sar_per_bus_vkm:
+    {value: 0.8733, low: 0.4366, high: 1.3099, unit: SAR per bus vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-218, sources: [S-r5-cba-223], note: "EU Handbook 2019 Table 16 coach average 14.34 EUR-cent/vkm (S-r5-cba-223) x 5.406486 x 1.1264 = 0.873. Low/high 0.5x / 1.5x (assumption: rural exposure vs older engine standards). TAG gives no PSV air-quality MEC per vkm"}
+  air_quality_cost_sar_per_train_km_diesel:
+    {value: 18.006, low: 2.862, high: 27.01, unit: SAR per diesel train-km, price_year: 2025, currency: SAR, assumption_id: A-cba-219, sources: [S-r5-cba-223, S-r5-cba-224], note: "EU Handbook 2019 Table 16 diesel passenger train 47.0 EUR-cent/vkm (low; mostly light DMUs, S-r5-cba-223) scaled by fuel use: 47.0 x (12.645 / 2.01 kg CO2e per train-km, A-cba-216) = 295.7 EUR-cent x 5.406486 x 1.1264 = 18.0 SAR (central; consistent with the Handbook diesel freight train 305.4 EUR-cent/vkm = 18.6 SAR). High = 1.5x (assumption: older locomotive emission standards). Desert routes have low exposure; electric trains: 0 at point of use"}
+  marginal_external_congestion_cost_sar_per_car_vkm_intercity:
+    {value: 0.012, low: 0.0032, high: 0.4688, unit: SAR per car vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-220, sources: [S-r5-cba-201], note: "TAG Data Book v2.03 Table A5.4.2 (2025, 2023 prices) rural motorways congestion: band 1 0.053 p (low), band 2 0.198 p (central), weighted average 7.71 p (high) (S-r5-cba-201) x 5.321609 x 1.142 (time cost, VoT transfer). CHOICE: central = band 2 because KSA intercity highways are assumed largely free-flowing outside urban fringes (assumption; no open KSA traffic counts, S-r1a-531); the high case applies the UK average rural-motorway congestion. Not for Jeddah: Jeddah decongestion comes only from the TrafficTwin coupling (never also VKT-based)"}
+  marginal_external_congestion_cost_sar_per_car_vkm_urban:
+    {value: 1.6501, low: 0.1892, high: 4.2277, unit: SAR per car vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-221, sources: [S-r5-cba-201], note: "TAG A5.4.2 2025 'Other urban' A roads congestion: average 27.15 p (central), band 2 3.11 p (low), band 4 69.56 p (high) x 5.321609 x 1.142. ONLY for access/egress legs in metros other than Jeddah, if used; Jeddah decongestion comes from TrafficTwin matched-control runs and must not be double-counted"}
+  car_vehicle_operating_cost_sar_per_vkm:
+    {value: 0.503, low: 0.3552, high: 0.6592, unit: SAR per car vehicle-km (resource cost, fuel + non-fuel), price_year: 2025, currency: SAR, assumption_id: A-cba-222, sources: [S-soc-316, S-soc-317, S-r5-cba-207], note: "fuel: Gasoline 91 SAR 2.18/L (Aramco, Oct 2026, S-soc-316) / 10 km/L (S-soc-317) = 0.218 (low 2.18/14 = 0.156; high Gasoline 95 2.33/8 = 0.291). Non-fuel: TAG A1.3.14 non-work car a1 5.355 p/km (2023 prices) x 5.321609 = 0.285 (S-r5-cba-207); low 0.7x; high = work-car a1 6.915 p/km = 0.368; not income-transferred (resource cost); the speed-dependent b1 capital term is excluded. Total 0.503. Departures: (1) KSA retail fuel prices are administered, so the fuel component is a financial, not shadow, price; (2) UK non-fuel costs transferred at market FX. The demand model includes fuel only (see meta.demand_model_car_cost_finding): use car_voc_nonfuel_sar_per_vkm for the CBA VOC line"}
+  car_voc_fuel_sar_per_vkm:
+    {value: 0.218, low: 0.1557, high: 0.2913, unit: SAR per car vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-222, sources: [S-soc-316, S-soc-317], note: "fuel component of car_vehicle_operating_cost_sar_per_vkm; already in the demand model's perceived cost (A-mode-023). Oct 2026 prices treated as 2025 prices (no deflation applied; Saudi CPI 2025-2026 change not yet in the index)"}
+  car_voc_nonfuel_sar_per_vkm:
+    {value: 0.285, low: 0.1995, high: 0.368, unit: SAR per car vehicle-km, price_year: 2025, currency: SAR, assumption_id: A-cba-222, sources: [S-r5-cba-207], note: "non-fuel component; NOT in the demand model's perceived cost, so it is the VOC resource saving to add for removed car-VKM"}

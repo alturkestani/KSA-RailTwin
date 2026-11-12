@@ -1,0 +1,939 @@
+{
+"type": "FeatureCollection",
+"name": "haram_boundary_markers_osm",
+"attribution": "(c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+"note": "Haram boundary marker boards as mapped in OSM (boundary=marker, name contains 'حد الحرم' / 'حدود الحرم'). Points, not a boundary: no complete official GIS boundary was found (S-rj-002) and no polygon is drawn. Precision: OSM point positions of roadside boards, typically metres to tens of metres; a board marks where a road crosses the boundary, not the line between boards (A-rj-004).",
+"features": [
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136146846",
+"osm_version": 4,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - عرفات",
+"name_en": "Al Haram boundary - Arafat",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9601546,
+21.361471
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136146929",
+"osm_version": 7,
+"osm_timestamp": 1784773149,
+"name": "حد الحرم العوالي طريق الطائف",
+"name_en": "Al Haram boundary - Al Awaly-Taif Road",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9399512,
+21.3412958
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136147183",
+"osm_version": 4,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم الجنوبية الحسينية",
+"name_en": "Al Haram boundary - Al Husayniyah",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.8823336,
+21.327143
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136147932",
+"osm_version": 4,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم الجنوبية الغربية",
+"name_en": "Al Haram boundary - southwest",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.706948,
+21.312882
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136148102",
+"osm_version": 4,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم قطار الحرمين",
+"name_en": "Al Haram boundary - HHR",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.647887,
+21.34032
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136148105",
+"osm_version": 4,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم قطار الحرمين",
+"name_en": "Al Haram boundary - HHR",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.647537,
+21.340812
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136148177",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم طريق جدة السريع",
+"name_en": "Al Haram boundary - Jeddah-Makkah Expressway",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.635245,
+21.351837
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136148179",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم طريق جدة السريع",
+"name_en": "Al Haram boundary - Jeddah-Makkah Expressway",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.635399,
+21.352668
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136148832",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية",
+"name_en": "Al Haram boundary - North",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.721968,
+21.455479
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149128",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية - الفيحاء",
+"name_en": "Al Haram boundary - Al Fayhaa",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.761962,
+21.472838
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149296",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية - التنعيم",
+"name_en": "Al Haram boundary - At Tanim",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.801329,
+21.467006
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149298",
+"osm_version": 2,
+"osm_timestamp": 1783679498,
+"name": "حدود الحرم الشمالية - التنعيم",
+"name_en": "Al Haram boundary - At Tanim",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.80219,
+21.467651
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149385",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية - بشم",
+"name_en": "Al Haram boundary - Bashm",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.81995,
+21.482107
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149441",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية",
+"name_en": "Al Haram boundary - North",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.834509,
+21.486921
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149594",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية",
+"name_en": "Al Haram boundary - North",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.86679,
+21.504438
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149600",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية",
+"name_en": "Al Haram boundary - North",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.868562,
+21.505843
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13136149677",
+"osm_version": 3,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية",
+"name_en": "Al Haram boundary - North",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.880088,
+21.519481
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158434519",
+"osm_version": 5,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم العوالي طريق الطائف",
+"name_en": "Al Haram boundary - Al Awaly-Taif Road",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9392745,
+21.3409706
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530864",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم الجنوبية الحسينية",
+"name_en": "Al Haram boundary - Al Husayniyah",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.881833,
+21.3271341
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530865",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم الجنوبية العكيشية",
+"name_en": "Al Haram boundary - Al Ukayshiyah",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.8135648,
+21.316828
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530866",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم الجنوبية العكيشية",
+"name_en": "Al Haram boundary - Al Ukayshiyah",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.8128884,
+21.3169742
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530867",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم الجنوبية الغربية",
+"name_en": "Al Haram boundary - southwest",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.7153595,
+21.3128875
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530868",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم طريق الليث",
+"name_en": "Al Haram boundary - Al Laith Road",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.7063324,
+21.3130462
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530869",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم طريق الليث",
+"name_en": "Al Haram boundary - Al Laith Road",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.658602,
+21.3325474
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530870",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حدود الحرم طريق الليث",
+"name_en": "Al Haram boundary - Al Laith Road",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.6584277,
+21.3333782
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530871",
+"osm_version": 2,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم طريق جدة القديم",
+"name_en": "Al Haram boundary - Old Jeddah Road",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.6484499,
+21.4305841
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530872",
+"osm_version": 2,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم طريق جدة القديم",
+"name_en": "Al Haram boundary - Old Jeddah Road",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.6475031,
+21.4306144
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530873",
+"osm_version": 2,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية - الفيحاء",
+"name_en": "Al Haram boundary - Al Fayhaa",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.7621828,
+21.4729264
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530874",
+"osm_version": 2,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية - التنعيم",
+"name_en": "Al Haram boundary - At Tanim",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.7915788,
+21.4746428
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530875",
+"osm_version": 2,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية - التنعيم",
+"name_en": "Al Haram boundary - At Tanim",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.8011379,
+21.4666078
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530876",
+"osm_version": 2,
+"osm_timestamp": 1758432193,
+"name": "حدود الحرم الشمالية",
+"name_en": "Al Haram boundary - North",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.866178,
+21.504192
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530877",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9377377,
+21.4930736
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530878",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9415696,
+21.4859178
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530879",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.941612,
+21.4853427
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530880",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9442747,
+21.4774954
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530881",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9444117,
+21.4773343
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530882",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9477901,
+21.4733649
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530883",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9479271,
+21.473204
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530884",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.951711,
+21.4678524
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530885",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9518397,
+21.4676641
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530886",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9548671,
+21.4632346
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530887",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9550339,
+21.4629905
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530888",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9581656,
+21.458832
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530889",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9586342,
+21.4584759
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530890",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.964636,
+21.4487412
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530891",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - الشرائع",
+"name_en": "Al Haram boundary - Ash Sharai",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9647576,
+21.4483392
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530892",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - شارع عمر قاضي",
+"name_en": "Al Haram boundary - Umar Qadi Street",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9656101,
+21.4446443
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530893",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - شارع عمر قاضي",
+"name_en": "Al Haram boundary - Umar Qadi Street",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9657937,
+21.4438486
+]
+}
+},
+{
+"type": "Feature",
+"properties": {
+"osm_id": "node/13158530894",
+"osm_version": 3,
+"osm_timestamp": 1762784005,
+"name": "حد الحرم - عرفات",
+"name_en": "Al Haram boundary - Arafat",
+"historic": "boundary_stone",
+"source": "S-rj-001"
+},
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9579542,
+21.3593254
+]
+}
+}
+]
+}

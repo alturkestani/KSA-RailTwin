@@ -1,0 +1,3 @@
+engine,voice,lang,line_id,seconds,readback,note
+elevenlabs,George,en,t-06,7.01,exact,"FIX_HALF2_QUALITY A/B, eleven_multilingual_v2, free tier, premade voice (narrative_story); chosen"
+elevenlabs,Daniel,en,t-06,7.94,exact,"FIX_HALF2_QUALITY A/B, eleven_multilingual_v2, free tier, premade voice (informative_educational)"

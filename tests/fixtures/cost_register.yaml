@@ -1,0 +1,57 @@
+# FIXTURE: invented test data (tests/fixtures/README.md). Not real costs; never cite these values.
+- id: C-fixture-line-001
+  item: Fixture conventional double track, flat terrain
+  category: line_type
+  line_type: conventional_passenger
+  terrain: flat_desert
+  unit: SAR_m_per_km
+  currency: SAR
+  price_year: 2024
+  low: 10
+  central: 20
+  high: 40
+  source: fixture
+  status: assumed
+  notes: fixture
+- id: C-fixture-station-001
+  item: Fixture intermediate station
+  category: station
+  line_type: n/a
+  terrain: n/a
+  unit: SAR_m_per_station
+  currency: SAR
+  price_year: 2024
+  low: 50
+  central: 100
+  high: 200
+  source: fixture
+  status: assumed
+  notes: fixture
+- id: C-fixture-opex-001
+  item: Fixture train operation
+  category: opex
+  line_type: conventional_passenger
+  terrain: n/a
+  unit: SAR_per_train_km
+  currency: SAR
+  price_year: 2024
+  low: 30
+  central: 60
+  high: 90
+  source: fixture
+  status: assumed
+  notes: fixture
+- id: C-fixture-contingency-001
+  item: Fixture contingency
+  category: contingency
+  line_type: n/a
+  terrain: n/a
+  unit: pct_of_capex
+  currency: SAR
+  price_year: 2024
+  low: 10
+  central: 20
+  high: 30
+  source: fixture
+  status: assumed
+  notes: fixture

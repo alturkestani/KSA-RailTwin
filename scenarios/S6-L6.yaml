@@ -1,0 +1,144 @@
+# Scenario S6-L6 - one connected rail system (hypothetical layer; corridors are ours, not announced). COMPARISON LAYOUT, NOT THE RECOMMENDED PROGRAMME. Schema: .claude/skills/scenario-yaml/SKILL.md.
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+id: S6-L6
+kind: comparison_layout
+title: 'S6-L6 (S6_L6_CONNECTED, hypothetical): one connected rail system: the smallest set of library
+  corridors that joins S1''s three components and puts the required cities on the graph (comparison layout,
+  not the recommended programme)'
+label: comparison layout, not the recommended programme
+layer: hypothetical (ours)
+layers:
+- existing
+- committed
+- hypothetical
+baseline: S1
+lines:
+  include:
+  - hhr
+  - sar-north-passenger
+  - sar-east-passenger
+  - riyadh-metro
+  - landbridge
+  - riyadh-rail-link
+  - gcc-railway-ksa
+candidates:
+- cities/ksa/corridors/trunk_gap/S2-trunk_gap-abha-khamis-mushait-bisha.yaml
+- cities/ksa/corridors/trunk_gap/S2-trunk_gap-abha-khamis-mushait-najran.yaml
+- cities/ksa/corridors/trunk_gap/S2-trunk_gap-al-jubayl-hafar-al-batin.yaml
+- cities/ksa/corridors/trunk_gap/S2-trunk_gap-jeddah-yanbu.yaml
+- cities/ksa/corridors/trunk_gap/S2-trunk_gap-tabuk-sakaka.yaml
+- cities/ksa/corridors/trunk_gap/S2-trunk_gap-taif-bisha.yaml
+- cities/ksa/corridors/branch_spur/S3-branch_spur-al-kharj.yaml
+- cities/ksa/corridors/branch_spur/S3-branch_spur-arar.yaml
+- cities/ksa/corridors/branch_spur/S3-branch_spur-bisha.yaml
+- cities/ksa/corridors/branch_spur/S3-branch_spur-sakaka.yaml
+- cities/ksa/corridors/branch_spur/S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind.yaml
+- cities/ksa/corridors/commuter_belt/S4-commuter_belt-abha-khamis-mushait-135.yaml
+- cities/ksa/corridors/commuter_belt/S4-commuter_belt-dammam-khobar-dhahran-180.yaml
+- cities/ksa/corridors/commuter_belt/S4-commuter_belt-jazan-315.yaml
+- cities/ksa/corridors/station_addition/S5-station_addition-al-jarn.yaml
+- cities/ksa/corridors/station_addition/S5-station_addition-al-jubayl.yaml
+layout:
+  corridors:
+  - id: S2-trunk_gap-abha-khamis-mushait-bisha
+    phase: 2050
+    electrified: false
+  - id: S2-trunk_gap-abha-khamis-mushait-najran
+    phase: 2050
+    electrified: false
+  - id: S2-trunk_gap-al-jubayl-hafar-al-batin
+    phase: 2050
+    electrified: false
+  - id: S2-trunk_gap-jeddah-yanbu
+    phase: 2050
+    electrified: false
+  - id: S2-trunk_gap-tabuk-sakaka
+    phase: 2050
+    electrified: false
+  - id: S2-trunk_gap-taif-bisha
+    phase: 2050
+    electrified: false
+  - id: S3-branch_spur-al-kharj
+    phase: 2050
+    electrified: false
+  - id: S3-branch_spur-arar
+    phase: 2050
+    electrified: false
+  - id: S3-branch_spur-bisha
+    phase: 2050
+    electrified: false
+  - id: S3-branch_spur-sakaka
+    phase: 2050
+    electrified: false
+  - id: S3-branch_spur-yanbu-al-sina-iyah-yanbu-ind
+    phase: 2050
+    electrified: false
+  - id: S4-commuter_belt-abha-khamis-mushait-135
+    phase: 2050
+    electrified: false
+  - id: S4-commuter_belt-dammam-khobar-dhahran-180
+    phase: 2050
+    electrified: false
+  - id: S4-commuter_belt-jazan-315
+    phase: 2050
+    electrified: false
+  - id: S5-station_addition-al-jarn
+    phase: 2050
+  - id: S5-station_addition-al-jubayl
+    phase: 2030
+  phase_rule: construction starts phase - 3 (A-r6-002)
+  phase_choice: each option's best single-corridor library phase (highest robust NPV, runs/r6/v3/library;
+    A-r6-134), not optimised as a layout
+  variant_fields: 'electrified: false = the costed R6_V3 non-electrified variant (A-r6-101 (b)); chosen
+    because it has the lowest capex P50 (A-r6-133)'
+connectivity:
+  components: 1
+  rules: 'network.graph interchange rules unchanged: walk 0.4 km (A-r1a-030), same name 3.0 km (A-r1a-032);
+    A-r6-130'
+fast_mode_totals:
+  robust_npv_fast: -200761.3
+  robust_npv_sum_of_row_minima: -200828.7
+  capex_p10_sum: 122532.2
+  capex_p50_sum: 227212.9
+  capex_p90_sum: 860035.2
+  reach_gain_120_union: 430482.0
+  n_corridors: 16
+  route_km: 3241.9
+fast_mode_label: fast mode, not a full-judge score; corridor interaction not included; the full judge
+  overstated/understated fast mode by 1–17 % of capex in R6
+score:
+  run_id: runs/r6/l6/score
+  label: 'comparison layout, not the recommended programme; synthetic demand, uncalibrated: scenario
+    comparison, not a forecast; alignment limitation applies (docs/alignments.md §0, §4)'
+  judge: v3-variants
+  judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+  seed: 1
+  draws: 10000
+  layout_hash: 2243d1863821
+  contexts: all horizons (30/40/60 y) x five rate cases x three population cases (--all-cases)
+  units: SAR million, 2025 prices; PV at 2026 (A-cba-301); capex undiscounted, uplifted
+  robust_npv: -191660.1
+  robust_case: un_wpp_low
+  npv_at_p50_cost: {low: -191660.1, medium: -186419.0, high: -181155.5}
+  npv_at_p90_cost: {low: -465453.8, medium: -459954.1, high: -454112.6}
+  bcr_medium: {p10: -0.075, p50: 0.061, p90: 0.365}
+  capex: {p10: 122532.0, p50: 227213.0, p90: 860035.3}
+  access_gain_120: 430482.0
+  national_reach_120_reported_only: 32739046.0
+  fast_vs_full: {robust_npv_fast: -200761.3, robust_npv_full: -191660.1, full_minus_fast: 9101.2, pct_of_capex_p50: 4.0}
+  note: docs/r6-l6-connected.md §7
+population_scenario: un_wpp_low / un_wpp_medium / un_wpp_high (robust = minimum)
+gigaproject_addon: none
+seed: 1
+sensitivity:
+  band: P10/P50/P90
+  draws: 10000
+labels:
+- 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+source: S6_L6_CONNECTED search (optimise/connect.py; runs/r6/l6/search.json); building blocks = R6_V3
+  single-corridor library (judge v3-variants); scored by the full judge v3 at S6_L6_SCORE
+  (see the score block)
+demand_params: cities/ksa/assumptions/demand.yaml
+mode_choice_params: cities/ksa/assumptions/modechoice.yaml
+costs: cities/ksa/costs/cost_register.yaml
+appraisal: cities/ksa/assumptions/appraisal.yaml

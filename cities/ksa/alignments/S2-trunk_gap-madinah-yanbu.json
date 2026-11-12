@@ -1,0 +1,101 @@
+{
+ "id": "S2-trunk_gap-madinah-yanbu",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 242.977,
+ "straight_km_legs": 162.009,
+ "straight_km_end_to_end": 162.009,
+ "detour_ratio": 1.4998,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 20.098,
+ "viaduct_km": 14.298,
+ "earthworks_km": 93.792,
+ "at_grade_km": 114.789,
+ "tunnel_share": 0.08272,
+ "viaduct_share": 0.05885,
+ "fill_m3": 15449000.0,
+ "cut_m3": 8880800.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.3049,
+ "elev_min_m": -0.5,
+ "elev_max_m": 973.5,
+ "terrain_shares": {
+  "coastal": 0.2348,
+  "dunes": 0.0342,
+  "escarpment_mountain": 0.3704,
+  "flat_desert": 0.1609,
+  "mixed": 0.1998
+ },
+ "area_km": {
+  "urban": 6.05,
+  "builtup": 25.297,
+  "protected": 0.0,
+  "military": 0.7,
+  "sand": 12.499,
+  "sabkha": 0.0,
+  "waterway": 12.399,
+  "highway": 17.448
+ },
+ "wadi_crossings_osm": 63,
+ "speed_restrictions": [
+  {
+   "from_km": 15.948,
+   "to_km": 17.548,
+   "kmh": 220.0
+  },
+  {
+   "from_km": 46.946,
+   "to_km": 49.745,
+   "kmh": 210.0
+  },
+  {
+   "from_km": 65.344,
+   "to_km": 68.943,
+   "kmh": 120.0
+  },
+  {
+   "from_km": 75.043,
+   "to_km": 78.942,
+   "kmh": 140.0
+  },
+  {
+   "from_km": 115.839,
+   "to_km": 118.239,
+   "kmh": 200.0
+  },
+  {
+   "from_km": 118.439,
+   "to_km": 119.838,
+   "kmh": 150.0
+  },
+  {
+   "from_km": 120.738,
+   "to_km": 122.938,
+   "kmh": 170.0
+  },
+  {
+   "from_km": 146.536,
+   "to_km": 150.335,
+   "kmh": 160.0
+  }
+ ],
+ "restricted_km": 21.695,
+ "min_curve_kmh": 120.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "madinah": 0.0,
+  "yanbu": 242.977
+ },
+ "status": "routed",
+ "stations_key": "6c1f62805a59f1a6",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-madinah-yanbu.geojson",
+ "run": "runs/align/corridors-s1/S2-trunk_gap-madinah-yanbu",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

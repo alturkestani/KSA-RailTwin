@@ -1,0 +1,13 @@
+cut,lang,line_id,section,text,sources,figure_values,on_screen_label,est_seconds,native_review
+main,en,m-01-01,1,"Meet Noura, a composite commuter who drives 45 minutes each way.",S-fx-001,45,composite,4.7,n/a
+main,ar,m-01-01,1,تعرّفوا على نورة، شخصية مركّبة تسوق ٤٥ دقيقة كل اتجاه.,S-fx-001,45,composite,4.3,approved by TA 2026-11-07
+main,en,m-01-02,1,The existing line runs 453 km between the two holy cities.,S-fx-002,453,,4.3,n/a
+main,ar,m-01-02,1,الخط القائم طوله 453 كم بين المدينتين المقدستين.,S-fx-002,453,,3.8,pending
+main,en,m-02-01,2,"In the model, travel time on this pair fell by 1.5 hours.",run:runs/fx/result.json,1.5,synthetic,4.2,n/a
+main,ar,m-02-01,2,في النموذج، قلّ وقت السفر على هذا الزوج بمقدار ١٫٥ ساعة.,run:runs/fx/result.json,1.5,synthetic,4.4,pending
+main,en,m-02-02,2,A side study sketched 5 routes; none of them is the official ranking.,S-xt-001;A-fx-001,5,synthetic+not_official,5.0,n/a
+main,ar,m-02-02,2,دراسة جانبية رسمت 5 مسارات، وما منها ترتيب رسمي.,S-xt-001;A-fx-001,5,synthetic+not_official,3.8,pending
+trailer,en,t-01,1,A railway to connect the country.,doc:docs/fixture-note.md#scope,,,2.6,n/a
+trailer,ar,t-01,1,سكة تربط البلد.,doc:docs/fixture-note.md#scope,,,1.5,pending
+trailer,en,t-02,8,"Costs are ranges: 2,958 to 4,100 million riyals.",A-fx-001,2958;4100,,3.6,n/a
+trailer,ar,t-02,8,"التكاليف نطاقات: من ٢٬٩٥٨ إلى 4,100 مليون ريال.",A-fx-001,2958;4100,,3.8,pending

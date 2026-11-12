@@ -1,0 +1,23 @@
+# > **Document version:** cities/ksa/assumptions/cba_programme.yaml v1.0 | 3 Nov 2026 | Author: R5 builder (economist) | Status: draft
+# Programme, timing and method assumptions of the W4 CBA (economics/). Every key is a registered assumption
+# (docs/assumptions.md, A-cba-3xx) or cites a source row. Money: SAR, 2025 prices (A-cost-001).
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+version: "1.0"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+params:
+  pv_year: {value: 2026, low: 2026, high: 2026, unit: year, assumption_id: A-cba-301, note: "present-value (discounting) year = year 0; prices stay 2025 (A-cost-001)"}
+  construction_start_year: {value: 2027, low: 2027, high: 2032, unit: year, assumption_id: A-cba-301, note: "every case starts construction in the same year so cases compare on equal terms; the range is not drawn (a common delay shifts every case alike)"}
+  rate_shift: {value: 0.0, low: -0.005, high: 0.01, unit: "absolute shift of every band of the Green Book 2026 schedule", assumption_id: A-cba-304, note: "uniform draw for the `drawn` rate case; band brackets the Green Book 2026 (3.0 %) to TAG (3.5 %) gap and the upward EC/World Bank evidence (A-cba-001/002)"}
+  jeddah_urban_leg_km: {value: 15.0, low: 10.0, high: 25.0, unit: km per trip end in the Jeddah metro, assumption_id: A-cba-308, note: "road-km of a trip end inside the Jeddah metro zones that belongs to the TrafficTwin channel (decongestion_jeddah), so it is excluded from the VKT-based interurban channel; never counted twice"}
+  intrazonal_speed_kmh: {value: 30.0, low: 20.0, high: 40.0, unit: km/h, assumption_id: A-cba-307, note: "own-zone generalised cost for TAG A2.4 effective density: (2/3) x sqrt(area/pi) / speed (the mean distance in a disc)"}
+  intrazonal_gc_cap_min: {value: 15.0, low: 10.0, high: 25.0, unit: generalised minutes, assumption_id: A-cba-307, note: "cap on the own-zone generalised cost of the TAG A2.4 effective density: model zones are governorates (up to tens of thousands of km2) while jobs sit in their towns, so the disc formula alone would make the own-zone term vanish and inflate the effective-density change of inter-city links; assumed, unsourced; the low/high run in the tornado through the WEI multiplier only"}
+  access_distance_km: {value: 30.0, low: 20.0, high: 50.0, unit: km straight-line to the nearest station, assumption_id: A-cba-313, note: "a town of 10,000+ farther than this from every station of the case's line set is 'left out' (docs/social.md B1 step 3c); same value as A-corr-007"}
+  station_opex_share_of_capex: {value: 0.02, low: 0.01, high: 0.04, unit: share of station base capex per year, assumption_id: A-cba-314, note: "S5 station additions: annual operation and maintenance of one added station; no per-station opex item exists in the cost register (docs/status/r4.md task 6); assumed, unsourced"}
+  capex_profile: {rule: "uniform over the drawn uplifted construction years (R1c schedule draws)", assumption_id: A-cba-303}
+  demand_years: {rule: "linear interpolation between 2025 (calibration point), 2040, 2050 and 2060; flat after 2060 and before 2025", assumption_id: A-cba-306, note: "TAG A1.1 holds demand constant beyond the last forecast year"}
+  residual_value: {rule: "straight-line remaining life at the horizon end; renewable classes age ((h-1) mod L)+1 since their last costed renewal; civil works age h", assumption_id: A-cba-305, sources: [S-cp1-087, S-cp1-089]}
+  lfs_q4_2025_saudi_unemployment_pct:
+    # transcribed from docs/social.md Part B, Table B2 (GASTAT LFS Q4 2025, Saudis 15+); derived table, sources S-soc-015, S-soc-016
+    assumption_id: A-cba-311
+    sources: [S-soc-015, S-soc-016]
+    by_region: {riyadh: 4.1, makkah: 9.1, madinah: 8.7, qassim: 6.9, eastern: 5.8, asir: 11.0, tabuk: 10.3, hail: 7.9, northern_borders: 11.7, jazan: 11.5, najran: 6.2, al_baha: 10.0, al_jouf: 8.1}

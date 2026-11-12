@@ -1,0 +1,16 @@
+# Spec for cities/ksa/lines/riyadh-metro-l2.yaml. Stations: stop nodes of OSM route relation 8857429 (ODbL).
+id: riyadh-metro-l2
+stations_from_route: 8857429
+station_source: S-r1a-802
+osm_track: [subway, light_rail, rail]
+line:
+  name_en: Riyadh Metro Line 2 (Red)
+  name_ar: مترو الرياض - المسار الأحمر
+  layer: existing
+  operator: Royal Commission for Riyadh City (RCRC), owner; operator not verified
+  status: in_service
+  source: S-r1a-046
+  accessed: 2026-10-31
+  line_type: metro
+  length_km: 25.3                                     # S-r1a-046 (secondary)
+  notes: "Opened 15 Dec 2024 (S-r1a-046, secondary). 15 stations per Wikipedia; station list and Arabic names from the OSM route relation (S-r1a-802). Operator not read (riyadhmetro.sa unreachable, S-r1a-054); RCRC owns the project (S-034). Arabic line name descriptive."

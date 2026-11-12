@@ -1,0 +1,156 @@
+[
+ {
+  "file": "main-ar-cue001-chrome.png",
+  "cue": 1,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "main-ar-cue001-firefox.png",
+  "cue": 1,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "main-ar-cue008-chrome.png",
+  "cue": 8,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "main-ar-cue008-firefox.png",
+  "cue": 8,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "main-ar-cue009-chrome.png",
+  "cue": 9,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "main-ar-cue009-firefox.png",
+  "cue": 9,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "main-en-cue001-chrome.png",
+  "cue": 1,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "main-en-cue001-firefox.png",
+  "cue": 1,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "main-en-cue010-chrome.png",
+  "cue": 10,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "main-en-cue010-firefox.png",
+  "cue": 10,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "main-en-cue011-chrome.png",
+  "cue": 11,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "main-en-cue011-firefox.png",
+  "cue": 11,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "trailer-ar-cue001-chrome.png",
+  "cue": 1,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "trailer-ar-cue001-firefox.png",
+  "cue": 1,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "trailer-ar-cue003-chrome.png",
+  "cue": 3,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "trailer-ar-cue003-firefox.png",
+  "cue": 3,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "trailer-ar-cue006-chrome.png",
+  "cue": 6,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "trailer-ar-cue006-firefox.png",
+  "cue": 6,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "trailer-en-cue001-chrome.png",
+  "cue": 1,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "trailer-en-cue001-firefox.png",
+  "cue": 1,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "trailer-en-cue003-chrome.png",
+  "cue": 3,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "trailer-en-cue003-firefox.png",
+  "cue": 3,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "trailer-en-cue006-chrome.png",
+  "cue": 6,
+  "player": "chrome",
+  "exists": true
+ },
+ {
+  "file": "trailer-en-cue006-firefox.png",
+  "cue": 6,
+  "player": "firefox",
+  "exists": true
+ },
+ {
+  "file": "bidi-main-ar.json",
+  "exit": 0,
+  "summary": "bidi-probe 360px: 0 numeric runs, 0 wrong; 0 footnote markers, 0 wrong; 0 wrapped"
+ },
+ {
+  "file": "bidi-trailer-ar.json",
+  "exit": 0,
+  "summary": "bidi-probe 360px: 0 numeric runs, 0 wrong; 0 footnote markers, 0 wrong; 0 wrapped"
+ }
+]

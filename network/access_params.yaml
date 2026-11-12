@@ -1,0 +1,5 @@
+# Parameters for network/access.py (nearest station / line vertex per settlement).
+# k_candidates: how many great-circle-nearest targets are routed by road; the fastest by road
+# time wins. A method parameter, registered as an assumption (rule 1) because a target that is
+# not among the K great-circle nearest can never be chosen even if it is faster by road.
+k_candidates: {value: 5, low: 3, high: 10, assumption_id: A-r1a-027}

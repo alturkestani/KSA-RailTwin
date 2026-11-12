@@ -1,0 +1,22 @@
+# > **Document version:** scenarios/candidate.yaml v1.0 (R6 editable surface; edited by the autoresearch loop) | 3 Nov 2026 | Author: R6 builder (optimizer) | Status: draft
+# The only file the R6 search may change (prompts/R6.md design A). Layer: hypothetical (ours), on top of S1.
+# Fields per corridor: id, phase (2030/2035/2040/2050); optional line_type, track, electrified, drop_stations.
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+id: candidate
+layer: hypothetical
+base: S1
+seed: 1
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+capex_ceiling_sar_m: 250000.0
+corridors:
+- id: S3-branch_spur-al-kharj
+  phase: 2050
+- id: S5-station_addition-al-jubayl
+  phase: 2030
+- id: S5-station_addition-dhahran
+  phase: 2030
+- id: S4-commuter_belt-riyadh-225
+  phase: 2050
+- id: S4-commuter_belt-makkah-045
+  phase: 2050
+proposed_links: []

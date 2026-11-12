@@ -1,0 +1,156 @@
+# > **Document version:** risk_matrix_S6-L1--ppp_dbfom_demand_risk.yaml v1.1 | 4 Nov 2026 | Author: R7 builder (funding.risk_matrix build; generated, do not edit by hand) | Status: draft
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast
+version: '1.0'
+template: false
+corridor_family: programme
+delivery_model: ppp_dbfom_demand_risk
+corridor: null
+programme: S6-L1
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+evidence:
+  score: runs/r6/top5/L1/score.json
+  judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+  fiscal_run: runs/r7/fiscal/fiscal.json
+  vfm_run: runs/r7/vfm/vfm.json
+  population_case: un_wpp_low
+columns:
+- public
+- private
+- shared
+rows:
+- risk: construction
+  scope: cost overrun, schedule delay, geotechnical and ground conditions, sand and heat design, interfaces
+    between civil, systems and rolling-stock packages
+  public: ''
+  private: x
+  shared: ''
+  mechanism_options:
+  - fixed-price design-and-build or DBFM/DBFOM with payment only from availability (private)
+  - target-cost or cost-sharing band with pain/gain share (shared)
+  - compensation event for unforeseen ground conditions above a defined baseline (shared)
+  - state-delivered works with optimism-bias contingency (public)
+  mechanism: fixed-price design-build inside the concession; overrun beyond the equity cushion returns
+    to the state
+  note: 'as LGV SEA. Capex P10/P50/P90 6,233 / 11,194 / 41,304 SAR m (base P50 9,376; P90/P50 3.69; runs/r6/top5/L1/score.json).
+    NPV at P90 cost, low / medium / high: -2,958 / -724 / 1,631. Overrun above the private absorption
+    capacity (A-fund-102) returns to the state: expected PV 5,041, at P90 capex 15,182 (runs/r7/fiscal).'
+  precedents:
+  - S-fund-046
+  - S-fund-047
+  - S-fund-227
+- risk: demand
+  scope: ridership and freight volume versus forecast; ramp-up; competing modes
+  public: ''
+  private: x
+  shared: ''
+  mechanism_options:
+  - availability payment, state keeps fare revenue (public)
+  - full demand risk to concessionaire via fares or access charges (private)
+  - minimum revenue guarantee and/or revenue sharing above a cap (cap-and-collar) (shared)
+  - revenue-sharing 'bonne fortune' clause above forecast (shared)
+  mechanism: fares to the concessionaire with a minimum revenue guarantee (cap-and-collar) and revenue
+    sharing above forecast
+  note: 'LGV SEA carried traffic risk; its forecasts were optimistic (over-estimated air diversion); MRGs
+    are contingent liabilities. BCR P10 (60 y, without WEIs) low / medium / high 0.54 / 0.60 / 0.67; PV
+    fares / PV opex+renewals 0.41 (un_wpp_low). MRG at A-fund-104 on the A-rcf-029 outturn ratio: expected
+    PV 5,041 incl. overrun, P90 15,182. P10 BCR < 1: a demand-risk PPP is not a fit at P10 demand (skill
+    rule).'
+  precedents:
+  - S-fund-046
+  - S-fund-229
+  - S-fund-023
+- risk: revenue
+  scope: fare level and indexation, fare-setting authority, ancillary and non-fare revenue (retail, property),
+    collection and leakage
+  public: ''
+  private: x
+  shared: ''
+  mechanism_options:
+  - state sets and keeps fares; operator paid a fee (public)
+  - 'concessionaire sets fares within a regulated cap (private; only if the law allows it: who sets passenger
+    fares is an open legal question, fare_setting_authority)'
+  - access-charge regime set by the regulator, collected by the infrastructure manager (shared)
+  - station-area development rights or levy income ring-fenced to the project (shared)
+  mechanism: concessionaire collects fares under the concession (any fare cap would be a contract term)
+  note: LGV SEA's concessionaire collected track-access tolls; whether a Saudi rail concessionaire may
+    set passenger fares, and under which authority, is unclear (legal item fare_setting_authority). PV
+    fare revenue P50 1,865 against PV opex+renewals 4,552 SAR m (60 y, un_wpp_low); a negative value means
+    the addition lowers fare revenue on the host network in the model.
+  precedents:
+  - S-fund-046
+  - S-fund-013
+- risk: operations
+  scope: operations and maintenance cost, availability and punctuality performance, asset condition at
+    hand-back, lifecycle renewal
+  public: ''
+  private: x
+  shared: ''
+  mechanism_options:
+  - performance-based O&M contract with deductions (private)
+  - availability deductions and hand-back condition requirements in a DBFM/DBFOM (private)
+  - in-house operation by the state company (public)
+  mechanism: concessionaire operates and maintains at its own cost
+  note: 'integrated in the concession. Eastern network connection (proxy Riyadh station) - Al-Kharj spur
+    (hypothetical): 139.226 km, conventional_passenger. New station Al Jubayl on gcc-railway-ksa (hypothetical):
+    host line gcc-railway-ksa (committed, status design, source S-029). New station Duruma on landbridge
+    (hypothetical): host line landbridge (committed, status announced, source S-054). New station Dhahran
+    on sar-east-passenger (hypothetical): host line sar-east-passenger (existing, status in_service, source
+    S-024).'
+  precedents:
+  - S-fund-046
+- risk: financing
+  scope: interest-rate and refinancing risk, availability of long-tenor debt, FX exposure on imported
+    systems and foreign lenders, financial close
+  public: ''
+  private: x
+  shared: ''
+  mechanism_options:
+  - sovereign or PIF financing (public)
+  - project-finance debt raised by the SPV, rate fixed or hedged at financial close (private)
+  - refinancing-gain sharing clause (shared)
+  - MoF financial and credit support under PSP Law Arts. 8 and 10 (shared)
+  mechanism: project-finance debt and equity at the SPV; state construction grant
+  note: LGV SEA needed a 48% grantor contribution. Net fiscal cost 60 y P10/P50/P90 8,409 / 8,409 / 23,592;
+    VfM vs public -5,124 SAR m (runs/r7/vfm, > 0 favours the PPP). Termination at opening, worst case
+    PV 6,707; probability-weighted (A-fund-006) 335 (memorandum).
+  precedents:
+  - S-fund-223
+  - S-fund-227
+  - S-lb-012
+- risk: land
+  scope: land acquisition and expropriation, right-of-way, utilities relocation, protection zones, heritage
+    and route-sensitivity constraints
+  public: x
+  private: ''
+  shared: ''
+  mechanism_options:
+  - state delivers land and utilities free of encumbrances before works (public)
+  - concessionaire acquires land within a capped budget (shared)
+  - compensation event for late land delivery (public)
+  mechanism: state delivers land and utilities
+  note: 'as in the other models. Eastern network connection (proxy Riyadh station) - Al-Kharj spur (hypothetical):
+    139.226 km, conventional_passenger. New station Al Jubayl on gcc-railway-ksa (hypothetical): host
+    line gcc-railway-ksa (committed, status design, source S-029). New station Duruma on landbridge (hypothetical):
+    host line landbridge (committed, status announced, source S-054). New station Dhahran on sar-east-passenger
+    (hypothetical): host line sar-east-passenger (existing, status in_service, source S-024).'
+  precedents:
+  - S-fund-014
+  - S-fund-258
+- risk: regulatory_force_majeure
+  scope: change in law, permits, political decisions, termination for public interest, force majeure,
+    disputes
+  public: ''
+  private: ''
+  shared: x
+  mechanism_options:
+  - change-in-law and public-interest termination compensation (public)
+  - force majeure relief with shared cost after a threshold (shared)
+  - arbitration with agreed governing law, subject to agency approval (shared)
+  mechanism: change-in-law and public-interest termination compensation including lost revenues (PSP Law
+    Art. 28)
+  note: termination compensation includes lost revenues.
+  precedents:
+  - S-fund-007
+  - S-fund-008
+note: Allocation per cities/ksa/assumptions/funding_r7.yaml (allocation, A-fund-001); evidence from the
+  judge v3 runs named above. Not a recommendation for any entity (rule 9); the recommendation is in cities/ksa/funding/recommendations.yaml.

@@ -1,0 +1,37 @@
+# > **Document version:** cities/ksa/assumptions/access_coupling.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (sim-engineer) | Status: draft
+# Jeddah coupling with TrafficTwin (coupling.jeddah). TrafficTwin's demand is Jeddah residents' internal trips only (no
+# external demand), so a rail family is representable only through stations inside its city network (pt_line between
+# them). Every value: source id or assumption id (docs/assumptions.md).
+version: "1.0"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+catchment_m: {value: 1500, range: [500, 3000], assumption: A-r4-cpl-002, note: "rail station catchment for the car shift (TrafficTwin's bus default is 500 m)"}
+families:
+  - id: r4_hhr_jeddah_kaia
+    family: "Haramain / trunk (S0 and S1: HHR in-city segment; the S1 Landbridge Jeddah terminal is co-located, A-r4-acc-004)"
+    scenario: S0
+    runnable: true
+    title: "HHR in-city segment Al-Sulaymaniyah - KAIA: modelled car shift between the station catchments (R4)"
+    line_id: HHRJ
+    share_from_run: runs/r4/demand/S0-r4-2025-base-s1
+    share_stations: ["hhr:jeddah", "hhr:kaia"]
+    headway_s: {value: 3600, source: "HHR headway 60 min (S-r1a-011; demand_supply.yaml)"}
+    hours: {value: ["05:00", "23:00"], assumption: A-r4-cpl-004}
+    stop_duration_s: {value: 120, assumption: A-r1a-035}
+    # stop points on the station access roads: TrafficTwin snaps a stop to a bus-capable edge aligned with the line
+    # within 200 m (sim/policies/ptline.py SNAP_MAX_M); the station points are 266-380 m from such an edge, so each stop
+    # sits on the nearest edge midpoint that is within 150 m of aligned edges in both directions (230 m from the
+    # Al-Sulaymaniyah station point, 356 m from the KAIA station point; computed from TrafficTwin's cached edge
+    # tables, read-only). A-r4-cpl-005.
+    stops:
+      - {name: "HHR Al-Sulaymaniyah - Jeddah (access road)", lon: 39.247521, lat: 21.518117}
+      - {name: "HHR Airport - Jeddah KAIA (access road)", lon: 39.176501, lat: 21.658492}
+  - id: r4_belt_jeddah
+    family: "S4 Jeddah commuter belts (000, 045, 315 deg)"
+    scenario: S4
+    runnable: false
+    reason: "only the Jeddah terminal lies inside TrafficTwin's city network; the belt stations (Khulays, Al-Kamil, Al-Jumum, Thuwal) and the commuters living there are outside its synthetic population, so the inbound car trips the belt would remove are not simulated (no external demand in TrafficTwin)"
+  - id: r4_trunk_riyadh_jeddah
+    family: "S2 Riyadh-Jeddah trunk and S2 Jeddah-Yanbu"
+    scenario: S2
+    runnable: false
+    reason: "one in-city station (the Jeddah terminal proxy); the intercity car trips it shifts are external to TrafficTwin's demand"

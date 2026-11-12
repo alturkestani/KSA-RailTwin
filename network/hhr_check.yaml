@@ -1,0 +1,30 @@
+# CP2_PREP item 5 (C-r1a-22): decomposition of the published Makkah-Jeddah (Al-Sulaymaniyah) time.
+# Every number carries a source (S-...) or an assumption (A-...) id (rule 1). Read by network/hhr_check.py.
+segment:
+  from: makkah
+  to: jeddah
+  km: {value: 78.25, source: "cities/ksa/lines/hhr.yaml km_post (OSM track, ODbL); HHR portal 77 km (S-cp2-502)"}
+published_minutes:
+  # the 43 min is HHR's opening timetable (train 80 Makkah 08:00 -> Jeddah 08:43; train 81 Jeddah 10:22 -> Makkah 11:05)
+  opening_2018: {value: 43, source: S-cp2-503}
+  # current times on secondary pages (aggregator / travel guide), not an SAR timetable
+  current_secondary_low: {value: 28, source: "S-cp2-504; S-r1a-006"}
+  current_secondary_high: {value: 30, source: "S-cp2-504; S-r1a-006"}
+tolerance_min: {value: 3, assumption_id: A-hhr-003}
+running:
+  cruise_kmh: {value: 300, source: "S-cp2-501 (HHR portal: operational speed 300 km/h); S-003"}
+  # no published speed profile: the whole segment is assumed open to 300 km/h (A-hhr-001)
+  restricted_km: {value: 0.0, low: 0.0, high: null, assumption_id: A-hhr-001}
+  accel_ms2: {value: 0.5, low: 0.3, high: 0.8, assumption_id: A-r1a-033}
+  decel_ms2: {value: 0.6, low: 0.4, high: 0.9, assumption_id: A-r1a-034}
+dwell:
+  # Makkah and Al-Sulaymaniyah are adjacent stations: no intermediate stop (S-cp2-503, S-cp2-502, S-001)
+  intermediate_stops: {value: 0, source: S-cp2-503}
+  dwell_s: {value: 120, low: 60, high: 300, assumption_id: A-r1a-035}
+recovery:
+  # UIC 451-1 as relayed by Schittenhelm (2011), Tables 4-5 (S-cp2-505). Central: multiple-unit
+  # passenger trains above 250 km/h, 7 % of running time + 1 min per 100 km. Range: locomotive-hauled
+  # (power-car) trains above 200 km/h, 5 % (<= 300 t) to 7 % (> 500 t) + 1.5 min per 100 km. Which
+  # category the Talgo 350 SRO falls in is an assumption (A-hhr-002).
+  pct: {value: 0.07, low: 0.05, high: 0.07, assumption_id: A-hhr-002, source: S-cp2-505}
+  min_per_100km: {value: 1.0, low: 1.0, high: 1.5, assumption_id: A-hhr-002, source: S-cp2-505}

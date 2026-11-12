@@ -1,0 +1,923 @@
+{
+ "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+ "units": "SAR million PV at 2026, 2025 prices, 60 years, expected values",
+ "population_case": "un_wpp_low",
+ "definition": "VfM = E[NFC public] - E[NFC availability PPP]; > 0 favours the PPP",
+ "corridors": {
+  "S3-branch_spur-al-kharj": {
+   "central": {
+    "psc": 10986.359054080618,
+    "ppp": 15216.488665441482,
+    "vfm": -4230.129611360864,
+    "vfm_pct_psc": -38.503471355140945
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -3454.0191853840006,
+     "vfm_at_high": -5882.536450601343,
+     "switching_value": -0.8103541185647498,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -3317.453034954062,
+     "vfm_at_high": -5486.86582279468,
+     "switching_value": -0.018391231939785698,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -4177.336574143634,
+     "vfm_at_high": -4388.508723012554,
+     "switching_value": -0.7812665749755885,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -4444.4275665340465,
+     "vfm_at_high": -4031.359029746749,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -4230.129611360864,
+     "vfm_at_high": -2430.924586231791,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -1196.855659614448,
+    "const:0.0356": -2890.374186553756
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  },
+  "S4-commuter_belt-riyadh-225": {
+   "central": {
+    "psc": 14747.205739274186,
+    "ppp": 18607.196200934173,
+    "vfm": -3859.990461659987,
+    "vfm_pct_psc": -26.17438537105514
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -3153.2366032146,
+     "vfm_at_high": -5362.143629198306,
+     "switching_value": -0.8050549049255517,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -3027.723017296832,
+     "vfm_at_high": -5006.005010479143,
+     "switching_value": -0.018430145534350358,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -3811.84862554764,
+     "vfm_at_high": -4004.415969997024,
+     "switching_value": -0.7817954389301192,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -4056.1795789829102,
+     "vfm_at_high": -3677.53287416859,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -3859.990461659987,
+     "vfm_at_high": -2219.299983939125,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -1086.2592026136117,
+    "const:0.0356": -2635.3502222340467
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  },
+  "S5-station_addition-al-jubayl": {
+   "central": {
+    "psc": 476.44192891078114,
+    "ppp": 820.6681577236853,
+    "vfm": -344.2262288129042,
+    "vfm_pct_psc": -72.2493567264027
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -279.53508567455606,
+     "vfm_at_high": -482.3442173928745,
+     "switching_value": -0.7904681324182458,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -266.9978767215788,
+     "vfm_at_high": -450.56802516384937,
+     "switching_value": -0.016158764477650852,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -339.5972792096554,
+     "vfm_at_high": -358.1130776226506,
+     "switching_value": -0.7236378840057172,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -363.0299700556982,
+     "vfm_at_high": -326.7762597166925,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -344.2262288129042,
+     "vfm_at_high": -199.83576488791687,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -154.04823749915488,
+    "const:0.0356": -282.4641671263992
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  },
+  "S5-station_addition-dhahran": {
+   "central": {
+    "psc": 990.6038474967611,
+    "ppp": 1334.8300763096654,
+    "vfm": -344.2262288129043,
+    "vfm_pct_psc": -34.74913101566868
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -279.53508567455606,
+     "vfm_at_high": -482.3442173928745,
+     "switching_value": -0.7904681324182463,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -266.9978767215787,
+     "vfm_at_high": -450.56802516384937,
+     "switching_value": -0.01615876447765086,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -339.5972792096554,
+     "vfm_at_high": -358.1130776226505,
+     "switching_value": -0.7236378840057172,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -363.0299700556982,
+     "vfm_at_high": -326.7762597166925,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -344.2262288129043,
+     "vfm_at_high": -199.83576488791664,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -154.04823749915477,
+    "const:0.0356": -282.46416712639916
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  },
+  "S5-station_addition-duruma": {
+   "central": {
+    "psc": 653.4593591072389,
+    "ppp": 858.849653385132,
+    "vfm": -205.39029427789308,
+    "vfm_pct_psc": -31.431226963907722
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -167.72230463294306,
+     "vfm_at_high": -285.56302012890535,
+     "switching_value": -0.8094046277511464,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -161.08269542644155,
+     "vfm_at_high": -266.4009144227929,
+     "switching_value": -0.018400045969747224,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -202.82735711522378,
+     "vfm_at_high": -213.07910576590098,
+     "switching_value": -0.7813863830511465,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -215.80146989202171,
+     "vfm_at_high": -195.7286694780198,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -205.39029427789308,
+     "vfm_at_high": -118.04450655231574,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -58.05916056855369,
+    "const:0.0356": -140.32095333481152
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  }
+ },
+ "programmes": {
+  "S6-L2": {
+   "central": {
+    "psc": 2171.2552883694516,
+    "ppp": 3065.098040273153,
+    "vfm": -893.8427519037014,
+    "vfm_pct_psc": -41.16709613520162
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -726.7924759820553,
+     "vfm_at_high": -1250.2514549146545,
+     "switching_value": -0.7948526663519243,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -695.078448869599,
+     "vfm_at_high": -1167.5369647504917,
+     "switching_value": -0.016653864174001554,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -882.0219155345344,
+     "vfm_at_high": -929.3052610112018,
+     "switching_value": -0.736158637163079,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -941.8614100034188,
+     "vfm_at_high": -849.281188911405,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -893.8427519037014,
+     "vfm_at_high": -517.7160363281496,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -366.15563556686334,
+    "const:0.0356": -705.2492875876096
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  },
+  "S6-L1": {
+   "central": {
+    "psc": 13177.4318332619,
+    "ppp": 18301.365026098876,
+    "vfm": -5123.933192836976,
+    "vfm_pct_psc": -38.884156318709735
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -4180.759035534989,
+     "vfm_at_high": -7132.81290138304,
+     "switching_value": -0.8077175944717935,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -4012.492313396069,
+     "vfm_at_high": -6654.363617117582,
+     "switching_value": -0.018077750627501724,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -5059.319319250579,
+     "vfm_at_high": -5317.7748135961665,
+     "switching_value": -0.7730082052712144,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -5386.239207604565,
+     "vfm_at_high": -4880.617522092962,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -5123.933192836976,
+     "vfm_at_high": -2948.601452132345,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -1563.1427043730364,
+    "const:0.0356": -3595.6231481119685
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  },
+  "S6-L3": {
+   "central": {
+    "psc": 27275.14385716297,
+    "ppp": 36054.218003441885,
+    "vfm": -8779.074146278916,
+    "vfm_pct_psc": -32.187086499906265
+   },
+   "drivers": {
+    "bid_contingency": {
+     "id": "A-fund-007",
+     "central": 0.2,
+     "range": [
+      0.05,
+      0.5
+     ],
+     "vfm_at_low": -7166.879217289017,
+     "vfm_at_high": -12209.626891998028,
+     "switching_value": -0.8064265885539693,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -0.95,
+      3.0
+     ]
+    },
+    "private_finance_premium": {
+     "id": "A-fund-008",
+     "central": 0.02875,
+     "range": [
+      0.02,
+      0.04
+     ],
+     "vfm_at_low": -6879.673421326326,
+     "vfm_at_high": -11394.508499233794,
+     "switching_value": -0.018228097033349773,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "reference_class",
+     "bracket_searched": [
+      -0.035,
+      0.15
+     ]
+    },
+    "transaction_cost": {
+     "id": "A-fund-103",
+     "central": 0.02,
+     "range": [
+      0.01,
+      0.05
+     ],
+     "vfm_at_low": -8668.881373742843,
+     "vfm_at_high": -9109.652463887134,
+     "switching_value": -0.7767014482192994,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      -1.0,
+      1.0
+     ]
+    },
+    "absorption_capacity": {
+     "id": "A-fund-102",
+     "central": 0.2,
+     "range": [
+      0.1,
+      0.3
+     ],
+     "vfm_at_low": -9227.20935774006,
+     "vfm_at_high": -8362.883128416448,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      5.0
+     ]
+    },
+    "public_contribution_availability": {
+     "id": "A-fund-002",
+     "central": 0.0,
+     "range": [
+      0.0,
+      0.5
+     ],
+     "vfm_at_low": -8779.074146278916,
+     "vfm_at_high": -5050.3977155790235,
+     "switching_value": null,
+     "switch_within_range": false,
+     "sourced": false,
+     "sourcing": "assumption",
+     "bracket_searched": [
+      0.0,
+      1.0
+     ]
+    }
+   },
+   "rate_sensitivity": {
+    "flat_5": -2591.2800181369457,
+    "const:0.0356": -6091.045637488496
+   },
+   "sign_central": "favours public delivery",
+   "depends_on_unsourced": [],
+   "not_sourced_for_ksa": [
+    "bid_contingency",
+    "private_finance_premium",
+    "transaction_cost",
+    "absorption_capacity",
+    "public_contribution_availability"
+   ],
+   "sign_robust_to_registered_ranges": true
+  }
+ },
+ "seed": 1
+}

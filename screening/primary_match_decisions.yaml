@@ -1,0 +1,90 @@
+# Judgement decisions for primary cities the automatic tiers cannot place (R2 merge, 31 Oct 2026).
+# Version: primary_match_decisions.yaml v1.1 | 31 Oct 2026 | Author: screening-analyst (R2); INTEGRATE_R2 item 1 (CP3 4a) | Status: draft
+# Each entry places one GASTAT primary city (S-cp2-gastat-008, export spelling as key) on one OSM
+# place, or records why it stays unplaced. Read by screening.primary_match (tier "judgement").
+# `pop_type` (CP3 4a): derived by default (TA1 figure, location by judgement); official only where
+# the decision is a direct placement (Tariq's instruction or a duplicate-row resolution).
+# Label: screening input, not a forecast.
+Ghata:
+  osm_type: node
+  osm_id: 1236744649
+  region: al_jouf
+  evidence: >-
+    citypopulation.de writes Ghata as غطى (S-al_jouf-010) and places it in Al-Qurayyat
+    (S-al_jouf-002); OSM village غطي (Ghutti, node 1236744649) is the same name once ى/ي are
+    unified, the only place of that name in the universe, and lies inside the Al-Qurayyat polygon
+    20.45 km from its boundary (geo-verify seat, runs/r2/geo_verify/seat, seed 1). Its grid
+    figure 2,048 is 0.31 of 6,653, inside the back-test band (A-r2-002). Conflict C-r2-001.
+Wadi Al Oqool farms:
+  # INTEGRATE_R2 item 1 replaces the R2 "unplaced" entry (a farm area with no coordinates then)
+  osm_type: node
+  osm_id: 1236691814
+  region: madinah
+  evidence: >-
+    the national citypopulation.de Census 2022 relay (S-qassim-003) lists 24,381 as Mazāri' Wādī
+    al-'Uqūl [Wadi al-Aqool Farms] / مزارع وادي العاقول in Madinah region (code MDM), the only row
+    with that figure; OSM has two places named العاقول in Madinah region: village node 1236691814
+    (24.532 N, 39.778 E) and neighbourhood node 12830607203 (24.517 N, 39.715 E, inside the
+    built-up city). The farm area is the rural village, so the village node takes it (geo-verify
+    seat inside the Al Madinah Al Munawwarah polygon, runs/integrate_r2/geo_verify). Location by
+    judgement; derived.
+Dariyah:
+  osm_type: node
+  osm_id: 1236443114
+  region: qassim
+  pop_type: official
+  evidence: >-
+    two register rows for one place: the Qassim sweep put the primary figure on the OSM place node
+    ضرية (governorate centre, A-qassim-004), CP2 on the boundary relation 12406851, whose
+    centroid is "not a town position" (its own note). The node keeps the city; the relation row is
+    marked a duplicate (screened false) so the figure is counted once.
+Jubail Industrial City:
+  # CP3 4a (Tariq, 31 Oct 2026): its own settlement row, not folded into Jubail
+  osm_type: node
+  osm_id: 1237806971
+  region: eastern
+  pop_type: official
+  evidence: >-
+    Tariq's CP3 instruction (4a): Jubail Industrial City (TA1 172,233, S-cp2-gastat-008) is placed
+    as its own settlement, not folded into Al Jubayl (TA1 302,446, node 38903292). OSM place
+    node 1237806971 اللجنة الملكية في الجبيل / Al Jubayl Royal Commission (place=locality,
+    27.0761 N, 49.5903 E) is the only OSM place named for the Royal Commission area; it lies in the
+    Al-Jubail governorate polygon, 10.4 km NW of the Al Jubayl city node, beside the Royal
+    Commission residential districts (OSM admin_level 10 relations Al Huwaylat, Al Lualu, Ash
+    Shati, Yanbu, Al Khalij, Al Fayha, Al Quds, Najd, Makkah, Al Hijaz, Al Andalus, Al Farouq, Al
+    Firdaws, Al Matrafiyah; the mean of their 14 representative points, 27.1155 N 49.5542 E, lies
+    5.7 km NNW of the node; runs/integrate_r2/geo_verify/jic.json). No RCJY administrative boundary is mapped in OSM (tags-filter of
+    the GCC extract for boundary/landuse/place objects naming the Royal Commission, 31 Oct 2026).
+Alulya:
+  osm_type: node
+  osm_id: 1236690508
+  region: asir
+  evidence: >-
+    the national citypopulation.de Census 2022 relay (S-qassim-003) lists 20,250 as Al-'Ulāyah /
+    العلاية, Asir (ASI), 2010 figure 19,956, the only row with that figure; the Asir sweep's register
+    row Sabt Al 'Alayah / سبت العلاية (node 1236690508, Balqarn governorate seat) is the only Asir
+    place with that name (سبت = the weekly-market prefix), and A-asir-003 already records the 2010
+    Al-Ulya figure 19,956 against it. Its grid figure 7,594 is 0.375 of 20,250 (inside the
+    A-r2-002 national band). Location by judgement; derived.
+Benban:
+  osm_type: node
+  osm_id: 1236702237
+  region: riyadh
+  evidence: >-
+    OSM suburb node 1236702237 بنبان / Banban (25.0017 N, 46.5881 E, Riyadh governorate, north of
+    the city) is the only OSM place named بنبان; two other places share the skeleton 'bnbn' of
+    the export spelling Benban: locality بنبن (node 1236702180, Riyadh) and locality ابو نيبان
+    (Eastern). The suburb is the settlement (place rank, name:en Banban). Not in the national
+    relay page (it lists larger cities only). Location by judgement; derived.
+Alhasma:
+  osm_type: node
+  osm_id: 1237961320
+  region: jazan
+  evidence: >-
+    OSM village node 1237961320 الحصمة / Al Hasamah (16.8344 N, 42.9714 E, Jazan region) with
+    mapped residential areas إسكان الحصمة and قرية الحصمة next to it; the other places with the
+    skeleton 'hsm' are حسمى (two Tabuk nodes; grid 0), الحصيمة (Jazan neighbourhood), الحصامة (four
+    Jazan places: three villages, one hamlet; grid 308 where tagged), الحسمة (Al-Baha hamlet), الحسام (two
+    neighbourhoods) and ال هيصم (Asir hamlet); الحصمة is the only exact spelling. Its grid figure 3,055 is 0.23 of 13,028: inside the
+    regional A-r2-002 band, outside the national one. Low confidence: location by judgement;
+    derived; to re-check in R4 with a GASTAT locality table if one is published.

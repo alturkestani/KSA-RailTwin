@@ -1,0 +1,68 @@
+{
+ "id": "S2-trunk_gap-riyadh-madinah",
+ "line_type": "hsr",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 755.486,
+ "straight_km_legs": 719.381,
+ "straight_km_end_to_end": 718.742,
+ "detour_ratio": 1.0502,
+ "max_grade_cap": 0.025,
+ "design_kmh": 300.0,
+ "r_min_m": 7000.0,
+ "structure_factor": 5.3339,
+ "tunnel_km": 4.598,
+ "viaduct_km": 4.598,
+ "earthworks_km": 46.284,
+ "at_grade_km": 700.006,
+ "tunnel_share": 0.00609,
+ "viaduct_share": 0.00609,
+ "fill_m3": 3176000.0,
+ "cut_m3": 5036000.0,
+ "formation_max_grade": 0.02503,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.0554,
+ "elev_min_m": 580.5,
+ "elev_max_m": 1037.7,
+ "terrain_shares": {
+  "dunes": 0.0446,
+  "escarpment_mountain": 0.03,
+  "flat_desert": 0.8375,
+  "mixed": 0.0868,
+  "sabkha": 0.0011
+ },
+ "area_km": {
+  "urban": 25.94,
+  "builtup": 37.186,
+  "protected": 0.0,
+  "military": 2.499,
+  "sand": 33.685,
+  "sabkha": 0.8,
+  "waterway": 18.696,
+  "highway": 23.392
+ },
+ "wadi_crossings_osm": 104,
+ "speed_restrictions": [
+  {
+   "from_km": 20.64,
+   "to_km": 24.738,
+   "kmh": 230.0
+  }
+ ],
+ "restricted_km": 4.098,
+ "min_curve_kmh": 230.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "riyadh": 0.0,
+  "duruma": 75.063,
+  "ad-dawadimi": 262.18,
+  "madinah": 755.486
+ },
+ "status": "routed",
+ "stations_key": "494d53832e1922d2",
+ "geojson": "cities/ksa/alignments/alternatives/S2-trunk_gap-riyadh-madinah.geojson",
+ "run": "runs/align/alternatives-s1/S2-trunk_gap-riyadh-madinah",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

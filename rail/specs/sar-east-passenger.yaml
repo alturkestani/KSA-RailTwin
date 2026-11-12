@@ -1,0 +1,28 @@
+# Spec for cities/ksa/lines/sar-east-passenger.yaml. Stations: SAR's list (S-025) at OSM station nodes.
+id: sar-east-passenger
+opened: 1981                  # S-r1a-033 (secondary): SRO stations Dammam, Abqaiq, Al-Hofuf, Riyadh
+line:
+  name_en: SAR East passenger line (Riyadh - Dammam)
+  name_ar: خط الشرق بين الرياض والدمام          # S-r1a-027 (verified)
+  layer: existing
+  operator: Saudi Arabia Railways (SAR)
+  status: in_service
+  source: S-024
+  accessed: 2026-10-31
+  line_type: conventional_passenger
+  track: double                                     # S-024 (verified): "double track"
+  fares_sar:
+    - {from: hufuf, to: dammam, economy: {low: 35, high: 35}, sampled: 2026-10-31, source: S-r1a-023}
+    - {from: dammam, to: riyadh, economy: {low: 90, high: 90}, sampled: 2026-10-31, source: S-r1a-024}
+  notes: >-
+    SAR prints "double track with a total length of 733 km" (S-024); the OSM track distance between
+    the Riyadh and Dammam passenger stations is about 449 km (km-posts below), so 733 km is not the
+    route length (C-r1a-15; length_km left empty). Al-Kharj is not a passenger stop on SAR's list
+    (S-025, C-r1a-09). Fares are SAR 'from' prices, no currency or class printed. No SAR timetable
+    readable; an aggregator gives 3 h 35 min Riyadh-Dammam express (S-r1a-040, secondary). Arabic
+    station names from OSM place names (ODbL).
+stations:
+  - {id: riyadh, name_en: Riyadh, name_ar: الرياض, class: terminal, source: S-025, osm: node/492520789}
+  - {id: hufuf, name_en: Hufuf, name_ar: الهفوف, class: intermediate, source: S-025, osm: way/95533900}
+  - {id: abqaiq, name_en: Abqaiq, name_ar: بقيق, class: intermediate, source: S-025, osm: node/2011671784}
+  - {id: dammam, name_en: Dammam, name_ar: الدمام, class: terminal, source: S-025, osm: node/492547630}

@@ -1,0 +1,193 @@
+{
+ "id": "RJ-LB",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 967.389,
+ "straight_km_legs": 874.324,
+ "straight_km_end_to_end": 844.182,
+ "detour_ratio": 1.1064,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 24.894,
+ "viaduct_km": 25.895,
+ "earthworks_km": 106.26,
+ "at_grade_km": 810.339,
+ "tunnel_share": 0.02573,
+ "viaduct_share": 0.02677,
+ "fill_m3": 5687600.0,
+ "cut_m3": 14745600.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.1209,
+ "elev_min_m": 13.2,
+ "elev_max_m": 1071.8,
+ "terrain_shares": {
+  "coastal": 0.0077,
+  "dunes": 0.0326,
+  "escarpment_mountain": 0.0516,
+  "flat_desert": 0.7593,
+  "mixed": 0.1489
+ },
+ "area_km": {
+  "urban": 32.291,
+  "builtup": 49.332,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 31.492,
+  "sabkha": 0.0,
+  "waterway": 21.195,
+  "highway": 51.037
+ },
+ "wadi_crossings_osm": 106,
+ "speed_restrictions": [
+  {
+   "from_km": 3.649,
+   "to_km": 5.249,
+   "kmh": 240.0
+  },
+  {
+   "from_km": 24.744,
+   "to_km": 27.143,
+   "kmh": 100.0
+  },
+  {
+   "from_km": 33.841,
+   "to_km": 36.24,
+   "kmh": 110.0
+  },
+  {
+   "from_km": 36.74,
+   "to_km": 40.539,
+   "kmh": 140.0
+  },
+  {
+   "from_km": 42.438,
+   "to_km": 44.038,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 837.209,
+   "to_km": 838.609,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 868.604,
+   "to_km": 871.004,
+   "kmh": 180.0
+  },
+  {
+   "from_km": 871.803,
+   "to_km": 874.203,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 876.903,
+   "to_km": 878.902,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 910.889,
+   "to_km": 914.386,
+   "kmh": 180.0
+  },
+  {
+   "from_km": 938.365,
+   "to_km": 942.661,
+   "kmh": 170.0
+  },
+  {
+   "from_km": 945.258,
+   "to_km": 947.657,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 956.648,
+   "to_km": 958.547,
+   "kmh": 200.0
+  }
+ ],
+ "restricted_km": 32.087,
+ "min_curve_kmh": 100.0,
+ "window_bound_legs": 0,
+ "legs": [
+  {
+   "leg": 0,
+   "from": "riyadh",
+   "to": "dawadmi",
+   "straight_km": 236.448,
+   "routed_km": 283.929,
+   "ends_relaxed": false,
+   "coarse_nodes": 275391,
+   "coarse_cells": 490,
+   "window_ellipse": 1.35,
+   "window_reach": 0.8352,
+   "window_bound": false,
+   "fine_nodes": 245829,
+   "sigma_m": 2000.0,
+   "max_offset_m": 739.9
+  },
+  {
+   "leg": 1,
+   "from": "dawadmi",
+   "to": "muwai",
+   "straight_km": 351.889,
+   "routed_km": 374.158,
+   "ends_relaxed": false,
+   "coarse_nodes": 604819,
+   "coarse_cells": 515,
+   "window_ellipse": 1.35,
+   "window_reach": 0.7736,
+   "window_bound": false,
+   "fine_nodes": 318872,
+   "sigma_m": 2000.0,
+   "max_offset_m": 569.5
+  },
+  {
+   "leg": 2,
+   "from": "muwai",
+   "to": "al-jumum",
+   "straight_km": 231.163,
+   "routed_km": 241.862,
+   "ends_relaxed": false,
+   "coarse_nodes": 258244,
+   "coarse_cells": 460,
+   "window_ellipse": 1.35,
+   "window_reach": 0.7492,
+   "window_bound": false,
+   "fine_nodes": 214182,
+   "sigma_m": 4000.0,
+   "max_offset_m": 980.1
+  },
+  {
+   "leg": 3,
+   "from": "al-jumum",
+   "to": "jeddah",
+   "straight_km": 54.824,
+   "routed_km": 67.44,
+   "ends_relaxed": false,
+   "coarse_nodes": 14479,
+   "coarse_cells": 96,
+   "window_ellipse": 1.35,
+   "window_reach": 0.7894,
+   "window_bound": false,
+   "fine_nodes": 62005,
+   "sigma_m": 2000.0,
+   "max_offset_m": 725.6
+  }
+ ],
+ "station_km": {
+  "riyadh": 0.0,
+  "dawadmi": 283.929,
+  "muwai": 658.087,
+  "al-jumum": 899.949,
+  "jeddah": 967.389
+ },
+ "study_label": "hypothetical alignment (ours), user-proposed: indicative engineering sketch, not a design",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "code_version": "r8.1-1-g8dafdfe",
+ "run": "runs/study/rj/align-s1/RJ-LB"
+}

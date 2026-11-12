@@ -1,0 +1,396 @@
+{
+ "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+ "feasible": true,
+ "errors": [],
+ "flags": [
+  "S4-commuter_belt-riyadh-000: 41.0 km through protected areas (WDPA; flagged)",
+  "S4-commuter_belt-makkah-045: 15.3 km through protected areas (WDPA; flagged)",
+  "S4-commuter_belt-makkah-090: 16.2 km through protected areas (WDPA; flagged)",
+  "S4-commuter_belt-makkah-315: 9.2 km through protected areas (WDPA; flagged)",
+  "S4-commuter_belt-madinah-045: island (touches neither S1 nor another layout corridor)"
+ ],
+ "layout": "L5.layout.yaml",
+ "corridors": [
+  "S4-commuter_belt-riyadh-000",
+  "S4-commuter_belt-riyadh-090",
+  "S4-commuter_belt-riyadh-225",
+  "S4-commuter_belt-riyadh-270",
+  "S4-commuter_belt-jeddah-000",
+  "S4-commuter_belt-jeddah-315",
+  "S4-commuter_belt-makkah-045",
+  "S4-commuter_belt-makkah-090",
+  "S4-commuter_belt-makkah-315",
+  "S4-commuter_belt-madinah-045",
+  "S5-station_addition-al-jubayl",
+  "S5-station_addition-dhahran"
+ ],
+ "n_corridors": 12,
+ "phases": {
+  "2030": [
+   "S5-station_addition-al-jubayl",
+   "S5-station_addition-dhahran"
+  ],
+  "2050": [
+   "S4-commuter_belt-riyadh-000",
+   "S4-commuter_belt-riyadh-090",
+   "S4-commuter_belt-riyadh-225",
+   "S4-commuter_belt-riyadh-270",
+   "S4-commuter_belt-jeddah-000",
+   "S4-commuter_belt-jeddah-315",
+   "S4-commuter_belt-makkah-045",
+   "S4-commuter_belt-makkah-090",
+   "S4-commuter_belt-makkah-315",
+   "S4-commuter_belt-madinah-045"
+  ]
+ },
+ "draws": 10000,
+ "seed": 1,
+ "robust_npv": -112564.91864550937,
+ "robust_case": "un_wpp_low",
+ "npv_at_p50_cost": {
+  "un_wpp_high": -108016.93455087068,
+  "un_wpp_low": -112564.91864550937,
+  "un_wpp_medium": -110365.3891412039
+ },
+ "npv_at_p90_cost": {
+  "un_wpp_high": -225401.06478328613,
+  "un_wpp_low": -229925.0757615811,
+  "un_wpp_medium": -227697.33222723388
+ },
+ "npv_p50": {
+  "un_wpp_high": -107351.74465894485,
+  "un_wpp_low": -111787.543013551,
+  "un_wpp_medium": -109483.57632011476
+ },
+ "npv_p10": {
+  "un_wpp_high": -219782.59235309795,
+  "un_wpp_low": -225505.59443026938,
+  "un_wpp_medium": -222390.48919067573
+ },
+ "npv_p90": {
+  "un_wpp_high": -63970.301278604675,
+  "un_wpp_low": -71413.30232646552,
+  "un_wpp_medium": -67710.2963568733
+ },
+ "bcr_p50": {
+  "un_wpp_high": 0.15061520321912816,
+  "un_wpp_low": 0.12065567983461949,
+  "un_wpp_medium": 0.1352030180912619
+ },
+ "bcr_p10": {
+  "un_wpp_high": 0.03944082284334453,
+  "un_wpp_low": 0.02945155951073633,
+  "un_wpp_medium": 0.03415034182641278
+ },
+ "bcr_p90": {
+  "un_wpp_high": 0.407566903436046,
+  "un_wpp_low": 0.33020357766339764,
+  "un_wpp_medium": 0.3680543581649687
+ },
+ "pvb_p50": {
+  "un_wpp_high": 21419.524138735775,
+  "un_wpp_low": 17199.57971710468,
+  "un_wpp_medium": 19254.274058945935
+ },
+ "pvc_p50": {
+  "un_wpp_high": 129436.45868960646,
+  "un_wpp_low": 129764.49836261406,
+  "un_wpp_medium": 129619.66320014984
+ },
+ "pvc_p90": {
+  "un_wpp_high": 246820.5889220219,
+  "un_wpp_low": 247124.65547868577,
+  "un_wpp_medium": 246951.60628617983
+ },
+ "phase_sweep": {},
+ "pv_wei_p50_indicative": {
+  "un_wpp_high": 408999.4222168094,
+  "un_wpp_low": 333749.61978974484,
+  "un_wpp_medium": 370715.23168433557
+ },
+ "capex_sar_m": {
+  "capex_p10": 52400.82069423778,
+  "capex_p50": 98169.68078109511,
+  "capex_p90": 374892.4673249321,
+  "capex_base_p50": 82226.12453532415
+ },
+ "appraisal_rows": [
+  {
+   "population": "un_wpp_high",
+   "horizon": 60,
+   "rate_case": "greenbook_2026",
+   "pvb_p50": 21419.524138735775,
+   "pvc_p10": 98115.39412312486,
+   "pvc_p50": 129436.45868960646,
+   "pvc_p90": 246820.5889220219,
+   "npv_p10": -219782.59235309795,
+   "npv_p50": -107351.74465894485,
+   "npv_p90": -63970.301278604675,
+   "npv_at_p50_cost": -108016.93455087068,
+   "npv_at_p90_cost": -225401.06478328613,
+   "bcr_p10": 0.03944082284334453,
+   "bcr_p50": 0.15061520321912816,
+   "bcr_p90": 0.407566903436046,
+   "pv_wei_p50": 408999.4222168094,
+   "fiscal_cost_p50": 133362.95712988538,
+   "pv_capex_p50": 46993.62768107977,
+   "pv_opex_renewals_p50": 84904.18217797167,
+   "pv_residual_p50": 3919.8562704686474,
+   "pv_user_time_cost_p50": 8450.886649319946,
+   "pv_vehicle_operating_cost_nonfuel_p50": 2426.0270953847375,
+   "pv_reliability_p50": 0.0,
+   "pv_safety_p50": 254.24548981869992,
+   "pv_carbon_p50": 7214.257146005155,
+   "pv_air_quality_p50": 132.21042428710052,
+   "pv_decongestion_interurban_p50": 308.23096602710206,
+   "pv_decongestion_jeddah_p50": 0.0,
+   "pv_freight_shift_p50": 0.0,
+   "pv_wei_agglomeration_p50": 408352.02676999464,
+   "pv_wei_imperfect_competition_p50": 363.03365727410807,
+   "pv_fare_revenue_p50": 1408.5747904476937
+  },
+  {
+   "population": "un_wpp_low",
+   "horizon": 60,
+   "rate_case": "greenbook_2026",
+   "pvb_p50": 17199.57971710468,
+   "pvc_p10": 98373.45042265668,
+   "pvc_p50": 129764.49836261406,
+   "pvc_p90": 247124.65547868577,
+   "npv_p10": -225505.59443026938,
+   "npv_p50": -111787.543013551,
+   "npv_p90": -71413.30232646552,
+   "npv_at_p50_cost": -112564.91864550937,
+   "npv_at_p90_cost": -229925.0757615811,
+   "bcr_p10": 0.02945155951073633,
+   "bcr_p50": 0.12065567983461949,
+   "bcr_p90": 0.33020357766339764,
+   "pv_wei_p50": 333749.61978974484,
+   "fiscal_cost_p50": 133667.0479359272,
+   "pv_capex_p50": 46993.62768107977,
+   "pv_opex_renewals_p50": 84904.18217797167,
+   "pv_residual_p50": 3919.8562704686474,
+   "pv_user_time_cost_p50": 6924.286691082657,
+   "pv_vehicle_operating_cost_nonfuel_p50": 2006.7966198210243,
+   "pv_reliability_p50": 0.0,
+   "pv_safety_p50": 42.73719631723998,
+   "pv_carbon_p50": 5789.768726431694,
+   "pv_air_quality_p50": 109.35092545552943,
+   "pv_decongestion_interurban_p50": 254.75203414806282,
+   "pv_decongestion_jeddah_p50": 0.0,
+   "pv_freight_shift_p50": 0.0,
+   "pv_wei_agglomeration_p50": 333387.77789043647,
+   "pv_wei_imperfect_competition_p50": 297.43004253261745,
+   "pv_fare_revenue_p50": 1159.0541623145957
+  },
+  {
+   "population": "un_wpp_medium",
+   "horizon": 30,
+   "rate_case": "greenbook_2026",
+   "pvb_p50": 11201.711991784017,
+   "pvc_p10": 69241.15624156635,
+   "pvc_p50": 93222.81070685654,
+   "pvc_p90": 199612.65609135648,
+   "npv_p10": -185108.30191885328,
+   "npv_p50": -81536.6232020705,
+   "npv_p90": -52049.009203014524,
+   "npv_at_p50_cost": -82021.09871507253,
+   "npv_at_p90_cost": -188410.94409957246,
+   "bcr_p10": 0.025523341127521432,
+   "bcr_p50": 0.10706095497335232,
+   "bcr_p90": 0.3009324956589872,
+   "pv_wei_p50": 201314.0985699734,
+   "fiscal_cost_p50": 101082.53296801209,
+   "pv_capex_p50": 46993.62768107977,
+   "pv_opex_renewals_p50": 53243.87606115441,
+   "pv_residual_p50": 8055.15739351268,
+   "pv_user_time_cost_p50": 4324.907538234496,
+   "pv_vehicle_operating_cost_nonfuel_p50": 1468.0059246277888,
+   "pv_reliability_p50": 0.0,
+   "pv_safety_p50": 84.63700266735526,
+   "pv_carbon_p50": 3656.5862450038853,
+   "pv_air_quality_p50": 80.01634790377807,
+   "pv_decongestion_interurban_p50": 186.47589100574567,
+   "pv_decongestion_jeddah_p50": 0.0,
+   "pv_freight_shift_p50": 0.0,
+   "pv_wei_agglomeration_p50": 201053.66617016657,
+   "pv_wei_imperfect_competition_p50": 185.79411860902613,
+   "pv_fare_revenue_p50": 852.2031962863654
+  },
+  {
+   "population": "un_wpp_medium",
+   "horizon": 60,
+   "rate_case": "greenbook_2026",
+   "pvb_p50": 19254.274058945935,
+   "pvc_p10": 98259.98598182447,
+   "pvc_p50": 129619.66320014984,
+   "pvc_p90": 246951.60628617983,
+   "npv_p10": -222390.48919067573,
+   "npv_p50": -109483.57632011476,
+   "npv_p90": -67710.2963568733,
+   "npv_at_p50_cost": -110365.3891412039,
+   "npv_at_p90_cost": -227697.33222723388,
+   "bcr_p10": 0.03415034182641278,
+   "bcr_p50": 0.1352030180912619,
+   "bcr_p90": 0.3680543581649687,
+   "pv_wei_p50": 370715.23168433557,
+   "fiscal_cost_p50": 133472.20858522019,
+   "pv_capex_p50": 46993.62768107977,
+   "pv_opex_renewals_p50": 84904.18217797167,
+   "pv_residual_p50": 3919.8562704686474,
+   "pv_user_time_cost_p50": 7674.311701276209,
+   "pv_vehicle_operating_cost_nonfuel_p50": 2212.604202399873,
+   "pv_reliability_p50": 0.0,
+   "pv_safety_p50": 144.59382245168752,
+   "pv_carbon_p50": 6490.409161610583,
+   "pv_air_quality_p50": 120.58316995770318,
+   "pv_decongestion_interurban_p50": 281.27046426435123,
+   "pv_decongestion_jeddah_p50": 0.0,
+   "pv_freight_shift_p50": 0.0,
+   "pv_wei_agglomeration_p50": 370060.47395427694,
+   "pv_wei_imperfect_competition_p50": 329.66844788258624,
+   "pv_fare_revenue_p50": 1281.3420903759857
+  }
+ ],
+ "units": "SAR million, 2025 prices; PV at 2026 (A-cba-301); capex undiscounted, uplifted",
+ "rail_trips_2050_medium": 24626600.374846622,
+ "rail_pkm_m_2050_medium": 6136.132626092078,
+ "rail_trips_2050_medium_S1": 19116132.57369283,
+ "rail_pkm_m_2050_medium_S1": 5718.593987760399,
+ "loads_2050_medium": {
+  "hhr": {
+   "passengers": 10353630.4,
+   "passenger_km_m": 1351.139,
+   "mean_trip_km": 130.5
+  },
+  "landbridge": {
+   "passengers": 4548170.0,
+   "passenger_km_m": 3048.166,
+   "mean_trip_km": 670.2
+  },
+  "riyadh-rail-link": {
+   "passengers": 17611.4,
+   "passenger_km_m": 0.403,
+   "mean_trip_km": 22.9
+  }
+ },
+ "loads_2050_medium_S1": {
+  "hhr": {
+   "passengers": 11269877.8,
+   "passenger_km_m": 1449.673,
+   "mean_trip_km": 128.63
+  },
+  "landbridge": {
+   "passengers": 4758416.1,
+   "passenger_km_m": 3074.239,
+   "mean_trip_km": 646.06
+  },
+  "riyadh-rail-link": {
+   "passengers": 18263.6,
+   "passenger_km_m": 0.418,
+   "mean_trip_km": 22.9
+  }
+ },
+ "by_line_2050_medium": {
+  "S4-commuter_belt-jeddah-000": {
+   "passengers": 154311.4,
+   "passenger_km_m": 12.081,
+   "mean_trip_km": 78.29
+  },
+  "S4-commuter_belt-jeddah-315": {
+   "passengers": 165574.2,
+   "passenger_km_m": 13.991,
+   "mean_trip_km": 84.5
+  },
+  "S4-commuter_belt-madinah-045": {
+   "passengers": 221168.9,
+   "passenger_km_m": 23.754,
+   "mean_trip_km": 107.4
+  },
+  "S4-commuter_belt-makkah-045": {
+   "passengers": 1599516.9,
+   "passenger_km_m": 148.853,
+   "mean_trip_km": 93.06
+  },
+  "S4-commuter_belt-makkah-090": {
+   "passengers": 908057.8,
+   "passenger_km_m": 107.423,
+   "mean_trip_km": 118.3
+  },
+  "S4-commuter_belt-makkah-315": {
+   "passengers": 285473.7,
+   "passenger_km_m": 29.661,
+   "mean_trip_km": 103.9
+  },
+  "S4-commuter_belt-riyadh-000": {
+   "passengers": 153962.7,
+   "passenger_km_m": 18.676,
+   "mean_trip_km": 121.3
+  },
+  "S4-commuter_belt-riyadh-090": {
+   "passengers": 306016.6,
+   "passenger_km_m": 23.675,
+   "mean_trip_km": 77.37
+  },
+  "S4-commuter_belt-riyadh-225": {
+   "passengers": 950746.3,
+   "passenger_km_m": 59.203,
+   "mean_trip_km": 62.27
+  },
+  "S4-commuter_belt-riyadh-270": {
+   "passengers": 516249.4,
+   "passenger_km_m": 58.552,
+   "mean_trip_km": 113.42
+  },
+  "gcc-railway-ksa": {
+   "passengers": 1151291.4,
+   "passenger_km_m": 129.699,
+   "mean_trip_km": 112.66
+  },
+  "hhr": {
+   "passengers": 10353630.4,
+   "passenger_km_m": 1351.139,
+   "mean_trip_km": 130.5
+  },
+  "landbridge": {
+   "passengers": 4548170.0,
+   "passenger_km_m": 3048.166,
+   "mean_trip_km": 670.2
+  },
+  "riyadh-rail-link": {
+   "passengers": 17611.4,
+   "passenger_km_m": 0.403,
+   "mean_trip_km": 22.9
+  },
+  "sar-east-passenger": {
+   "passengers": 3342411.6,
+   "passenger_km_m": 903.505,
+   "mean_trip_km": 270.32
+  },
+  "sar-north-passenger": {
+   "passengers": 408908.6,
+   "passenger_km_m": 207.183,
+   "mean_trip_km": 506.67
+  }
+ },
+ "access_gain_60": 0.0,
+ "access_gain_120": 5298080.0,
+ "seconds": 91.2,
+ "national_reach_reported_only": {
+  "note": "reported column only, never in the score (CP7-5, A-r6-104); added by optimise.report_v3 after the judge run",
+  "population_2025_within_min": {
+   "60": 24214053.0,
+   "120": 26634590.0
+  },
+  "S1_population_2025_within_min": {
+   "60": 22345984.0,
+   "120": 26096670.0
+  },
+  "gain_vs_S1": {
+   "60": 1868069.0,
+   "120": 537920.0
+  },
+  "within_120_with_access_cap": 26458002.0,
+  "population_total_2025": 35927621.0
+ }
+}

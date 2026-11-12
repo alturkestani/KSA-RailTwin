@@ -1,0 +1,235 @@
+# > **Document version:** cities/ksa/population/scenarios/gigaprojects.yaml v0.1 | 31 Oct 2026 | Author: demand-modeler (R3) | Status: draft
+# Giga-projects as ADD-ON scenarios, never in the base (gravity-calibration skill; A-demand-030).
+# Announced figures are the project's own or officially quoted targets, as printed (sources graded in
+# docs/population-scenarios.md). delivered_share is a registered judgement (A-demand-030), applied to
+# the announced quantity at its target year; the add-on ramps in linearly from the ramp start year
+# (A-pop-014). Zones are governorate ids G001-G149 from cities/ksa/zones/governorates.geojson, by
+# point-in-polygon of the cited coordinates (A-pop-017). Visitors feed the tourism purpose only and are
+# never added to zone population (A-pop-018).
+id: gigaprojects
+kind: addon_gigaprojects
+title: "Giga-project add-ons: announced versus delivered (P10/P50/P90)"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+applies_to: [un_wpp_low, un_wpp_medium, un_wpp_high, un_wpp_constant_fertility, un_wpp_zero_migration, un_wpp_medium_gastat2024, vision2030_policy]
+quantiles: [announced, p10, p50, p90]
+assumptions: [A-demand-030, A-pop-013, A-pop-014, A-pop-015, A-pop-016, A-pop-017, A-pop-018]
+
+projects:
+  - id: neom-the-line-2030
+    name: "NEOM: THE LINE (2030 phase as announced in 2022)"
+    zone: G145
+    zone_method: "point-in-polygon of node giga-neom (S-r1a-212); THE LINE's footprint crosses more than one governorate (not resolved)"
+    residents_announced: 1500000
+    residents_basis: increment
+    jobs_announced: null
+    visitors_announced: null
+    target_year: 2030
+    delivered_share: {p10: 0.0, p50: 0.02, p90: 0.067, assumption: A-demand-030}
+    status: paused
+    status_date: "2026-05-22"
+    sources: [S-r3-pop-012, S-r3-pop-019, S-r3-pop-020, S-r1a-212]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "Announced: NEOM first phase 1.5 M residents by 2030 (Crown Prince, Argaam 26 Jul 2022, S-r3-pop-012; Semafor cites the same 1.5 M earlier vision, S-r3-pop-020). Delivered: NEOM's own page now says THE LINE is 'advancing through a phased, demand-led approach' with no resident figure (S-r3-pop-019, verified); Semafor (22 May 2026, unnamed sources) reports work halted until after 2030 and a 2030 target of up to 100,000 (S-r3-pop-020). P90 = 100,000 / 1.5 M."
+
+  - id: neom-the-line-2045
+    name: "NEOM: THE LINE / NEOM full build (2045 as announced in 2022)"
+    zone: G145
+    zone_method: "as neom-the-line-2030"
+    residents_announced: 9000000
+    residents_basis: increment
+    jobs_announced: null
+    visitors_announced: null
+    target_year: 2045
+    delivered_share: {p10: 0.0, p50: 0.01, p90: 0.05, assumption: A-demand-030}
+    status: paused
+    status_date: "2026-05-22"
+    sources: [S-r3-pop-012, S-r3-pop-019, S-r3-pop-020]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "Announced: rising to nine million by 2045 (Argaam 26 Jul 2022, S-r3-pop-012; the July 2022 THE LINE design launch also quoted nine million, PIF repost not readable from here, 403). Use either this entry or the 2030 entry for one run; the code takes the larger increment per year so they are not double counted (A-pop-014)."
+    supersedes_when_larger: neom-the-line-2030
+
+  - id: neom-trojena
+    name: "NEOM: Trojena"
+    zone: G147
+    zone_method: "point-in-polygon of node giga-trojena (S-r1a-233, Wikipedia coordinates, secondary)"
+    residents_announced: 7000
+    residents_basis: increment
+    jobs_announced: 10000
+    visitors_announced: 700000
+    visitors_unit: per_year
+    target_year: 2030
+    delivered_share: {p10: 0.0, p50: 0.1, p90: 0.4, assumption: A-demand-030}
+    status: paused
+    status_date: "2026-05-22"
+    sources: [S-r3-pop-021, S-r3-pop-020, S-r1a-233]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "Announced 3 Mar 2022: 700,000 visitors, 7,000 permanent residents and more than 10,000 jobs by 2030 (S-r3-pop-021). Delivered: no new investment until after 2030 per Semafor's unnamed sources (S-r3-pop-020); the 2029 Asian Winter Games moved away from Trojena (S-r1a-233, secondary)."
+
+  - id: neom-oxagon
+    name: "NEOM: Oxagon (industrial city and Port of NEOM)"
+    zone: G145
+    zone_method: "node giga-oxagon (S-r1a-212) lies 0.0017 degrees offshore of the Duba polygon: nearest polygon (A-pop-017)"
+    residents_announced: null
+    residents_observed_capacity: 2400
+    residents_basis: increment
+    jobs_announced: null
+    visitors_announced: null
+    target_year: null
+    delivered_share: {p10: 1.0, p50: 1.0, p90: 1.0, assumption: A-demand-030}
+    status: partly_open
+    status_date: "2026-10-31"
+    sources: [S-r3-pop-022, S-r3-pop-020, S-r1a-212]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "No resident or jobs target found. NEOM's Oxagon page (verified 31 Oct 2026) states Oxagon Hive 'offers capacity for up to 2,400 people' and the port is planned to reach 1.5 M TEU by 2030 from 250,000 TEU now (freight input, S-r3-pop-022). The add-on uses the observed capacity only (share 1.0 of an observed figure). Semafor reports Oxagon spending continues (S-r3-pop-020)."
+
+  - id: red-sea-global-the-red-sea
+    name: "Red Sea Global: The Red Sea destination"
+    zone: G149
+    zone_method: "point-in-polygon of node giga-red-sea-global (S-r1a-226, Wikipedia coordinates, secondary)"
+    residents_announced: null
+    jobs_announced: null
+    visitors_announced: 1000000
+    visitors_unit: per_year
+    hotel_rooms_announced: 8000
+    target_year: 2030
+    target_year_basis: "Phase II (8,000 rooms) due by 2030; the article gives no year for the 1 M visitors (A-pop-015 not applied: tied to Phase II)"
+    delivered_share: {p10: 0.3, p50: 0.6, p90: 0.9, assumption: A-demand-030}
+    status: partly_open
+    status_date: "2025-09"
+    sources: [S-r3-pop-023, S-r1a-226]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "Announced (Argaam 22 Jan 2024, Red Sea Global officer): one million tourists a year, Phase I 3,000 rooms in H2 2025, Phase II 8,000 rooms by 2030 (S-r3-pop-023). Delivered: first destination opened Nov 2023 and three Shura Island resorts opened Sep 2025 (S-r1a-226, secondary). Residents and jobs: no figure read (a 70,000-jobs figure appears in search extracts only: not used)."
+
+  - id: red-sea-global-amaala
+    name: "Red Sea Global: AMAALA"
+    zone: G143
+    zone_method: "point-in-polygon of the Wikipedia AMAALA coordinates 26.6436 N 36.2258 E (S-r3-pop-025, secondary)"
+    residents_announced: null
+    jobs_announced: null
+    visitors_announced: null
+    hotel_rooms_announced: 1600
+    target_year: null
+    delivered_share: {p10: 0.3, p50: 0.6, p90: 0.9, assumption: A-demand-030}
+    status: partly_open
+    status_date: "2026-07-08"
+    sources: [S-r3-pop-024, S-r3-pop-025, S-r3-pop-035]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "Read: Six Senses AMAALA opened at Triple Bay in July 2026; Triple Bay planned at more than 1,600 rooms across nine resorts (S-r3-pop-024). A 500,000 visitors-a-year cap is reported in search extracts only (S-r3-pop-035, unverified): not used. No add-on quantity until a visitor or jobs figure is verified."
+
+  - id: qiddiya
+    name: "Qiddiya City"
+    zone: G134
+    zone_method: "point-in-polygon of node giga-qiddiya (S-r1a-229, Wikipedia coordinates, secondary)"
+    residents_announced: 500000
+    residents_basis: increment
+    residents_target_year: null
+    jobs_announced: 85000
+    jobs_target_year: 2030
+    visitors_announced: 48000000
+    visitors_unit: per_year
+    target_year: null
+    delivered_share: {p10: 0.1, p50: 0.3, p90: 0.6, assumption: A-demand-030}
+    status: partly_open
+    status_date: "2025-12-31"
+    sources: [S-r3-pop-026, S-r3-pop-027, S-r1a-229]
+    assumptions: [A-demand-030, A-pop-015, A-pop-017]
+    notes: "Announced Dec 2023: 'eventually host over 600,000 residents', 48 M visits a year, over 325,000 jobs, no target year (S-r3-pop-026). Jan 2026 restatement: 500,000 residents in 150,000 units, 85,000 jobs by 2030 (S-r3-pop-027): the later figures are used; the conflict is recorded. Undated residents and visits take the undated target year (A-pop-015). Delivered: Six Flags Qiddiya City opened 31 Dec 2025 (S-r3-pop-027)."
+
+  - id: alula
+    name: "AlUla (Royal Commission for AlUla, Journey Through Time masterplan)"
+    zone: G074
+    zone_method: "point-in-polygon of node giga-alula (S-r1a-227, town coordinates, secondary)"
+    residents_announced: 130000
+    residents_basis: total_area
+    jobs_announced: 38000
+    visitors_announced: 2000000
+    visitors_unit: per_year
+    target_year: 2035
+    delivered_share: {p10: 0.2, p50: 0.5, p90: 0.8, assumption: A-demand-030}
+    status: partly_open
+    status_date: "2021-03"
+    sources: [S-r3-pop-028, S-r1a-227, S-r1a-228]
+    assumptions: [A-demand-030, A-pop-016, A-pop-017]
+    notes: "Announced Apr 2021: on completion in 2035, 38,000 new jobs, two million visitors a year and the area's population expanded to 130,000 (S-r3-pop-028, secondary). 130,000 is a total, so the increment is 130,000 minus the Census 2022 AlUla governorate base (A-pop-016)."
+
+  - id: diriyah
+    name: "Diriyah (Diriyah Company)"
+    zone: G121
+    zone_method: "point-in-polygon of node giga-diriyah (S-r1a-230, Wikipedia coordinates, secondary)"
+    residents_announced: 100000
+    residents_basis: increment
+    jobs_announced: 178000
+    visitors_announced: 50000000
+    visitors_unit: per_year
+    target_year: 2030
+    delivered_share: {p10: 0.3, p50: 0.6, p90: 0.9, assumption: A-demand-030}
+    status: under_construction
+    status_date: "2026-10-05"
+    sources: [S-r3-pop-029, S-r3-pop-030, S-r1a-230]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "Announced (Diriyah Company, 10 Dec 2024, verified): 'over 100,000 residents, creating 178,000 jobs, attracting 50 million annual visits ... by the end of the decade' (S-r3-pop-029). The June 2020 release gave 100,000 residents and 25 M visitors (S-r3-pop-030): the visitor target was doubled. Construction contracts were still being awarded in Oct 2026 (company news list, S-r3-pop-029)."
+
+  - id: roshn-sedra
+    name: "ROSHN: SEDRA (Riyadh)"
+    zone: G138
+    zone_method: "point-in-polygon of node giga-roshn-sedra (S-r1a-231, Wikipedia coordinates, secondary)"
+    residents_announced: null
+    homes_announced: 30000
+    jobs_announced: null
+    visitors_announced: null
+    target_year: null
+    delivered_share: {p10: 0.0, p50: 0.0, p90: 0.0, assumption: A-demand-030}
+    status: partly_open
+    status_date: "2022"
+    sources: [S-r3-pop-031, S-r1a-231]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "ROSHN states '30K+ Homes' for SEDRA (S-r3-pop-031, verified, undated). No resident figure is published and no household size is applied, so there is no add-on quantity; SEDRA houses Riyadh's own growth, which the base scenarios already carry (double counting otherwise)."
+
+  - id: new-murabba
+    name: "New Murabba (Riyadh downtown)"
+    zone: G121
+    zone_method: "Wikidata point (S-r1a-214) falls inside the OSM Ad Diriyah polygon; the project is described as Riyadh's downtown, so G138 is the alternative (flagged, A-pop-017)"
+    residents_announced: null
+    homes_announced: 104000
+    jobs_announced: 334000
+    jobs_basis: "direct and indirect"
+    visitors_announced: null
+    target_year: 2030
+    delivered_share: {p10: 0.05, p50: 0.2, p90: 0.5, assumption: A-demand-030}
+    status: announced
+    status_date: "unknown"
+    sources: [S-r3-pop-032, S-r3-pop-033, S-r1a-214]
+    assumptions: [A-demand-030, A-pop-017]
+    notes: "Announced Feb 2023: more than 104,000 homes and 334,000 direct and indirect jobs, completion 2030 (S-r3-pop-032, trade press relaying the PIF release; PIF page returned 403). newmurabba.com (verified, undated): 14.1 km2 downtown at 23,000 people/km2 (S-r3-pop-033); their product is not used as a resident target. Indirect jobs are not all in the host zone; the delivered share reflects that and the lack of any read delivery status."
+
+  - id: king-salman-park
+    name: "King Salman Park (Riyadh)"
+    zone: G138
+    zone_method: "point-in-polygon of node giga-king-salman-park (S-r1a-234, Wikipedia coordinates, secondary)"
+    residents_announced: null
+    homes_announced: 12000
+    jobs_announced: null
+    visitors_announced: 400000
+    visitors_unit: per_day
+    target_year: 2024
+    delivered_share: {p10: 0.2, p50: 0.5, p90: 0.8, assumption: A-demand-030}
+    status: under_construction
+    status_date: "2024-02-29"
+    sources: [S-r3-pop-034, S-r1a-234]
+    assumptions: [A-demand-030, A-pop-017, A-pop-018]
+    notes: "Announced Mar 2019: 12,000 residential units, about 400,000 visitors per day, full project by 2024 (S-r3-pop-034, secondary). Still under construction (S-r1a-234). Visitors are per day and urban-park trips: intrazonal, not an intercity tourism total."
+
+  - id: sports-boulevard
+    name: "Sports Boulevard (Riyadh)"
+    zone: null
+    zone_method: "unlocated (no coordinates in any source read, economic_nodes giga-sports-boulevard)"
+    residents_announced: null
+    jobs_announced: null
+    visitors_announced: null
+    target_year: null
+    delivered_share: {p10: 0.0, p50: 0.0, p90: 0.0, assumption: A-demand-030}
+    status: partly_open
+    status_date: "2025-02-27"
+    sources: [S-r1a-235]
+    assumptions: [A-demand-030]
+    notes: "No resident, jobs or visitor target read. Listed so that every giga_project node in cities/ksa/zones/economic_nodes.csv appears (rule 2)."

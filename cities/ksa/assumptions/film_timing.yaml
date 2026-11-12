@@ -1,0 +1,29 @@
+# Version: film_timing.yaml v1.0 | 7 Nov 2026 | Author: R10 builder | Status: draft
+# Narration timing for the film script estimate (film/script.py; uv run python -m film.script estimate).
+# estimate = round(chars / chars_per_second[lang] + pause_seconds, 1), chars = text with whitespace
+# runs collapsed to one space. Planning values only; the register is film/assumptions-r10.md.
+version: "1.0"
+
+ar_chars_per_second:
+  value: 14.0
+  range: [12.0, 16.0]
+  unit: "characters per second (including spaces)"
+  assumption: A-film-002
+  status: assumed
+  reason: "planning estimate for narration pace; replaced by measured TTS/narrator timing in half 2"
+
+en_chars_per_second:
+  value: 15.0
+  range: [13.0, 17.0]
+  unit: "characters per second (including spaces)"
+  assumption: A-film-003
+  status: assumed
+  reason: "planning estimate for narration pace; replaced by measured TTS/narrator timing in half 2"
+
+pause_seconds:
+  value: 0.4
+  range: [0.2, 0.8]
+  unit: "seconds per line"
+  assumption: A-film-004
+  status: assumed
+  reason: "planning estimate for narration pace; replaced by measured TTS/narrator timing in half 2"

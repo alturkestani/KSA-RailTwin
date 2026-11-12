@@ -1,0 +1,12 @@
+cut,lang,line_id,section,engine,voice,chars,seconds,input_i,input_tp,output_i,output_tp,said_override,sha256,voice_id,model
+trailer,en,t-01,1,elevenlabs,George,105,7.105,-23.61,-3.73,-16.46,-1.50,,51524429ac1e4faf80ff31eed6716dc9e286b3779a813f4e620d8622866bf1e7,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-02,1,elevenlabs,George,85,7.198,-23.55,-3.73,-16.57,-1.50,,c288bdaf3c784ae5c077f4a7ad0e64b94ff3a2d2f2c8bf335bdc7d52c3ac3c43,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-03,2,elevenlabs,George,84,7.291,-23.58,-4.85,-16.25,-1.49,,aa81728792d8d1bb927a0f97ffd927d3285798cedf5b50f2a0a604c7de2e1ab9,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-04,3,elevenlabs,George,58,5.341,-22.88,-4.35,-16.48,-1.50,,4f776e1587e9691bd32fbf494e39984c94d1194d837d42e5d81b8f9a7c4b9360,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-05,4,elevenlabs,George,66,4.505,-23.25,-5.72,-16.28,-1.49,,acd22b4e1483dce620c8835c4424634fe48d40bf9d70c433d3593641e153d076,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-06,6,elevenlabs,George,106,7.012,-23.40,-2.90,-16.18,-1.50,,2360f3042eb77f1372e55e40c0c637682a331cd7767894d0cd981b9a77b475a2,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-07,7,elevenlabs,George,64,4.830,-23.71,-4.89,-16.78,-1.49,yes,a1562ee48457891aefa05624596fa521b0b7f5950de76765c91a8a59646c54c6,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-08,8,elevenlabs,George,100,8.266,-23.04,-5.91,-16.27,-1.50,,3f79e405c128a98c4097aaacb8fe42f11b2c9bf1655c4d3704a5f9b1c913e7eb,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-09,8,elevenlabs,George,69,4.272,-23.68,-6.09,-16.47,-1.50,,43bca9462c46cee70e8c67111f84695ee15c7fe2cac6822900cdd7940d62bd56,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-10,8,elevenlabs,George,68,4.365,-23.99,-5.16,-16.82,-1.50,,c0c55ceeb1610bb0c78b1d582384eb83046efb75e4a9fa51f1ed741997ad655a,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2
+trailer,en,t-11,8,elevenlabs,George,33,2.043,-22.21,-3.72,-19.98,-1.50,,1eb61443dbfa4ed27abab576831e6c2aa94ae1e90f358675a324b1b3fa65e07b,JBFqnCBsd6RMkjVDRZzb,eleven_multilingual_v2

@@ -1,0 +1,104 @@
+{
+ "id": "S3-branch_spur-badr-hunayn",
+ "line_type": "conventional_passenger",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 144.373,
+ "straight_km_legs": 120.136,
+ "straight_km_end_to_end": 120.136,
+ "detour_ratio": 1.2017,
+ "max_grade_cap": 0.025,
+ "design_kmh": 200.0,
+ "r_min_m": 3111.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 13.297,
+ "viaduct_km": 11.098,
+ "earthworks_km": 57.689,
+ "at_grade_km": 62.289,
+ "tunnel_share": 0.0921,
+ "viaduct_share": 0.07687,
+ "fill_m3": 7083700.0,
+ "cut_m3": 8239600.0,
+ "formation_max_grade": 0.02503,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.3328,
+ "elev_min_m": 107.7,
+ "elev_max_m": 890.6,
+ "terrain_shares": {
+  "escarpment_mountain": 0.626,
+  "flat_desert": 0.0859,
+  "mixed": 0.2881
+ },
+ "area_km": {
+  "urban": 3.749,
+  "builtup": 5.999,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 0.0,
+  "sabkha": 0.0,
+  "waterway": 9.698,
+  "highway": 8.898
+ },
+ "wadi_crossings_osm": 30,
+ "speed_restrictions": [
+  {
+   "from_km": 59.839,
+   "to_km": 61.139,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 78.236,
+   "to_km": 81.335,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 88.234,
+   "to_km": 91.233,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 112.03,
+   "to_km": 113.829,
+   "kmh": 170.0
+  },
+  {
+   "from_km": 115.029,
+   "to_km": 116.329,
+   "kmh": 90.0
+  },
+  {
+   "from_km": 116.029,
+   "to_km": 117.528,
+   "kmh": 100.0
+  },
+  {
+   "from_km": 119.228,
+   "to_km": 121.127,
+   "kmh": 130.0
+  },
+  {
+   "from_km": 122.527,
+   "to_km": 124.627,
+   "kmh": 160.0
+  },
+  {
+   "from_km": 142.423,
+   "to_km": 144.123,
+   "kmh": 120.0
+  }
+ ],
+ "restricted_km": 17.695,
+ "min_curve_kmh": 90.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "madinah": 0.0,
+  "badr-hunayn": 144.373
+ },
+ "status": "routed",
+ "stations_key": "1bafef0d9092be95",
+ "geojson": "cities/ksa/alignments/S3-branch_spur-badr-hunayn.geojson",
+ "run": "runs/align/corridors-s1/S3-branch_spur-badr-hunayn",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

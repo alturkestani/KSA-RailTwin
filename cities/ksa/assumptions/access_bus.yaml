@@ -1,0 +1,182 @@
+# > **Document version:** cities/ksa/assumptions/access_bus.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (gis-network-engineer) | Status: draft
+# Intercity bus nodes (CP4 R4 requirement 2). Named cities: one press source (S-r4-net-033);
+# region capitals not named there are added by assumption A-r4-bus-001 (flagged).
+version: '1.0'
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+rule:
+  value: bus is available between two zones when each zone point is within node_access_max_road_min of a different bus node;
+    access adds the road minutes to the node
+  assumption: A-r4-bus-002
+  variants:
+    named_and_capitals: default
+    named_only: sensitivity (sourced nodes only)
+    r3_all_pairs: 'sensitivity (R3 rule A-mode-040: every pair >= 50 road km)'
+node_access_max_road_min:
+  value: 30
+  range:
+  - 15
+  - 60
+  assumption: A-r4-bus-002
+min_road_km:
+  value: 50
+  range:
+  - 30
+  - 100
+  assumption: A-mode-040
+nodes:
+- city: Riyadh
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: riyadh:node:315358390
+  register_name: Riyadh
+  lat: 24.638916
+  lon: 46.71601
+- city: Dammam
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: eastern:node:287865393
+  register_name: Dammam
+  lat: 26.436782
+  lon: 50.103999
+- city: Al-Ahsa
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: eastern:node:208501048
+  register_name: Al-Hofuf
+  lat: 25.369658
+  lon: 49.586522
+- city: Jeddah
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: makkah:node:1933393717
+  register_name: Jeddah
+  lat: 21.550443
+  lon: 39.174236
+- city: Makkah
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: makkah:node:4308338842
+  register_name: Mecca
+  lat: 21.420847
+  lon: 39.826869
+- city: Taif
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: makkah:node:1236468526
+  register_name: At Ta'if
+  lat: 21.27028
+  lon: 40.415831
+- city: Al-Baha
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: al_baha:node:295921642
+  register_name: Al Bahah
+  lat: 20.013794
+  lon: 41.465638
+- city: Al-Namaas
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: asir:node:1236687970
+  register_name: An-Nimas
+  lat: 19.116667
+  lon: 42.133333
+- city: Abha
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: asir:node:295924875
+  register_name: Abha
+  lat: 18.216428
+  lon: 42.50436
+- city: Khamis Mushait
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: asir:node:983083570
+  register_name: Khamis Mushait
+  lat: 18.3
+  lon: 42.733333
+- city: Jazan
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: jazan:node:288992209
+  register_name: Jizan
+  lat: 16.894719
+  lon: 42.557976
+- city: Najran
+  tier: named
+  operator: SAPTCO/SAT (Southern concession)
+  sources:
+  - S-r4-net-033
+  register_row: najran:node:982548735
+  register_name: Najran
+  lat: 17.543981
+  lon: 44.224682
+- city: Madinah
+  tier: region_capital
+  operator: not named
+  assumption: A-r4-bus-001
+  register_row: madinah:node:4571693347
+  register_name: Medina
+  lat: 24.471153
+  lon: 39.611122
+- city: Buraidah
+  tier: region_capital
+  operator: not named
+  assumption: A-r4-bus-001
+  register_row: qassim:node:1236365110
+  register_name: Buraydah
+  lat: 26.331667
+  lon: 43.971667
+- city: Tabuk
+  tier: region_capital
+  operator: not named
+  assumption: A-r4-bus-001
+  register_row: tabuk:node:5418190413
+  register_name: Tabuk
+  lat: 28.401254
+  lon: 36.567049
+- city: Hail
+  tier: region_capital
+  operator: not named
+  assumption: A-r4-bus-001
+  register_row: hail:node:346801397
+  register_name: Ha'il
+  lat: 27.520872
+  lon: 41.698599
+- city: Arar
+  tier: region_capital
+  operator: not named
+  assumption: A-r4-bus-001
+  register_row: northern_borders:node:1236747164
+  register_name: Arar
+  lat: 30.981553
+  lon: 41.016479
+- city: Sakaka
+  tier: region_capital
+  operator: not named
+  assumption: A-r4-bus-001
+  register_row: al_jouf:node:1236740006
+  register_name: Sakaka
+  lat: 29.978401
+  lon: 40.20477

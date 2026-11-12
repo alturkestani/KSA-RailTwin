@@ -1,0 +1,29 @@
+id: S6-L5
+layer: hypothetical
+base: S1
+source: scenarios/S6-L5.yaml
+corridors:
+- id: S4-commuter_belt-riyadh-000
+  phase: 2050
+- id: S4-commuter_belt-riyadh-090
+  phase: 2050
+- id: S4-commuter_belt-riyadh-225
+  phase: 2050
+- id: S4-commuter_belt-riyadh-270
+  phase: 2050
+- id: S4-commuter_belt-jeddah-000
+  phase: 2050
+- id: S4-commuter_belt-jeddah-315
+  phase: 2050
+- id: S4-commuter_belt-makkah-045
+  phase: 2050
+- id: S4-commuter_belt-makkah-090
+  phase: 2050
+- id: S4-commuter_belt-makkah-315
+  phase: 2050
+- id: S4-commuter_belt-madinah-045
+  phase: 2050
+- id: S5-station_addition-al-jubayl
+  phase: 2030
+- id: S5-station_addition-dhahran
+  phase: 2030

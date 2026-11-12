@@ -1,0 +1,66 @@
+{
+ "type": "FeatureCollection",
+ "name": "S4-commuter_belt-riyadh-225",
+ "attribution": "alignment derived from Copernicus GLO-30 (c) DLR/Airbus, ESA WorldCover 2021 (CC BY 4.0) and (c) OpenStreetMap contributors (ODbL)",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "routed",
+    "id": "S4-commuter_belt-riyadh-225",
+    "layer": "hypothetical",
+    "length_km": 78.955,
+    "detour_ratio": 1.1589,
+    "tunnel_km": 3.7,
+    "viaduct_km": 4.3
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      46.716,
+      24.6389
+     ],
+     [
+      46.5319,
+      24.4415
+     ],
+     [
+      46.2598,
+      24.4929
+     ],
+     [
+      46.1337,
+      24.5955
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "kind": "straight_sketch",
+    "id": "S4-commuter_belt-riyadh-225",
+    "layer": "hypothetical"
+   },
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      46.71601,
+      24.638916
+     ],
+     [
+      46.270561,
+      24.472775
+     ],
+     [
+      46.133743,
+      24.59551
+     ]
+    ]
+   }
+  }
+ ]
+}

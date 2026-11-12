@@ -1,0 +1,13 @@
+id: S6-L1
+layer: hypothetical
+base: S1
+source: scenarios/S6-L1.yaml
+corridors:
+- id: S3-branch_spur-al-kharj
+  phase: 2050
+- id: S5-station_addition-al-jubayl
+  phase: 2030
+- id: S5-station_addition-duruma
+  phase: 2050
+- id: S5-station_addition-dhahran
+  phase: 2030

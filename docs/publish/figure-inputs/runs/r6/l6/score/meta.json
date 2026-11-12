@@ -1,0 +1,30 @@
+{
+  "seed": 1,
+  "config_hash": "83ca49c2b833409a779f42b3da68ec649bdbe0aa6a2174fa644c6890c39947c4",
+  "data_hash": "86d58906da831a32327df0892ac720f4077fb61ee9c76c7c549577e76b09aaf0",
+  "code_version": "judge v3-variants @ 017234562c sha256 d9fef64384e2e25f",
+  "tool_versions": {
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "pydantic": "2.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "duckdb": "2.0.0",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0",
+    "geopandas": "1.2.0",
+    "networkx": "3.7",
+    "typer": "0.27.3",
+    "scipy": "1.18.1"
+  },
+  "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+  "created_utc": "2026-11-06T15:19:44+00:00",
+  "judge": "v3-variants",
+  "judge_sha256": "d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee",
+  "judge_commit": "017234562c7c8496749afa17c0bdfeeeccb77009",
+  "judge_fingerprint_checked": true,
+  "harness_code_version": "r8-54-g29b6aaf",
+  "layout_hash": "2243d1863821",
+  "layout_file": "runs/r6/l6/L6.layout.yaml"
+}

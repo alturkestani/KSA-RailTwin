@@ -1,0 +1,96 @@
+# Document version: costs/config/estimate_map.yaml v1.0 | 31 Oct 2026 | Author: cost-estimator (R1c) | Status: draft
+# Component -> cost-register id for costs.estimate (one choice per component and line type; the choice is
+# recorded in docs/costs.md section 6 and, where it is a proxy, as an assumption). Every id must exist in
+# cities/ksa/costs/cost_register.yaml and not be `unknown` (tests/test_costs_estimate.py).
+assumptions: [A-cost-013, A-cost-015, A-cost-017]   # map-level proxy and scope choices
+line_base:            # civil + track per route-km, EXCLUDING tunnels, bridges, stations and systems (EC tier 2)
+  hsr: C-line-type-hsr-ec-base-003
+  conventional_passenger: C-line-type-conv-ec-base-006
+  mixed: C-line-type-conv-ec-base-006
+  commuter: C-line-type-conv-ec-base-006          # proxy, A-cost-013 (commuter at-grade per km is unknown)
+  upgrade: C-line-type-upgrade-ec-conv-base-010
+terrain_premium:      # % over the base on that terrain's km; escarpment/coastal premia come via structure shares
+  dunes: C-terrain-dunes-uplift-038
+  sabkha: C-terrain-sabkha-uplift-040
+  escarpment_mountain: null
+  coastal: null
+structure:
+  tunnel: C-structure-tunnel-pwc-hs2-042
+  viaduct: C-structure-viaduct-pwc-hs2-048
+signalling:
+  hsr: {etcs_l2: C-signalling-etcs-l2-hsr-002}
+  conventional_passenger: {etcs_l2: C-signalling-etcs-l2-conv-001}
+  mixed: {etcs_l2: C-signalling-etcs-l2-conv-001}
+  commuter: {etcs_l2: C-signalling-etcs-l2-conv-001}
+  upgrade: {etcs_l2: C-signalling-etcs-l2-conv-001}
+systems_per_km:
+  hsr: {telecom: C-signalling-telecom-hsr-008}
+  conventional_passenger: {telecom: C-signalling-telecom-conv-007}
+  mixed: {telecom: C-signalling-telecom-conv-007}
+  commuter: {telecom: C-signalling-telecom-conv-007}
+  upgrade: {telecom: C-signalling-telecom-conv-007}
+electrification:      # OCS excluding substations (EC tier 3)
+  hsr: C-electrification-ocs-hsr-002
+  conventional_passenger: C-electrification-ocs-conv-001
+  mixed: C-electrification-ocs-conv-001
+  commuter: C-electrification-ocs-conv-001
+  upgrade: C-electrification-ocs-conv-001
+power:                # traction substations, counted from the spacing in the profile (A-cost-014)
+  hsr: C-power-traction-substation-hsr-002
+  conventional_passenger: C-power-traction-substation-hsr-002
+  mixed: C-power-traction-substation-hsr-002
+  commuter: C-power-traction-substation-hsr-002
+  upgrade: C-power-traction-substation-hsr-002
+station:
+  hsr: {terminal: C-station-hsr-terminal-ksa-001, major: C-station-hsr-terminal-ksa-001, airport: C-station-hsr-intermediate-ksa-002, intermediate: C-station-hsr-intermediate-ksa-002, halt: C-station-hsr-intermediate-uk-003, planned: C-station-hsr-intermediate-ksa-002}
+  conventional_passenger: &convst {terminal: C-station-sar-north-2012-001, major: C-station-sar-north-2012-001, airport: C-station-sar-north-2012-001, intermediate: C-station-sar-north-2012-001, halt: C-station-conv-halt-uk-004, planned: C-station-sar-north-2012-001}
+  mixed: *convst
+  upgrade: *convst
+  commuter: {terminal: C-station-sar-north-2012-001, major: C-station-sar-north-2012-001, airport: C-station-sar-north-2012-001, intermediate: C-station-conv-halt-uk-004, halt: C-station-conv-halt-uk-004, planned: C-station-conv-halt-uk-004}
+depot:
+  hsr: C-depot-hsr-uk-001                         # upper bound (includes a national control centre)
+  conventional_passenger: C-depot-sar-north-nariyah-001
+  mixed: C-depot-sar-north-nariyah-001
+  upgrade: C-depot-sar-north-nariyah-001
+  commuter: C-depot-regional-de-002
+rolling_stock:        # train-only prices preferred; proxies flagged A-cost-015
+  hsr: {electric: C-rollingstock-hsr-ice3neo-001, diesel: C-rollingstock-hsr-ice3neo-001}
+  conventional_passenger: &convrs {electric: C-rollingstock-ic-diesel-sar-caf-008, diesel: C-rollingstock-ic-diesel-sar-caf-008}
+  mixed: *convrs
+  upgrade: *convrs
+  commuter: *convrs
+land:
+  hsr: C-land-wb-china-hsr-059
+  conventional_passenger: C-land-wb-china-mixed-060
+  mixed: C-land-wb-china-mixed-060
+  commuter: C-land-wb-china-mixed-060
+  upgrade: C-land-wb-china-mixed-060
+utilities: C-utilities-diversion-065
+design_pm: C-design-pm-pwc-hs2-indirects-067
+contingency: C-contingency-pwc-hs2-070
+opex:                 # SAR m per year = driver x product of the rows (pct rows divided by 100); to_sar_m 1e-6 for SAR rows
+  hsr:
+    - {name: energy, ids: [C-opex-hsr-energy-001, C-opex-power-tariff-001], driver: train_km, to_sar_m: 1.0e-6}
+    - {name: rolling_stock_maintenance, ids: [C-opex-hsr-rs-maint-001], driver: train_km, to_sar_m: 1.0e-6}
+    - {name: staff, ids: [C-opex-hsr-staff-001, C-opex-staff-wage-001, C-opex-staff-oncost-001], driver: route_km, to_sar_m: 1.0e-6}
+    - {name: maintenance_of_way, ids: [C-opex-hsr-infra-maint-002], driver: route_km}
+    - {name: sand_maintenance, ids: [C-opex-hsr-infra-maint-002, C-opex-dunes-sand-maint-001], driver: route_km_dunes}
+  conventional_passenger: &convopex
+    - {name: train_operation_fully_allocated, ids: [C-opex-conv-train-op-002], driver: train_km, to_sar_m: 1.0e-6}   # A-cost-017
+    - {name: maintenance_of_way, ids: [C-opex-conv-infra-maint-002], driver: route_km}
+    - {name: sand_maintenance, ids: [C-opex-conv-infra-maint-002, C-opex-dunes-sand-maint-001], driver: route_km_dunes}
+  commuter: *convopex
+  upgrade: *convopex
+  mixed:
+    - {name: train_operation_fully_allocated, ids: [C-opex-conv-train-op-002], driver: train_km, to_sar_m: 1.0e-6}
+    - {name: maintenance_of_way, ids: [C-opex-mixed-infra-maint-001], driver: route_km}
+    - {name: sand_maintenance, ids: [C-opex-mixed-infra-maint-001, C-opex-dunes-sand-maint-001], driver: route_km_dunes}
+renewals:             # once per asset life inside 30/40/60 years; amount = component capex x shares
+  - {name: track, components: ["civil_track"], life_id: C-renewal-track-life-001, share_ids: {hsr: [C-renewal-track-share-hsr-004, C-renewal-replacement-share-002], default: [C-renewal-track-share-conv-003, C-renewal-replacement-share-002]}}
+  - {name: signalling_telecom, components: ["signalling", "telecom"], life_id: C-renewal-signalling-life-001, share_ids: [C-renewal-replacement-share-002]}
+  - {name: electrification_power, components: ["electrification_ocs", "power_substations"], life_id: C-renewal-electrification-life-001, share_ids: [C-renewal-replacement-share-002]}
+  - {name: stations_buildings, components: ["station", "depot"], life_id: C-renewal-buildings-life-001, share_ids: [C-renewal-replacement-share-002]}
+  - {name: rolling_stock, components: ["rolling_stock"], life_id: C-renewal-rolling-stock-life-001, share_ids: [C-renewal-replacement-share-002]}
+staffing:             # headcount and Saudi share (A-cost-300); conventional staffing per km is unknown, so HSR only
+  hsr: C-opex-hsr-staff-001
+  saudisation_share: C-opex-staff-saudisation-001

@@ -1,0 +1,77 @@
+{
+ "id": "S2-trunk_gap-riyadh-buraidah",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 368.385,
+ "straight_km_legs": 334.497,
+ "straight_km_end_to_end": 333.613,
+ "detour_ratio": 1.1013,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 7.995,
+ "viaduct_km": 8.595,
+ "earthworks_km": 102.158,
+ "at_grade_km": 249.637,
+ "tunnel_share": 0.0217,
+ "viaduct_share": 0.02333,
+ "fill_m3": 5968800.0,
+ "cut_m3": 13435800.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.2304,
+ "elev_min_m": 586.1,
+ "elev_max_m": 847.0,
+ "terrain_shares": {
+  "dunes": 0.0708,
+  "flat_desert": 0.6795,
+  "mixed": 0.2426,
+  "sabkha": 0.0071
+ },
+ "area_km": {
+  "urban": 10.946,
+  "builtup": 26.391,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 26.095,
+  "sabkha": 2.599,
+  "waterway": 21.691,
+  "highway": 16.895
+ },
+ "wadi_crossings_osm": 140,
+ "speed_restrictions": [
+  {
+   "from_km": 94.115,
+   "to_km": 96.313,
+   "kmh": 190.0
+  },
+  {
+   "from_km": 110.6,
+   "to_km": 112.998,
+   "kmh": 200.0
+  },
+  {
+   "from_km": 127.884,
+   "to_km": 130.682,
+   "kmh": 210.0
+  }
+ ],
+ "restricted_km": 7.394,
+ "min_curve_kmh": 190.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "riyadh": 0.0,
+  "huraymila": 93.566,
+  "thadig": 131.731,
+  "buraidah": 368.385
+ },
+ "status": "routed",
+ "stations_key": "3ab440d0d1d17e71",
+ "geojson": "cities/ksa/alignments/alternatives/S2-trunk_gap-riyadh-buraidah.geojson",
+ "run": "runs/align/alternatives-s1/S2-trunk_gap-riyadh-buraidah",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

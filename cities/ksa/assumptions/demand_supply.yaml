@@ -1,0 +1,52 @@
+# > **Document version:** cities/ksa/assumptions/demand_supply.yaml v0.1 | 31 Oct 2026 | Author: R3 builder (demand-modeler) | Status: draft
+# Zone-to-zone level of service per mode for the national gravity + MNL run (demand.supply). R3 has no rail
+# graph or transfers (R4's running-time model replaces the rail rows); car, bus and the MNL coefficients and
+# defaults come from mode_choice_r3.yaml / mode_choice_priors.yaml (read, not copied). Every value here
+# carries a source id or an assumption id (docs/assumptions.md).
+version: "0.1"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+
+road:
+  backend: {value: "OSRM /table, MLD, car profile, free flow (network.osrm), zone points of demand.zones", source: "manifest osm-gcc-2026-10-14", note: "uncongested; not calibrated against counts (none open, demand_calibration.yaml)"}
+
+rail:
+  lines_by_scenario:
+    S0: [hhr, sar-east-passenger, sar-north-passenger]          # scenarios/S0.yaml intercity lines in passenger service
+    S1: [hhr, sar-east-passenger, sar-north-passenger, landbridge]   # + committed Landbridge (announced/planned)
+  station_access: {value: "nearest station of the line by road time from the zone point", max_road_min: {value: 90, range: [60, 150], unit: min, assumption: A-demand-045}}
+  terminal_min: {value: 10, range: [5, 20], unit: min per side (station processing and platform), assumption: A-demand-046, note: "added to the road minutes to and from the station; replaces mode_choice_r3 fixed 20/20 for zone pairs (that default stands for city-centre to city-centre pairs without a station skim)"}
+  lines:
+    # average speed = km-post span / published end-to-end minutes of the line's longest published pair (A-demand-047);
+    # in-vehicle minutes between two stations = |km_a - km_b| / speed x 60. Fare = |km| x fare_per_km (A-demand-048).
+    hhr:
+      speed_kmh: {value: 153.8, range: [120.0, 200.0], assumption: A-demand-047, derived_from: "448.54 km (cities/ksa/lines/hhr.yaml km_post Makkah-Madinah) / 175 min (S-cp2-503, 2018 non-stop timetable)"}
+      fare_per_km_sar: {value: 0.405, range: [0.30, 0.55], assumption: A-demand-048, derived_from: "Jeddah-Madinah 150 SAR / 370.3 km (S-soc-318, secondary); Makkah-Jeddah 43 / 78.25 = 0.55 (S-r1a-012)"}
+      headway_min: {value: 60, range: [30, 120], source: S-r1a-011, assumption: A-mode-041}
+    sar-east-passenger:
+      speed_kmh: {value: 125.3, range: [100.0, 140.0], assumption: A-demand-047, derived_from: "449.09 km Riyadh-Dammam / 215 min express (S-r1a-040)"}
+      fare_per_km_sar: {value: 0.200, range: [0.195, 0.26], assumption: A-demand-048, derived_from: "90 SAR / 449.1 km (S-r1a-024)"}
+      headway_min: {value: 270, range: [180, 480], source: S-r1a-040, assumption: A-mode-041}
+    sar-north-passenger:
+      speed_kmh: {value: 137.3, range: [110.0, 160.0], assumption: A-demand-047, derived_from: "622.6 km Riyadh-Hail / 272 min (S-r3-mode-003)"}
+      fare_per_km_sar: {value: 0.201, range: [0.195, 0.26], assumption: A-demand-048, derived_from: "125 SAR / 622.6 km (S-r1a-021)"}
+      headway_min: {value: 540, range: [360, 1080], source: S-r3-mode-003, assumption: A-mode-041}
+    landbridge:
+      # committed / under procurement, announced/planned: hypothetical service until R4
+      speed_kmh: {value: 150.0, range: [112.5, 200.0], assumption: A-mode-036, derived_from: "design 250 km/h (cities/ksa/lines/landbridge.yaml) x 0.60 (A-mode-036, range 0.45-0.80)"}
+      fare_per_km_sar: {value: 0.30, range: [0.20, 0.405], assumption: A-mode-037}
+      headway_min: {value: 120, range: [60, 240], assumption: A-demand-049}
+
+air:
+  airports: {value: "the 27 GACA airports in cities/ksa/zones/economic_nodes.parquet (role airport, IATA in subtype)", source: S-cp1-100}
+  airport_access: {value: "nearest airport by road time from the zone point", max_road_min: {value: 150, range: [90, 240], unit: min, assumption: A-demand-050}}
+  network_rule:
+    value: "a route exists between two different airports when it is listed in mode_choice_r3.yaml air.routes, or when one end is a hub (RUH, JED, DMM)"
+    hubs: [RUH, JED, DMM]
+    assumption: A-demand-051
+    note: "no open GACA city-pair table (S-r1a-218); every airport in the GACA domestic table (S-r3-cal-011) carries domestic traffic, which a spoke-to-hub rule represents; spoke-to-spoke routes are not modelled"
+  headway_unlisted_min: {value: 480, range: [240, 1440], unit: min, assumption: A-demand-052, note: "hub routes not listed in mode_choice_r3.yaml; listed routes keep their own headway"}
+  block_time_and_fare: {value: "mode_choice_r3.yaml air.block_time and air.fare (A-mode-029, A-mode-030) on the great-circle km between the two airports"}
+  processing: {value: "mode_choice_r3.yaml access_egress.air access_min / egress_min (A-mode-028) added to the road minutes to and from the airport"}
+
+bus:
+  rule: {value: "mode_choice_r3.yaml bus block (A-mode-033..035, A-mode-040): available where road km >= 50; IVT = road min x 1.15; fare = road km x 0.20"}

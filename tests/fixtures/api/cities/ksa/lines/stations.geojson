@@ -1,0 +1,194 @@
+{
+ "type": "FeatureCollection",
+ "name": "stations",
+ "attribution": "(c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+ "generated": "2026-10-31",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     48.49278,
+     28.42254
+    ]
+   },
+   "properties": {
+    "station_uid": "gcc-railway-ksa:kuwait-border",
+    "line_id": "gcc-railway-ksa",
+    "station_id": "kuwait-border",
+    "name_en": "Kuwait border (proxy Al Khafji customs)",
+    "name_ar": "الحدود الكويتية (منفذ الخفجي)",
+    "class": "planned",
+    "layer": "committed",
+    "status": "design",
+    "operator": null,
+    "opened": null,
+    "km_post": 0.0,
+    "source": "S-032",
+    "location_method": "town_centroid:osm:node/983083571 (Al Khafji city)",
+    "located": false,
+    "uncertainty_km": 13.1,
+    "snap_km": null,
+    "site_status": "inferred",
+    "notes": "Route 'will begin at Al-Khafji in the Eastern Province near Kuwait's border' (S-cp2-607, 12 May 2026). No station or crossing site published. Town centroid = OSM Al Khafji city node (67,012 pop. in OSM). Band = max(own built-up radius 5.19 km, geodesic 13.11 km to the named customs node 1237828458) (A-stn-001, A-stn-003). The old proxy (customs node) lies inside the band. Layer committed, design stage (S-032). [CP2_PREP research: S-cp2-607, S-032, S-cp2-601, S-cp2-602]",
+    "confidence": "low"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     50.104,
+     26.43678
+    ]
+   },
+   "properties": {
+    "station_uid": "gcc-railway-ksa:dammam",
+    "line_id": "gcc-railway-ksa",
+    "station_id": "dammam",
+    "name_en": "Dammam (not confirmed",
+    "name_ar": "الدمام",
+    "class": "planned",
+    "layer": "committed",
+    "status": "design",
+    "operator": null,
+    "opened": null,
+    "km_post": 285.2,
+    "source": "S-032",
+    "location_method": "town_centroid:osm:node/287865393 (Dammam city)",
+    "located": false,
+    "uncertainty_km": 13.8,
+    "snap_km": null,
+    "site_status": "inferred",
+    "notes": "Dammam remains 'not confirmed' (C-008). The line passes through Dammam (S-cp2-607) but no station site is published. Band from the Dammam-Khobar built-up cluster (diameter 27.5 km, radius 13.76 km). OSM 'Dammam Railway Station' node/492547630 (SAR, existing) is 3.7 km away and inside the band; not used: no source links it to the GCC line. [CP2_PREP research: S-cp2-607, S-032, S-cp2-601, S-cp2-602]",
+    "confidence": "low"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     51.56759,
+     24.13303
+    ]
+   },
+   "properties": {
+    "station_uid": "gcc-railway-ksa:uae-border",
+    "line_id": "gcc-railway-ksa",
+    "station_id": "uae-border",
+    "name_en": "UAE border (proxy Al Batha)",
+    "name_ar": "الحدود الإماراتية (البطحاء)",
+    "class": "planned",
+    "layer": "committed",
+    "status": "design",
+    "operator": null,
+    "opened": null,
+    "km_post": 580.6,
+    "source": "S-032",
+    "location_method": "town_centroid:osm:node/3952970012 (Al Batha)",
+    "located": false,
+    "uncertainty_km": 1.3,
+    "snap_km": null,
+    "site_status": "inferred",
+    "notes": "Route 'will then extend southward to Al-Batha on the UAE border' (S-cp2-607). No crossing or station site published. OSM Al Batha node is a village-class place (crossing name). Band = built-up radius 1.26 km (374 buildings). Old proxy coordinates are the same node. [CP2_PREP research: S-cp2-607, S-032, S-cp2-601, S-cp2-602]",
+    "confidence": "low"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.166799,
+     29.046369
+    ]
+   },
+   "properties": {
+    "station_uid": "hejaz-railway:dhat-al-hajj",
+    "line_id": "hejaz-railway",
+    "station_id": "dhat-al-hajj",
+    "name_en": "Dhat al Hajj",
+    "name_ar": "ذات الحاج",
+    "class": "terminal",
+    "layer": "historical",
+    "status": "abandoned",
+    "operator": null,
+    "opened": "1908-09-01",
+    "km_post": 0.0,
+    "source": "S-r1a-807",
+    "location_method": "osm:node/1237958878",
+    "located": true,
+    "uncertainty_km": null,
+    "snap_km": 0.053,
+    "site_status": null,
+    "notes": null,
+    "confidence": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.269423,
+     28.855893
+    ]
+   },
+   "properties": {
+    "station_uid": "hejaz-railway:bir-ibn-hermas",
+    "line_id": "hejaz-railway",
+    "station_id": "bir-ibn-hermas",
+    "name_en": "Bir Ibn Hermas",
+    "name_ar": "محطة بئر ابن هرماس - قطار الحجاز",
+    "class": "intermediate",
+    "layer": "historical",
+    "status": "abandoned",
+    "operator": null,
+    "opened": "1908-09-01",
+    "km_post": 23.74,
+    "source": "S-r1a-807",
+    "location_method": "osm:node/7317195489",
+    "located": true,
+    "uncertainty_km": null,
+    "snap_km": 0.167,
+    "site_status": null,
+    "notes": null,
+    "confidence": null
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     36.767037,
+     28.217973
+    ]
+   },
+   "properties": {
+    "station_uid": "hejaz-railway:al-uthayli",
+    "line_id": "hejaz-railway",
+    "station_id": "al-uthayli",
+    "name_en": "Al Uthayli",
+    "name_ar": "الأثيلي",
+    "class": "intermediate",
+    "layer": "historical",
+    "status": "abandoned",
+    "operator": null,
+    "opened": "1908-09-01",
+    "km_post": 111.51,
+    "source": "S-r1a-807",
+    "location_method": "osm:node/1236320545",
+    "located": true,
+    "uncertainty_km": null,
+    "snap_km": 0.163,
+    "site_status": null,
+    "notes": null,
+    "confidence": null
+   }
+  }
+ ]
+}

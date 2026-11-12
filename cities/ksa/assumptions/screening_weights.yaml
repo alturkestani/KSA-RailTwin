@@ -1,0 +1,87 @@
+# Screening funnel criteria and weights: PROPOSAL for CP1 (screening-funnel skill defaults).
+# Version: screening_weights.yaml v0.2 | 31 Oct 2026 | Author: screening-analyst (PILOT_MERGE); CP1_PREP item 1 | Status: draft
+# Label: pilot, proposed criteria pending CP1; screening input, not a forecast.
+# Every number is {value, assumption_id}; each id is a row in docs/assumptions.md (status assumed,
+# approval pending CP1 unless the row says Tariq approved it). This file is the CANONICAL criteria
+# set; docs/plan.md section 1 describes exactly it (CP1_PREP, 31 Oct 2026: one set, one id scheme).
+# v0.2: `administrative` no longer scores (A-screen-009), `energy` role (A-screen-010), rail gap on a
+# capped log scale (A-screen-021; the v0.1 linear measure is the `score-linear-gap` sensitivity).
+label: "pilot, proposed criteria pending CP1; screening input, not a forecast"
+status: assumed
+approval: pending CP1
+
+long_list:
+  threshold: {value: 10000, unit: persons, assumption_id: A-screen-001}
+  sensitivity: {value: 5000, unit: persons, assumption_id: A-screen-002}
+  role_passes: {value: true, assumption_id: A-screen-003}       # >= 1 sourced scored role (A-screen-009) passes
+  served_km: {value: 10, unit: km, assumption_id: A-screen-004}  # within this of a station = "served" bucket
+  centres_always_pass: {value: true, source: "PROJECT.md section 2 rule 2; screening-funnel skill stage 2"}
+  pilot_distance_proxy: {value: straight-line, assumption_id: A-screen-027}  # road skims arrive in R1a
+  # Pilot: committed-line distances exist for 2 of 13 regions, measured to unlocated Landbridge
+  # stops, so served and rail gap use the existing layer only; the skill default (true) is run as
+  # a sensitivity (docs/screening-pilot.md).
+  use_committed: {value: false, assumption_id: A-screen-030}
+
+criteria:
+  population:
+    weight: {value: 0.30, assumption_id: A-screen-020}
+    measure: log10(population), min-max scaled over the long list
+    missing: {value: min, assumption_id: A-screen-028}
+  rail_gap:
+    weight: {value: 0.20, assumption_id: A-screen-021}
+    measure: log10(1 + min(d, cap_km)) / log10(1 + cap_km), d = distance to the nearest line of the layers in use (A-screen-030); farther = higher, saturates at cap_km
+    measure_kind: {value: log_capped, alternatives: [linear], assumption_id: A-screen-021}  # linear = v0.1 min-max (sensitivity)
+    cap_km: {value: 300, range: [200, 500], unit: km, assumption_id: A-screen-021}
+    missing: {value: median, assumption_id: A-screen-028}
+  commute:
+    weight: {value: 0.20, assumption_id: A-screen-022}
+    measure: max over metros with distance in the band of tier_factor * log10(metro pop) / log10(largest metro pop)
+    band_km: {value: [40, 120], unit: km, assumption_id: A-screen-005}
+    tier_factor:
+      1: {value: 1.0, assumption_id: A-screen-026}
+      2: {value: 0.6, assumption_id: A-screen-026}
+      3: {value: 0.3, assumption_id: A-screen-026}
+    missing: {value: "none (computed from coordinates for every row)", assumption_id: A-screen-028}
+  economic_roles:
+    weight: {value: 0.20, assumption_id: A-screen-023}  # A-screen-012 merged into A-screen-023
+    measure: count of distinct sourced roles, excluding exclude_from_score, capped, divided by the cap
+    roles: {value: [port, industrial_city, mining, tourism, heritage, hajj_umrah, airport, university, giga_project, agriculture, border_crossing, military, administrative, energy], assumption_id: A-screen-007}
+    energy_role: {value: "refineries, oil/gas processing, export terminals", assumption_id: A-screen-010}
+    cap: {value: 3, unit: roles, assumption_id: A-screen-008}
+    exclude_from_score: {value: [administrative], assumption_id: A-screen-009}  # kept in the data; centres pass by rule 2
+    source_required: {value: "one S- source per role that ties the role to that town", assumption_id: A-screen-011}
+    missing: {value: "0 (empty list = not assessed or none)", assumption_id: A-screen-028}
+  terrain:
+    weight: {value: 0.10, assumption_id: A-screen-024}
+    measure: 1 + penalty (so flat = 1, escarpment = 0)
+    penalty:
+      flat_desert: {value: 0.0, assumption_id: A-screen-024}
+      coastal: {value: 0.0, assumption_id: A-screen-024}
+      dunes: {value: -0.5, assumption_id: A-screen-024}
+      sabkha: {value: -0.5, assumption_id: A-screen-024}
+      escarpment_mountain: {value: -1.0, assumption_id: A-screen-024}
+      mixed: {value: -0.5, assumption_id: A-screen-025}
+    missing: {value: median, assumption_id: A-screen-028}
+
+sweep:
+  fraction: {value: 0.25, assumption_id: A-screen-029}  # each weight x (1 +/- f), one at a time, renormalised
+short_list:
+  top_n: {value: 60, assumption_id: A-screen-006}
+  stable_share: {value: 0.8, assumption_id: A-screen-006}  # plus every candidate in the top N in >= 80 % of corners
+  report_top: {value: 30, source: "prompts/PILOT_MERGE.md task 3 (reporting size, not a criterion)"}
+
+# A-screen-013 (Tariq, 30 Oct 2026). Anchors are register rows (row_key): coordinates from OSM and
+# Census 2022 populations come with each row's own source ids. A metro's distance is the nearest
+# anchor; its size is the sum of its anchors' populations.
+metros:
+  - {name: Riyadh, tier: 1, anchors: ["riyadh:node:315358390"], assumption_id: A-screen-013}
+  - {name: Jeddah, tier: 1, anchors: ["makkah:node:1933393717"], assumption_id: A-screen-013}
+  - {name: Makkah, tier: 1, anchors: ["makkah:relation:12429517"], assumption_id: A-screen-013}
+  - {name: Madinah, tier: 1, anchors: ["madinah:osm:4571693347"], assumption_id: A-screen-013}
+  - {name: Dammam–Khobar–Dhahran, tier: 1, anchors: ["eastern:osm:287865393", "eastern:osm:32441763", "eastern:osm:447805356"], assumption_id: A-screen-013}
+  - {name: Taif, tier: 2, anchors: ["makkah:node:1236468526"], assumption_id: A-screen-013}
+  - {name: Buraidah, tier: 2, anchors: ["qassim:node:1236365110"], assumption_id: A-screen-013}
+  - {name: Tabuk, tier: 2, anchors: ["tabuk:osm:5418190413"], assumption_id: A-screen-013}
+  - {name: Abha–Khamis Mushait, tier: 2, anchors: ["asir:osm:295924875", "asir:osm:983083570"], assumption_id: A-screen-013}
+  - {name: Jazan, tier: 3, anchors: ["jazan:osm:288992209"], assumption_id: A-screen-013}
+  - {name: Najran, tier: 3, anchors: ["najran:osm:982548735"], assumption_id: A-screen-013}

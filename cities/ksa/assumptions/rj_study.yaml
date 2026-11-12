@@ -1,0 +1,105 @@
+# Version: rj_study.yaml v1.0 | 6 Nov 2026 | Author: STUDY_RJ_FAMILIES (main track builder) | Status: draft
+# Riyadh-Jeddah corridor study (prompts/STUDY_RJ_FAMILIES.md items 3-6). Read by study/rj.py.
+# Hypothetical alignments (ours), user-proposed (Tariq, 6 Nov 2026; CP7-6): indicative engineering
+# sketches, not designs. Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+# Nothing here changes S1, the Landbridge line file, HHR, the interchange rules or the access model.
+# Every real-world value carries a source id or an assumption id (docs/study-rj/assumptions.md, study register).
+
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+
+# --------------------------------------------------------------------------- places
+# Terminals: the same town-centroid placeholders as landbridge.yaml (A-r1a-006, A-r4-acc-004), so
+# every route is compared on the same end points; neither is a published terminal site.
+places:
+  riyadh: {name_en: "Riyadh (terminal site not published; town-centroid placeholder)", name_ar: الرياض, lat: 24.638916, lon: 46.71601, source: "cities/ksa/lines/landbridge.yaml (S-054; A-r1a-006)"}
+  jeddah: {name_en: "Jeddah (terminal site not published; town-centroid placeholder)", name_ar: جدة, lat: 21.550443, lon: 39.174236, source: "cities/ksa/lines/landbridge.yaml (S-054; A-r1a-006)"}
+  dawadmi: {name_en: "Dawadmi (Al-Doadmi), announced stop, town-centroid proxy", name_ar: الدوادمي, lat: 24.494167, lon: 44.383333, source: "cities/ksa/lines/landbridge.yaml (S-062)"}
+  muwai: {name_en: "Muwai (Moya), announced stop, town-centroid proxy", name_ar: المويه, lat: 22.436566, lon: 41.761935, source: "cities/ksa/lines/landbridge.yaml (S-062)"}
+  al-jumum: {name_en: "Al-Jumum (Jumoum / Jamuma), announced stop, town-centroid proxy", name_ar: الجموم, lat: 21.621168, lon: 39.698979, source: "cities/ksa/lines/landbridge.yaml (S-062; identity S-063 owner statement)"}
+  taif: {name_en: "Taif (metro anchor)", name_ar: الطائف, lat: 21.27028, lon: 40.415831, source: "A-screen-013 metro anchor (cities/ksa/corridors/trunk_gap/S2-trunk_gap-taif-bisha.yaml)"}
+  # Makkah-area gateways: OUTSIDE the Haram boundary, sited on the HHR alignment so an interchange
+  # with HHR is physically possible (a new HHR stop would be needed; not modelled: the access model
+  # and the interchange rules are unchanged, A-r4-acc-004). Coordinates = the HHR vertex nearest the
+  # stated target (snapped by study/rj.py); A-rj-003.
+  gateway-sw: {name_en: "Makkah-area gateway SW (outside the Haram boundary, on HHR)", name_ar: "بوابة منطقة مكة (جنوب غرب، خارج حدود الحرم)", target_lat: 21.326, target_lon: 39.593, snap: hhr, assumption_id: A-rj-003}
+  gateway-nw: {name_en: "Makkah-area gateway NW (outside the Haram boundary, on HHR near Bahrah)", name_ar: "بوابة منطقة مكة (شمال غرب، خارج حدود الحرم)", target_lat: 21.476, target_lon: 39.483, snap: hhr, assumption_id: A-rj-003}
+  # Routing waypoints: timing points, not stations (no stop, no dwell, no station cost). Chosen by us
+  # so the least-cost path between them stays outside the sourced Haram markers; A-rj-002.
+  wp-north: {name_en: "waypoint north of Al-Ji'ranah (routing only)", name_ar: "نقطة توجيه", lat: 21.63, lon: 39.96, assumption_id: A-rj-002}
+  wp-south: {name_en: "waypoint south of the southern Haram markers (routing only)", name_ar: "نقطة توجيه", lat: 21.22, lon: 39.82, assumption_id: A-rj-002}
+
+# --------------------------------------------------------------------------- routes
+# line_type picks the routing class of the frozen v1 weights (align_weights.yaml): hsr = 2.5 % grade
+# cap, 300 km/h, R_min 7,000 m; mixed = 1.25 %, 250 km/h (the announced Landbridge is mixed
+# passenger/freight, S-054). `stops` are the stations a passenger train calls at; other points are
+# waypoints. A-rj-001.
+routes:
+  RJ-LB:
+    title: "as-understood announced Landbridge stops, terrain-routed by us (sketch, not the official alignment)"
+    line_type: mixed
+    points: [riyadh, dawadmi, muwai, al-jumum, jeddah]
+    stops: [riyadh, dawadmi, muwai, al-jumum, jeddah]
+  RJ-A:
+    title: "speed-oriented: Riyadh-Jeddah with no required intermediate city"
+    line_type: hsr
+    points: [riyadh, jeddah]
+    stops: [riyadh, jeddah]
+  RJ-B:
+    title: "via Taif, outside the Haram boundary (north-around), then Jeddah"
+    line_type: hsr
+    points: [riyadh, taif, wp-north, jeddah]
+    stops: [riyadh, taif, jeddah]
+  RJ-C1:
+    title: "via Taif with a Makkah-area gateway SW outside the Haram boundary and an HHR interchange (south-around)"
+    line_type: hsr
+    points: [riyadh, taif, wp-south, gateway-sw, jeddah]
+    stops: [riyadh, taif, gateway-sw, jeddah]
+  RJ-C2:
+    title: "via Taif with a Makkah-area gateway NW outside the Haram boundary and an HHR interchange (north-around)"
+    line_type: hsr
+    points: [riyadh, taif, wp-north, gateway-nw, jeddah]
+    stops: [riyadh, taif, gateway-nw, jeddah]
+
+# --------------------------------------------------------------------------- siting check
+siting:
+  # Haram boundary markers: OSM nodes tagged boundary=marker whose name contains "حد الحرم" or
+  # "حدود الحرم" (S-rj-001). No complete official GIS boundary polygon was found (S-rj-002); none is
+  # drawn. The check uses the markers only (A-rj-004).
+  osm_bbox_wsen: [39.35, 21.15, 40.15, 21.8]
+  centre: {name: "Masjid al-Haram (Kaaba, OSM)", lat: 21.4225, lon: 39.8262, source: S-rj-001}
+  # a through-track point is "outside" when it is farther from the centre than every marker within
+  # +/- sector_deg of its bearing, plus the clearance; a bearing with no marker in its sector is
+  # reported as "not verifiable" (no polygon is invented)
+  sector_deg: {value: 15, assumption_id: A-rj-004}
+  clearance_km: {value: 2.0, range: [1.0, 5.0], assumption_id: A-rj-004}
+  check_radius_km: {value: 45, assumption_id: A-rj-004}
+
+# --------------------------------------------------------------------------- running time
+# The R4 model (access.running_time) with the generic timetable factor (A-r4-rt-011, factors-s1),
+# exactly as network.evaluate applies it to hypothetical corridors: P10/P50/P90 = kinematic x
+# factor range low / value / high. Speed classes (line speed, km/h) with the stock class used.
+speed_classes:
+  - {id: "220", line_speed_kmh: 220, stock: intercity_250, source: "S-058 (220 km/h operating, secondary); A-r4-rt-012 range", note: "Landbridge-class"}
+  - {id: "250", line_speed_kmh: 250, stock: intercity_250, source: "S-054 (landbridge.yaml design 250 km/h); A-r4-rt-003", note: "Landbridge-class"}
+  - {id: "300", line_speed_kmh: 300, stock: hsr_talgo350, source: "S-cp2-501 (HHR in-service 300 km/h); C-004 open", note: "HHR-class"}
+  - {id: "350", line_speed_kmh: 350, stock: hsr_talgo350, vmax_override_kmh: 350, source: "S-rj-010 (CR400 Fuxing 350 km/h commercial)", assumption_id: A-rj-005, note: "fastest commercial steel-wheel; Talgo-350 kinematics re-used with vmax 350"}
+# curves: v = sqrt(R (E + I) / 11.8) on the routed profile radius (the align.py rule, A-align-012),
+# recomputed on the joined path (waypoint kinks included) and capped at the class line speed
+curve_rule: {assumption_id: A-align-012}
+# grades are not in the running-time model (A-r4-rt-007: resistance not modelled; the timetable factor corrects)
+
+# --------------------------------------------------------------------------- door to door
+# indicative city-centre to city-centre, existing access-model parameters only (no change)
+door_to_door:
+  rail_access_min: {value: 20, range: [10, 30], assumption_id: A-mode-028}
+  rail_egress_min: {value: 20, range: [10, 30], assumption_id: A-mode-028}
+  rail_wait: {rule: "headway / 2 capped at wait_cap_min", headway_min_key: "access_network.yaml hypothetical_service.headway_min[line_type]", wait_cap_min: {value: 30, range: [15, 60], assumption_id: A-access-010}}
+  air_access_min: {value: 60, range: [45, 75], assumption_id: A-mode-028, note: "includes check-in, security and boarding"}
+  air_egress_min: {value: 30, range: [15, 45], assumption_id: A-mode-028}
+  air_block_model: {fixed_min: 30, km_per_min: 12.0, assumption_id: A-mode-029, airports: "airport-ruh-king-khalid and airport-jed-king-abdulaziz in cities/ksa/zones/economic_nodes.parquet (S-cp1-100; S-r1a-210, OSM positions)"}
+  air_airborne_bound_min: {value: 110, source: "Tariq, 6 Nov 2026 (prompt: flight of at most 1:50 airborne)"}
+
+# --------------------------------------------------------------------------- envelope
+envelope:
+  lower_h: {value: 2.0, source: "Tariq, 6 Nov 2026 (prompt: lower bound, 'almost impossible')"}
+  upper_h: {value: 9.0, source: "Tariq, 6 Nov 2026 (prompt: upper bound)"}

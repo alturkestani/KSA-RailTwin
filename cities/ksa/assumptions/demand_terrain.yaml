@@ -1,0 +1,57 @@
+# Terrain class from an open DEM (R3, Tariq's CP3 decision 8). Read by demand/terrain.py.
+# Every threshold carries an assumption id (docs/assumptions.md). DEM: Copernicus GLO-30
+# Public (COG on AWS Open Data, manifest row cop-dem-glo30-aws-2026-10-31); coastline: OSM
+# natural=coastline (manifest row osm-gcc-coastline-2026-10-14). Classes = common/schemas.py Terrain.
+# "produced using Copernicus WorldDEM-30 (c) DLR e.V. 2010-2014 and (c) Airbus Defence and Space
+#  GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved"
+version: 1
+
+dem:
+  product: Copernicus DEM GLO-30 Public (DSM, 1 arc-second, EGM2008 heights)
+  url_template: https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_{ns}{lat:02d}_00_{ew}{lon:03d}_00_DEM/Copernicus_DSM_COG_10_{ns}{lat:02d}_00_{ew}{lon:03d}_00_DEM.tif
+  missing_tile_fill_m: {value: 0.0, assumption_id: A-geo-022}   # readme: ocean has no tiles, "assume height values equal to zero"
+  target_res_m: 30              # resampled to the local UTM zone (bilinear) at this spacing
+
+extent:
+  # settlement extent = a disc around the register point; radius from population
+  radius_k_km_per_sqrt_person: {value: 0.02, assumption_id: A-geo-011}
+  radius_min_km: {value: 5.0, assumption_id: A-geo-012}
+  radius_max_km: {value: 15.0, assumption_id: A-geo-012}
+  radius_missing_pop_km: {value: 5.0, assumption_id: A-geo-012}
+
+smoothing:
+  # Copernicus is a surface model (buildings, palms); a median filter removes isolated spikes
+  median_filter_px: {value: 5, assumption_id: A-geo-013}
+  roughness_window_px: {value: 33, assumption_id: A-geo-014}   # ~1 km box mean; residual std = roughness
+
+coast:
+  source: OSM natural=coastline ways (GCC extract), haversine to vertices densified to 0.5 km
+  densify_km: 0.5
+
+rule:
+  # evaluated in this order (A-geo-021); the first that matches wins
+  order: [escarpment_mountain, sabkha, coastal, dunes, mixed, flat_desert]
+  escarpment_mountain:
+    slope_p90_deg_min: {value: 15.0, assumption_id: A-geo-015}
+    relief_m_min: {value: 300.0, assumption_id: A-geo-016}
+  sabkha:
+    # DEM signature only: very low, very flat ground near the sea; inland sabkhas are missed
+    coast_km_max: {value: 40.0, assumption_id: A-geo-017}
+    elev_mean_m_max: {value: 10.0, assumption_id: A-geo-017}
+    relief_m_max: {value: 8.0, assumption_id: A-geo-017}
+    slope_mean_deg_max: {value: 0.5, assumption_id: A-geo-017}
+  coastal:
+    coast_km_max: {value: 10.0, assumption_id: A-geo-018}
+  dunes:
+    # DEM signature only: slopes spread over the whole disc (median slope), moderate relief,
+    # short-wavelength roughness, no cliff; cannot tell a dune field from low rocky hills
+    slope_p50_deg_min: {value: 2.0, assumption_id: A-geo-019}
+    slope_p90_deg_max: {value: 15.0, assumption_id: A-geo-019}
+    relief_m_max: {value: 150.0, assumption_id: A-geo-019}
+    rough_m_min: {value: 6.0, assumption_id: A-geo-019}
+    slope_p90_over_p50_max: {value: 3.0, assumption_id: A-geo-019}   # dissected rock is spikier
+    elev_mean_m_max: {value: 1300.0, assumption_id: A-geo-019}       # Saudi sand seas lie lower
+  mixed:
+    slope_p90_deg_min: {value: 6.0, assumption_id: A-geo-020}
+    relief_m_min: {value: 100.0, assumption_id: A-geo-020}
+  flat_desert: otherwise

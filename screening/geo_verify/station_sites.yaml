@@ -1,0 +1,139 @@
+sites:
+- station_uid: hhr:jeddah
+  name_ar: السليمانية - جدة
+  lat: 21.517643
+  lon: 39.245363
+  method: imagery confirmation of the current point (Sentinel-2 TCI window, 3 x 3
+    km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: osm:way/485762503
+  uncertainty_km: null
+  accept: false
+  seen: 'Station roof and platform canopies at the window centre beside the HHR alignment
+    and the Haramain road: OSM site confirmed'
+- station_uid: sar-east-freight-legacy:dammam-port
+  name_ar: ميناء الملك عبدالعزيز بالدمام
+  lat: 26.428741
+  lon: 50.121524
+  method: imagery confirmation of the current point (Sentinel-2 TCI window, 3 x 3
+    km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: unlocated:track_node_nearest_to_osm:node/287865393 (snap 2.0 km)
+  uncertainty_km: null
+  accept: false
+  seen: 'Urban fabric with cloud over the east half; no port or yard identifiable:
+    inconclusive'
+- station_uid: sar-east-freight-legacy:al-ahsa
+  name_ar: الأحساء
+  lat: 25.390704
+  lon: 49.565712
+  method: imagery confirmation of the current point (Sentinel-2 TCI window, 3 x 3
+    km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: unlocated:track_node_nearest_to_osm:node/8487320543 (snap 0.4 km)
+  uncertainty_km: null
+  accept: false
+  seen: Not inspected in the time-box (window cached)
+- station_uid: sar-east-freight-legacy:riyadh-dry-port
+  name_ar: ميناء الرياض الجاف
+  lat: 24.642673
+  lon: 46.743604
+  method: imagery confirmation of the current point (Sentinel-2 TCI window, 3 x 3
+    km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: unlocated:track_node_nearest_to_osm:node/315358390 (snap 2.8 km)
+  uncertainty_km: null
+  accept: false
+  seen: 'Window on the scene edge (west half no data); a paved yard with parallel
+    sidings lies about 1 km north-west of the point: consistent with the dry port,
+    not confirmed'
+- station_uid: sar-north-freight:al-jalamid
+  name_ar: حزم الجلاميد
+  lat: 31.224245
+  lon: 39.969887
+  method: imagery confirmation of the current point (Sentinel-2 TCI window, 3 x 3
+    km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: unlocated:track_node_nearest_to_osm:node/1236741000 (snap 14.2
+    km)
+  uncertainty_km: null
+  accept: false
+  seen: 'Single track through open desert; no yard, siding or plant within 1.5 km:
+    the proxy is not the terminal'
+- station_uid: sar-north-freight:al-baithah
+  name_ar: البعيثة
+  lat: 27.653479
+  lon: 44.002713
+  method: imagery confirmation of the current point (Sentinel-2 TCI window, 3 x 3
+    km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: unlocated:track_node_nearest_to_osm:node/6784047594 (snap 9.5 km)
+  uncertainty_km: null
+  accept: false
+  seen: Track and roads only at the proxy point
+- station_uid: sar-north-freight:ras-al-khair
+  name_ar: رأس الخير
+  lat: 27.49239
+  lon: 49.213979
+  method: imagery confirmation of the current point (Sentinel-2 TCI window, 3 x 3
+    km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: unlocated:track_node_nearest_to_osm:node/1237806545 (snap 8.9 km)
+  uncertainty_km: null
+  accept: false
+  seen: 'Rail wye and loops inside the industrial city at the point; which loop is
+    the freight terminal is not determinable at 10 m: left unlocated'
+- station_uid: sar-north-freight:al-jalamid
+  variant: spur-end
+  lat: 31.4884683
+  lon: 39.9250479
+  method: nearest dead end of an OSM railway=rail way to the OSM place node, then
+    Sentinel-2 TCI window (3 x 3 km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - osm-gcc-places-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: osm_spur_end:node/8879771880+imagery:sentinel-2
+  uncertainty_km: 2.0
+  accept: true
+  seen: 'Curved rail loop/embankment on the east side and plant buildings to the north-west
+    of the spur end: consistent with a mine loading terminal'
+  confidence: medium
+  site_status: inferred_imagery
+  located: true
+  notes: Ma'aden phosphate terminal area inferred from the OSM spur end (28.7 km from
+    the Hazm al Jalamid place node) and Sentinel-2; operator site plan not found
+- station_uid: sar-north-freight:al-baithah
+  variant: spur-end
+  lat: 27.6650136
+  lon: 43.9942105
+  method: nearest dead end of an OSM railway=rail way to the OSM place node, then
+    Sentinel-2 TCI window (3 x 3 km)
+  inputs:
+  - osm-ksa-rail-extract-2026-10-14
+  - osm-gcc-places-extract-2026-10-14
+  - sentinel-2-l2a-cogs
+  location_method: osm_spur_end:node/5396737260+imagery:sentinel-2
+  uncertainty_km: 1.0
+  accept: true
+  seen: 'Balloon (teardrop) loading loop and a fenced facility compound at the spur
+    end: consistent with a mine loading terminal'
+  confidence: medium
+  site_status: inferred_imagery
+  located: true
+  notes: Loading loop inferred from the OSM spur end (10.9 km from the Al Ba`ithah
+    place node) and Sentinel-2; operator site plan not found

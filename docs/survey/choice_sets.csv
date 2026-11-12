@@ -1,0 +1,691 @@
+block,task,task_type,alternative,attribute,level_index,level_value,level_label_en,level_label_ar
+1,1,design,car,ivt,2,270,,
+1,1,design,car,cost,3,120,,
+1,1,design,rail,ivt,2,210,,
+1,1,design,rail,access,0,20,,
+1,1,design,rail,cost,3,180,,
+1,1,design,rail,headway,0,30,,
+1,1,design,rail,reliability,1,95,,
+1,1,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+1,1,design,rail,family_carriage,0,0,No,غير متوفرة
+1,1,design,rail,prayer,0,0,No,غير متوفر
+1,1,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,1,design,rail,shaded_transfer,1,1,Yes,متوفرة
+1,1,design,air,ivt,2,85,,
+1,1,design,air,access,2,120,,
+1,1,design,air,cost,0,180,,
+1,1,design,air,headway,0,60,,
+1,1,design,air,reliability,0,80,,
+1,1,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,1,design,bus,ivt,2,390,,
+1,1,design,bus,access,0,15,,
+1,1,design,bus,cost,0,60,,
+1,1,design,bus,headway,2,240,,
+1,1,design,bus,comfort,1,1,VIP,VIP
+1,2,design,car,ivt,2,270,,
+1,2,design,car,cost,3,120,,
+1,2,design,rail,ivt,2,210,,
+1,2,design,rail,access,2,60,,
+1,2,design,rail,cost,3,180,,
+1,2,design,rail,headway,2,120,,
+1,2,design,rail,reliability,0,80,,
+1,2,design,rail,comfort,1,1,Business,درجة الأعمال
+1,2,design,rail,family_carriage,0,0,No,غير متوفرة
+1,2,design,rail,prayer,0,0,No,غير متوفر
+1,2,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,2,design,rail,shaded_transfer,1,1,Yes,متوفرة
+1,2,design,air,ivt,2,85,,
+1,2,design,air,access,0,60,,
+1,2,design,air,cost,0,180,,
+1,2,design,air,headway,0,60,,
+1,2,design,air,reliability,1,95,,
+1,2,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,2,design,bus,ivt,2,390,,
+1,2,design,bus,access,0,15,,
+1,2,design,bus,cost,0,60,,
+1,2,design,bus,headway,2,240,,
+1,2,design,bus,comfort,0,0,Standard,عادية
+1,3,design,car,ivt,0,210,,
+1,3,design,car,cost,3,120,,
+1,3,design,rail,ivt,0,90,,
+1,3,design,rail,access,2,60,,
+1,3,design,rail,cost,0,60,,
+1,3,design,rail,headway,2,120,,
+1,3,design,rail,reliability,1,95,,
+1,3,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+1,3,design,rail,family_carriage,0,0,No,غير متوفرة
+1,3,design,rail,prayer,1,1,Yes,متوفر
+1,3,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,3,design,rail,shaded_transfer,0,0,No,غير متوفرة
+1,3,design,air,ivt,0,55,,
+1,3,design,air,access,0,60,,
+1,3,design,air,cost,0,180,,
+1,3,design,air,headway,0,60,,
+1,3,design,air,reliability,0,80,,
+1,3,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,3,design,bus,ivt,0,300,,
+1,3,design,bus,access,0,15,,
+1,3,design,bus,cost,0,60,,
+1,3,design,bus,headway,0,60,,
+1,3,design,bus,comfort,1,1,VIP,VIP
+1,4,design,car,ivt,0,210,,
+1,4,design,car,cost,3,120,,
+1,4,design,rail,ivt,2,210,,
+1,4,design,rail,access,2,60,,
+1,4,design,rail,cost,0,60,,
+1,4,design,rail,headway,2,120,,
+1,4,design,rail,reliability,0,80,,
+1,4,design,rail,comfort,1,1,Business,درجة الأعمال
+1,4,design,rail,family_carriage,0,0,No,غير متوفرة
+1,4,design,rail,prayer,1,1,Yes,متوفر
+1,4,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,4,design,rail,shaded_transfer,0,0,No,غير متوفرة
+1,4,design,air,ivt,2,85,,
+1,4,design,air,access,0,60,,
+1,4,design,air,cost,0,180,,
+1,4,design,air,headway,0,60,,
+1,4,design,air,reliability,1,95,,
+1,4,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,4,design,bus,ivt,0,300,,
+1,4,design,bus,access,0,15,,
+1,4,design,bus,cost,3,120,,
+1,4,design,bus,headway,0,60,,
+1,4,design,bus,comfort,0,0,Standard,عادية
+1,5,design,car,ivt,2,270,,
+1,5,design,car,cost,3,120,,
+1,5,design,rail,ivt,2,210,,
+1,5,design,rail,access,2,60,,
+1,5,design,rail,cost,3,180,,
+1,5,design,rail,headway,0,30,,
+1,5,design,rail,reliability,0,80,,
+1,5,design,rail,comfort,1,1,Business,درجة الأعمال
+1,5,design,rail,family_carriage,1,1,Yes,متوفرة
+1,5,design,rail,prayer,1,1,Yes,متوفر
+1,5,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,5,design,rail,shaded_transfer,1,1,Yes,متوفرة
+1,5,design,air,ivt,0,55,,
+1,5,design,air,access,0,60,,
+1,5,design,air,cost,0,180,,
+1,5,design,air,headway,2,240,,
+1,5,design,air,reliability,1,95,,
+1,5,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,5,design,bus,ivt,0,300,,
+1,5,design,bus,access,0,15,,
+1,5,design,bus,cost,0,60,,
+1,5,design,bus,headway,2,240,,
+1,5,design,bus,comfort,0,0,Standard,عادية
+1,6,design,car,ivt,2,270,,
+1,6,design,car,cost,3,120,,
+1,6,design,rail,ivt,2,210,,
+1,6,design,rail,access,2,60,,
+1,6,design,rail,cost,3,180,,
+1,6,design,rail,headway,0,30,,
+1,6,design,rail,reliability,1,95,,
+1,6,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+1,6,design,rail,family_carriage,1,1,Yes,متوفرة
+1,6,design,rail,prayer,1,1,Yes,متوفر
+1,6,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,6,design,rail,shaded_transfer,0,0,No,غير متوفرة
+1,6,design,air,ivt,0,55,,
+1,6,design,air,access,0,60,,
+1,6,design,air,cost,0,180,,
+1,6,design,air,headway,2,240,,
+1,6,design,air,reliability,0,80,,
+1,6,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,6,design,bus,ivt,2,390,,
+1,6,design,bus,access,0,15,,
+1,6,design,bus,cost,0,60,,
+1,6,design,bus,headway,0,60,,
+1,6,design,bus,comfort,1,1,VIP,VIP
+1,7,design,car,ivt,2,270,,
+1,7,design,car,cost,3,120,,
+1,7,design,rail,ivt,0,90,,
+1,7,design,rail,access,2,60,,
+1,7,design,rail,cost,3,180,,
+1,7,design,rail,headway,2,120,,
+1,7,design,rail,reliability,0,80,,
+1,7,design,rail,comfort,1,1,Business,درجة الأعمال
+1,7,design,rail,family_carriage,1,1,Yes,متوفرة
+1,7,design,rail,prayer,1,1,Yes,متوفر
+1,7,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,7,design,rail,shaded_transfer,1,1,Yes,متوفرة
+1,7,design,air,ivt,0,55,,
+1,7,design,air,access,0,60,,
+1,7,design,air,cost,0,180,,
+1,7,design,air,headway,0,60,,
+1,7,design,air,reliability,1,95,,
+1,7,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,7,design,bus,ivt,2,390,,
+1,7,design,bus,access,0,15,,
+1,7,design,bus,cost,0,60,,
+1,7,design,bus,headway,0,60,,
+1,7,design,bus,comfort,0,0,Standard,عادية
+1,8,design,car,ivt,0,210,,
+1,8,design,car,cost,3,120,,
+1,8,design,rail,ivt,2,210,,
+1,8,design,rail,access,2,60,,
+1,8,design,rail,cost,0,60,,
+1,8,design,rail,headway,2,120,,
+1,8,design,rail,reliability,1,95,,
+1,8,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+1,8,design,rail,family_carriage,1,1,Yes,متوفرة
+1,8,design,rail,prayer,1,1,Yes,متوفر
+1,8,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,8,design,rail,shaded_transfer,0,0,No,غير متوفرة
+1,8,design,air,ivt,0,55,,
+1,8,design,air,access,0,60,,
+1,8,design,air,cost,0,180,,
+1,8,design,air,headway,0,60,,
+1,8,design,air,reliability,0,80,,
+1,8,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,8,design,bus,ivt,0,300,,
+1,8,design,bus,access,0,15,,
+1,8,design,bus,cost,3,120,,
+1,8,design,bus,headway,0,60,,
+1,8,design,bus,comfort,1,1,VIP,VIP
+1,9,design,car,ivt,2,270,,
+1,9,design,car,cost,3,120,,
+1,9,design,rail,ivt,0,90,,
+1,9,design,rail,access,0,20,,
+1,9,design,rail,cost,3,180,,
+1,9,design,rail,headway,2,120,,
+1,9,design,rail,reliability,0,80,,
+1,9,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+1,9,design,rail,family_carriage,1,1,Yes,متوفرة
+1,9,design,rail,prayer,0,0,No,غير متوفر
+1,9,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,9,design,rail,shaded_transfer,0,0,No,غير متوفرة
+1,9,design,air,ivt,0,55,,
+1,9,design,air,access,2,120,,
+1,9,design,air,cost,0,180,,
+1,9,design,air,headway,0,60,,
+1,9,design,air,reliability,1,95,,
+1,9,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,9,design,bus,ivt,2,390,,
+1,9,design,bus,access,0,15,,
+1,9,design,bus,cost,0,60,,
+1,9,design,bus,headway,0,60,,
+1,9,design,bus,comfort,1,1,VIP,VIP
+1,10,dominance,car,ivt,2,270,,
+1,10,dominance,car,cost,3,120,,
+1,10,dominance,rail,ivt,0,90,,
+1,10,dominance,rail,access,0,20,,
+1,10,dominance,rail,cost,0,60,,
+1,10,dominance,rail,headway,0,30,,
+1,10,dominance,rail,reliability,1,95,,
+1,10,dominance,rail,comfort,1,1,Business,درجة الأعمال
+1,10,dominance,rail,family_carriage,1,1,Yes,متوفرة
+1,10,dominance,rail,prayer,1,1,Yes,متوفر
+1,10,dominance,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+1,10,dominance,rail,shaded_transfer,1,1,Yes,متوفرة
+1,10,dominance,air,ivt,2,85,,
+1,10,dominance,air,access,2,120,,
+1,10,dominance,air,cost,3,420,,
+1,10,dominance,air,headway,2,240,,
+1,10,dominance,air,reliability,0,80,,
+1,10,dominance,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+1,10,dominance,bus,ivt,2,390,,
+1,10,dominance,bus,access,2,45,,
+1,10,dominance,bus,cost,3,120,,
+1,10,dominance,bus,headway,2,240,,
+1,10,dominance,bus,comfort,0,0,Standard,عادية
+2,1,design,car,ivt,2,270,,
+2,1,design,car,cost,3,120,,
+2,1,design,rail,ivt,2,210,,
+2,1,design,rail,access,2,60,,
+2,1,design,rail,cost,2,140,,
+2,1,design,rail,headway,2,120,,
+2,1,design,rail,reliability,0,80,,
+2,1,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+2,1,design,rail,family_carriage,1,1,Yes,متوفرة
+2,1,design,rail,prayer,0,0,No,غير متوفر
+2,1,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,1,design,rail,shaded_transfer,0,0,No,غير متوفرة
+2,1,design,air,ivt,2,85,,
+2,1,design,air,access,0,60,,
+2,1,design,air,cost,0,180,,
+2,1,design,air,headway,2,240,,
+2,1,design,air,reliability,1,95,,
+2,1,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,1,design,bus,ivt,0,300,,
+2,1,design,bus,access,0,15,,
+2,1,design,bus,cost,0,60,,
+2,1,design,bus,headway,0,60,,
+2,1,design,bus,comfort,1,1,VIP,VIP
+2,2,design,car,ivt,2,270,,
+2,2,design,car,cost,3,120,,
+2,2,design,rail,ivt,2,210,,
+2,2,design,rail,access,0,20,,
+2,2,design,rail,cost,3,180,,
+2,2,design,rail,headway,0,30,,
+2,2,design,rail,reliability,1,95,,
+2,2,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+2,2,design,rail,family_carriage,0,0,No,غير متوفرة
+2,2,design,rail,prayer,0,0,No,غير متوفر
+2,2,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,2,design,rail,shaded_transfer,0,0,No,غير متوفرة
+2,2,design,air,ivt,0,55,,
+2,2,design,air,access,2,120,,
+2,2,design,air,cost,0,180,,
+2,2,design,air,headway,0,60,,
+2,2,design,air,reliability,0,80,,
+2,2,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,2,design,bus,ivt,0,300,,
+2,2,design,bus,access,0,15,,
+2,2,design,bus,cost,0,60,,
+2,2,design,bus,headway,2,240,,
+2,2,design,bus,comfort,1,1,VIP,VIP
+2,3,design,car,ivt,2,270,,
+2,3,design,car,cost,3,120,,
+2,3,design,rail,ivt,0,90,,
+2,3,design,rail,access,2,60,,
+2,3,design,rail,cost,3,180,,
+2,3,design,rail,headway,2,120,,
+2,3,design,rail,reliability,1,95,,
+2,3,design,rail,comfort,1,1,Business,درجة الأعمال
+2,3,design,rail,family_carriage,1,1,Yes,متوفرة
+2,3,design,rail,prayer,0,0,No,غير متوفر
+2,3,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,3,design,rail,shaded_transfer,0,0,No,غير متوفرة
+2,3,design,air,ivt,2,85,,
+2,3,design,air,access,0,60,,
+2,3,design,air,cost,0,180,,
+2,3,design,air,headway,0,60,,
+2,3,design,air,reliability,0,80,,
+2,3,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,3,design,bus,ivt,0,300,,
+2,3,design,bus,access,0,15,,
+2,3,design,bus,cost,0,60,,
+2,3,design,bus,headway,2,240,,
+2,3,design,bus,comfort,0,0,Standard,عادية
+2,4,design,car,ivt,2,270,,
+2,4,design,car,cost,3,120,,
+2,4,design,rail,ivt,2,210,,
+2,4,design,rail,access,0,20,,
+2,4,design,rail,cost,3,180,,
+2,4,design,rail,headway,2,120,,
+2,4,design,rail,reliability,1,95,,
+2,4,design,rail,comfort,1,1,Business,درجة الأعمال
+2,4,design,rail,family_carriage,0,0,No,غير متوفرة
+2,4,design,rail,prayer,0,0,No,غير متوفر
+2,4,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,4,design,rail,shaded_transfer,0,0,No,غير متوفرة
+2,4,design,air,ivt,0,55,,
+2,4,design,air,access,2,120,,
+2,4,design,air,cost,0,180,,
+2,4,design,air,headway,0,60,,
+2,4,design,air,reliability,0,80,,
+2,4,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,4,design,bus,ivt,2,390,,
+2,4,design,bus,access,0,15,,
+2,4,design,bus,cost,0,60,,
+2,4,design,bus,headway,0,60,,
+2,4,design,bus,comfort,0,0,Standard,عادية
+2,5,design,car,ivt,0,210,,
+2,5,design,car,cost,3,120,,
+2,5,design,rail,ivt,2,210,,
+2,5,design,rail,access,2,60,,
+2,5,design,rail,cost,0,60,,
+2,5,design,rail,headway,0,30,,
+2,5,design,rail,reliability,0,80,,
+2,5,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+2,5,design,rail,family_carriage,0,0,No,غير متوفرة
+2,5,design,rail,prayer,0,0,No,غير متوفر
+2,5,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,5,design,rail,shaded_transfer,0,0,No,غير متوفرة
+2,5,design,air,ivt,0,55,,
+2,5,design,air,access,0,60,,
+2,5,design,air,cost,0,180,,
+2,5,design,air,headway,2,240,,
+2,5,design,air,reliability,1,95,,
+2,5,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,5,design,bus,ivt,2,390,,
+2,5,design,bus,access,0,15,,
+2,5,design,bus,cost,3,120,,
+2,5,design,bus,headway,0,60,,
+2,5,design,bus,comfort,1,1,VIP,VIP
+2,6,design,car,ivt,2,270,,
+2,6,design,car,cost,3,120,,
+2,6,design,rail,ivt,2,210,,
+2,6,design,rail,access,0,20,,
+2,6,design,rail,cost,3,180,,
+2,6,design,rail,headway,2,120,,
+2,6,design,rail,reliability,1,95,,
+2,6,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+2,6,design,rail,family_carriage,0,0,No,غير متوفرة
+2,6,design,rail,prayer,1,1,Yes,متوفر
+2,6,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,6,design,rail,shaded_transfer,1,1,Yes,متوفرة
+2,6,design,air,ivt,2,85,,
+2,6,design,air,access,0,60,,
+2,6,design,air,cost,0,180,,
+2,6,design,air,headway,2,240,,
+2,6,design,air,reliability,0,80,,
+2,6,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,6,design,bus,ivt,0,300,,
+2,6,design,bus,access,2,45,,
+2,6,design,bus,cost,0,60,,
+2,6,design,bus,headway,0,60,,
+2,6,design,bus,comfort,1,1,VIP,VIP
+2,7,design,car,ivt,0,210,,
+2,7,design,car,cost,0,60,,
+2,7,design,rail,ivt,0,90,,
+2,7,design,rail,access,2,60,,
+2,7,design,rail,cost,3,180,,
+2,7,design,rail,headway,0,30,,
+2,7,design,rail,reliability,0,80,,
+2,7,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+2,7,design,rail,family_carriage,0,0,No,غير متوفرة
+2,7,design,rail,prayer,0,0,No,غير متوفر
+2,7,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,7,design,rail,shaded_transfer,1,1,Yes,متوفرة
+2,7,design,air,ivt,2,85,,
+2,7,design,air,access,0,60,,
+2,7,design,air,cost,1,260,,
+2,7,design,air,headway,0,60,,
+2,7,design,air,reliability,1,95,,
+2,7,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,7,design,bus,ivt,0,300,,
+2,7,design,bus,access,0,15,,
+2,7,design,bus,cost,0,60,,
+2,7,design,bus,headway,2,240,,
+2,7,design,bus,comfort,1,1,VIP,VIP
+2,8,design,car,ivt,0,210,,
+2,8,design,car,cost,0,60,,
+2,8,design,rail,ivt,0,90,,
+2,8,design,rail,access,0,20,,
+2,8,design,rail,cost,3,180,,
+2,8,design,rail,headway,2,120,,
+2,8,design,rail,reliability,1,95,,
+2,8,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+2,8,design,rail,family_carriage,1,1,Yes,متوفرة
+2,8,design,rail,prayer,1,1,Yes,متوفر
+2,8,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,8,design,rail,shaded_transfer,1,1,Yes,متوفرة
+2,8,design,air,ivt,0,55,,
+2,8,design,air,access,2,120,,
+2,8,design,air,cost,0,180,,
+2,8,design,air,headway,0,60,,
+2,8,design,air,reliability,0,80,,
+2,8,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,8,design,bus,ivt,0,300,,
+2,8,design,bus,access,2,45,,
+2,8,design,bus,cost,0,60,,
+2,8,design,bus,headway,2,240,,
+2,8,design,bus,comfort,1,1,VIP,VIP
+2,9,design,car,ivt,0,210,,
+2,9,design,car,cost,3,120,,
+2,9,design,rail,ivt,0,90,,
+2,9,design,rail,access,2,60,,
+2,9,design,rail,cost,3,180,,
+2,9,design,rail,headway,0,30,,
+2,9,design,rail,reliability,1,95,,
+2,9,design,rail,comfort,1,1,Business,درجة الأعمال
+2,9,design,rail,family_carriage,1,1,Yes,متوفرة
+2,9,design,rail,prayer,0,0,No,غير متوفر
+2,9,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,9,design,rail,shaded_transfer,0,0,No,غير متوفرة
+2,9,design,air,ivt,2,85,,
+2,9,design,air,access,0,60,,
+2,9,design,air,cost,0,180,,
+2,9,design,air,headway,0,60,,
+2,9,design,air,reliability,0,80,,
+2,9,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,9,design,bus,ivt,0,300,,
+2,9,design,bus,access,0,15,,
+2,9,design,bus,cost,0,60,,
+2,9,design,bus,headway,2,240,,
+2,9,design,bus,comfort,0,0,Standard,عادية
+2,10,dominance,car,ivt,2,270,,
+2,10,dominance,car,cost,3,120,,
+2,10,dominance,rail,ivt,0,90,,
+2,10,dominance,rail,access,0,20,,
+2,10,dominance,rail,cost,0,60,,
+2,10,dominance,rail,headway,0,30,,
+2,10,dominance,rail,reliability,1,95,,
+2,10,dominance,rail,comfort,1,1,Business,درجة الأعمال
+2,10,dominance,rail,family_carriage,1,1,Yes,متوفرة
+2,10,dominance,rail,prayer,1,1,Yes,متوفر
+2,10,dominance,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+2,10,dominance,rail,shaded_transfer,1,1,Yes,متوفرة
+2,10,dominance,air,ivt,2,85,,
+2,10,dominance,air,access,2,120,,
+2,10,dominance,air,cost,3,420,,
+2,10,dominance,air,headway,2,240,,
+2,10,dominance,air,reliability,0,80,,
+2,10,dominance,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+2,10,dominance,bus,ivt,2,390,,
+2,10,dominance,bus,access,2,45,,
+2,10,dominance,bus,cost,3,120,,
+2,10,dominance,bus,headway,2,240,,
+2,10,dominance,bus,comfort,0,0,Standard,عادية
+3,1,design,car,ivt,2,270,,
+3,1,design,car,cost,3,120,,
+3,1,design,rail,ivt,2,210,,
+3,1,design,rail,access,0,20,,
+3,1,design,rail,cost,3,180,,
+3,1,design,rail,headway,2,120,,
+3,1,design,rail,reliability,0,80,,
+3,1,design,rail,comfort,1,1,Business,درجة الأعمال
+3,1,design,rail,family_carriage,0,0,No,غير متوفرة
+3,1,design,rail,prayer,1,1,Yes,متوفر
+3,1,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,1,design,rail,shaded_transfer,0,0,No,غير متوفرة
+3,1,design,air,ivt,2,85,,
+3,1,design,air,access,2,120,,
+3,1,design,air,cost,0,180,,
+3,1,design,air,headway,2,240,,
+3,1,design,air,reliability,1,95,,
+3,1,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,1,design,bus,ivt,0,300,,
+3,1,design,bus,access,2,45,,
+3,1,design,bus,cost,0,60,,
+3,1,design,bus,headway,0,60,,
+3,1,design,bus,comfort,0,0,Standard,عادية
+3,2,design,car,ivt,0,210,,
+3,2,design,car,cost,3,120,,
+3,2,design,rail,ivt,2,210,,
+3,2,design,rail,access,0,20,,
+3,2,design,rail,cost,3,180,,
+3,2,design,rail,headway,2,120,,
+3,2,design,rail,reliability,0,80,,
+3,2,design,rail,comfort,1,1,Business,درجة الأعمال
+3,2,design,rail,family_carriage,1,1,Yes,متوفرة
+3,2,design,rail,prayer,0,0,No,غير متوفر
+3,2,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,2,design,rail,shaded_transfer,1,1,Yes,متوفرة
+3,2,design,air,ivt,0,55,,
+3,2,design,air,access,2,120,,
+3,2,design,air,cost,0,180,,
+3,2,design,air,headway,0,60,,
+3,2,design,air,reliability,1,95,,
+3,2,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,2,design,bus,ivt,2,390,,
+3,2,design,bus,access,2,45,,
+3,2,design,bus,cost,0,60,,
+3,2,design,bus,headway,0,60,,
+3,2,design,bus,comfort,0,0,Standard,عادية
+3,3,design,car,ivt,2,270,,
+3,3,design,car,cost,3,120,,
+3,3,design,rail,ivt,0,90,,
+3,3,design,rail,access,2,60,,
+3,3,design,rail,cost,3,180,,
+3,3,design,rail,headway,2,120,,
+3,3,design,rail,reliability,0,80,,
+3,3,design,rail,comfort,1,1,Business,درجة الأعمال
+3,3,design,rail,family_carriage,0,0,No,غير متوفرة
+3,3,design,rail,prayer,1,1,Yes,متوفر
+3,3,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,3,design,rail,shaded_transfer,0,0,No,غير متوفرة
+3,3,design,air,ivt,0,55,,
+3,3,design,air,access,0,60,,
+3,3,design,air,cost,0,180,,
+3,3,design,air,headway,0,60,,
+3,3,design,air,reliability,1,95,,
+3,3,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,3,design,bus,ivt,2,390,,
+3,3,design,bus,access,0,15,,
+3,3,design,bus,cost,0,60,,
+3,3,design,bus,headway,0,60,,
+3,3,design,bus,comfort,0,0,Standard,عادية
+3,4,design,car,ivt,2,270,,
+3,4,design,car,cost,3,120,,
+3,4,design,rail,ivt,2,210,,
+3,4,design,rail,access,2,60,,
+3,4,design,rail,cost,3,180,,
+3,4,design,rail,headway,0,30,,
+3,4,design,rail,reliability,1,95,,
+3,4,design,rail,comfort,1,1,Business,درجة الأعمال
+3,4,design,rail,family_carriage,0,0,No,غير متوفرة
+3,4,design,rail,prayer,1,1,Yes,متوفر
+3,4,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,4,design,rail,shaded_transfer,1,1,Yes,متوفرة
+3,4,design,air,ivt,0,55,,
+3,4,design,air,access,0,60,,
+3,4,design,air,cost,0,180,,
+3,4,design,air,headway,0,60,,
+3,4,design,air,reliability,0,80,,
+3,4,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,4,design,bus,ivt,0,300,,
+3,4,design,bus,access,0,15,,
+3,4,design,bus,cost,0,60,,
+3,4,design,bus,headway,2,240,,
+3,4,design,bus,comfort,0,0,Standard,عادية
+3,5,design,car,ivt,2,270,,
+3,5,design,car,cost,3,120,,
+3,5,design,rail,ivt,2,210,,
+3,5,design,rail,access,2,60,,
+3,5,design,rail,cost,0,60,,
+3,5,design,rail,headway,2,120,,
+3,5,design,rail,reliability,1,95,,
+3,5,design,rail,comfort,1,1,Business,درجة الأعمال
+3,5,design,rail,family_carriage,1,1,Yes,متوفرة
+3,5,design,rail,prayer,0,0,No,غير متوفر
+3,5,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,5,design,rail,shaded_transfer,1,1,Yes,متوفرة
+3,5,design,air,ivt,0,55,,
+3,5,design,air,access,0,60,,
+3,5,design,air,cost,0,180,,
+3,5,design,air,headway,0,60,,
+3,5,design,air,reliability,0,80,,
+3,5,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,5,design,bus,ivt,0,300,,
+3,5,design,bus,access,0,15,,
+3,5,design,bus,cost,3,120,,
+3,5,design,bus,headway,0,60,,
+3,5,design,bus,comfort,0,0,Standard,عادية
+3,6,design,car,ivt,2,270,,
+3,6,design,car,cost,3,120,,
+3,6,design,rail,ivt,0,90,,
+3,6,design,rail,access,2,60,,
+3,6,design,rail,cost,3,180,,
+3,6,design,rail,headway,2,120,,
+3,6,design,rail,reliability,1,95,,
+3,6,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+3,6,design,rail,family_carriage,0,0,No,غير متوفرة
+3,6,design,rail,prayer,1,1,Yes,متوفر
+3,6,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,6,design,rail,shaded_transfer,1,1,Yes,متوفرة
+3,6,design,air,ivt,2,85,,
+3,6,design,air,access,0,60,,
+3,6,design,air,cost,0,180,,
+3,6,design,air,headway,0,60,,
+3,6,design,air,reliability,0,80,,
+3,6,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,6,design,bus,ivt,2,390,,
+3,6,design,bus,access,0,15,,
+3,6,design,bus,cost,0,60,,
+3,6,design,bus,headway,2,240,,
+3,6,design,bus,comfort,1,1,VIP,VIP
+3,7,design,car,ivt,2,270,,
+3,7,design,car,cost,3,120,,
+3,7,design,rail,ivt,2,210,,
+3,7,design,rail,access,0,20,,
+3,7,design,rail,cost,3,180,,
+3,7,design,rail,headway,0,30,,
+3,7,design,rail,reliability,0,80,,
+3,7,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+3,7,design,rail,family_carriage,1,1,Yes,متوفرة
+3,7,design,rail,prayer,1,1,Yes,متوفر
+3,7,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,7,design,rail,shaded_transfer,0,0,No,غير متوفرة
+3,7,design,air,ivt,2,85,,
+3,7,design,air,access,2,120,,
+3,7,design,air,cost,0,180,,
+3,7,design,air,headway,0,60,,
+3,7,design,air,reliability,1,95,,
+3,7,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,7,design,bus,ivt,2,390,,
+3,7,design,bus,access,0,15,,
+3,7,design,bus,cost,0,60,,
+3,7,design,bus,headway,2,240,,
+3,7,design,bus,comfort,1,1,VIP,VIP
+3,8,design,car,ivt,0,210,,
+3,8,design,car,cost,3,120,,
+3,8,design,rail,ivt,2,210,,
+3,8,design,rail,access,2,60,,
+3,8,design,rail,cost,0,60,,
+3,8,design,rail,headway,2,120,,
+3,8,design,rail,reliability,0,80,,
+3,8,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+3,8,design,rail,family_carriage,1,1,Yes,متوفرة
+3,8,design,rail,prayer,1,1,Yes,متوفر
+3,8,design,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,8,design,rail,shaded_transfer,1,1,Yes,متوفرة
+3,8,design,air,ivt,2,85,,
+3,8,design,air,access,0,60,,
+3,8,design,air,cost,0,180,,
+3,8,design,air,headway,0,60,,
+3,8,design,air,reliability,1,95,,
+3,8,design,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,8,design,bus,ivt,2,390,,
+3,8,design,bus,access,0,15,,
+3,8,design,bus,cost,0,60,,
+3,8,design,bus,headway,0,60,,
+3,8,design,bus,comfort,1,1,VIP,VIP
+3,9,design,car,ivt,0,210,,
+3,9,design,car,cost,3,120,,
+3,9,design,rail,ivt,0,90,,
+3,9,design,rail,access,2,60,,
+3,9,design,rail,cost,0,60,,
+3,9,design,rail,headway,2,120,,
+3,9,design,rail,reliability,0,80,,
+3,9,design,rail,comfort,0,0,Economy,الدرجة الاقتصادية
+3,9,design,rail,family_carriage,0,0,No,غير متوفرة
+3,9,design,rail,prayer,0,0,No,غير متوفر
+3,9,design,rail,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,9,design,rail,shaded_transfer,1,1,Yes,متوفرة
+3,9,design,air,ivt,0,55,,
+3,9,design,air,access,0,60,,
+3,9,design,air,cost,0,180,,
+3,9,design,air,headway,0,60,,
+3,9,design,air,reliability,1,95,,
+3,9,design,air,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,9,design,bus,ivt,0,300,,
+3,9,design,bus,access,0,15,,
+3,9,design,bus,cost,3,120,,
+3,9,design,bus,headway,0,60,,
+3,9,design,bus,comfort,1,1,VIP,VIP
+3,10,dominance,car,ivt,2,270,,
+3,10,dominance,car,cost,3,120,,
+3,10,dominance,rail,ivt,0,90,,
+3,10,dominance,rail,access,0,20,,
+3,10,dominance,rail,cost,0,60,,
+3,10,dominance,rail,headway,0,30,,
+3,10,dominance,rail,reliability,1,95,,
+3,10,dominance,rail,comfort,1,1,Business,درجة الأعمال
+3,10,dominance,rail,family_carriage,1,1,Yes,متوفرة
+3,10,dominance,rail,prayer,1,1,Yes,متوفر
+3,10,dominance,rail,luggage,1,1,Cabin bag + one large suitcase,حقيبة يد + حقيبة سفر كبيرة واحدة
+3,10,dominance,rail,shaded_transfer,1,1,Yes,متوفرة
+3,10,dominance,air,ivt,2,85,,
+3,10,dominance,air,access,2,120,,
+3,10,dominance,air,cost,3,420,,
+3,10,dominance,air,headway,2,240,,
+3,10,dominance,air,reliability,0,80,,
+3,10,dominance,air,luggage,0,0,Cabin bag only,حقيبة يد فقط
+3,10,dominance,bus,ivt,2,390,,
+3,10,dominance,bus,access,2,45,,
+3,10,dominance,bus,cost,3,120,,
+3,10,dominance,bus,headway,2,240,,
+3,10,dominance,bus,comfort,0,0,Standard,عادية

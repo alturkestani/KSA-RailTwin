@@ -1,0 +1,13 @@
+# > **Document version:** cities/ksa/assumptions/modechoice.yaml v0.1 | 31 Oct 2026 | Author: INTEGRATE_R3 | Status: draft
+# Thin include: the name every scenario file uses for `mode_choice_params` (scenarios/S*.yaml, written by
+# screening/corridors.py). It holds no values. The mode-choice model reads the two files below
+# (modechoice/coefficients.py): the R1d literature priors (utility coefficients, A-mode-001…020) and the
+# R3 parameters the priors lack (purpose treatment, car cost, access, availability, fares; A-mode-021…041).
+# Label: "coefficients literature-based until survey results exist";
+#        "synthetic demand, uncalibrated: scenario comparison, not a forecast".
+version: "0.1"
+kind: include
+label: "coefficients literature-based until survey results exist"
+include:
+  - cities/ksa/assumptions/mode_choice_priors.yaml
+  - cities/ksa/assumptions/mode_choice_r3.yaml

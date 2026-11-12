@@ -1,0 +1,66 @@
+{
+ "id": "S2-trunk_gap-tabuk-yanbu",
+ "line_type": "mixed",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 608.104,
+ "straight_km_legs": 502.325,
+ "straight_km_end_to_end": 502.325,
+ "detour_ratio": 1.2106,
+ "max_grade_cap": 0.0125,
+ "design_kmh": 250.0,
+ "r_min_m": 4861.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 17.797,
+ "viaduct_km": 13.198,
+ "earthworks_km": 232.363,
+ "at_grade_km": 344.747,
+ "tunnel_share": 0.02927,
+ "viaduct_share": 0.0217,
+ "fill_m3": 21078400.0,
+ "cut_m3": 28525900.0,
+ "formation_max_grade": 0.01251,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.2836,
+ "elev_min_m": 3.4,
+ "elev_max_m": 1110.7,
+ "terrain_shares": {
+  "coastal": 0.0165,
+  "escarpment_mountain": 0.1412,
+  "flat_desert": 0.3708,
+  "mixed": 0.4658,
+  "sabkha": 0.0056
+ },
+ "area_km": {
+  "urban": 20.447,
+  "builtup": 19.747,
+  "protected": 9.898,
+  "military": 4.099,
+  "sand": 0.0,
+  "sabkha": 3.399,
+  "waterway": 23.696,
+  "highway": 37.744
+ },
+ "wadi_crossings_osm": 136,
+ "speed_restrictions": [
+  {
+   "from_km": 240.412,
+   "to_km": 242.712,
+   "kmh": 190.0
+  }
+ ],
+ "restricted_km": 2.3,
+ "min_curve_kmh": 190.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "tabuk": 0.0,
+  "yanbu": 608.104
+ },
+ "status": "routed",
+ "stations_key": "d9c3d6fbdc9d89ad",
+ "geojson": "cities/ksa/alignments/S2-trunk_gap-tabuk-yanbu.geojson",
+ "run": "runs/align/corridors-s1/S2-trunk_gap-tabuk-yanbu",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

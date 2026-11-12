@@ -1,0 +1,12 @@
+# gitleaks configuration (PUBLISH_PREP, 12 Nov 2026): the default rules plus one narrow allowlist.
+# `stations_key` in cities/ksa/alignments*/*.json is a 16-hex digest of a corridor's station list
+# (screening.corridors.stations_key), not a secret; gitleaks' generic-api-key rule flags 6 of them.
+title = "KSA Rail Twin"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "stations_key: station-list digest, not a credential"
+regexTarget = "line"
+regexes = ['''"stations_key": "[0-9a-f]{16}"''']

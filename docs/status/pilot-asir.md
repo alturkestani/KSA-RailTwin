@@ -1,0 +1,19 @@
+> **Document version:** docs/status/pilot-asir.md v1.0 | 30 Oct 2026 | Author: region-scout (pilot, PILOT_REGION_ASIR) | Status: draft
+
+# Status: pilot-asir (track PILOT_REGION_ASIR)
+
+## PILOT_REGION_ASIR block, 30 Oct 2026
+
+- **Rows written:** 18 (one centre row per governorate). Parquet and CSV agree (same 18 ids and columns); validated by `common.schemas.load_region_register` (`screening.region_sweep` does not exist in this worktree; this is the validation).
+- **Governorates:** GASTAT primary count not reached (`portal.saudicensus.sa` DNS failure, 30 Oct 2026; S-072, S-090). Governorates per S-asir-001 (citypopulation.de crediting GASTAT): **18**. Governorates listed in the register: **18**. Discrepancy flagged: Wikipedia EN and AR list 17; Saudipedia 18 plus Abha (docs/gastat-regions.md). Not resolved.
+- **Towns >= 50k:** 5 centre rows (Abha 334,290; Ahad Rafidah 79,202; Bisha 115,537; Khamis Mushait 535,065; Muhayil 97,967). No non-centre settlement in the census place table reaches 50k. Three governorate totals at or above 50k have no matching centre at or above 50k (Balqarn, Rijal Alma, Sarat Abidah): Needs Opus judgement.
+- **Sample of 5k–50k towns:** 5 rows with `pilot_sample: true` (Tanumah, Tathlith, Sarat Abidah, Al-Majaridah, Fir'ah Tarib), each with a reason. The near-rail stratum (under 25 km) is empty: no Asir centre is within 25 km of any station used. The far stratum (over 100 km) is covered. No sampled town has a sourced economic role.
+- **Exclusions:** 1 (Balqarn centre: unresolved in OSM; coordinates provisional; screened false with reason).
+- **Facts:** verified (local OSM file, S-asir-003/004): coordinates and OSM ids for all 18 centres and the existing-station nodes. Secondary (aggregators, search summaries): populations (S-asir-001), Landbridge station names (S-asir-006, conflicting), airport and base roles (S-asir-008), Bisha exploration (S-asir-009), Rijal Almaa (S-asir-010), Abha terrain (S-asir-007). Unverified: GASTAT primary counts and populations (S-072, S-090); Jeddah Al-Sulaymaniyah coordinate (omitted); all road distances (not computed; R1a).
+- **Elapsed:** not measured.
+- **Checks run (30 Oct 2026):** `common.docver check` on the three new docs: OK (3 files). `common.docver check docs` from this worktree reports "0 files": it drops any path containing `.worktrees`, so it checks nothing here (bug in `common/docver.py` `iter_md`, not fixed: outside the pilot's ownership; coordinator to decide). Ruff check and format clean on `common/schemas.py`; pytest passes; the register re-loads with 18 rows in both Parquet and CSV, same ids; 0 populations without a source; 0 roles without a source; no committed line labelled existing.
+- **Schema change (common/schemas.py, additive):** `pop_type` accepts `secondary`; new optional fields `threshold_50k`, `pilot_sample`, `pilot_reason`, `distance_method`, `primary_to_find`; `TAG_50K`. Needed because the brief asks for these fields and the aggregator tier, and the schema had neither. Existing rows and tests are unaffected (new fields default off).
+- **Needs Opus judgement (see docs/regions/pilot-asir.md):** (1) Balqarn centre; (2) Al-Harjah centre (three candidate nodes); (3) whether governorate totals at or above 50k tag a settlement; (4) Fir'ah Tarib as the Tarib centre (name match only); (5) Al-Amwah Arabic name and centre population; (6) Bariq and Rijal Alma centre populations (not in the place table); (7) terrain for non-Abha centres (assumed `mixed`); (8) Bisha mining role is exploration only.
+- **Not done in this pilot (by brief):** no downloads over 50 MB; no grids or PBF extracts; no road skims; the builder script is in /tmp (outside the repo) and is not committed; re-running needs it re-created from the register and this status (the rows are fully written in the Parquet).
+
+PILOT_REGION_ASIR: done

@@ -1,0 +1,30 @@
+# > **Document version:** cities/ksa/assumptions/r6v3_variants.yaml v1.2 | 4 Nov 2026 | Author: INTEGRATE_R6_V3 (register pointer); R6_V3 builder (optimizer) | Status: draft
+# R6_V3 variant surface, pruning rules and the national reach column (optimise.variants).
+# Every value is a registered assumption (docs/assumptions.md, A-r6-1xx; folded from the r6v3 fragment at INTEGRATE_R6_V3).
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+surface:
+  # one variant field changed at a time on every searchable line corridor (station additions have none)
+  line_type: {value: "every class of LINE_TYPES other than the corridor's own that passes the A-r6-004 feasibility check", assumption: A-r6-101}
+  electrified: {value: [false], note: "R4 costing default is true (A-r4-cost-002)", assumption: A-r6-101}
+  drop_stations: {value: "each intermediate station alone", assumption: A-r6-101}
+  track: {value: [single], note: "R4 costing default is double (A-r4-cost-001)", assumption: A-r6-102}
+pruning:
+  # track has no term in the frozen cost or demand model: one demonstration run, the rest not scored
+  track_demonstration_corridor: {value: S3-branch_spur-al-kharj, assumption: A-r6-102}
+  # second stage: the corridor's best line-type variant combined with electrified false, only where
+  # both single-field variants beat the base corridor at their best phase (robust NPV)
+  combine: {value: "best line type x electrified false, where both improve on the base", assumption: A-r6-103}
+search:
+  # NSGA-II restart cap: with 214 options the front keeps gaining near-equal points, so the R6 stop
+  # rule (front unchanged over 2 restarts) may not trigger; R6 (v2) needed 6-16 restarts
+  max_restarts: {value: 30, assumption: A-r6-106}
+  # full-judge re-score set per budget: max robust NPV, max reach, these capex quantiles of the
+  # combined front, and the best point holding a variant (the R6 rule plus the variant point)
+  rescore_capex_quantiles: {value: 6, assumption: A-r6-107}
+compute:
+  library_parallel_runs: {value: 6, note: "judge processes in parallel (1 worker each); compute setting, not a model value"}
+national_reach:
+  # reported column only (CP7-5), never in the score
+  bands_min: {value: [60, 120], assumption: A-r6-104}
+  rule: {value: "zone reached if (road minutes to its nearest station of S1 + layout, excluding connector-only lines, + terminal minutes) x summer factor <= band; the 90-min station access cap (A-demand-045) is not applied (the cap-limited 120-min figure is reported beside it)", assumption: A-r6-104}
+  population: {value: "2025, un_wpp_medium_gastat2024 (access.isochrones.POP), 507 zones", assumption: A-r6-104}

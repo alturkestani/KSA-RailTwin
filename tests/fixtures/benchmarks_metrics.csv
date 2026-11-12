@@ -1,0 +1,4 @@
+row_id,slug,system,metric,scope,value,value_low,value_high,unit,currency,price_year,year_observed,source_id,grade,notes,country
+M-fx-001,fixture_a,Fixture HSR A,cost_per_km,Fixture line 1,10,,,m/km,EUR,2010,,S-fixture-001,A,fixture,FXA
+M-fx-002,fixture_a,Fixture HSR A,ridership_vs_forecast,Fixture line 1 year 5,0.8,,,ratio,n/a,n/a,2015,S-fixture-002,B,fixture,FXA
+M-fx-003,fixture_b,Fixture HSR B,cost_per_km,Fixture line 2,30,,,m/km,USD,2020,,S-fixture-003,D,fixture,

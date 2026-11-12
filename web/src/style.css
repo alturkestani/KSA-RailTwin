@@ -1,0 +1,65 @@
+/* Neutral styling, open fonts only (Noto Sans, Noto Naskh Arabic; SIL OFL 1.1). No tracking. */
+:root {
+  font-family: "Noto Sans", "Noto Naskh Arabic", system-ui, sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1 { font-size: 18px; margin: 0; }
+h2 { font-size: 16px; margin: 4px 0 6px; }
+h3 { font-size: 13.5px; margin: 14px 0 6px; }
+.app { display: flex; flex-direction: column; min-height: 100vh; }
+.header { padding: 8px 14px 6px; background: #fff; border-bottom: 1px solid #e2e8f0; display: grid; grid-template-columns: auto 1fr; gap: 4px 18px; align-items: center; }
+.subtitle { font-size: 11.5px; color: #b45309; font-weight: 600; }
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tab, .chip { border: 1px solid #cbd5e1; background: #fff; padding: 4px 9px; border-radius: 4px; cursor: pointer; font: inherit; font-size: 12.5px; }
+.tab.active { background: #1e293b; color: #fff; border-color: #1e293b; }
+.switcher { grid-column: 1 / span 2; display: flex; gap: 4px; flex-wrap: wrap; align-items: center; }
+.chip.active { background: #e0e7ff; border-color: #4338ca; }
+.chip small { color: #475569; }
+.switcher select, .filters select, label select { font: inherit; font-size: 12.5px; padding: 3px; }
+.switcher-note { grid-column: 1 / span 2; font-size: 11px; color: #64748b; }
+.main { flex: 1; display: flex; min-height: 0; }
+.main.with-map .map-wrap { flex: 1 1 58%; position: relative; min-height: 640px; }
+.main.with-map .panel { flex: 1 1 42%; max-width: 760px; overflow: auto; max-height: calc(100vh - 170px); }
+.panel { padding: 10px 16px; flex: 1; font-size: 13px; }
+.map { position: absolute; inset: 0; }
+.legend { position: absolute; left: 10px; top: 10px; background: rgba(255,255,255,0.95); border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 10px; font-size: 12px; max-width: 330px; z-index: 2; }
+.legend-title { font-weight: 600; margin-bottom: 4px; }
+.legend-row { display: flex; align-items: center; gap: 6px; margin: 2px 0; }
+.legend-row.off { opacity: 0.55; }
+.legend-register { border-top: 1px solid #e2e8f0; margin-top: 4px; padding-top: 4px; }
+.legend-caption { margin-top: 6px; font-size: 11px; color: #b45309; }
+.legend-credit { margin-top: 4px; font-size: 10.5px; color: #334155; }
+.maplibregl-ctrl-attrib { font-size: 11px; }
+.muted { color: #64748b; }
+.small { font-size: 11px; }
+.role { color: #4338ca; font-weight: 400; }
+.note-l1 { background: #f5f3ff; border-left: 3px solid #7c3aed; padding: 6px 8px; }
+.caption-warn { background: #f1f5f9; border-left: 3px solid #94a3b8; padding: 5px 8px; font-style: italic; color: #334155; }
+.kv th { text-align: left; font-weight: 400; color: #475569; padding: 2px 10px 2px 0; }
+.grid { border-collapse: collapse; font-size: 12px; width: 100%; margin: 4px 0 10px; }
+.grid th, .grid td { border-bottom: 1px solid #e2e8f0; padding: 3px 6px; text-align: left; vertical-align: top; }
+.grid td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.delta { font-weight: 600; }
+.ar { font-family: "Noto Naskh Arabic", serif; }
+.table-wrap { max-height: 380px; overflow: auto; }
+.filters { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin: 6px 0; }
+.check { font-size: 12px; }
+.funnel-row { display: flex; align-items: center; gap: 8px; margin: 2px 0; }
+.funnel-label { width: 230px; font-size: 12px; }
+.funnel-bar { height: 13px; background: #64748b; border-radius: 2px; min-width: 2px; }
+.funnel-count { font-variant-numeric: tabular-nums; font-size: 12px; }
+.range-chart { margin: 8px 0 12px; }
+.range-chart figcaption { font-weight: 600; font-size: 12.5px; margin-bottom: 2px; }
+.axis-unit { font-size: 10.5px; color: #64748b; }
+.two-col { display: flex; flex-wrap: wrap; gap: 0 18px; }
+.footer { border-top: 1px solid #e2e8f0; background: #fff; padding: 6px 14px; font-size: 11.5px; }
+.footer-label { color: #b45309; }
+.footer-limit { color: #334155; }
+.footer-meta { color: #64748b; font-size: 10.5px; }
+.error { background: #fef2f2; color: #991b1b; padding: 6px 10px; }
+.scenario-title { font-weight: 600; }
+.legend-committed { margin-top: 5px; font-size: 10.5px; color: #92400e; }
+.coverage { font-size: 11.5px; background: #f8fafc; border-left: 3px solid #94a3b8; padding: 5px 8px; }

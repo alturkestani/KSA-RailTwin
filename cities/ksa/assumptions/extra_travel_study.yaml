@@ -1,0 +1,74 @@
+# > **Document version:** cities/ksa/assumptions/extra_travel_study.yaml v1.0 | 7 Nov 2026 | Author: STUDY_EXTRA_TRAVEL (main track builder) | Status: draft
+# STUDY_EXTRA_TRAVEL constants (study path only; prompts/STUDY_EXTRA_TRAVEL.md). Nothing here is read
+# by the published S1 / L1-L6 / R8 path: the frozen trip rates (A-demand-012...015), pilgrimage
+# totals (A-demand-016/019) and the international rail share (A-intl-003) are unchanged.
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast. Not the official ranking.
+
+study: STUDY_EXTRA_TRAVEL
+official_ranking: false
+
+# Item 2: the Riyadh-Jeddah pair = every zone of the Riyadh metro x every zone of the Jeddah metro
+# (zone attribute `metro`), both directions, all five purposes, 2050 UN WPP medium.
+rj_pair:
+  metros: [Riyadh, Jeddah]
+  population: un_wpp_medium
+  year: 2050
+  assumption: A-xt-001
+
+# Item 3: induced (generated) domestic trips. T1' = T1 x (C1 / C0) ** e on each origin-destination
+# pair, C = the frozen model's composite generalised cost (logsum, car in-vehicle minutes), applied
+# to the scenario run of the purposes below; mode shares of the pair are kept. No KSA-calibrated
+# trip-frequency elasticity exists (A-xt-002); the range is a bounded, uncalibrated bracket.
+induced:
+  purposes: [tourism, leisure_vfr, business]
+  unchanged: [commute, pilgrimage]
+  elasticity_cases:
+    low: -0.15
+    central: -0.25
+    high: -0.40
+    stress: -0.70
+    # rail-favourable bound (A-xt-011): generated trips on rail-served pairs are all rail trips
+    central_rail_only: -0.25
+    stress_rail_only: -0.70
+  source: S-xt-010, S-xt-011, S-xt-012
+  assumption: A-xt-002, A-xt-003
+  baseline_case: CBA-S1-committed-programme  # S1 vs S0, the published R5 CBA (judge v1-r5)
+
+# Item 4: land-entry ports of foreign Umrah performers (GASTAT Umrah bulletins 1440/1441 AH,
+# Table 3; manifest rows pilgrims-umrah-statistics-bulletin-2019-xlsx, -2020-1-xlsx). Port -> model
+# zone from the zone register's border-crossing nodes (cities/ksa zones, economic_nodes) unless an
+# assumption id is given. 1442 AH is excluded from the port mix (COVID year; every land row is 0).
+land_ports:
+  bulletins_ah: ["1440", "1441"]
+  groups:
+    north_jordan:
+      ports: {"Alhaditha Port": G011, "Al-hadithah Port": G011, "halt Ammar  Port": G147-H010, "Halat Ammar Port": G147-H010}
+      assumption: A-xt-004
+    gulf:
+      ports: {"Batha Port": G037, "Al-bat'haa' Port": G037, "Al-raqi Port": G039, "Al-Ra'qa'i Port": G039, "king Fahd's bridge": G040-H003, "King fahad Causeway": G040-H003}
+      assumption: A-xt-004
+    south_yemen:
+      ports: {"Al- wadiah Port": G100, "Al- wadeeha Port": G100}
+      assumption: A-xt-005
+    other:
+      ports: {"Dura Port": G146}
+      assumption: A-xt-004
+  # onward rail: rail share given a rail path. Central = the frozen fitted value (A-intl-003);
+  # study variants are the frozen prior's bounds, labelled, never written into the frozen path.
+  rail_share_variants:
+    frozen_fitted: 0.0286
+    pre_r5_central: 0.176
+    prior_high: 0.470
+  rail_share_assumption: A-xt-006
+  # land share of foreign Umrah entries: frozen pooled value and the observed 1440-1442 maximum
+  land_share_variants:
+    frozen_pooled: 0.0843
+    observed_max: 0.09538
+  # extra land-entry volume caused by easier access: no source found; a labelled what-if bracket
+  extra_land_volume: [0.0, 0.10, 0.25]
+  extra_volume_assumption: A-xt-007
+  hajj_held_fixed: true
+  # "if counted" fare illustration only (outside the official CBA, A-cba-310): rail-km of the
+  # path x a per-km fare; low / central / high = the A-mode-037 range and central
+  fare_per_km_if_counted: {low: 0.20, central: 0.30, high: 0.405}
+  oag_usd_fare_peg_sar_per_usd: 3.75  # S-lb-020 (SAMA)

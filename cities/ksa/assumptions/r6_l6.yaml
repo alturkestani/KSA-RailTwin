@@ -1,0 +1,63 @@
+# Version: r6_l6.yaml v1.0 | 6 Nov 2026 | Author: S6_L6_CONNECTED (main track builder) | Status: draft
+# S6-L6, one connected rail system (comparison layout, not the recommended programme).
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+# Read by optimise/connect.py. The interchange rules are NOT here: they stay in
+# network/graph_params.yaml (walk 0.4 km A-r1a-030, same name 3.0 km A-r1a-032), unchanged.
+
+connectivity:
+  # A-r6-130: the rail graph of S1 + the layout (network.graph.build_graph, current interchange
+  # rules; station additions inserted into their host line as the judge does) has exactly one
+  # connected component. Connector-only lines (the Riyadh Rail Link) count as rail.
+  components_required: {value: 1, assumption_id: A-r6-130}
+
+on_graph:
+  # A-r6-131: a city is on the graph when (T1) a station of the graph meets the interchange rules
+  # with the city's reference point (within walk_max_km, or the same normalised name within
+  # same_name_max_km), or else (T2) a station of the graph lies within the served distance of
+  # the reference point: towns 10 km (A-screen-004, CP1 D10a), metro anchors 25 km (A-corr-015,
+  # CP3 6a). Reference point = the point the S2-S4 corridor families use for the city (the
+  # A-screen-013 metro anchor or the register point), read from the corridor YAMLs.
+  served_town_km: {value: 10, source: "A-screen-004 (cities/ksa/assumptions/corridor_rules.yaml on_network_km)", assumption_id: A-r6-131}
+  served_metro_km: {value: 25, source: "A-corr-015 (corridor_rules.yaml metro_attach_km)", assumption_id: A-r6-131}
+
+# A-r6-132: the required cities: the five metros of A-r6-007, the T2/T3 cities and the S2-family
+# cities named in prompts/S6_L6_CONNECTED.md item 2 (Tariq, 6 Nov 2026). Ha'il and Ar Rass (also
+# S2-family end points, not named in the list) are reported, not required.
+# ref = station id used for the city in the corridor YAMLs; kind = metro (anchor) or town (register)
+required:
+  - {city: Riyadh, ref: riyadh, kind: metro}
+  - {city: Jeddah, ref: jeddah, kind: metro}
+  - {city: Makkah, ref: makkah, kind: metro, anchor_family: commuter_belt}
+  - {city: Madinah, ref: madinah, kind: metro, anchor_family: trunk_gap}
+  - {city: Dammam–Khobar–Dhahran, ref: dammam-khobar-dhahran, kind: metro}
+  - {city: Taif, ref: taif, kind: metro}
+  - {city: Buraidah (Qassim), ref: buraidah, kind: metro}
+  - {city: Tabuk, ref: tabuk, kind: metro}
+  - {city: Abha–Khamis Mushait, ref: abha-khamis-mushait, kind: metro}
+  - {city: Jazan, ref: jazan, kind: metro}
+  - {city: Najran, ref: najran, kind: metro}
+  - {city: Yanbu, ref: yanbu, kind: town}
+  - {city: Bisha, ref: bisha, kind: town}
+  - {city: Arar, ref: arar, kind: town}
+  - {city: Hafar Al-Batin, ref: hafar-al-batin, kind: town}
+  - {city: Sakaka, ref: sakaka, kind: town}
+  - {city: Al-Kharj, ref: al-kharj, kind: town}
+  - {city: Al Jubayl, ref: al-jubayl, kind: town}
+reported:
+  - {city: "Ha'il", ref: ha-il, kind: town}
+  - {city: Ar Rass, ref: ar-rass, kind: town}
+
+search:
+  # A-r6-133: exact MILP (scipy/HiGHS) over the R6_V3 library options (73 base corridors less the
+  # two A-r6-008 Jubail exclusions = 71, plus their 143 costed variants; at most one option per
+  # corridor); node-weighted connectivity by a single-commodity flow from the S1 main component.
+  # Objective lexicographic: capex P50 (uplifted, undiscounted, SAR m 2025) first, then the
+  # number of corridors. Alternatives: each next set must drop at least one corridor of every
+  # set found before (no supersets); ties = equal capex within tie_tol.
+  objective: {value: "min capex P50, then min corridor count", assumption_id: A-r6-133}
+  tie_tol_sar_m: {value: 0.5, assumption_id: A-r6-133}
+  alternatives: {value: 2, assumption_id: A-r6-133}
+  # A-r6-134: phase per corridor = the option's best library phase (highest robust NPV, A-r6-001)
+  phase_rule: {value: "best library phase per option", assumption_id: A-r6-134}
+  # FIX_HHR chord-band corridors (prompts/S6_L6_CONNECTED.md item 4); -045 is not in the library
+  chord_band: [S4-commuter_belt-jeddah-000, S4-commuter_belt-jeddah-045, S4-commuter_belt-jeddah-315, S2-trunk_gap-riyadh-jeddah]

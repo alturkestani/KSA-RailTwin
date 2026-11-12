@@ -1,0 +1,15 @@
+# source: film/renders/out/ksa-rail-twin-trailer-en.mp4
+# sha256: 78802cd553486ad249dcf2fef97aa1cd61f3ecfe69552e125195858c7ca38d30
+# model: mlx-community/whisper-large-v3-turbo (local, offline), language=en, temperature 0
+# date: 2026-11-12
+[0.00-7.20] A night train heading north. A Thursday afternoon flight. A climb to Abar. A student going home to Tabuk.
+[8.72-15.76] Jeddah Riyadh in 2025. About 9.8 million scheduled air seats, fifth in OAG's top ten.
+[17.78-24.02] Taif, Tabuk, Abar, Najran, Jazan. None has a passenger station within 10 kilometers.
+[24.02-31.32] A country of 35.3 million people by mid-2024 and growing.
+[33.18-37.22] On Riyadh Jeddah, air stays ahead door-to-door in every rail case.
+[38.66-45.30] Every line routed over real terrain, priced from a register, with the overruns big rail projects have had.
+[47.02-51.58] One frozen judge, 10,000 draws, a record of every attempt.
+[51.58-61.06] The three-station central case stays positive even at high cost, between 4.0 and 5.6 billion rials.
+[62.80-67.20] No option pays for itself. The state pays under every delivery model.
+[69.06-72.70] A railway that connects the country is a possibility, not a promise.
+[74.28-76.40] A railway to connect the country.

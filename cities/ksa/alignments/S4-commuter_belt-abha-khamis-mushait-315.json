@@ -1,0 +1,83 @@
+{
+ "id": "S4-commuter_belt-abha-khamis-mushait-315",
+ "line_type": "commuter",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 151.891,
+ "straight_km_legs": 129.838,
+ "straight_km_end_to_end": 118.602,
+ "detour_ratio": 1.1698,
+ "max_grade_cap": 0.025,
+ "design_kmh": 160.0,
+ "r_min_m": 1991.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 29.869,
+ "viaduct_km": 28.723,
+ "earthworks_km": 74.157,
+ "at_grade_km": 19.142,
+ "tunnel_share": 0.19665,
+ "viaduct_share": 0.1891,
+ "fill_m3": 7535900.0,
+ "cut_m3": 16329500.0,
+ "formation_max_grade": 12.68633,
+ "formation_cap_ok": false,
+ "profile_feasible": false,
+ "infeasible_legs": [
+  {
+   "from": "an-nimas",
+   "to": "al-majaridah",
+   "height_difference_m": 1892.5,
+   "routed_km": 27.186,
+   "min_km_at_cap": 75.7
+  }
+ ],
+ "ground_share_over_cap": 0.57,
+ "elev_min_m": 458.1,
+ "elev_max_m": 2555.9,
+ "terrain_shares": {
+  "escarpment_mountain": 0.6726,
+  "mixed": 0.3274
+ },
+ "area_km": {
+  "urban": 9.889,
+  "builtup": 7.296,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 0.0,
+  "sabkha": 0.0,
+  "waterway": 6.197,
+  "highway": 9.347
+ },
+ "wadi_crossings_osm": 21,
+ "speed_restrictions": [
+  {
+   "from_km": 129.252,
+   "to_km": 130.551,
+   "kmh": 80.0
+  },
+  {
+   "from_km": 130.651,
+   "to_km": 131.351,
+   "kmh": 150.0
+  },
+  {
+   "from_km": 133.25,
+   "to_km": 134.749,
+   "kmh": 80.0
+  }
+ ],
+ "restricted_km": 3.498,
+ "min_curve_kmh": 80.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "abha-khamis-mushait": 0.0,
+  "tanumah": 101.784,
+  "an-nimas": 124.704,
+  "al-majaridah": 151.891
+ },
+ "status": "routed",
+ "stations_key": "e84e5eeea1252f8f",
+ "geojson": "cities/ksa/alignments/S4-commuter_belt-abha-khamis-mushait-315.geojson",
+ "run": "runs/align/corridors-s1/S4-commuter_belt-abha-khamis-mushait-315",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

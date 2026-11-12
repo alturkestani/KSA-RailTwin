@@ -1,0 +1,24 @@
+{
+  "seed": 1,
+  "config_hash": "6fa4804b5b20845037b7342477acb7fac90a8ec772cbaacfd6a7025cc14b7163",
+  "data_hash": "86d58906da831a32327df0892ac720f4077fb61ee9c76c7c549577e76b09aaf0",
+  "code_version": "r8-45-g0ef4623-dirty",
+  "tool_versions": {
+    "python": "3.12.13",
+    "pyyaml": "6.0.3",
+    "pydantic": "2.14.2",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "pyarrow": "26.0.0",
+    "duckdb": "2.0.0",
+    "shapely": "2.2.0",
+    "pyproj": "3.8.0",
+    "geopandas": "1.2.0",
+    "networkx": "3.7",
+    "typer": "0.27.3",
+    "scipy": "1.18.1"
+  },
+  "label": "synthetic demand, uncalibrated: scenario comparison, not a forecast",
+  "created_utc": "2026-11-06T13:45:25+00:00",
+  "seconds": 0.3
+}

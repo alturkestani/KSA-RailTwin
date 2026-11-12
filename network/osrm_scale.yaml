@@ -1,0 +1,21 @@
+# Reference measurements for `uv run python -m network.osrm estimate` (dry run before a national
+# OSRM preparation). Measured 31 Oct 2026 on the project Mac (Apple M3 Pro, 11 threads used,
+# 18 GB RAM) with osrm-backend 26.10.0 (Homebrew bottle), profile car.lua, algorithm MLD
+# (extract + partition + customize), under /usr/bin/time -l. Source of each point: the run's
+# data/ksa/osrm/<name>/prep_stats.json and logs/r1a-osrm-*.log (gitignored outputs).
+# Clips: jeddah = data/osm/jeddah.osm.pbf (TrafficTwin clip); west-calib = osmium extract
+# -b 38.5,20.5,41.5,23.5 and central-calib = -b 38.0,20.0,47.5,26.0 of the Geofabrik GCC PBF
+# (edition in cities/ksa/sources.yaml). The estimate fits value = a + b * pbf_mb by least squares.
+source: "measured: network/osrm.py prepare, 31 Oct 2026 (docs/status/r1a-network-notes.md)"
+# peak_footprint_mb = macOS "peak memory footprint" (counts compressed/swapped pages; >= RSS).
+# The gcc-states-latest point was added AFTER the national run (its pre-run estimate used the
+# first three points only; see the notes file).
+points:
+  - {name: jeddah,            pbf_mb: 3.612,  wall_s: 3.46,   peak_rss_mb: 335.2,  peak_footprint_mb: 324.9,  output_mb: 74.3}
+  - {name: west-calib,        pbf_mb: 11.75,  wall_s: 9.03,   peak_rss_mb: 626.0,  peak_footprint_mb: 807.1,  output_mb: 220.9}
+  - {name: central-calib,     pbf_mb: 43.24,  wall_s: 29.61,  peak_rss_mb: 1383.7, peak_footprint_mb: 1756.2, output_mb: 590.4}
+  - {name: gcc-states-latest, pbf_mb: 255.369, wall_s: 187.65, peak_rss_mb: 3232.1, peak_footprint_mb: 6974.1, output_mb: 2396.6}
+# Worst case multiplies the per-MB slope (time, RAM, disk) by this margin.
+slope_margin: {value: 1.5, low: 1.0, high: 2.0, assumption_id: A-r1a-028}
+# CLAUDE.md workflow rule: runs expected over 90 minutes need a smaller sample first.
+max_minutes: 90

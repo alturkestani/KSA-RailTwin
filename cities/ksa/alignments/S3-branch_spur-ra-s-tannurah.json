@@ -1,0 +1,64 @@
+{
+ "id": "S3-branch_spur-ra-s-tannurah",
+ "line_type": "conventional_passenger",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 103.959,
+ "straight_km_legs": 82.767,
+ "straight_km_end_to_end": 77.048,
+ "detour_ratio": 1.256,
+ "max_grade_cap": 0.025,
+ "design_kmh": 200.0,
+ "r_min_m": 3111.1,
+ "structure_factor": 10.183,
+ "tunnel_km": 0.0,
+ "viaduct_km": 2.799,
+ "earthworks_km": 0.1,
+ "at_grade_km": 101.06,
+ "tunnel_share": 0.0,
+ "viaduct_share": 0.02692,
+ "fill_m3": 1500.0,
+ "cut_m3": 0.0,
+ "formation_max_grade": 0.02502,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.0077,
+ "elev_min_m": -0.1,
+ "elev_max_m": 18.8,
+ "terrain_shares": {
+  "coastal": 0.9981,
+  "flat_desert": 0.0019
+ },
+ "area_km": {
+  "urban": 11.795,
+  "builtup": 23.29,
+  "protected": 0.0,
+  "military": 0.0,
+  "sand": 0.0,
+  "sabkha": 0.0,
+  "waterway": 0.0,
+  "highway": 8.796
+ },
+ "wadi_crossings_osm": 0,
+ "speed_restrictions": [
+  {
+   "from_km": 40.132,
+   "to_km": 42.631,
+   "kmh": 150.0
+  }
+ ],
+ "restricted_km": 2.499,
+ "min_curve_kmh": 150.0,
+ "window_bound_legs": 0,
+ "station_km": {
+  "dammam": 0.0,
+  "ra-s-tannurah": 48.978,
+  "al-jubayl": 103.959
+ },
+ "status": "routed",
+ "stations_key": "62edadd7b68b33b1",
+ "geojson": "cities/ksa/alignments/S3-branch_spur-ra-s-tannurah.geojson",
+ "run": "runs/align/corridors-s1/S3-branch_spur-ra-s-tannurah",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "weights_frozen": true
+}

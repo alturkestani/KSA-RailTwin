@@ -1,0 +1,14 @@
+# Parameters of network/zones.py (settlement universe). Registered in docs/assumptions.md.
+simplify_deg:
+  value: 0.002
+  assumption: "polygon simplification tolerance (~200 m) for the committed admin GeoJSONs; display and point-in-polygon only, not area statistics"
+  assumption_id: A-r1a-003
+pilot_match_km:
+  value: 3.0
+  assumption: "a pilot-register row is the same settlement as the nearest OSM place node within 3 km (when the node id does not match)"
+  assumption_id: A-r1a-002
+grid_radius_km:
+  # settlement footprint for grid sums, by OSM place class; unverified until the geo-verify back-test
+  value: {city: 10.0, town: 3.0, village: 1.5, hamlet: 1.0, default: 1.5}
+  assumption: "radius of the circle summed on the population grid per OSM place class"
+  assumption_id: A-r1a-004

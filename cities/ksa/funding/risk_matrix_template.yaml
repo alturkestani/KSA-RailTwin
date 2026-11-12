@@ -1,0 +1,148 @@
+# > **Document version:** cities/ksa/funding/risk_matrix_template.yaml v0.2 | 4 Nov 2026 | Author: R8 builder (verify-R7 O17: Art. 18 note limited to usage fees under use agreements; fare-cap option marked as subject to the unclear fare-setting authority); funding-ppp-analyst A (R1d) | Status: draft
+# Risk-allocation matrix TEMPLATE (W6). Copy to risk_matrix_<corridor_family>.yaml at R7, set
+# template: false, corridor_family, delivery_model (an id from models.yaml), put exactly one "x"
+# per row, name the chosen `mechanism` and at least one precedent S-id.
+# Validate: uv run python -m funding.risk_matrix validate ; render: ... render
+# Not a recommendation (rule 9). Allocation cells are deliberately empty.
+version: "0.2"
+template: true
+columns: [public, private, shared]
+note: >-
+  Rows follow funding.models.RISK_KEYS. Mechanism options name contract clause types; the
+  precedents show where each has been used, not that it suits a Saudi corridor. Saudi statutory
+  hooks: PSP Law Arts. 8, 10, 11, 20, 28, 34 (S-fund-004, S-fund-005, S-fund-006, S-fund-007, S-fund-008, S-fund-002); Railway Law Arts. 14,
+  18, 32, 33 (S-fund-013, S-fund-014, S-fund-015, S-fund-016).
+rows:
+  - risk: construction
+    scope: "cost overrun, schedule delay, geotechnical and ground conditions, sand and heat design, interfaces between civil, systems and rolling-stock packages"
+    public: ""
+    private: ""
+    shared: ""
+    mechanism_options:
+      - "fixed-price design-and-build or DBFM/DBFOM with payment only from availability (private)"
+      - "target-cost or cost-sharing band with pain/gain share (shared)"
+      - "compensation event for unforeseen ground conditions above a defined baseline (shared)"
+      - "state-delivered works with optimism-bias contingency (public)"
+    note: "Ex post, LGV SEA cost deviations were borne by the concessionaire and taxpayers were protected from overruns of budget commitments (S-fund-046, S-fund-047). Green Book requires an explicit optimism-bias adjustment (S-fund-025)."
+    precedents: [S-fund-046, S-fund-047, S-fund-043, S-fund-025]
+  - risk: demand
+    scope: "ridership and freight volume versus forecast; ramp-up; competing modes"
+    public: ""
+    private: ""
+    shared: ""
+    mechanism_options:
+      - "availability payment, state keeps fare revenue (public)"
+      - "full demand risk to concessionaire via fares or access charges (private)"
+      - "minimum revenue guarantee and/or revenue sharing above a cap (cap-and-collar) (shared)"
+      - "revenue-sharing 'bonne fortune' clause above forecast (shared)"
+    note: "Sydney Metro Northwest: State retained demand risk (S-fund-045). LGV SEA: traffic risk largely on the concessionaire, with excess revenue shared from year 5 (S-fund-046). MRGs are contingent liabilities (S-fund-023). Skill rule: do not place demand risk privately where the CBA P10 demand breaks BCR = 1 without saying so."
+    precedents: [S-fund-045, S-fund-046, S-fund-023]
+  - risk: revenue
+    scope: "fare level and indexation, fare-setting authority, ancillary and non-fare revenue (retail, property), collection and leakage"
+    public: ""
+    private: ""
+    shared: ""
+    mechanism_options:
+      - "state sets and keeps fares; operator paid a fee (public)"
+      - "concessionaire sets fares within a regulated cap (private; only if the law allows it: who sets passenger fares is an open legal question, fare_setting_authority)"
+      - "access-charge regime set by the regulator, collected by the infrastructure manager (shared)"
+      - "station-area development rights or levy income ring-fenced to the project (shared)"
+    note: "Railway Law M/159 Art. 18 concerns usage (access) fees under use agreements only (Art. 16), not passenger fares: TGA sets the usage-fee policy; the infrastructure manager or operator determines and collects them (S-fund-016). Who sets passenger fares is an open legal question (fare_setting_authority). Hong Kong Rail-plus-Property (S-fund-048); Crossrail BRS (S-fund-049)."
+    precedents: [S-fund-016, S-fund-048, S-fund-049]
+  - risk: operations
+    scope: "operations and maintenance cost, availability and punctuality performance, asset condition at hand-back, lifecycle renewal"
+    public: ""
+    private: ""
+    shared: ""
+    mechanism_options:
+      - "performance-based O&M contract with deductions (private)"
+      - "availability deductions and hand-back condition requirements in a DBFM/DBFOM (private)"
+      - "in-house operation by the state company (public)"
+    note: "Haramain O&M by a private operator for SAR (S-fund-039). HSL-Zuid: punctuality floors with penalties; arbitration placed 90% of rail-damage cost on the State (S-fund-044)."
+    precedents: [S-fund-039, S-fund-044, S-fund-043]
+  - risk: financing
+    scope: "interest-rate and refinancing risk, availability of long-tenor debt, FX exposure on imported systems and foreign lenders, financial close"
+    public: ""
+    private: ""
+    shared: ""
+    mechanism_options:
+      - "sovereign or PIF financing (public)"
+      - "project-finance debt raised by the SPV, rate fixed or hedged at financial close (private)"
+      - "refinancing-gain sharing clause (shared)"
+      - "MoF financial and credit support under PSP Law Arts. 8 and 10 (shared)"
+    note: "PSP Law Art. 8 makes MoF responsible for funds and support; Art. 10 allows extra support by Council of Ministers resolution (S-fund-004, S-fund-005). FY2026 pre-budget statement: expanding project, infrastructure and ECA finance (S-fund-027). Landbridge 2008 BOT failed to reach financial close (S-lb-012)."
+    precedents: [S-fund-004, S-fund-005, S-fund-027, S-lb-012]
+  - risk: land
+    scope: "land acquisition and expropriation, right-of-way, utilities relocation, protection zones, heritage and route-sensitivity constraints"
+    public: ""
+    private: ""
+    shared: ""
+    mechanism_options:
+      - "state delivers land and utilities free of encumbrances before works (public)"
+      - "concessionaire acquires land within a capped budget (shared)"
+      - "compensation event for late land delivery (public)"
+    note: "Railway Law M/159 Art. 33: TGA may allow a concessionaire to use railway lands and protection zones (S-fund-014). PSP Law Art. 11: CEDA instructs agencies that delay permits (S-fund-006). Saudi expropriation procedure for rail was not reviewed here."
+    precedents: [S-fund-014, S-fund-006]
+  - risk: regulatory_force_majeure
+    scope: "change in law, permits, political decisions, termination for public interest, force majeure, disputes"
+    public: ""
+    private: ""
+    shared: ""
+    mechanism_options:
+      - "change-in-law and public-interest termination compensation (public)"
+      - "force majeure relief with shared cost after a threshold (shared)"
+      - "arbitration with agreed governing law, subject to agency approval (shared)"
+    note: "PSP Law Art. 28: unilateral termination including for public interest; the contract may define compensation including lost revenues (S-fund-007). Art. 34: arbitration if the relevant agency approves (S-fund-008)."
+    precedents: [S-fund-007, S-fund-008, S-fund-006]
+fiscal_exposure_metrics:
+  - id: upfront_public_capex
+    definition: "Public capital spending (grants, construction contributions, state-delivered works) before and during construction, by year and in present value; reported as P10/P50/P90 from the W3 cost distribution."
+    formula: "sum_t (public_share_t * capex_t) ; PV = sum_t public_share_t * capex_t / (1 + r)^t"
+    unit: "SAR bn (real, stated price year) and SAR bn PV"
+    inputs:
+      - "capex distribution by year (W3 cost register, P10/P50/P90)"
+      - "public share of capex by delivery model (models.yaml; A-fund ids)"
+      - "discount rate (cba-appraisal; D1a decision)"
+    sources: [S-fund-021, S-fund-026]
+    note: "PFRAM separates government capital contributions from later payments (S-fund-021)."
+  - id: availability_payments_share_of_budget
+    definition: "Annual availability or subsidy payments committed under the contract, as a share of a stated budget line (total state expenditure from the MoF budget statement unless a narrower transport line is sourced), for each year of the horizon."
+    formula: "AP_t / E_t where AP_t = availability or subsidy payment in year t and E_t = stated budget line in year t (projected beyond the MoF medium-term window by an assumption A-fund-nnn)"
+    unit: "% of the stated budget line per year; peak and average"
+    inputs:
+      - "availability payment schedule (from the PPP financial model or an assumption)"
+      - "budget line E_t: total expenditure 2024-2028 from the FY2026 pre-budget statement (S-fund-026)"
+      - "growth assumption for E_t beyond 2028 (A-fund id)"
+    sources: [S-fund-026, S-fund-023, S-fund-004]
+    note: "PSP Law Art. 8 requires MoF to secure allocations for these payments (S-fund-004); PFRAM treats them as firm liabilities (S-fund-023)."
+  - id: contingent_liabilities
+    definition: "Probability-weighted and worst-case value of guarantees and contingent obligations: minimum revenue guarantees, debt guarantees, termination compensation (including lost revenues under PSP Law Art. 28), compensation events; reported as expected value and P90."
+    formula: "EV = sum_k p_k * L_k (Monte Carlo over W4 demand and W3 cost draws); worst case = max_k L_k ; MRG_t = max(0, G_t - R_t)"
+    unit: "SAR bn PV (expected, P90, worst case)"
+    inputs:
+      - "W4 demand distribution and revenue model (for MRG triggers)"
+      - "guarantee and termination clauses by delivery model"
+      - "probability of termination or default (A-fund id)"
+    sources: [S-fund-021, S-fund-023, S-fund-007]
+    note: "PFRAM estimates contingent liabilities under a worst-case scenario and reports them as memorandum items, outside debt (S-fund-021, S-fund-023)."
+  - id: net_fiscal_cost_horizon
+    definition: "Net present fiscal cost to the state over 30, 40 and 60 years: public capex + availability or subsidy payments + expected contingent payouts + public O&M - fare, access-charge and value-capture revenue retained by the state - residual value at hand-back."
+    formula: "NFC_H = sum_{t=0..H} (Capex_pub_t + AP_t + E[CL_t] + OM_pub_t - Rev_pub_t) / (1 + r)^t - RV_H / (1 + r)^H"
+    unit: "SAR bn PV at H = 30, 40, 60 years (P10/P50/P90)"
+    inputs:
+      - "upfront_public_capex, availability_payments_share_of_budget, contingent_liabilities"
+      - "W4 revenue distribution; value-capture yield (A-fund id)"
+      - "discount rate (cba-appraisal)"
+    sources: [S-fund-021, S-fund-017]
+    note: "Under IPSAS 32 most PPPs are on balance sheet, so the fiscal comparison is like-for-like with traditional procurement (S-fund-023)."
+  - id: value_for_money_psc
+    definition: "Public sector comparator test: risk-adjusted PV cost of the public option (with optimism bias and retained-risk value) compared with the PV cost to the state of the PPP option (payments + retained risks + contingent liabilities + transaction costs)."
+    formula: "VfM = PV(PSC_base + retained_risk_PSC + transferred_risk_value + competitive_neutrality_adj) - PV(PPP_payments + retained_risk_PPP + E[CL] + transaction_costs); VfM > 0 favours the PPP on cost"
+    unit: "SAR bn PV and % of PSC (P10/P50/P90)"
+    inputs:
+      - "PSC cost from W3 (with optimism bias)"
+      - "risk-transfer value (assumption A-fund id; no Saudi benchmark found)"
+      - "private financing cost premium (financing parameters; assumption)"
+      - "tax-neutrality adjustment per Green Book A.14"
+    sources: [S-fund-024, S-fund-025, S-fund-019, S-fund-030]
+    note: "Green Book A.13-A.14 define the public sector option and require tax adjustments (S-fund-024). NCP's strategy reports a value-for-money target but not its method (S-fund-030): unclear how NCP computes VfM."

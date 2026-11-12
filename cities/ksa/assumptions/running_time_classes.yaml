@@ -1,0 +1,59 @@
+# > **Document version:** cities/ksa/assumptions/running_time_classes.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (sim-engineer) | Status: draft
+# Rolling-stock classes for access.running_time (R4 task 1). Every value carries a source id (docs/sources/r4-rt.csv,
+# docs/sources/index.csv) or an assumption id (docs/assumptions.md). `range` is the low/high used for the running-time
+# band (the fast end = low running time). Running resistance is not modelled (A-r4-rt-007): the kinematics are an
+# optimistic lower bound, which the timetable factor (running_time_lines.yaml) corrects for planned and hypothetical lines.
+version: "1.0"
+label: "timetable model, not a forecast"
+
+by_line_type:
+  hsr: hsr_talgo350
+  mixed: intercity_250
+  conventional_passenger: intercity_200
+  upgrade: intercity_200
+  commuter: emu_commuter_160
+  freight: intercity_200   # not used for passenger running times
+
+classes:
+  hsr_talgo350:
+    note: Talgo 350 SRO (HHR fleet; S-cp2-506, S-r4-rt-009). Traction from the Renfe Class 102 sister design (S-r4-rt-012..014)
+    vmax_kmh: {value: 300, range: [300, 300], source: "S-cp2-501 (HHR operational speed 300 km/h); S-r4-rt-008"}
+    # a0 = starting tractive effort / (mass x rotating-mass factor) = 200 kN / (322 t x 1.05) = 0.59 m/s2
+    accel_ms2: {value: 0.59, range: [0.50, 0.65], assumption: A-r4-rt-001, derived_from: "S-r4-rt-014 (200 kN), S-r4-rt-013 (322 t), rotating-mass factor 1.05 (A-r4-rt-002)"}
+    # constant-power knee = power / tractive effort = 8,000 kW / 200 kN = 40 m/s = 144 km/h
+    power_knee_kmh: {value: 144, range: [126, 151], assumption: A-r4-rt-001, derived_from: "S-r4-rt-012 / S-cp2-506 (8,000 / 8,400 kW), S-r4-rt-014 (200 kN); range 7,000-8,400 kW"}
+    decel_ms2: {value: 0.6, range: [0.4, 0.9], assumption: A-r1a-034, note: "service braking not published (S-r4-rt-020)"}
+    dwell_s: {default: {value: 120, range: [60, 300], assumption: A-r1a-035}, airport: {value: 120, range: [60, 300], assumption: A-r1a-035}}
+    recovery:
+      pct: {value: 0.07, range: [0.05, 0.07], assumption: A-hhr-002, source: S-cp2-505}
+      min_per_100km: {value: 1.0, range: [1.0, 1.5], assumption: A-hhr-002, source: S-cp2-505}
+  intercity_250:
+    note: generic 250 km/h intercity / mixed-line passenger stock (Landbridge design speed 250 km/h, landbridge.yaml); Talgo-like traction per tonne
+    vmax_kmh: {value: 250, range: [250, 250], source: "cities/ksa/lines/landbridge.yaml design_speed_kmh (S-054)"}
+    accel_ms2: {value: 0.59, range: [0.50, 0.65], assumption: A-r4-rt-003}
+    power_knee_kmh: {value: 144, range: [126, 151], assumption: A-r4-rt-003}
+    decel_ms2: {value: 0.6, range: [0.4, 0.9], assumption: A-r1a-034}
+    dwell_s: {default: {value: 120, range: [60, 300], assumption: A-r1a-035}}
+    recovery:
+      pct: {value: 0.06, range: [0.05, 0.07], assumption: A-r4-rt-004, source: S-cp2-505}
+      min_per_100km: {value: 1.0, range: [1.0, 1.5], assumption: A-r4-rt-004, source: S-cp2-505}
+  intercity_200:
+    note: 180-200 km/h locomotive-hauled or diesel multiple-unit passenger stock (SAR East CAF push-pull 180 km/h, S-r4-rt-038; SAR North CAF diesel 200 km/h, S-r4-rt-032); no traction data published
+    vmax_kmh: {value: 200, range: [180, 200], source: "S-r4-rt-032 (200 km/h); S-r4-rt-038 (180 km/h)"}
+    accel_ms2: {value: 0.5, range: [0.3, 0.8], assumption: A-r1a-033}
+    power_knee_kmh: {value: 80, range: [60, 110], assumption: A-r4-rt-005}
+    decel_ms2: {value: 0.6, range: [0.4, 0.9], assumption: A-r1a-034}
+    dwell_s: {default: {value: 120, range: [60, 300], assumption: A-r1a-035}, major: {value: 300, range: [120, 600], assumption: A-r4-rt-006, source: "S-r4-rt-031 (10-min Majmaah stop)"}}
+    recovery:
+      pct: {value: 0.05, range: [0.03, 0.07], assumption: A-r4-rt-004, source: "S-cp2-505; S-r4-rt-027"}
+      min_per_100km: {value: 1.5, range: [1.0, 1.5], assumption: A-r4-rt-004, source: S-cp2-505}
+  emu_commuter_160:
+    note: 160 km/h regional/commuter EMU (Stadler FLIRT class reference)
+    vmax_kmh: {value: 160, range: [160, 160], source: "S-r4-rt-021 (FLIRT 160, unverified snippet); commuter line type"}
+    accel_ms2: {value: 0.9, range: [0.6, 1.2], assumption: A-r4-rt-008, source: "S-r4-rt-023 (FLIRT family 0.6-1.3 m/s2, secondary); S-r4-rt-021"}
+    power_knee_kmh: {value: 70, range: [50, 90], assumption: A-r4-rt-008}
+    decel_ms2: {value: 0.8, range: [0.6, 1.0], assumption: A-r4-rt-008}
+    dwell_s: {default: {value: 60, range: [30, 90], assumption: A-r4-rt-009, source: "S-r4-rt-029 (suburban 30-90 s, secondary)"}, terminal: {value: 60, range: [30, 90], assumption: A-r4-rt-009}}
+    recovery:
+      pct: {value: 0.05, range: [0.03, 0.07], assumption: A-r4-rt-004, source: "S-r4-rt-027"}
+      min_per_100km: {value: 1.0, range: [1.0, 1.5], assumption: A-r4-rt-004, source: S-cp2-505}

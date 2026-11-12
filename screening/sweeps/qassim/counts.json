@@ -1,0 +1,20 @@
+{
+  "rows": 35,
+  "centres": 13,
+  "screened": 34,
+  "excluded": 1,
+  "tag_10k": 10,
+  "tag_5k": 28,
+  "pop_official": 19,
+  "pop_grid": 10,
+  "pop_null": 6,
+  "grid_gate_excluded": 4,
+  "roles_rows": 3,
+  "roles_total": 6,
+  "population_sum_rows": 1235625,
+  "governorates": 13,
+  "universe_rows": 575,
+  "below5k": 540,
+  "tag5k_official": 19,
+  "tag5k_grid": 9
+}

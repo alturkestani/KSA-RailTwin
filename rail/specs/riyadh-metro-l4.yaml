@@ -1,0 +1,16 @@
+# Spec for cities/ksa/lines/riyadh-metro-l4.yaml. Stations: stop nodes of OSM route relation 8857389 (ODbL).
+id: riyadh-metro-l4
+stations_from_route: 8857389
+station_source: S-r1a-804
+osm_track: [subway, light_rail, rail]
+line:
+  name_en: Riyadh Metro Line 4 (Yellow)
+  name_ar: مترو الرياض - المسار الأصفر
+  layer: existing
+  operator: Royal Commission for Riyadh City (RCRC), owner; operator not verified
+  status: in_service
+  source: S-r1a-048
+  accessed: 2026-10-31
+  line_type: metro
+  length_km: 29.6                                     # S-r1a-048 (secondary)
+  notes: "Opened 1 Dec 2024 (S-r1a-048, secondary). 9 stations per Wikipedia; station list and Arabic names from the OSM route relation (S-r1a-804). Operator not read (riyadhmetro.sa unreachable, S-r1a-054); RCRC owns the project (S-034). Arabic line name descriptive."

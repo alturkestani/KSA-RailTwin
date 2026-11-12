@@ -1,0 +1,235 @@
+{
+  "label": "screening input, not a forecast; criteria approved at CP1 (D6a-D10a, 31 Oct 2026)",
+  "seed": 1,
+  "sweep_fraction": 0.25,
+  "weights": {
+    "population": 0.3,
+    "rail_gap": 0.2,
+    "commute": 0.2,
+    "economic_roles": 0.2,
+    "terrain": 0.1
+  },
+  "rail_gap_measure": "log_capped",
+  "rail_gap_cap_km": 300,
+  "roles_excluded_from_score": [
+    "administrative"
+  ],
+  "corners": [
+    "population-0.25",
+    "population+0.25",
+    "rail_gap-0.25",
+    "rail_gap+0.25",
+    "commute-0.25",
+    "commute+0.25",
+    "economic_roles-0.25",
+    "economic_roles+0.25",
+    "terrain-0.25",
+    "terrain+0.25"
+  ],
+  "n_long": 198,
+  "n_short": 60,
+  "top_n": 60,
+  "report_top": 30,
+  "top_report_stable_all_corners": 23,
+  "top_report_stability": 0.7667,
+  "per_corner_overlap_top_report": {
+    "population-0.25": 28,
+    "population+0.25": 30,
+    "rail_gap-0.25": 29,
+    "rail_gap+0.25": 29,
+    "commute-0.25": 28,
+    "commute+0.25": 25,
+    "economic_roles-0.25": 27,
+    "economic_roles+0.25": 28,
+    "terrain-0.25": 30,
+    "terrain+0.25": 30
+  },
+  "per_corner_overlap_top_n": {
+    "population-0.25": 57,
+    "population+0.25": 57,
+    "rail_gap-0.25": 56,
+    "rail_gap+0.25": 56,
+    "commute-0.25": 53,
+    "commute+0.25": 53,
+    "economic_roles-0.25": 56,
+    "economic_roles+0.25": 54,
+    "terrain-0.25": 58,
+    "terrain+0.25": 60
+  },
+  "kendall_tau_base_vs_corner": {
+    "population-0.25": 0.9531,
+    "population+0.25": 0.956,
+    "rail_gap-0.25": 0.9531,
+    "rail_gap+0.25": 0.9562,
+    "commute-0.25": 0.9321,
+    "commute+0.25": 0.946,
+    "economic_roles-0.25": 0.953,
+    "economic_roles+0.25": 0.9613,
+    "terrain-0.25": 0.9775,
+    "terrain+0.25": 0.9806
+  },
+  "kendall_tau_pairs": {
+    "n_pairs": 55,
+    "min": 0.8781,
+    "median": 0.9358
+  },
+  "drivers": {
+    "mean_share_of_score_top": {
+      "population": 0.3517,
+      "rail_gap": 0.2315,
+      "commute": 0.1122,
+      "economic_roles": 0.175,
+      "terrain": 0.1296
+    },
+    "mean_share_of_score_all": {
+      "population": 0.3745,
+      "rail_gap": 0.325,
+      "commute": 0.078,
+      "economic_roles": 0.0562,
+      "terrain": 0.1663
+    },
+    "spearman_with_score": {
+      "population": 0.5286,
+      "rail_gap": 0.0534,
+      "commute": 0.487,
+      "economic_roles": 0.5407,
+      "terrain": 0.2517
+    }
+  },
+  "missing_counts": {
+    "population": 6,
+    "rail_gap": 2,
+    "commute": 0,
+    "economic_roles": 136,
+    "terrain": 104
+  },
+  "metros": [
+    {
+      "name": "Riyadh",
+      "tier": 1,
+      "lat": [
+        24.638916
+      ],
+      "lon": [
+        46.7160104
+      ],
+      "pop": 6924566.0
+    },
+    {
+      "name": "Jeddah",
+      "tier": 1,
+      "lat": [
+        21.5504432
+      ],
+      "lon": [
+        39.1742363
+      ],
+      "pop": 3712917.0
+    },
+    {
+      "name": "Makkah",
+      "tier": 1,
+      "lat": [
+        21.420847
+      ],
+      "lon": [
+        39.826869
+      ],
+      "pop": 2385509.0
+    },
+    {
+      "name": "Madinah",
+      "tier": 1,
+      "lat": [
+        24.471153
+      ],
+      "lon": [
+        39.6111216
+      ],
+      "pop": 1411599.0
+    },
+    {
+      "name": "Dammam–Khobar–Dhahran",
+      "tier": 1,
+      "lat": [
+        26.4367824,
+        26.3039999,
+        26.2966528
+      ],
+      "lon": [
+        50.1039991,
+        50.1960237,
+        50.1202146
+      ],
+      "pop": 1939651.0
+    },
+    {
+      "name": "Taif",
+      "tier": 2,
+      "lat": [
+        21.2702801
+      ],
+      "lon": [
+        40.4158308
+      ],
+      "pop": 563282.0
+    },
+    {
+      "name": "Buraidah",
+      "tier": 2,
+      "lat": [
+        26.331667
+      ],
+      "lon": [
+        43.971667
+      ],
+      "pop": 571169.0
+    },
+    {
+      "name": "Tabuk",
+      "tier": 2,
+      "lat": [
+        28.4012536
+      ],
+      "lon": [
+        36.567049
+      ],
+      "pop": 594350.0
+    },
+    {
+      "name": "Abha–Khamis Mushait",
+      "tier": 2,
+      "lat": [
+        18.2164282,
+        18.3
+      ],
+      "lon": [
+        42.5043596,
+        42.733333
+      ],
+      "pop": 869355.0
+    },
+    {
+      "name": "Jazan",
+      "tier": 3,
+      "lat": [
+        16.894719
+      ],
+      "lon": [
+        42.5579758
+      ],
+      "pop": 173919.0
+    },
+    {
+      "name": "Najran",
+      "tier": 3,
+      "lat": [
+        17.5439809
+      ],
+      "lon": [
+        44.2246817
+      ],
+      "pop": 381431.0
+    }
+  ]
+}

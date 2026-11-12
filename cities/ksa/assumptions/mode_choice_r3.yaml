@@ -1,0 +1,176 @@
+# > **Document version:** cities/ksa/assumptions/mode_choice_r3.yaml v0.1 | 31 Oct 2026 | Author: mode-choice-modeler (R3) | Status: draft
+# R3 parameters for the intercity car / rail / air / bus MNL (modechoice/). The COEFFICIENTS live in
+# mode_choice_priors.yaml (R1d, read-only); this file holds only what the priors lack: purpose treatment,
+# car cost, access/egress defaults, the summer first/last-mile penalty, availability rules, fare-per-km
+# defaults and the attributes of the representative OD pairs used by the sweep.
+# Every real-world number carries `source:` (S-... id) or `assumption:` (A-mode-0xx, docs/assumptions.md).
+# Label: "coefficients literature-based until survey results exist";
+#        "synthetic demand, uncalibrated: scenario comparison, not a forecast".
+version: "0.1"
+label: "coefficients literature-based until survey results exist"
+priors_file: cities/ksa/assumptions/mode_choice_priors.yaml
+
+purpose:
+  # Priors are not purpose-specific (A-mode-006 is the non-work inter-urban design VoT). The value of time
+  # per purpose is scaled by the A-cba-010 ratios to the non-work value, applied to the COST coefficient
+  # (b_cost / ratio): time sensitivity is kept from the literature priors, money sensitivity falls for
+  # purposes where time is worth more (employer-paid business travel). Method: A-mode-021.
+  method: {value: cost_scaling, options: [cost_scaling, ivt_scaling, none], assumption: A-mode-021}
+  vot_ratio_reference: a_cba_010_non_work   # key in priors vot_cross_check
+  vot_key:                                   # purpose -> key in priors vot_cross_check
+    commute: a_cba_010_commuting
+    business: a_cba_010_working
+    leisure_vfr: a_cba_010_non_work
+    pilgrimage: a_cba_010_non_work
+    tourism: a_cba_010_non_work
+  note: "pilgrimage and tourism take the non-work value: no Saudi or Umrah VoT found (S-soc-308 names Umrah as a distinct purpose; coefficients not obtained)"
+
+car:
+  fuel_price_sar_per_l: {value: 2.18, unit: SAR per litre, range: [2.18, 2.33], source: S-soc-316, note: "Gasoline 91, October 2026; 95 = 2.33 as upper end"}
+  fuel_economy_km_per_l: {value: 10.0, unit: km per litre, range: [8.0, 14.0], source: S-soc-317, note: "secondary; central and range as printed in the source row"}
+  running_cost_basis: {value: fuel_only, assumption: A-mode-023, note: "perceived out-of-pocket cost = fuel; wear, insurance and depreciation excluded (perceived-cost convention)"}
+  parking_toll_sar_per_trip: {value: 0.0, unit: SAR per vehicle trip, range: [0.0, 30.0], assumption: A-mode-024}
+  occupancy: {value: 2.0, unit: persons per car, range: [1.2, 3.5], assumption: A-mode-022, note: "car cost is per vehicle; the MNL divides it by occupancy (cost per traveller)"}
+  terminal_min: {value: 0.0, unit: min, range: [0.0, 15.0], assumption: A-mode-038, note: "car door-to-door = road skim minutes between zone points; no parking or terminal time added"}
+
+access_egress:
+  # default minutes per side, where R4's station/airport access skims do not yet exist. Central values are
+  # the SP design's central combined levels (docs/survey/design.yaml): rail 20/40/60 -> 40, air 60/90/120 -> 90
+  # (includes check-in and security), bus 15/30/45 -> 30.
+  rail: {access_min: 20, egress_min: 20, unit: min, range_total: [20, 60], assumption: A-mode-028}
+  air:  {access_min: 60, egress_min: 30, unit: min, range_total: [60, 120], assumption: A-mode-028, note: "access includes airport processing (check-in, security, boarding)"}
+  bus:  {access_min: 15, egress_min: 15, unit: min, range_total: [15, 45], assumption: A-mode-028}
+
+summer_penalty:
+  # skill isochrone-commute: summer-heat first/last-mile penalty (that skill's access-penalty id is not yet
+  # registered; this track registers its own id). Effective access+egress minutes =
+  # (access+egress) x (1 + outdoor_share x (multiplier - 1)) in the summer season.
+  multiplier: {value: 1.5, unit: ratio on outdoor minutes, range: [1.0, 3.7], assumption: A-mode-026, note: "1.0 = no heat effect (S-soc-301, world meta-analysis, not significant); 3.7 = Riyadh SP walk -0.18 / Metro IVT -0.029 (S-soc-304, secondary) divided by the world walk multiplier 1.67 (S-soc-300)"}
+  outdoor_share: {rail: 0.3, air: 0.1, bus: 0.4, unit: share of access+egress minutes walked or waited outdoors, range: [0.1, 0.6], assumption: A-mode-027}
+  default_season: {value: other, options: [other, summer], assumption: A-mode-026}
+
+on_time:
+  # utility term b_ontime x (on_time_share - reference); the reference is the SP design midpoint so the
+  # ASC priors keep their meaning at design-centre levels. Car and bus carry no on-time term (the SP
+  # design shows reliability for rail and air only).
+  reference_pp: {value: 87.5, unit: percentage points, range: [80.0, 95.0], assumption: A-mode-025}
+  rail_by_line:
+    hhr: {value: 97.8, unit: "%", source: S-014}
+    sar-east-passenger: {value: 96.1, unit: "%", source: S-r3-mode-001}
+    sar-north-passenger: {value: 94.3, unit: "%", source: S-r3-mode-001}
+    landbridge: {value: 96.1, unit: "%", range: [94.3, 97.8], assumption: A-mode-039, note: "hypothetical service: East Train value as proxy; range = North to HHR"}
+  air: {value: 85.0, unit: "%", range: [70.0, 95.0], assumption: A-mode-032, note: "no open airline on-time figure for Saudi domestic routes found; GACA's 89 % (S-cp1-101) is an airport compliance rate, not punctuality"}
+
+air:
+  block_time:
+    # block minutes = fixed + great-circle km between the zones' airport host points / speed
+    fixed_min: {value: 30, unit: min, range: [20, 40], assumption: A-mode-029}
+    speed_km_per_min: {value: 12.0, unit: km per min, range: [10.0, 14.0], assumption: A-mode-029, note: "cross-check only (not an input): RUH-JED 100-110 min, JED-MED about 65 min, RUH-DMM 60-100 min in search summaries of aggregator pages that could not be read (S-r3-mode-004, unverified)"}
+  fare:
+    # fare SAR = fixed + per_km x great-circle km; no open fare table (S-soc-320, flynas RUH-JED SAR 189 offer, is unverified and is used only as a cross-check)
+    fixed_sar: {value: 150, unit: SAR, range: [100, 250], assumption: A-mode-030}
+    per_km_sar: {value: 0.15, unit: SAR per km, range: [0.05, 0.30], assumption: A-mode-030}
+  availability_rule: {value: listed_routes_only, assumption: A-mode-040, note: "air only where both zones map to different airports and the route is listed under air.routes with evidence"}
+  airport_host:
+    # zone -> (IATA, zone whose point stands in for the airport; access to the host zone by road skim is added)
+    G138: {iata: RUH, host_zone: G138, source: S-cp1-100}
+    G089: {iata: JED, host_zone: G089, source: S-cp1-100}
+    G091: {iata: JED, host_zone: G089, assumption: A-mode-040, note: "Makkah has no airport; travellers use JED, road skim Makkah-Jeddah added to access"}
+    G038: {iata: DMM, host_zone: G038, source: S-eastern-012}
+    G072: {iata: MED, host_zone: G072, source: S-madinah-013}
+    G114: {iata: ELQ, host_zone: G114, source: S-cp1-115}
+    G050: {iata: HAS, host_zone: G050, source: S-hail-006}
+  routes:
+    # headway = minutes between departures over the service day. Route existence and headways are
+    # assumptions (A-mode-031, A-mode-040): no GACA city-pair table is open (S-r1a-218). `evidence` ids are
+    # cross-checks only; unverified rows (search summaries, pages returned 403) do not feed the model.
+    - {pair: [RUH, JED], headway_min: 30, range: [15, 60], assumption: A-mode-031, evidence: S-r1a-530, note: "busiest domestic pair; in the IATA world top 10 (secondary)"}
+    - {pair: [RUH, DMM], headway_min: 60, range: [30, 120], assumption: A-mode-031, evidence: S-r3-mode-004}
+    - {pair: [JED, MED], headway_min: 120, range: [60, 240], assumption: A-mode-031, evidence: S-r3-mode-004}
+    - {pair: [RUH, ELQ], headway_min: 300, range: [180, 480], assumption: A-mode-031, evidence: S-r3-mode-005, note: "about 24 nonstop flights a week in a search summary (unverified)"}
+    - {pair: [RUH, HAS], headway_min: 240, range: [120, 480], assumption: A-mode-031, evidence: S-r3-mode-005, note: "about 4 a day in a search summary (unverified)"}
+    - {pair: [RUH, MED], headway_min: 120, range: [60, 240], assumption: A-mode-031, evidence: S-r3-mode-004}
+
+bus:
+  ivt_factor_on_road: {value: 1.15, unit: ratio to car skim minutes, range: [1.05, 1.35], assumption: A-mode-033}
+  fare_per_km_sar: {value: 0.20, unit: SAR per road km, range: [0.195, 0.26], source: S-soc-319, assumption: A-mode-034, note: "derived: SAPTCO regular 81.43 / 416.5 road km Riyadh-Dammam = 0.196; 196 / 954.1 km Riyadh-Jeddah = 0.205; VIP 108 / 416.5 = 0.259 (road km from runs/skims/national-governorates)"}
+  headway_min: {value: 240, unit: min, range: [60, 720], assumption: A-mode-035, note: "no per-route frequency found (S-r1a-522); TGA reports over 44,000 intercity trips in Q2 2025 (S-r1a-521, secondary)"}
+  availability_min_road_km: {value: 50, unit: km, range: [30, 100], assumption: A-mode-040, note: "intercity bus assumed available between zones at least this far apart by road"}
+
+rail:
+  availability_rule: {value: same_line_both_zones, assumption: A-mode-040, note: "rail only where one line in the scenario has a station in both zones; no transfers in R3"}
+  fare_per_km_hypothetical:
+    # for scenario lines without a published fare (Landbridge); SAR per track km
+    value: 0.30
+    unit: SAR per track km
+    range: [0.20, 0.405]
+    assumption: A-mode-037
+    note: "derived: SAR East 90 / 449.1 km = 0.200 (S-r1a-024); North 125 / 622.6 = 0.201 (S-r1a-021); HHR Jeddah-Madinah 150 / 370.3 = 0.405 (S-soc-318, secondary)"
+  hypothetical_speed_ratio:
+    # average / design speed for lines without a timetable; to be replaced by R4's running-time model
+    value: 0.60
+    unit: ratio
+    range: [0.45, 0.80]
+    assumption: A-mode-036
+    note: "HHR Makkah-Jeddah achieved 107 km/h (43 min, S-cp2-503) to about 160 km/h (28-30 min, S-cp2-504) on a 300 km/h line = 0.36-0.54 on a 78 km hop; long hops run nearer design speed"
+
+representative_pairs:
+  # o, d = governorate zone ids (cities/ksa/zones/governorates.geojson). Road km/min come from the skims.
+  # Rail fields per scenario; a pair with no rail entry for a scenario has rail unavailable in it.
+  - id: RUH-DMM
+    o: G138
+    d: G038
+    name: Riyadh - Dammam (SAR East)
+    rail:
+      S0: {line: sar-east-passenger, ivt_min: 215, ivt_range: [215, 270], ivt_source: S-r1a-040, fare_sar: 90, fare_source: S-r1a-024, headway_min: 270, headway_range: [180, 480], headway_source: S-r1a-040, assumption: A-mode-041, note: "3 h 35 min express (aggregator, secondary); 4 h 10 to 4 h 30 (S-r1a-041, unverified, upper range only); 4 trains listed -> headway over an 18 h day"}
+  - id: RUH-ELQ
+    o: G138
+    d: G114
+    name: Riyadh - Qassim (Buraydah) (SAR North)
+    rail:
+      S0: {line: sar-north-passenger, ivt_min: 148, ivt_range: [148, 160], ivt_source: S-r3-mode-002, fare_sar: 80, fare_source: S-r1a-022, headway_min: 540, headway_range: [360, 1080], headway_source: S-r3-mode-003, assumption: A-mode-041, note: "2 h 28 min Qassim-Riyadh incl. the Majmaah stop (Gulf News, secondary); upper end assumed; North trains 'once daily' per direction on the Hail service (S-r3-mode-003, secondary) plus other North services, so headway assumed 540 min (360-1080)"}
+  - id: RUH-HAS
+    o: G138
+    d: G050
+    name: Riyadh - Hail (SAR North)
+    rail:
+      S0: {line: sar-north-passenger, ivt_min: 272, ivt_range: [240, 360], ivt_source: S-r3-mode-003, fare_sar: 125, fare_source: S-r1a-021, headway_min: 540, headway_range: [360, 1080], headway_source: S-r3-mode-003, assumption: A-mode-041, note: "average 4 h 32 min, once daily (rome2rio, secondary); range ends assumed (a 6 h listing seen in a search summary only)"}
+  - id: MAK-JED
+    o: G091
+    d: G089
+    name: Makkah - Jeddah (HHR)
+    rail:
+      S0: {line: hhr, ivt_min: 43, ivt_range: [28, 43], ivt_source: S-cp2-503, fare_sar: 43, fare_source: S-r1a-012, headway_min: 60, headway_range: [30, 120], headway_source: S-r1a-011, assumption: A-mode-041, note: "43 min = 2018 HHR timetable (verified archive); 28-30 min current secondary listings (S-cp2-504, C-r1a-22); 17 trips a day Airport-Makkah (secondary) -> about 60 min"}
+  - id: JED-MED
+    o: G089
+    d: G072
+    name: Jeddah - Madinah (HHR)
+    rail:
+      S0: {line: hhr, ivt_min: 135, ivt_range: [100, 140], assumption: A-mode-041, fare_sar: 150, fare_source: S-soc-318, headway_min: 60, headway_range: [30, 120], headway_source: S-r1a-011, note: "no published Jeddah-Madinah time read: 175 min Makkah-Madinah non-stop (S-cp2-503) less 43 min Makkah-Jeddah plus one dwell, rounded; fare 'from 150' economy (secondary)"}
+  - id: MAK-MED
+    o: G091
+    d: G072
+    name: Makkah - Madinah (HHR)
+    rail:
+      S0: {line: hhr, ivt_min: 175, ivt_range: [120, 175], ivt_source: S-cp2-503, fare_sar: 160, fare_range: [150, 195], assumption: A-mode-041, headway_min: 60, headway_range: [30, 120], headway_source: S-r1a-011, note: "175 min non-stop 2018 timetable (verified archive); about 2 h (S-r1a-010, secondary); fare assumed: the 150 and 162 listings (S-r1a-016, S-r1a-014) are unverified and only bound the range"}
+  - id: JED-RUH
+    o: G089
+    d: G138
+    name: Jeddah - Riyadh (no rail today; Landbridge committed, announced/planned)
+    rail:
+      S1: {line: landbridge, hypothetical_service: true, track_km: 874.3, track_km_source: "cities/ksa/lines/landbridge.yaml km_post (great-circle chain, A-r1a-006)", design_speed_kmh: 250, design_speed_source: "cities/ksa/lines/landbridge.yaml design_speed_kmh (line source S-054, secondary)", intermediate_stops: 3, stops_source: S-062, headway_min: 240, headway_range: [120, 480], assumption: A-mode-036, note: "IVT = track_km / (design speed x A-mode-036) + stops x dwell (A-r1a-035); fare = track_km x A-mode-037; placeholder until R4's running-time model"}
+  - id: MAK-JED-28
+    o: G091
+    d: G089
+    name: Makkah - Jeddah (HHR, current secondary 28 min listing; input sensitivity)
+    input_variant: true
+    rail:
+      S0: {line: hhr, ivt_min: 28, ivt_range: [28, 30], ivt_source: S-cp2-504, fare_sar: 43, fare_source: S-r1a-012, headway_min: 60, headway_range: [30, 120], headway_source: S-r1a-011, assumption: A-mode-041, note: "input variant of MAK-JED, not a separate OD"}
+
+dwell_min_hypothetical: {value: 2.0, unit: min per intermediate stop, range: [1.0, 5.0], assumption: A-r1a-035}
+
+calibration_hook:
+  # R3 calibration (demand/calibrate.py) may adjust only these, within the priors' ranges, via
+  # modechoice.coefficients.apply_overrides; every adjustment is logged by the caller.
+  adjustable: [asc.rail, asc.air, asc.bus]
+  assumption: A-mode-010

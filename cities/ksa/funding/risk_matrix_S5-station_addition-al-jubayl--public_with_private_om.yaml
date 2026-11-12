@@ -1,0 +1,143 @@
+# > **Document version:** risk_matrix_S5-station_addition-al-jubayl--public_with_private_om.yaml v1.1 | 4 Nov 2026 | Author: R7 builder (funding.risk_matrix build; generated, do not edit by hand) | Status: draft
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast
+version: '1.0'
+template: false
+corridor_family: station_addition
+delivery_model: public_with_private_om
+corridor: S5-station_addition-al-jubayl
+programme: null
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+evidence:
+  score: runs/r6/v3/library/S5-station_addition-al-jubayl/score.json
+  judge_sha256: d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee
+  fiscal_run: runs/r7/fiscal/fiscal.json
+  vfm_run: runs/r7/vfm/vfm.json
+  population_case: un_wpp_low
+columns:
+- public
+- private
+- shared
+rows:
+- risk: construction
+  scope: cost overrun, schedule delay, geotechnical and ground conditions, sand and heat design, interfaces
+    between civil, systems and rolling-stock packages
+  public: x
+  private: ''
+  shared: ''
+  mechanism_options:
+  - fixed-price design-and-build or DBFM/DBFOM with payment only from availability (private)
+  - target-cost or cost-sharing band with pain/gain share (shared)
+  - compensation event for unforeseen ground conditions above a defined baseline (shared)
+  - state-delivered works with optimism-bias contingency (public)
+  mechanism: state-delivered works with an optimism-bias contingency
+  note: 'capital works stay with the owner; only O&M is contracted. Capex P10/P50/P90 267 / 474 / 1,762
+    SAR m (base P50 397; P90/P50 3.71; runs/r6/v3/library/S5-station_addition-al-jubayl/score.json). NPV
+    at P90 cost, low / medium / high: 4,007 / 4,538 / 5,082. The state carries the outturn: P90 minus
+    P50 capex in PV 1,214.'
+  precedents:
+  - S-fund-261
+  - S-fund-025
+- risk: demand
+  scope: ridership and freight volume versus forecast; ramp-up; competing modes
+  public: x
+  private: ''
+  shared: ''
+  mechanism_options:
+  - availability payment, state keeps fare revenue (public)
+  - full demand risk to concessionaire via fares or access charges (private)
+  - minimum revenue guarantee and/or revenue sharing above a cap (cap-and-collar) (shared)
+  - revenue-sharing 'bonne fortune' clause above forecast (shared)
+  mechanism: state keeps fare revenue; operator paid a fee
+  note: 'Haramain: Renfe runs trains on behalf of SAR (secondary); whether any of its fee depends on ridership
+    is unclear. BCR P10 (60 y, without WEIs) low / medium / high 2.76 / 3.08 / 3.43; PV fares / PV opex+renewals
+    2.61 (un_wpp_low).'
+  precedents:
+  - S-fund-039
+  - S-fund-045
+- risk: revenue
+  scope: fare level and indexation, fare-setting authority, ancillary and non-fare revenue (retail, property),
+    collection and leakage
+  public: x
+  private: ''
+  shared: ''
+  mechanism_options:
+  - state sets and keeps fares; operator paid a fee (public)
+  - 'concessionaire sets fares within a regulated cap (private; only if the law allows it: who sets passenger
+    fares is an open legal question, fare_setting_authority)'
+  - access-charge regime set by the regulator, collected by the infrastructure manager (shared)
+  - station-area development rights or levy income ring-fenced to the project (shared)
+  mechanism: state keeps fares; operator paid a fee
+  note: fare revenue stays with the owner; who sets passenger fares is unclear (legal item fare_setting_authority).
+    PV fare revenue P50 453 against PV opex+renewals 174 SAR m (60 y, un_wpp_low); a negative value means
+    the addition lowers fare revenue on the host network in the model.
+  precedents:
+  - S-fund-039
+- risk: operations
+  scope: operations and maintenance cost, availability and punctuality performance, asset condition at
+    hand-back, lifecycle renewal
+  public: ''
+  private: x
+  shared: ''
+  mechanism_options:
+  - performance-based O&M contract with deductions (private)
+  - availability deductions and hand-back condition requirements in a DBFM/DBFOM (private)
+  - in-house operation by the state company (public)
+  mechanism: performance-based O&M contract with availability and punctuality deductions
+  note: 'HSL-Zuid shows the limit: arbitration placed 90% of a rail-damage cost on the State. New station
+    Al Jubayl on gcc-railway-ksa (hypothetical): host line gcc-railway-ksa (committed, status design,
+    source S-029).'
+  precedents:
+  - S-fund-039
+  - S-fund-044
+- risk: financing
+  scope: interest-rate and refinancing risk, availability of long-tenor debt, FX exposure on imported
+    systems and foreign lenders, financial close
+  public: x
+  private: ''
+  shared: ''
+  mechanism_options:
+  - sovereign or PIF financing (public)
+  - project-finance debt raised by the SPV, rate fixed or hedged at financial close (private)
+  - refinancing-gain sharing clause (shared)
+  - MoF financial and credit support under PSP Law Arts. 8 and 10 (shared)
+  mechanism: budget, PIF or SAR balance-sheet funding
+  note: no private finance in the contract. Net fiscal cost 60 y P10/P50/P90 -27 / 168 / 1,382; VfM vs
+    public -344 SAR m (runs/r7/vfm, > 0 favours the PPP).
+  precedents:
+  - S-fund-004
+  - S-fund-027
+- risk: land
+  scope: land acquisition and expropriation, right-of-way, utilities relocation, protection zones, heritage
+    and route-sensitivity constraints
+  public: x
+  private: ''
+  shared: ''
+  mechanism_options:
+  - state delivers land and utilities free of encumbrances before works (public)
+  - concessionaire acquires land within a capped budget (shared)
+  - compensation event for late land delivery (public)
+  mechanism: state delivers land before works
+  note: 'as in fully public delivery. New station Al Jubayl on gcc-railway-ksa (hypothetical): host line
+    gcc-railway-ksa (committed, status design, source S-029).'
+  precedents:
+  - S-fund-014
+  - S-fund-258
+- risk: regulatory_force_majeure
+  scope: change in law, permits, political decisions, termination for public interest, force majeure,
+    disputes
+  public: ''
+  private: ''
+  shared: x
+  mechanism_options:
+  - change-in-law and public-interest termination compensation (public)
+  - force majeure relief with shared cost after a threshold (shared)
+  - arbitration with agreed governing law, subject to agency approval (shared)
+  mechanism: change-in-law and force-majeure relief in the O&M contract; arbitration subject to agency
+    approval
+  note: 'a 5-year-plus O&M contract may fall under the PSP Law (unclear: O&M-only contracts and the Art.
+    1 definition).'
+  precedents:
+  - S-fund-007
+  - S-fund-008
+note: Allocation per cities/ksa/assumptions/funding_r7.yaml (allocation, A-fund-001); evidence from the
+  judge v3 runs named above. Not a recommendation for any entity (rule 9); the recommendation is in cities/ksa/funding/recommendations.yaml.

@@ -1,0 +1,4751 @@
+{
+"type": "FeatureCollection",
+"name": "stations",
+"attribution": "(c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+"generated": "2026-11-06",
+"features": [
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+48.49278,
+28.42254
+]
+},
+"properties": {
+"station_uid": "gcc-railway-ksa:kuwait-border",
+"line_id": "gcc-railway-ksa",
+"station_id": "kuwait-border",
+"name_en": "Kuwait border (proxy Al Khafji customs)",
+"name_ar": "الحدود الكويتية (منفذ الخفجي)",
+"class": "planned",
+"layer": "committed",
+"status": "design",
+"operator": null,
+"opened": null,
+"km_post": 0.0,
+"source": "S-032",
+"location_method": "town_centroid:osm:node/983083571 (Al Khafji city)",
+"located": false,
+"uncertainty_km": 13.1,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Route 'will begin at Al-Khafji in the Eastern Province near Kuwait's border' (S-cp2-607, 12 May 2026). No station or crossing site published. Town centroid = OSM Al Khafji city node (67,012 pop. in OSM). Band = max(own built-up radius 5.19 km, geodesic 13.11 km to the named customs node 1237828458) (A-stn-001, A-stn-003). The old proxy (customs node) lies inside the band. Layer committed, design stage (S-032). [CP2_PREP research: S-cp2-607, S-032, S-cp2-601, S-cp2-602]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.104,
+26.43678
+]
+},
+"properties": {
+"station_uid": "gcc-railway-ksa:dammam",
+"line_id": "gcc-railway-ksa",
+"station_id": "dammam",
+"name_en": "Dammam (not confirmed",
+"name_ar": "الدمام",
+"class": "planned",
+"layer": "committed",
+"status": "design",
+"operator": null,
+"opened": null,
+"km_post": 285.2,
+"source": "S-032",
+"location_method": "town_centroid:osm:node/287865393 (Dammam city)",
+"located": false,
+"uncertainty_km": 13.8,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Dammam remains 'not confirmed' (C-008). The line passes through Dammam (S-cp2-607) but no station site is published. Band from the Dammam-Khobar built-up cluster (diameter 27.5 km, radius 13.76 km). OSM 'Dammam Railway Station' node/492547630 (SAR, existing) is 3.7 km away and inside the band; not used: no source links it to the GCC line. [CP2_PREP research: S-cp2-607, S-032, S-cp2-601, S-cp2-602]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+51.56759,
+24.13303
+]
+},
+"properties": {
+"station_uid": "gcc-railway-ksa:uae-border",
+"line_id": "gcc-railway-ksa",
+"station_id": "uae-border",
+"name_en": "UAE border (proxy Al Batha)",
+"name_ar": "الحدود الإماراتية (البطحاء)",
+"class": "planned",
+"layer": "committed",
+"status": "design",
+"operator": null,
+"opened": null,
+"km_post": 580.6,
+"source": "S-032",
+"location_method": "town_centroid:osm:node/3952970012 (Al Batha)",
+"located": false,
+"uncertainty_km": 1.3,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Route 'will then extend southward to Al-Batha on the UAE border' (S-cp2-607). No crossing or station site published. OSM Al Batha node is a village-class place (crossing name). Band = built-up radius 1.26 km (374 buildings). Old proxy coordinates are the same node. [CP2_PREP research: S-cp2-607, S-032, S-cp2-601, S-cp2-602]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+36.166799,
+29.046369
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:dhat-al-hajj",
+"line_id": "hejaz-railway",
+"station_id": "dhat-al-hajj",
+"name_en": "Dhat al Hajj",
+"name_ar": "ذات الحاج",
+"class": "terminal",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 0.0,
+"source": "S-r1a-807",
+"location_method": "osm:node/1237958878",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.053,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+36.269423,
+28.855893
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:bir-ibn-hermas",
+"line_id": "hejaz-railway",
+"station_id": "bir-ibn-hermas",
+"name_en": "Bir Ibn Hermas",
+"name_ar": "محطة بئر ابن هرماس - قطار الحجاز",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 23.74,
+"source": "S-r1a-807",
+"location_method": "osm:node/7317195489",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.167,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+36.767037,
+28.217973
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:al-uthayli",
+"line_id": "hejaz-railway",
+"station_id": "al-uthayli",
+"name_en": "Al Uthayli",
+"name_ar": "الأثيلي",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 111.51,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236320545",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.163,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+36.862929,
+28.157979
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:birk",
+"line_id": "hejaz-railway",
+"station_id": "birk",
+"name_en": "Birk",
+"name_ar": "برك",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 123.4,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236320550",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.118,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.059047,
+28.108568
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:al-mustabaghah",
+"line_id": "hejaz-railway",
+"station_id": "al-mustabaghah",
+"name_en": "Al Mustabaghah",
+"name_ar": "المصطبغة",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 146.39,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236320557",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.041,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.12821,
+28.092966
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:al-akhdar",
+"line_id": "hejaz-railway",
+"station_id": "al-akhdar",
+"name_en": "Al Akhdar",
+"name_ar": "الأخضر",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 155.83,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236320517",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.035,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.368799,
+27.888715
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:al-asad",
+"line_id": "hejaz-railway",
+"station_id": "al-asad",
+"name_en": "Al Asad",
+"name_ar": "الأسعد",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 196.43,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236320336",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.015,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.51419,
+27.737785
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:qalat-al-muazzam",
+"line_id": "hejaz-railway",
+"station_id": "qalat-al-muazzam",
+"name_en": "Qalat al Muazzam",
+"name_ar": "قلعة المعظم",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 219.44,
+"source": "S-r1a-807",
+"location_method": "osm:node/1237943733",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.088,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.629644,
+27.536264
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:khashm-sana",
+"line_id": "hejaz-railway",
+"station_id": "khashm-sana",
+"name_en": "Khashm Sana",
+"name_ar": "خشم صنع",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 244.55,
+"source": "S-r1a-807",
+"location_method": "osm:node/1237944216",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.028,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.799057,
+27.345592
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:ad-dar-al-hamra",
+"line_id": "hejaz-railway",
+"station_id": "ad-dar-al-hamra",
+"name_en": "Ad Dar al Hamra",
+"name_ar": "الدار الحمراء",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 271.86,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236392693",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.076,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.843176,
+26.992272
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:abu-taqah",
+"line_id": "hejaz-railway",
+"station_id": "abu-taqah",
+"name_en": "Abu Taqah",
+"name_ar": "أبو طاقة",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 317.22,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236392443",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.115,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.860287,
+26.897999
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:al-mazham",
+"line_id": "hejaz-railway",
+"station_id": "al-mazham",
+"name_en": "Al Mazham",
+"name_ar": "المزحم",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 333.89,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236392957",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.295,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.947649,
+26.806541
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:mada-in-saleh",
+"line_id": "hejaz-railway",
+"station_id": "mada-in-saleh",
+"name_en": "Mada'in Saleh",
+"name_ar": "Mada'in Saleh",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 347.19,
+"source": "S-r1a-807",
+"location_method": "osm:node/7926611002",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.047,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.173931,
+26.410145
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:mashhad",
+"line_id": "hejaz-railway",
+"station_id": "mashhad",
+"name_en": "Mashhad",
+"name_ar": "مشهد",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 404.29,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236393841",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.105,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.738791,
+25.541176
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:hadiyah",
+"line_id": "hejaz-railway",
+"station_id": "hadiyah",
+"name_en": "Hadiyah",
+"name_ar": "هدية",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 525.75,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236451809",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.052,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.814807,
+25.378464
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:jadaah",
+"line_id": "hejaz-railway",
+"station_id": "jadaah",
+"name_en": "Jadaah",
+"name_ar": "محطة جذَّاعة",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 548.31,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236451922",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.04,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.824337,
+25.229741
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:abu-an-naam",
+"line_id": "hejaz-railway",
+"station_id": "abu-an-naam",
+"name_en": "Abu an Naam",
+"name_ar": "أبو النعم",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 565.69,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236451837",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.036,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.885033,
+25.098686
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:istabl-antar-station",
+"line_id": "hejaz-railway",
+"station_id": "istabl-antar-station",
+"name_en": "Istabl Antar Station",
+"name_ar": "إصطبل عنتر",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 581.72,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236695030",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.023,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+38.988933,
+24.947143
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:al-buwayr-station",
+"line_id": "hejaz-railway",
+"station_id": "al-buwayr-station",
+"name_en": "Al Buwayr Station",
+"name_ar": "محطة البوير",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 601.57,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236694020",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.019,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.127553,
+24.852413
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:al-anqa-station",
+"line_id": "hejaz-railway",
+"station_id": "al-anqa-station",
+"name_en": "Al Anqa Station",
+"name_ar": "محطة العنقاء",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 621.33,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236694383",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.14,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.218578,
+24.701011
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:buwatah-station",
+"line_id": "hejaz-railway",
+"station_id": "buwatah-station",
+"name_en": "Buwatah Station",
+"name_ar": "محطة بواطة",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 640.26,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236693196",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.254,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.35918,
+24.590968
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:mahattat-hafirah",
+"line_id": "hejaz-railway",
+"station_id": "mahattat-hafirah",
+"name_en": "Mahattat Hafirah",
+"name_ar": "محطة حفيرة",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 661.06,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236691876",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.094,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.469531,
+24.497571
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:muhit-station",
+"line_id": "hejaz-railway",
+"station_id": "muhit-station",
+"name_en": "Muhit Station",
+"name_ar": "محطة محيط",
+"class": "intermediate",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 680.3,
+"source": "S-r1a-807",
+"location_method": "osm:node/1236691779",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.044,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.59919,
+24.46068
+]
+},
+"properties": {
+"station_uid": "hejaz-railway:madinah-hejaz-station",
+"line_id": "hejaz-railway",
+"station_id": "madinah-hejaz-station",
+"name_en": "Madinah (Hejaz Railway station",
+"name_ar": "محطة سكة حديد الحجاز بالمدينة المنورة",
+"class": "terminal",
+"layer": "historical",
+"status": "abandoned",
+"operator": null,
+"opened": "1908-09-01",
+"km_post": 694.01,
+"source": "S-r1a-071",
+"location_method": "osm:node/7931432373",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.018,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.788532,
+21.417656
+]
+},
+"properties": {
+"station_uid": "hhr:makkah",
+"line_id": "hhr",
+"station_id": "makkah",
+"name_en": "Makkah",
+"name_ar": "مكة المكرمة",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2018-10-11",
+"km_post": 0.0,
+"source": "S-001",
+"location_method": "osm:node/10956967098",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.027,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.245363,
+21.517643
+]
+},
+"properties": {
+"station_uid": "hhr:jeddah",
+"line_id": "hhr",
+"station_id": "jeddah",
+"name_en": "Al-Sulimaniyah - Jeddah",
+"name_ar": "السليمانية - جدة",
+"class": "major",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2018-10-11",
+"km_post": 78.25,
+"source": "S-001",
+"location_method": "osm:way/485762503",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.162,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.173818,
+21.660504
+]
+},
+"properties": {
+"station_uid": "hhr:kaia",
+"line_id": "hhr",
+"station_id": "kaia",
+"name_en": "Airport - Jeddah",
+"name_ar": "المطار- جدة",
+"class": "airport",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2018-10-11",
+"km_post": 97.02,
+"source": "S-001",
+"location_method": "osm:node/7227897402",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.011,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.191746,
+22.421824
+]
+},
+"properties": {
+"station_uid": "hhr:kaec",
+"line_id": "hhr",
+"station_id": "kaec",
+"name_en": "KAEC",
+"name_ar": "مدينة الملك عبدالله الاقتصادية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2018-10-11",
+"km_post": 181.04,
+"source": "S-001",
+"location_method": "osm:node/2147398509",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.038,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.699604,
+24.472297
+]
+},
+"properties": {
+"station_uid": "hhr:madinah",
+"line_id": "hhr",
+"station_id": "madinah",
+"name_en": "Madinah",
+"name_ar": "المدينة المنورة",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2018-10-11",
+"km_post": 448.54,
+"source": "S-001",
+"location_method": "osm:node/10957110707",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.017,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.71601,
+24.63892
+]
+},
+"properties": {
+"station_uid": "landbridge:riyadh",
+"line_id": "landbridge",
+"station_id": "riyadh",
+"name_en": "Riyadh (terminal site not published)",
+"name_ar": "الرياض",
+"class": "planned",
+"layer": "committed",
+"status": "announced",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 0.0,
+"source": "S-054",
+"location_method": "town_centroid:osm:node/315358390 (Riyadh city)",
+"located": false,
+"uncertainty_km": 19.9,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Terminal site not published (S-054). Band = built-up city radius (19.94 km, 40 km window; cluster diameter 39.9 km, not window-truncated). The stop is therefore effectively the city; any site must come from SAR. Thumamah / Al Malaz bypass station names from a search summary were not verified and are not used. No Riyadh Rail Link award notice found as of 31 Oct 2026 (S-r1a-055 is the latest). [CP2_PREP research: S-054, S-cp2-604, S-cp2-601, S-cp2-602, S-r1a-055]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.38333,
+24.49417
+]
+},
+"properties": {
+"station_uid": "landbridge:dawadmi",
+"line_id": "landbridge",
+"station_id": "dawadmi",
+"name_en": "Dawadmi (Al-Doadmi)",
+"name_ar": "الدوادمي",
+"class": "planned",
+"layer": "committed",
+"status": "announced",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 236.4,
+"source": "S-062",
+"location_method": "town_centroid:osm:node/1236695687 (Ad Dawadimi)",
+"located": false,
+"uncertainty_km": 4.1,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Named intermediate station (S-062: 'Dawadmi'; S-lb-018 MEED Projects: 'Al-Doadmi'). No coordinates published. Band = built-up radius 4.10 km (10,777 buildings in the cluster). [CP2_PREP research: S-062, S-lb-018, S-cp2-601, S-cp2-602]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.76194,
+22.43657
+]
+},
+"properties": {
+"station_uid": "landbridge:muwai",
+"line_id": "landbridge",
+"station_id": "muwai",
+"name_en": "Muwai (Moya)",
+"name_ar": "المويه",
+"class": "planned",
+"layer": "committed",
+"status": "announced",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 588.3,
+"source": "S-062",
+"location_method": "town_centroid:osm:node/1236449504 (Al Muwayh)",
+"located": false,
+"uncertainty_km": 15.0,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Named intermediate station: 'Muwai' (S-062), 'Moya' (S-lb-018), OSM 'Al Muwayh' town. No coordinates published. Band NOT measured: no footprint tile covers the window (A-stn-002 fallback 15 km, the Landbridge site value in A-r1a-006). [CP2_PREP research: S-062, S-lb-018, S-cp2-601, S-cp2-602]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.69898,
+21.62117
+]
+},
+"properties": {
+"station_uid": "landbridge:al-jumum",
+"line_id": "landbridge",
+"station_id": "al-jumum",
+"name_en": "Al-Jumum (Jumoum / Jamuma)",
+"name_ar": "الجموم",
+"class": "planned",
+"layer": "committed",
+"status": "announced",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 819.5,
+"source": "S-062",
+"location_method": "town_centroid:osm:node/1236466181 (Al Jumum)",
+"located": false,
+"uncertainty_km": 2.8,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Identity A-stn-006: 'Jamuma' (MEED Projects, S-lb-018) = Al-Jumum is the owner's statement (S-063, unverified against a published SAR list). No coordinates published. Band = built-up radius 2.78 km (6,544 buildings). Town centroid only. [CP2_PREP research: S-062, S-lb-018, S-063, S-cp2-601, S-cp2-602]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.17424,
+21.55044
+]
+},
+"properties": {
+"station_uid": "landbridge:jeddah",
+"line_id": "landbridge",
+"station_id": "jeddah",
+"name_en": "Jeddah (terminal site not published)",
+"name_ar": "جدة",
+"class": "planned",
+"layer": "committed",
+"status": "announced",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 874.3,
+"source": "S-054",
+"location_method": "town_centroid:osm:node/1933393717 (Jeddah city)",
+"located": false,
+"uncertainty_km": 13.9,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Terminal site not published (S-054). Band = max(built-up radius 13.89 km, geodesic 9.05 km to the OSM Jeddah Islamic seaport node) (A-stn-001, A-stn-003). Haramain stations (Jeddah Central, airport) are existing and not Landbridge sites. Search summaries on freight and passenger stations at the airport and city centre are unverified and not used. [CP2_PREP research: S-054, S-cp2-601, S-cp2-602, S-cp2-605]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.616642,
+24.829504
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:sab-bank",
+"line_id": "riyadh-metro-l1",
+"station_id": "sab-bank",
+"name_en": "SAB Bank",
+"name_ar": "ساب",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 0.0,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909571",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.625719,
+24.811572
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:dr-sulaiman-al-habib-group",
+"line_id": "riyadh-metro-l1",
+"station_id": "dr-sulaiman-al-habib-group",
+"name_en": "Dr. Sulaiman Al Habib Group",
+"name_ar": "د. سليمان الحبيب",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 2.19,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909573",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.643025,
+24.767549
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:king-abdullah-financial-district",
+"line_id": "riyadh-metro-l1",
+"station_id": "king-abdullah-financial-district",
+"name_en": "King Abdullah Financial District",
+"name_ar": "مركز الملك عبدالله المالي",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 7.52,
+"source": "S-r1a-801",
+"location_method": "osm:node/11435850923",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.65458,
+24.754252
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-murooj",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-murooj",
+"name_en": "Al Murooj",
+"name_ar": "المروج",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 9.52,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909686",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.659235,
+24.744938
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:king-fahad-district",
+"line_id": "riyadh-metro-l1",
+"station_id": "king-fahad-district",
+"name_en": "King Fahad District",
+"name_ar": "محطة حي الملك فهد",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 10.65,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909582",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.663637,
+24.736322
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:king-fahad-district-2",
+"line_id": "riyadh-metro-l1",
+"station_id": "king-fahad-district-2",
+"name_en": "King Fahad District 2",
+"name_ar": "محطة حي الملك فهد 2",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 11.71,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909685",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.666735,
+24.726784
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:stc",
+"line_id": "riyadh-metro-l1",
+"station_id": "stc",
+"name_en": "STC",
+"name_ar": "محطة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 12.85,
+"source": "S-r1a-801",
+"location_method": "osm:node/3941133525",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.671268,
+24.721278
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-wurud-2",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-wurud-2",
+"name_en": "Al Wurud 2",
+"name_ar": "محطة الورود 2",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 13.64,
+"source": "S-r1a-801",
+"location_method": "osm:node/8703400244",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.675143,
+24.713472
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-urubah",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-urubah",
+"name_en": "Al Urubah",
+"name_ar": "محطة العروبة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 14.59,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909586",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.680213,
+24.703454
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-inma-bank",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-inma-bank",
+"name_en": "Al Inma Bank",
+"name_ar": "مصرف الانماء",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 15.82,
+"source": "S-r1a-801",
+"location_method": "osm:node/469952698",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.683726,
+24.696513
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:bank-al-bilad",
+"line_id": "riyadh-metro-l1",
+"station_id": "bank-al-bilad",
+"name_en": "Bank Al Bilad",
+"name_ar": "بنك البلاد",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 16.67,
+"source": "S-r1a-801",
+"location_method": "osm:node/12080044112",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.686933,
+24.690206
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:king-fahad-library",
+"line_id": "riyadh-metro-l1",
+"station_id": "king-fahad-library",
+"name_en": "King Fahad Library",
+"name_ar": "مكتبة الملك فهد",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 17.44,
+"source": "S-r1a-801",
+"location_method": "osm:node/12338832172",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.694903,
+24.674423
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:ministry-of-interior",
+"line_id": "riyadh-metro-l1",
+"station_id": "ministry-of-interior",
+"name_en": "Ministry of Interior",
+"name_ar": "وزارة الداخلية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 19.37,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909592",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.70236,
+24.664733
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-muorabba",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-muorabba",
+"name_en": "Al Muorabba",
+"name_ar": "المربع",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 20.71,
+"source": "S-r1a-801",
+"location_method": "osm:node/6018879099",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.704251,
+24.659785
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:passport-department",
+"line_id": "riyadh-metro-l1",
+"station_id": "passport-department",
+"name_en": "Passport Department",
+"name_ar": "الجوزات",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 21.3,
+"source": "S-r1a-801",
+"location_method": "osm:node/8678006165",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.713146,
+24.645363
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:national-museum",
+"line_id": "riyadh-metro-l1",
+"station_id": "national-museum",
+"name_en": "National Museum",
+"name_ar": "المتحف الوطني",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 23.23,
+"source": "S-r1a-801",
+"location_method": "osm:node/12347703285",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.714875,
+24.638309
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-bat-ha",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-bat-ha",
+"name_en": "Al Bat'ha",
+"name_ar": "البطحاء",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 24.04,
+"source": "S-r1a-801",
+"location_method": "osm:node/13267042616",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.716453,
+24.628685
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:qasr-al-hokm",
+"line_id": "riyadh-metro-l1",
+"station_id": "qasr-al-hokm",
+"name_en": "Qasr Al Hokm",
+"name_ar": "محطة قصر الحكم",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 25.14,
+"source": "S-r1a-801",
+"location_method": "osm:node/6018879091",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.721433,
+24.625642
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-owd",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-owd",
+"name_en": "Al Owd",
+"name_ar": "محطة العود",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 25.79,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909651",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.725307,
+24.617912
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:skirinah",
+"line_id": "riyadh-metro-l1",
+"station_id": "skirinah",
+"name_en": "Skirinah",
+"name_ar": "محطة سكيرينه",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 26.74,
+"source": "S-r1a-801",
+"location_method": "osm:node/2846344461",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.72759,
+24.610426
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:manfouhah",
+"line_id": "riyadh-metro-l1",
+"station_id": "manfouhah",
+"name_en": "Manfouhah",
+"name_ar": "محطة منفوحة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 27.61,
+"source": "S-r1a-801",
+"location_method": "osm:node/3942909659",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.735785,
+24.600632
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-iman-hospital",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-iman-hospital",
+"name_en": "Al Iman Hospital",
+"name_ar": "محطة مستشفى الإيمان",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 29.1,
+"source": "S-r1a-801",
+"location_method": "osm:node/6712570788",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.745325,
+24.598461
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:transportation-center",
+"line_id": "riyadh-metro-l1",
+"station_id": "transportation-center",
+"name_en": "Transportation Center",
+"name_ar": "محطة النقل العام",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 30.53,
+"source": "S-r1a-801",
+"location_method": "osm:node/2846350260",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.760875,
+24.5873
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:al-aziziah",
+"line_id": "riyadh-metro-l1",
+"station_id": "al-aziziah",
+"name_en": "Al Aziziah",
+"name_ar": "العزيزية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 33.29,
+"source": "S-r1a-801",
+"location_method": "osm:node/3943451150",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.77632,
+24.560098
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l1:ad-dar-al-baida",
+"line_id": "riyadh-metro-l1",
+"station_id": "ad-dar-al-baida",
+"name_en": "Ad Dar Al Baida",
+"name_ar": "الدار البيضاء",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 36.7,
+"source": "S-r1a-801",
+"location_method": "osm:node/11594935252",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.628352,
+24.710219
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:king-saud-university",
+"line_id": "riyadh-metro-l2",
+"station_id": "king-saud-university",
+"name_en": "King Saud University",
+"name_ar": "جامعة الملك سعود",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 0.0,
+"source": "S-r1a-802",
+"location_method": "osm:node/6018675540",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.638608,
+24.716983
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:king-salman-oasis",
+"line_id": "riyadh-metro-l2",
+"station_id": "king-salman-oasis",
+"name_en": "King Salman Oasis",
+"name_ar": "واحة الملك سلمان",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 1.36,
+"source": "S-r1a-802",
+"location_method": "osm:node/3941133519",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.646674,
+24.720435
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:king-abdulaziz-city-for-science-and-technology",
+"line_id": "riyadh-metro-l2",
+"station_id": "king-abdulaziz-city-for-science-and-technology",
+"name_en": "King Abdulaziz City for Science and Technology",
+"name_ar": "مدينة الملك عبد العزيز للعلوم والتقنية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 2.26,
+"source": "S-r1a-802",
+"location_method": "osm:node/8670300248",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.654401,
+24.723684
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:at-takhassussi",
+"line_id": "riyadh-metro-l2",
+"station_id": "at-takhassussi",
+"name_en": "At Takhassussi",
+"name_ar": "التخصصي",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 3.12,
+"source": "S-r1a-802",
+"location_method": "osm:node/3943451126",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.666851,
+24.72677
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:stc",
+"line_id": "riyadh-metro-l2",
+"station_id": "stc",
+"name_en": "STC",
+"name_ar": "محطة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 4.46,
+"source": "S-r1a-802",
+"location_method": "osm:node/12651966199",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.677243,
+24.733333
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:al-wurud",
+"line_id": "riyadh-metro-l2",
+"station_id": "al-wurud",
+"name_en": "Al Wurud",
+"name_ar": "الورود",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 5.78,
+"source": "S-r1a-802",
+"location_method": "osm:node/3943451109",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.685327,
+24.736743
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:king-abdulaziz-road",
+"line_id": "riyadh-metro-l2",
+"station_id": "king-abdulaziz-road",
+"name_en": "King Abdulaziz Road",
+"name_ar": "طريق الملك عبدالعزيز",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 6.68,
+"source": "S-r1a-802",
+"location_method": "osm:node/11595046631",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.694734,
+24.740652
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:ministry-of-education",
+"line_id": "riyadh-metro-l2",
+"station_id": "ministry-of-education",
+"name_en": "Ministry of Education",
+"name_ar": "وزارة التعليم",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 7.73,
+"source": "S-r1a-802",
+"location_method": "osm:node/4809668179",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.712446,
+24.748161
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:an-nuzhah",
+"line_id": "riyadh-metro-l2",
+"station_id": "an-nuzhah",
+"name_en": "An Nuzhah",
+"name_ar": "النزهة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 9.7,
+"source": "S-r1a-802",
+"location_method": "osm:node/11595046649",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.727116,
+24.754534
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:riyadh-exhibition-center",
+"line_id": "riyadh-metro-l2",
+"station_id": "riyadh-exhibition-center",
+"name_en": "Riyadh Exhibition Center",
+"name_ar": "محطة معارض الرياض",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 11.34,
+"source": "S-r1a-802",
+"location_method": "osm:node/3943451105",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.75938,
+24.767821
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:khalid-bin-al-waleed-road",
+"line_id": "riyadh-metro-l2",
+"station_id": "khalid-bin-al-waleed-road",
+"name_en": "Khalid Bin Al Waleed Road",
+"name_ar": "طريق خالد بن الوليد",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 14.92,
+"source": "S-r1a-802",
+"location_method": "osm:node/6001451219",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.776523,
+24.776323
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:al-hamra",
+"line_id": "riyadh-metro-l2",
+"station_id": "al-hamra",
+"name_en": "Al Hamra",
+"name_ar": "الحمراء",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 16.9,
+"source": "S-r1a-802",
+"location_method": "osm:node/11595203420",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.794443,
+24.782152
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:al-khaleej",
+"line_id": "riyadh-metro-l2",
+"station_id": "al-khaleej",
+"name_en": "Al Khaleej",
+"name_ar": "الخليج",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 18.85,
+"source": "S-r1a-802",
+"location_method": "osm:node/3943451102",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.810842,
+24.792233
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:city-centre-ishbiliyah",
+"line_id": "riyadh-metro-l2",
+"station_id": "city-centre-ishbiliyah",
+"name_en": "City Centre Ishbiliyah",
+"name_ar": "سيتي سنتر",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 20.85,
+"source": "S-r1a-802",
+"location_method": "osm:node/3941133555",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.836455,
+24.793047
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l2:king-fahad-stadium",
+"line_id": "riyadh-metro-l2",
+"station_id": "king-fahad-stadium",
+"name_en": "King Fahad Stadium",
+"name_ar": "استاد الملك فهد",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 24.21,
+"source": "S-r1a-802",
+"location_method": "osm:node/6018716682",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.543571,
+24.591579
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:jeddah-road",
+"line_id": "riyadh-metro-l3",
+"station_id": "jeddah-road",
+"name_en": "Jeddah Road",
+"name_ar": "محطة طريق جدة",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 0.0,
+"source": "S-r1a-803",
+"location_method": "osm:node/5387096968",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.559835,
+24.585477
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:tuwaiq",
+"line_id": "riyadh-metro-l3",
+"station_id": "tuwaiq",
+"name_en": "Tuwaiq",
+"name_ar": "طويق",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 2.5,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846351296",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.588463,
+24.582497
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:ad-douh",
+"line_id": "riyadh-metro-l3",
+"station_id": "ad-douh",
+"name_en": "Ad Douh",
+"name_ar": "محطة الدوح",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 5.63,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846350251",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.614595,
+24.581787
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:western-station",
+"line_id": "riyadh-metro-l3",
+"station_id": "western-station",
+"name_en": "Western Station",
+"name_ar": "المحطة الغربية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 9.08,
+"source": "S-r1a-803",
+"location_method": "osm:node/6018764935",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.643825,
+24.600572
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:aishah-bint-abi-bakr-street",
+"line_id": "riyadh-metro-l3",
+"station_id": "aishah-bint-abi-bakr-street",
+"name_en": "Aishah bint Abi Bakr Street",
+"name_ar": "شارع عائشة بنت أبي بكر",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 12.72,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846350266",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.65386,
+24.606673
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:dhahrat-al-badiah",
+"line_id": "riyadh-metro-l3",
+"station_id": "dhahrat-al-badiah",
+"name_en": "Dhahrat Al Badiah",
+"name_ar": "محطة ظهرة البديعة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 13.94,
+"source": "S-r1a-803",
+"location_method": "osm:node/6018764736",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.686329,
+24.61481
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:sultanah",
+"line_id": "riyadh-metro-l3",
+"station_id": "sultanah",
+"name_en": "Sultanah",
+"name_ar": "سلطانة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 17.49,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846350532",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.697799,
+24.61835
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:al-jarradiyah",
+"line_id": "riyadh-metro-l3",
+"station_id": "al-jarradiyah",
+"name_en": "Al Jarradiyah",
+"name_ar": "الجرادية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 18.72,
+"source": "S-r1a-803",
+"location_method": "osm:node/7176870379",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.712297,
+24.626727
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:courts-complex",
+"line_id": "riyadh-metro-l3",
+"station_id": "courts-complex",
+"name_en": "Courts Complex",
+"name_ar": "مجمع المحاكم",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 20.46,
+"source": "S-r1a-803",
+"location_method": "osm:node/6018764699",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.716127,
+24.628853
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:qasr-al-hokm",
+"line_id": "riyadh-metro-l3",
+"station_id": "qasr-al-hokm",
+"name_en": "Qasr Al Hokm",
+"name_ar": "محطة قصر الحكم",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 20.92,
+"source": "S-r1a-803",
+"location_method": "osm:node/12397423132",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.721812,
+24.632218
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:al-hilla",
+"line_id": "riyadh-metro-l3",
+"station_id": "al-hilla",
+"name_en": "Al Hilla",
+"name_ar": "الحلة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 21.6,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846344465",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.726309,
+24.634477
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:al-margab",
+"line_id": "riyadh-metro-l3",
+"station_id": "al-margab",
+"name_en": "Al Margab",
+"name_ar": "المرقب",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 22.12,
+"source": "S-r1a-803",
+"location_method": "osm:node/8666132482",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.732861,
+24.63773
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:as-salhiyah",
+"line_id": "riyadh-metro-l3",
+"station_id": "as-salhiyah",
+"name_en": "As Salhiyah",
+"name_ar": "الصالحية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 22.88,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846344469",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.739428,
+24.644712
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:first-industrial-city",
+"line_id": "riyadh-metro-l3",
+"station_id": "first-industrial-city",
+"name_en": "First Industrial City",
+"name_ar": "الصناعية الأولى",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 24.01,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846344472",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.740735,
+24.649485
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:railway",
+"line_id": "riyadh-metro-l3",
+"station_id": "railway",
+"name_en": "Railway",
+"name_ar": "سكة الحديد",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 24.59,
+"source": "S-r1a-803",
+"location_method": "osm:node/2846344475",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.744573,
+24.660408
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:al-malaz",
+"line_id": "riyadh-metro-l3",
+"station_id": "al-malaz",
+"name_en": "Al Malaz",
+"name_ar": "الملز",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 25.95,
+"source": "S-r1a-803",
+"location_method": "osm:node/6018649744",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.760415,
+24.673033
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:jarir-district",
+"line_id": "riyadh-metro-l3",
+"station_id": "jarir-district",
+"name_en": "Jarir District",
+"name_ar": "محطة حي جرير",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 28.2,
+"source": "S-r1a-803",
+"location_method": "osm:node/12079650177",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.779493,
+24.680204
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:al-rajhi-grand-mosque",
+"line_id": "riyadh-metro-l3",
+"station_id": "al-rajhi-grand-mosque",
+"name_en": "Al Rajhi Grand Mosque",
+"name_ar": "محطة جامع الراجحي",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 30.29,
+"source": "S-r1a-803",
+"location_method": "osm:node/4793648974",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.795991,
+24.686027
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:harun-ar-rasheed-road",
+"line_id": "riyadh-metro-l3",
+"station_id": "harun-ar-rasheed-road",
+"name_en": "Harun Ar Rasheed Road",
+"name_ar": "طريق هارون الرشيد",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 32.08,
+"source": "S-r1a-803",
+"location_method": "osm:node/4114652293",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.827533,
+24.700448
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:an-naseem",
+"line_id": "riyadh-metro-l3",
+"station_id": "an-naseem",
+"name_en": "An Naseem",
+"name_ar": "النسيم",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 35.65,
+"source": "S-r1a-803",
+"location_method": "osm:node/4114652306",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.847599,
+24.712786
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:hassan-bin-thabit-street",
+"line_id": "riyadh-metro-l3",
+"station_id": "hassan-bin-thabit-street",
+"name_en": "Hassan Bin Thabit Street",
+"name_ar": "شارع حسان بن ثابت",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 38.1,
+"source": "S-r1a-803",
+"location_method": "osm:node/4809668151",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.860713,
+24.721654
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l3:khashm-al-an",
+"line_id": "riyadh-metro-l3",
+"station_id": "khashm-al-an",
+"name_en": "Khashm Al An",
+"name_ar": "خشم العان",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 39.76,
+"source": "S-r1a-803",
+"location_method": "osm:node/4809668142",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.643198,
+24.76743
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:king-abdullah-financial-district",
+"line_id": "riyadh-metro-l4",
+"station_id": "king-abdullah-financial-district",
+"name_en": "King Abdullah Financial District",
+"name_ar": "مركز الملك عبدالله المالي",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 0.0,
+"source": "S-r1a-804",
+"location_method": "osm:node/12338832174",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.660225,
+24.786311
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:ar-rabi",
+"line_id": "riyadh-metro-l4",
+"station_id": "ar-rabi",
+"name_en": "Ar Rabi",
+"name_ar": "الربيع",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 3.24,
+"source": "S-r1a-804",
+"location_method": "osm:node/2893846223",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.696053,
+24.801413
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:uthman-bin-affan-road",
+"line_id": "riyadh-metro-l4",
+"station_id": "uthman-bin-affan-road",
+"name_en": "Uthman Bin Affan Road",
+"name_ar": "طريق عثمان بن عفان",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 7.23,
+"source": "S-r1a-804",
+"location_method": "osm:node/2893847419",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.709333,
+24.806999
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:sabic",
+"line_id": "riyadh-metro-l4",
+"station_id": "sabic",
+"name_en": "SABIC",
+"name_ar": "SABIC",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 8.7,
+"source": "S-r1a-804",
+"location_method": "osm:node/2893847420",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.717413,
+24.841609
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:pnu-1",
+"line_id": "riyadh-metro-l4",
+"station_id": "pnu-1",
+"name_en": "PNU 1",
+"name_ar": "محطة جامعة الاميره نوره 1",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 13.08,
+"source": "S-r1a-804",
+"location_method": "osm:node/2893847429",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.704436,
+24.859685
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:pnu-2",
+"line_id": "riyadh-metro-l4",
+"station_id": "pnu-2",
+"name_en": "PNU 2",
+"name_ar": "محطة جامعة الاميره نوره 2",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 15.52,
+"source": "S-r1a-804",
+"location_method": "osm:node/5101277154",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.710499,
+24.940534
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:airport-t5",
+"line_id": "riyadh-metro-l4",
+"station_id": "airport-t5",
+"name_en": "Airport T5",
+"name_ar": "Airport T5",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 26.47,
+"source": "S-r1a-804",
+"location_method": "osm:node/4385748487",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.702376,
+24.9558
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:airport-t3-4",
+"line_id": "riyadh-metro-l4",
+"station_id": "airport-t3-4",
+"name_en": "Airport T3-4",
+"name_ar": "Airport T3-4",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 28.36,
+"source": "S-r1a-804",
+"location_method": "osm:node/8380256913",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.699022,
+24.961066
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l4:airport-t1-2",
+"line_id": "riyadh-metro-l4",
+"station_id": "airport-t1-2",
+"name_en": "Airport T1-2",
+"name_ar": "Airport T1-2",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 29.04,
+"source": "S-r1a-804",
+"location_method": "osm:node/8380256915",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.695628,
+24.740548
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:ministry-of-education",
+"line_id": "riyadh-metro-l5",
+"station_id": "ministry-of-education",
+"name_en": "Ministry of Education",
+"name_ar": "وزارة التعليم",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 0.0,
+"source": "S-r1a-805",
+"location_method": "osm:node/8670300274",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.700685,
+24.728522
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:salahaddin",
+"line_id": "riyadh-metro-l5",
+"station_id": "salahaddin",
+"name_en": "Salahaddin",
+"name_ar": "صلاح الدين",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 1.66,
+"source": "S-r1a-805",
+"location_method": "osm:node/7263004813",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.700221,
+24.71288
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:as-sulimaniyah",
+"line_id": "riyadh-metro-l5",
+"station_id": "as-sulimaniyah",
+"name_en": "As Sulimaniyah",
+"name_ar": "السليمانية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 3.83,
+"source": "S-r1a-805",
+"location_method": "osm:node/7261529084",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.707763,
+24.709686
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:ad-dhabab",
+"line_id": "riyadh-metro-l5",
+"station_id": "ad-dhabab",
+"name_en": "Ad Dhabab",
+"name_ar": "الضباب",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 4.67,
+"source": "S-r1a-805",
+"location_method": "osm:node/4809668198",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.716253,
+24.70617
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:abu-dhabi-square",
+"line_id": "riyadh-metro-l5",
+"station_id": "abu-dhabi-square",
+"name_en": "Abu Dhabi Square",
+"name_ar": "ميدان أبو ظبي",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 5.63,
+"source": "S-r1a-805",
+"location_method": "osm:node/6018698306",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.717914,
+24.698282
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:officers-club",
+"line_id": "riyadh-metro-l5",
+"station_id": "officers-club",
+"name_en": "Officers Club",
+"name_ar": "نادي الضباط",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 6.56,
+"source": "S-r1a-805",
+"location_method": "osm:node/4809668205",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.718137,
+24.686753
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:gosi",
+"line_id": "riyadh-metro-l5",
+"station_id": "gosi",
+"name_en": "GOSI",
+"name_ar": "المؤسسة العامة للتأمينات الاجتماعية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 7.84,
+"source": "S-r1a-805",
+"location_method": "osm:node/4809668210",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.718384,
+24.675379
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:al-wizarat",
+"line_id": "riyadh-metro-l5",
+"station_id": "al-wizarat",
+"name_en": "Al Wizarat",
+"name_ar": "الوزارات",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 9.1,
+"source": "S-r1a-805",
+"location_method": "osm:node/4809668217",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.718233,
+24.667901
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:ministry-of-defence",
+"line_id": "riyadh-metro-l5",
+"station_id": "ministry-of-defence",
+"name_en": "Ministry of Defence",
+"name_ar": "وزارة الدفاع",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 9.93,
+"source": "S-r1a-805",
+"location_method": "osm:node/4809672436",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.717701,
+24.65986
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:mew-a",
+"line_id": "riyadh-metro-l5",
+"station_id": "mew-a",
+"name_en": "MEW&A",
+"name_ar": "وزاره البيئة والمياه والزراعة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 10.83,
+"source": "S-r1a-805",
+"location_method": "osm:node/4809672435",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.716399,
+24.652648
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:ministry-of-finance",
+"line_id": "riyadh-metro-l5",
+"station_id": "ministry-of-finance",
+"name_en": "Ministry of Finance",
+"name_ar": "وزارة المالية",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 11.64,
+"source": "S-r1a-805",
+"location_method": "osm:node/4809672431",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.713556,
+24.64525
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l5:national-museum",
+"line_id": "riyadh-metro-l5",
+"station_id": "national-museum",
+"name_en": "National Museum",
+"name_ar": "المتحف الوطني",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 12.55,
+"source": "S-r1a-805",
+"location_method": "osm:node/12426919047",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.827576,
+24.70046
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:an-naseem",
+"line_id": "riyadh-metro-l6",
+"station_id": "an-naseem",
+"name_en": "An Naseem",
+"name_ar": "النسيم",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 0.0,
+"source": "S-r1a-806",
+"location_method": "osm:node/12652138530",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.811231,
+24.722758
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:as-salam",
+"line_id": "riyadh-metro-l6",
+"station_id": "as-salam",
+"name_en": "As Salam",
+"name_ar": "As Salam",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 2.98,
+"source": "S-r1a-806",
+"location_method": "osm:node/3942909689",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.79864,
+24.740756
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:khurais-road",
+"line_id": "riyadh-metro-l6",
+"station_id": "khurais-road",
+"name_en": "Khurais Road",
+"name_ar": "Khurais Road",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 5.36,
+"source": "S-r1a-806",
+"location_method": "osm:node/3834223765",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.790278,
+24.756741
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:al-andalus",
+"line_id": "riyadh-metro-l6",
+"station_id": "al-andalus",
+"name_en": "Al Andalus",
+"name_ar": "Al Andalus",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 7.43,
+"source": "S-r1a-806",
+"location_method": "osm:node/3834222557",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.776507,
+24.776359
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:al-hamra",
+"line_id": "riyadh-metro-l6",
+"station_id": "al-hamra",
+"name_en": "Al Hamra",
+"name_ar": "الحمراء",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 10.03,
+"source": "S-r1a-806",
+"location_method": "osm:node/12392081302",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.729158,
+24.78649
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:granadia",
+"line_id": "riyadh-metro-l6",
+"station_id": "granadia",
+"name_en": "Granadia",
+"name_ar": "Granadia",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 16.63,
+"source": "S-r1a-806",
+"location_method": "osm:node/3942075156",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.709295,
+24.807066
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:sabic",
+"line_id": "riyadh-metro-l6",
+"station_id": "sabic",
+"name_en": "SABIC",
+"name_ar": "SABIC",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 20.39,
+"source": "S-r1a-806",
+"location_method": "osm:node/12389972556",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.696032,
+24.801457
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:uthman-bin-affan-road",
+"line_id": "riyadh-metro-l6",
+"station_id": "uthman-bin-affan-road",
+"name_en": "Uthman Bin Affan Road",
+"name_ar": "طريق عثمان بن عفان",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 21.87,
+"source": "S-r1a-806",
+"location_method": "osm:node/12389972554",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.660197,
+24.786347
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:ar-rabi",
+"line_id": "riyadh-metro-l6",
+"station_id": "ar-rabi",
+"name_en": "Ar Rabi",
+"name_ar": "الربيع",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 25.86,
+"source": "S-r1a-806",
+"location_method": "osm:node/12389972516",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.643036,
+24.767372
+]
+},
+"properties": {
+"station_uid": "riyadh-metro-l6:king-abdullah-financial-district",
+"line_id": "riyadh-metro-l6",
+"station_id": "king-abdullah-financial-district",
+"name_en": "King Abdullah Financial District",
+"name_ar": "مركز الملك عبدالله المالي",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Royal Commission for Riyadh City (RCRC), owner; operator not verified",
+"opened": null,
+"km_post": 29.11,
+"source": "S-r1a-806",
+"location_method": "osm:node/12389957378",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.763294,
+24.855279
+]
+},
+"properties": {
+"station_uid": "riyadh-rail-link:north-south-connection",
+"line_id": "riyadh-rail-link",
+"station_id": "north-south-connection",
+"name_en": "North-South Railway connection (proxy Riyadh North station)",
+"name_ar": "الربط مع خط الشمال (محطة الرياض الشمالية)",
+"class": "planned",
+"layer": "committed",
+"status": "procurement",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 0.0,
+"source": "S-r1a-055",
+"location_method": "unlocated:town_centroid_proxy:osm:way/441199322",
+"located": false,
+"uncertainty_km": 10,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "The point where the 35 km line joins SAR's North-South Railway is not published (S-r1a-055: 'connects SAR's North-South Railway to the Eastern Railway network'). An existing station is not a connection point (A-stn-008), so the spec proxy is not promoted to a located point. Keep the stored proxy only as 'unlocated:...'. If a band is needed, A-r1a-006 gives 10 km. [CP2_PREP research: S-r1a-055, S-cp2-605, S-cp2-601]",
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.740657,
+24.650468
+]
+},
+"properties": {
+"station_uid": "riyadh-rail-link:eastern-network-connection",
+"line_id": "riyadh-rail-link",
+"station_id": "eastern-network-connection",
+"name_en": "Eastern network connection (proxy Riyadh station)",
+"name_ar": "الربط مع خط الشرق (محطة الرياض)",
+"class": "planned",
+"layer": "committed",
+"status": "procurement",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 22.9,
+"source": "S-r1a-055",
+"location_method": "unlocated:town_centroid_proxy:osm:node/492520789",
+"located": false,
+"uncertainty_km": 10,
+"snap_km": null,
+"site_status": "inferred",
+"notes": "Connection to the Eastern network is not published. The OSM Riyadh Railway Station (node/492520789) is the spec proxy; it is an existing station and not a connection point (A-stn-008). It is also the anchor of the Riyadh Dry Port (S-cp2-604), so it must not be used as the Eastern connection by default. Keep the stored proxy only as 'unlocated:...'. [CP2_PREP research: S-r1a-055, S-cp2-605, S-cp2-601]",
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.20111,
+26.48861
+]
+},
+"properties": {
+"station_uid": "sar-east-freight-legacy:dammam-port",
+"line_id": "sar-east-freight-legacy",
+"station_id": "dammam-port",
+"name_en": "King Abdulaziz Port (Dammam)",
+"name_ar": "ميناء الملك عبدالعزيز بالدمام",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 0.0,
+"source": "S-026",
+"location_method": "published:S-cp2-603 (Wikipedia port coordinate; secondary)",
+"located": false,
+"uncertainty_km": 4.4,
+"snap_km": 1.961,
+"site_status": "inferred",
+"notes": "The rail terminal inside the port is not located. The 4.4 km band is the distance between the two port points (A-stn-003, A-stn-009). The stored proxy (26.428741, 50.121524) is 10.3 km from the Wikipedia point and 7.1 km from the OSM port node, and sits in an OSM rail yard with SRO workshops near the Dammam Railway Station. Location conflict (Wikipedia vs OSM, 4.4 km): escalated to the coordinator, see REPORT.md. Geo-verify imagery of this window was inconclusive (cloud). [CP2_PREP research: S-cp2-603, S-cp2-601, S-cp2-608, S-026]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.664734,
+25.931934
+]
+},
+"properties": {
+"station_uid": "sar-east-freight-legacy:buqayq",
+"line_id": "sar-east-freight-legacy",
+"station_id": "buqayq",
+"name_en": "Buqayq (Abqaiq)",
+"name_ar": "بقيق",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 77.09,
+"source": "S-026",
+"location_method": "osm:node/2011671784",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.5686,
+25.38655
+]
+},
+"properties": {
+"station_uid": "sar-east-freight-legacy:al-ahsa",
+"line_id": "sar-east-freight-legacy",
+"station_id": "al-ahsa",
+"name_en": "Al-Ahsa",
+"name_ar": "الأحساء",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 142.77,
+"source": "S-026",
+"location_method": "osm:way/95533900 (Al Hufuf Railway Station, SAR; polygon centroid)",
+"located": true,
+"uncertainty_km": 0.5,
+"snap_km": 0.449,
+"site_status": "inferred",
+"notes": "SAR's freight list names Al-Ahsa (S-026). OSM tags the SAR station at Hufuf (railway=station, operator SAR), the best facility match in the town. Freight yard not tagged; identity assumed (A-stn-007), offset allowance 0.5 km (A-stn-004). The Dec 2024 freight re-routing (S-cp2-606) may move the freight stop: confirm when the new track is published. Imagery window cached but not re-inspected this run. [CP2_PREP research: S-cp2-601, S-cp2-606, S-026]",
+"confidence": "medium"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.060951,
+24.146911
+]
+},
+"properties": {
+"station_uid": "sar-east-freight-legacy:haradh",
+"line_id": "sar-east-freight-legacy",
+"station_id": "haradh",
+"name_en": "Haradh",
+"name_ar": "حرض",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 298.14,
+"source": "S-026",
+"location_method": "osm:node/1236725492",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.062,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+47.359431,
+24.245621
+]
+},
+"properties": {
+"station_uid": "sar-east-freight-legacy:al-kharj",
+"line_id": "sar-east-freight-legacy",
+"station_id": "al-kharj",
+"name_en": "Al-Kharj",
+"name_ar": "الخرج",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 475.71,
+"source": "S-026",
+"location_method": "osm:node/1236705235",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.025,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.74066,
+24.65047
+]
+},
+"properties": {
+"station_uid": "sar-east-freight-legacy:riyadh-dry-port",
+"line_id": "sar-east-freight-legacy",
+"station_id": "riyadh-dry-port",
+"name_en": "Riyadh (dry port)",
+"name_ar": "ميناء الرياض الجاف",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 560.76,
+"source": "S-026",
+"location_method": "adjacent_to_facility:osm:node/492520789 (Riyadh Railway Station, SAR) per S-cp2-604",
+"located": false,
+"uncertainty_km": 1.1,
+"snap_km": 2.82,
+"site_status": "inferred",
+"notes": "Secondary location only: 'adjacent to the Riyadh railway station' (S-cp2-604). The point is the SAR station node. Band 1.1 km = equivalent-circle radius of 918,639 m2 (0.54 km) plus a 0.5 km adjacency allowance (A-stn-005). The stored point is 0.91 km from this node, inside the band. The dry port has no separate OSM tag. [CP2_PREP research: S-cp2-604, S-cp2-601, S-cp2-605, S-026]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.740657,
+24.650468
+]
+},
+"properties": {
+"station_uid": "sar-east-passenger:riyadh",
+"line_id": "sar-east-passenger",
+"station_id": "riyadh",
+"name_en": "Riyadh",
+"name_ar": "الرياض",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "1981",
+"km_post": 0.0,
+"source": "S-025",
+"location_method": "osm:node/492520789",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.048,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.568664,
+25.386554
+]
+},
+"properties": {
+"station_uid": "sar-east-passenger:hufuf",
+"line_id": "sar-east-passenger",
+"station_id": "hufuf",
+"name_en": "Hufuf",
+"name_ar": "الهفوف",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "1981",
+"km_post": 309.54,
+"source": "S-025",
+"location_method": "osm:way/95533900",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.038,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.664734,
+25.931934
+]
+},
+"properties": {
+"station_uid": "sar-east-passenger:abqaiq",
+"line_id": "sar-east-passenger",
+"station_id": "abqaiq",
+"name_en": "Abqaiq",
+"name_ar": "بقيق",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "1981",
+"km_post": 375.06,
+"source": "S-025",
+"location_method": "osm:node/2011671784",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+50.126308,
+26.409744
+]
+},
+"properties": {
+"station_uid": "sar-east-passenger:dammam",
+"line_id": "sar-east-passenger",
+"station_id": "dammam",
+"name_en": "Dammam",
+"name_ar": "الدمام",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "1981",
+"km_post": 449.09,
+"source": "S-025",
+"location_method": "osm:node/492547630",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.01,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.9250479,
+31.4884683
+]
+},
+"properties": {
+"station_uid": "sar-north-freight:al-jalamid",
+"line_id": "sar-north-freight",
+"station_id": "al-jalamid",
+"name_en": "Al-Jalamid mine",
+"name_ar": "حزم الجلاميد",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 0.0,
+"source": "S-020",
+"location_method": "osm_spur_end:node/8879771880+imagery:sentinel-2",
+"located": true,
+"uncertainty_km": 2.0,
+"snap_km": 14.204,
+"site_status": "inferred_imagery",
+"notes": "Ma'aden phosphate terminal area inferred from the OSM spur end (28.7 km from the Hazm al Jalamid place node) and Sentinel-2; operator site plan not found [method log geo-stn-622f20a7]",
+"confidence": "medium"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.837365,
+29.648307
+]
+},
+"properties": {
+"station_uid": "sar-north-freight:al-jawf",
+"line_id": "sar-north-freight",
+"station_id": "al-jawf",
+"name_en": "Jouf",
+"name_ar": "الجوف",
+"class": "major",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 184.52,
+"source": "S-020",
+"location_method": "osm:node/7984803603",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.755137,
+27.683315
+]
+},
+"properties": {
+"station_uid": "sar-north-freight:hail",
+"line_id": "sar-north-freight",
+"station_id": "hail",
+"name_en": "Hail",
+"name_ar": "حائل",
+"class": "major",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 486.49,
+"source": "S-020",
+"location_method": "osm:node/7984942389",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+43.9942105,
+27.6650136
+]
+},
+"properties": {
+"station_uid": "sar-north-freight:al-baithah",
+"line_id": "sar-north-freight",
+"station_id": "al-baithah",
+"name_en": "AlBaithah Junction",
+"name_ar": "البعيثة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 810.4,
+"source": "S-020",
+"location_method": "osm_spur_end:node/5396737260+imagery:sentinel-2",
+"located": true,
+"uncertainty_km": 1.0,
+"snap_km": 9.472,
+"site_status": "inferred_imagery",
+"notes": "Loading loop inferred from the OSM spur end (10.9 km from the Al Ba`ithah place node) and Sentinel-2; operator site plan not found [method log geo-stn-ad964120]",
+"confidence": "medium"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+49.30111,
+27.47278
+]
+},
+"properties": {
+"station_uid": "sar-north-freight:ras-al-khair",
+"line_id": "sar-north-freight",
+"station_id": "ras-al-khair",
+"name_en": "Ras Al-Khair",
+"name_ar": "رأس الخير",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": null,
+"km_post": 1374.55,
+"source": "S-020",
+"location_method": "town_centroid:osm:node/1237806545 (Ras Al Khair locality)",
+"located": false,
+"uncertainty_km": 18.4,
+"snap_km": 8.868,
+"site_status": "inferred",
+"notes": "No terminal or station named for the Ma'aden freight terminal in any source found. Band = max(built-up radius 1.13 km, geodesic 18.38 km to the unnamed yard cluster) (A-stn-001, A-stn-003). The radius is a lower bound (footprint-sparse industrial area). The unnamed yard cluster is an unverified candidate; escalated (REPORT.md). The stored proxy (27.49239, 49.213979) is the nearest OSM rail node to the old place node. [CP2_PREP research: S-020, S-cp2-601, S-cp2-602]",
+"confidence": "low"
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+46.762743,
+24.856278
+]
+},
+"properties": {
+"station_uid": "sar-north-passenger:riyadh-north",
+"line_id": "sar-north-passenger",
+"station_id": "riyadh-north",
+"name_en": "Riyadh (North)",
+"name_ar": "محطة قطار الشمال بالرياض",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2017-02-26",
+"km_post": 0.0,
+"source": "S-018",
+"location_method": "osm:node/7984868762",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+45.419888,
+25.921053
+]
+},
+"properties": {
+"station_uid": "sar-north-passenger:majmaah",
+"line_id": "sar-north-passenger",
+"station_id": "majmaah",
+"name_en": "Majmaah",
+"name_ar": "محطة المجمعة",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2017-02-26",
+"km_post": 190.36,
+"source": "S-018",
+"location_method": "osm:node/7985031029",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+44.091717,
+26.492603
+]
+},
+"properties": {
+"station_uid": "sar-north-passenger:al-qassim",
+"line_id": "sar-north-passenger",
+"station_id": "al-qassim",
+"name_en": "Qassim",
+"name_ar": "القصيم",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2017-02-26",
+"km_post": 352.9,
+"source": "S-018",
+"location_method": "osm:node/6788821146",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+41.755137,
+27.683315
+]
+},
+"properties": {
+"station_uid": "sar-north-passenger:hail",
+"line_id": "sar-north-passenger",
+"station_id": "hail",
+"name_en": "Hail",
+"name_ar": "حائل",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2017-02-26",
+"km_post": 622.6,
+"source": "S-018",
+"location_method": "osm:node/7984942389",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+39.837365,
+29.648307
+]
+},
+"properties": {
+"station_uid": "sar-north-passenger:al-jawf",
+"line_id": "sar-north-passenger",
+"station_id": "al-jawf",
+"name_en": "Jouf",
+"name_ar": "الجوف",
+"class": "intermediate",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2017-02-26",
+"km_post": 924.57,
+"source": "S-018",
+"location_method": "osm:node/7984803603",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+},
+{
+"type": "Feature",
+"geometry": {
+"type": "Point",
+"coordinates": [
+37.289301,
+31.420715
+]
+},
+"properties": {
+"station_uid": "sar-north-passenger:al-qurayyat",
+"line_id": "sar-north-passenger",
+"station_id": "al-qurayyat",
+"name_en": "Qurayyat",
+"name_ar": "القريات",
+"class": "terminal",
+"layer": "existing",
+"status": "in_service",
+"operator": "Saudi Arabia Railways (SAR)",
+"opened": "2017-02-26",
+"km_post": 1242.67,
+"source": "S-018",
+"location_method": "osm:node/7987566892",
+"located": true,
+"uncertainty_km": null,
+"snap_km": 0.0,
+"site_status": null,
+"notes": null,
+"confidence": null
+}
+}
+]
+}

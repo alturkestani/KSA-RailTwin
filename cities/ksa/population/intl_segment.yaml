@@ -1,0 +1,65 @@
+# > **Document version:** cities/ksa/population/intl_segment.yaml v1.1 | 3 Nov 2026 | Author: R4 builder (demand-modeler); R5 (rail share fitted, H3a) | Status: draft
+# International-visitor segment (foreign Umrah performers and foreign Hajj pilgrims) for the HHR validation and the
+# Makkah / Madinah / JED / MED zone demand (prompts/R4.md, CP4 requirement 5; A-demand-059 scope rule).
+# Totals are read from the GASTAT tables by demand.intl (data/ksa/tables/pilgrims/); this file holds the rules and
+# the assumed parameters. Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+version: "1.0"
+label: "synthetic demand, uncalibrated: scenario comparison, not a forecast"
+year: 2025
+umrah_total:
+  rule: "sum of the four 2025 quarterly external totals (Table 1.10); Q2 2025 uses the revised (later) release (prompts/R4.md; conflict C-r4-intl-002)"
+  # The two Q2 2025 bulletins in data/ksa/tables/pilgrims/: 1,324,418 (URL upload stamp t=1763544957806 = 19 Nov 2025)
+  # and 1,405,116 (t=1786339722854 = 9 Aug 2026; the Q2 workbook, modified 6 Aug 2026, agrees). The later release is
+  # therefore 1,405,116; the coordinator's README labels the other file "revised" (logged, C-r4-intl-002, for Tariq).
+  q2_2025_revised: {value: 1405116, source: "Umrah Statistics Q2 2025 EN.pdf and Umrah Statistics Q2-2025-EN (1).xlsx Table 1.10 (later release, Aug 2026)", note: "value of record; the monthly split is the workbook's"}
+  q2_2025_superseded: {value: 1324418, source: "Umrah Statistics for Q2 - 2025 - EN.pdf (earlier upload, Nov 2025)", note: "sensitivity only"}
+hajj_total: {rule: "external pilgrims by way of arrival, Hajj 1446 / 2025 (Table 6, Hajj_Statistics_2025_EN_(3).xlsx)"}
+port_to_airport:
+  # entry ports of the GASTAT table -> model airports (IATA); land and sea ports are kept apart (no airport leg)
+  King Abdulaziz International Airport: JED
+  Prince Mohammed bin Abdulaziz Airport: MED
+  Prince Mohammed Airport: MED
+  King Khaled International Airport: RUH
+  King Khalid International Airport: RUH
+  King Fahd Airport: DMM
+  King Fahad Airport: DMM
+  Yanbu Airport: YNB
+  Prince Abdulmohsin Airport in Yanbu: YNB
+  Taif Airport: TIF
+  Al- taif Airport: TIF
+  Taif International Airport: TIF
+first_city:
+  # first holy city after arrival by airport (A-intl-007); every Umrah performer visits Makkah
+  JED: makkah
+  TIF: makkah
+  RUH: makkah
+  DMM: makkah
+  MED: madinah
+  YNB: madinah
+madinah_visit_share:
+  value: 0.668
+  range: [0.649, 0.675]
+  assumption: A-intl-006
+  derived_from: "Madinah external visitors (Ministry of Tourism, preliminary) / external Umrah performers, same quarter: Q1 2025 4,412,689 / 6,604,198; Q4 2025 3,846,284 / 5,701,525; Q1 2026 3,741,460 / 5,769,271 (pilgrims README and quarterly tables)"
+  note: "upper-bound-like: Madinah visitors may include foreign visitors who are not Umrah performers"
+legs:
+  # departure airport = arrival airport (A-intl-007); open-jaw itineraries are not observed
+  rule: "arrival leg airport -> first city; if both cities: one inter-city leg each way between the holy cities as the itinerary needs; departure leg last city -> airport"
+  assumption: A-intl-007
+rail_share_given_path:
+  # share of a leg's travellers on rail when the scenario's rail graph has a path between the two zones (A-intl-003)
+  value: 0.0286
+  range: [0.026, 0.470]
+  prior_central: 0.176
+  assumption: A-intl-003
+  fitted: {value: 0.02860846, decision: "H3a (Tariq, 3 Nov 2026)", run: "runs/r5/demand/intl-fit-s1/fit.json", target: "HHR 2025 observed 8,529,112 (rail-hhr-pax-2025)", calibration_run: "runs/r5/demand/calibration-r5-s1", note: "exact fit; the HHR 2025 total is a calibration target, not independent validation; replacement check: Ramadan month profile (A-intl-008/002)"}
+  derived_from: "central: GACA Hajj 1446, 253k travellers on the air-to-HHR link / 1,435,017 foreign pilgrims by air (gaca-19-million-air-passengers-hajj-1446.html; Hajj_Statistics_2025 Table 6); low: Hajj 1440 domestic pilgrims entering Makkah by Haramain train 6,387 / 248,984 = 2.6 % (hajj_1440_0.xlsx); high: the SAR/SPA Hajj 1446 seat capacity (>2 M seats, a ceiling, not riders) / 4,252,741 foreign Hajj legs with a rail path in S0 = 0.470 (computed, runs/intl/S0-s1/totals.json hajj_legs_with_rail)"
+  status: calibrated
+peaks:
+  ramadan_month_factor:
+    rule: "Ramadan month / mean month of the Hijri year (12 months), 1440 AH Table 3 (computed); range: the Gregorian Ramadan months of 2024 and 2025 / their year means (computed)"
+    assumption: A-intl-004
+  hajj_window:
+    rule: "share of foreign Hajj arrivals from 11/11 to 9/12 (Hijri), Table 7 of Hajj 1446 (computed), arriving over 29 days"
+    days: {value: 29, source: "Hajj_Statistics_2025_EN_(3).xlsx Table 7 date bands (11/11 to 9/12)"}
+    assumption: A-intl-005

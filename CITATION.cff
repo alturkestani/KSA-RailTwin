@@ -1,0 +1,49 @@
+cff-version: 1.2.0
+message: >-
+  If you use KSA Rail Twin, please cite it with the metadata below. Every modelled
+  output is synthetic demand, uncalibrated: scenario comparison, not a forecast.
+  It is an independent simulation, not a government plan. Version 1.0.0 is
+  the first public release (code published; native Saudi review of the
+  Arabic pending; films follow the review).
+type: software
+repository-code: "https://github.com/alturkestani/KSA-RailTwin"
+url: "https://github.com/alturkestani/KSA-RailTwin"
+title: KSA Rail Twin
+authors:
+  - family-names: Alturkestani
+    given-names: Tariq
+version: "1.0.0"
+date-released: "2026-11-12"
+license: Apache-2.0
+abstract: >-
+  KSA Rail Twin is a personal, open-source and non-partisan economic feasibility
+  study of a national rail network for Saudi Arabia: which corridors, in what
+  order, at what cost, with what long-term benefit, funded and delivered how,
+  and with what effect on people, benchmarked against other countries'
+  experience. Simulation is the tool; the decision case is the product. It
+  covers a Kingdom-wide screening of all 13 regions, cost estimates with
+  reference-class uplifts, demand and mode-choice scenarios, cost-benefit
+  appraisal, funding and delivery options and network optimisation, with every
+  cost and benefit reported as a P10/P50/P90 range. Every modelled output is
+  synthetic demand, uncalibrated: scenario comparison, not a forecast. Map data
+  (c) OpenStreetMap contributors (ODbL).
+keywords:
+  - Saudi Arabia
+  - railway
+  - transport planning
+  - feasibility study
+  - cost-benefit analysis
+  - reference-class forecasting
+  - scenario analysis
+  - OpenStreetMap
+references:
+  - type: software
+    title: TrafficTwin Jeddah
+    authors:
+      - family-names: Alturkestani
+        given-names: Tariq
+    license: Apache-2.0
+    notes: >-
+      Parent project; KSA Rail Twin extends it from one city to the whole Kingdom.
+      It is the author's optional private companion project (not public; not
+      required to run, test or reproduce KSA Rail Twin).

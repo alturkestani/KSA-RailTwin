@@ -1,0 +1,53 @@
+# Scenario S6-L4 - R6 optimised layout (hypothetical layer; corridors are ours, not announced). Schema: .claude/skills/scenario-yaml/SKILL.md.
+# Label: synthetic demand, uncalibrated: scenario comparison, not a forecast.
+id: S6-L4
+kind: optimised_programme
+title: 'S6-L4 (R6, hypothetical): L3 plus the Makkah belt 045 (2050): reach in a second
+  metro'
+layers:
+- existing
+- committed
+- hypothetical
+baseline: S1
+lines:
+  include:
+  - hhr
+  - sar-north-passenger
+  - sar-east-passenger
+  - riyadh-metro
+  - landbridge
+  - riyadh-rail-link
+  - gcc-railway-ksa
+candidates:
+- cities/ksa/corridors/branch_spur/S3-branch_spur-al-kharj.yaml
+- cities/ksa/corridors/station_addition/S5-station_addition-al-jubayl.yaml
+- cities/ksa/corridors/station_addition/S5-station_addition-dhahran.yaml
+- cities/ksa/corridors/commuter_belt/S4-commuter_belt-riyadh-225.yaml
+- cities/ksa/corridors/commuter_belt/S4-commuter_belt-makkah-045.yaml
+layout:
+  corridors:
+  - id: S3-branch_spur-al-kharj
+    phase: 2050
+  - id: S5-station_addition-al-jubayl
+    phase: 2030
+  - id: S5-station_addition-dhahran
+    phase: 2030
+  - id: S4-commuter_belt-riyadh-225
+    phase: 2050
+  - id: S4-commuter_belt-makkah-045
+    phase: 2050
+  phase_rule: construction starts phase - 3 (A-r6-002)
+population_scenario: un_wpp_low / un_wpp_medium / un_wpp_high (robust = minimum)
+gigaproject_addon: none
+seed: 1
+sensitivity:
+  band: P10/P50/P90
+  draws: 10000
+labels:
+- 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+source: R6 search (docs/r6-topology.md); layout runs/r6/agent/kept-56a1a33398ae.yaml;
+  scored by judge/v2-p5b
+demand_params: cities/ksa/assumptions/demand.yaml
+mode_choice_params: cities/ksa/assumptions/modechoice.yaml
+costs: cities/ksa/costs/cost_register.yaml
+appraisal: cities/ksa/assumptions/appraisal.yaml

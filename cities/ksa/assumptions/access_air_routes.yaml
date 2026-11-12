@@ -1,0 +1,939 @@
+# > **Document version:** cities/ksa/assumptions/access_air_routes.yaml v1.0 | 1 Nov 2026 | Author: R4 builder (gis-network-engineer) | Status: draft
+# Spoke-to-spoke domestic air network (CP4 R4 requirement 2). Every pair: Wikipedia airport pages
+# (secondary), docs/sources/r4-net.csv.
+version: '1.0'
+label: 'synthetic demand, uncalibrated: scenario comparison, not a forecast'
+rule:
+  value: a domestic air route exists between two airports when the pair is listed below (scheduled passenger service on the
+    airport pages read 1 Nov 2026); this replaces R3's hub rule A-demand-051
+  assumption: A-r4-air-001
+headway_unlisted_min:
+  value: 480
+  range:
+  - 240
+  - 1440
+  assumption: A-demand-052
+  note: routes without a headway in mode_choice_r3.yaml air.routes; no frequency found (S-r4-net)
+routes:
+- pair:
+  - ABT
+  - AHB
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-002
+  status: secondary
+  note: listed on AHB page only (no reciprocal entry on ABT page); Wikipedia table gives no frequency per route
+- pair:
+  - ABT
+  - DMM
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-001
+  status: secondary
+  note: listed on ABT page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - ABT
+  - JED
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-001
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - ABT
+  - RUH
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-001
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - AHB
+  - BHH
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-005
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - AHB
+  - DMM
+  airlines:
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-002
+  status: secondary
+  note: listed on AHB page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route; source row
+    carries a Seasonal marker (may apply to only some destinations in that row)
+- pair:
+  - AHB
+  - ELQ
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-009
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - AHB
+  - GIZ
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-010
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - AHB
+  - JED
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - AHB
+  - MED
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-014
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - AHB
+  - RUH
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - AHB
+  - SHW
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-020
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - AHB
+  - TIF
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-002
+  - S-r4-net-021
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - AHB
+  - TUU
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-002
+  status: secondary
+  note: listed on AHB page only (no reciprocal entry on TUU page); Wikipedia table gives no frequency per route
+- pair:
+  - AHB
+  - WAE
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-002
+  - S-r4-net-026
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - AJF
+  - JED
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-003
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - AJF
+  - RUH
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-003
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - AQI
+  - HAS
+  airlines:
+  - Nesma Airlines
+  sources:
+  - S-r4-net-004
+  status: secondary
+  note: listed on AQI page only (no reciprocal entry on HAS page); Wikipedia table gives no frequency per route
+- pair:
+  - AQI
+  - JED
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-004
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - AQI
+  - RUH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-004
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - BHH
+  - DMM
+  airlines:
+  - Saudia
+  - flyadeal
+  sources:
+  - S-r4-net-005
+  status: secondary
+  note: listed on BHH page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - BHH
+  - JED
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-005
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - BHH
+  - RUH
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-005
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - DMM
+  - EAM
+  airlines:
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-008
+  status: secondary
+  note: listed on EAM page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - ELQ
+  airlines:
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-009
+  status: secondary
+  note: listed on ELQ page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route; source row
+    carries a Seasonal marker (may apply to only some destinations in that row)
+- pair:
+  - DMM
+  - GIZ
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-010
+  status: secondary
+  note: listed on GIZ page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - HAS
+  airlines:
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-011
+  status: secondary
+  note: listed on HAS page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - JED
+  airlines:
+  - Saudia
+  - flyadeal
+  sources:
+  - S-r4-net-006
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - DMM
+  - NUM
+  airlines:
+  - Saudia
+  - flyadeal
+  sources:
+  - S-r4-net-015
+  status: secondary
+  note: listed on NUM page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - RAE
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-016
+  status: secondary
+  note: listed on RAE page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - RSI
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-006
+  status: secondary
+  note: listed on DMM page only (no reciprocal entry on RSI page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - RUH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-006
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - DMM
+  - TIF
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-021
+  status: secondary
+  note: listed on TIF page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - TUI
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-022
+  status: secondary
+  note: listed on TUI page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - TUU
+  airlines:
+  - flyadeal
+  sources:
+  - S-r4-net-006
+  - S-r4-net-023
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - ULH
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-024
+  status: secondary
+  note: listed on ULH page only (no reciprocal entry on DMM page); Wikipedia table gives no frequency per route
+- pair:
+  - DMM
+  - YNB
+  airlines:
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-006
+  - S-r4-net-027
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - DWD
+  - JED
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-007
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - DWD
+  - RUH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-007
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - EAM
+  - JED
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-008
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - EAM
+  - RUH
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-008
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - ELQ
+  - HAS
+  airlines:
+  - Nesma Airlines
+  sources:
+  - S-r4-net-009
+  status: secondary
+  note: listed on ELQ page only (no reciprocal entry on HAS page); Wikipedia table gives no frequency per route
+- pair:
+  - ELQ
+  - JED
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-009
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - ELQ
+  - RUH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-009
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - GIZ
+  - JED
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-010
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - GIZ
+  - RUH
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-010
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - GIZ
+  - TIF
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-010
+  - S-r4-net-021
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - GIZ
+  - TUU
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-010
+  status: secondary
+  note: listed on GIZ page only (no reciprocal entry on TUU page); Wikipedia table gives no frequency per route
+- pair:
+  - HAS
+  - JED
+  airlines:
+  - Saudia
+  - flyadeal
+  sources:
+  - S-r4-net-011
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - HAS
+  - MED
+  airlines:
+  - Nesma Airlines
+  sources:
+  - S-r4-net-014
+  status: secondary
+  note: listed on MED page only (no reciprocal entry on HAS page); Wikipedia table gives no frequency per route
+- pair:
+  - HAS
+  - RAE
+  airlines:
+  - Nesma Airlines
+  sources:
+  - S-r4-net-016
+  status: secondary
+  note: listed on RAE page only (no reciprocal entry on HAS page); Wikipedia table gives no frequency per route
+- pair:
+  - HAS
+  - RAH
+  airlines:
+  - Nesma Airlines
+  sources:
+  - S-r4-net-017
+  status: secondary
+  note: listed on RAH page only (no reciprocal entry on HAS page); Wikipedia table gives no frequency per route
+- pair:
+  - HAS
+  - RUH
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-011
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - HAS
+  - TUI
+  airlines:
+  - Nesma Airlines
+  sources:
+  - S-r4-net-022
+  status: secondary
+  note: listed on TUI page only (no reciprocal entry on HAS page); Wikipedia table gives no frequency per route
+- pair:
+  - HOF
+  - JED
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-012
+  - S-r4-net-013
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - HOF
+  - MED
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-012
+  - S-r4-net-014
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route
+- pair:
+  - JED
+  - NUM
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-015
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - RAE
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-016
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - RAH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-017
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - RSI
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-018
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - RUH
+  airlines:
+  - Riyadh Air
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - SHW
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-020
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - TIF
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-021
+  status: secondary
+  note: listed on TIF page only (no reciprocal entry on JED page); Wikipedia table gives no frequency per route
+- pair:
+  - JED
+  - TUI
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-022
+  status: secondary
+  note: listed on TUI page only (no reciprocal entry on JED page); Wikipedia table gives no frequency per route
+- pair:
+  - JED
+  - TUU
+  airlines:
+  - Saudia
+  - flyadeal
+  sources:
+  - S-r4-net-013
+  - S-r4-net-023
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - ULH
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-013
+  - S-r4-net-024
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - URY
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-025
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - WAE
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-013
+  - S-r4-net-026
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - JED
+  - YNB
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-013
+  - S-r4-net-027
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - MED
+  - RUH
+  airlines:
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-014
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - MED
+  - TIF
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-021
+  status: secondary
+  note: listed on TIF page only (no reciprocal entry on MED page); Wikipedia table gives no frequency per route
+- pair:
+  - MED
+  - TUU
+  airlines:
+  - flynas
+  sources:
+  - S-r4-net-023
+  status: secondary
+  note: listed on TUU page only (no reciprocal entry on MED page); Wikipedia table gives no frequency per route
+- pair:
+  - NUM
+  - RUH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-015
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RAE
+  - RUH
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-016
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RAH
+  - RUH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-017
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RSI
+  - RUH
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-018
+  - S-r4-net-019
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - SHW
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-019
+  - S-r4-net-020
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - TIF
+  airlines:
+  - Saudia
+  - flyadeal
+  - flynas
+  sources:
+  - S-r4-net-019
+  - S-r4-net-021
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - TUI
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-019
+  - S-r4-net-022
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - TUU
+  airlines:
+  - Saudia
+  - flyadeal
+  sources:
+  - S-r4-net-019
+  - S-r4-net-023
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - ULH
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-019
+  - S-r4-net-024
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - URY
+  airlines:
+  - Saudia
+  - flyadeal
+  sources:
+  - S-r4-net-019
+  - S-r4-net-025
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - WAE
+  airlines:
+  - Saudia
+  - flynas
+  sources:
+  - S-r4-net-019
+  - S-r4-net-026
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - RUH
+  - YNB
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-019
+  - S-r4-net-027
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route; source row carries a Seasonal marker (may
+    apply to only some destinations in that row)
+- pair:
+  - SHW
+  - TIF
+  airlines:
+  - Saudia
+  sources:
+  - S-r4-net-020
+  - S-r4-net-021
+  status: secondary
+  note: listed on both airport pages; Wikipedia table gives no frequency per route

@@ -1,0 +1,16 @@
+# Spec for cities/ksa/lines/riyadh-metro-l5.yaml. Stations: stop nodes of OSM route relation 8857090 (ODbL).
+id: riyadh-metro-l5
+stations_from_route: 8857090
+station_source: S-r1a-805
+osm_track: [subway, light_rail, rail]
+line:
+  name_en: Riyadh Metro Line 5 (Green)
+  name_ar: مترو الرياض - المسار الأخضر
+  layer: existing
+  operator: Royal Commission for Riyadh City (RCRC), owner; operator not verified
+  status: in_service
+  source: S-r1a-049
+  accessed: 2026-10-31
+  line_type: metro
+  length_km: 12.9                                     # S-r1a-049 (secondary)
+  notes: "Opened 15 Dec 2024 (S-r1a-049, secondary). 12 stations per Wikipedia; station list and Arabic names from the OSM route relation (S-r1a-805). Operator not read (riyadhmetro.sa unreachable, S-r1a-054); RCRC owns the project (S-034). Arabic line name descriptive."

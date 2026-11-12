@@ -1,0 +1,18 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install Python 3.12
+        run: uv python install 3.12
+      - name: Sync
+        run: uv sync --frozen
+      - name: Test (no network; data/ is not in the repository)
+        run: make test MANIFEST_FLAGS=--allow-missing
+      - name: Demo (fixture data; local API on 127.0.0.1 only)
+        run: make demo

@@ -1,0 +1,45 @@
+# Fixture shot list (tests only).
+shots:
+  - id: sh-01-01
+    section: 1
+    type: title
+    duration_s: 4.7
+    visual: "Title card on a plain background, no logo"
+    data_source: none
+    on_screen_text: {en: "A Railway to Connect the Country", ar: "سكة تربط البلد"}
+    narration_line_ids: [m-01-01]
+    cut: main
+    transition: fade
+    footer: none
+    renderer: ffmpeg_only
+    osm_credit: false
+    output: film/renders/main/sh-01-01.mp4
+  - id: sh-02-01
+    section: 2
+    type: map_animation
+    duration_s: 4.2
+    visual: "National map, existing layer then the modelled pair highlighted"
+    data_source: runs/fx/result.json
+    on_screen_text: {en: "In the model", ar: "في النموذج"}
+    narration_line_ids: [m-02-01]
+    cut: main
+    transition: cut
+    footer: synthetic
+    renderer: deckgl_capture
+    osm_credit: true
+    ai_generated: false
+    output: film/renders/main/sh-02-01.mp4
+  - id: sh-01-02
+    section: 1
+    type: text_card
+    duration_s: 2.6
+    visual: "Trailer opening card"
+    data_source: none
+    on_screen_text: {en: "", ar: ""}
+    narration_line_ids: [t-01]
+    cut: trailer
+    transition: fade
+    footer: synthetic
+    renderer: ffmpeg_only
+    osm_credit: false
+    output: film/renders/trailer/sh-01-02.mp4

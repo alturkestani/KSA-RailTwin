@@ -1,0 +1,97 @@
+{
+ "id": "RJ-A",
+ "line_type": "hsr",
+ "label": "hypothetical alignment (ours): indicative engineering sketch, not a design",
+ "length_km": 887.212,
+ "straight_km_legs": 844.182,
+ "straight_km_end_to_end": 844.182,
+ "detour_ratio": 1.051,
+ "max_grade_cap": 0.025,
+ "design_kmh": 300.0,
+ "r_min_m": 7000.0,
+ "structure_factor": 5.3339,
+ "tunnel_km": 14.698,
+ "viaduct_km": 17.798,
+ "earthworks_km": 132.687,
+ "at_grade_km": 722.028,
+ "tunnel_share": 0.01657,
+ "viaduct_share": 0.02006,
+ "fill_m3": 8380300.0,
+ "cut_m3": 23777500.0,
+ "formation_max_grade": 0.02503,
+ "formation_cap_ok": true,
+ "profile_feasible": true,
+ "infeasible_legs": [],
+ "ground_share_over_cap": 0.1222,
+ "elev_min_m": 13.2,
+ "elev_max_m": 1101.7,
+ "terrain_shares": {
+  "coastal": 0.0084,
+  "dunes": 0.041,
+  "escarpment_mountain": 0.0743,
+  "flat_desert": 0.6899,
+  "mixed": 0.1864
+ },
+ "area_km": {
+  "urban": 33.197,
+  "builtup": 58.444,
+  "protected": 0.0,
+  "military": 2.5,
+  "sand": 36.396,
+  "sabkha": 0.0,
+  "waterway": 25.298,
+  "highway": 63.644
+ },
+ "wadi_crossings_osm": 132,
+ "speed_restrictions": [
+  {
+   "from_km": 20.648,
+   "to_km": 24.747,
+   "kmh": 230.0
+  },
+  {
+   "from_km": 789.972,
+   "to_km": 791.271,
+   "kmh": 290.0
+  },
+  {
+   "from_km": 832.367,
+   "to_km": 836.867,
+   "kmh": 240.0
+  },
+  {
+   "from_km": 859.665,
+   "to_km": 862.164,
+   "kmh": 280.0
+  }
+ ],
+ "restricted_km": 12.397,
+ "min_curve_kmh": 230.0,
+ "window_bound_legs": 0,
+ "legs": [
+  {
+   "leg": 0,
+   "from": "riyadh",
+   "to": "jeddah",
+   "straight_km": 844.182,
+   "routed_km": 887.212,
+   "ends_relaxed": false,
+   "coarse_nodes": 3303579,
+   "coarse_cells": 1327,
+   "window_ellipse": 1.35,
+   "window_reach": 0.7459,
+   "window_bound": false,
+   "fine_nodes": 764111,
+   "sigma_m": 4000.0,
+   "max_offset_m": 1204.8
+  }
+ ],
+ "station_km": {
+  "riyadh": 0.0,
+  "jeddah": 887.212
+ },
+ "study_label": "hypothetical alignment (ours), user-proposed: indicative engineering sketch, not a design",
+ "weights_hash": "2b718ecbe6caead86e8424e621f90420815a6ada10ad6c4e1b7ffa00bca792d4",
+ "code_version": "r8.1-1-g8dafdfe",
+ "run": "runs/study/rj/align-s1/RJ-A"
+}

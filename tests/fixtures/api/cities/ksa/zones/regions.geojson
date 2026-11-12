@@ -1,0 +1,70 @@
+{
+ "type": "FeatureCollection",
+ "name": "regions",
+ "attribution": "(c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+ "licence": "ODbL-1.0 (derived database of OpenStreetMap)",
+ "source": "osm-gcc-2026-10-14",
+ "simplify_deg": 0.002,
+ "features": [
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_id": 3678409,
+    "name_en": "Riyadh Region",
+    "name_ar": "منطقة الرياض",
+    "wikidata": "Q1249255",
+    "iso3166_2": "SA-01",
+    "region": "riyadh"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       41.6811,
+       23.7229
+      ],
+      [
+       44.1478,
+       19.9573
+      ],
+      [
+       47.6279,
+       25.1202
+      ],
+      [
+       43.5337,
+       25.2333
+      ],
+      [
+       41.6811,
+       23.7229
+      ]
+     ]
+    ]
+   }
+  },
+  {
+   "type": "Feature",
+   "properties": {
+    "osm_id": 3678639,
+    "name_en": "Makkah Region",
+    "name_ar": "منطقة مكة المكرمة",
+    "wikidata": "Q234167",
+    "iso3166_2": "SA-02",
+    "region": "makkah"
+   },
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       38.6598,
+       23.3918
+      ]
+     ]
+    ]
+   }
+  }
+ ]
+}

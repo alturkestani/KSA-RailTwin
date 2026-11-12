@@ -1,0 +1,28 @@
+# GEO_VERIFY parameters. Every value is an A-geo assumption (docs/assumptions.md); none is a
+# measured fact. Ranges are the values a sensitivity run may take.
+extent:
+  eps_m: {value: 100, range: [60, 200], assumption: A-geo-001}
+  min_samples: {value: 5, range: [3, 10], assumption: A-geo-002}
+  snap_m: {value: 1500, range: [500, 3000], assumption: A-geo-003}
+  close_kernel: {value: 3, range: [1, 5], assumption: A-geo-004}
+  min_area_m2: {value: 20, range: [10, 40], assumption: A-geo-005}
+  window_km: {value: 25, range: [10, 40], assumption: A-geo-009}
+occupancy:
+  hh_size: {value: 4.8, range: [2.7, 5.0], assumption: A-geo-006, source: S-geo-001}
+  dwellings_per_building: {value: 1.0, range: [0.8, 2.0], assumption: A-geo-007}
+  residential_share: {value: 0.8, range: [0.6, 0.9], assumption: A-geo-008}
+backtest:
+  strata: # [min, max) Census 2022 population (relayed), count to draw
+    - {name: above_500k, min: 500000, max: 1000000, n: 2}
+    - {name: 50k_500k, min: 50000, max: 500000, n: 3}
+    - {name: 10k_50k, min: 10000, max: 50000, n: 3}
+    - {name: below_10k, min: 0, max: 10000, n: 2}
+  rank_gate_mape: {value: 0.30, source: ".claude/skills/geo-verify/SKILL.md section 3"}
+  max_city_pop: {value: 1000000, assumption: A-geo-010}
+gates:
+  min_free_gib: 15
+  max_cache_gib: 5
+conflict_divergence: {value: 0.25, source: ".claude/skills/geo-verify/SKILL.md section 3"}
+inputs:
+  worldpop: data/ksa/grids/sau_ppp_2020_UNadj_constrained.tif  # manifest worldpop-sau-2020-100m-unadj-constrained
+  footprint_index: data/ksa/geo/dataset-links.csv  # manifest msbuildings-dataset-links-2026-02-03

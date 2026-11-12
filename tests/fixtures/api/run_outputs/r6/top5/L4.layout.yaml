@@ -1,0 +1,15 @@
+id: S6-L4
+layer: hypothetical
+base: S1
+source: scenarios/S6-L4.yaml
+corridors:
+- id: S3-branch_spur-al-kharj
+  phase: 2050
+- id: S5-station_addition-al-jubayl
+  phase: 2030
+- id: S5-station_addition-dhahran
+  phase: 2030
+- id: S4-commuter_belt-riyadh-225
+  phase: 2050
+- id: S4-commuter_belt-makkah-045
+  phase: 2050
