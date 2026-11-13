@@ -1,7 +1,7 @@
 # KSA Rail Twin: common tasks. `make setup && make test` is the README command.
 # CI has no data/ symlinks, so it runs `make test MANIFEST_FLAGS=--allow-missing`. A fresh clone
 # without the data/osm symlink defaults to --allow-missing too (R9); a full checkout verifies every row.
-.PHONY: setup data-links test lint pytest docver manifest cost region-prompts status dashboard demo demo-serve credits
+.PHONY: setup data-links test lint pytest docver manifest cost region-prompts status dashboard demo demo-serve credits report-pdf
 
 MANIFEST_FLAGS ?= $(if $(wildcard data/osm),,--allow-missing)
 
@@ -62,3 +62,9 @@ DASHBOARD_PORT_DEMO ?= 8766
 # docs/credits.md from the licence register (R9)
 credits:
 	uv run python -m common.licences credits --out docs/credits.md
+
+# PDF of the feasibility report (PUBLISH_PDF_POST): docs/report/feasibility-report.pdf, A4, built
+# with headless Chrome from docs/report/feasibility-report.md; then pages, links, private-name count.
+report-pdf:
+	uv run python -m common.report_pdf build
+	uv run python -m common.report_pdf check

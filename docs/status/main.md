@@ -1,4 +1,4 @@
-> **Document version:** docs/status/main.md v1.40 | 12 Nov 2026 | Author: R0 builder; PUBLISH_EXPORT block (v1.40); PUBLISH_PREP_URL block (v1.39); PUBLISH_PREP block (v1.38); FIX_TRAILER_AR block (v1.37); FIX_LICENCE_CITE_TERMS block (v1.35; v1.36 verifier pass 2 result and close line); FIX_LICENCE_NAMED_FLAGS block (v1.33; v1.34 verifier result and close line); FIX_LICENCE_CITE_FACTS block (v1.32); FIX_R9_COUNTS block and R9-block count corrections (v1.30; v1.31 verifier result and status line); R9 block (v1.28; v1.29 verifier PASS, observations, status line); STUDY_RJ_SCORE block (v1.27); STUDY_RJ_FAMILIES block (v1.26); S6_L6_SCORE block (v1.24 start; v1.25 result, verifier, status line); S6_L6_CONNECTED block (v1.22; v1.23 verifier PASS and status line); FIX_HHR_REROUTE block (v1.21); FIX_HHR_JEDDAH block (v1.18; v1.19 corridor-bonus row, verdicts, follow-ups after VERIFY_FIX_HHR_JEDDAH; v1.20 verifier result and status line); FIX_R8_RTL block; FIX_R8 block; INTEGRATE_R8 block; FIX_R7 block and INTEGRATE_R7 correction; INTEGRATE_R7 block; later blocks by each main-track run | Status: active
+> **Document version:** docs/status/main.md v1.47 | 13 Nov 2026 | Author: R0 builder; PUBLISH_PDF_POST block (v1.46; v1.47 verifier result); FILM_SUBS block; FIX_SOCIAL_CARDS block (v1.45); SOCIAL_CARDS block (v1.43; v1.44 verifier result and close line); FIX_EXPORT_NAMES block (v1.41; v1.42 verifier result and close line); PUBLISH_EXPORT block (v1.40); PUBLISH_PREP_URL block (v1.39); PUBLISH_PREP block (v1.38); FIX_TRAILER_AR block (v1.37); FIX_LICENCE_CITE_TERMS block (v1.35; v1.36 verifier pass 2 result and close line); FIX_LICENCE_NAMED_FLAGS block (v1.33; v1.34 verifier result and close line); FIX_LICENCE_CITE_FACTS block (v1.32); FIX_R9_COUNTS block and R9-block count corrections (v1.30; v1.31 verifier result and status line); R9 block (v1.28; v1.29 verifier PASS, observations, status line); STUDY_RJ_SCORE block (v1.27); STUDY_RJ_FAMILIES block (v1.26); S6_L6_SCORE block (v1.24 start; v1.25 result, verifier, status line); S6_L6_CONNECTED block (v1.22; v1.23 verifier PASS and status line); FIX_HHR_REROUTE block (v1.21); FIX_HHR_JEDDAH block (v1.18; v1.19 corridor-bonus row, verdicts, follow-ups after VERIFY_FIX_HHR_JEDDAH; v1.20 verifier result and status line); FIX_R8_RTL block; FIX_R8 block; INTEGRATE_R8 block; FIX_R7 block and INTEGRATE_R7 correction; INTEGRATE_R7 block; later blocks by each main-track run | Status: active
 
 # Track `main` — status
 
@@ -1876,3 +1876,188 @@ Paid calls: none (paid TTS stays USD 7.09). Nobody contacted. No process stopped
 **Verifier (`docs/status/verify-PUBLISH_EXPORT.md`, red-team-verifier, read-only): VERIFY_PUBLISH_EXPORT: PASS** (pass 1 at 4a00ed4; 9 of 9 criteria). It rebuilt the export independently from e73b183 (`diff -r` 0 lines, 189 binaries `cmp`-identical) and re-ran gitleaks (0) and trufflehog (0 verified; the 5 unverified hits are the known S2/S3 false positives, which it judges to meet "0" in substance, not literally). Its own clean clone: setup 18 s, test 149 s, demo 2 s, rc 0; 915 passed, 159 skipped, 0 failed (one test more passes than in this run's clone, a Chrome-related skip). It confirmed the level-2 byte-identical figure rebuild and the private repository unchanged (no remote, 18 tags, `r10-final` → 92c5472, `make test` green). Notes: O2 generated docs keep their generation-date headers; O4 the export's `CLAUDE.md` reads "no the author's company content" (exact R2, cosmetic); O6 the blockers note's row count (flagged above). The cost-log row is the coordinator's.
 
 PUBLISH_EXPORT: done
+
+## FIX_EXPORT_NAMES (12 Nov 2026 AST; main checkout, from a25cc63/5450d57)
+
+Tariq's prompt `prompts/FIX_EXPORT_NAMES.md` (excluded from the export, first step). The private names are referred to here only by the gitignored list `.publish/private-names.txt` and by counts.
+
+**The list.** `.publish/private-names.txt` (mode 600; `.publish/` added to `.gitignore`): 15 lines for 14 terms (the previous R2 set plus the nine terms the prompt names; the company name has two lines, hyphenated and spaced, so each keeps its own replacement). Format: one term per line, optional TAB + replacement (default "[private name]"); matching is case-insensitive and substring-wide, and a space in a term also matches "-", "_" or nothing. It is the single source for the redaction, the residue grep, the new test and the verifier's grep.
+
+**Tracked files on `main`.** Private-list matches outside the prompt: **187 matches in 70 files at 5450d57 → 0 at HEAD** (`git grep -a -i`). How:
+- rule-9 sentences (`PROJECT.md`, `CLAUDE.md`, `prompts/_common.md`, kept identical) and the three agent files: the name became "the author's company" (role kept: "no content, branding, data or contacts from the author's company");
+- `VERIFY_*` prompts, `prompts/R8.md` and 49 verifier reports: "X content" became "content from the author's company"; grep terms that only searched for a removed name were dropped from the pattern (other terms kept) or, where the whole list was private, the text now says "the private-list terms";
+- `tests/test_report_figures.py`: the name dropped from the banned-word list (the new test covers it);
+- `scripts/publish_export.sh` and `docs/publish/checklist.md` v1.5 (§2, §7, §10): no name, not even in a regex; the script builds its pattern from the list at run time and refuses to run without it;
+- the PUBLISH_EXPORT "For Tariq" note above: the three terms are now a count.
+New test `tests/test_private_names.py`: no tracked file except the prompt contains any list term (skips without the list, as in a public clone); the list is gitignored and the prompt is in `export-exclude.txt`.
+
+**Script changes.** Besides reading the list: a binary file that contains a term now stops the build (it used to be listed only); the residue check also reads the text of every PDF (`pdftotext`) and the XML inside every xlsx/docx/pptx; after the commit a `git grep -i` of the commit must find nothing. The vendor-email residue pattern now needs an address (local part + domain), because the PUBLISH_EXPORT verifier report mentions the bare domains (the first rebuild attempt stopped on that line; the partial folder it created was deleted).
+
+**Export rebuilt.** The old export (`~/Documents/Projects/KSA-RailTwin-public`, single commit 41164cd, no remote) was deleted and rebuilt with `scripts/publish_export.sh` from **506d4ad** (`LOG=logs/publish-export-fix`, gitignored): 2,000 files archived, 7 dropped (`export-exclude.txt`), **1,993 files**; R2 redacted 0 files (nothing left to redact); residue 0; **export commit e4c3ad1abe43e1e97f13b8a00ca5723349cfdc24**, one commit, author and committer "Tariq Alturkestani <alturkestani@users.noreply.github.com>", 2026-11-12 12:00 +03:00, no remote, no tag, one branch.
+
+**Proof (grep with the list; counts only).**
+
+| check over the export | result |
+|---|---|
+| `grep -rlaiE` (every byte of every file, `.git` excluded) | 0 files |
+| `pdftotext` of all 29 PDFs, grep | 0 of 29 |
+| `unzip -p` of all 29 xlsx, grep | 0 of 29 |
+| `git grep -a -i` on the commit | 0 files |
+| commit message | 0 |
+| gitleaks (script, `.gitleaks.toml`, 1 commit) | no leaks found |
+| trufflehog 3.99.8 `git` / `filesystem` | 0 verified; 5 unverified (`git`) = the known S2/S3 false positives (a UUID in a news URL in 4 source-index files; bytes in a GASTAT xlsx); `filesystem` 9 = the same 5 plus 4 copies inside `.git/objects` |
+
+**Clean-env proof** (`git clone` of the export into `/tmp`; every step under `env -i HOME=<empty temp folder> PATH=<uv dir>:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin`; the uv cache is shared, so setup took 0 s):
+
+| step | exit | wall |
+|---|---|---|
+| `make setup` | 0 | 0 s |
+| `make test` | 0 | 127 s |
+| `make demo` | 0 | 2 s |
+| reproduce level 2 (copy figure inputs, `common.figures build`, `git status` on both figure folders) | 0 | **0 changed files (byte-identical)** |
+| `tests/test_private_names.py` in the clone | skip (list absent), as designed | |
+
+Observation (pre-existing, not changed by this run): after the level-2 copy, a full `pytest` in the clone gives 939 passed, 136 skipped, **1 failed**: `tests/test_s6_l6_connected.py::test_map_exists_small_and_idempotent` is gated only on `runs/r6/l6/search.json` (shipped in the figure inputs) but its map command needs other run files. No code under `tests/`, `optimise/` or `common/` changed since e73b183. A one-line skip-gate fix is possible on Tariq's word.
+
+**Private repository.** History not rewritten (this run's commits on top of 5450d57); `git remote` empty; 18 tags, `r10-final` → 92c5472. `make test` green on `main` at 6c084ec (rc 0: ruff, format 828, pytest, docver 422, manifest 388); the later commits touch only the script, checklist and this file.
+
+Paid calls: none. Nobody contacted. Processes stopped: one `pdftotext` this run started (it was reading stdin after a path with spaces split; the PDF check was redone null-safe). Cost row: by the orchestrator from the run JSON.
+
+**Verifier (`docs/status/verify-FIX_EXPORT_NAMES.md`, red-team-verifier, read-only): VERIFY_FIX_EXPORT_NAMES: PASS** (9 of 9 criteria, at 4c04c67). Its own grep with the list: 0 over tracked files on `main` (prompt excepted), 0 over `git archive main` minus the exclude list (1,993 files), 0 over the export (bytes, 29 PDFs, 29 xlsx, the commit, the message). Its independent rebuild from 506d4ad gave the same commit SHA e4c3ad1 and tree; `diff -r` 0 lines. gitleaks: no leaks; trufflehog: 0 verified, the 5 known false positives. Its clean clone: setup, test (171 s, overlapping its own `make test` on main), demo all rc 0; level 2 byte-identical. Private repo: no remote, 18 tags, `r10-final` → 92c5472, no rewrite; `make test` on main rc 0. Observations: close-out line and cost row pending (this line and the orchestrator's row); the pre-existing `test_s6_l6_connected` skip gate (decision for Tariq); trufflehog's literal 0 would need an exclude (left as reported).
+
+FIX_EXPORT_NAMES: done
+
+## SOCIAL_CARDS (Tariq, 12 Nov 2026 AST; `prompts/SOCIAL_CARDS.md`; one run on main, WT=0; start HEAD cf504dc on 5092df2)
+
+**Done.** Ten PNG cards: five cards × English and Arabic, all 1080×1350, in `renders/out/social/cards/` on the external volume. Not committed (rule 8). The cards are `card1-network`, `card2-cost`, `card3-payback`, `card4-riyadh-jeddah` and `card5-how-made`, each with `-en` and `-ar`.
+- Renderer: `film/cards.py`. It is a thin wrapper around `film/sim.py` and `film/sim_main.py`, with the same night relief, line styles, glow, fonts and Chrome text layer as the film's `sim_map` frames. It sets `sim.W`/`sim.H` to 1080×1350 for one still and then restores them. No new package, no model download, no paid call.
+- Card text: `docs/publish/social-cards.csv`, one row per card and language.
+- Trace: `docs/publish/social-cards.md` lists exact value → card value → file:line for every figure, and where the file differs from the prompt's figure.
+- Re-rendering gives byte-identical PNGs (SHA-256 compared).
+- Command: `uv run python -m film.cards render`. It refuses to render if any card figure does not trace.
+
+**Figures (the file wins; full table in `social-cards.md`).**
+- Card 2, cost to build:
+  - committed lines 102 bn (likely 48–468) vs the prompt's 100 (50–470);
+  - connected network 227 bn (123–860) vs 230 (120–860);
+  - three stations 1.4 bn (0.8–5.3).
+- Card 3, riyals back per riyal: 6 / 2.3 / 0.3 / 0.2 / 0.06, as in the prompt and as the film rounds them (`film/storyboard/rounding-log.csv`).
+- Card 4, Riyadh–Jeddah door to door: flight 3 h 11 min against the fastest modelled train (RJ-A, 350 km/h, non-stop) 4 h 57 min. These are the two times the film's door-to-door race (sh-04-51) is scaled to (`runs/study/rj/times-s1/`, `docs/rj-routes-study.md` §5). The film's narration states the result in words only.
+- Card 5, as of commit cf504dc: 93 Claude runs (the prompt said 94; this run's own row is not in the log yet), USD 1,325 at list price, USD 7 in voices (7.09 in the cost log; `docs/spend-summary.md` says 7.06 because it predates the last two TTS rows), open code.
+
+**Decisions.**
+1. The card 1 legend uses the film's classes word for word: "existing", "committed or under procurement", "hypothetical (ours)". "Proposed" was not used, so nothing reads as an official proposal (rule 5).
+2. Card 1 draws only the routed S6-L6 alignments; the 2-point sketches are never drawn.
+3. Card 3 shows middle values only, as Tariq asked for simple bars. Its title says "middle case"; the ranges are in the trace.
+4. Costs are in whole billions from 10 bn, one decimal below that.
+5. Cards 1–4 carry the project label. Card 5 is not modelled output and has none.
+6. The footer and the OSM + Copernicus credit are on all ten cards.
+7. Word count = tokens that contain a letter, footer, credits, label, legend and map labels excluded. The highest count is 25 (cards 3 en/ar and 4 ar).
+8. Arabic: plain Saudi wording taken from the film where the film has it. Number ranges are LTR isolates. A first render showed "468–48" reversed; this was fixed and checked on zoomed crops. `common.ar_render bidi-probe` finds no numeric runs in this markup, so it was not used as evidence.
+9. Arabic `native_review = pending`. The film's Arabic is also still pending native review.
+
+**Checks.**
+- `tests/test_social_cards.py` (15 tests): five cards × two languages; no jargon (NPV, BCR, P10/P50/P80/P90, capex, present value, benefit–cost ratio and their Arabic forms) anywhere on a card; ≤ 25 words; footer and credit present; every figure equals the value recomputed from its file (needs the local runs); the PNG sizes (needs the volume).
+- `make test` rc 0: ruff, format, pytest, docver 425, manifest 388. Log: `logs/social-cards/make-test.log`.
+- Commit c8a0bbe. No remote, nothing pushed, nobody contacted, no paid calls, no processes stopped.
+- Cost row: added by the orchestrator from the run JSON.
+
+**Verifier (`docs/status/verify-SOCIAL_CARDS.md`, red-team-verifier, read-only):** all eight content criteria PASS at 4eef294:
+- every figure recomputed from its file, and the numbers visible in all ten PNGs equal the CSV;
+- no jargon;
+- word counts 16–25;
+- footer and OSM + Copernicus credit on all ten cards;
+- 1080×1350 for all ten;
+- Arabic shaping and range order checked on crops;
+- card 1 shows routed alignments only;
+- `make test` rc 0; no remote;
+- re-renders byte-identical.
+
+Its single FAIL was the missing close line below, which by this track's convention follows the verifier result.
+
+Observations:
+- the cost row is pending (the orchestrator adds it);
+- `docs/spend-summary.md` is stale on TTS (7.06 against the log's 7.09; listed in the trace);
+- the `._` AppleDouble sidecars beside the PNGs have been deleted;
+- the legend says "hypothetical (ours)" where the prompt said "proposed": Tariq's call.
+
+SOCIAL_CARDS: done
+
+## FIX_SOCIAL_CARDS (Tariq, 13 Nov 2026 AST; `prompts/FIX_SOCIAL_CARDS.md`; one run on main, WT=0; start HEAD 5c4c3f0 on 8ccc6e9)
+
+**Done.** Text edits in `docs/publish/social-cards.csv` (the file `film/cards.py` reads), then all ten PNGs re-rendered in place in `renders/out/social/cards/` on the external volume. Not committed (rule 8).
+
+**Edited strings (before → after).**
+
+| card | field | before | after |
+|---|---|---|---|
+| 1 en | title | "One connected network, in the model" | "One connected network" |
+| 1 ar | title | «شبكة وحدة مترابطة، في النموذج» | «شبكة واحدة مترابطة» |
+| 1 ar | note | «للمقارنة، مو توصية» | «للمقارنة، وليست توصية» |
+| 4 en | item label | "Fastest train in the model = 4 h 57 min" | "Fastest train = 4 h 57 min" |
+| 4 ar | item label | «أسرع قطار في النموذج = 4 ساعات و57 دقيقة» | «أسرع قطار = 4 ساعات و57 دقيقة» |
+
+- Unchanged: the one project label line above the footer ("synthetic demand, uncalibrated: scenario comparison, not a forecast" and its Arabic), still on cards 1–4; every other word, every number, layout and source.
+- Word counts (body, `film.cards check`): card 1 en 19 → 16, ar 16 → 14; card 4 en 23 → 20, ar 25 → 23. Others unchanged.
+- Trace `docs/publish/social-cards.md` v1.1: the Arabic-register line («للمقارنة، وليست توصية»), the card 4 row's item name, the card 5 row's cut-off, and a short FIX_SOCIAL_CARDS section. Nothing else.
+
+**Decision: the card 5 trace check pinned to cf504dc.** The first render refused ("figures do not trace": card 5 expected 94 runs and USD 1,333). `film.cards` checked card 5 against the live `docs/cost-log.csv`, which gained the SOCIAL_CARDS row in 8ccc6e9, while the card says "As of commit cf504dc". Since 8ccc6e9 this also made `tests/test_social_cards.py::test_every_figure_traces` fail on main. Fix in `film/cards.py`: `cost_totals()` counts only the rows up to `AS_OF_LAST_RUN = "main-FIX_EXPORT_NAMES-try1"`, the last row at cf504dc (the log is append-only; a row id, not a git lookup, so it also works in the history-free export). The card numbers are unchanged (93, USD 1,325, USD 7). No number on any card changed.
+
+**PNG SHA-256 after the re-render** (`renders/out/social/cards/`):
+
+| file | SHA-256 | vs SOCIAL_CARDS |
+|---|---|---|
+| card1-network-en.png | 279148bc22965f87ab61f8c00142fbf625fdb15220f1102826da9fdf646cb4c0 | changed (text edit) |
+| card1-network-ar.png | 266c677bfb0a496ee92585df67c9d4f3902b90790ca98e5a544015c5eec02ee3 | changed (text edit) |
+| card2-cost-en.png | 0b600b0efb6968537da9bf6ff7e360134f58159ca7419a6b7a2dc2d8771541f5 | identical |
+| card2-cost-ar.png | b58166eb7d9c0b43cec272698b63f0ff0c8e088bfe62fec431f83ce978d2bba8 | identical |
+| card3-payback-en.png | aade7dd245f28c3dc4934410edc9beded76bc3b8fee189e0396921fb00898630 | identical |
+| card3-payback-ar.png | fc1f96a2980123c624e5a4a2ca7433910150db37b330d0af810853460aeb672b | identical |
+| card4-riyadh-jeddah-en.png | b6a376986e057b2be6fdbe3f350892026429c737af1ba02287e47a08fb7ff931 | changed (text edit) |
+| card4-riyadh-jeddah-ar.png | 748eb34686f18a987120fdba09cd0b7937d6b13cd864f90d9364284d2952b6ca | changed (text edit) |
+| card5-how-made-en.png | 173ed3ca2417a6c6d079ec6f787f694b69b696b805ad15f535713d2ec53cd0d5 | identical |
+| card5-how-made-ar.png | f3e4edb36bd3e2b825c9ea16ca42344f493246d79ae10be208f066a66c78c4ab | identical |
+
+Only the four edited cards changed; the six others are byte-identical, so the renderer is deterministic. All ten are 1080×1350. The four changed cards were viewed: titles, Arabic shaping and «4 ساعات و57 دقيقة» read correctly. `._` sidecars deleted.
+
+**Checks.**
+- `uv run python -m film.cards check`: ok (jargon, ≤ 25 words, figures).
+- `tests/test_social_cards.py`: 15 of 15 pass, including `test_every_figure_traces` and the PNG-size test.
+- `make test` rc 0: ruff, format, pytest, docver 427, manifest 388. Log: `logs/fix-social-cards/make-test.log`.
+- No remote, nothing pushed, nobody contacted, no paid calls, no processes stopped.
+- Cost row: added by the orchestrator from the run JSON.
+
+**Verifier:** VERIFY_SOCIAL_CARDS pass 2 runs after this commit, as a full pass over the ten re-rendered cards. Its result is appended to `docs/status/verify-SOCIAL_CARDS.md`.
+
+FIX_SOCIAL_CARDS: done
+
+## FILM_SUBS (Tariq, 13 Nov 2026 AST): cross-language subtitles, burned-in copies, LinkedIn Arabic cut
+
+- Prompt: `prompts/FILM_SUBS.md`; one run on the main checkout from 17c4696 (clean tree, FIX_SOCIAL_CARDS stopped). Full QA note: `docs/publish/film-subs.md` v1.0.
+- **Item 1 (done).** `film/subs/main-ar.en.srt` (212 cues) and `film/subs/main-en.ar.srt` (170 cues), plus VTT copies, are generated by the new `film/cross.py` from `film/subs/cross/main-ar.en.csv` and `film/subs/cross/main-en.ar.csv` (68 rows each; the source text equals `lines.csv`). They are timed inside each line's measured narration interval (`film/assemble/lines-main-*.csv`). Limits: max 2 lines, max 42 characters per line, cues from 1.089 s to 6.880 s, max 16.5 cps. `film.subs check` PASS (warnings are under 12 cps only). `film.cross check` PASS: figures digit by digit, 43 names, full honorific in both languages, no tashkeel, cue alignment. Two declared word-for-figure cases: m-01-07 «ساعة», m-05-04 «ساعتين». **Arabic subtitles: native_review = pending.** Bidi-probe over every Arabic cue: 0 risky runs and 0 errors.
+- **Item 2 (done).** `renders/out/social/subs/main-ar-subEN.mp4` (1008.833 s) and `main-en-subAR.mp4` (872.167 s): H.264 1920×1080, AAC audio stream-copied (demuxed audio packet MD5 identical to the source: true for both). They use the `film/social.py` path: Chrome-drawn cue PNGs in the top band, so they never sit over the bottom caption band. Frames viewed at 266 s (EN) and 230 s (AR).
+- **Item 3 (stopped as instructed: no cut made).** The narration WAVs of main-ar alone run 14:59.040, already 9.04 s over 14:50. Low-range holds give 16:04.067; with the 20 s closing notice also removed, 15:44.067. Proposed 2-part split before section 6 ("How we routed and priced it"): 7:59.367 + 8:49.467 at today's timing, both under 15:00 with no tightening. Table: `film/assemble/li-floor.csv` (`film.cross li-plan`). No speech cut, no `main-ar-li.mp4`, no loudness re-measure needed.
+- **Item 4 (done).** Original SHA-256s were measured before and after the run and are unchanged: main-en 540c5e41…, main-ar 391f72bf…, trailer-en 78802cd5…, trailer-ar 64cf4389….
+- Decisions: (a) the sidecar SRTs have no `{\an8}` position tag (not portable; LinkedIn's handling is unknown). Burned copies sit at the top. (b) In Arabic subtitles, the English cut's Vision 2030 quotations are carried as meaning («بمعنى النص»), because no official Arabic wording is registered, as in the Arabic narration. (c) Known cosmetic: the shared packer sometimes leaves a one-word second line.
+- No TTS, no paid call (paid total stays USD 7.09), no new package, no remote, no push, nobody contacted, no process stopped that this run did not start. Cost row: added by the orchestrator from the run JSON.
+- Verifier: VERIFY_FILM_SUBS runs after this commit (full pass).
+
+FILM_SUBS: done
+
+## PUBLISH_PDF_POST (Tariq, 13 Nov 2026 AST): report PDF, LinkedIn post draft, cards 6–7
+
+- Prompt: `prompts/PUBLISH_PDF_POST.md`; one run on the main checkout (WT=0), start HEAD d58ef2a (the prompt commit on ef50569). Commits: 8d21b5a (generator, tests, licence `used_in`), 23ee9b5 (PDF, post, cards, credits).
+- **Item 1 (done): the PDF.** `docs/report/feasibility-report.pdf`: **55 pages, A4, 4,783,351 bytes (4.8 MB)**, so it is tracked (under the ~25 MB limit). SHA-256 63d439cb7f2ad297c28221123760e83a572318398f308bdf33e538514c6b893d. Copy (byte-identical) at `renders/out/social/feasibility-report.pdf` on the external volume (`film/renders`). Built from `docs/report/feasibility-report.md` as it stands on main (v1.3, CP7 label wording included): no content edit, no new figure, no number changed.
+  - Generator (committed, repeatable): `common/report_pdf.py`, `make report-pdf` (= `uv run python -m common.report_pdf build` then `check`). Markdown → HTML with markdown-it-py, HTML → PDF with headless Chrome 157.0.8103.78. Both were already in the licence register (Chrome approved 4 Nov 2026), and Poppler (`pdftotext`, `pdfinfo`, `pdftohtml`) reads the result. **No new package**; only the `used_in` cells of four licence rows were extended (markdown-it-py, Chrome, Poppler, Noto Sans), and `docs/credits.md` was regenerated.
+  - Added around the unchanged text: a cover page (title, author Dr. Tariq Alturkestani, date 13 November 2026 = build date, "Independent simulation, not a government plan", repository link github.com/alturkestani/KSA-RailTwin, Apache-2.0, "Built from commit 8d21b5a", and the project label); page numbers in the report's own Contents list (two-pass build, settled on the first try); a running footer with page x / y; PDF bookmarks from the headings.
+  - Figures: the report's 16 figures keep their own numbers ("Figure 1" to "Figure 16" in the captions, in the order the report uses them) and stay vector (SVG); the four dashboard screenshots are unnumbered in the report and stay unnumbered, with their alt text as caption. Not renumbered, because that would change the text.
+  - Links: 154 internal `#` links, all resolving to a heading (build check; `pdftohtml` finds 260 internal link annotations including the Contents); 138 external URLs (the source notes, plus 16 repository links: relative links to `annex-*.md` rewritten to `https://github.com/alturkestani/KSA-RailTwin/blob/main/docs/report/…`, which work once the repository is public). 98 source notes at the end are the references; each `[S-…]` marker links to its note.
+  - Presentation fix: three tables written straight under a "> Labels" line were parsed as part of the quote (lazy continuation), so the build puts a blank line between them. Text unchanged.
+  - **Private-name check:** the `.publish/private-names.txt` pattern (as in `tests/test_private_names.py`) over the `pdftotext` output: **0 hits**. No absolute home path in the PDF bytes or text (0). Log: `logs/publish-pdf-post/report-pdf.log`.
+- **Item 2 (done): the post.** `docs/publish/linkedin-method-findings.md` v1.0: English post of **1,937 characters** (first comment excluded), 3 hashtags, no links in the body, no finance jargon (cards' list), the project label quoted. Spend **as of commit d58ef2a**: 96 Claude runs, USD 1,347.12 list price (subscription; reference cost) → "about USD 1,347"; paid voices USD 7.09 over 35 calls → "about USD 7" (`common.cost_log summary` at d58ef2a). This run's own row is not included. Five findings with the film's plain numbers (about 6 / 0.3 / 0.2 / 0.06 riyals back per riyal; flight 3 h 11 min vs fastest modelled train 4 h 57 min; 32.7 vs 26.1 million within two hours; 123 to 860 billion riyals; no option pays for itself from fares). Every number has a row in the file's trace table (exact → post → file:line). First comment: the PDF link and `https://github.com/alturkestani/KSA-RailTwin`. **The repository is not live yet**: until Tariq pushes, the PDF is the SSD copy above. Suggested reply order (links, then cards 6, 7, 3, 2, 4, 1, 5, each with a one-line caption) is in the file. Note there: card 5 counts the log at cf504dc (93 runs, USD 1,325) and the post at d58ef2a (96 runs, USD 1,347); both say which commit they count to.
+- **Item 3 (done): cards 6 and 7.** Rows in `docs/publish/social-cards.csv`; `film/cards.py` gains `card6` (method: open data → routes over real terrain → costs with overrun ranges → simulated travellers → compare options) and `card7` (findings: 6 / 0.3 / 0.06 riyals back per riyal, middle case, plus "Riyadh–Jeddah door to door: flight beats every modelled train"). Same renderer, footer, credit and project label; 1080×1350; words en/ar: card 6 18/18, card 7 24/25 (≤ 25); `film.cards check` ok (jargon, words, figures: card 7's three figures trace to the same files as card 3). Arabic native_review = pending. Trace rows appended to `docs/publish/social-cards.md` (v1.2). Only cards 6 and 7 were rendered; the **SHA-256 of the ten card 1–5 PNGs is identical before and after** (and equal to the FIX_SOCIAL_CARDS values above). New PNG SHA-256s are in `social-cards.md`. Four `._` sidecars this run created were deleted.
+- Tests: new `tests/test_report_pdf.py` (slugs, link rewriting, source-note links, the label/table fix, every report anchor resolves, committed PDF is A4 with 0 private names) and `tests/test_linkedin_post.py` (length 1,300–2,000 and the stated count, ≤ 3 hashtags, no links, no jargon, the label, the first comment's links); `tests/test_social_cards.py` now expects seven cards. `make test` rc 0: ruff, format, pytest (1,116 passed), docver 432, manifest 388. Log: `logs/publish-pdf-post/make-test.log`.
+- No paid call (paid total stays USD 7.09), no new package, no remote, no push, nobody contacted, no process stopped. Cost row: added by the orchestrator from the run JSON.
+- Verifier: VERIFY_PUBLISH_PDF_POST **PASS**, full pass, nine criteria (`docs/status/verify-PUBLISH_PDF_POST.md`, on HEAD c6927c0). Non-blocking notes: the Chrome licence row's version column still reads 156.0.8078.81 (the build used 157.0.8103.78, recorded in `used_in`; version cells were left alone); long numbers can wrap inside narrow table cells (presentation only); `social-cards.md:34` (pre-existing) says "non-stop" for a row whose `pattern` is `all-stop` with only the two end stops.
+
+PUBLISH_PDF_POST: done

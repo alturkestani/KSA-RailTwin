@@ -40,11 +40,11 @@ REPORT_DATE = "4 Nov 2026"
 AUTHOR = "report-writer"
 STATUS = "draft"
 # The assembled report's own header (FIX_R8): bumped on every rebuild that changes its text.
-MAIN_REPORT_VERSION = "1.3"
-MAIN_REPORT_DATE = "5 Nov 2026"
+MAIN_REPORT_VERSION = "1.4"
+MAIN_REPORT_DATE = "13 Nov 2026"
 MAIN_REPORT_NOTE = (
     "; v1.1: fig09 title, FIX_R8 item 1; v1.2: wording checks, FIX_R8 item 9; "
-    "v1.3: neutral framing, FIX_R8 item 7"
+    "v1.3: neutral framing, FIX_R8 item 7; v1.4: S6-L6 plain-language section, FIX_PDF_CONNECTED"
 )
 JUDGE_SHA = "d9fef64384e2e25f84b288962907fa25e2476d9749bf863d7bd6fb66fb70f9ee"
 JUDGE_SHORT = "d9fef643…"

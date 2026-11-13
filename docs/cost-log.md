@@ -133,3 +133,8 @@ Figures are Claude Code's list-price `total_cost_usd` from each run's stream-jso
 | 2026-11-12 | main-PUBLISH_PREP-try1 | main | PUBLISH_PREP | claude-fable-5-1+claude-opus-5-5 | 1 | 59.6 | 177 | 1925 | 202213 | 44816916 | 692270 | 21.27 | done |  |
 | 2026-11-12 | main-PUBLISH_PREP_URL-try1 | main | PUBLISH_PREP_URL | claude-fable-5-1+claude-opus-5-5 | 1 | 10.5 | 25 | 482 | 38938 | 4072961 | 230957 | 4.54 | done |  |
 | 2026-11-12 | main-PUBLISH_EXPORT-try1 | main | PUBLISH_EXPORT | claude-fable-5-1+claude-opus-5-5 | 1 | 38.8 | 139 | 945 | 124431 | 28816154 | 403118 | 13.05 | done |  |
+| 2026-11-12 | main-FIX_EXPORT_NAMES-try1 | main | FIX_EXPORT_NAMES | claude-fable-5-1+claude-opus-5-5 | 1 | 23.6 | 58 | 1141 | 66676 | 9843482 | 250365 | 6.62 | done |  |
+| 2026-11-12 | main-SOCIAL_CARDS-try1 | main | SOCIAL_CARDS | claude-fable-5-1+claude-opus-5-5 | 1 | 24.8 | 64 | 515 | 77976 | 11435544 | 378184 | 8.26 | done |  |
+| 2026-11-12 | main-FIX_SOCIAL_CARDS-try1 | main | FIX_SOCIAL_CARDS | claude-fable-5-1+claude-opus-5-5 | 1 | 8.8 | 27 | 347 | 33969 | 3242699 | 239455 | 4.42 | done |  |
+| 2026-11-12 | main-FILM_SUBS-try1 | main | FILM_SUBS | claude-fable-5-1+claude-opus-5-5 | 1 | 29.7 | 64 | 612 | 104031 | 12751801 | 393762 | 9.57 | done |  |
+| 2026-11-13 | main-PUBLISH_PDF_POST-try1 | main | PUBLISH_PDF_POST | claude-fable-5-1+claude-opus-5-5 | 1 | 29.3 | 85 | 1213 | 109504 | 17303805 | 390507 | 10.71 | done |  |

@@ -1,0 +1,17 @@
+card,lang,title,subtitle,items,chart_label,note
+1,en,One connected network,"Tabuk to Jazan, Najran, Abha and Khamis Mushait",,,"A comparison, not a recommendation"
+1,ar,شبكة واحدة مترابطة,من تبوك إلى جازان ونجران وأبها وخميس مشيط,,,للمقارنة، وليست توصية
+2,en,"Cost to build, billion riyals",,Committed lines = 102 = 48–468 | Connected network = 227 = 123–860 | Three new stations = 1.4 = 0.8–5.3,middle | likely range,Ranges allow for overruns like past rail projects
+2,ar,تكلفة البناء، بالمليار ريال,,الخطوط الملتزم بها = 102 = 48–468 | الشبكة المترابطة = 227 = 123–860 | ثلاث محطات جديدة = 1.4 = 0.8–5.3,الوسط | النطاق المرجّح,النطاقات تحسب حساب تجاوز التكاليف مثل مشاريع السكك السابقة
+3,en,"Riyals back per riyal, middle case",,Three stations = 6 | Plus Al-Kharj spur = 2.3 | Committed lines = 0.3 | Riyadh–Jeddah (side study) = 0.2 | Connected network = 0.06,below 1 = doesn't pay back what it costs,
+3,ar,كم ريال يرجع لكل ريال، الحالة الوسطى,,ثلاث محطات = 6 | ومعها خط الخرج = 2.3 | الخطوط الملتزم بها = 0.3 | الرياض–جدة (دراسة جانبية) = 0.2 | الشبكة المترابطة = 0.06,أقل من 1 = ما يرجّع تكلفته,
+4,en,"Riyadh–Jeddah, door to door",,Flight = 3 h 11 min | Fastest train = 4 h 57 min,,"City centre to city centre. Train at 350 km/h, non-stop."
+4,ar,الرياض–جدة، من الباب إلى الباب,,الطيارة = 3 ساعات و11 دقيقة | أسرع قطار = 4 ساعات و57 دقيقة,,من وسط المدينة لوسطها، والقطار 350 كيلو بالساعة بدون توقف.
+5,en,How it was made,,"Claude runs = 93 | at list price (subscription) = USD 1,325 | in voices = USD 7 | code = open",,As of commit cf504dc
+5,ar,كيف انسوّت الدراسة,,"تشغيلة Claude = 93 | بسعر القائمة (اشتراك) = 1,325 دولار | للأصوات = 7 دولار | الكود = مفتوح",,الأرقام حتى النسخة cf504dc
+6,en,How the study worked,,Open data | Routes over real terrain | Costs with overrun ranges | Simulated travellers | Compare options,,
+6,ar,كيف اشتغلت الدراسة,,بيانات مفتوحة | مسارات فوق التضاريس الحقيقية | تكاليف بنطاقات تحسب حساب التجاوز | مسافرين افتراضيين | مقارنة الخيارات,,
+7,en,Main findings,,Three new stations = 6 | Committed lines = 0.3 | Connected network = 0.06,"riyals back per riyal, middle case",Riyadh–Jeddah door to door: flight beats every modelled train
+7,ar,أهم النتائج,,ثلاث محطات جديدة = 6 | الخطوط الملتزم بها = 0.3 | الشبكة المترابطة = 0.06,كم ريال يرجع لكل ريال، الحالة الوسطى,الرياض–جدة باب لباب: الطيارة أسرع من كل قطار
+8,en,Connecting every region,16 new links join 18 cities,"New line = 3,242 km | Cost to build, billion riyals = 227 = likely 123–860 | Riyals back per riyal = 0.06",,"A comparison, not a recommendation"
+8,ar,ربط كل المناطق,16 وصلة جديدة تربط 18 مدينة,"خطوط جديدة = 3,242 كم | تكلفة البناء، بالمليار ريال = 227 = المرجّح 123–860 | كم ريال يرجع لكل ريال = 0.06",,للمقارنة، وليست توصية

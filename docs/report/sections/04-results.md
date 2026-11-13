@@ -1,10 +1,59 @@
-> **Document version:** docs/report/sections/04-results.md v1.2 | 6 Nov 2026 | Author: report-writer; FIX_R8 (v1.1: spur figure as a layout difference, five-metro reach qualifier, national reach 'reported only', item 9); R8_L6_PANEL (v1.2: S6-L6 comparison paragraph and Figure 16 in §4.6) | Status: draft
+> **Document version:** docs/report/sections/04-results.md v1.3 | 13 Nov 2026 | Author: report-writer; FIX_R8 (v1.1: spur figure as a layout difference, five-metro reach qualifier, national reach 'reported only', item 9); R8_L6_PANEL (v1.2: S6-L6 comparison paragraph and Figure 16 in §4.6); FIX_PDF_CONNECTED (v1.3, 13 Nov 2026: plain-language section "One connected national network (S6-L6)" before §4.1, existing figures only) | Status: draft
 
 # 4. Results
 
 > Labels: synthetic demand, uncalibrated: scenario comparison, not a forecast. alignments are indicative least-cost sketches on 30 m terrain whose mean lateral offset from real lines was 3–10 km on three reference lines; lengths within ±5 %; costs and running times inherit that uncertainty.
 
 Everything in this section is "in the model": a scenario comparison on synthetic, uncalibrated demand, each case against its matched baseline on the same zones, seed and parameters (rule 6). Money is SAR million at 2025 prices, PV 2026; every cost and benefit is a P10 / P50 / P90 range. R6/R7 figures come from judge v3 (`v3-variants`, SHA-256 `d9fef643…`), seed 1, 10,000 draws, alignment weights v1 (runs/r6/v3/library/library.json). The tables between `gen` markers are regenerated from the run files by `uv run python -m common.report build`.
+
+## One connected national network (S6-L6)
+
+**Plain-language summary of a comparison layout, not the recommended programme.** This section summarises S6-L6, which is set out in full in §4.6 and Figure 16 (`docs/r6-l6-connected.md`; scenarios/S6-L6.yaml; runs/r6/l6/score/S6-L6.csv). It adds no new modelling. Labels: synthetic demand, uncalibrated: scenario comparison, not a forecast. Alignment limitation: lengths, costs, running times and ridership inherit the indicative-alignment uncertainty (`docs/alignments.md` §0, §4).
+
+**The question.** The committed network (S1) is not one connected system. Under the rail graph's interchange rules it is three separate pieces: the main network, the Haramain line on its own and the GCC line on its own (runs/r6/l6/components.json; A-r6-130). S6-L6 asks what it takes to join everything into one network that serves 18 cities: the five metros (Riyadh, Jeddah, Makkah, Madinah, Dammam–Khobar–Dhahran) plus Taif, Buraidah, Tabuk, Abha–Khamis Mushait, Jazan, Najran, Yanbu, Bisha, Arar, Hafar Al-Batin, Sakaka, Al-Kharj and Al Jubayl (A-r6-131). The answer is the cheapest set of corridors from the study's existing corridor library that does this. It was found by an exact search (A-r6-133) and contains 16 corridors (runs/r6/l6/search.json).
+
+**What it joins** (runs/r6/l6/attachments.json; `docs/r6-l6-connected.md` §3):
+- **Tabuk** joins through a Tabuk–Sakaka line and a short Jouf–Sakaka spur onto the northern line (SAR North) at Jouf. Arar joins through a Jouf–Arar spur.
+- **The south** joins through Taif–Bisha, Bisha–Abha–Khamis Mushait and Abha–Khamis Mushait–Najran lines, with a Bisha spur that meets the Landbridge at Muwai. Jazan joins through two short commuter lines, Jazan–Baysh and Abha–Khamis Mushait–Baysh.
+- **Jeddah** joins through a Jeddah–Yanbu line and a Yanbu–Madinah spur onto the Haramain line at Madinah. The Jeddah end meets the Landbridge Jeddah placeholder site (A-station-001), so this link has to be re-checked if a Landbridge Jeddah site is published.
+- **The east** joins through Al Jubayl–Hafar Al-Batin, a Dammam commuter line that meets SAR East at a new Al Jarn station, a new Al Jubayl station on the GCC line, and the Al-Kharj spur from Riyadh.
+- **There is no direct Jeddah–Tabuk line in this study.** In S6-L6, Tabuk is reached through the northern line. A Tabuk–Yanbu trunk gap was scored on its own in the corridor library (cities/ksa/corridors/trunk_gap/S2-trunk_gap-tabuk-yanbu.yaml), but it is not part of S6-L6.
+
+> Labels: synthetic demand, uncalibrated: scenario comparison, not a forecast. alignments are indicative least-cost sketches on 30 m terrain whose mean lateral offset from real lines was 3–10 km on three reference lines; lengths within ±5 %; costs and running times inherit that uncertainty.
+| corridor (hypothetical, ours) | route-km |
+|---|---|
+| Tabuk – Sakaka | 458.9 |
+| Al Jubayl – Hafar Al-Batin | 402.7 |
+| Jeddah – Yanbu | 325.0 |
+| Muwai (Landbridge) – Bisha spur | 302.3 |
+| Abha–Khamis Mushait – Najran | 297.4 |
+| Taif – Bisha | 293.3 |
+| Abha–Khamis Mushait – Bisha | 228.4 |
+| Madinah – Yanbu Industrial City – Yanbu spur | 226.8 |
+| Jouf – Arar spur | 194.9 |
+| Dammam–Khobar–Dhahran commuter line (via Al Jarn) | 151.6 |
+| Riyadh – Al-Kharj spur | 139.2 |
+| Abha–Khamis Mushait – Baysh commuter line | 103.9 |
+| Jazan – Baysh commuter line | 60.4 |
+| Jouf – Sakaka spur | 57.1 |
+| New Al Jarn station on SAR East | 0 |
+| New Al Jubayl station on the GCC line | 0 |
+| **16 corridors** | **3,241.9** |
+Source: `docs/r6-l6-connected.md` §2 (route-km per option, runs/r6/v3/library/<option>/score.json); total runs/r6/l6/score/S6-L6.csv `new_route_km`. All 14 lines are the non-electrified variants (scenarios/S6-L6.yaml `layout:`).
+
+**What it costs and what it returns** (full judge v3, hash d9fef643…, seed 1; runs/r6/l6/score/S6-L6.csv):
+- **About 3,242 km of new line**, costing about **227 billion riyals** at the middle estimate (capex P50 227,213 SAR m; P10 to P90 range 122,532 to 860,035, so roughly 123 to 860 billion).
+- **About 0.06 riyals of benefit back for every riyal of cost** (medium-population BCR at P50; P10 / P90 −0.08 / 0.37). Its robust NPV is −191,660 SAR m, the most negative of the layouts compared in §4.6.
+- **The most extra rail trips** of the layouts compared in §4.6: in the model, +9.03 M rail trips in 2050 (medium case) and 2,363 M added passenger-km.
+- **The most national reach (reported only)**: in the model, 32.7 M people live within two hours, door to door, of a station, against 26.1 M for the committed network (S1). That is a gain of +6.64 M (runs/r6/l6/national_reach.json; reported only, never part of the score, A-r6-104).
+
+**Why it does not pay back on these numbers** (runs/r6/l6/score/S6-L6.csv; `docs/r6-l6-connected.md` §7b):
+- **The lines are long and the demand on them is thin.** Most of the 3,242 km runs between towns far from the five metros. In the model each new route-km adds about 2,785 rail trips in 2050. The five-metro two-hour reach gain is only 0.43 M, the smallest of the compared layouts.
+- **The benefits are too small for the cost.** The NPV is negative in every population case, every horizon (30, 40 and 60 years) and every discount-rate case at P50 cost. At P90 cost it falls to between −465,454 and −454,113 SAR m.
+- **Diesel traction counts against it.** Every line is the cheaper non-electrified option. In the model, air quality is a large negative benefit stream (PV P50 −10,873 SAR m, against total benefits of 14,908 SAR m; medium, 60 years).
+- **Building in 2050 lowers the loss, but does not remove it.** Each loss-making corridor is placed at its least-bad phase, 2050 (A-r6-134).
+
+Connecting everything is therefore a coverage choice, not an economic one, on the evidence of this model. The judge uses the access-model site overrides for door-to-door times (A-r4-acc-004), and these are not rail-graph interchanges (`docs/r6-l6-connected.md` §7d). Connectivity stays a reported diagnostic only, not a search goal (A-r6-104; the author's decision of 6 Nov 2026; `docs/r6-l6-connected.md` §8).
 
 <!-- gen:fig-fig01-national-map -->
 ![Figure 1. National rail map: existing, committed, historical and hypothetical layers](figures/fig01-national-map.svg)
